@@ -1,26 +1,92 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+ * Brand design tokens for Parul University Goa.
+ * Defining --color-* here makes Tailwind utilities (bg-brand, text-sunshine,
+ * border-ocean, …) available automatically in Tailwind v4. Source of truth for
+ * the palette — tweak here, not in component classes.
+ */
+@theme {
+  /*
+   * Palette sampled directly from the Figma "Landing page" export
+   * (design/brand/Landing page.pdf). Source of truth — tweak here, not in classes.
+   */
+
+  /* Primary red — logo accent, CTAs, headlines (#e73649 in the design) */
+  --color-brand: #e73649;
+  --color-brand-bright: #ff3148; /* lighter pop for stat numbers / accents */
+  --color-brand-dark: #c92b3c; /* hover state for red buttons */
+
+  /* Sky blues — header bar + hero backdrop (header blends into the hero sky) */
+  --color-sky: #83c6ef; /* hero sky */
+  --color-sky-soft: #c0d7ea; /* header row-2 strip */
+  --color-sky-deep: #74aad3; /* header row-1 bar */
+  --color-sky-light: #dceefb; /* palest sky wash */
+
+  /* Bright cyan — philosophy band, info cards, "Why Goa", footer (#0babe0) */
+  --color-ocean: #0babe0;
+  --color-ocean-deep: #0a90bd;
+
+  /* Sunshine yellow — badges, philosophy/food cards (#fedb2f) */
+  --color-sunshine: #fedb2f;
+  --color-sunshine-deep: #f4c800;
+
+  /* Cream — the soft wave wash behind the final CTA */
+  --color-cream: #fbf3cf;
+
+  /* Inks — body text (#1f1f1f) + the warm near-black stats band (#1e190c) */
+  --color-ink: #1f1f1f;
+  --color-ink-warm: #1e190c;
+
+  /* Gotham is self-hosted via next/font/local (src/lib/fonts.ts) as --font-gotham */
+  --font-sans: var(--font-gotham), ui-sans-serif, system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: var(--color-ink);
+}
+
+/* Offset in-page anchor targets so the content isn't hidden under fixed UI. */
+[id] {
+  scroll-margin-top: 6rem;
+}
+
+/*
+ * Hero intro sequence (pure CSS, no JS — runs in SSG, crawlable):
+ *  1. The big "Parul University Goa" lockup is shown.
+ *  2. It swipes left + fades out.
+ *  3. The headline / CTA content fades up into view.
+ * Content lives in the DOM throughout (opacity only), so crawlers always see it.
+ */
+@keyframes heroIntroOut {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(-38%); }
+}
+@keyframes heroContentIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-intro {
+  animation: heroIntroOut 0.7s cubic-bezier(0.55, 0, 0.85, 0.3) 1.5s forwards;
+}
+.hero-content {
+  opacity: 0;
+  animation: heroContentIn 0.8s ease-out 2s forwards;
+}
+
+/* Accessibility: skip the intro for users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-intro {
+    display: none;
+  }
+  .hero-content {
+    opacity: 1;
+    animation: none;
+  }
 }
