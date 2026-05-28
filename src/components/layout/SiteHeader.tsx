@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { navItems, cta } from "@/lib/navigation";
 
 /**
@@ -16,15 +17,17 @@ function Logo() {
   return (
     <Link
       href="/"
-      className="flex items-center gap-2 text-2xl text-white"
+      className="flex items-center gap-2"
       aria-label="Parul University Goa home"
     >
-      <span className="font-extrabold tracking-tight">
-        Parul
-        <sup className="ml-0.5 align-super text-[0.5em] font-normal">®</sup>
-      </span>
-      <span className="font-light">University</span>
-      <span className="rounded-lg bg-brand px-2.5 py-0.5 text-xl font-bold">Goa</span>
+      <Image
+        src="/logo.svg"
+        alt="Parul University Goa Logo"
+        width={233}
+        height={26}
+        className="h-8 w-auto"
+        priority
+      />
     </Link>
   );
 }
@@ -33,18 +36,18 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="relative z-30">
-      {/* Row 1 */}
-      <div className="bg-gradient-to-b from-sky-deep to-sky">
+    <header className="fixed inset-x-0 top-0 z-30">
+      {/* Row 1 - Brand Blue bar */}
+      <div className="bg-brand-blue/80 backdrop-blur-md border-b border-white/20">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-5">
           <Logo />
 
-          <nav aria-label="Primary" className="hidden items-center gap-6 lg:flex">
+          <nav aria-label="Primary" className="hidden items-center gap-4 xl:gap-8 lg:flex">
             {navItems.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
-                className="whitespace-nowrap text-[15px] font-medium text-white transition-colors hover:text-white/80"
+                className="whitespace-nowrap text-sm font-medium text-white transition-colors hover:text-white/80"
               >
                 {item.label}
               </Link>
@@ -54,7 +57,7 @@ export function SiteHeader() {
           <div className="flex items-center gap-3">
             <Link
               href={cta.apply}
-              className="whitespace-nowrap rounded-full bg-brand px-6 py-3 text-base font-semibold text-white shadow-sm transition-colors hover:bg-brand-bright"
+              className="whitespace-nowrap rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-bright"
             >
               Apply Now
             </Link>
@@ -81,7 +84,7 @@ export function SiteHeader() {
       </div>
 
       {/* Row 2 — secondary nav strip (desktop) */}
-      <div className="hidden bg-sky-soft lg:block">
+      <div className="hidden bg-white/10 backdrop-blur-md border-b border-white/20 lg:block">
         <nav
           aria-label="Sections"
           className="mx-auto flex max-w-7xl items-center justify-center gap-10 px-6 py-3"
@@ -90,7 +93,7 @@ export function SiteHeader() {
             <Link
               key={item.label}
               href={item.href}
-              className="whitespace-nowrap text-[15px] font-semibold text-ink/90 transition-colors hover:text-brand"
+              className="whitespace-nowrap text-sm font-semibold text-ink/90 transition-colors hover:text-brand"
             >
               {item.label}
             </Link>

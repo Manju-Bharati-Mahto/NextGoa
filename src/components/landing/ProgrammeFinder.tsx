@@ -68,7 +68,7 @@ export function ProgrammeFinder() {
     <section id="programmes" className="bg-white">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <Eyebrow className="text-ink">Find your programme</Eyebrow>
-        <h2 className="mt-2 text-center text-4xl font-extrabold tracking-tight text-brand sm:text-5xl">
+        <h2 className="mt-2 text-center font-[family-name:var(--font-poppins)] text-4xl font-extrabold tracking-tight text-brand sm:text-5xl">
           Tell us where you&apos;re headed.
         </h2>
         <p className="mt-3 text-center text-base text-ink/70">
@@ -77,46 +77,52 @@ export function ProgrammeFinder() {
 
         <form
           onSubmit={handleSubmit}
-          className="mx-auto mt-10 flex max-w-3xl flex-col items-stretch gap-3 rounded-3xl bg-zinc-50 p-3 ring-1 ring-black/5 sm:flex-row sm:items-center"
+          className="mx-auto mt-10 flex w-full max-w-4xl flex-col items-stretch rounded-3xl bg-white p-2 ring-1 ring-zinc-300 sm:flex-row sm:items-center sm:rounded-[100px]"
         >
-          <select
-            aria-label="Level"
-            value={level}
-            onChange={(e) => {
-              setLevel(e.target.value);
-              setSubmitted(false);
-            }}
-            className="flex-1 rounded-full border border-zinc-200 bg-white px-5 py-3.5 text-sm font-medium text-ink focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30"
-          >
-            <option value="">I am exploring…</option>
-            {levels.map((l) => (
-              <option key={l} value={l}>
-                {l}
-              </option>
-            ))}
-          </select>
+          <div className="flex flex-1 items-center px-4 py-2">
+            <select
+              aria-label="Level"
+              value={level}
+              onChange={(e) => {
+                setLevel(e.target.value);
+                setSubmitted(false);
+              }}
+              className="w-full appearance-none border-0 border-b border-zinc-400 bg-transparent px-0 pb-1.5 text-base text-zinc-500 focus:border-brand focus:outline-none focus:ring-0 bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:1.2rem_1.2rem] bg-[position:right_0_bottom_6px] bg-no-repeat pr-6"
+            >
+              <option value="">I am exploring</option>
+              {levels.map((l) => (
+                <option key={l} value={l}>
+                  {l}
+                </option>
+              ))}
+            </select>
+          </div>
 
-          <select
-            aria-label="Field"
-            value={field}
-            onChange={(e) => {
-              setField(e.target.value);
-              setSubmitted(false);
-            }}
-            className="flex-1 rounded-full border border-zinc-200 bg-white px-5 py-3.5 text-sm font-medium text-ink focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30"
-          >
-            <option value="">Field</option>
-            {fields.map((f) => (
-              <option key={f} value={f}>
-                {f}
-              </option>
-            ))}
-          </select>
+          <div className="hidden h-6 w-px bg-zinc-300 sm:block mx-2"></div>
+
+          <div className="flex flex-1 items-center px-4 py-2">
+            <select
+              aria-label="Field"
+              value={field}
+              onChange={(e) => {
+                setField(e.target.value);
+                setSubmitted(false);
+              }}
+              className="w-full appearance-none border-0 border-b border-zinc-400 bg-transparent px-0 pb-1.5 text-base text-zinc-500 focus:border-brand focus:outline-none focus:ring-0 bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:1.2rem_1.2rem] bg-[position:right_0_bottom_6px] bg-no-repeat pr-6"
+            >
+              <option value="">Field</option>
+              {fields.map((f) => (
+                <option key={f} value={f}>
+                  {f}
+                </option>
+              ))}
+            </select>
+          </div>
 
           <button
             type="submit"
             disabled={!ready}
-            className="whitespace-nowrap rounded-full bg-brand px-7 py-3.5 text-sm font-bold text-white transition-colors hover:bg-brand-dark disabled:cursor-not-allowed disabled:opacity-40"
+            className="mt-2 whitespace-nowrap rounded-full bg-brand px-8 py-3 text-base font-semibold text-white transition-colors hover:bg-brand-dark disabled:cursor-not-allowed sm:ml-4 sm:mt-0"
           >
             Find programs
           </button>

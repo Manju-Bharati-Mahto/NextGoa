@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { gotham } from "@/lib/fonts";
+import { gotham, poppins } from "@/lib/fonts";
 import { siteConfig, SITE_URL } from "@/lib/site-config";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { organizationSchema, websiteSchema } from "@/lib/structured-data";
@@ -58,7 +58,7 @@ export default function RootLayout({
   return (
     <html
       lang={siteConfig.lang}
-      className={`${gotham.variable} h-full antialiased`}
+      className={`${gotham.variable} ${poppins.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
         {/* Site-wide entity definitions for search engines + AI answer engines. */}

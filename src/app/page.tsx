@@ -15,7 +15,6 @@ import { International } from "@/components/landing/International";
 import { News } from "@/components/landing/News";
 import { Faq } from "@/components/landing/Faq";
 import { FinalCta } from "@/components/landing/FinalCta";
-import { StickyApplyBar } from "@/components/landing/StickyApplyBar";
 
 /**
  * Landing page — composes the sections in the order of the Figma "Landing page"
@@ -49,7 +48,6 @@ export default function Home() {
         <Faq />
         <FinalCta />
       </main>
-      <StickyApplyBar />
     </>
   );
 }

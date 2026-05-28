@@ -1,4 +1,15 @@
 import localFont from "next/font/local";
+import { Poppins } from "next/font/google";
+
+/**
+ * Poppins - used for specific typographic elements per brand guidelines.
+ */
+export const poppins = Poppins({
+  weight: ["400", "500", "600"],
+  subsets: ["latin"],
+  variable: "--font-poppins",
+  display: "swap",
+});
 
 /**
  * Gotham — the brand typeface, self-hosted from src/fonts via next/font/local.

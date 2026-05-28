@@ -15,7 +15,7 @@ export function StatsBar() {
         <dl className="grid grid-cols-1 gap-10 sm:grid-cols-3 sm:divide-x sm:divide-white/10">
           {stats.map((s) => (
             <div key={s.label} className="text-center">
-              <dt className="text-5xl font-extrabold text-brand-bright">{s.value}</dt>
+              <dt className="font-[family-name:var(--font-poppins)] text-5xl font-semibold text-brand-bright">{s.value}</dt>
               <dd className="mt-2 text-sm font-medium text-white/70">{s.label}</dd>
             </div>
           ))}

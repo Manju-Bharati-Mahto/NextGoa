@@ -16,6 +16,7 @@
   --color-brand: #e73649;
   --color-brand-bright: #ff3148; /* lighter pop for stat numbers / accents */
   --color-brand-dark: #c92b3c; /* hover state for red buttons */
+  --color-brand-blue: #0CAADD; /* brand blue */
 
   /* Sky blues — header bar + hero backdrop (header blends into the hero sky) */
   --color-sky: #83c6ef; /* hero sky */
@@ -40,6 +41,9 @@
 
   /* Gotham is self-hosted via next/font/local (src/lib/fonts.ts) as --font-gotham */
   --font-sans: var(--font-gotham), ui-sans-serif, system-ui, sans-serif;
+  
+  /* Poppins loaded via next/font/google */
+  --font-poppins: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
 }
 
 html {
