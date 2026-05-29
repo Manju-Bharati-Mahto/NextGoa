@@ -112,12 +112,28 @@ export function Placements() {
         </div>
 
         {/* Recruiting companies line */}
-        <div className="mt-8 flex flex-col items-center gap-2 text-center sm:flex-row sm:justify-center sm:gap-4">
-          <span className="font-sans font-bold text-5xl text-ink">2,200+</span>
-          <span className="text-left font-[family-name:var(--font-poppins)] font-normal text-[15px] sm:text-[17px] text-ink/70">
-            <strong className="block font-sans font-bold text-ink">Recruiting companies*</strong>
-            Across the Parul University ecosystem, every year.
-          </span>
+        <div className="mt-8 flex items-center justify-center gap-3.5 sm:gap-6">
+          {/* Left: 2200.png image */}
+          <div className="flex-shrink-0">
+            <img
+              src="/2200.png"
+              alt="2200+ recruiting companies"
+              className="h-10 sm:h-[54px] w-auto object-contain"
+            />
+          </div>
+
+          {/* Middle: Vertical divider */}
+          <div className="h-10 sm:h-14 w-px bg-zinc-300" />
+
+          {/* Right: Text block */}
+          <div className="text-left">
+            <h3 className="font-sans font-extrabold text-[18px] sm:text-[32px] leading-tight text-[#1F1F1F]">
+              Recruiting companies*
+            </h3>
+            <p className="mt-0.5 sm:mt-1 font-[family-name:var(--font-poppins)] font-normal text-[11px] sm:text-[16px] text-zinc-500">
+              Across the Parul ecosystem, every year.
+            </p>
+          </div>
         </div>
 
         {/* Stat trio */}
