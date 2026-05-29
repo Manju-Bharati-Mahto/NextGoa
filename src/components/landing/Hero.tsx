@@ -5,7 +5,7 @@ export function Hero() {
   return (
     <section 
       id="hero" 
-      className="relative flex min-h-screen flex-col items-center justify-start pt-32 overflow-hidden bg-[url('/hero-bg.png')] bg-cover bg-center bg-no-repeat"
+      className="relative flex min-h-screen flex-col items-center justify-start pt-32 overflow-hidden bg-[url('/hero-bg.jpg')] bg-cover bg-center bg-no-repeat"
     >
       {/* Hero content */}
       <div className="relative z-10 w-full max-w-7xl px-4 pt-16 sm:px-6 sm:pt-24 lg:pt-32 text-center">

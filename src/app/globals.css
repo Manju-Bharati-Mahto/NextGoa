@@ -39,6 +39,11 @@
   --color-ink: #1f1f1f;
   --color-ink-warm: #1e190c;
 
+  /* Brand guidelines colors */
+  --color-brand-white: #F8F8F8;
+  --color-brand-black: #1F1F1F;
+  --color-brand-yellow: #FEDB2F;
+
   /* Gotham is self-hosted via next/font/local (src/lib/fonts.ts) as --font-gotham */
   --font-sans: var(--font-gotham), ui-sans-serif, system-ui, sans-serif;
   

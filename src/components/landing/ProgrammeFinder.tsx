@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useId } from "react";
 import { Eyebrow } from "./Decor";
 
 /**
@@ -22,33 +22,119 @@ const fields = [
   "Science & Computing",
 ];
 
-/** Faculty cards — alternating cyan / yellow as in the design. */
 const faculties = [
-  { name: "Engineering, IT & CS", tags: ["B.Tech", "M.Tech", "Diploma"] },
-  { name: "Management Studies", tags: ["BBA", "MBA", "BCom"] },
-  { name: "Pharmacy", tags: ["B.Pharm", "M.Pharm", "D.Pharm"] },
-  { name: "Nursing", tags: ["B.Sc", "GNM", "Post Basic"] },
-  { name: "Hotel Management", tags: ["BHMCT", "Diploma"] },
-  { name: "Physiotherapy", tags: ["BPT", "MPT"] },
+  {
+    name: "Engineering, IT & CS",
+    tags: ["Diploma", "B.Tech", "BCA", "MCA"],
+    levels: ["Diploma", "Undergraduate", "Postgraduate"],
+    fields: ["Engineering & Technology", "Science & Computing"],
+  },
+  {
+    name: "Management Studies",
+    tags: ["BBA", "MBA", "BCom"],
+    levels: ["Undergraduate", "Postgraduate"],
+    fields: ["Management & Commerce"],
+  },
+  {
+    name: "Pharmacy",
+    tags: ["B.Pharm", "M.Pharm", "D.Pharm"],
+    levels: ["Undergraduate", "Postgraduate", "Diploma"],
+    fields: ["Medicine & Health Sciences"],
+  },
+  {
+    name: "Nursing",
+    tags: ["B.Sc", "GNM", "Post Basic"],
+    levels: ["Undergraduate", "Diploma", "Postgraduate"],
+    fields: ["Medicine & Health Sciences"],
+  },
+  {
+    name: "Hotel Management",
+    tags: ["BHMCT", "Diploma"],
+    levels: ["Undergraduate", "Diploma"],
+    fields: ["Management & Commerce"],
+  },
+  {
+    name: "Physiotherapy",
+    tags: ["BPT", "MPT"],
+    levels: ["Undergraduate", "Postgraduate"],
+    fields: ["Medicine & Health Sciences"],
+  },
 ];
 
-function CapIcon() {
+interface CourseCardProps {
+  color: "blue" | "yellow";
+  title: string;
+  tags: string[];
+}
+
+function CourseCard({ color, title, tags }: CourseCardProps) {
+  const isYellow = color === "yellow";
+  const colorHex = isYellow ? "#FEDB2F" : "#0CAADD";
+
   return (
-    <svg
-      width="64"
-      height="64"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
+    <div
+      className={`relative w-full h-[268px] rounded-[16px] p-8 flex flex-col justify-between overflow-hidden border text-left ${
+        isYellow ? "bg-[#FEDB2F] border-[#FEDB2F] text-[#1F1F1F]" : "bg-[#0CAADD] border-[#0CAADD] text-white"
+      }`}
     >
-      <path d="M22 10 12 5 2 10l10 5 10-5Z" />
-      <path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5" />
-      <path d="M22 10v6" />
-    </svg>
+      {/* Decorative background pattern (isolated to the right portion of the card) */}
+      <svg
+        viewBox="250 0 125 268"
+        className="absolute right-0 top-0 h-full w-[33%] pointer-events-none opacity-40"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <path
+            d="M279.918 96.1157C285.888 107.687 297.761 115.1 310.877 115.1C323.992 115.1 335.866 107.686 341.836 96.1157L355.349 96.1157C354.213 99.3087 352.83 102.398 351.037 105.267L351.003 105.322L351.036 105.377L353.77 109.938C354.493 111.142 354.302 112.684 353.31 113.675L344.362 122.624C343.37 123.612 341.829 123.802 340.626 123.083L336.065 120.348L336.01 120.315L335.955 120.349C331.512 123.13 326.681 125.128 321.545 126.305L321.481 126.32L321.466 126.382L320.171 131.559C319.827 132.928 318.599 134.084 317.205 134.084L304.549 134.084C303.154 134.084 301.926 132.928 301.583 131.559L300.288 126.382L300.272 126.32L300.21 126.305L299.25 126.075C294.471 124.875 289.964 122.956 285.8 120.349L285.745 120.315L285.69 120.348L281.129 123.083C279.918 123.8 278.381 123.617 277.392 122.624L277.391 122.624L268.443 113.675C267.451 112.684 267.261 111.142 267.984 109.938L270.719 105.377L270.752 105.322L270.718 105.267C268.923 102.398 267.541 99.3087 266.404 96.1157L279.918 96.1157Z"
+            fill="#F8F8F8"
+            stroke={colorHex}
+            strokeWidth="0.210938"
+          />
+          <path
+            d="M261.623 80.2954L360.131 80.2954C362.693 80.2954 364.771 82.3732 364.771 84.936C364.771 87.4988 362.693 89.5767 360.131 89.5767L261.623 89.5767C259.06 89.5767 256.982 87.4988 256.982 84.936C256.982 82.3732 259.06 80.2954 261.623 80.2954Z"
+            fill="#F8F8F8"
+            stroke={colorHex}
+            strokeWidth="0.210938"
+          />
+          <path
+            d="M304.549 26.2954L317.205 26.2954C320.642 26.2954 323.427 29.081 323.427 32.5181L323.427 54.8774C323.427 56.6841 324.89 58.1469 326.697 58.147C328.504 58.147 329.967 56.6842 329.967 54.8774L329.967 37.1245C332.099 38.0739 334.141 39.1605 336.084 40.3979L336.084 54.8774C336.084 56.6841 337.547 58.1469 339.353 58.147C341.16 58.147 342.623 56.6842 342.623 54.8774L342.623 45.3481C350.681 52.7107 356.157 62.7181 357.709 73.7563L264.045 73.7563C265.596 62.7183 271.073 52.7117 279.131 45.3491L279.131 54.8774C279.131 56.6841 280.593 58.1469 282.4 58.147C284.207 58.147 285.67 56.6842 285.67 54.8774L285.67 40.3979C287.613 39.1605 289.654 38.0739 291.787 37.1245L291.787 54.8774C291.787 56.6841 293.25 58.1469 295.056 58.147C296.863 58.147 298.326 56.6842 298.326 54.8774L298.326 32.5181C298.326 29.1892 300.939 26.4706 304.228 26.3032L304.549 26.2954Z"
+            fill="#F8F8F8"
+            stroke={colorHex}
+            strokeWidth="0.210938"
+          />
+        </g>
+      </svg>
+      {/* Content wrapper */}
+      <div className="flex flex-col h-full justify-end z-10 relative">
+        {/* Title */}
+        <h3 className="text-[30px] sm:text-[32px] font-sans font-medium leading-[1.08] tracking-tight pr-12 mb-3.5">
+          {title}
+        </h3>
+
+        {/* Tags */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          {tags.map((tag) => (
+            <span
+              key={tag}
+              className="inline-flex items-center justify-center rounded-full bg-white text-black px-3.5 py-1 text-[11px] font-bold uppercase tracking-wider animate-none"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        {/* View Program button */}
+        <div>
+          <a
+            href="#admissions"
+            className="inline-flex items-center justify-center rounded-full bg-black text-white px-5 py-2.5 text-xs font-bold hover:bg-zinc-800 transition-colors shadow-sm"
+          >
+            View Program
+          </a>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -59,13 +145,20 @@ export function ProgrammeFinder() {
 
   const ready = level !== "" && field !== "";
 
+  const filteredFaculties = faculties.filter((fac) => {
+    if (!submitted) return true;
+    const matchesLevel = level ? fac.levels.includes(level) : true;
+    const matchesField = field ? fac.fields.includes(field) : true;
+    return matchesLevel && matchesField;
+  });
+
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (ready) setSubmitted(true);
   }
 
   return (
-    <section id="programmes" className="bg-white">
+    <section id="programmes" className="bg-brand-white">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <Eyebrow className="text-ink">Find your programme</Eyebrow>
         <h2 className="mt-2 text-center font-[family-name:var(--font-poppins)] text-4xl font-extrabold tracking-tight text-brand sm:text-5xl">
@@ -87,7 +180,7 @@ export function ProgrammeFinder() {
                 setLevel(e.target.value);
                 setSubmitted(false);
               }}
-              className="w-full appearance-none border-0 border-b border-zinc-400 bg-transparent px-0 pb-1.5 text-base text-zinc-500 focus:border-brand focus:outline-none focus:ring-0 bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:1.2rem_1.2rem] bg-[position:right_0_bottom_6px] bg-no-repeat pr-6"
+              className="w-full appearance-none border-0 bg-transparent px-0 text-base text-zinc-500 focus:outline-none focus:ring-0 bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:1.1rem_1.1rem] bg-[position:right_12px_center] bg-no-repeat pr-8 cursor-pointer"
             >
               <option value="">I am exploring</option>
               {levels.map((l) => (
@@ -108,7 +201,7 @@ export function ProgrammeFinder() {
                 setField(e.target.value);
                 setSubmitted(false);
               }}
-              className="w-full appearance-none border-0 border-b border-zinc-400 bg-transparent px-0 pb-1.5 text-base text-zinc-500 focus:border-brand focus:outline-none focus:ring-0 bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:1.2rem_1.2rem] bg-[position:right_0_bottom_6px] bg-no-repeat pr-6"
+              className="w-full appearance-none border-0 bg-transparent px-0 text-base text-zinc-500 focus:outline-none focus:ring-0 bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:1.1rem_1.1rem] bg-[position:right_12px_center] bg-no-repeat pr-8 cursor-pointer"
             >
               <option value="">Field</option>
               {fields.map((f) => (
@@ -138,56 +231,58 @@ export function ProgrammeFinder() {
           </p>
         )}
 
-        {/* Faculty cards */}
-        <ul className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {faculties.map((f, i) => {
-            const yellow = i % 2 === 1;
-            return (
-              <li
-                key={f.name}
-                className={`relative overflow-hidden rounded-3xl p-6 shadow-sm ring-1 ring-black/5 ${
-                  yellow ? "bg-sunshine text-ink" : "bg-ocean text-white"
-                }`}
+        {/* Faculty cards grid */}
+        {filteredFaculties.length === 0 ? (
+          <div className="mt-12 text-center py-16 px-6 rounded-3xl border border-zinc-200 max-w-xl mx-auto bg-white shadow-sm">
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-zinc-50 ring-4 ring-zinc-50/50">
+              <svg
+                className="h-7 w-7 text-zinc-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
               >
-                <span
-                  className={`pointer-events-none absolute -right-2 -top-2 ${
-                    yellow ? "text-ink/10" : "text-white/20"
-                  }`}
-                >
-                  <CapIcon />
-                </span>
-                <h3 className="max-w-[70%] text-xl font-extrabold leading-tight">{f.name}</h3>
-                <div className="mt-4 flex flex-wrap gap-1.5">
-                  {f.tags.map((t) => (
-                    <span
-                      key={t}
-                      className={`rounded-full px-2.5 py-1 text-[11px] font-semibold ${
-                        yellow ? "bg-ink/10 text-ink" : "bg-white/20 text-white"
-                      }`}
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-                <a
-                  href="#admissions"
-                  className={`mt-5 inline-flex items-center gap-1 rounded-full px-4 py-2 text-xs font-bold transition-colors ${
-                    yellow
-                      ? "bg-ink text-white hover:bg-black"
-                      : "bg-white text-ink hover:bg-zinc-100"
-                  }`}
-                >
-                  View Program →
-                </a>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.637 10.637z"
+                />
+              </svg>
+            </div>
+            <h3 className="mt-5 text-lg font-bold text-ink">No programmes found</h3>
+            <p className="mt-2 text-sm text-ink/70">
+              We couldn&apos;t find any faculties offering <strong>{level}</strong> programmes in the <strong>{field}</strong> field.
+            </p>
+            <button
+              type="button"
+              onClick={() => {
+                setLevel("");
+                setField("");
+                setSubmitted(false);
+              }}
+              className="mt-6 inline-flex items-center justify-center rounded-full bg-brand px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-brand-dark transition-colors"
+            >
+              Reset search filters
+            </button>
+          </div>
+        ) : (
+          <ul className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {filteredFaculties.map((fac, i) => (
+              <li key={fac.name}>
+                <CourseCard
+                  color={i % 2 === 1 ? "yellow" : "blue"}
+                  title={fac.name}
+                  tags={fac.tags}
+                />
               </li>
-            );
-          })}
-        </ul>
+            ))}
+          </ul>
+        )}
 
         {/* Counsellor band */}
         <div className="mt-8 flex flex-col items-center justify-between gap-4 rounded-2xl bg-ink-warm px-6 py-5 sm:flex-row">
-          <p className="text-center text-sm font-medium text-white/90 sm:text-left">
-            Don&apos;t know what to choose? Talk to a counsellor — we&apos;ll match you to the
+          <p className="text-center text-base sm:text-lg font-medium text-white/90 sm:text-left">
+            <span className="font-bold">Don&apos;t know what to choose?</span> Talk to a counsellor — we&apos;ll match you to the
             right program.
           </p>
           <a

@@ -11,53 +11,111 @@ const stats = [
   { value: "120+", suffix: "", label: "Global university partners" },
 ];
 
-function ChartMark() {
-  return (
-    <svg width="40" height="40" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-      <rect x="4" y="18" width="5" height="10" rx="1" fill="var(--color-ocean)" />
-      <rect x="13" y="12" width="5" height="16" rx="1" fill="var(--color-sunshine)" />
-      <rect x="22" y="6" width="5" height="22" rx="1" fill="var(--color-brand)" />
-    </svg>
-  );
-}
-
 export function Placements() {
   return (
     <section id="placements" className="bg-zinc-50">
       <div className="mx-auto max-w-6xl px-6 py-20">
-        <div className="flex justify-center">
-          <ChartMark />
+        <div className="flex justify-center mb-6">
+          <img src="/Test.svg" alt="PU Goa logo" className="h-[97px] w-auto" />
         </div>
         <Eyebrow className="mt-3 text-ink/70">NUMBERS THAT MATTER</Eyebrow>
-        <h2 className="mt-2 text-center text-4xl font-extrabold tracking-tight text-brand sm:text-5xl">
+        <h2 className="mt-2 text-center font-sans font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
           The ecosystem in figures.
         </h2>
-        <p className="mt-3 text-center text-base text-ink/70">
+        <p className="mt-3 text-center font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] leading-relaxed text-ink/70">
           Two decades of placement results, distilled.
         </p>
 
-        {/* Headline package card */}
-        <div className="relative mt-12 overflow-hidden rounded-3xl bg-brand p-8 text-white shadow-lg sm:p-12">
-          <span className="inline-block rounded-full bg-sunshine px-4 py-1.5 text-xs font-bold text-ink">
-            Highest package · 2027
-          </span>
-          <div className="mt-6 flex items-end gap-2">
-            <span className="text-7xl font-extrabold leading-none sm:text-8xl">₹60</span>
-            <span className="mb-2 text-3xl font-extrabold sm:text-4xl">LPA*</span>
+        {/* ── Headline package card ────────────────────────────────────────
+             Mobile  : vertical stack  — text top, photo bottom (inside card)
+             Desktop : horizontal band — text left, photo overflows above right
+        ──────────────────────────────────────────────────────────────────── */}
+
+        {/* Outer wrapper: on desktop only we add pt-16 for the photo overflow */}
+        <div className="relative mt-8 sm:pt-16" style={{ overflow: "visible" }}>
+
+          {/* ── MOBILE CARD (vertical, shown below sm) ── */}
+          <div className="sm:hidden relative mx-auto max-w-[420px]">
+            {/* SVG card as the only background/structure */}
+            <img
+              src="/mobile-card.svg"
+              alt="MS Dhoni with Parul University students"
+              className="w-full h-auto block"
+            />
+            {/* Text overlaid directly over the SVG */}
+            <div className="absolute top-0 left-0 right-0 p-6 flex flex-col justify-start pointer-events-none">
+              <div>
+                <span className="inline-block rounded-full bg-white/20 border border-white/40 px-3.5 py-1 text-[11px] font-semibold text-white">
+                  Highest package · 2027
+                </span>
+              </div>
+              <div className="mt-3.5 flex items-end gap-1.5 text-white">
+                <span className="font-sans font-bold leading-none" style={{ fontSize: "44px" }}>₹60</span>
+                <span className="mb-0.5 font-sans font-bold text-xl">LPA*</span>
+              </div>
+              <div className="w-full h-px bg-white/30 my-3" />
+              <p className="font-[family-name:var(--font-poppins)] font-normal text-[12px] leading-relaxed text-white/90">
+                Awarded to two B.Tech CSE students in a single recruitment
+                cycle — the benchmark the PU ecosystem is producing today.
+              </p>
+            </div>
           </div>
-          <p className="mt-5 max-w-xl text-base leading-7 text-white/90">
-            Awarded to two B.Tech CSE students in a single recruitment cycle — the benchmark the PU
-            ecosystem is producing today.
-          </p>
-          {/* decorative ring */}
-          <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/10" />
+
+          {/* ── DESKTOP CARD (horizontal, shown at sm+) ── */}
+          <div
+            className="hidden sm:block overflow-hidden rounded-[24px] bg-brand text-white shadow-lg text-left"
+            style={{ minHeight: "260px", position: "relative" }}
+          >
+            {/* Left: text content */}
+            <div className="p-10 flex flex-col justify-center max-w-[48%]" style={{ minHeight: "260px" }}>
+              <div>
+                <span className="inline-block rounded-full bg-white/20 border border-white/40 px-4 py-1.5 text-xs font-semibold text-white">
+                  Highest package · 2027
+                </span>
+              </div>
+              <div className="mt-5 flex items-end gap-2">
+                <span className="font-sans font-bold leading-none" style={{ fontSize: "72px" }}>₹60</span>
+                <span className="mb-2 font-sans font-bold text-4xl">LPA*</span>
+              </div>
+              <div className="w-full h-px bg-white/30 my-4" />
+              <p className="font-[family-name:var(--font-poppins)] font-normal text-[16px] leading-[1.65] text-white/90">
+                Awarded to two B.Tech CSE students in a single recruitment
+                cycle — the benchmark the PU ecosystem is producing today.
+              </p>
+            </div>
+          </div>
+
+          {/* Desktop photo — overflows above card (pt-16 on wrapper gives 64px) */}
+          <div
+            className="hidden sm:block pointer-events-none"
+            style={{
+              position: "absolute",
+              top: 0,
+              right: 0,
+              bottom: 0,
+              width: "62%",
+              zIndex: 10,
+            }}
+          >
+            <img
+              src="/Image-opt.png"
+              alt="MS Dhoni with Parul University students"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "top center",
+                display: "block",
+              }}
+            />
+          </div>
         </div>
 
         {/* Recruiting companies line */}
         <div className="mt-8 flex flex-col items-center gap-2 text-center sm:flex-row sm:justify-center sm:gap-4">
-          <span className="text-5xl font-extrabold text-ink">2,200+</span>
-          <span className="text-left text-sm text-ink/70">
-            <strong className="block text-ink">Recruiting companies*</strong>
+          <span className="font-sans font-bold text-5xl text-ink">2,200+</span>
+          <span className="text-left font-[family-name:var(--font-poppins)] font-normal text-[15px] sm:text-[17px] text-ink/70">
+            <strong className="block font-sans font-bold text-ink">Recruiting companies*</strong>
             Across the Parul University ecosystem, every year.
           </span>
         </div>
@@ -69,16 +127,16 @@ export function Placements() {
               key={s.label}
               className="rounded-2xl border border-zinc-200 bg-white p-6 text-center"
             >
-              <dt className="text-3xl font-extrabold text-ink">
+              <dt className="font-sans font-bold text-3xl text-ink">
                 {s.value}
-                <span className="text-xl">{s.suffix}</span>
+                <span className="text-xl font-medium">{s.suffix}</span>
               </dt>
-              <dd className="mt-2 text-sm text-ink/60">{s.label}</dd>
+              <dd className="mt-2 font-[family-name:var(--font-poppins)] font-normal text-xs sm:text-sm text-ink/60">{s.label}</dd>
             </div>
           ))}
         </dl>
 
-        <p className="mt-8 text-center text-xs text-ink/40">
+        <p className="mt-8 text-center font-[family-name:var(--font-poppins)] font-normal text-xs text-ink/40">
           *Figures span the Parul University ecosystem (Goa &amp; Gujarat).
         </p>
       </div>
