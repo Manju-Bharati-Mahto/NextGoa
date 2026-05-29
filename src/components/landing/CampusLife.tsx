@@ -155,6 +155,13 @@ export function CampusLife() {
           </ul>
         </div>
       </div>
+
+      {/* Decorative icons sitting on the white, just above the Why Goa wave */}
+      <div className="flex w-full items-end justify-between pb-2">
+        <img src="/deco-lighthouse.svg" alt="" aria-hidden="true" className="h-20 w-auto sm:h-32" />
+        <img src="/deco-pearl.svg" alt="" aria-hidden="true" className="h-16 w-auto translate-y-2 sm:h-24" />
+        <img src="/deco-sun.svg" alt="" aria-hidden="true" className="mb-2 h-16 w-auto sm:h-24" />
+      </div>
     </section>
   );
 }

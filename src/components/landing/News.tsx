@@ -9,8 +9,8 @@ const stories = [
   {
     tag: "Innovation",
     tagClass: "bg-brand text-white",
-    title: "PU Goa Hackathon 2026 — 48 hours, 60 teams, 5 deployed prototypes.",
-    body: "From mentor-led teams to student-built real solutions.",
+    title: "PU Goa Hackathon 2026 - 48 hours, 60 teams, 9 deployed prototypes.",
+    body: "From medical scheduling to coastal-tourism analytics, students built real solutions.",
   },
   {
     tag: "Alumni",
@@ -44,14 +44,14 @@ export function News() {
               <div className="relative aspect-[16/10] bg-gradient-to-br from-emerald-500 via-emerald-700 to-emerald-900">
                 <div className="absolute inset-0 opacity-25 [background:radial-gradient(circle_at_25%_70%,#bbf7d0_0,transparent_45%)]" />
               </div>
-              <div className="p-6">
+              <div className="p-7">
                 <span
-                  className={`inline-block rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wide ${s.tagClass}`}
+                  className={`inline-block rounded-full px-5 py-2 text-sm font-bold uppercase tracking-wide ${s.tagClass}`}
                 >
                   {s.tag}
                 </span>
-                <h3 className="mt-3 text-base font-extrabold leading-snug text-ink">{s.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-ink/70">{s.body}</p>
+                <h3 className="mt-4 font-sans text-xl font-bold leading-snug tracking-tight text-ink">{s.title}</h3>
+                <p className="mt-3 font-[family-name:var(--font-poppins)] text-[15px] leading-relaxed text-ink/70">{s.body}</p>
               </div>
             </li>
           ))}

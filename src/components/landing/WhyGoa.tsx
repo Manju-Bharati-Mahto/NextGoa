@@ -10,13 +10,13 @@ import { WaveBandBg } from "./WaveBand";
  */
 export function WhyGoa() {
   return (
-    <section className="relative overflow-hidden bg-[#F8F8F8]">
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#F8F8F8] to-[#CBEFFD]">
       {/* Background: same scalloped wave band as "Our Philosophy", same colours */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <WaveBandBg band="#0CAADD" accent="#0094C4" />
       </div>
 
-      <div className="relative z-10 mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-6 py-24 md:grid-cols-2">
+      <div className="relative z-10 mx-auto grid max-w-6xl grid-cols-1 items-center gap-14 px-6 pt-44 pb-64 md:grid-cols-2 md:gap-24 lg:gap-32">
         <div className="relative mx-auto w-full max-w-md">
           {/* Top-left blueprint crosshair (Group 3062.svg) */}
           <svg
@@ -42,11 +42,11 @@ export function WhyGoa() {
             <circle cx="5.76442" cy="5.76442" r="5.76442" transform="matrix(1 0 0 -1 371.227 273.232)" fill="#FEDB2F" />
           </svg>
 
-          {/* Yellow accent square behind the photo (offset down-left) */}
-          <div className="absolute inset-0 z-[5] -translate-x-7 translate-y-9 rounded-[28px] bg-sunshine" />
+          {/* Yellow accent square behind the photo, anchored bottom-left */}
+          <div className="absolute -bottom-[12%] -left-[12%] z-[5] h-[62%] w-[62%] rounded-[28px] bg-sunshine" />
 
-          {/* Event photo, slightly tilted */}
-          <div className="relative z-10 overflow-hidden rounded-[28px] shadow-2xl ring-1 ring-black/10 rotate-[2deg]">
+          {/* Event photo */}
+          <div className="relative z-10 overflow-hidden rounded-[28px] shadow-2xl ring-1 ring-black/10">
             <img
               src="/why-goa.jpg"
               alt="Parul University Mission Possible event in Goa"
@@ -57,8 +57,12 @@ export function WhyGoa() {
 
         <div className="text-white">
           <Eyebrow className="!text-left text-white">Why Goa</Eyebrow>
-          <h2 className="mt-2 font-sans font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-sunshine">
-            We chose Goa because no classroom can teach what Goa can.
+          <h2 className="mt-2 font-sans font-bold text-[32px] sm:text-[42px] leading-[1.12] tracking-tight text-sunshine">
+            We chose Goa because
+            <br />
+            no classroom can teach
+            <br />
+            what Goa can.
           </h2>
           <div className="mt-5 space-y-4 text-base leading-7 text-white/90">
             <p>
