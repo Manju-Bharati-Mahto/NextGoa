@@ -1,22 +1,63 @@
-import { Eyebrow, Wave } from "./Decor";
+import { Eyebrow } from "./Decor";
+import { WaveBandBg } from "./WaveBand";
 
 /**
- * "Why Goa" — cyan band arguing Goa itself is an academic advantage. The image
- * is a placeholder (drop a real campus/culture photo at /public/why-goa.jpg and
- * swap in <Image>). Owns the cyan→white wave into the International section.
+ * "Why Goa" — cyan band arguing Goa itself is an academic advantage. Uses the
+ * same scalloped wave-band background as "Our Philosophy" (blue #0CAADD band
+ * with #0094C4 decorative waves); the band's bottom scallop hands off into the
+ * white International section below. The image is a placeholder (drop a real
+ * campus/culture photo at /public/why-goa.jpg and swap in <Image>).
  */
 export function WhyGoa() {
   return (
-    <section className="bg-ocean">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-6 py-20 md:grid-cols-2">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-gradient-to-br from-ocean-deep to-ink/40 shadow-lg ring-1 ring-black/10">
-          <div className="absolute -left-6 bottom-6 h-24 w-24 rounded-full bg-sunshine/80 blur-xl" />
-          <div className="absolute right-8 top-8 h-16 w-16 rounded-full bg-white/20" />
+    <section className="relative overflow-hidden bg-[#F8F8F8]">
+      {/* Background: same scalloped wave band as "Our Philosophy", same colours */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <WaveBandBg band="#0CAADD" accent="#0094C4" />
+      </div>
+
+      <div className="relative z-10 mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-6 py-24 md:grid-cols-2">
+        <div className="relative mx-auto w-full max-w-md">
+          {/* Top-left blueprint crosshair (Group 3062.svg) */}
+          <svg
+            viewBox="0 0 420 311"
+            fill="none"
+            aria-hidden="true"
+            className="pointer-events-none absolute -left-14 -top-12 z-0 hidden w-[95%] sm:block"
+          >
+            <line x1="43.6447" x2="43.6447" y2="310.143" stroke="#fff" strokeWidth="1.41431" strokeDasharray="14.14 14.14" strokeOpacity="0.6" />
+            <line x1="0.000380434" y1="40.8157" x2="419.648" y2="41.0414" stroke="#fff" strokeWidth="1.41431" strokeDasharray="14.14 14.14" strokeOpacity="0.6" />
+            <circle cx="5.76442" cy="5.76442" r="5.76442" transform="matrix(-1 0 0 1 48.4208 36.9114)" fill="#FEDB2F" />
+          </svg>
+
+          {/* Bottom-right blueprint crosshair (Group 3063.svg) */}
+          <svg
+            viewBox="0 0 420 311"
+            fill="none"
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-14 -bottom-12 z-0 hidden w-[95%] sm:block"
+          >
+            <line x1="376.004" y1="310.143" x2="376.004" stroke="#fff" strokeWidth="1.41431" strokeDasharray="14.14 14.14" strokeOpacity="0.6" />
+            <line x1="419.648" y1="269.328" x2="0.000371496" y2="269.102" stroke="#fff" strokeWidth="1.41431" strokeDasharray="14.14 14.14" strokeOpacity="0.6" />
+            <circle cx="5.76442" cy="5.76442" r="5.76442" transform="matrix(1 0 0 -1 371.227 273.232)" fill="#FEDB2F" />
+          </svg>
+
+          {/* Yellow accent square behind the photo (offset down-left) */}
+          <div className="absolute inset-0 z-[5] -translate-x-7 translate-y-9 rounded-[28px] bg-sunshine" />
+
+          {/* Event photo, slightly tilted */}
+          <div className="relative z-10 overflow-hidden rounded-[28px] shadow-2xl ring-1 ring-black/10 rotate-[2deg]">
+            <img
+              src="/why-goa.jpg"
+              alt="Parul University Mission Possible event in Goa"
+              className="aspect-square w-full object-cover"
+            />
+          </div>
         </div>
 
         <div className="text-white">
-          <Eyebrow className="!text-left text-white/90">Why Goa</Eyebrow>
-          <h2 className="mt-2 text-3xl font-extrabold leading-tight tracking-tight text-sunshine sm:text-4xl">
+          <Eyebrow className="!text-left text-white">Why Goa</Eyebrow>
+          <h2 className="mt-2 font-sans font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-sunshine">
             We chose Goa because no classroom can teach what Goa can.
           </h2>
           <div className="mt-5 space-y-4 text-base leading-7 text-white/90">
@@ -33,8 +74,6 @@ export function WhyGoa() {
           </div>
         </div>
       </div>
-
-      <Wave top="var(--color-ocean)" bottom="#ffffff" accent="var(--color-ocean-deep)" />
     </section>
   );
 }

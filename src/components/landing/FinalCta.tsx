@@ -26,10 +26,10 @@ export function FinalCta() {
             <span className="inline-block rounded-full bg-sunshine px-4 py-1.5 text-xs font-bold text-ink">
               Admissions Open · 2026
             </span>
-            <h2 className="mt-5 text-4xl font-extrabold tracking-tight text-white sm:text-6xl">
+            <h2 className="mt-5 text-center font-sans font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-white">
               Ready to begin?
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-white/90">
+            <p className="mx-auto mt-4 max-w-xl text-center font-[family-name:var(--font-poppins)] font-normal text-base sm:text-lg text-white leading-relaxed">
               Admissions are open for the 2026 academic year. Explore programmes, check eligibility,
               and take the first step toward a life worth talking about.
             </p>

@@ -8,14 +8,14 @@ import type { CSSProperties } from "react";
 /** Small centred kicker above a section heading (e.g. "Our Philosophy"). */
 export function Eyebrow({
   children,
-  className = "text-ink/70",
+  className = "text-ink",
 }: {
   children: React.ReactNode;
   className?: string;
 }) {
   return (
     <p
-      className={`text-center text-sm font-semibold tracking-wide sm:text-base ${className}`}
+      className={`text-center font-sans font-bold text-[18px] sm:text-[22px] tracking-tight ${className}`}
     >
       {children}
     </p>

@@ -59,6 +59,7 @@ export default function RootLayout({
     <html
       lang={siteConfig.lang}
       className={`${gotham.variable} ${poppins.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col font-sans">
         {/* Site-wide entity definitions for search engines + AI answer engines. */}

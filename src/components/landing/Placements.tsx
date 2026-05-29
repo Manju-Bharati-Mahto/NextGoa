@@ -6,23 +6,40 @@ import { Eyebrow } from "./Decor";
  * keep the asterisked "ecosystem" caveat honest.
  */
 const stats = [
-  { value: "3x", suffix: " ASSOCHAM", label: "Best Placement University, consecutive years" },
-  { value: "₹58 Cr+", suffix: "", label: "Government-funded research grants" },
-  { value: "120+", suffix: "", label: "Global university partners" },
+  {
+    title: (
+      <>
+        3x ASSOCHAM
+        <br />
+        Award
+      </>
+    ),
+    label: "Best Placement University - consecutive years.",
+  },
+  {
+    title: "₹58 Cr+",
+    titleClass: "text-[34px] sm:text-[38px] lg:text-[42px]",
+    label: "Best Placement University - consecutive years.",
+  },
+  {
+    title: "120+",
+    titleClass: "text-[34px] sm:text-[38px] lg:text-[42px]",
+    label: "Best Placement University - consecutive years.",
+  },
 ];
 
 export function Placements() {
   return (
-    <section id="placements" className="bg-zinc-50">
+    <section id="placements" className="bg-brand-white">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <div className="flex justify-center mb-6">
-          <img src="/Test.svg" alt="PU Goa logo" className="h-[97px] w-auto" />
+          <img src="/Test.svg" alt="" aria-hidden="true" className="h-[97px] w-auto" />
         </div>
-        <Eyebrow className="mt-3 text-ink/70">NUMBERS THAT MATTER</Eyebrow>
+        <Eyebrow className="mt-3 text-ink">Numbers that matter</Eyebrow>
         <h2 className="mt-2 text-center font-sans font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
           The ecosystem in figures.
         </h2>
-        <p className="mt-3 text-center font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] leading-relaxed text-ink/70">
+        <p className="mt-3 text-center font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] leading-relaxed text-ink">
           Two decades of placement results, distilled.
         </p>
 
@@ -112,26 +129,43 @@ export function Placements() {
         </div>
 
         {/* Recruiting companies line */}
-        <div className="mt-8 flex flex-col items-center gap-2 text-center sm:flex-row sm:justify-center sm:gap-4">
-          <span className="font-sans font-bold text-5xl text-ink">2,200+</span>
-          <span className="text-left font-[family-name:var(--font-poppins)] font-normal text-[15px] sm:text-[17px] text-ink/70">
-            <strong className="block font-sans font-bold text-ink">Recruiting companies*</strong>
-            Across the Parul University ecosystem, every year.
-          </span>
+        <div className="mt-8 flex items-center justify-center gap-3.5 sm:gap-6">
+          {/* Left: 2200.png image */}
+          <div className="flex-shrink-0">
+            <img
+              src="/2200.png"
+              alt="2200+ recruiting companies"
+              className="h-14 sm:h-[72px] w-auto object-contain"
+            />
+          </div>
+
+          {/* Middle: Vertical divider */}
+          <div className="h-14 sm:h-20 w-px bg-zinc-300" />
+
+          {/* Right: Text block */}
+          <div className="text-left">
+            <h3 className="font-sans font-extrabold text-[18px] sm:text-[32px] leading-tight text-[#1F1F1F]">
+              Recruiting companies*
+            </h3>
+            <p className="mt-0.5 sm:mt-1 font-[family-name:var(--font-poppins)] font-normal text-[11px] sm:text-[16px] text-zinc-500">
+              Across the Parul ecosystem, every year.
+            </p>
+          </div>
         </div>
 
         {/* Stat trio */}
         <dl className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3">
-          {stats.map((s) => (
+          {stats.map((s, idx) => (
             <div
-              key={s.label}
-              className="rounded-2xl border border-zinc-200 bg-white p-6 text-center"
+              key={idx}
+              className="rounded-[20px] border border-zinc-300 bg-white px-7 py-6 text-left"
             >
-              <dt className="font-sans font-bold text-3xl text-ink">
-                {s.value}
-                <span className="text-xl font-medium">{s.suffix}</span>
+              <dt className={`font-sans font-bold leading-[1.15] text-brand-blue tracking-tight ${("titleClass" in s && s.titleClass) || "text-[26px] sm:text-[28px] lg:text-[30px]"}`}>
+                {s.title}
               </dt>
-              <dd className="mt-2 font-[family-name:var(--font-poppins)] font-normal text-xs sm:text-sm text-ink/60">{s.label}</dd>
+              <dd className="mt-3 font-[family-name:var(--font-poppins)] font-normal text-[14px] sm:text-[15px] text-ink leading-[1.45]">
+                {s.label}
+              </dd>
             </div>
           ))}
         </dl>
