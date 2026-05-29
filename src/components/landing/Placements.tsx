@@ -118,12 +118,12 @@ export function Placements() {
             <img
               src="/2200.png"
               alt="2200+ recruiting companies"
-              className="h-10 sm:h-[54px] w-auto object-contain"
+              className="h-14 sm:h-[72px] w-auto object-contain"
             />
           </div>
 
           {/* Middle: Vertical divider */}
-          <div className="h-10 sm:h-14 w-px bg-zinc-300" />
+          <div className="h-14 sm:h-20 w-px bg-zinc-300" />
 
           {/* Right: Text block */}
           <div className="text-left">
