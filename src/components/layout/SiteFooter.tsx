@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import footerBackground from "../../../Assets/FOOTER .svg";
 import { siteConfig } from "@/lib/site-config";
 
 /**
@@ -67,48 +69,87 @@ function MailIcon() {
 
 function Logo() {
   return (
-    <div className="flex items-center gap-2 text-2xl text-white">
-      <span className="font-extrabold tracking-tight">
-        Parul
-        <sup className="ml-0.5 align-super text-[0.5em] font-normal">®</sup>
-      </span>
-      <span className="font-light">University</span>
-      <span className="rounded-lg bg-brand px-2.5 py-0.5 text-xl font-bold">Goa</span>
-    </div>
+    <Link href="/" aria-label="Parul University Goa home" className="inline-flex">
+      <Image
+        src="/logo.svg"
+        alt="Parul University Goa"
+        width={233}
+        height={26}
+        className="h-9 w-auto sm:h-11"
+        priority={false}
+      />
+    </Link>
+  );
+}
+
+function ShellMark() {
+  return (
+    <Image
+      src="/vector.svg"
+      alt=""
+      width={220}
+      height={180}
+      className="h-auto w-[220px] opacity-20 brightness-0 invert"
+      aria-hidden="true"
+    />
   );
 }
 
 export function SiteFooter() {
   const { contact } = siteConfig;
   const { address } = contact;
-  const year = new Date().getFullYear();
   const fullAddress = `${address.streetAddress}, ${address.addressLocality}, ${address.addressRegion} ${address.postalCode}`;
 
   return (
-    <footer id="contact" className="mt-auto bg-ocean text-white">
-      <div className="mx-auto max-w-7xl px-6 py-14">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+    <footer id="contact" className="relative mt-auto overflow-hidden bg-[#FFEA84] text-white">
+      <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+        <Image
+          src={footerBackground}
+          alt=""
+          fill
+          className="object-cover object-top"
+          priority={false}
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-[1380px] px-6 pb-20 pt-24 sm:pt-32">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.7fr_0.95fr_0.95fr_1.08fr] lg:gap-16">
           {/* Brand + NAP */}
-          <div>
+          <div className="max-w-[34rem]">
             <Logo />
-            <address className="mt-4 space-y-2.5 text-sm not-italic leading-6 text-white/90">
+            <address className="mt-6 space-y-1 text-[13px] not-italic leading-7 text-white sm:text-[14px]">
+              <p>{fullAddress}</p>
+              <p>
+                <a href={`tel:${contact.phone.replace(/\s/g, "")}`} className="hover:text-white">
+                  {contact.phone}
+                </a>{" "}
+                <span className="text-white/70">(Toll Free)</span>
+              </p>
+              <p>
+                <a href={`mailto:${contact.email}`} className="break-all hover:text-white">
+                  {contact.email}
+                </a>
+              </p>
+            </address>
+
+            <address className="mt-8 space-y-4 text-[13px] not-italic leading-6 text-white sm:text-[14px]">
               <p className="flex items-start gap-2">
-                <span className="mt-0.5 text-white/70">
+                <span className="mt-1 text-white/80">
                   <PinIcon />
                 </span>
                 {fullAddress}
               </p>
               <p className="flex items-center gap-2">
-                <span className="text-white/70">
+                <span className="text-white/80">
                   <PhoneIcon />
                 </span>
                 <a href={`tel:${contact.phone.replace(/\s/g, "")}`} className="hover:text-white">
                   {contact.phone}
                 </a>{" "}
-                <span className="text-white/60">(Toll Free)</span>
+                <span className="text-white/70">(Toll Free)</span>
               </p>
               <p className="flex items-center gap-2">
-                <span className="text-white/70">
+                <span className="text-white/80">
                   <MailIcon />
                 </span>
                 <a href={`mailto:${contact.email}`} className="break-all hover:text-white">
@@ -119,12 +160,16 @@ export function SiteFooter() {
           </div>
 
           {/* Link columns */}
-          {columns.map((col) => (
-            <nav key={col.heading} aria-label={col.heading}>
-              <h2 className="text-sm font-bold uppercase tracking-wide text-sunshine">
+          {columns.map((col, index) => (
+            <nav
+              key={col.heading}
+              aria-label={col.heading}
+              className={index > 0 ? "lg:border-l lg:border-white/18 lg:pl-10" : ""}
+            >
+              <h2 className="text-sm font-bold uppercase tracking-[0.08em] text-sunshine">
                 {col.heading}
               </h2>
-              <ul className="mt-4 space-y-2.5 text-sm text-white/90">
+              <ul className="mt-6 space-y-3 text-[13px] text-white sm:text-[14px]">
                 {col.links.map((l) => (
                   <li key={l.label}>
                     <Link href={l.href} className="transition-colors hover:text-white">
@@ -137,8 +182,8 @@ export function SiteFooter() {
           ))}
         </div>
 
-        <div className="mt-12 border-t border-white/20 pt-6 text-xs text-white/70">
-          © {year} {siteConfig.legalName}. All rights reserved.
+        <div className="pointer-events-none absolute bottom-0 right-0 hidden lg:block z-0">
+          <ShellMark />
         </div>
       </div>
     </footer>

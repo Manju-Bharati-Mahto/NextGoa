@@ -43,20 +43,6 @@ const faqs: FaqItem[] = [
   },
 ];
 
-function CloverMark() {
-  return (
-    <svg viewBox="0 0 120 120" className="h-32 w-32" aria-hidden="true">
-      <g fill="var(--color-sunshine)">
-        <circle cx="60" cy="34" r="24" />
-        <circle cx="60" cy="86" r="24" />
-        <circle cx="34" cy="60" r="24" />
-        <circle cx="86" cy="60" r="24" />
-      </g>
-      <circle cx="60" cy="60" r="14" fill="var(--color-sunshine-deep)" />
-    </svg>
-  );
-}
-
 export function Faq() {
   return (
     <section id="faq" className="bg-brand-white">
@@ -67,24 +53,45 @@ export function Faq() {
           Straight answers before you ask.
         </h2>
 
-        <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-[auto_1fr] md:items-start">
-          <div className="hidden justify-center md:flex md:pt-4">
-            <CloverMark />
+        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-[340px_1fr] md:items-stretch lg:gap-12">
+          {/* Yellow accent card — stretches to match the accordion height */}
+          <div className="relative hidden min-h-[320px] overflow-hidden rounded-[24px] bg-sunshine md:block">
+            <svg
+              viewBox="57 102 238 228"
+              fill="none"
+              aria-hidden="true"
+              className="absolute left-1/2 top-1/2 w-[64%] -translate-x-1/2 -translate-y-1/2"
+            >
+              <g opacity="0.5">
+                <path d="M235.499 216.428C268.36 216.428 294.999 190.921 294.999 159.456C294.999 127.992 268.36 102.484 235.499 102.484C202.638 102.484 175.999 127.992 175.999 159.456C175.999 190.921 202.638 216.428 235.499 216.428Z" fill="white" />
+                <path d="M116.5 216.428C149.361 216.428 176 190.921 176 159.456C176 127.992 149.361 102.484 116.5 102.484C83.6392 102.484 57 127.992 57 159.456C57 190.921 83.6392 216.428 116.5 216.428Z" fill="white" />
+                <path d="M235.499 330.369C268.36 330.369 294.999 304.861 294.999 273.397C294.999 241.932 268.36 216.425 235.499 216.425C202.638 216.425 175.999 241.932 175.999 273.397C175.999 304.861 202.638 330.369 235.499 330.369Z" fill="white" />
+                <path d="M116.5 330.369C149.361 330.369 176 304.861 176 273.397C176 241.932 149.361 216.425 116.5 216.425C83.6392 216.425 57 241.932 57 273.397C57 304.861 83.6392 330.369 116.5 330.369Z" fill="white" />
+                <path d="M237.912 157.146H114.088V275.709H237.912V157.146Z" fill="#E0E0E0" />
+                <path d="M235.499 216.422C202.643 216.422 176.001 241.931 176.001 273.399C176.001 241.931 149.36 216.422 116.504 216.422C149.36 216.422 176.001 190.921 176.001 159.452C176.001 190.921 202.643 216.422 235.499 216.422Z" fill="white" />
+              </g>
+            </svg>
           </div>
 
-          <ul className="divide-y divide-zinc-200 border-y border-zinc-200">
-            {faqs.map((f) => (
+          {/* Accordion — each item is its own card; first one open */}
+          <ul className="space-y-4">
+            {faqs.map((f, i) => (
               <li key={f.question}>
-                <details className="group">
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-left text-base font-bold text-ink [&::-webkit-details-marker]:hidden">
+                <details
+                  className="group rounded-2xl bg-white px-6 py-5 shadow-sm ring-1 ring-black/5"
+                  {...(i === 0 ? { open: true } : {})}
+                >
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-base font-bold text-ink [&::-webkit-details-marker]:hidden">
                     {f.question}
-                    <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-zinc-100 text-brand transition-transform group-open:rotate-45">
-                      <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
-                        <path d="M7 1v12M1 7h12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                    <span className="shrink-0 text-brand">
+                      <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+                        <path d="M10 3v14M3 10h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                       </svg>
                     </span>
                   </summary>
-                  <p className="pb-5 pr-10 text-sm leading-7 text-ink/70">{f.answer}</p>
+                  <p className="mt-4 font-[family-name:var(--font-poppins)] text-sm leading-7 text-ink/70">
+                    {f.answer}
+                  </p>
                 </details>
               </li>
             ))}

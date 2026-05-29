@@ -4,10 +4,18 @@
  * the top and bottom edges. Stretched to fill its (absolutely-positioned)
  * parent. Shared by the Philosophy band (blue) and Campus Walkthrough (red).
  */
-export function WaveBandBg({ band, accent }: { band: string; accent: string }) {
+export function WaveBandBg({
+  band,
+  accent,
+  topOnly = false,
+}: {
+  band: string;
+  accent: string;
+  topOnly?: boolean;
+}) {
   return (
             <svg
-              preserveAspectRatio="none"
+              preserveAspectRatio={topOnly ? "xMidYMin slice" : "none"}
               width="1440"
               height="768"
               viewBox="0 0 1440 768"
