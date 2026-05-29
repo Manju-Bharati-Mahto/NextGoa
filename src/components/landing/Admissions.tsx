@@ -10,15 +10,15 @@ const acceptedTests = ["JEE", "CUET", "CAT", "MAT", "GPAT", "UGC NET", "PU Goa E
 
 export function Admissions() {
   return (
-    <section id="admissions" className="bg-white">
+    <section id="admissions" className="bg-brand-white">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <div className="flex justify-center mb-6">
-          <img src="/6.svg" alt="Admissions illustration" className="h-[97px] w-auto" />
+          <img src="/1.svg" alt="Admissions illustration" className="h-[97px] w-auto" />
         </div>
-        <Eyebrow className="mt-3 text-ink/70">
+        <Eyebrow className="mt-3 text-ink">
           <span className="inline-flex items-center gap-2">
             <span className="h-2 w-2 animate-pulse rounded-full bg-brand" />
-            ADMISSIONS 2026 — LIVE
+            Admissions 2026 — Live
           </span>
         </Eyebrow>
         <h2 className="mt-2 text-center font-sans font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">

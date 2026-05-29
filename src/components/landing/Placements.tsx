@@ -6,23 +6,40 @@ import { Eyebrow } from "./Decor";
  * keep the asterisked "ecosystem" caveat honest.
  */
 const stats = [
-  { value: "3x", suffix: " ASSOCHAM", label: "Best Placement University, consecutive years" },
-  { value: "₹58 Cr+", suffix: "", label: "Government-funded research grants" },
-  { value: "120+", suffix: "", label: "Global university partners" },
+  {
+    title: (
+      <>
+        3x ASSOCHAM
+        <br />
+        Award
+      </>
+    ),
+    label: "Best Placement University - consecutive years.",
+  },
+  {
+    title: "₹58 Cr+",
+    titleClass: "text-[34px] sm:text-[38px] lg:text-[42px]",
+    label: "Best Placement University - consecutive years.",
+  },
+  {
+    title: "120+",
+    titleClass: "text-[34px] sm:text-[38px] lg:text-[42px]",
+    label: "Best Placement University - consecutive years.",
+  },
 ];
 
 export function Placements() {
   return (
-    <section id="placements" className="bg-zinc-50">
+    <section id="placements" className="bg-brand-white">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <div className="flex justify-center mb-6">
-          <img src="/Test.svg" alt="PU Goa logo" className="h-[97px] w-auto" />
+          <img src="/Test.svg" alt="" aria-hidden="true" className="h-[97px] w-auto" />
         </div>
-        <Eyebrow className="mt-3 text-ink/70">NUMBERS THAT MATTER</Eyebrow>
+        <Eyebrow className="mt-3 text-ink">Numbers that matter</Eyebrow>
         <h2 className="mt-2 text-center font-sans font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
           The ecosystem in figures.
         </h2>
-        <p className="mt-3 text-center font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] leading-relaxed text-ink/70">
+        <p className="mt-3 text-center font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] leading-relaxed text-ink">
           Two decades of placement results, distilled.
         </p>
 
@@ -138,16 +155,17 @@ export function Placements() {
 
         {/* Stat trio */}
         <dl className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3">
-          {stats.map((s) => (
+          {stats.map((s, idx) => (
             <div
-              key={s.label}
-              className="rounded-2xl border border-zinc-200 bg-white p-6 text-center"
+              key={idx}
+              className="rounded-[20px] border border-zinc-300 bg-white px-7 py-6 text-left"
             >
-              <dt className="font-sans font-bold text-3xl text-ink">
-                {s.value}
-                <span className="text-xl font-medium">{s.suffix}</span>
+              <dt className={`font-sans font-bold leading-[1.15] text-brand-blue tracking-tight ${("titleClass" in s && s.titleClass) || "text-[26px] sm:text-[28px] lg:text-[30px]"}`}>
+                {s.title}
               </dt>
-              <dd className="mt-2 font-[family-name:var(--font-poppins)] font-normal text-xs sm:text-sm text-ink/60">{s.label}</dd>
+              <dd className="mt-3 font-[family-name:var(--font-poppins)] font-normal text-[14px] sm:text-[15px] text-ink leading-[1.45]">
+                {s.label}
+              </dd>
             </div>
           ))}
         </dl>

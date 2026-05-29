@@ -59,11 +59,11 @@ function CloverMark() {
 
 export function Faq() {
   return (
-    <section id="faq" className="bg-white">
+    <section id="faq" className="bg-brand-white">
       <JsonLd data={faqSchema(faqs)} />
       <div className="mx-auto max-w-6xl px-6 py-20">
-        <Eyebrow className="text-ink/70">Questions parents ask</Eyebrow>
-        <h2 className="mt-2 text-center text-4xl font-extrabold tracking-tight text-brand sm:text-5xl">
+        <Eyebrow className="text-ink">Questions parents ask</Eyebrow>
+        <h2 className="mt-2 text-center font-sans font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
           Straight answers before you ask.
         </h2>
 

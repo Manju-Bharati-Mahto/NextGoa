@@ -4,28 +4,14 @@ import { Eyebrow } from "./Decor";
  * "Beyond the classroom" — two cyan cards: Research (grant-funded) and
  * Entrepreneurship (incubator). Figures are plain text for AEO/GEO citability.
  */
-function PalmMark() {
-  return (
-    <svg width="40" height="40" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-      <path d="M16 14v15" stroke="var(--color-brand)" strokeWidth="2.5" strokeLinecap="round" />
-      <path
-        d="M16 12C12 8 7 9 5 12c4-1 7 0 9 3M16 12c4-4 9-3 11 0-4-1-7 0-9 3M16 12c-1-5 2-9 6-9-2 2-3 5-3 8M16 12c1-5-2-9-6-9 2 2 3 5 3 8"
-        stroke="var(--color-ocean)"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 const cards = [
   {
     badge: "Research",
     badgeClass: "bg-brand text-white",
-    title: "Research that funds itself.",
+    description:
+      "₹58 Cr+ in government-funded research, internal IMR grants for early-career scholars, and APC support for Scopus/Web of Science publications. PU Goa PhD scholars plug into this network from day one.",
     stats: [
-      { value: "₹58 Cr+", label: "Govt grants" },
+      { value: "₹58 Cr+", label: "Govt funding" },
       { value: "IMR", label: "Internal grants" },
       { value: "APC", label: "Publishing support" },
     ],
@@ -33,52 +19,86 @@ const cards = [
   },
   {
     badge: "Entrepreneurship",
-    badgeClass: "bg-ink text-white",
-    title: "Ventures that ship.",
+    badgeClass: "bg-brand text-white",
+    description:
+      "₹20 Cr+ in startup funding raised by student-led ventures, ₹40 Cr+ in revenue generated, & a Shark Tank India winner among them. The incubation cell is open across every faculty from agri-tech to hospitality concepts.",
     stats: [
-      { value: "₹20 Cr+", label: "Funding raised" },
-      { value: "100+", label: "Startups incubated" },
+      { value: "₹20 Cr+", label: "Startup funding" },
+      { value: "100+", label: "Mentors" },
       { value: "₹40 Cr+", label: "Startup revenue" },
     ],
-    cta: "Visit the Incubator →",
+    cta: "Visit the incubator →",
   },
 ];
 
 export function Research() {
   return (
-    <section id="research" className="bg-white">
-      <div className="mx-auto max-w-6xl px-6 py-20">
+    <section id="research" className="bg-brand-white">
+      <div className="mx-auto max-w-7xl px-6 py-20">
         <div className="flex justify-center">
-          <PalmMark />
+          <img src="/Fade1.svg" alt="" aria-hidden="true" className="h-[97px] w-auto" />
         </div>
-        <Eyebrow className="mt-3 text-ink/70">Beyond the classroom</Eyebrow>
-        <h2 className="mt-2 text-center text-4xl font-extrabold tracking-tight text-brand sm:text-5xl">
+        <Eyebrow className="mt-3 text-ink">Beyond the classroom</Eyebrow>
+        <h2 className="mt-2 text-center font-sans font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
           Research that funds itself. Ventures that ship.
         </h2>
 
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
           {cards.map((c) => (
-            <div key={c.badge} className="rounded-3xl bg-ocean p-8 text-white shadow-sm">
-              <span
-                className={`inline-block rounded-full px-4 py-1.5 text-xs font-bold ${c.badgeClass}`}
-              >
-                {c.badge}
-              </span>
-              <h3 className="mt-5 text-2xl font-extrabold">{c.title}</h3>
-              <dl className="mt-6 grid grid-cols-3 gap-4">
-                {c.stats.map((s) => (
-                  <div key={s.label}>
-                    <dt className="text-2xl font-extrabold">{s.value}</dt>
-                    <dd className="mt-1 text-xs text-white/80">{s.label}</dd>
+            <div
+              key={c.badge}
+              className="flex flex-col justify-between rounded-[32px] bg-ocean p-6 sm:p-8 md:p-10 text-white shadow-sm"
+            >
+              <div>
+                <span
+                  className={`inline-block rounded-full px-4 py-1 text-xs font-semibold tracking-wide ${c.badgeClass}`}
+                >
+                  {c.badge}
+                </span>
+                <p className="mt-6 font-[family-name:var(--font-poppins)] text-sm sm:text-[15px] md:text-base leading-relaxed text-white/95 font-normal">
+                  {c.description}
+                </p>
+              </div>
+
+              <div>
+                <dl className="mt-8 grid grid-cols-[1fr_auto_1fr_auto_1fr] items-center gap-2">
+                  <div className="flex flex-col">
+                    <dt className="font-[family-name:var(--font-poppins)] text-2xl sm:text-[28px] md:text-[32px] font-bold text-white leading-none tracking-tight">
+                      {c.stats[0].value}
+                    </dt>
+                    <dd className="mt-2 font-[family-name:var(--font-poppins)] text-xs sm:text-sm text-white/90 leading-tight">
+                      {c.stats[0].label}
+                    </dd>
                   </div>
-                ))}
-              </dl>
-              <a
-                href="#admissions"
-                className="mt-7 inline-block rounded-full bg-sunshine px-5 py-2.5 text-sm font-bold text-ink transition-transform hover:scale-[1.03]"
-              >
-                {c.cta}
-              </a>
+                  <div className="h-10 w-px bg-white/25" aria-hidden="true" />
+                  <div className="flex flex-col pl-2 sm:pl-4">
+                    <dt className="font-[family-name:var(--font-poppins)] text-2xl sm:text-[28px] md:text-[32px] font-bold text-white leading-none tracking-tight">
+                      {c.stats[1].value}
+                    </dt>
+                    <dd className="mt-2 font-[family-name:var(--font-poppins)] text-xs sm:text-sm text-white/90 leading-tight">
+                      {c.stats[1].label}
+                    </dd>
+                  </div>
+                  <div className="h-10 w-px bg-white/25" aria-hidden="true" />
+                  <div className="flex flex-col pl-2 sm:pl-4">
+                    <dt className="font-[family-name:var(--font-poppins)] text-2xl sm:text-[28px] md:text-[32px] font-bold text-white leading-none tracking-tight">
+                      {c.stats[2].value}
+                    </dt>
+                    <dd className="mt-2 font-[family-name:var(--font-poppins)] text-xs sm:text-sm text-white/90 leading-tight">
+                      {c.stats[2].label}
+                    </dd>
+                  </div>
+                </dl>
+
+                <div className="mt-8">
+                  <a
+                    href="#admissions"
+                    className="inline-block rounded-full bg-sunshine px-5 py-2.5 font-[family-name:var(--font-poppins)] text-xs sm:text-sm font-bold text-ink transition-transform hover:scale-[1.03]"
+                  >
+                    {c.cta}
+                  </a>
+                </div>
+              </div>
             </div>
           ))}
         </div>

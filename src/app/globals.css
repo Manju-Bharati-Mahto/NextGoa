@@ -24,20 +24,20 @@
   --color-sky-deep: #74aad3; /* header row-1 bar */
   --color-sky-light: #dceefb; /* palest sky wash */
 
-  /* Bright cyan — philosophy band, info cards, "Why Goa", footer (#0babe0) */
-  --color-ocean: #0babe0;
-  --color-ocean-deep: #0a90bd;
+  /* Bright cyan — philosophy band, info cards, "Why Goa", footer (#0CAADD) */
+  --color-ocean: #0CAADD;
+  --color-ocean-deep: #0A94C2;
 
-  /* Sunshine yellow — badges, philosophy/food cards (#fedb2f) */
-  --color-sunshine: #fedb2f;
-  --color-sunshine-deep: #f4c800;
+  /* Sunshine yellow — badges, philosophy/food cards (#FEDB2F) */
+  --color-sunshine: #FEDB2F;
+  --color-sunshine-deep: #F4C800;
 
   /* Cream — the soft wave wash behind the final CTA */
   --color-cream: #fbf3cf;
 
-  /* Inks — body text (#1f1f1f) + the warm near-black stats band (#1e190c) */
-  --color-ink: #1f1f1f;
-  --color-ink-warm: #1e190c;
+  /* Inks — body text (#1f1f1f) + the warm near-black stats band (#1F1F1F) */
+  --color-ink: #1F1F1F;
+  --color-ink-warm: #1F1F1F;
 
   /* Brand guidelines colors */
   --color-brand-white: #F8F8F8;
@@ -49,6 +49,19 @@
   
   /* Poppins loaded via next/font/google */
   --font-poppins: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+
+  /* Marquee animation utilities */
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-marquee-reverse: marquee-reverse 30s linear infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes marquee-reverse {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
 }
 
 html {
@@ -56,7 +69,7 @@ html {
 }
 
 body {
-  background: #ffffff;
+  background: var(--color-brand-white);
   color: var(--color-ink);
 }
 
@@ -98,4 +111,9 @@ body {
     opacity: 1;
     animation: none;
   }
+}
+
+.animate-marquee:hover,
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
 }

@@ -28,10 +28,10 @@ const stories = [
 
 export function News() {
   return (
-    <section id="news" className="bg-white">
+    <section id="news" className="bg-brand-white">
       <div className="mx-auto max-w-6xl px-6 py-20">
-        <Eyebrow className="text-ink/70">News &amp; stories</Eyebrow>
-        <h2 className="mt-2 text-center text-4xl font-extrabold tracking-tight text-brand sm:text-5xl">
+        <Eyebrow className="text-ink">News &amp; stories</Eyebrow>
+        <h2 className="mt-2 text-center font-sans font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
           What&apos;s happening on campus.
         </h2>
 

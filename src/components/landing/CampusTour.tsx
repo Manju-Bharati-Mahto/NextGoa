@@ -1,17 +1,35 @@
-import { Eyebrow, Wave } from "./Decor";
+import { Eyebrow } from "./Decor";
+import { WaveBandBg } from "./WaveBand";
 
 /**
  * "Campus Walkthrough" — red band introducing the 3D campus tour video.
- * The video frame is a placeholder poster with a play button; wire it to the
- * real tour (YouTube embed or /public video poster) when available.
- *
- * Owns the white→red wave at its top and the red→light wave at its bottom.
+ * Background is the same scalloped Figma wave band used by "Our Philosophy",
+ * recoloured to the brand red (#E73649) with a darker red wave layer (#C92B3C).
  */
+function SunWaveIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      width="74"
+      height="74"
+      viewBox="0 0 74 74"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-hidden="true"
+    >
+      <path
+        d="M73.4483 48.543C72.6935 51.8153 70.6733 60.0426 69.0592 61.7686C67.9137 62.9934 65.9978 63.5445 64.1452 64.0776C62.9303 64.4275 61.6721 64.7891 60.8559 65.2944C60.1054 65.7601 59.5023 66.5192 58.8658 67.3229C57.9073 68.5309 56.8225 69.9 54.9785 70.5613C53.2943 71.1657 51.3191 71.0053 49.4119 70.8517C48.062 70.7434 46.6652 70.6282 45.5283 70.8182C44.4868 70.9903 43.4143 71.4876 42.28 72.0146C40.6292 72.7799 38.9226 73.5719 36.945 73.5719C34.9685 73.5719 33.262 72.7805 31.6111 72.0146C30.4755 71.4883 29.4043 70.9911 28.3616 70.8189C27.2234 70.6301 25.8266 70.7439 24.4779 70.8517C22.5671 71.0047 20.5956 71.1644 18.9114 70.5613C17.0686 69.9 15.9825 68.5309 15.024 67.3229C14.3863 66.5192 13.7845 65.7594 13.0327 65.2938C12.2165 64.7886 10.9584 64.4269 9.74345 64.077C7.89084 63.5439 5.97496 62.9928 4.82946 61.768C3.37644 60.2152 1.44103 53.3044 0.336108 48.9743C0.834988 49.5547 0.97816 49.6499 1.03878 49.6886C1.26539 49.9103 1.73853 50.9419 2.05302 51.6249C2.81961 53.2949 3.61218 55.0225 4.80346 55.8429C5.93286 56.6201 7.72852 56.9526 9.62957 57.3048C10.868 57.534 12.1484 57.7711 12.998 58.1092C13.7583 58.4127 14.328 58.8745 14.9856 59.4095C15.9453 60.1879 17.0328 61.0709 18.8209 61.4838C20.4209 61.8522 22.3479 61.7525 24.2068 61.6559C25.5851 61.5835 27.0105 61.5129 28.2006 61.6374C29.2967 61.7544 30.3902 62.0814 31.548 62.4269C33.1617 62.9087 34.8285 63.4066 36.7122 63.4066C38.5946 63.4066 40.2614 62.9087 41.8738 62.4269C43.0318 62.0814 44.1265 61.7544 45.2237 61.6374C46.4113 61.5111 47.838 61.5835 49.2163 61.6559C51.0764 61.7525 53.0021 61.8522 54.6021 61.4838C56.3916 61.0702 57.479 60.1878 58.4387 59.4089C59.0975 58.8739 59.666 58.4127 60.4251 58.1092C61.2746 57.7711 62.5552 57.534 63.7924 57.3048C65.6946 56.9526 67.4902 56.6201 68.6196 55.8429C69.8122 55.0218 70.6047 53.2936 71.3726 51.6219C71.686 50.9401 72.159 49.9098 72.3348 49.7265C72.4378 49.6579 72.6477 49.514 73.4483 48.543ZM29.7653 59.3229C29.3468 59.2342 28.9156 59.1708 28.4718 59.12C27.0768 58.9679 25.5551 59.12 24.0714 59.12C22.3974 59.2088 20.6474 59.2976 19.392 59.0186C18.1746 58.7269 17.4391 58.1309 16.5894 57.4461C15.8666 56.8628 15.055 56.2033 13.939 55.7595C12.8611 55.3283 11.4535 55.062 10.0966 54.8084C8.61291 54.5294 6.9263 54.2251 6.24152 53.7559C5.62013 53.3247 4.8973 51.7269 4.35201 50.5602C3.64186 49.0004 3.19801 48.0873 2.57663 47.6815C2.38641 47.504 1.76503 46.7304 1.02952 45.792C1.54945 45.3482 2.23424 44.9677 3.10925 44.7141C7.43356 43.4585 12.43 42.571 18.5677 42.013C18.555 42.1018 18.555 42.2032 18.555 42.292C18.555 49.9134 23.171 56.4823 29.7653 59.3229ZM72.5265 45.6272C71.7402 46.6417 71.0808 47.466 70.9159 47.6181C70.2312 48.0873 69.7873 49.0004 69.0645 50.5602C68.5319 51.7269 67.7964 53.3247 67.175 53.7559C66.5029 54.2251 64.8163 54.5421 63.3325 54.8084C61.9758 55.062 60.568 55.3283 59.4901 55.7595C58.3615 56.2033 57.5499 56.8628 56.8397 57.4334C55.9901 58.1309 55.2546 58.7269 54.0372 59.0059C52.7817 59.2976 51.0317 59.2088 49.3451 59.12C47.8741 59.0439 46.3397 58.9679 44.9574 59.12C44.932 59.12 44.9194 59.12 44.894 59.1327C51.2346 56.178 55.6477 49.7359 55.6477 42.292C55.6477 42.1525 55.6477 42.0257 55.6352 41.8862C60.4921 42.33 65.7168 43.1416 70.9287 44.8156C71.6009 45.0312 72.1208 45.3101 72.5265 45.6272ZM72.6533 26.1234L72.3109 25.7049C71.5881 24.8045 70.9159 23.955 70.637 23.1561C70.3453 22.3191 70.3707 21.2286 70.4087 20.0744C70.4594 18.3245 70.5101 16.3335 69.3181 14.7483C68.1768 13.2392 66.2492 12.5418 64.3851 11.8697C63.117 11.4131 61.9122 10.9947 61.1133 10.3733C60.3398 9.77725 59.7311 8.81348 59.0843 7.79898C58.1332 6.30259 57.0553 4.6033 55.1912 3.77902C53.4538 3.00546 51.4375 3.20836 49.4973 3.39858C48.1024 3.53807 46.7835 3.67757 45.6802 3.4493C44.6657 3.23372 43.6005 2.62502 42.4846 1.97828C40.874 1.05254 39.0606 0 37.0189 0C34.9646 0 33.1512 1.05254 31.5533 1.97828C30.4374 2.62502 29.3721 3.23372 28.3704 3.4493C27.2545 3.67757 25.9356 3.53807 24.5407 3.39858C22.5878 3.20836 20.5841 3.00546 18.8468 3.77902C16.9827 4.6033 15.9048 6.30259 14.9537 7.79898C14.2942 8.81348 13.6855 9.77725 12.9247 10.3733C12.1131 10.9947 10.921 11.4258 9.6529 11.8697C7.78876 12.5418 5.86121 13.2392 4.71989 14.7483C3.51517 16.3335 3.57858 18.3244 3.6293 20.0871C3.66735 21.2411 3.69271 22.319 3.40104 23.156C3.12205 23.9803 2.4119 24.8553 1.65103 25.7937C1.42277 26.0727 1.20718 26.3517 0.978921 26.6306C0.154639 27.7086 -0.162393 29.0147 0.0785512 30.3082C0.332176 31.6651 1.16914 32.8445 2.42458 33.618C7.63658 36.8391 13.0515 39.388 18.5932 41.2141C19.1512 31.4876 27.2418 23.752 37.1078 23.752C46.8217 23.752 54.8109 31.2593 55.5717 40.7829C60.8091 38.9695 66.0465 36.6235 71.0048 33.8336C72.4251 33.0347 73.4016 31.7158 73.6933 30.2194C73.9723 28.7611 73.6044 27.3154 72.6533 26.1234ZM20.6529 27.6214C20.4027 27.9292 20.0373 28.089 19.6683 28.089C19.3872 28.089 19.1036 27.9962 18.8695 27.8042L12.374 22.5162C11.8304 22.0741 11.7486 21.2753 12.1908 20.7323C12.6317 20.1911 13.4329 20.1063 13.974 20.5497L20.4695 25.8377C21.0132 26.2798 21.0951 27.0784 20.6529 27.6214ZM28.1725 21.1371C27.983 21.2381 27.7787 21.2857 27.578 21.2857C27.1248 21.2857 26.6851 21.0418 26.4572 20.6133L22.5216 13.22C22.1921 12.602 22.4275 11.8342 23.0455 11.5048C23.6621 11.1754 24.4325 11.4101 24.7606 12.0287L28.6962 19.422C29.0257 20.0399 28.7904 20.8078 28.1725 21.1371ZM38.1602 17.0733C38.1602 17.7735 37.593 18.3414 36.8921 18.3414C36.1912 18.3414 35.624 17.7735 35.624 17.0733V8.87511C35.624 8.17485 36.1912 7.60698 36.8921 7.60698C37.593 7.60698 38.1602 8.17485 38.1602 8.87511V17.0733ZM51.6811 13.22L47.7455 20.6133C47.5176 21.0418 47.078 21.2857 46.6247 21.2857C46.4241 21.2857 46.2198 21.2381 46.0302 21.1371C45.4123 20.8077 45.1769 20.0399 45.5064 19.422L49.442 12.0287C49.7702 11.4101 50.5405 11.1754 51.1571 11.5048C51.7751 11.8343 52.0106 12.602 51.6811 13.22ZM61.8287 22.5161L55.3332 27.804C55.0991 27.996 54.8156 28.0889 54.5344 28.0889C54.1654 28.0889 53.8 27.9291 53.5498 27.6213C53.1078 27.0783 53.1894 26.2795 53.7331 25.8374L60.2286 20.5495C60.7709 20.1061 61.571 20.191 62.0118 20.7321C62.4539 21.2751 62.3723 22.074 61.8287 22.5161ZM37.1015 26.282C28.2729 26.282 21.0914 33.4642 21.0914 42.2921C21.0914 51.1201 28.2729 58.3022 37.1015 58.3022C45.9301 58.3022 53.1116 51.1201 53.1116 42.2921C53.1116 33.4642 45.9301 26.282 37.1015 26.282ZM34.5689 34.7094C31.863 34.7094 29.6487 36.8214 29.5274 39.5175C29.5211 39.6122 29.5224 39.684 29.5224 39.7559C29.5224 40.4561 28.9552 41.024 28.2543 41.024C27.5534 41.024 26.9862 40.4561 26.9862 39.7559C26.9862 39.6308 26.9874 39.5057 26.9948 39.3806C27.1769 35.349 30.5044 32.1731 34.5689 32.1731C35.2698 32.1731 35.837 32.741 35.837 33.4412C35.837 34.1415 35.2698 34.7094 34.5689 34.7094Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
 function PlayButton() {
   return (
     <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 shadow-lg transition-transform group-hover:scale-105">
-      <svg width="22" height="24" viewBox="0 0 22 24" aria-hidden="true">
-        <path d="M2 2l18 10L2 22z" fill="var(--color-brand)" />
+      <svg width="22" height="24" viewBox="0 0 22 24" aria-hidden="true" className="ml-1">
+        <path d="M2 2l18 10L2 22z" fill="#1F1F1F" />
       </svg>
     </span>
   );
@@ -19,15 +37,25 @@ function PlayButton() {
 
 export function CampusTour() {
   return (
-    <section id="campus-tour" className="bg-brand">
-      <Wave top="#ffffff" bottom="var(--color-brand)" />
+    <section
+      id="campus-tour"
+      className="relative overflow-hidden bg-gradient-to-b from-[#CBEFFD] to-[#F8F8F8]"
+    >
+      {/* Background: same scalloped wave band as "Our Philosophy", recoloured red */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <WaveBandBg band="#E73649" accent="#C92B3C" />
+      </div>
 
-      <div className="mx-auto max-w-5xl px-6 pb-4 pt-2 text-center">
-        <Eyebrow className="text-white/90">Campus Walkthrough</Eyebrow>
-        <h2 className="mt-2 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+      {/* Decorative Shell Icons */}
+      <SunWaveIcon className="absolute left-[-20px] top-1/4 h-20 w-auto text-white/20 pointer-events-none select-none z-10 sm:h-24" />
+      <SunWaveIcon className="absolute right-[-20px] bottom-1/4 h-20 w-auto text-white/20 pointer-events-none select-none rotate-[20deg] z-10 sm:h-24" />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-[140px] pb-40 text-center">
+        <Eyebrow className="text-white">Campus Walkthrough</Eyebrow>
+        <h2 className="mt-2 text-center font-sans font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-white">
           Step inside PU Goa.
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-white/90">
+        <p className="mx-auto mt-4 max-w-2xl text-center font-[family-name:var(--font-poppins)] font-normal text-base sm:text-lg text-white leading-relaxed">
           A 3D walkthrough of the academic blocks, residences, dining hall, swimming pool, and the
           green campus that opens out to the Goan coast.
         </p>
@@ -35,21 +63,22 @@ export function CampusTour() {
         <a
           href="#campus-tour"
           aria-label="Watch the 3D campus tour"
-          className="group mt-10 block overflow-hidden rounded-3xl shadow-2xl ring-1 ring-black/10"
+          className="group mt-10 block overflow-hidden rounded-3xl shadow-2xl ring-1 ring-black/10 w-full mx-auto"
         >
-          <div className="relative flex aspect-video items-center justify-center bg-gradient-to-br from-emerald-700 via-green-800 to-emerald-900">
-            {/* subtle foliage texture */}
-            <div className="absolute inset-0 opacity-20 [background:radial-gradient(circle_at_30%_30%,#a7f3d0_0,transparent_40%),radial-gradient(circle_at_70%_60%,#34d399_0,transparent_45%)]" />
-            <div className="relative flex flex-col items-center">
+          <div
+            className="relative flex aspect-video items-center justify-center bg-cover bg-center"
+            style={{ backgroundImage: "url('/campus-tour-thumbnail.png')" }}
+          >
+            {/* Dark overlay for readability */}
+            <div className="absolute inset-0 bg-black/35 transition-opacity group-hover:bg-black/45" />
+            <div className="relative flex flex-col items-center z-10">
               <PlayButton />
-              <p className="mt-4 text-lg font-bold text-white">Watch 3D Campus Tour</p>
-              <p className="text-sm text-white/80">Near ONGC Betul, South Goa</p>
+              <p className="mt-4 text-lg font-bold text-white tracking-tight">Watch 3D Campus Tour</p>
+              <p className="text-sm text-white/80 font-[family-name:var(--font-poppins)]">Near ONGC Betul, South Goa</p>
             </div>
           </div>
         </a>
       </div>
-
-      <Wave top="var(--color-brand)" bottom="#fafafa" className="mt-8 h-12 sm:h-20" />
     </section>
   );
 }

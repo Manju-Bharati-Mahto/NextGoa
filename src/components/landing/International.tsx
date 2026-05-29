@@ -22,13 +22,13 @@ const cards = [
 
 export function International() {
   return (
-    <section id="international" className="bg-white">
+    <section id="international" className="bg-brand-white">
       <div className="mx-auto max-w-6xl px-6 py-20">
-        <Eyebrow className="text-ink/70">International Teaser</Eyebrow>
-        <h2 className="mt-2 text-center text-4xl font-extrabold tracking-tight text-brand sm:text-5xl">
+        <Eyebrow className="text-ink">International Teaser</Eyebrow>
+        <h2 className="mt-2 text-center font-sans font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
           Your Degree Can Take You Global
         </h2>
-        <p className="mx-auto mt-4 max-w-3xl text-center text-base leading-7 text-ink/70">
+        <p className="mx-auto mt-4 max-w-3xl text-center font-[family-name:var(--font-poppins)] font-normal text-base sm:text-lg text-ink leading-relaxed">
           Through Pathway Programmes, Semester Exchanges, Summer Schools, and Global Internships, PU
           Goa students can start here and finish their degree at partner universities in the USA,
           UK, Australia, New Zealand, Canada, France, and Germany.
