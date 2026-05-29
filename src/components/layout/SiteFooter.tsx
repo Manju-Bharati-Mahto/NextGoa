@@ -119,17 +119,6 @@ export function SiteFooter() {
             <Logo />
             <address className="mt-6 space-y-1 text-[13px] not-italic leading-7 text-white sm:text-[14px]">
               <p>{fullAddress}</p>
-              <p>
-                <a href={`tel:${contact.phone.replace(/\s/g, "")}`} className="hover:text-white">
-                  {contact.phone}
-                </a>{" "}
-                <span className="text-white/70">(Toll Free)</span>
-              </p>
-              <p>
-                <a href={`mailto:${contact.email}`} className="break-all hover:text-white">
-                  {contact.email}
-                </a>
-              </p>
             </address>
 
             <address className="mt-8 space-y-4 text-[13px] not-italic leading-6 text-white sm:text-[14px]">
