@@ -50,7 +50,7 @@ export function CampusTour() {
       <SunWaveIcon className="absolute left-[-20px] top-1/4 h-20 w-auto text-white/20 pointer-events-none select-none z-10 sm:h-24" />
       <SunWaveIcon className="absolute right-[-20px] bottom-1/4 h-20 w-auto text-white/20 pointer-events-none select-none rotate-[20deg] z-10 sm:h-24" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-[140px] pb-40 text-center">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 py-40 sm:py-64 text-center">
         <Eyebrow className="text-white">Campus Walkthrough</Eyebrow>
         <h2 className="mt-2 text-center font-sans font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-white">
           Step inside PU Goa.

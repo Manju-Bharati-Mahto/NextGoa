@@ -1,14 +1,14 @@
+"use client";
+
+import { useState } from "react";
 import { faqSchema, type FaqItem } from "@/lib/structured-data";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Eyebrow } from "./Decor";
 
 /**
- * "Questions parents ask" — an accordion built on native <details>/<summary>,
- * so it works with zero JavaScript (fully SSG, crawlable, keyboard-accessible).
- *
+ * "Questions parents ask" — smooth animated accordion.
  * The same `faqs` array feeds both the visible accordion and the FAQPage
- * JSON-LD — Google penalises markup whose Q&As aren't on the page, so they must
- * stay in lockstep. Update copy in one place.
+ * JSON-LD to ensure perfect SEO alignment.
  */
 const faqs: FaqItem[] = [
   {
@@ -43,7 +43,41 @@ const faqs: FaqItem[] = [
   },
 ];
 
+function FaqAccordionItem({ f, isOpen, onToggle }: { f: FaqItem; isOpen: boolean; onToggle: () => void }) {
+  return (
+    <div className="rounded-2xl bg-white shadow-sm ring-1 ring-black/5">
+      <button
+        onClick={onToggle}
+        className="flex w-full cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left text-base font-bold text-ink"
+      >
+        {f.question}
+        <span
+          className="shrink-0 text-brand transition-transform duration-300 ease-in-out"
+          style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0deg)" }}
+        >
+          <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M10 3v14M3 10h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+        </span>
+      </button>
+      <div
+        className={`grid transition-all duration-300 ease-in-out ${
+          isOpen ? "grid-rows-[1fr] opacity-100 pb-5" : "grid-rows-[0fr] opacity-0"
+        }`}
+      >
+        <div className="overflow-hidden px-6">
+          <p className="mt-1 font-[family-name:var(--font-poppins)] text-sm leading-7 text-ink/70">
+            {f.answer}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function Faq() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
   return (
     <section id="faq" className="bg-brand-white">
       <JsonLd data={faqSchema(faqs)} />
@@ -73,26 +107,15 @@ export function Faq() {
             </svg>
           </div>
 
-          {/* Accordion — each item is its own card; first one open */}
+          {/* Accordion list */}
           <ul className="space-y-4">
             {faqs.map((f, i) => (
               <li key={f.question}>
-                <details
-                  className="group rounded-2xl bg-white px-6 py-5 shadow-sm ring-1 ring-black/5"
-                  {...(i === 0 ? { open: true } : {})}
-                >
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-base font-bold text-ink [&::-webkit-details-marker]:hidden">
-                    {f.question}
-                    <span className="shrink-0 text-brand">
-                      <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
-                        <path d="M10 3v14M3 10h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                      </svg>
-                    </span>
-                  </summary>
-                  <p className="mt-4 font-[family-name:var(--font-poppins)] text-sm leading-7 text-ink/70">
-                    {f.answer}
-                  </p>
-                </details>
+                <FaqAccordionItem 
+                  f={f} 
+                  isOpen={openIndex === i}
+                  onToggle={() => setOpenIndex(openIndex === i ? null : i)}
+                />
               </li>
             ))}
           </ul>

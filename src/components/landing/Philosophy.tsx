@@ -63,13 +63,13 @@ const cards = [
   },
   {
     Icon: PearlIcon,
-    eyebrow: "The Lighthouse",
+    eyebrow: "Oyster & Pearl",
     title: "Discovery",
     body: "Curiosity is built into everything here. Through internships, global exposure, industry immersions, & interdisciplinary learning, students do not just learn what exists. They discover what is possible.",
   },
   {
     Icon: SunriseIcon,
-    eyebrow: "The Lighthouse",
+    eyebrow: "Waves",
     title: "Continuity",
     body: "What you build at PU Goa does not stop when you leave campus. The habits, the networks, the resilience: they travel with you for life.",
   },
@@ -85,13 +85,13 @@ export function Philosophy() {
       <div className="absolute inset-0 z-0 pointer-events-none">
         <WaveBandBg band="#0CAADD" accent="#0094C4" />
       </div>
-      <div className="relative z-10 mx-auto max-w-7xl px-6 py-24 sm:py-32">
+      <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-32 sm:py-48 flex flex-col items-center justify-center">
         <Eyebrow className="text-white">Our Philosophy</Eyebrow>
         <h2 className="mt-1 text-center font-sans font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-white">
           What Shapes Everything We Do
         </h2>
 
-        <div className="relative mt-12">
+        <div className="relative mt-12 w-full">
           {/* Top-Left Blueprint Grid (Group 3062.svg) */}
           <svg
             width="420"
@@ -178,8 +178,8 @@ export function Philosophy() {
                 <Icon />
               </span>
               <p className="mt-5 font-[family-name:var(--font-poppins)] text-sm font-semibold text-ink/70">{eyebrow}</p>
-              <h3 className="mt-1 font-[family-name:var(--font-poppins)] text-2xl font-bold text-ink">{title}</h3>
-              <p className="mt-3 font-[family-name:var(--font-poppins)] text-sm leading-6 text-ink/80">{body}</p>
+              <h3 className="mt-1 font-sans font-medium text-[24px] sm:text-[32px] leading-tight tracking-tight text-ink">{title}</h3>
+              <p className="mt-3 font-[family-name:var(--font-poppins)] font-normal text-base sm:text-[18px] leading-relaxed text-ink/80">{body}</p>
             </li>
           ))}
           </ul>

@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { organizationSchema, websiteSchema } from "@/lib/structured-data";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import { EnquiryModal } from "@/components/layout/EnquiryModal";
 
 /**
  * Site-wide metadata defaults. `metadataBase` lets every page emit absolute
@@ -68,6 +69,7 @@ export default function RootLayout({
         <SiteHeader />
         {children}
         <SiteFooter />
+        <EnquiryModal />
       </body>
     </html>
   );

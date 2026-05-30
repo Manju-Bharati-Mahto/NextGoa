@@ -26,7 +26,17 @@ export function StickyApplyBar() {
       ticking = false;
       // Reveal a little before the hero fully leaves so it feels responsive.
       const threshold = hero ? hero.offsetHeight - 140 : window.innerHeight * 0.8;
-      setVisible(window.scrollY > threshold);
+      let isVisible = window.scrollY > threshold;
+
+      const footer = document.getElementById("contact");
+      if (footer) {
+        // Hide if the footer has entered the viewport
+        if (footer.getBoundingClientRect().top < window.innerHeight) {
+          isVisible = false;
+        }
+      }
+
+      setVisible(isVisible);
     };
 
     const onScroll = () => {

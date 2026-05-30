@@ -1,4 +1,5 @@
 import { Eyebrow } from "./Decor";
+import { TwoThousandPlusIcon } from "./TwoThousandPlusIcon";
 
 /**
  * "Numbers that matter" — the placement ecosystem in figures. The headline
@@ -62,13 +63,13 @@ export function Placements() {
             {/* Text overlaid directly over the SVG */}
             <div className="absolute top-0 left-0 right-0 p-6 flex flex-col justify-start pointer-events-none">
               <div>
-                <span className="inline-block rounded-full bg-white/20 border border-white/40 px-3.5 py-1 text-[11px] font-semibold text-white">
+                <span className="inline-block rounded-full bg-white px-5 py-2 font-[family-name:var(--font-poppins)] font-normal text-[20px] text-[#1F1F1F]">
                   Highest package · 2027
                 </span>
               </div>
               <div className="mt-3.5 flex items-end gap-1.5 text-white">
-                <span className="font-sans font-bold leading-none" style={{ fontSize: "44px" }}>₹60</span>
-                <span className="mb-0.5 font-sans font-bold text-xl">LPA*</span>
+                <span className="font-[family-name:var(--font-gotham)] font-bold leading-none" style={{ fontSize: "64px" }}>₹60</span>
+                <span className="mb-1.5 font-[family-name:var(--font-gotham)] font-bold text-3xl">LPA<span className="text-[#FEDB2F]">*</span></span>
               </div>
               <div className="w-full h-px bg-white/30 my-3" />
               <p className="font-[family-name:var(--font-poppins)] font-normal text-[12px] leading-relaxed text-white/90">
@@ -84,15 +85,15 @@ export function Placements() {
             style={{ minHeight: "260px", position: "relative" }}
           >
             {/* Left: text content */}
-            <div className="p-10 flex flex-col justify-center max-w-[48%]" style={{ minHeight: "260px" }}>
+            <div className="p-10 flex flex-col justify-center max-w-[40%]" style={{ minHeight: "260px" }}>
               <div>
-                <span className="inline-block rounded-full bg-white/20 border border-white/40 px-4 py-1.5 text-xs font-semibold text-white">
+                <span className="inline-block rounded-full bg-white px-5 py-2 font-[family-name:var(--font-poppins)] font-normal text-[20px] text-[#1F1F1F]">
                   Highest package · 2027
                 </span>
               </div>
-              <div className="mt-5 flex items-end gap-2">
-                <span className="font-sans font-bold leading-none" style={{ fontSize: "72px" }}>₹60</span>
-                <span className="mb-2 font-sans font-bold text-4xl">LPA*</span>
+              <div className="mt-5 flex items-end gap-2 text-white">
+                <span className="font-[family-name:var(--font-gotham)] font-bold leading-none" style={{ fontSize: "110px" }}>₹60</span>
+                <span className="mb-3 font-[family-name:var(--font-gotham)] font-bold text-5xl">LPA<span className="text-[#FEDB2F]">*</span></span>
               </div>
               <div className="w-full h-px bg-white/30 my-4" />
               <p className="font-[family-name:var(--font-poppins)] font-normal text-[16px] leading-[1.65] text-white/90">
@@ -102,52 +103,44 @@ export function Placements() {
             </div>
           </div>
 
-          {/* Desktop photo — overflows above card (pt-16 on wrapper gives 64px) */}
+          {/* Desktop photo — wrapped to clip bottom-right corner but allow pop-out at top */}
           <div
-            className="hidden sm:block pointer-events-none"
+            className="hidden sm:block absolute right-0 bottom-0 z-10 w-[62%] pointer-events-none rounded-br-[24px]"
             style={{
-              position: "absolute",
-              top: 0,
-              right: 0,
-              bottom: 0,
-              width: "62%",
-              zIndex: 10,
+              top: "-200px", // Extends high up so the head is never clipped
+              overflow: "hidden",
             }}
           >
             <img
               src="/Image-opt.png"
               alt="MS Dhoni with Parul University students"
               style={{
+                position: "absolute",
+                bottom: "-38px", // Pulls the transparent padding down
+                right: 0,
                 width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                objectPosition: "top center",
-                display: "block",
+                height: "auto",
               }}
             />
           </div>
         </div>
 
         {/* Recruiting companies line */}
-        <div className="mt-8 flex items-center justify-center gap-3.5 sm:gap-6">
-          {/* Left: 2200.png image */}
+        <div className="mt-8 flex items-center justify-center gap-3.5 sm:gap-8">
+          {/* Left: 2200 SVG image */}
           <div className="flex-shrink-0">
-            <img
-              src="/2200.png"
-              alt="2200+ recruiting companies"
-              className="h-14 sm:h-[72px] w-auto object-contain"
-            />
+            <TwoThousandPlusIcon className="h-14 sm:h-[90px] w-auto" />
           </div>
 
           {/* Middle: Vertical divider */}
-          <div className="h-14 sm:h-20 w-px bg-zinc-300" />
+          <div className="h-14 sm:h-[90px] w-px bg-zinc-300" />
 
           {/* Right: Text block */}
           <div className="text-left">
-            <h3 className="font-sans font-extrabold text-[18px] sm:text-[32px] leading-tight text-[#1F1F1F]">
+            <h3 className="font-sans font-extrabold text-[18px] sm:text-[40px] leading-tight text-[#1F1F1F]">
               Recruiting companies*
             </h3>
-            <p className="mt-0.5 sm:mt-1 font-[family-name:var(--font-poppins)] font-normal text-[11px] sm:text-[16px] text-zinc-500">
+            <p className="mt-0.5 sm:mt-2 font-[family-name:var(--font-poppins)] font-normal text-[11px] sm:text-[18px] text-zinc-500">
               Across the Parul ecosystem, every year.
             </p>
           </div>
@@ -169,10 +162,6 @@ export function Placements() {
             </div>
           ))}
         </dl>
-
-        <p className="mt-8 text-center font-[family-name:var(--font-poppins)] font-normal text-xs text-ink/40">
-          *Figures span the Parul University ecosystem (Goa &amp; Gujarat).
-        </p>
       </div>
     </section>
   );
