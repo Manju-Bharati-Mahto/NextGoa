@@ -15,9 +15,9 @@ export function FinalCta() {
             alt=""
             fill
             sizes="(min-width: 1152px) 1088px, 100vw"
-            className="-z-10 object-cover"
+            className="-z-10 object-cover object-bottom"
           />
-          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-ink/80 via-ink/55 to-ink/30" />
+          <div className="absolute inset-0 -z-10 bg-black/75" />
 
           <div className="px-6 py-20 text-center sm:py-28">
             <span className="inline-block rounded-full bg-sunshine px-5 py-2 text-sm font-bold text-ink">

@@ -112,27 +112,12 @@ export function SiteFooter() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-[1380px] px-6 pb-20 pt-24 sm:pt-32">
+      <div className="relative z-10 mx-auto max-w-[1380px] px-6 pb-32 pt-32 sm:pt-48 sm:pb-40">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.7fr_0.95fr_0.95fr_1.08fr] lg:gap-16">
           {/* Brand + NAP */}
           <div className="max-w-[34rem]">
             <Logo />
-            <address className="mt-6 space-y-1 text-[13px] not-italic leading-7 text-white sm:text-[14px]">
-              <p>{fullAddress}</p>
-              <p>
-                <a href={`tel:${contact.phone.replace(/\s/g, "")}`} className="hover:text-white">
-                  {contact.phone}
-                </a>{" "}
-                <span className="text-white/70">(Toll Free)</span>
-              </p>
-              <p>
-                <a href={`mailto:${contact.email}`} className="break-all hover:text-white">
-                  {contact.email}
-                </a>
-              </p>
-            </address>
-
-            <address className="mt-8 space-y-4 text-[13px] not-italic leading-6 text-white sm:text-[14px]">
+            <address className="mt-6 space-y-4 text-sm not-italic leading-6 text-white sm:text-base">
               <p className="flex items-start gap-2">
                 <span className="mt-1 text-white/80">
                   <PinIcon />
@@ -166,10 +151,10 @@ export function SiteFooter() {
               aria-label={col.heading}
               className={index > 0 ? "lg:border-l lg:border-white/18 lg:pl-10" : ""}
             >
-              <h2 className="text-sm font-bold uppercase tracking-[0.08em] text-sunshine">
+              <h2 className="text-sm sm:text-base font-bold uppercase tracking-[0.08em] text-sunshine">
                 {col.heading}
               </h2>
-              <ul className="mt-6 space-y-3 text-[13px] text-white sm:text-[14px]">
+              <ul className="mt-6 space-y-3 text-sm text-white sm:text-base">
                 {col.links.map((l) => (
                   <li key={l.label}>
                     <Link href={l.href} className="transition-colors hover:text-white">

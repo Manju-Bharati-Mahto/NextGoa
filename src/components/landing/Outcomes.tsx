@@ -68,7 +68,7 @@ export function Outcomes() {
                   key={i}
                   src={src}
                   alt="Recruiter logo"
-                  className="h-10 sm:h-12 w-auto object-contain mx-6 sm:mx-8 max-w-none hover:scale-105 transition-transform duration-200"
+                  className="h-12 sm:h-16 w-auto object-contain mx-6 sm:mx-8 max-w-none hover:scale-105 transition-transform duration-200"
                 />
               ))}
             </div>
@@ -82,7 +82,7 @@ export function Outcomes() {
                   key={i}
                   src={src}
                   alt="Recruiter logo"
-                  className="h-10 sm:h-12 w-auto object-contain mx-6 sm:mx-8 max-w-none hover:scale-105 transition-transform duration-200"
+                  className="h-12 sm:h-16 w-auto object-contain mx-6 sm:mx-8 max-w-none hover:scale-105 transition-transform duration-200"
                 />
               ))}
             </div>

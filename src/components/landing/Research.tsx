@@ -55,7 +55,7 @@ export function Research() {
                 >
                   {c.badge}
                 </span>
-                <p className="mt-6 font-[family-name:var(--font-poppins)] text-sm sm:text-[15px] md:text-base leading-relaxed text-white/95 font-normal">
+                <p className="mt-6 font-[family-name:var(--font-poppins)] font-normal text-base sm:text-[18px] leading-relaxed text-white/95">
                   {c.description}
                 </p>
               </div>
