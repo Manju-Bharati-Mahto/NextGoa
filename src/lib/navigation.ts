@@ -21,10 +21,10 @@ export const navItems: NavItem[] = [
 
 /** Primary CTA destinations. */
 export const cta = {
-  /** Application page. TODO: replace with the live application portal URL. */
-  apply: "/admissions",
+  /** Application modal trigger. */
+  apply: "#enquiry",
   /** Brochure download. TODO: add the PDF at public/parul-goa-brochure-2026.pdf. */
   brochure: "/parul-goa-brochure-2026.pdf",
-  /** Counsellor enquiry — scrolls to the footer contact block for now. */
-  counsellor: "#contact",
+  /** Counsellor enquiry modal trigger. */
+  counsellor: "#enquiry",
 } as const;

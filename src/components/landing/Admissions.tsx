@@ -28,7 +28,7 @@ export function Admissions() {
         <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
           {/* Left — entrance test pitch */}
           <div className="flex flex-col justify-center text-left">
-            <h3 className="font-sans font-bold text-[28px] sm:text-[42px] lg:text-[48px] leading-[1.05] text-ink">
+            <h3 className="font-sans font-medium text-[24px] sm:text-[32px] leading-tight tracking-tight text-ink">
               Apply for PU Goa&apos;s<br />Entrance Test
             </h3>
             <p className="mt-4 max-w-md font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] leading-[1.65] text-ink/70">
@@ -39,9 +39,9 @@ export function Admissions() {
               <img
                 src="/IMG.png"
                 alt="5,235 registered students"
-                className="h-10 w-auto object-contain"
+                className="h-8 w-auto object-contain"
               />
-              <p className="font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] text-ink/70">
+              <p className="font-[family-name:var(--font-poppins)] font-normal text-sm sm:text-base text-ink/70">
                 5,235 students have registered
               </p>
             </div>

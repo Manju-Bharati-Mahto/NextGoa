@@ -47,14 +47,14 @@ export function Testimonial() {
             {testimonials.map((t, idx) => {
               const isActive = idx === currentIndex;
               return (
-                <figure
-                  key={idx}
-                  className={`col-start-1 row-start-1 transition-all duration-[1200ms] ease-in-out ${
-                    isActive
-                      ? "opacity-100 translate-y-0 pointer-events-auto z-10"
-                      : "opacity-0 translate-y-2 pointer-events-none z-0"
-                  }`}
-                >
+                  <figure
+                    key={idx}
+                    className={`col-start-1 row-start-1 transition-all duration-1000 ease-in-out ${
+                      isActive
+                        ? "opacity-100 translate-y-0 blur-0 pointer-events-auto z-10"
+                        : "opacity-0 translate-y-4 blur-[4px] pointer-events-none z-0"
+                    }`}
+                  >
                   <blockquote className="font-sans text-2xl sm:text-3xl md:text-[34px] font-bold leading-[1.25] tracking-tight text-ink">
                     &quot;{t.quote}&quot;
                   </blockquote>
@@ -95,10 +95,10 @@ export function Testimonial() {
             return (
               <div
                 key={idx}
-                className={`absolute inset-0 overflow-hidden rounded-full shadow-lg transition-all duration-[1200ms] ease-in-out ${
+                className={`absolute inset-0 overflow-hidden rounded-full shadow-lg transition-all duration-1000 ease-in-out ${
                   isActive
-                    ? "opacity-100 scale-100 pointer-events-auto z-10"
-                    : "opacity-0 scale-95 pointer-events-none z-0"
+                    ? "opacity-100 scale-100 blur-0 pointer-events-auto z-10"
+                    : "opacity-0 scale-95 blur-[4px] pointer-events-none z-0"
                 }`}
               >
                 <Image

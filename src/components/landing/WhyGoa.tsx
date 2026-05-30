@@ -16,8 +16,8 @@ export function WhyGoa() {
         <WaveBandBg band="#0CAADD" accent="#0094C4" />
       </div>
 
-      <div className="relative z-10 mx-auto grid max-w-6xl grid-cols-1 items-center gap-14 px-6 pt-44 pb-64 md:grid-cols-2 md:gap-24 lg:gap-32">
-        <div className="relative mx-auto w-full max-w-md">
+      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 pt-44 pb-64 md:grid-cols-[1fr_1.3fr] lg:grid-cols-[1fr_1.2fr] md:gap-24 lg:gap-32">
+        <div className="relative mx-auto w-full max-w-none lg:max-w-[550px]">
           {/* Top-left blueprint crosshair (Group 3062.svg) */}
           <svg
             viewBox="0 0 420 311"
@@ -57,14 +57,14 @@ export function WhyGoa() {
 
         <div className="text-white">
           <Eyebrow className="!text-left text-white">Why Goa</Eyebrow>
-          <h2 className="mt-2 font-sans font-bold text-[32px] sm:text-[42px] leading-[1.12] tracking-tight text-sunshine">
+          <h2 className="mt-2 font-sans font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-sunshine sm:whitespace-nowrap">
             We chose Goa because
             <br />
             no classroom can teach
             <br />
             what Goa can.
           </h2>
-          <div className="mt-5 space-y-4 text-base leading-7 text-white/90">
+          <div className="mt-5 space-y-4 font-[family-name:var(--font-poppins)] font-normal text-base sm:text-[18px] leading-relaxed text-white/90">
             <p>
               Goa is a global tourism hub, a creative economy, a place where Indian and
               international cultures have been meeting for centuries. It hosts some of the
