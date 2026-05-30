@@ -117,3 +117,10 @@ body {
 .animate-marquee-reverse:hover {
   animation-play-state: paused;
 }
+
+/* Prevent image and SVG selection/dragging to deter piracy */
+img, svg {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
