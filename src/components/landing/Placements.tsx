@@ -15,33 +15,56 @@ const stats = [
         Award
       </>
     ),
+    titleClass: "text-[28px] sm:text-[32px] lg:text-[36px]",
     label: "Best Placement University - consecutive years.",
   },
   {
     title: "₹58 Cr+",
-    titleClass: "text-[34px] sm:text-[38px] lg:text-[42px]",
+    titleClass: "text-[42px] sm:text-[48px] lg:text-[56px]",
     label: "Best Placement University - consecutive years.",
   },
   {
     title: "120+",
-    titleClass: "text-[34px] sm:text-[38px] lg:text-[42px]",
+    titleClass: "text-[42px] sm:text-[48px] lg:text-[56px]",
     label: "Best Placement University - consecutive years.",
   },
 ];
 
-export function Placements() {
+export function Placements({ variant = "landing" }: { variant?: "landing" | "about" }) {
+  const isAbout = variant === "about";
+
+  const aboutExtraStats = [
+    {
+      title: "254",
+      titleClass: "text-[42px] sm:text-[48px] lg:text-[56px]",
+      label: "Startups incubated",
+    },
+    {
+      title: "800+",
+      titleClass: "text-[42px] sm:text-[48px] lg:text-[56px]",
+      label: "Students in global programmes",
+    },
+    {
+      title: "315",
+      titleClass: "text-[42px] sm:text-[48px] lg:text-[56px]",
+      label: "Funded research projects",
+    },
+  ];
+
   return (
-    <section id="placements" className="bg-brand-white">
+    <section id="placements" className={isAbout ? "bg-gradient-to-b from-[#D6F0FA] via-[#F8F8F8]/50 to-brand-white -mt-10 pt-10 relative z-0" : "bg-brand-white"}>
       <div className="mx-auto max-w-6xl px-6 py-20">
         <div className="flex justify-center mb-6">
           <img src="/Test.svg" alt="" aria-hidden="true" className="h-[97px] w-auto" />
         </div>
-        <Eyebrow className="mt-3 text-ink">Numbers that matter</Eyebrow>
+        <Eyebrow className="mt-3 text-ink">
+          {isAbout ? "LEGACY IN NUMBERS" : "Numbers that matter"}
+        </Eyebrow>
         <h2 className="mt-2 text-center font-sans font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
-          The ecosystem in figures.
+          {isAbout ? "Excellence That Needs No Introduction!" : "The ecosystem in figures."}
         </h2>
         <p className="mt-3 text-center font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] leading-relaxed text-ink">
-          Two decades of placement results, distilled.
+          {isAbout ? "Figures from Parul University, Gujarat." : "Two decades of placement results, distilled."}
         </p>
 
         {/* ── Headline package card ────────────────────────────────────────
@@ -146,14 +169,14 @@ export function Placements() {
           </div>
         </div>
 
-        {/* Stat trio */}
+        {/* Stat trio - Row 1 */}
         <dl className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3">
           {stats.map((s, idx) => (
             <div
               key={idx}
-              className="rounded-[20px] border border-zinc-300 bg-white px-7 py-6 text-left"
+              className="rounded-[20px] border border-zinc-300 bg-white px-7 py-6 text-left shadow-sm"
             >
-              <dt className={`font-sans font-bold leading-[1.15] text-brand-blue tracking-tight ${("titleClass" in s && s.titleClass) || "text-[26px] sm:text-[28px] lg:text-[30px]"}`}>
+              <dt className={`font-sans font-bold leading-[1.15] text-[#0CAADD] tracking-tight ${("titleClass" in s && s.titleClass) || "text-[26px] sm:text-[28px] lg:text-[30px]"}`}>
                 {s.title}
               </dt>
               <dd className="mt-3 font-[family-name:var(--font-poppins)] font-normal text-[14px] sm:text-[15px] text-ink leading-[1.45]">
@@ -162,6 +185,25 @@ export function Placements() {
             </div>
           ))}
         </dl>
+
+        {/* Stat trio - Row 2 (About page only) */}
+        {isAbout && (
+          <dl className="mt-5 flex flex-col sm:flex-row justify-center gap-5">
+            {aboutExtraStats.map((s, idx) => (
+              <div
+                key={idx}
+                className="w-full sm:w-[30%] max-w-[280px] rounded-[20px] border border-zinc-300 bg-white px-7 py-6 text-left shadow-sm mx-auto sm:mx-0"
+              >
+                <dt className={`font-sans font-bold leading-[1.15] text-[#0CAADD] tracking-tight ${s.titleClass}`}>
+                  {s.title}
+                </dt>
+                <dd className="mt-3 font-[family-name:var(--font-poppins)] font-normal text-[14px] sm:text-[15px] text-ink leading-[1.45]">
+                  {s.label}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        )}
       </div>
     </section>
   );
