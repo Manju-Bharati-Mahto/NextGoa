@@ -70,9 +70,12 @@ export function Governance() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[#E73649]">
-      {/* Background wave band */}
-      <div className="absolute inset-x-0 top-0 h-[150px] z-0 pointer-events-none">
+    <section className="relative overflow-hidden bg-transparent">
+      {/* Solid red background starting below the wave dip */}
+      <div className="absolute inset-x-0 bottom-0 top-[2vw] z-0 bg-[#E73649] pointer-events-none" />
+
+      {/* Background wave band perfectly proportioned */}
+      <div className="absolute inset-x-0 top-0 w-full aspect-[1440/75] z-0 pointer-events-none">
         <WaveBandBg band="#E73649" accent="#C92B3C" topOnly={true} />
       </div>
 
