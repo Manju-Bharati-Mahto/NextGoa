@@ -135,7 +135,7 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
             }}
           >
             <img
-              src="/Image-opt.png"
+              src="/Image-opt.webp"
               alt="MS Dhoni with Parul University students"
               style={{
                 position: "absolute",
