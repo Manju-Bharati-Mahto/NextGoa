@@ -48,7 +48,7 @@ function FaqAccordionItem({ f, isOpen, onToggle }: { f: FaqItem; isOpen: boolean
     <div className="rounded-2xl bg-white shadow-sm ring-1 ring-black/5">
       <button
         onClick={onToggle}
-        className="flex w-full cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left text-base font-bold text-ink"
+        className="flex w-full cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left font-[family-name:var(--font-poppins)] text-base font-medium text-ink"
       >
         {f.question}
         <span
@@ -79,7 +79,7 @@ export function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="bg-brand-white">
+    <section id="faq" className="bg-gradient-to-t from-[#FFF9E6] to-[#F8F8F8] pb-24">
       <JsonLd data={faqSchema(faqs)} />
       <div className="mx-auto max-w-6xl px-6 py-20">
         <Eyebrow className="text-ink">Questions parents ask</Eyebrow>

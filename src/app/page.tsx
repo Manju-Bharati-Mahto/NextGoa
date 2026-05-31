@@ -45,8 +45,8 @@ export default function Home() {
         <WhyGoa />
         <International />
         <News />
-        <Faq />
         <FinalCta />
+        <Faq />
       </main>
     </>
   );
