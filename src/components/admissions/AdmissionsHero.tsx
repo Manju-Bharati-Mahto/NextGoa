@@ -1,37 +1,21 @@
-import Image from "next/image";
+import React from "react";
 
 export function AdmissionsHero() {
   return (
-    <section className="relative min-h-[90vh] sm:min-h-screen w-full flex flex-col pt-32 pb-40 overflow-hidden bg-brand-white">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/admissions-hero.png"
-          alt="Parul University Goa Campus"
-          fill
-          className="object-cover object-center"
-          priority
-        />
-        {/* Bottom fade to white */}
-        <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-white to-transparent pointer-events-none" />
-      </div>
+    <section 
+      id="hero"
+      className="relative flex flex-col items-center justify-start pt-32 pb-24 sm:pt-40 sm:pb-32 bg-brand-white"
+    >
+      <div className="relative z-10 w-full max-w-7xl px-4 text-center mt-12 sm:mt-16">
+        <span className="inline-block rounded-full bg-brand-yellow px-4 py-1.5 text-xs font-bold text-ink shadow-sm uppercase tracking-wider mb-6">
+          Admissions Open for 2026-27 Academic Year
+        </span>
 
-      {/* Content */}
-      <div className="relative z-10 mx-auto max-w-[900px] px-6 text-center mt-8 sm:mt-16">
-        {/* Yellow Badge */}
-        <div className="inline-flex items-center justify-center rounded-full bg-sunshine px-5 py-1.5 mb-8">
-          <span className="font-sans text-sm font-semibold tracking-wide text-ink">
-            Admissions Open for 2026-27 Academic Year
-          </span>
-        </div>
-
-        {/* Heading */}
-        <h1 className="font-sans text-[42px] font-bold leading-[1.1] tracking-tight text-brand sm:text-[64px] lg:text-[72px] mb-8 drop-shadow-sm">
+        <h1 className="font-sans mx-auto w-full max-w-4xl text-[38px] sm:text-[56px] font-bold leading-[1.1] tracking-tight text-brand">
           From Goa To Global Degree!
         </h1>
 
-        {/* Description */}
-        <p className="font-[family-name:var(--font-poppins)] text-lg sm:text-[20px] leading-[1.6] text-ink/80 max-w-[800px] mx-auto font-medium drop-shadow-sm">
+        <p className="mx-auto mt-6 max-w-4xl text-[16px] sm:text-[18px] leading-[1.65] font-[family-name:var(--font-poppins)] font-normal text-ink">
           Stay in touch with your <strong>GOA</strong>ls as admissions in Parul University Goa are open for the 2026-27 academic year. Whether you are a student, fresh out of Class 12, a diploma holder seeking lateral entry, a graduate ready for postgraduate studies, or a working professional, there is a pathway here for you!
         </p>
       </div>
