@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import footerBackground from "../../../Assets/FOOTER .svg";
 import { siteConfig } from "@/lib/site-config";
 
 /**
@@ -104,7 +103,7 @@ export function SiteFooter() {
     <footer id="contact" className="relative mt-auto overflow-hidden bg-[#FFF9E6] text-white">
       <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
         <Image
-          src={footerBackground}
+          src="/footer.svg"
           alt=""
           fill
           className="object-cover object-top"
