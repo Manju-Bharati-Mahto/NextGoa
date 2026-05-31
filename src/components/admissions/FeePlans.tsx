@@ -119,7 +119,7 @@ export function FeePlans() {
                       setSelectedCourse(course);
                       setSearchQuery(course.name);
                       setIsDropdownOpen(false);
-                      e.target.blur(); // Remove focus to fully commit the selection
+                      (e.target as HTMLInputElement).blur(); // Remove focus to fully commit the selection
                     }
                   }}
                   className="w-full bg-[#f4f4f4] text-ink rounded-xl py-4 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-brand font-medium"

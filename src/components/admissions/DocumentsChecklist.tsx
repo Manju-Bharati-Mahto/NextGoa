@@ -9,7 +9,13 @@ type ChecklistItem = {
   sub?: string;
 };
 
-const DATA = {
+type ApplicantData = {
+  academic: ChecklistItem[];
+  identity: ChecklistItem[];
+  supporting: ChecklistItem[];
+};
+
+const DATA: Record<ApplicantType, ApplicantData> = {
   ug: {
     academic: [
       { main: "Class 10 Mark Sheet & Certificate" },
