@@ -8,12 +8,17 @@ import { WaveBandBg } from "./WaveBand";
  * white International section below. The image is a placeholder (drop a real
  * campus/culture photo at /public/why-goa.jpg and swap in <Image>).
  */
-export function WhyGoa() {
+export function WhyGoa({ variant = "blue" }: { variant?: "blue" | "red" }) {
+  const isRed = variant === "red";
+  
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#F8F8F8] to-[#CBEFFD]">
-      {/* Background: same scalloped wave band as "Our Philosophy", same colours */}
+    <section className={`relative overflow-hidden ${isRed ? "bg-transparent" : "bg-gradient-to-b from-[#F8F8F8] to-[#CBEFFD]"}`}>
+      {/* Background wave band */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <WaveBandBg band="#0CAADD" accent="#0094C4" />
+        <WaveBandBg 
+          band={isRed ? "#E73649" : "#0CAADD"} 
+          accent={isRed ? "#C92B3C" : "#0094C4"} 
+        />
       </div>
 
       <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 pt-44 pb-64 md:grid-cols-[1fr_1.3fr] lg:grid-cols-[1fr_1.2fr] md:gap-24 lg:gap-32">
@@ -23,7 +28,7 @@ export function WhyGoa() {
             viewBox="0 0 420 311"
             fill="none"
             aria-hidden="true"
-            className="pointer-events-none absolute -left-14 -top-12 z-0 hidden w-[95%] sm:block"
+            className="pointer-events-none absolute -top-4 -left-4 sm:-top-6 sm:-left-6 lg:-top-8 lg:-left-8 -translate-x-[10.2%] -translate-y-[13.1%] z-0 hidden w-[95%] sm:block"
           >
             <line x1="43.6447" x2="43.6447" y2="310.143" stroke="#fff" strokeWidth="1.41431" strokeDasharray="14.14 14.14" strokeOpacity="0.6" />
             <line x1="0.000380434" y1="40.8157" x2="419.648" y2="41.0414" stroke="#fff" strokeWidth="1.41431" strokeDasharray="14.14 14.14" strokeOpacity="0.6" />
@@ -35,7 +40,7 @@ export function WhyGoa() {
             viewBox="0 0 420 311"
             fill="none"
             aria-hidden="true"
-            className="pointer-events-none absolute -right-14 -bottom-12 z-0 hidden w-[95%] sm:block"
+            className="pointer-events-none absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 lg:-bottom-8 lg:-right-8 translate-x-[10.4%] translate-y-[13.8%] z-0 hidden w-[95%] sm:block"
           >
             <line x1="376.004" y1="310.143" x2="376.004" stroke="#fff" strokeWidth="1.41431" strokeDasharray="14.14 14.14" strokeOpacity="0.6" />
             <line x1="419.648" y1="269.328" x2="0.000371496" y2="269.102" stroke="#fff" strokeWidth="1.41431" strokeDasharray="14.14 14.14" strokeOpacity="0.6" />

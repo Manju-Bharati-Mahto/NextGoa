@@ -42,7 +42,23 @@
   /* Brand guidelines colors */
   --color-brand-white: #F8F8F8;
   --color-brand-black: #1F1F1F;
+  --color-brand-red: #E73649;
+  --color-brand-blue-guideline: #0CAADD;
   --color-brand-yellow: #FEDB2F;
+
+  /* Brand guideline gradient stops */
+  --color-brand-pink-soft: #FFCACF;
+  --color-brand-yellow-soft: #FFEA84;
+  --color-brand-blue-soft: #9BE4FB;
+  --color-brand-white-pure: #FFFFFF;
+
+  /* Brand guideline typography */
+  --text-brand-body: 18px;
+  --text-brand-subheading: 32px;
+  --text-brand-heading: 56px;
+  --font-weight-brand-body: 400;
+  --font-weight-brand-subheading: 500;
+  --font-weight-brand-heading: 700;
 
   /* Gotham is self-hosted via next/font/local (src/lib/fonts.ts) as --font-gotham */
   --font-sans: var(--font-gotham), ui-sans-serif, system-ui, sans-serif;
@@ -71,6 +87,13 @@ html {
 body {
   background: var(--color-brand-white);
   color: var(--color-ink);
+}
+
+:root {
+  --gradient-brand-pink: linear-gradient(180deg, #FFCACF 0%, #F8F8F8 100%);
+  --gradient-brand-yellow: linear-gradient(180deg, #FFEA84 0%, #F8F8F8 100%);
+  --gradient-brand-blue: linear-gradient(180deg, #9BE4FB 0%, #F8F8F8 100%);
+  --gradient-brand-white: linear-gradient(180deg, #F8F8F8 0%, #FFFFFF 100%);
 }
 
 /* Offset in-page anchor targets so the content isn't hidden under fixed UI. */
@@ -123,4 +146,13 @@ img, svg {
   user-select: none;
   -webkit-user-select: none;
   -webkit-user-drag: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
