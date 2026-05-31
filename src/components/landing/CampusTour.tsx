@@ -67,7 +67,7 @@ export function CampusTour() {
         >
           <div
             className="relative flex aspect-video items-center justify-center bg-cover bg-center"
-            style={{ backgroundImage: "url('/campus-tour-thumbnail.png')" }}
+            style={{ backgroundImage: "url('/campus-tour-thumbnail.webp')" }}
           >
             {/* Dark overlay for readability */}
             <div className="absolute inset-0 bg-black/35 transition-opacity group-hover:bg-black/45" />

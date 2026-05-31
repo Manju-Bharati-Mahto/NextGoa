@@ -4,37 +4,37 @@ export function FacultyDeans() {
       name: "Dr. Anuradha Pillai",
       faculty: "Faculty of Engineering, IT & CS",
       stats: "Ph.D. Computer Engineering • 21+ yrs • 48 papers",
-      image: "/leader-1.png", // Using placeholder image for now
+      image: "/leader-1.webp",
     },
     {
       name: "Dr. Kshitiz Sharma",
       faculty: "Faculty of Management Studies",
       stats: "PhD. Management • 23+ yrs • 44 papers",
-      image: "/leader-2.png", // Using placeholder image for now
+      image: "/leader-2.webp",
     },
     {
       name: "Dr. Anupam Kumar",
       faculty: "Applied & Health Sciences",
       stats: "PhD. Biotechnology • 15+ yrs • 50+ papers",
-      image: "/leader-3.png", // Using placeholder image for now
+      image: "/leader-3.webp",
     },
     {
       name: "Dr. Lalit Lata Jha",
       faculty: "Faculty of Pharmacy",
       stats: "PhD. Pharmacy • 23+ yrs • 41 papers",
-      image: "/leader-1.png", // The screenshot uses this exact photo
+      image: "/leader-1.webp",
     },
     {
       name: "Dr. Aseem Yadav",
       faculty: "Faculty of Physiotherapy",
       stats: "PhD. Physiotherapy • 14+ yrs • 81 papers",
-      image: "/leader-2.png", // Using placeholder image for now
+      image: "/leader-2.webp",
     },
     {
       name: "Dr. Jeyalakshmi K.",
       faculty: "Faculty of Nursing",
       stats: "PhD. Community Health Nursing • 18+ yrs",
-      image: "/leader-3.png", // Using placeholder image for now
+      image: "/leader-3.webp",
     },
   ];
 

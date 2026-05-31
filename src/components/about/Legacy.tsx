@@ -43,7 +43,7 @@ export function Legacy() {
               />
               
               <img 
-                src="/rectangle-319.png" 
+                src="/rectangle-319.webp" 
                 alt="PU Goa Academic Block" 
                 className="relative w-full h-auto rounded-[24px] object-cover z-10"
               />
