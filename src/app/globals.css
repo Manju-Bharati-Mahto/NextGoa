@@ -89,6 +89,10 @@ body {
   color: var(--color-ink);
 }
 
+* {
+  letter-spacing: -0.04em;
+}
+
 :root {
   --gradient-brand-pink: linear-gradient(180deg, #FFCACF 0%, #F8F8F8 100%);
   --gradient-brand-yellow: linear-gradient(180deg, #FFEA84 0%, #F8F8F8 100%);
