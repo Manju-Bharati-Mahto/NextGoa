@@ -8,14 +8,20 @@ export function WaveBandBg({
   band,
   accent,
   topOnly = false,
+  bottomOnly = false,
 }: {
   band: string;
   accent: string;
   topOnly?: boolean;
+  bottomOnly?: boolean;
 }) {
+  let preserveAspectRatio = "none";
+  if (topOnly) preserveAspectRatio = "xMidYMin slice";
+  if (bottomOnly) preserveAspectRatio = "xMidYMax slice";
+
   return (
             <svg
-              preserveAspectRatio={topOnly ? "xMidYMin slice" : "none"}
+              preserveAspectRatio={preserveAspectRatio}
               width="1440"
               height="768"
               viewBox="0 0 1440 768"
