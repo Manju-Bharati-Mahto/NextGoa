@@ -5,7 +5,7 @@ import { Poppins } from "next/font/google";
  * Poppins - used for specific typographic elements per brand guidelines.
  */
 export const poppins = Poppins({
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
   variable: "--font-poppins",
   display: "swap",
