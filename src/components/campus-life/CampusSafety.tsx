@@ -10,7 +10,7 @@ export function CampusSafety() {
       {/* Background Safe Graphic */}
       <div className="absolute inset-x-0 top-[10%] bottom-0 flex justify-center pointer-events-none z-0 opacity-50">
         <div className="relative w-full max-w-[1000px] h-full">
-          <Image src="/safe2.png" alt="" fill className="object-contain object-bottom" />
+          <Image src="/safe2.png" alt="" fill unoptimized className="object-contain object-bottom" />
         </div>
       </div>
 
