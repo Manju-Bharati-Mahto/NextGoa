@@ -13,7 +13,7 @@ export const navItems: NavItem[] = [
   { label: "Programmes", href: "/programmes" },
   { label: "Admissions", href: "/admissions" },
   { label: "Campus Life", href: "#campus-life" },
-  { label: "Study Abroad", href: "#international" },
+  { label: "Study Abroad", href: "/study-abroad" },
   { label: "Placements", href: "#placements" },
   { label: "Research", href: "#research" },
   { label: "Stories", href: "#news" },
