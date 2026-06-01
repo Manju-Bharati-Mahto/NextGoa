@@ -9,21 +9,21 @@ const testimonials = [
     name: "Riya S.",
     role: "Software Engineer - TCS",
     course: "B.Tech CSE - Batch 2025",
-    image: "/students/riya.png",
+    image: "/students/riya.webp",
   },
   {
     quote: "The semester abroad in Germany changed how I think about engineering. Having the university support my visa and credits made it seamless.",
     name: "Karan M.",
     role: "Graduate Student - Technical University of Munich",
     course: "B.Tech Mechanical - Batch 2024",
-    image: "/students/karan.png",
+    image: "/students/karan.webp",
   },
   {
     quote: "Working on the solar car project with students from electrical and design courses taught me more about teamwork than any textbook ever could.",
     name: "Anjali D.",
     role: "EV Research Engineer - Ather Energy",
     course: "B.Tech Electrical - Batch 2025",
-    image: "/students/anjali.png",
+    image: "/students/anjali.webp",
   },
 ];
 

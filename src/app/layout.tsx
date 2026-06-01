@@ -62,6 +62,9 @@ export default function RootLayout({
       className={`${gotham.variable} ${poppins.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+      </head>
       <body className="min-h-full flex flex-col font-sans">
         {/* Site-wide entity definitions for search engines + AI answer engines. */}
         <JsonLd data={organizationSchema()} />
