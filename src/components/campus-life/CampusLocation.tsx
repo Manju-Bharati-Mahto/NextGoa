@@ -135,26 +135,26 @@ export function CampusLocation() {
                 <button
                   key={loc.id}
                   onClick={() => setSelectedId(loc.id)}
-                  className={`flex-1 w-full flex items-center justify-between p-3 sm:p-4 pr-6 sm:pr-8 rounded-[20px] shadow-sm transition-all duration-300 border ${
+                  className={`flex-1 w-full flex items-center justify-between p-2 sm:p-3 pr-4 sm:pr-6 rounded-[16px] shadow-sm transition-all duration-300 border ${
                     isSelected 
                       ? 'bg-[#0CAADD] border-[#0CAADD] text-white scale-[1.02] shadow-md' 
                       : 'bg-white border-black/5 text-[#1F1F1F] hover:bg-gray-50 hover:border-black/10'
                   }`}
                 >
-                  <div className="flex items-center gap-4 sm:gap-6">
+                  <div className="flex items-center gap-3 sm:gap-4">
                     {/* Icon Block */}
-                    <div className={`w-[56px] h-[56px] shrink-0 flex items-center justify-center rounded-[14px] transition-colors ${
+                    <div className={`w-[48px] h-[48px] shrink-0 flex items-center justify-center rounded-[12px] transition-colors ${
                       isSelected 
                         ? 'bg-white text-[#0CAADD]' 
                         : typeColorClass
                     }`}>
-                      <Icon icon={getTypeIcon(loc.type)} className="text-[28px]" />
+                      <Icon icon={getTypeIcon(loc.type)} className="text-[24px]" />
                     </div>
-                    <span className="font-[family-name:var(--font-poppins)] font-medium text-[16px] sm:text-[18px] text-left">
+                    <span className="font-[family-name:var(--font-poppins)] font-medium text-[15px] sm:text-[16px] text-left">
                       {loc.name}
                     </span>
                   </div>
-                  <span className="font-[family-name:var(--font-poppins)] text-[16px] sm:text-[18px] ml-4 shrink-0">
+                  <span className="font-[family-name:var(--font-poppins)] text-[14px] sm:text-[16px] ml-4 shrink-0">
                     {loc.distance}
                   </span>
                 </button>
@@ -245,11 +245,11 @@ export function CampusLocation() {
 
                 {/* Bottom Pick-up Card */}
                 <div className="mt-auto">
-                  <div className="bg-[#0CAADD] rounded-[16px] py-4 px-6 text-center shadow-lg">
-                    <h4 className="font-sans font-bold text-white text-[18px] sm:text-[22px] mb-1">
+                  <div className="bg-[#0CAADD] rounded-[14px] py-3 px-4 sm:py-3 sm:px-6 text-center shadow-lg">
+                    <h4 className="font-sans font-bold text-white text-[16px] sm:text-[20px] mb-1">
                       {selectedLocation.pickupTitle}
                     </h4>
-                    <p className="font-[family-name:var(--font-poppins)] text-white/95 text-[15px] sm:text-[17px] leading-snug max-w-[95%] mx-auto">
+                    <p className="font-[family-name:var(--font-poppins)] text-white/95 text-[14px] sm:text-[15px] leading-snug max-w-[95%] mx-auto">
                       {selectedLocation.pickupDesc}
                     </p>
                   </div>
