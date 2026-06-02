@@ -1,0 +1,351 @@
+"use client";
+
+import React, { useState } from 'react';
+import Image from 'next/image';
+
+const sectorData = [
+  { label: 'Tech & IT', value: 28, color: '#FFDE21' },
+  { label: 'Pharmaceuticals', value: 14, color: '#2BA5D5' },
+  { label: 'BFSI & Consulting', value: 13, color: '#FF6B86' },
+  { label: 'Healthcare', value: 12, color: '#FFDE21' },
+  { label: 'Higher Studies', value: 11, color: '#E42D45' },
+  { label: 'Hospitality', value: 10, color: '#D2A809' },
+  { label: 'Entrepreneurship', value: 7, color: '#66D2F9' },
+  { label: 'Govt / Defence', value: 5, color: '#2BA5D5' },
+];
+
+const packageData = [
+  { label: '₹6–10 LPA', value: 38, color: '#F38D9A' },
+  { label: '₹4–6 LPA', value: 32, color: '#F9BEC6' },
+  { label: '₹10–20 LPA', value: 22, color: '#EE6171' },
+  { label: '₹20+ LPA', value: 8, color: '#E32D43' },
+];
+
+export function PlacementsByTheNumbers() {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  const rawData = activeSlide === 0 ? sectorData : packageData;
+  const sortedData = [...rawData].sort((a, b) => b.value - a.value);
+
+  const cx = 450;
+  const cy = 300;
+  const R = 240; 
+  const dotR = R * 0.75;
+  const elbowR = R * 1.15; // Extend the bend further outside the chart
+  const lineLength = 55;   // Make the horizontal line longer
+
+  const maskR = R / 2;
+  const maskCircumference = 2 * Math.PI * maskR;
+
+  let currentPercentForAnim = 0;
+  const wipeValues = [maskCircumference];
+  const keyTimes = [0];
+  let currentKeyTime = 0;
+  
+  const numPauses = Math.max(1, sortedData.length - 1); 
+  const totalPauseTime = 0.30; // 30% of the total animation duration is spent pausing
+  const pauseDuration = totalPauseTime / numPauses;
+  const totalMoveTime = 1 - totalPauseTime;
+
+  const animatedData = sortedData.map((slice, index) => {
+    const moveDuration = (slice.value / 100) * totalMoveTime;
+    const midMoveKeyTime = currentKeyTime + moveDuration / 2;
+    const animDelay = (midMoveKeyTime * 3.5).toFixed(2);
+    
+    currentKeyTime += moveDuration;
+    currentPercentForAnim += slice.value;
+    const currentOffset = maskCircumference * (1 - currentPercentForAnim / 100);
+    
+    wipeValues.push(currentOffset);
+    keyTimes.push(Math.min(currentKeyTime, 1));
+    
+    if (index < numPauses) {
+      currentKeyTime += pauseDuration;
+      wipeValues.push(currentOffset);
+      keyTimes.push(Math.min(currentKeyTime, 1));
+    }
+
+    return {
+      ...slice,
+      animDelay
+    };
+  });
+
+  const animValuesString = wipeValues.join(';');
+  const animKeyTimesString = keyTimes.map(n => n.toFixed(4)).join(';');
+
+  let cumulativeForPie = 0;
+  let cumulativeForGaps = 0;
+  let cumulativeForLabels = 0;
+
+  return (
+    <section className="w-full bg-white py-20 border-t border-gray-100">
+      <div className="max-w-6xl mx-auto px-6 flex flex-col items-center">
+        <h3 className="font-poppins font-semibold text-lg text-gray-900 tracking-wide mb-2 transition-all duration-300">
+          {activeSlide === 0 ? "Sector destinations" : "Package distribution"}
+        </h3>
+        <h2 className="font-poppins font-bold text-3xl sm:text-5xl text-[#E73649] text-center mb-3 transition-all duration-300">
+          {activeSlide === 0 ? "Where graduates go and what they earn." : "% of placed students per band"}
+        </h2>
+        <p className="font-[family-name:var(--font-poppins)] text-sm sm:text-base text-gray-800 text-center mb-16 transition-all duration-300">
+          {activeSlide === 0 
+            ? "Two views of one cohort — package bands on the left, sector destinations on the right."
+            : "Highest: ₹60 LPA · Median confirmed in official placement report."}
+        </p>
+
+        <div className="relative w-full max-w-5xl mx-auto mb-10" key={`slide-${activeSlide}`}>
+          <svg viewBox="0 0 900 600" className="w-full h-auto overflow-visible">
+            
+            <style>
+              {`
+                @keyframes popOutCenter {
+                  0% {
+                    transform: scale(0);
+                  }
+                  50% {
+                    transform: scale(1.15);
+                  }
+                  75% {
+                    transform: scale(0.95);
+                  }
+                  100% {
+                    transform: scale(1);
+                  }
+                }
+                .animate-pop-center {
+                  transform-origin: 450px 300px;
+                  transform: scale(0);
+                  animation: popOutCenter 0.6s ease-in-out 3.5s forwards;
+                }
+              `}
+            </style>
+
+            <defs>
+              <mask id="pie-wipe-mask">
+                <circle
+                  cx={cx}
+                  cy={cy}
+                  r={maskR}
+                  fill="none"
+                  stroke="white"
+                  strokeWidth={R + 10}
+                  strokeDasharray={maskCircumference}
+                  strokeDashoffset={maskCircumference}
+                  transform={`rotate(-90 ${cx} ${cy})`}
+                >
+                  <animate
+                    attributeName="stroke-dashoffset"
+                    values={animValuesString}
+                    dur="3.5s"
+                    fill="freeze"
+                    calcMode="linear"
+                    keyTimes={animKeyTimesString}
+                  />
+                </circle>
+              </mask>
+            </defs>
+
+            {/* Outer soft shadow circle/glow */}
+            <circle cx={cx} cy={cy} r={R + 12} fill="white" filter="drop-shadow(0 4px 20px rgba(0,0,0,0.06))" />
+            <circle cx={cx} cy={cy} r={R + 1} fill="none" stroke="#F1F5F9" strokeWidth="2" />
+
+            {/* Masked group for pie slices and gaps so they visually 'fill up' */}
+            <g mask="url(#pie-wipe-mask)">
+              {/* Pie Slices */}
+              <g transform={`rotate(-90 ${cx} ${cy})`}>
+                {(() => {
+                  let tempSum = 0;
+                  return animatedData.map((slice, i) => {
+                    const startPercent = tempSum / 100;
+                    tempSum += slice.value;
+                    const endPercent = tempSum / 100;
+
+                    const startAngle = startPercent * 360;
+                    const endAngle = endPercent * 360;
+
+                    const startRad = startAngle * (Math.PI / 180);
+                    const endRad = endAngle * (Math.PI / 180);
+
+                  const x1 = Number((cx + R * Math.cos(startRad)).toFixed(4));
+                  const y1 = Number((cy + R * Math.sin(startRad)).toFixed(4));
+                  const x2 = Number((cx + R * Math.cos(endRad)).toFixed(4));
+                  const y2 = Number((cy + R * Math.sin(endRad)).toFixed(4));
+
+                  const largeArcFlag = endAngle - startAngle > 180 ? 1 : 0;
+                  const d = `M ${cx} ${cy} L ${x1} ${y1} A ${R} ${R} 0 ${largeArcFlag} 1 ${x2} ${y2} Z`;
+
+                  return (
+                    <path
+                      key={`slice-${i}`}
+                      d={d}
+                      fill={slice.color}
+                      className="transition-all duration-300 hover:opacity-90 cursor-pointer"
+                    />
+                  );
+                })})()}
+              </g>
+
+              {/* Gaps (White lines radiating from center) */}
+              <g transform={`rotate(-90 ${cx} ${cy})`}>
+                {(() => {
+                  let tempGaps = 0;
+                  return animatedData.map((slice, i) => {
+                    tempGaps += slice.value;
+                    const endPercent = tempGaps / 100;
+                    const rad = endPercent * 360 * (Math.PI / 180);
+                    const x = Number((cx + R * Math.cos(rad)).toFixed(4));
+                    const y = Number((cy + R * Math.sin(rad)).toFixed(4));
+                    return (
+                      <line
+                        key={`gap-${i}`}
+                        x1={cx}
+                        y1={cy}
+                        x2={x}
+                        y2={y}
+                        stroke="white"
+                        strokeWidth="3.5"
+                      />
+                    );
+                  })
+                })()}
+              </g>
+            </g>
+
+            {/* Center Circle Overlay */}
+            <g className="animate-pop-center">
+              <circle cx={cx} cy={cy} r={R * 0.45} fill="white" stroke="#F8FAFC" strokeWidth="12" />
+              
+              {/* Center Company Logos Image */}
+              <image
+                href="/placements/comp.png"
+                x={cx - (R * 0.43)}
+                y={cy - (R * 0.43)}
+                width={R * 0.86}
+                height={R * 0.86}
+                preserveAspectRatio="xMidYMid meet"
+              />
+            </g>
+
+            {/* Labels and connecting lines */}
+            {animatedData.map((slice, i) => {
+              const startPercent = cumulativeForLabels / 100;
+              cumulativeForLabels += slice.value;
+              const endPercent = cumulativeForLabels / 100;
+              const midPercent = (startPercent + endPercent) / 2;
+
+              const midAngle = midPercent * 360;
+              const rad = (midAngle - 90) * (Math.PI / 180);
+
+              const dotX = Number((cx + dotR * Math.cos(rad)).toFixed(4));
+              const dotY = Number((cy + dotR * Math.sin(rad)).toFixed(4));
+
+              const elbowX = Number((cx + elbowR * Math.cos(rad)).toFixed(4));
+              const elbowY = Number((cy + elbowR * Math.sin(rad)).toFixed(4));
+
+              const isRight = midAngle >= 0 && midAngle < 180;
+              const endX = isRight ? elbowX + lineLength : elbowX - lineLength;
+              const endY = elbowY;
+
+              const animDelay = slice.animDelay;
+
+              return (
+                <g key={`label-${i}`} opacity="0">
+                  <animate
+                    attributeName="opacity"
+                    from="0"
+                    to="1"
+                    dur="0.6s"
+                    begin={`${animDelay}s`}
+                    fill="freeze"
+                  />
+                  {/* Polyline from dot to elbow to horizontal end */}
+                  <polyline
+                    points={`${dotX},${dotY} ${elbowX},${elbowY} ${endX},${endY}`}
+                    fill="none"
+                    stroke="#9CA3AF"
+                    strokeWidth="2"
+                    strokeLinejoin="round"
+                  />
+                  {/* Dot inside slice */}
+                  <circle 
+                    cx={dotX} 
+                    cy={dotY} 
+                    r="3.5" 
+                    fill="white" 
+                    stroke="#9CA3AF" 
+                    strokeWidth="2" 
+                  />
+                  {/* Label Text (Above line) */}
+                  <text
+                    x={isRight ? endX + 10 : endX - 10}
+                    y={endY - 8}
+                    textAnchor={isRight ? "start" : "end"}
+                    fill="#1F1F1F"
+                    fontSize="15"
+                    fontFamily="sans-serif"
+                    fontWeight="600"
+                  >
+                    {slice.label}
+                  </text>
+                  {/* Percentage Text (Below line) */}
+                  <text
+                    x={isRight ? endX + 10 : endX - 10}
+                    y={endY + 28}
+                    textAnchor={isRight ? "start" : "end"}
+                    fill="#E73649"
+                    fontSize="32"
+                    fontWeight="800"
+                    fontStyle="italic"
+                    fontFamily="sans-serif"
+                  >
+                    {slice.value}%
+                  </text>
+                </g>
+              );
+            })}
+          </svg>
+
+          {/* Dots below chart */}
+          <div className="flex justify-center items-center gap-3 mt-6">
+            <button 
+              onClick={() => setActiveSlide(0)}
+              className={`w-3 h-3 rounded-full transition-colors ${activeSlide === 0 ? 'bg-[#E73649]' : 'border border-gray-300 bg-white hover:bg-gray-100'}`} 
+              aria-label="View Sector Destinations"
+            />
+            <button 
+              onClick={() => setActiveSlide(1)}
+              className={`w-3 h-3 rounded-full transition-colors ${activeSlide === 1 ? 'bg-[#E73649]' : 'border border-gray-300 bg-white hover:bg-gray-100'}`} 
+              aria-label="View Package Distribution"
+            />
+          </div>
+        </div>
+
+        <p className="text-xs sm:text-sm text-gray-500 mb-14 transition-all duration-300">
+          Indicative — verified annually in the placement report.
+        </p>
+
+        {/* CTA Bar */}
+        <div className="w-full max-w-[1000px] bg-black rounded-[20px] py-5 px-6 md:px-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl mx-auto mt-2">
+          <div className="text-center md:text-left">
+            <h4 className="text-white font-poppins font-semibold text-[22px] tracking-tight">Want PU Goa to recruit you next?</h4>
+            <p className="text-[#A1A1AA] font-sans text-[15px] mt-0.5 font-light">
+              Apply now or talk to a career counsellor.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+            <button className="bg-[#EE384E] hover:bg-[#D32F2F] text-white px-8 py-3 rounded-full font-sans font-medium text-[15px] transition-colors text-center">
+              Apply Now
+            </button>
+            <button className="bg-gradient-to-br from-white/10 to-white/0 hover:from-white/15 hover:to-white/5 backdrop-blur-md text-white px-6 py-3 rounded-full font-sans font-medium text-[15px] transition-all text-center border border-white/5 border-t-white/20 border-l-white/20 shadow-[0_4px_14px_rgba(0,0,0,0.5)]">
+              Chat on WhatsApp
+            </button>
+            <button className="bg-gradient-to-br from-white/10 to-white/0 hover:from-white/15 hover:to-white/5 backdrop-blur-md text-white px-6 py-3 rounded-full font-sans font-medium text-[15px] transition-all flex items-center justify-center gap-2.5 border border-white/5 border-t-white/20 border-l-white/20 shadow-[0_4px_14px_rgba(0,0,0,0.5)]">
+              <svg className="w-[18px] h-[18px] text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+              1800 890 9090
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

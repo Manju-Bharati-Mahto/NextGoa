@@ -107,15 +107,15 @@ export function AdmissionJourneyTimeline() {
       <div className="max-w-[1400px] mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-xl sm:text-2xl font-bold text-ink mb-2">2026-27 Timeline</h2>
-          <h3 className="text-4xl sm:text-5xl font-bold text-brand mb-4">Your Admission Journey, Your Way!</h3>
+          <h2 className="text-xl sm:text-2xl font-bold text-ink mb-2 font-poppins">2026-27 Timeline</h2>
+          <h3 className="text-4xl sm:text-5xl font-semibold text-brand mb-4 font-poppins">Your Admission Journey, Your Way!</h3>
           <p className="text-ink text-lg">Pick your current stage and then follow the next action!</p>
         </div>
 
         {/* Selection Box */}
         <div className="bg-white rounded-3xl border border-gray-200 p-6 sm:p-8 flex flex-col lg:flex-row items-center justify-between lg:items-start gap-6 lg:gap-12 mb-20 shadow-sm w-full mx-auto max-w-[1200px]">
           <div className="lg:w-1/3 text-center lg:text-left">
-            <h4 className="font-bold text-xl text-ink mb-2">Where are you right now?</h4>
+            <h4 className="font-semibold text-xl text-ink mb-2 font-poppins">Where are you right now?</h4>
             <p className="text-gray-600">Select your current status, the timeline, process card, and next step update altogether.</p>
           </div>
           
@@ -210,7 +210,7 @@ export function AdmissionJourneyTimeline() {
           {/* Red Card */}
           <div className="bg-[#ee364f] rounded-[20px] p-8 sm:px-12 sm:py-10 text-white min-h-[220px] flex flex-col justify-start transition-all duration-300 transform shadow-lg">
             <p className="text-brand-yellow font-medium mb-3">Step {activeStep + 1}</p>
-            <h4 className="text-3xl sm:text-4xl font-bold mb-3">{currentStepData.redCardTitle}</h4>
+            <h4 className="text-3xl sm:text-4xl font-semibold mb-3 font-poppins">{currentStepData.redCardTitle}</h4>
             <p className="text-white/90 text-lg leading-relaxed">
               {currentStepData.redCardDescription}
             </p>

@@ -7,8 +7,8 @@ export default function StudyAbroadGlance() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h3 className="text-2xl font-bold text-ink mb-4">At a Glance</h3>
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#E9324D]">
+          <h3 className="text-2xl font-semibold text-ink mb-4 font-poppins">At a Glance</h3>
+          <h2 className="text-4xl sm:text-5xl font-bold text-[#E9324D] font-poppins">
             Your global degree, in numbers.
           </h2>
         </div>
@@ -21,7 +21,7 @@ export default function StudyAbroadGlance() {
           {/* 1. Blue Box (Partner Universities) */}
           <div className="lg:col-span-2 rounded-2xl bg-[#0EB1E1] p-8 relative overflow-hidden flex flex-col justify-center min-h-[200px]">
             <div className="relative z-10">
-              <h4 className="text-6xl sm:text-7xl font-bold text-white mb-2 leading-none">120+</h4>
+              <h4 className="text-6xl sm:text-7xl font-semibold text-white mb-2 leading-none font-poppins">120+</h4>
               <p className="text-sm font-bold text-white tracking-wide mb-1 uppercase">Partner Universities</p>
               <p className="text-sm text-white/90">Across the Parul Ecosystem</p>
             </div>
@@ -37,7 +37,7 @@ export default function StudyAbroadGlance() {
 
           {/* 2. Yellow Box (Partner Countries) */}
           <div className="rounded-2xl bg-[#FFD523] p-8 flex flex-col justify-center min-h-[200px]">
-            <h4 className="text-6xl sm:text-7xl font-bold text-ink mb-2 leading-none">7</h4>
+            <h4 className="text-6xl sm:text-7xl font-semibold text-ink mb-2 leading-none font-poppins">7</h4>
             <p className="text-sm font-bold text-ink tracking-wide mb-2 uppercase">Partner Countries</p>
             <p className="text-sm text-ink/80 leading-snug">
               USA • UK • Canada • Germany •<br />France • Australia • NZ
@@ -46,7 +46,7 @@ export default function StudyAbroadGlance() {
 
           {/* 3. Yellow Box (Pathway Models) */}
           <div className="rounded-2xl bg-[#FFD523] p-8 flex flex-col justify-center min-h-[200px]">
-            <h4 className="text-6xl sm:text-7xl font-bold text-ink mb-2 leading-none">4</h4>
+            <h4 className="text-6xl sm:text-7xl font-semibold text-ink mb-2 leading-none font-poppins">4</h4>
             <p className="text-sm font-bold text-ink tracking-wide mb-2 uppercase">Pathway Models</p>
             <p className="text-sm text-ink/80 leading-snug">
               2+2 • 1+1 • 3+1+1 • 3.5+1.5
@@ -57,14 +57,14 @@ export default function StudyAbroadGlance() {
 
           {/* 4. Dark Gray Box (EMI) */}
           <div className="rounded-2xl bg-[#1C1C1C] p-8 flex flex-col justify-center min-h-[200px]">
-            <h4 className="text-6xl sm:text-7xl font-bold text-white mb-2 leading-none">8%</h4>
+            <h4 className="text-6xl sm:text-7xl font-semibold text-white mb-2 leading-none font-poppins">8%</h4>
             <p className="text-sm font-bold text-white tracking-wide mb-2 uppercase">EMI for Abroad Tuition</p>
             <p className="text-sm text-white/70">Semester-wise</p>
           </div>
 
           {/* 5. Dark Gray Box (Students) */}
           <div className="rounded-2xl bg-[#1C1C1C] p-8 flex flex-col justify-center min-h-[200px]">
-            <h4 className="text-6xl sm:text-7xl font-bold text-white mb-2 leading-none">800+</h4>
+            <h4 className="text-6xl sm:text-7xl font-semibold text-white mb-2 leading-none font-poppins">800+</h4>
             <p className="text-sm font-bold text-white tracking-wide mb-2 uppercase">Students Gone Global</p>
             <p className="text-sm text-white/70">Pathways, exchange & internships</p>
           </div>
@@ -73,7 +73,7 @@ export default function StudyAbroadGlance() {
           <div className="lg:col-span-2 rounded-2xl bg-[#E9324D] overflow-hidden flex flex-col sm:flex-row min-h-[200px]">
             {/* Left side text */}
             <div className="w-full sm:w-1/2 p-8 flex flex-col justify-center">
-              <h4 className="text-5xl sm:text-6xl font-bold text-white mb-2 leading-none">₹6.3 cr</h4>
+              <h4 className="text-5xl sm:text-6xl font-semibold text-white mb-2 leading-none font-poppins">₹6.3 cr</h4>
               <p className="text-sm font-bold text-white tracking-wide mb-2 uppercase">Students Gone Global</p>
               <p className="text-sm text-white/90">Pathways, exchange & internships</p>
             </div>

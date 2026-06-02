@@ -62,7 +62,7 @@ export function WhyGoa({ variant = "blue" }: { variant?: "blue" | "red" }) {
 
         <div className="text-white">
           <Eyebrow className="!text-left text-white">Why Goa</Eyebrow>
-          <h2 className="mt-2 font-sans font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-sunshine sm:whitespace-nowrap">
+          <h2 className="mt-2 font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-sunshine sm:whitespace-nowrap">
             We chose Goa because
             <br />
             no classroom can teach

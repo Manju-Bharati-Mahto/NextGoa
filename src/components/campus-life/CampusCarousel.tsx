@@ -18,8 +18,8 @@ export function CampusCarousel() {
       <div className="relative z-10 mx-auto w-full flex flex-col items-center py-32 sm:py-48">
         {/* Header content */}
         <div className="text-center px-6 max-w-3xl mb-12">
-          <h3 className="font-sans font-bold text-[20px] sm:text-[24px] text-white mb-2">The Campus</h3>
-          <h2 className="font-sans font-black text-[34px] sm:text-[46px] lg:text-[54px] leading-[1.1] tracking-tight text-white mb-6">
+          <h3 className="font-poppins font-semibold text-[20px] sm:text-[24px] text-white mb-2">The Campus</h3>
+          <h2 className="font-poppins font-bold text-[34px] sm:text-[46px] lg:text-[54px] leading-[1.1] tracking-tight text-white mb-6">
             A Campus Built for Inspiration
           </h2>
           <p className="font-[family-name:var(--font-poppins)] text-white text-[14px] sm:text-[16px] leading-relaxed mx-auto max-w-2xl">
@@ -47,7 +47,7 @@ export function CampusCarousel() {
             >
               <div className="absolute bottom-6 left-6 sm:bottom-8 sm:left-8 flex items-center gap-3 z-10">
                 <div className="w-[3px] h-[20px] sm:h-[24px] bg-[#FEDB2F]"></div>
-                <h4 className="font-[family-name:var(--font-poppins)] text-white text-[18px] sm:text-[22px] font-medium tracking-wide leading-none mt-0.5">
+                <h4 className="font-[family-name:var(--font-poppins)] text-white text-[18px] sm:text-[22px] font-semibold tracking-wide leading-none mt-0.5">
                   {item.title}
                 </h4>
               </div>

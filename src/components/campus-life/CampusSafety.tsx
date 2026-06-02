@@ -9,18 +9,24 @@ export function CampusSafety() {
 
       {/* Background Safe Graphic */}
       <div className="absolute inset-x-0 top-[10%] bottom-0 flex justify-center pointer-events-none z-0 opacity-50">
-        <div className="relative w-full max-w-[1000px] h-full">
-          <Image src="/safe1.svg" alt="" fill className="object-contain object-bottom" />
+        <div className="relative w-full max-w-[1000px] h-full flex justify-center items-end">
+          <Image 
+            src="/campus-life/safe3.png" 
+            alt="Campus Safety Graphic" 
+            fill 
+            className="object-contain object-bottom" 
+            priority
+          />
         </div>
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto flex flex-col items-center">
         {/* Title Section */}
         <div className="text-center mb-12 sm:mb-16">
-          <h3 className="font-sans font-bold text-[20px] sm:text-[24px] text-[#1F1F1F] mb-2">
+          <h3 className="font-poppins font-semibold text-[20px] sm:text-[24px] text-[#1F1F1F] mb-2">
             Safety & Security
           </h3>
-          <h2 className="font-sans font-black text-[34px] sm:text-[46px] lg:text-[54px] leading-[1.1] tracking-tight text-[#1B8136] mb-4">
+          <h2 className="font-poppins font-bold text-[34px] sm:text-[46px] lg:text-[54px] leading-[1.1] tracking-tight text-[#1B8136] mb-4">
             Safe for students,<br />reassuring for parents.
           </h2>
           <p className="font-[family-name:var(--font-poppins)] text-[#1F1F1F]/80 text-[15px] sm:text-[18px] max-w-none mx-auto leading-relaxed">
@@ -37,7 +43,7 @@ export function CampusSafety() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#4A64A4]/90 via-[#4A64A4]/70 to-transparent z-10"></div>
             {/* Content */}
             <div className="absolute inset-0 p-6 sm:p-10 flex flex-col justify-end z-20 max-w-[70%]">
-              <h3 className="font-sans font-medium text-[24px] sm:text-[32px] text-white leading-tight mb-3">
+              <h3 className="font-poppins font-semibold text-[24px] sm:text-[32px] text-white leading-tight mb-3">
                 24x7 Security & Surveillance
               </h3>
               <p className="font-[family-name:var(--font-poppins)] text-white/90 text-[14px] sm:text-[16px] max-w-[90%]">
@@ -50,7 +56,7 @@ export function CampusSafety() {
           <div className="group relative w-full aspect-[16/9] sm:aspect-[2/1] md:aspect-[4/3] lg:aspect-[16/9] rounded-[24px] sm:rounded-[32px] overflow-hidden bg-black/10 shadow-lg">
             <div className="absolute inset-0 bg-gradient-to-r from-[#598448]/90 via-[#598448]/70 to-transparent z-10"></div>
             <div className="absolute inset-0 p-6 sm:p-10 flex flex-col justify-end z-20 max-w-[70%]">
-              <h3 className="font-sans font-medium text-[24px] sm:text-[32px] text-white leading-tight mb-3">
+              <h3 className="font-poppins font-semibold text-[24px] sm:text-[32px] text-white leading-tight mb-3">
                 Female Wardens
               </h3>
               <p className="font-[family-name:var(--font-poppins)] text-white/90 text-[14px] sm:text-[16px] max-w-[90%]">
@@ -63,7 +69,7 @@ export function CampusSafety() {
           <div className="group relative w-full aspect-[16/9] sm:aspect-[2/1] md:aspect-[4/3] lg:aspect-[16/9] rounded-[24px] sm:rounded-[32px] overflow-hidden bg-black/10 shadow-lg">
             <div className="absolute inset-0 bg-gradient-to-r from-[#94552A]/90 via-[#94552A]/70 to-transparent z-10"></div>
             <div className="absolute inset-0 p-6 sm:p-10 flex flex-col justify-end z-20 max-w-[70%]">
-              <h3 className="font-sans font-medium text-[24px] sm:text-[32px] text-white leading-tight mb-3">
+              <h3 className="font-poppins font-semibold text-[24px] sm:text-[32px] text-white leading-tight mb-3">
                 Hostel Access
               </h3>
               <p className="font-[family-name:var(--font-poppins)] text-white/90 text-[14px] sm:text-[16px] max-w-[90%]">
@@ -76,7 +82,7 @@ export function CampusSafety() {
           <div className="group relative w-full aspect-[16/9] sm:aspect-[2/1] md:aspect-[4/3] lg:aspect-[16/9] rounded-[24px] sm:rounded-[32px] overflow-hidden bg-black/10 shadow-lg">
             <div className="absolute inset-0 bg-gradient-to-r from-[#393C41]/90 via-[#393C41]/70 to-transparent z-10"></div>
             <div className="absolute inset-0 p-6 sm:p-10 flex flex-col justify-end z-20 max-w-[70%]">
-              <h3 className="font-sans font-medium text-[24px] sm:text-[32px] text-white leading-tight mb-3">
+              <h3 className="font-poppins font-semibold text-[24px] sm:text-[32px] text-white leading-tight mb-3">
                 Internal Complaints Committee
               </h3>
               <p className="font-[family-name:var(--font-poppins)] text-white/90 text-[14px] sm:text-[16px] max-w-[90%]">

@@ -21,14 +21,14 @@ export function Admissions() {
             Admissions 2026 — Live
           </span>
         </Eyebrow>
-        <h2 className="mt-2 text-center font-sans font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
+        <h2 className="mt-2 text-center font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
           Key dates you can plan around.
         </h2>
 
         <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
           {/* Left — entrance test pitch */}
           <div className="flex flex-col justify-center text-left">
-            <h3 className="font-sans font-medium text-[24px] sm:text-[32px] leading-tight tracking-tight text-ink">
+            <h3 className="font-poppins font-semibold text-[24px] sm:text-[32px] leading-tight tracking-tight text-ink">
               Apply for PU Goa&apos;s<br />Entrance Test
             </h3>
             <p className="mt-4 max-w-md font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] leading-[1.65] text-ink/70">

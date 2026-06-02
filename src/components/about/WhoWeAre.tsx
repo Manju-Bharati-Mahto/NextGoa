@@ -13,7 +13,7 @@ export function WhoWeAre() {
         {/* Left Side: Text */}
         <div className="text-white order-2 md:order-1">
           <Eyebrow className="!text-left text-white">Who We Are</Eyebrow>
-          <h2 className="mt-2 font-sans font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-sunshine">
+          <h2 className="mt-2 font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-sunshine">
             The Goan Chapter Of
             <br />
             Excellence

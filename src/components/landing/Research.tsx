@@ -39,7 +39,7 @@ export function Research() {
           <img src="/Fade1.svg" alt="" aria-hidden="true" className="h-[97px] w-auto" />
         </div>
         <Eyebrow className="mt-3 text-ink">Beyond the classroom</Eyebrow>
-        <h2 className="mt-2 text-center font-sans font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
+        <h2 className="mt-2 text-center font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
           Research that funds itself. Ventures that ship.
         </h2>
 

@@ -52,7 +52,7 @@ const DegreeCard = ({ data }: { data: typeof degrees[0] }) => (
     <div className="bg-[#fe4155] p-6 flex items-center justify-between text-white relative overflow-hidden">
       <div className="flex items-center gap-3 relative z-10">
         <DocumentIcon />
-        <h4 className="text-[22px] font-bold font-[family-name:var(--font-poppins)] tracking-tight">{data.title}</h4>
+        <h4 className="text-[22px] font-semibold font-[family-name:var(--font-poppins)] tracking-tight">{data.title}</h4>
       </div>
       <div className="bg-white/20 border border-white/30 px-3 py-1 rounded-full text-[11px] font-bold tracking-widest uppercase relative z-10">
         {data.count}
@@ -87,8 +87,8 @@ export default function DegreeLevelSection() {
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 font-[family-name:var(--font-poppins)]">
         {/* Header Content */}
         <div className="text-center text-white mb-16 sm:mb-20">
-          <h2 className="text-xl sm:text-[22px] font-bold mb-3 tracking-wide">By Degree Level</h2>
-          <h3 className="text-4xl sm:text-[3.2rem] font-extrabold text-[#FFD523] mb-5 tracking-tight leading-tight">
+          <h2 className="text-xl sm:text-[22px] font-bold mb-3 tracking-wide font-poppins">By Degree Level</h2>
+          <h3 className="text-4xl sm:text-[3.2rem] font-semibold text-[#FFD523] mb-5 tracking-tight leading-tight font-poppins">
             Choose by qualification.
           </h3>
           <p className="text-[15px] sm:text-[17px] max-w-2xl mx-auto opacity-95 font-medium">

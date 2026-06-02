@@ -9,7 +9,7 @@ export function Hero() {
     >
       {/* Hero content */}
       <div className="relative z-10 w-full max-w-7xl px-4 pt-16 sm:px-6 sm:pt-24 lg:pt-32 text-center">
-        <h1 className="font-[family-name:var(--font-poppins)] mx-auto w-full max-w-none text-4xl font-semibold leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-[3.5rem] lg:whitespace-nowrap">
+        <h1 className="font-[family-name:var(--font-poppins)] mx-auto w-full max-w-none text-4xl font-bold leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-[3.5rem] lg:whitespace-nowrap">
           For <span className="text-brand">GOA</span>L Getters, For Unstoppables.
           <br />
           <span className="text-brand">For Futures That Refuse Average</span>

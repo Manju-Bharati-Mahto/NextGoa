@@ -11,7 +11,7 @@ export default function TrendingSection() {
           {/* Left Column */}
           <div className="flex flex-col text-white lg:pr-4 relative z-10">
             <h2 className="text-xl sm:text-[22px] font-[family-name:var(--font-poppins)] tracking-wide">Trending now</h2>
-            <h3 className="text-4xl sm:text-5xl lg:text-[4rem] font-bold text-[#FFD523] mt-2 leading-[1.1] font-[family-name:var(--font-poppins)]">
+            <h3 className="text-4xl sm:text-5xl lg:text-[4rem] font-semibold text-[#FFD523] mt-2 leading-[1.1] font-[family-name:var(--font-poppins)]">
               Limited seats for<br/>2026-27
             </h3>
             
@@ -34,7 +34,7 @@ export default function TrendingSection() {
                   <span className="bg-sunshine text-[11px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest text-ink">Most Applied</span>
                 </div>
                 
-                <h4 className="text-3xl sm:text-[38px] font-extrabold  tracking-tight mb-1 font-[family-name:var(--font-poppins)] relative z-10">B.Tech CSE</h4>
+                <h4 className="text-3xl sm:text-[38px] font-semibold tracking-tight mb-1 font-[family-name:var(--font-poppins)] relative z-10">B.Tech CSE</h4>
                 <p className="text-lg sm:text-[20px] font-medium mb-6 text-ink/80 relative z-10">AI & ML</p>
                 
                 <button className="bg-[#0EB1E1] hover:bg-[#0BA1CD] transition-colors text-white text-[14px] font-medium px-6 py-2.5 rounded-full flex items-center gap-2 w-max relative z-10">

@@ -15,7 +15,7 @@ export default function StudyAbroadHero() {
           Global Pathways
         </span>
 
-        <h1 className="text-4xl sm:text-5xl lg:text-[45px] font-bold text-[#E9324D] leading-[1.2] mb-6">
+        <h1 className="text-4xl sm:text-5xl lg:text-[45px] font-bold text-[#E9324D] leading-[1.2] mb-6 font-poppins">
           Study Abroad from PU Goa<br />
           Global Pathway Programmes
         </h1>

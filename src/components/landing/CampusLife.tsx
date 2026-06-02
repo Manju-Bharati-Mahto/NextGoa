@@ -47,7 +47,7 @@ function CardItem({ card }: { card: (typeof cards)[number] }) {
   return (
     <li className={`relative overflow-hidden rounded-[20px] p-8 sm:p-10 min-h-[280px] sm:min-h-[320px] ${cls}`}>
       <div className={`relative z-10 ${textClass}`}>
-        <h3 className="font-sans font-medium text-[24px] sm:text-[32px] leading-tight tracking-tight">{title}</h3>
+        <h3 className="font-poppins font-semibold text-[24px] sm:text-[32px] leading-tight tracking-tight">{title}</h3>
         <p className="mt-3 font-[family-name:var(--font-poppins)] font-normal text-base sm:text-[18px] leading-relaxed opacity-90">
           {body}
         </p>
@@ -62,7 +62,7 @@ export function CampusLife() {
     <section id="campus-life" className="bg-brand-white">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <Eyebrow className="text-ink">Campus Life</Eyebrow>
-        <h2 className="mt-2 text-center font-sans font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
+        <h2 className="mt-2 text-center font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
           A campus that feels like a destination.
         </h2>
         <p className="mx-auto mt-4 w-full text-center font-[family-name:var(--font-poppins)] font-normal text-base sm:text-[17px] text-ink leading-relaxed">

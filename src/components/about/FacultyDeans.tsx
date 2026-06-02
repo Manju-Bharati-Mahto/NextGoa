@@ -42,7 +42,7 @@ export function FacultyDeans() {
     <section className="bg-[#F8F8F8] py-20 px-6">
       <div className="mx-auto max-w-6xl">
         <div className="text-center mb-12">
-          <h2 className="font-sans font-bold text-[32px] sm:text-[44px] leading-tight text-ink">
+          <h2 className="font-poppins font-bold text-[32px] sm:text-[44px] leading-tight text-ink">
             Faculty Deans
           </h2>
           <p className="mt-2 font-[family-name:var(--font-poppins)] text-[16px] sm:text-[18px] text-ink/80">
@@ -70,7 +70,7 @@ export function FacultyDeans() {
                   </span>
                 </div>
 
-                <h3 className="font-sans font-bold text-[22px] sm:text-[24px] leading-tight text-[#1F1F1F]">
+                <h3 className="font-poppins font-semibold text-[22px] sm:text-[24px] leading-tight text-[#1F1F1F]">
                   {dean.name}
                 </h3>
                 <p className="font-sans font-bold text-[14px] sm:text-[15px] text-[#0CAADD] mt-1">

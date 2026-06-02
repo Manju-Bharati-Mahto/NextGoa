@@ -107,10 +107,10 @@ export function Governance() {
 
       <div className="relative z-10 mx-auto max-w-5xl px-6 pt-60 pb-52 sm:pt-64 sm:pb-56">
         <div className="text-center mb-14 text-white">
-          <h3 className="font-sans text-[24px] font-medium leading-tight text-white sm:text-brand-subheading">
+          <h3 className="font-poppins text-[24px] font-semibold leading-tight text-white sm:text-brand-subheading">
             Governance and Recognition
           </h3>
-          <h2 className="mt-5 font-sans text-[38px] font-bold leading-tight text-white sm:text-[48px] lg:text-brand-heading">
+          <h2 className="mt-5 font-poppins text-[38px] font-bold leading-tight text-white sm:text-[48px] lg:text-brand-heading">
             The Holistic Framework Behind PU Goa!
           </h2>
         </div>
@@ -138,7 +138,7 @@ export function Governance() {
                 </div>
 
                 {/* Title */}
-                <h4 className="font-sans font-bold text-[24px] sm:text-[28px] lg:text-[32px] leading-tight text-[#1F1F1F] mb-4 sm:mb-5">
+                <h4 className="font-poppins font-semibold text-[24px] sm:text-[28px] lg:text-[32px] leading-tight text-[#1F1F1F] mb-4 sm:mb-5">
                   {card.title}
                 </h4>
 

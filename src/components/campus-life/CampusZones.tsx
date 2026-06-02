@@ -4,10 +4,10 @@ export function CampusZones() {
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         {/* Header */}
         <div className="flex flex-col items-center text-center max-w-5xl mx-auto mb-16">
-          <h3 className="font-sans font-bold text-[20px] sm:text-[24px] text-[#1F1F1F] mb-2">
+          <h3 className="font-poppins font-semibold text-[20px] sm:text-[24px] text-[#1F1F1F] mb-2">
             Five Campus Zones
           </h3>
-          <h2 className="font-sans font-black text-[34px] sm:text-[46px] lg:text-[54px] leading-[1.1] tracking-tight text-[#E73649] mb-4 lg:whitespace-nowrap">
+          <h2 className="font-poppins font-bold text-[34px] sm:text-[46px] lg:text-[54px] leading-[1.1] tracking-tight text-[#E73649] mb-4 lg:whitespace-nowrap">
             A Campus Designed On Five Pillars
           </h2>
           <p className="font-[family-name:var(--font-poppins)] text-[#1F1F1F]/80 text-[16px] sm:text-[18px] leading-relaxed">
@@ -24,7 +24,7 @@ export function CampusZones() {
               <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#333333] text-[#FEDB2F] font-[family-name:var(--font-poppins)] text-sm mb-8">
                 01 - Academic Zone
               </div>
-              <h3 className="font-sans font-medium text-[28px] sm:text-[36px] leading-[1.2] tracking-tight text-white mb-4">
+              <h3 className="font-poppins font-semibold text-[28px] sm:text-[36px] leading-[1.2] tracking-tight text-white mb-4">
                 Smart classrooms, advanced labs, central auditorium and digital libraries.
               </h3>
               <p className="font-[family-name:var(--font-poppins)] text-white/50 text-[15px] sm:text-[16px] mb-8">
@@ -85,7 +85,7 @@ export function CampusZones() {
                 <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/20 text-white font-[family-name:var(--font-poppins)] text-sm mb-6">
                   02 - Student Residences
                 </div>
-                <h3 className="font-sans font-medium text-[28px] sm:text-[36px] leading-[1.2] tracking-tight text-[#FEDB2F] mb-4">
+                <h3 className="font-poppins font-semibold text-[28px] sm:text-[36px] leading-[1.2] tracking-tight text-[#FEDB2F] mb-4">
                   Your home away from home.
                 </h3>
                 <p className="font-[family-name:var(--font-poppins)] text-white text-[15px] sm:text-[16px] leading-relaxed mb-8">
@@ -103,7 +103,7 @@ export function CampusZones() {
                 <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#1F1F1F]/5 text-[#1F1F1F]/80 font-[family-name:var(--font-poppins)] text-sm mb-6">
                   03 - Dining Facilities
                 </div>
-                <h3 className="font-sans font-medium text-[28px] sm:text-[36px] leading-[1.2] tracking-tight text-[#E73649] mb-4">
+                <h3 className="font-poppins font-semibold text-[28px] sm:text-[36px] leading-[1.2] tracking-tight text-[#E73649] mb-4">
                   Multi-cuisine cafeterias.
                 </h3>
                 <p className="font-[family-name:var(--font-poppins)] text-[#1F1F1F] text-[15px] sm:text-[16px] leading-relaxed mb-8">

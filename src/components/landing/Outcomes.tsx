@@ -40,7 +40,7 @@ export function Outcomes() {
       {/* Constrained Header Container */}
       <div className="mx-auto max-w-5xl px-6 pt-20">
         <Eyebrow className="text-ink">Outcomes</Eyebrow>
-        <h2 className="mt-2 text-center font-sans font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
+        <h2 className="mt-2 text-center font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
           Where graduates go by sector, not by accident.
         </h2>
         <p className="mx-auto mt-3 max-w-2xl text-center font-[family-name:var(--font-poppins)] font-normal text-base sm:text-lg text-ink leading-relaxed">

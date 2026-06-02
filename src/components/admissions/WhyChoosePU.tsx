@@ -7,7 +7,7 @@ export function WhyChoosePU() {
   return (
     <section className="w-full bg-[#fcfcfc] py-20 px-4 sm:px-8 xl:px-16 border-t border-gray-100">
       <div className="max-w-[1200px] mx-auto text-center">
-        <h2 className="font-sans font-bold text-[36px] sm:text-[44px] lg:text-[48px] text-[#ee364f] mb-12 tracking-tight">
+        <h2 className="font-poppins font-bold text-[36px] sm:text-[44px] lg:text-[48px] text-[#ee364f] mb-12 tracking-tight">
           Why students choose PU Goa.
         </h2>
         
@@ -40,7 +40,7 @@ export function WhyChoosePU() {
           <div className="hidden md:block w-[1.5px] h-[60px] bg-gray-300"></div>
           
           <div className="text-center md:text-left">
-            <h3 className="font-sans font-bold text-[28px] md:text-[32px] lg:text-[40px] text-ink leading-tight mb-1">
+            <h3 className="font-poppins font-semibold text-[28px] md:text-[32px] lg:text-[40px] text-ink leading-tight mb-1">
               Recruiting companies*
             </h3>
             <p className="font-[family-name:var(--font-poppins)] text-gray-500 text-[16px] md:text-[18px] lg:text-[20px]">

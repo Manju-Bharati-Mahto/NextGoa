@@ -94,10 +94,10 @@ export function DocumentsChecklist() {
         
         {/* Header Section */}
         <div className="text-center mb-10">
-          <h2 className="font-sans font-bold text-[24px] sm:text-[32px] text-ink mb-2">
+          <h2 className="font-poppins font-bold text-[24px] sm:text-[32px] text-ink mb-2">
             Documents Checklist
           </h2>
-          <h3 className="font-sans font-bold text-[36px] sm:text-[48px] lg:text-[56px] text-[#ee364f] mb-4 tracking-tight">
+          <h3 className="font-poppins font-semibold text-[36px] sm:text-[48px] lg:text-[56px] text-[#ee364f] mb-4 tracking-tight">
             What to bring on admission day.
           </h3>
           <p className="font-[family-name:var(--font-poppins)] text-ink/80 text-[16px] sm:text-[18px]">
@@ -131,7 +131,7 @@ export function DocumentsChecklist() {
               <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 -960 960 960" width="28" fill="currentColor" className="text-white">
                 <path d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/>
               </svg>
-              <h3 className="text-white font-sans font-bold text-[22px]">Academic Records</h3>
+              <h3 className="text-white font-poppins font-semibold text-[22px]">Academic Records</h3>
             </div>
             <div className="p-4 lg:p-6 flex-grow">
               <ul className="divide-y divide-gray-100">
@@ -157,7 +157,7 @@ export function DocumentsChecklist() {
               <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 -960 960 960" width="28" fill="currentColor" className="text-white">
                 <path d="M480-120q-125-34-192.5-132T220-466v-214l260-96 260 96v214q0 116-67.5 214T480-120Zm-60-246 226-226-42-42-184 184-86-86-42 42 128 128Z"/>
               </svg>
-              <h3 className="text-white font-sans font-bold text-[22px]">Identity & Photos</h3>
+              <h3 className="text-white font-poppins font-semibold text-[22px]">Identity & Photos</h3>
             </div>
             <div className="p-4 lg:p-6 flex-grow">
               <ul className="divide-y divide-gray-100">
@@ -183,7 +183,7 @@ export function DocumentsChecklist() {
               <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 -960 960 960" width="28" fill="currentColor" className="text-white">
                 <path d="M480-200 160-360v-109l320 160 320-160v109L480-200Zm0-156L160-516l320-160 320 160-320 160Z"/>
               </svg>
-              <h3 className="text-white font-sans font-bold text-[22px]">Supporting</h3>
+              <h3 className="text-white font-poppins font-semibold text-[22px]">Supporting</h3>
             </div>
             <div className="p-4 lg:p-6 flex-grow">
               <ul className="divide-y divide-gray-100">
@@ -212,7 +212,7 @@ export function DocumentsChecklist() {
               <path d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/>
             </svg>
             <div>
-              <h4 className="font-sans font-bold text-[18px] text-ink mb-1">Originals required:</h4>
+              <h4 className="font-poppins font-semibold text-[18px] text-ink mb-1">Originals required:</h4>
               <p className="font-[family-name:var(--font-poppins)] text-[14px] lg:text-[15px] text-ink/80 leading-relaxed">
                 All originals must be presented for physical verification at the time of admission. Self-attested photocopies are also accepted for upload.
               </p>
@@ -221,7 +221,7 @@ export function DocumentsChecklist() {
 
           {/* Right Box */}
           <div className="bg-[#e73649] rounded-b-[24px] md:rounded-bl-none md:rounded-r-[24px] p-6 lg:p-8 flex flex-col items-center justify-center text-center shadow-sm md:w-[40%]">
-            <h4 className="font-sans font-medium text-[24px] sm:text-[28px] text-white mb-4">Quick reference</h4>
+            <h4 className="font-poppins font-semibold text-[24px] sm:text-[28px] text-white mb-4">Quick reference</h4>
             <button className="bg-[#FEDB2F] hover:bg-[#e5c52a] text-ink font-bold text-[15px] sm:text-[16px] px-6 py-3 rounded-full flex items-center gap-3 transition-colors shadow-sm w-full sm:w-auto justify-center">
               <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20" fill="currentColor">
                 <path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/>

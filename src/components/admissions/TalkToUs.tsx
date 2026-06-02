@@ -30,10 +30,10 @@ export function TalkToUs() {
         
         {/* Left Side: Copy & Info */}
         <div className="w-full lg:w-[45%] xl:w-1/2 flex flex-col pt-4">
-          <h3 className="font-sans font-bold text-[20px] md:text-[22px] text-ink mb-2">
+          <h3 className="font-poppins font-semibold text-[20px] md:text-[22px] text-ink mb-2">
             Talk to Us
           </h3>
-          <h2 className="font-sans font-bold text-[40px] sm:text-[48px] lg:text-[56px] text-[#ee364f] leading-[1.1] mb-6 tracking-tight">
+          <h2 className="font-poppins font-bold text-[40px] sm:text-[48px] lg:text-[56px] text-[#ee364f] leading-[1.1] mb-6 tracking-tight">
             Talk to a<br className="hidden lg:block" /> counsellor in 24<br className="hidden lg:block" /> hours.
           </h2>
           
@@ -70,7 +70,7 @@ export function TalkToUs() {
           
           {/* Action Box */}
           <div className="bg-white border border-gray-300 rounded-[12px] p-6 max-w-[500px]">
-            <h4 className="font-sans font-bold text-[18px] text-ink mb-4">
+            <h4 className="font-poppins font-semibold text-[18px] text-ink mb-4">
               Prefer to talk now?
             </h4>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -94,7 +94,7 @@ export function TalkToUs() {
         {/* Right Side: Form Card */}
         <div className="w-full lg:w-[55%] xl:w-1/2">
           <div className="bg-white rounded-[24px] p-8 sm:p-10 shadow-[0_10px_40px_rgba(0,0,0,0.06)] border border-gray-100">
-            <h3 className="font-sans font-bold text-[28px] sm:text-[32px] text-ink text-center mb-8">
+            <h3 className="font-poppins font-semibold text-[28px] sm:text-[32px] text-ink text-center mb-8">
               Request a callback
             </h3>
             

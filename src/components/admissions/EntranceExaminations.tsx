@@ -11,8 +11,8 @@ export function EntranceExaminations() {
       <div className="max-w-[1200px] mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
-          <h2 className="font-sans font-medium text-[32px] text-ink mb-2">Entrance Examinations</h2>
-          <h3 className="font-sans font-bold text-4xl sm:text-[56px] text-[#ee364f] mb-4">
+          <h2 className="font-poppins font-bold text-[32px] text-ink mb-2">Entrance Examinations</h2>
+          <h3 className="font-poppins font-semibold text-4xl sm:text-[56px] text-[#ee364f] mb-4">
             Two Pathways, <br className="hidden sm:block" />
             Designed Around Your Journey
           </h3>
@@ -49,7 +49,7 @@ export function EntranceExaminations() {
             <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2 mb-6">
               {/* Left — entrance test pitch */}
               <div className="flex flex-col justify-center text-left">
-                <h3 className="font-sans font-bold text-[32px] sm:text-[42px] leading-tight tracking-tight text-ink">
+                <h3 className="font-poppins font-semibold text-[32px] sm:text-[42px] leading-tight tracking-tight text-ink">
                   Apply for PU Goa&apos;s<br />Entrance Test
                 </h3>
                 <p className="mt-4 max-w-md font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] leading-[1.65] text-ink/80">
@@ -108,7 +108,7 @@ export function EntranceExaminations() {
         
         {activeTab === "other" && (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 text-center py-20">
-            <h4 className="text-2xl font-bold text-ink mb-4">Other National Entrances</h4>
+            <h4 className="text-2xl font-semibold text-ink mb-4 font-poppins">Other National Entrances</h4>
             <p className="text-ink/80 text-lg">
               We accept valid scores from JEE, CUET, CAT, MAT, GPAT, and UGC NET.
             </p>

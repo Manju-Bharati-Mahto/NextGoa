@@ -16,7 +16,7 @@ export default function GatewaySection() {
             Admissions Open 2026
           </span>
           
-          <h2 className="text-white text-4xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight mb-6 leading-tight">
+          <h2 className="text-white text-4xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight mb-6 leading-tight font-poppins">
             Ready to apply, Or still deciding?
           </h2>
           

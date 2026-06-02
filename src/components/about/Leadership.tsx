@@ -6,7 +6,7 @@ export function Leadership() {
       <div className="mx-auto max-w-6xl">
         <div className="text-center mb-12">
           <Eyebrow className="text-ink">Our Leadership</Eyebrow>
-          <h2 className="mt-2 font-sans font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
+          <h2 className="mt-2 font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
             The people leading PU Goa.
           </h2>
 
@@ -22,7 +22,7 @@ export function Leadership() {
             </button>
           </div>
 
-          <h3 className="mt-12 font-sans font-bold text-[24px] sm:text-[32px] text-ink">
+          <h3 className="mt-12 font-poppins font-semibold text-[24px] sm:text-[32px] text-ink">
             Leadership - Parul Education Foundation
           </h3>
           <p className="mt-2 font-[family-name:var(--font-poppins)] text-sm sm:text-base text-ink/80">
@@ -46,7 +46,7 @@ export function Leadership() {
             {/* Card */}
             <div className="w-full md:w-[60%] rounded-[20px] bg-brand p-8 sm:p-12 text-white shadow-lg relative overflow-hidden flex flex-col justify-center">
               <div className="relative z-10">
-                <h4 className="font-sans font-bold text-[32px] sm:text-[40px] leading-tight">
+                <h4 className="font-poppins font-semibold text-[32px] sm:text-[40px] leading-tight">
                   Dr. Devanshu Patel
                 </h4>
                 <p className="mt-1 font-[family-name:var(--font-poppins)] text-[16px] sm:text-[18px] font-normal text-white/90">
@@ -88,7 +88,7 @@ export function Leadership() {
             {/* Card */}
             <div className="w-full md:w-[60%] rounded-[20px] bg-[#0CAADD] p-8 sm:p-12 text-white shadow-lg relative overflow-hidden flex flex-col justify-center">
               <div className="relative z-10">
-                <h4 className="font-sans font-bold text-[32px] sm:text-[40px] leading-tight">
+                <h4 className="font-poppins font-semibold text-[32px] sm:text-[40px] leading-tight">
                   Dr. Parul Patel
                 </h4>
                 <p className="mt-1 font-[family-name:var(--font-poppins)] text-[16px] sm:text-[18px] font-normal text-white/90">
