@@ -3,7 +3,7 @@ import React from "react";
 export default function StudyAbroadHero() {
   return (
     <section
-      className="relative w-full min-h-[700px] lg:min-h-[1000px] font-[family-name:var(--font-poppins)] pt-32 lg:pt-48 pb-0 flex flex-col items-center bg-[length:250%] md:bg-[length:100%] bg-bottom bg-no-repeat"
+      className="relative w-full min-h-[900px] lg:min-h-[1100px] font-[family-name:var(--font-poppins)] pt-32 lg:pt-48 pb-0 flex flex-col items-center bg-[length:250%] md:bg-[length:100%] bg-bottom bg-no-repeat"
       style={{
         backgroundImage: "linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0.95) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,0) 85%, rgba(255,255,255,1) 100%), url('/abroad/Global Learning Experience.png')",
         backgroundColor: "#ffffff"
@@ -20,7 +20,7 @@ export default function StudyAbroadHero() {
           Global Pathway Programmes
         </h1>
 
-        <p className="max-w-[900px] text-[15px] sm:text-[17px] text-ink/80 leading-relaxed font-medium">
+        <p className="max-w-[900px] text-[14px] sm:text-[17px] text-ink/80 leading-relaxed font-medium">
           Kickstart your degree at Parul University Goa and finish abroad with a globally recognised qualification.
           Study Pathway Programmes (2+2, 1+1, 3+1+1, 3.5+1.5) with partner universities across the USA, UK, Canada,
           Germany, France, Australia and New Zealand.

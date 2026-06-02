@@ -14,12 +14,9 @@ export default function StudyAbroadModels() {
     >
       {/* Background Frame */}
       <div
-        className="absolute inset-0 z-0 pointer-events-none"
+        className="absolute inset-0 z-0 pointer-events-none bg-cover bg-top sm:bg-[length:100%_100%] sm:bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/abroad/Global Journey Frame.png')",
-          backgroundSize: "100% 100%",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
+          backgroundImage: "url('/abroad/Global Journey Frame.png')"
         }}
       ></div>
 
@@ -50,7 +47,7 @@ export default function StudyAbroadModels() {
           <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight">
             Three Models. Six Countries.
           </h2>
-          
+
           {/* Arrow */}
           <div className="absolute top-[-80px] md:top-[-110px] right-[10%] md:right-[-180px] w-[140px] md:w-[280px] h-[140px] md:h-[280px] pointer-events-none hidden md:block z-20">
             <Image
@@ -63,22 +60,22 @@ export default function StudyAbroadModels() {
         </div>
 
         {/* Cards */}
-        <div className="w-full flex flex-col md:flex-row gap-5 mb-12 justify-center z-10">
-          
+        <div className="w-full flex flex-col md:flex-row sm:gap-5 mb-12 gap-8 justify-center z-10">
+
           {/* Card 1 */}
           <div className="bg-white rounded-2xl p-6 md:p-8 flex flex-col justify-between w-full md:w-1/3 shadow-lg min-h-[200px]">
             <div>
               <h3 className="text-4xl font-extrabold text-[#1f2022] leading-none mb-1">2+2</h3>
-              <h4 className="text-2xl font-bold text-[#1f2022] mb-1">Bachelors</h4>
-              <p className="text-gray-800 text-[14px] font-medium">2 yrs PU Goa · 2 yrs abroad</p>
+              <h4 className="text-2xl font-bold text-[#1f2022] mb-3">Bachelors</h4>
+              <p className="text-gray-800 text-[15px] font-medium">2 yrs PU Goa · 2 yrs abroad</p>
             </div>
-            
+
             <div className="mt-8">
               <div className="w-full flex h-2 rounded-full overflow-hidden mb-2">
                 <div className="w-1/2 bg-gray-100"></div>
                 <div className="w-1/2 bg-[#eb3b47]"></div>
               </div>
-              <div className="flex justify-between items-center text-[11px] font-bold text-[#1f2022]">
+              <div className="flex justify-between items-center text-[15px] font-bold text-[#1f2022]">
                 <span>PU Goa</span>
                 <span>Abroad</span>
               </div>
@@ -89,16 +86,16 @@ export default function StudyAbroadModels() {
           <div className="bg-[#1f2022] rounded-2xl p-6 md:p-8 flex flex-col justify-between w-full md:w-1/3 shadow-lg min-h-[200px]">
             <div>
               <h3 className="text-4xl font-extrabold text-white leading-none mb-1">3+1+1</h3>
-              <h4 className="text-2xl font-bold text-white mb-1">3 + 1 + 1 Combo</h4>
-              <p className="text-gray-300 text-[13px] font-medium">UG + PG split across PU Goa & abroad</p>
+              <h4 className="text-2xl font-bold text-white mb-3">3 + 1 + 1 Combo</h4>
+              <p className="text-gray-300 text-[15px] font-medium">UG + PG split across PU Goa & abroad</p>
             </div>
-            
+
             <div className="mt-8">
               <div className="w-full flex h-2 rounded-full overflow-hidden mb-2">
                 <div className="w-[60%] bg-white"></div>
                 <div className="w-[40%] bg-[#0ca7dd]"></div>
               </div>
-              <div className="flex justify-between items-center text-[11px] font-bold text-white">
+              <div className="flex justify-between items-center text-[15px] font-bold text-white">
                 <span>PU Goa</span>
                 <span>Abroad</span>
               </div>
@@ -109,16 +106,16 @@ export default function StudyAbroadModels() {
           <div className="bg-[#fbdc2a] rounded-2xl p-6 md:p-8 flex flex-col justify-between w-full md:w-1/3 shadow-lg min-h-[200px]">
             <div>
               <h3 className="text-4xl font-extrabold text-[#1f2022] leading-none mb-1">1+1</h3>
-              <h4 className="text-2xl font-bold text-[#1f2022] mb-1">Masters</h4>
-              <p className="text-gray-800 text-[14px] font-medium">1 yr PU Goa · 1 yr abroad</p>
+              <h4 className="text-2xl font-bold text-[#1f2022] mb-3">Masters</h4>
+              <p className="text-gray-800 text-[15px] font-medium">1 yr PU Goa · 1 yr abroad</p>
             </div>
-            
+
             <div className="mt-8">
               <div className="w-full flex h-2 rounded-full overflow-hidden mb-2">
                 <div className="w-1/2 bg-[#1f2022]"></div>
                 <div className="w-1/2 bg-[#0ca7dd]"></div>
               </div>
-              <div className="flex justify-between items-center text-[11px] font-bold text-[#1f2022]">
+              <div className="flex justify-between items-center text-[15px] font-bold text-[#1f2022]">
                 <span>PU Goa</span>
                 <span>Abroad</span>
               </div>
@@ -129,7 +126,7 @@ export default function StudyAbroadModels() {
 
         {/* Footer info */}
         <div className="w-full flex flex-col md:flex-row items-center justify-between gap-6 z-10 px-4 md:px-0">
-          
+
           <div className="flex flex-col gap-3 flex-1 w-full">
             <h4 className="text-white text-xl font-semibold">Available in:</h4>
             <div className="flex flex-wrap gap-2 md:gap-3">

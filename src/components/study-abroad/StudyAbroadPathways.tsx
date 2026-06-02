@@ -130,8 +130,8 @@ export default function StudyAbroadPathways() {
               onClick={() => setActiveTabId(tab.id)}
               className={
                 activeTabId === tab.id
-                  ? "bg-[#12a6e6] text-white px-8 py-3 rounded-full font-bold shadow-sm transition-transform hover:scale-105"
-                  : "bg-white border border-gray-300 text-gray-900 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors"
+                  ? "bg-[#12a6e6] text-white w-[150px] sm:w-[170px] md:w-auto px-2 sm:px-8 py-3 rounded-full font-bold shadow-sm transition-transform hover:scale-105"
+                  : "bg-white border border-gray-300 text-gray-900 w-[150px] sm:w-[170px] md:w-auto px-2 sm:px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors"
               }
             >
               {tab.tabLabel}
@@ -156,14 +156,14 @@ export default function StudyAbroadPathways() {
 
               {activeData.tableData.map((item, index) => (
                 <div key={index} className="flex relative">
-                  <div className="w-[42%] py-4 text-[#eab308] text-[15px] font-medium pr-6 relative">
+                  <div className="w-[42%] py-4 text-[#eab308] text-[16px] sm:text-[17px] font-medium pr-6 relative">
                     {item.label}
                     {/* Solid horizontal line (left side) - using absolute div for identical thickness */}
                     {index !== activeData.tableData.length - 1 && (
                       <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-white/30"></div>
                     )}
                   </div>
-                  <div className="w-[58%] py-4 text-gray-200 text-[15px] pl-6 relative">
+                  <div className="w-[58%] py-4 text-gray-200 text-[16px] sm:text-[17px] pl-6 relative">
                     {item.value}
                     {/* Fading horizontal line (right side) */}
                     {index !== activeData.tableData.length - 1 && (
