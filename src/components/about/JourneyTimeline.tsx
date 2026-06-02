@@ -56,7 +56,7 @@ export function JourneyTimeline() {
         <p className="font-sans text-[24px] font-medium leading-tight text-ink sm:text-brand-subheading">
           Journey
         </p>
-        <h2 className="mx-auto mt-5 max-w-5xl font-sans text-[38px] font-bold leading-tight text-brand sm:text-[48px] lg:text-brand-heading">
+        <h2 className="mx-auto mt-5 max-w-5xl font-poppins text-[38px] font-bold leading-tight text-brand sm:text-[48px] lg:text-brand-heading">
           From Vadodara To Goa,
           <br className="hidden sm:block" />
           Milestones That Thrive Our Story!

@@ -33,10 +33,10 @@ export function CampusStudentLife() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full flex flex-col items-center text-center mb-12 sm:mb-16 mt-8">
-        <h3 className="font-sans font-medium text-[20px] sm:text-[24px] text-white mb-2">
+        <h3 className="font-poppins font-semibold text-[20px] sm:text-[24px] text-white mb-2">
           Clubs, Events & Student Life
         </h3>
-        <h2 className="font-sans font-black text-[36px] sm:text-[46px] lg:text-[54px] leading-[1.1] tracking-tight text-white mb-4">
+        <h2 className="font-poppins font-bold text-[36px] sm:text-[46px] lg:text-[54px] leading-[1.1] tracking-tight text-white mb-4">
           A campus alive with possibility.
         </h2>
         <p className="font-[family-name:var(--font-poppins)] text-white/90 text-[15px] sm:text-[18px] max-w-2xl mx-auto leading-relaxed">
@@ -67,7 +67,7 @@ export function CampusStudentLife() {
 
               {/* Content Container (Bottom Left) */}
               <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
-                <h3 className="font-sans font-bold text-[28px] sm:text-[32px] text-white leading-tight mb-3">
+                <h3 className="font-poppins font-semibold text-[28px] sm:text-[32px] text-white leading-tight mb-3">
                   {club.title}
                 </h3>
                 

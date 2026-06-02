@@ -15,7 +15,7 @@ export function AboutHero() {
           About Us
         </span>
 
-        <h1 className="font-sans mx-auto w-full max-w-none text-[38px] sm:text-[56px] font-bold leading-[1.1] tracking-tight text-ink">
+        <h1 className="font-poppins mx-auto w-full max-w-none text-[38px] sm:text-[56px] font-bold leading-[1.1] tracking-tight text-ink">
           Goa&apos;s First State <br className="hidden sm:block" />
           <span className="text-brand">Private University.</span>
         </h1>

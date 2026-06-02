@@ -39,10 +39,10 @@ export default function SpecialisationsSection() {
         
         {/* Header Content */}
         <div className="text-center mb-16 sm:mb-20">
-          <h2 className="text-xl sm:text-[22px] font-bold text-ink mb-3 tracking-wide">
+          <h2 className="text-xl sm:text-[22px] font-bold text-ink mb-3 tracking-wide font-poppins">
             Specialisations
           </h2>
-          <h3 className="text-4xl sm:text-[3.2rem] font-extrabold text-[#ED383F] mb-6 tracking-tight leading-tight">
+          <h3 className="text-4xl sm:text-[3.2rem] font-semibold text-[#ED383F] mb-6 tracking-tight leading-tight font-poppins">
             Pick a specialisation, not just a programme.
           </h3>
           <p className="text-[15px] sm:text-[17px] max-w-3xl mx-auto text-ink/80 font-medium">

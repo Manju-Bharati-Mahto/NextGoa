@@ -42,7 +42,7 @@ export function International() {
 
       <div className="relative z-10 mx-auto max-w-6xl px-6 py-20">
         <Eyebrow className="text-ink">International Teaser</Eyebrow>
-        <h2 className="mt-2 text-center font-sans font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
+        <h2 className="mt-2 text-center font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
           Your Degree Can Take You Global
         </h2>
         <p className="mx-auto mt-4 max-w-6xl text-center font-[family-name:var(--font-poppins)] font-normal text-base sm:text-lg text-ink leading-relaxed">
@@ -76,7 +76,7 @@ export function International() {
               className="flex min-h-[210px] flex-col items-center justify-center rounded-3xl bg-ocean px-6 py-10 text-center text-white shadow-sm"
             >
               <p className="font-sans font-bold text-5xl sm:text-6xl leading-none tracking-tight">{c.value}</p>
-              <h3 className="mt-3 font-sans font-medium text-[24px] sm:text-[32px] leading-tight tracking-tight text-white/90">{c.title}</h3>
+              <h3 className="mt-3 font-poppins font-semibold text-[24px] sm:text-[32px] leading-tight tracking-tight text-white/90">{c.title}</h3>
             </div>
           ))}
         </div>

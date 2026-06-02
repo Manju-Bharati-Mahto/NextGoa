@@ -10,7 +10,7 @@ export function CampusLifeHero() {
             Campus Life
           </span>
 
-          <h1 className="font-sans font-black text-[42px] sm:text-[52px] lg:text-[64px] tracking-tight leading-[1.05] text-[#1F1F1F] mb-5">
+          <h1 className="font-poppins font-bold text-[42px] sm:text-[52px] lg:text-[64px] tracking-tight leading-[1.05] text-[#1F1F1F] mb-5">
             A campus that <br className="hidden sm:block" />
             nurtures and helps <br className="hidden sm:block" />
             students learn and <br className="hidden sm:block" />

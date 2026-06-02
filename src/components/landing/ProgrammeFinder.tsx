@@ -145,7 +145,7 @@ function CourseCard({ color, title, tags }: CourseCardProps) {
       {/* Content wrapper */}
       <div className="flex flex-col h-full justify-end z-10 relative">
         {/* Title */}
-        <h3 className="font-sans font-medium text-[24px] sm:text-[32px] leading-tight tracking-tight pr-12 mb-3.5">
+        <h3 className="font-poppins font-semibold text-[24px] sm:text-[32px] leading-tight tracking-tight pr-12 mb-3.5">
           {title}
         </h3>
 
@@ -198,7 +198,7 @@ export function ProgrammeFinder() {
     <section id="programmes" className="bg-brand-white">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <Eyebrow className="text-ink">Find your programme</Eyebrow>
-        <h2 className="mt-2 text-center font-sans font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
+        <h2 className="mt-2 text-center font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
           Tell us where you&apos;re headed.
         </h2>
         <p className="mt-3 text-center font-[family-name:var(--font-poppins)] font-normal text-base sm:text-lg text-ink leading-relaxed">
@@ -286,7 +286,7 @@ export function ProgrammeFinder() {
                 />
               </svg>
             </div>
-            <h3 className="mt-5 text-lg font-bold text-ink">No programmes found</h3>
+            <h3 className="mt-5 text-lg font-semibold text-ink font-poppins">No programmes found</h3>
             <p className="mt-2 text-sm text-ink/70">
               We couldn&apos;t find any faculties offering <strong>{level}</strong> programmes in the <strong>{field}</strong> field.
             </p>

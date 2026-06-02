@@ -14,7 +14,7 @@ export function AdmissionsHero() {
           Admissions Open for 2026-27 Academic Year
         </span>
 
-        <h1 className="font-sans mx-auto w-full max-w-none text-[42px] sm:text-[68px] font-bold leading-[1.1] tracking-tight text-brand">
+        <h1 className="font-poppins mx-auto w-full max-w-none text-[42px] sm:text-[68px] font-bold leading-[1.1] tracking-tight text-brand">
           From Goa To Global Degree!
         </h1>
 

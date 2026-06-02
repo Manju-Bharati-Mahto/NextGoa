@@ -14,7 +14,7 @@ const columns: { heading: string; links: { label: string; href: string }[] }[] =
       { label: "About Us", href: "#philosophy" },
       { label: "Admissions", href: "#admissions" },
       { label: "Campus Life", href: "/campus-life" },
-      { label: "Placements", href: "#placements" },
+      { label: "Placements", href: "/placements" },
       { label: "Study Abroad", href: "#international" },
       { label: "Stories", href: "#news" },
     ],
@@ -35,8 +35,8 @@ const columns: { heading: string; links: { label: string; href: string }[] }[] =
     links: [
       { label: "NAAC Grade A++", href: "#admissions" },
       { label: "THE Impact Rankings 2025", href: "#admissions" },
-      { label: "ASSOCHAM Best Placements 3x", href: "#placements" },
-      { label: "NIRF Top 50 Innovations", href: "#placements" },
+      { label: "ASSOCHAM Best Placements 3x", href: "/placements" },
+      { label: "NIRF Top 50 Innovations", href: "/placements" },
       { label: "Goa Private Universities Act 2020", href: "#admissions" },
     ],
   },
@@ -150,7 +150,7 @@ export function SiteFooter() {
               aria-label={col.heading}
               className={index > 0 ? "lg:border-l lg:border-white/18 lg:pl-10" : ""}
             >
-              <h2 className="text-sm sm:text-base font-bold uppercase tracking-[0.08em] text-sunshine">
+              <h2 className="text-sm sm:text-base font-bold uppercase tracking-[0.08em] text-sunshine font-poppins">
                 {col.heading}
               </h2>
               <ul className="mt-6 space-y-3 text-sm text-white sm:text-base">

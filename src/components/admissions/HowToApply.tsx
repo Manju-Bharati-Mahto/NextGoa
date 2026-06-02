@@ -6,8 +6,8 @@ export function HowToApply() {
     <section className="w-full bg-[#faf9f6] py-20 px-4 sm:px-8 xl:px-16">
       <div className="max-w-[1200px] mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-xl sm:text-2xl font-bold text-ink mb-2">How to Apply</h2>
-          <h3 className="text-4xl sm:text-5xl font-bold text-brand mb-4">Follow These 4 Simple Steps</h3>
+          <h2 className="text-xl sm:text-2xl font-bold text-ink mb-2 font-poppins">How to Apply</h2>
+          <h3 className="text-4xl sm:text-5xl font-semibold text-brand mb-4 font-poppins">Follow These 4 Simple Steps</h3>
           <p className="text-ink text-lg">Choose what suits you. Every channel reaches to our admissions team!</p>
         </div>
 
@@ -23,7 +23,7 @@ export function HowToApply() {
               />
               <div className="w-full flex justify-end p-6 sm:pt-12 sm:pr-8 relative z-10">
                 <div className="w-[55%]">
-                  <h4 className="text-3xl font-bold text-ink mb-2">Callback</h4>
+                  <h4 className="text-3xl font-semibold text-ink mb-2 font-poppins">Callback</h4>
                   <p className="text-ink/80 text-base leading-relaxed mb-4 pr-2">
                     Drop your details below - a counsellor will call you within 24 hours.
                   </p>
@@ -43,7 +43,7 @@ export function HowToApply() {
               />
               <div className="w-full flex justify-end p-6 sm:pt-12 sm:pr-12 relative z-10">
                 <div className="w-[50%]">
-                  <h4 className="text-4xl font-bold text-white mb-3">Digital</h4>
+                  <h4 className="text-4xl font-semibold text-white mb-3 font-poppins">Digital</h4>
                   <p className="text-white/90 text-lg leading-relaxed mb-5 pr-4">
                     Apply through the official PU Goa admissions portal and upload documents digitally.
                   </p>
@@ -66,7 +66,7 @@ export function HowToApply() {
               />
               <div className="w-full flex justify-end p-6 sm:pt-12 sm:pr-12 relative z-10">
                 <div className="w-[45%]">
-                  <h4 className="text-4xl font-bold text-white mb-3">WhatsApp</h4>
+                  <h4 className="text-4xl font-semibold text-white mb-3 font-poppins">WhatsApp</h4>
                   <p className="text-white/90 text-lg leading-relaxed mb-5">
                     Ask quick questions on programmes, fees or eligibility - instant answers.
                   </p>
@@ -86,7 +86,7 @@ export function HowToApply() {
               />
               <div className="w-full flex justify-end p-6 sm:pt-12 sm:pr-8 relative z-10">
                 <div className="w-[60%]">
-                  <h4 className="text-3xl font-bold text-white mb-2">Visit Campus</h4>
+                  <h4 className="text-3xl font-semibold text-white mb-2 font-poppins">Visit Campus</h4>
                   <p className="text-white/80 text-base leading-relaxed mb-4">
                     Book a campus tour and apply on the spot with our admissions team.
                   </p>

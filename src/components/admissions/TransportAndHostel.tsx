@@ -18,7 +18,7 @@ export function TransportAndHostel() {
             </span>
           </div>
           
-          <h2 className="font-sans font-bold text-[36px] sm:text-[44px] lg:text-[48px] text-ink leading-[1.1] mb-6 tracking-tight">
+          <h2 className="font-poppins font-bold text-[36px] sm:text-[44px] lg:text-[48px] text-ink leading-[1.1] mb-6 tracking-tight">
             Getting here is not a problem.
           </h2>
           
@@ -49,7 +49,7 @@ export function TransportAndHostel() {
               <span className="material-symbols-rounded text-[#ee364f] text-[28px]">
                 home
               </span>
-              <h3 className="font-sans font-bold text-[22px] sm:text-[24px] text-ink leading-tight">
+              <h3 className="font-poppins font-semibold text-[22px] sm:text-[24px] text-ink leading-tight">
                 Hostel · Boys & Girls · AC, 3-sharing
               </h3>
             </div>

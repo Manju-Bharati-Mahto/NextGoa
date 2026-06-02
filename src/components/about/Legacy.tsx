@@ -17,7 +17,7 @@ export function Legacy() {
             />
 
             <div className="relative z-10">
-              <h2 className="font-sans font-medium text-[32px] sm:text-[36px] leading-tight text-brand mb-6">
+              <h2 className="font-poppins font-bold text-[32px] sm:text-[36px] leading-tight text-brand mb-6">
                 Where a 3-Decade-Old <br />
                 Legacy Meets <br />
                 India&apos;s Coastal Paradise!

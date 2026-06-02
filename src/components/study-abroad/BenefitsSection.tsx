@@ -31,7 +31,7 @@ export default function BenefitsSection() {
           <span className="mb-4 inline-block rounded-full bg-[#FFD523] px-4 py-1.5 text-xs font-bold text-ink shadow-sm uppercase tracking-wider">
             Why Study Abroad?
           </span>
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-ink mb-6">
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-ink mb-6 font-poppins">
             Beyond Boundaries
           </h2>
           <p className="mx-auto max-w-2xl text-[16px] text-ink/80">
@@ -45,7 +45,7 @@ export default function BenefitsSection() {
               <div className="w-14 h-14 rounded-2xl bg-zinc-50 flex items-center justify-center text-3xl mb-6 shadow-sm border border-zinc-100">
                 {benefit.icon}
               </div>
-              <h3 className="text-xl font-bold text-ink mb-3">{benefit.title}</h3>
+              <h3 className="text-xl font-semibold text-ink mb-3 font-poppins">{benefit.title}</h3>
               <p className="text-[15px] text-ink/70 leading-relaxed">
                 {benefit.description}
               </p>

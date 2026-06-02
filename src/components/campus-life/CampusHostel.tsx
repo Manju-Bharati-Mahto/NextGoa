@@ -18,10 +18,10 @@ export function CampusHostel() {
       <div className="relative z-10 mx-auto max-w-[1300px] px-6 lg:px-12 flex flex-col items-center pt-40 pb-32 lg:pt-56 lg:pb-48">
         {/* Header */}
         <div className="text-center mb-16 lg:mb-24">
-          <h3 className="font-sans font-bold text-[20px] sm:text-[24px] text-white mb-2">
+          <h3 className="font-poppins font-semibold text-[20px] sm:text-[24px] text-white mb-2">
             Hostels & Residences
           </h3>
-          <h2 className="font-sans font-black text-[34px] sm:text-[46px] lg:text-[54px] leading-[1.1] tracking-tight text-[#FEDB2F] mb-6">
+          <h2 className="font-poppins font-bold text-[34px] sm:text-[46px] lg:text-[54px] leading-[1.1] tracking-tight text-[#FEDB2F] mb-6">
             Your home at PU Goa.
           </h2>
           <p className="font-[family-name:var(--font-poppins)] text-white/90 text-[15px] sm:text-[18px] leading-relaxed max-w-2xl mx-auto">
@@ -66,7 +66,7 @@ export function CampusHostel() {
             <div className="font-[family-name:var(--font-poppins)] text-[#E73649] text-[15px] sm:text-[18px] mb-3">
               Residential blocks
             </div>
-            <h3 className="font-sans font-medium text-[28px] sm:text-[36px] text-white leading-[1.2] tracking-tight mb-3">
+            <h3 className="font-poppins font-semibold text-[28px] sm:text-[36px] text-white leading-[1.2] tracking-tight mb-3">
               What you get in your room.
             </h3>
             
@@ -122,7 +122,7 @@ export function CampusHostel() {
         {/* Bottom Call to Action Card */}
         <div className="w-full bg-white rounded-[32px] overflow-hidden flex flex-col md:flex-row shadow-2xl">
           <div className="flex-1 px-8 py-8 sm:px-16 sm:py-12 flex flex-col justify-center">
-            <h3 className="font-sans font-medium text-[28px] sm:text-[36px] text-[#E73649] mb-4 leading-tight">
+            <h3 className="font-poppins font-semibold text-[28px] sm:text-[36px] text-[#E73649] mb-4 leading-tight">
               Hostel fees & room plans
             </h3>
             <p className="font-[family-name:var(--font-poppins)] text-[#1F1F1F]/80 text-[16px] sm:text-[18px] leading-relaxed max-w-md">

@@ -69,7 +69,7 @@ export function EnquiryModal() {
           </svg>
         </button>
 
-        <h2 className="mb-8 text-center font-sans text-3xl font-bold tracking-tight text-ink">
+        <h2 className="mb-8 text-center font-poppins text-3xl font-bold tracking-tight text-ink">
           Request a callback
         </h2>
 

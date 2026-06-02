@@ -108,10 +108,10 @@ export function CampusLocation() {
         
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <h3 className="font-sans font-bold text-[20px] sm:text-[24px] text-[#1F1F1F] mb-2">
+          <h3 className="font-poppins font-semibold text-[20px] sm:text-[24px] text-[#1F1F1F] mb-2">
             Location & Transport
           </h3>
-          <h2 className="font-sans font-black text-[34px] sm:text-[46px] lg:text-[54px] leading-[1.1] tracking-tight text-[#E73649] mb-4">
+          <h2 className="font-poppins font-bold text-[34px] sm:text-[46px] lg:text-[54px] leading-[1.1] tracking-tight text-[#E73649] mb-4">
             Getting to campus and around Goa.
           </h2>
           <p className="font-[family-name:var(--font-poppins)] text-[#1F1F1F]/80 text-[15px] sm:text-[18px] max-w-2xl mx-auto leading-relaxed">
@@ -246,7 +246,7 @@ export function CampusLocation() {
                 {/* Bottom Pick-up Card */}
                 <div className="mt-auto">
                   <div className="bg-[#0CAADD] rounded-[14px] py-3 px-4 sm:py-3 sm:px-6 text-center shadow-lg">
-                    <h4 className="font-sans font-bold text-white text-[16px] sm:text-[20px] mb-1">
+                    <h4 className="font-poppins font-semibold text-white text-[16px] sm:text-[20px] mb-1">
                       {selectedLocation.pickupTitle}
                     </h4>
                     <p className="font-[family-name:var(--font-poppins)] text-white/95 text-[14px] sm:text-[15px] leading-snug max-w-[95%] mx-auto">

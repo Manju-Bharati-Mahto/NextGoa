@@ -44,8 +44,8 @@ export function CampusFacilities() {
         {/* Header content */}
         <div className="flex flex-col items-center text-center max-w-4xl">
           <img src="/campus-life/sa.svg" alt="Campus Life Icon" className="w-[80px] sm:w-[100px] h-auto mb-4" />
-          <h3 className="font-sans font-bold text-[20px] sm:text-[24px] text-[#1F1F1F] mb-1">Campus Life</h3>
-          <h2 className="font-sans font-black text-[34px] sm:text-[46px] lg:text-[54px] leading-[1.1] tracking-tight text-[#E53B4A]">
+          <h3 className="font-poppins font-semibold text-[20px] sm:text-[24px] text-[#1F1F1F] mb-1">Campus Life</h3>
+          <h2 className="font-poppins font-bold text-[34px] sm:text-[46px] lg:text-[54px] leading-[1.1] tracking-tight text-[#E53B4A]">
             A campus that feels like a<br className="hidden sm:block" /> destination.
           </h2>
           <p className="font-[family-name:var(--font-poppins)] text-[#1F1F1F]/80 text-[14px] sm:text-[16px] leading-relaxed max-w-3xl mt-6 mb-12">
@@ -65,7 +65,7 @@ export function CampusFacilities() {
               {/* Background SVG */}
               <img src={card.bgImage} alt="" className="absolute inset-0 w-full h-full object-cover z-0" />
               
-              <h4 className="font-sans font-bold text-[22px] sm:text-[26px] text-[#FEDB2F] relative z-20">
+              <h4 className="font-poppins font-semibold text-[22px] sm:text-[26px] text-[#FEDB2F] relative z-20">
                 {card.title}
               </h4>
               <hr className="border-t border-white/30 my-3 w-1/2 relative z-20" />

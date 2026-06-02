@@ -31,11 +31,11 @@ export default function StudyAbroadComparison() {
         {/* Header Section */}
         <div className="text-center mb-12 pt-6">
           <p className="text-white font-medium text-lg mb-3">Why PU Goa Pathway</p>
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-[#FFD523] mb-4 leading-tight">
+          <h2 className="text-4xl sm:text-5xl font-bold text-[#FFD523] mb-4 leading-tight font-poppins">
             Why study abroad with PU Goa<br className="hidden sm:block" /> instead of going directly.
           </h2>
           <p className="text-white/90 text-sm sm:text-base">
-            A side-by-side comparison so you can decide what's right for you and your family.
+            A side-by-side comparison so you can decide what&apos;s right for you and your family.
           </p>
         </div>
 
@@ -51,7 +51,7 @@ export default function StudyAbroadComparison() {
               </div>
               <div>
                 <p className="text-gray-400 text-xs font-bold tracking-widest uppercase mb-1">Option A</p>
-                <h3 className="text-white text-lg sm:text-[22px] font-bold leading-tight">Direct foreign admission</h3>
+                <h3 className="text-white text-lg sm:text-[22px] font-semibold leading-tight font-poppins">Direct foreign admission</h3>
               </div>
             </div>
             {/* Body */}
@@ -76,7 +76,7 @@ export default function StudyAbroadComparison() {
               </div>
               <div>
                 <p className="text-[#222222] text-[11px] font-bold tracking-widest uppercase mb-1">Option B · Recommended</p>
-                <h3 className="text-[#222222] text-lg sm:text-[22px] font-extrabold leading-tight">Study Abroad with PU Goa</h3>
+                <h3 className="text-[#222222] text-lg sm:text-[22px] font-semibold leading-tight font-poppins">Study Abroad with PU Goa</h3>
               </div>
             </div>
             {/* Body */}

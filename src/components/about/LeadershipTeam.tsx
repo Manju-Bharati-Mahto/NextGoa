@@ -27,7 +27,7 @@ export function LeadershipTeam() {
     <section className="bg-[#F8F8F8] py-20 px-6">
       <div className="mx-auto max-w-6xl">
         <div className="text-center mb-12">
-          <h2 className="font-sans font-bold text-[32px] sm:text-[44px] leading-tight text-ink">
+          <h2 className="font-poppins font-bold text-[32px] sm:text-[44px] leading-tight text-ink">
             Meet Our Leadership Team
           </h2>
           <p className="mt-2 font-[family-name:var(--font-poppins)] text-[16px] sm:text-[18px] text-ink/80">
@@ -68,7 +68,7 @@ export function LeadershipTeam() {
                   </span>
                 </div>
 
-                <h3 className="font-sans font-bold text-[22px] sm:text-[26px] leading-tight text-[#1F1F1F]">
+                <h3 className="font-poppins font-semibold text-[22px] sm:text-[26px] leading-tight text-[#1F1F1F]">
                   {member.name}
                 </h3>
                 <p className="font-sans font-bold text-[15px] sm:text-[16px] text-[#E73649] mt-0.5">

@@ -69,8 +69,8 @@ export function FeePlans() {
       <div className="max-w-[1100px] mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="font-sans font-medium text-[32px] text-ink mb-2">Fees · 2026-27</h2>
-          <h3 className="font-sans font-bold text-4xl sm:text-[56px] text-[#ee364f] mb-4">
+          <h2 className="font-poppins font-bold text-[32px] text-ink mb-2">Fees · 2026-27</h2>
+          <h3 className="font-poppins font-semibold text-4xl sm:text-[56px] text-[#ee364f] mb-4">
             Flexible Fee Plans!
           </h3>
           <p className="font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] text-ink max-w-2xl mx-auto">
@@ -83,7 +83,7 @@ export function FeePlans() {
           
           {/* Left Column (Search) */}
           <div className="w-full md:w-1/2 flex flex-col justify-center">
-            <h4 className="font-sans font-bold text-[28px] sm:text-[32px] text-ink mb-6 text-center">
+            <h4 className="font-poppins font-semibold text-[28px] sm:text-[32px] text-ink mb-6 text-center">
               Search your course to know
             </h4>
             
@@ -170,7 +170,7 @@ export function FeePlans() {
 
               {/* Text Content */}
               <div className={`relative z-10 ${selectedCourse.textColor}`}>
-                <h4 className="text-2xl sm:text-3xl font-bold mb-4 pr-12 leading-tight">
+                <h4 className="text-2xl sm:text-3xl font-semibold mb-4 pr-12 leading-tight font-poppins">
                   {selectedCourse.name}
                 </h4>
                 

@@ -101,8 +101,8 @@ export function EligibilitySection() {
       <div className="max-w-[1000px] mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
-          <h2 className="text-2xl font-bold text-ink mb-2">Eligibility</h2>
-          <h3 className="text-4xl sm:text-5xl font-bold text-[#ee364f] mb-4">
+          <h2 className="text-2xl font-bold text-ink mb-2 font-poppins">Eligibility</h2>
+          <h3 className="text-4xl sm:text-5xl font-semibold text-[#ee364f] mb-4 font-poppins">
             Find your fit in seconds.
           </h3>
           <p className="text-ink text-lg">
