@@ -47,7 +47,7 @@ export function FinalCta({
     <section
       className="bg-brand-white"
     >
-      <div className="mx-auto max-w-[1600px] px-6 pb-16 pt-20">
+      <div className="mx-auto max-w-[1600px] px-6 sm:pb-16 sm:pt-20 pt-15 pb-5">
         <div className="relative isolate overflow-hidden rounded-[20px] shadow-xl">
           <Image
             src="/hero-campus.webp"

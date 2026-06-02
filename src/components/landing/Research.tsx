@@ -34,7 +34,7 @@ const cards = [
 export function Research() {
   return (
     <section id="research" className="bg-brand-white">
-      <div className="mx-auto max-w-7xl px-6 py-20">
+      <div className="mx-auto max-w-7xl px-6 sm:py-20 py-5">
         <div className="flex justify-center">
           <img src="/Fade1.svg" alt="" aria-hidden="true" className="h-[97px] w-auto" />
         </div>

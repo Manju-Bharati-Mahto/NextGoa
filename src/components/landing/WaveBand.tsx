@@ -15,7 +15,7 @@ export function WaveBandBg({
   topOnly?: boolean;
   bottomOnly?: boolean;
 }) {
-  let preserveAspectRatio = "none";
+  let preserveAspectRatio = "xMidYMid slice";
   if (topOnly) preserveAspectRatio = "xMidYMin slice";
   if (bottomOnly) preserveAspectRatio = "xMidYMax slice";
 

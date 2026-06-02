@@ -25,7 +25,7 @@ export function PlacementsNumbers() {
         {/* ── Headline package card from landing page ── */}
         <div className="relative mt-6 sm:mt-6 w-full sm:pt-16" style={{ overflow: "visible" }}>
           {/* ── MOBILE CARD (vertical, shown below sm) ── */}
-          <div className="sm:hidden relative mx-auto max-w-[420px]">
+          <div className="sm:hidden relative mx-auto w-full scale-[1.12] origin-top pb-10">
             {/* SVG card as the only background/structure */}
             <img
               src="/mobile-card.svg"
@@ -33,18 +33,18 @@ export function PlacementsNumbers() {
               className="w-full h-auto block"
             />
             {/* Text overlaid directly over the SVG */}
-            <div className="absolute top-0 left-0 right-0 p-6 flex flex-col justify-start pointer-events-none">
+            <div className="absolute top-0 left-0 right-0 p-5 flex flex-col justify-start pointer-events-none">
               <div>
-                <span className="inline-block rounded-full bg-white px-5 py-2 font-[family-name:var(--font-poppins)] font-normal text-[20px] text-[#1F1F1F]">
+                <span className="inline-block rounded-full bg-white px-4 py-1.5 font-[family-name:var(--font-poppins)] font-normal text-[14px] text-[#1F1F1F]">
                   Highest package · 2027
                 </span>
               </div>
-              <div className="mt-3.5 flex items-end gap-1.5 text-white">
-                <span className="font-[family-name:var(--font-gotham)] font-bold leading-none" style={{ fontSize: "64px" }}>₹60</span>
-                <span className="mb-1.5 font-[family-name:var(--font-gotham)] font-bold text-3xl">LPA<span className="text-[#FEDB2F]">*</span></span>
+              <div className="mt-2 flex items-end gap-1 text-white">
+                <span className="font-[family-name:var(--font-gotham)] font-bold leading-none" style={{ fontSize: "56px" }}>₹60</span>
+                <span className="mb-1 font-[family-name:var(--font-gotham)] font-bold text-2xl">LPA<span className="text-[#FEDB2F]">*</span></span>
               </div>
-              <div className="w-full h-px bg-white/30 my-3" />
-              <p className="font-[family-name:var(--font-poppins)] font-normal text-[12px] leading-relaxed text-white/90">
+              <div className="w-full h-px bg-white/30 my-2.5" />
+              <p className="font-[family-name:var(--font-poppins)] font-normal text-[11px] leading-relaxed text-white/90 pr-4">
                 Awarded to two B.Tech CSE students in a single recruitment
                 cycle the benchmark the PU ecosystem is producing today.
               </p>
