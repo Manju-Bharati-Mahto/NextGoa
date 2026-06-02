@@ -73,7 +73,7 @@ export default function StudyAbroadInvestment() {
         </div>
 
         {/* Bottom Badges */}
-        <div className="flex flex-wrap justify-center gap-3 max-w-6xl">
+        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 max-w-6xl w-full">
           {[
             'Education loan partners',
             'Currency support',
@@ -81,7 +81,7 @@ export default function StudyAbroadInvestment() {
             'Scholarship guidance',
             'Fee instalments'
           ].map((badge) => (
-            <div key={badge} className="bg-[#f0f0f0] border border-[#e5e5e5] px-5 py-2.5 rounded-full text-[#4a4a4a] text-[15px] font-medium shadow-sm">
+            <div key={badge} className="bg-[#f0f0f0] border border-[#e5e5e5] px-5 py-3 rounded-full text-[#4a4a4a] text-[16px] font-medium shadow-sm w-full sm:w-auto text-center">
               {badge}
             </div>
           ))}
