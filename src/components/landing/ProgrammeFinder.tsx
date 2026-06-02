@@ -117,7 +117,7 @@ function CourseCard({ color, title, tags }: CourseCardProps) {
       {/* Decorative background pattern (isolated to the right portion of the card) */}
       <svg
         viewBox="250 0 125 268"
-        className="absolute left-[5%] sm:left-auto sm:right-0 -top-[13%] sm:top-0 h-full w-[20%] sm:w-[33%] pointer-events-none opacity-40"
+        className="absolute right-[5%] sm:right-0 -top-[13%] sm:top-0 h-full w-[20%] sm:w-[33%] pointer-events-none opacity-40"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
