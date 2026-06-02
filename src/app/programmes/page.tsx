@@ -34,7 +34,7 @@ export default function ProgrammesPage() {
         </div>
 
         {/* White fade at the bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+        <div className="hidden sm:block absolute bottom-0 left-0 right-0 h-30 bg-gradient-to-t from-white to-transparent pointer-events-none" />
       </section>
 
       {/* Trending Section */}
@@ -57,23 +57,23 @@ export default function ProgrammesPage() {
 
       {/* Glassy CTA container at bottom of frame */}
       <div className="fixed inset-x-0 bottom-6 sm:bottom-10 z-50 flex justify-center px-4 pointer-events-none">
-        <div className="pointer-events-auto flex flex-wrap items-center justify-center gap-3 rounded-full bg-white/20 px-4 py-3 backdrop-blur-md shadow-xl border border-white/30">
+        <div className="pointer-events-auto font-[family-name:var(--font-poppins)] flex flex-row items-center justify-center gap-2 sm:gap-3 rounded-[2rem] sm:rounded-full bg-white/20 px-2 sm:px-4 py-2 sm:py-3 backdrop-blur-md shadow-xl border border-white/30">
           <a
             href="#enquiry"
-            className="rounded-full bg-brand px-8 py-3.5 text-base font-bold text-white shadow-md transition-colors hover:bg-brand-dark"
+            className="rounded-full bg-brand px-4 sm:px-8 py-2.5 sm:py-3.5 text-[15px] sm:text-lg font-bold text-white shadow-md transition-colors hover:bg-brand-dark whitespace-nowrap"
           >
             Apply for 2026 &rarr;
           </a>
           <a
             href="#enquiry"
-            className="rounded-full bg-white px-8 py-3.5 text-base font-bold text-ink shadow-md transition-colors hover:bg-zinc-50"
+            className="rounded-full bg-white px-4 sm:px-8 py-2.5 sm:py-3.5 text-[15px] sm:text-lg font-bold text-ink shadow-md transition-colors hover:bg-zinc-50 whitespace-nowrap"
           >
             Talk to Counsellor
           </a>
           <a
             href="/parul-goa-brochure-2026.pdf"
             download
-            className="rounded-full bg-white px-8 py-3.5 text-base font-bold text-ink shadow-md transition-colors hover:bg-zinc-50"
+            className="hidden sm:inline-flex rounded-full bg-white px-8 py-3.5 text-lg font-bold text-ink shadow-md transition-colors hover:bg-zinc-50 whitespace-nowrap"
           >
             Brochure
           </a>
