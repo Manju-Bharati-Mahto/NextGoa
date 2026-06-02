@@ -3,27 +3,33 @@
 import { useState } from "react";
 import { faqSchema, type FaqItem } from "@/lib/structured-data";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+});
 
 const faqs: FaqItem[] = [
   {
-    question: "What is the placement record at Parul University Goa?",
-    answer: "Parul University Goa has a strong placement record, with dedicated training and placement cells working year-round to ensure students are industry-ready and connected with top employers.",
+    question: "Define Global Pathway Programme?",
+    answer: "The Global Pathway Programme is a specialized academic route that allows you to start your degree at Parul University Goa and later transfer to a partner university abroad to complete your studies, earning an international degree.",
   },
   {
-    question: "Who are the top recruiters at PU Goa?",
-    answer: "Our top recruiters include leading multinational corporations, tech giants, and prominent national companies across various sectors such as IT, Management, and Healthcare.",
+    question: "Can I study abroad while studying at PU Goa?",
+    answer: "Yes, our pathway programmes are specifically designed to let you complete the initial part of your degree at PU Goa before seamlessly transferring to one of our international partner universities.",
   },
   {
-    question: "What is the highest package offered to a PU graduate?",
-    answer: "The highest package offered varies by year and programme, but our graduates consistently secure highly competitive salaries in top-tier companies.",
+    question: "What is the 2+2 pathway?",
+    answer: "The 2+2 pathway is a popular model where you complete the first 2 years of your undergraduate degree at PU Goa, and then transfer to a partner university abroad for the remaining 2 years to graduate.",
   },
   {
-    question: "Are placements available for non-engineering students?",
-    answer: "Yes, absolutely. We have dedicated placement drives for Management, Pharmacy, Arts, and other non-engineering faculties with equal opportunities for high-value packages.",
+    question: "How much does it cost?",
+    answer: "Costs vary depending on the destination country and partner university. However, starting your degree at PU Goa through a pathway programme can save you up to 40-50% on total international tuition and living expenses.",
   },
   {
-    question: "Are pre-placement offers available through internships?",
-    answer: "Yes, many of our students secure Pre-Placement Offers (PPOs) during their final-year internships and industry training programmes.",
+    question: "How many English tests are accepted?",
+    answer: "We accept several major English proficiency tests including IELTS, TOEFL, PTE, and Duolingo English Test, though specific requirements depend on the destination country and partner university.",
   },
 ];
 
@@ -32,7 +38,7 @@ function FaqAccordionItem({ f, isOpen, onToggle }: { f: FaqItem; isOpen: boolean
     <div className="rounded-2xl bg-white shadow-sm ring-1 ring-black/5">
       <button
         onClick={onToggle}
-        className="flex w-full cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left font-[family-name:var(--font-poppins)] text-base font-medium text-ink"
+        className="flex w-full cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left text-base font-medium text-ink"
       >
         {f.question}
         <svg
@@ -53,7 +59,7 @@ function FaqAccordionItem({ f, isOpen, onToggle }: { f: FaqItem; isOpen: boolean
         }`}
       >
         <div className="overflow-hidden px-6">
-          <p className="mt-1 font-[family-name:var(--font-poppins)] text-sm leading-7 text-ink/70">
+          <p className="mt-1 text-sm leading-7 text-ink/70">
             {f.answer}
           </p>
         </div>
@@ -62,25 +68,25 @@ function FaqAccordionItem({ f, isOpen, onToggle }: { f: FaqItem; isOpen: boolean
   );
 }
 
-export default function ProgrammesFaq() {
+export default function StudyAbroadFaq() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="bg-[#F9F9F9] pb-24 pt-20 font-[family-name:var(--font-poppins)]">
+    <section id="faq" className={`bg-[#fff9e6] pb-24 pt-20 ${poppins.className}`} style={poppins.style}>
       <JsonLd data={faqSchema(faqs)} />
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-xl sm:text-[22px] font-bold text-ink mb-3 tracking-wide font-poppins">
+          <h2 className="text-xl sm:text-[22px] font-bold text-ink mb-3 tracking-wide">
             FAQs
           </h2>
-          <h3 className="text-4xl sm:text-[3.2rem] font-semibold text-[#ED383F] tracking-tight leading-tight font-poppins">
+          <h3 className="text-4xl sm:text-[3.2rem] font-extrabold text-[#ED383F] tracking-tight leading-tight">
             Frequently asked questions about campus life.
           </h3>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-[400px_1fr] lg:items-stretch lg:gap-12">
+        <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-[400px_1fr] lg:items-stretch lg:gap-12 max-w-6xl mx-auto">
           {/* Yellow accent card */}
-          <div className="relative hidden min-h-[320px] w-full overflow-hidden rounded-[32px] bg-[#FFD523] lg:block">
+          <div className="relative hidden min-h-[320px] w-full overflow-hidden rounded-[32px] bg-[#FFD523] lg:block shadow-sm">
             <svg
               viewBox="57 102 238 228"
               fill="none"
