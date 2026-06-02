@@ -15,17 +15,17 @@ const stats = [
         Award
       </>
     ),
-    titleClass: "text-[28px] sm:text-[32px] lg:text-[36px]",
+    titleClass: "text-[36px] sm:text-[32px] lg:text-[36px]",
     label: "Best Placement University - consecutive years.",
   },
   {
     title: "₹58 Cr+",
-    titleClass: "text-[42px] sm:text-[48px] lg:text-[56px]",
+    titleClass: "text-[56px] sm:text-[48px] lg:text-[56px]",
     label: "Best Placement University - consecutive years.",
   },
   {
     title: "120+",
-    titleClass: "text-[42px] sm:text-[48px] lg:text-[56px]",
+    titleClass: "text-[56px] sm:text-[48px] lg:text-[56px]",
     label: "Best Placement University - consecutive years.",
   },
 ];
@@ -36,24 +36,24 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
   const aboutExtraStats = [
     {
       title: "254",
-      titleClass: "text-[42px] sm:text-[48px] lg:text-[56px]",
+      titleClass: "text-[56px] sm:text-[48px] lg:text-[56px]",
       label: "Startups incubated",
     },
     {
       title: "800+",
-      titleClass: "text-[42px] sm:text-[48px] lg:text-[56px]",
+      titleClass: "text-[56px] sm:text-[48px] lg:text-[56px]",
       label: "Students in global programmes",
     },
     {
       title: "315",
-      titleClass: "text-[42px] sm:text-[48px] lg:text-[56px]",
+      titleClass: "text-[56px] sm:text-[48px] lg:text-[56px]",
       label: "Funded research projects",
     },
   ];
 
   return (
     <section id="placements" className={isAbout ? "bg-gradient-to-b from-[#D6F0FA] via-[#F8F8F8]/50 to-brand-white -mt-10 pt-10 relative z-0" : "bg-brand-white"}>
-      <div className="mx-auto max-w-6xl px-6 py-20">
+      <div className="mx-auto max-w-6xl px-6 pt-15 pb-20 sm:py-20">
         <div className="flex justify-center mb-6">
           <img src="/Test.svg" alt="" aria-hidden="true" className="h-[97px] w-auto" />
         </div>
@@ -76,7 +76,7 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
         <div className="relative mt-8 sm:pt-16" style={{ overflow: "visible" }}>
 
           {/* ── MOBILE CARD (vertical, shown below sm) ── */}
-          <div className="sm:hidden relative mx-auto max-w-[420px]">
+          <div className="sm:hidden relative mx-auto w-full scale-[1.12] origin-top pb-10">
             {/* SVG card as the only background/structure */}
             <img
               src="/mobile-card.svg"
@@ -84,18 +84,18 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
               className="w-full h-auto block"
             />
             {/* Text overlaid directly over the SVG */}
-            <div className="absolute top-0 left-0 right-0 p-6 flex flex-col justify-start pointer-events-none">
+            <div className="absolute top-0 left-0 right-0 p-5 flex flex-col justify-start pointer-events-none">
               <div>
-                <span className="inline-block rounded-full bg-white px-5 py-2 font-[family-name:var(--font-poppins)] font-normal text-[20px] text-[#1F1F1F]">
+                <span className="inline-block rounded-full bg-white px-4 py-2 mb-1 font-[family-name:var(--font-poppins)] font-normal text-[14px] text-[#1F1F1F]">
                   Highest package · 2027
                 </span>
               </div>
-              <div className="mt-3.5 flex items-end gap-1.5 text-white">
-                <span className="font-[family-name:var(--font-gotham)] font-bold leading-none" style={{ fontSize: "64px" }}>₹60</span>
-                <span className="mb-1.5 font-[family-name:var(--font-gotham)] font-bold text-3xl">LPA<span className="text-[#FEDB2F]">*</span></span>
+              <div className="mt-2 flex items-end gap-1 text-white">
+                <span className="font-[family-name:var(--font-gotham)] font-bold leading-none" style={{ fontSize: "56px" }}>₹60</span>
+                <span className="mb-1 font-[family-name:var(--font-gotham)] font-bold text-2xl">LPA<span className="text-[#FEDB2F]">*</span></span>
               </div>
-              <div className="w-full h-px bg-white/30 my-3" />
-              <p className="font-[family-name:var(--font-poppins)] font-normal text-[12px] leading-relaxed text-white/90">
+              <div className="w-full h-px bg-white/30 my-2.5" />
+              <p className="font-[family-name:var(--font-poppins)] font-normal text-[14px] leading-relaxed text-white/90 pr-4">
                 Awarded to two B.Tech CSE students in a single recruitment
                 cycle — the benchmark the PU ecosystem is producing today.
               </p>
@@ -179,7 +179,7 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
               <dt className={`font-sans font-bold leading-[1.15] text-[#0CAADD] tracking-tight ${("titleClass" in s && s.titleClass) || "text-[26px] sm:text-[28px] lg:text-[30px]"}`}>
                 {s.title}
               </dt>
-              <dd className="mt-3 font-[family-name:var(--font-poppins)] font-normal text-[14px] sm:text-[15px] text-ink leading-[1.45]">
+              <dd className="mt-3 font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[15px] text-ink leading-[1.45]">
                 {s.label}
               </dd>
             </div>
@@ -197,7 +197,7 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
                 <dt className={`font-sans font-bold leading-[1.15] text-[#0CAADD] tracking-tight ${s.titleClass}`}>
                   {s.title}
                 </dt>
-                <dd className="mt-3 font-[family-name:var(--font-poppins)] font-normal text-[14px] sm:text-[15px] text-ink leading-[1.45]">
+                <dd className="mt-3 font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[15px] text-ink leading-[1.45]">
                   {s.label}
                 </dd>
               </div>

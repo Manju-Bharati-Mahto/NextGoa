@@ -39,7 +39,7 @@ export function Testimonial() {
   }, []);
 
   return (
-    <section className="bg-gradient-to-t from-[#CBEFFD] to-brand-white py-24">
+    <section className="bg-gradient-to-t from-[#CBEFFD] to-brand-white sm:py-24 py-15">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 md:grid-cols-[1.4fr_1fr]">
         <div className="relative">
           {/* Testimonial text cross-fade container - grid cell overlap prevents height collapse */}

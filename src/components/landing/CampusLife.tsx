@@ -13,32 +13,32 @@ const cards = [
     title: "Food",
     body: "Multi-cuisine cafeteria, dietary plans on request, hygienic kitchens audited monthly.",
     cls: "bg-sunshine text-ink",
-    textClass: "max-w-[50%]",
-    iconClass: "bottom-0 right-4 w-44 sm:w-52",
+    textClass: "max-w-[55%] sm:max-w-[50%]",
+    iconClass: "bottom-0 right-2 sm:right-4 w-28 sm:w-52",
   },
   {
     imagePath: "/medical.png",
     title: "Medical",
     body: "On-campus clinic with resident doctor + tie-ups with nearby multi-specialty hospitals.",
     cls: "bg-brand text-white",
-    textClass: "max-w-[55%]",
-    iconClass: "bottom-0 right-3 w-44 sm:w-52",
+    textClass: "max-w-[60%] sm:max-w-[55%]",
+    iconClass: "bottom-0 right-1 sm:right-3 w-28 sm:w-52",
   },
   {
     imagePath: "/hostel.png",
     title: "Hostels",
     body: "Separate boys' & girls' blocks. 24×7 security, biometric access, in-house wardens.",
     cls: "bg-ink text-white",
-    textClass: "max-w-[55%]",
-    iconClass: "bottom-0 right-4 w-36 sm:w-44",
+    textClass: "max-w-[60%] sm:max-w-[55%]",
+    iconClass: "bottom-0 right-2 sm:right-4 w-24 sm:w-44",
   },
   {
     imagePath: "/transport.png",
     title: "Transport",
     body: "Daily shuttle from Margao / Madgaon and key Goa pickup points.",
     cls: "bg-ocean text-white",
-    textClass: "max-w-[48%]",
-    iconClass: "bottom-3 right-2 w-60 sm:w-72",
+    textClass: "max-w-[55%] sm:max-w-[48%]",
+    iconClass: "bottom-3 -right-2 sm:right-2 w-40 sm:w-72",
   },
 ];
 
@@ -85,10 +85,10 @@ export function CampusLife() {
       </div>
 
       {/* Decorative icons sitting on the white, just above the Why Goa wave */}
-      <div className="flex w-full items-end justify-between pb-2 relative z-0">
-        <img src="/deco-lighthouse.svg" alt="" aria-hidden="true" className="h-20 w-auto sm:h-32 translate-y-[45px]" />
-        <img src="/deco-pearl.svg" alt="" aria-hidden="true" className="h-16 w-auto translate-y-2 sm:h-24 translate-x-[10px]" />
-        <img src="/deco-sun.svg" alt="" aria-hidden="true" className="mb-2 h-16 w-auto sm:h-24 -translate-x-[60px] translate-y-[10px]" />
+      <div className="flex w-full items-end justify-between pb-2 relative z-0 px-2 sm:px-0">
+        <img src="/deco-lighthouse.svg" alt="" aria-hidden="true" className="h-16 w-auto sm:h-32 translate-y-[25px] sm:translate-y-[45px]" />
+        <img src="/deco-pearl.svg" alt="" aria-hidden="true" className="h-14 w-auto sm:h-24 translate-y-[35px] sm:translate-y-2 translate-x-2 sm:translate-x-[10px]" />
+        <img src="/deco-sun.svg" alt="" aria-hidden="true" className="mb-2 h-14 w-auto sm:h-24 -translate-x-2 sm:-translate-x-[60px] translate-y-[20px] sm:translate-y-[10px]" />
       </div>
     </section>
   );

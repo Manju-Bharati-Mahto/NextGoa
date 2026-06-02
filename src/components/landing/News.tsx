@@ -29,7 +29,7 @@ const stories = [
 export function News() {
   return (
     <section id="news" className="bg-brand-white">
-      <div className="mx-auto max-w-6xl px-6 py-20">
+      <div className="mx-auto max-w-6xl px-6 py-10 sm:py-15">
         <Eyebrow className="text-ink">News &amp; stories</Eyebrow>
         <h2 className="mt-2 text-center font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
           What&apos;s happening on campus.
@@ -58,7 +58,7 @@ export function News() {
         </ul>
 
         <p className="mt-10 text-center">
-          <a href="#news" className="text-sm font-bold text-brand hover:text-brand-dark">
+          <a href="#news" className="font-poppins text-lg font-bold text-brand hover:text-brand-dark">
             All news →
           </a>
         </p>

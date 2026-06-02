@@ -117,7 +117,7 @@ function CourseCard({ color, title, tags }: CourseCardProps) {
       {/* Decorative background pattern (isolated to the right portion of the card) */}
       <svg
         viewBox="250 0 125 268"
-        className="absolute right-0 top-0 h-full w-[33%] pointer-events-none opacity-40"
+        className="absolute left-[5%] sm:left-auto sm:right-0 -top-[13%] sm:top-0 h-full w-[20%] sm:w-[33%] pointer-events-none opacity-40"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -320,7 +320,7 @@ export function ProgrammeFinder() {
         )}
 
         {/* Counsellor band */}
-        <div className="mt-8 flex flex-col items-center justify-between gap-4 rounded-2xl bg-ink-warm px-6 py-5 sm:flex-row">
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 rounded-2xl bg-ink-warm px-6 py-8 sm:py-5 sm:flex-row font-[family-name:var(--font-poppins)]">
           <p className="text-center text-base sm:text-lg font-medium text-white/90 sm:text-left">
             <span className="font-bold">Don&apos;t know what to choose?</span>{" "}
             Talk to a counsellor — we&apos;ll match you to the right program.

@@ -11,7 +11,7 @@ const acceptedTests = ["JEE", "CUET", "CAT", "MAT", "GPAT", "UGC NET", "PU Goa E
 export function Admissions() {
   return (
     <section id="admissions" className="bg-brand-white">
-      <div className="mx-auto max-w-6xl px-6 py-20">
+      <div className="mx-auto max-w-6xl px-6 py-10">
         <div className="flex justify-center mb-6">
           <img src="/1.svg" alt="Admissions illustration" className="h-[97px] w-auto" />
         </div>
@@ -28,10 +28,10 @@ export function Admissions() {
         <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
           {/* Left — entrance test pitch */}
           <div className="flex flex-col justify-center text-left">
-            <h3 className="font-poppins font-semibold text-[24px] sm:text-[32px] leading-tight tracking-tight text-ink">
+            <h3 className="font-poppins font-semibold text-[32px] leading-tight tracking-tight text-ink">
               Apply for PU Goa&apos;s<br />Entrance Test
             </h3>
-            <p className="mt-4 max-w-md font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] leading-[1.65] text-ink/70">
+            <p className="mt-4 max-w-md font-[family-name:var(--font-poppins)] font-normal text-[18px] sm:text-[18px] leading-[1.65] text-ink/70">
               The Goa Entrance Exam is designed to assess your readiness for B.Tech programmes in
               Computer Science &amp; AI. Sit it online, get your result fast, and lock your seat.
             </p>
@@ -48,10 +48,10 @@ export function Admissions() {
           </div>
 
           {/* Right — window card SVG */}
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center py-6 sm:py-0">
             <a
               href={cta.apply}
-              className="block w-full max-w-[585px]"
+              className="block w-full scale-[1.15] sm:scale-100 sm:w-full max-w-none sm:max-w-[585px] origin-center"
             >
               <img
                 src="/Group 32629.svg"
