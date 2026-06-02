@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const programmes = [
   {
@@ -10,6 +11,7 @@ const programmes = [
     description: "The finest technical exposure in the field of technology.",
     count: 8,
     image: "/programmes/ARVR Innovation Lab.png",
+    href: "/programmes/engineering",
   },
   {
     id: 2,
@@ -176,30 +178,42 @@ export default function ProgramFilter() {
 
           {/* Grid */}
           <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
-            {programmes.map((prog) => (
-              <div key={prog.id} className="bg-white rounded-[20px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.04)] border-3 border-gray-200 flex flex-col group hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all">
-                <div className="relative h-[260px] w-full overflow-hidden">
-                  <Image
-                    src={prog.image}
-                    alt={prog.category}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </div>
-                <div className="p-6 flex-1 flex flex-col items-start bg-white z-10 relative">
-                  <div className="bg-[#ED383F] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">
-                    {prog.count} PROGRAMMES
+            {programmes.map((prog) => {
+              const CardContent = (
+                <div className="bg-white rounded-[20px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.04)] border-3 border-gray-200 flex flex-col group hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all h-full">
+                  <div className="relative h-[260px] w-full overflow-hidden">
+                    <Image
+                      src={prog.image}
+                      alt={prog.category}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
                   </div>
-                  <h4 className="text-xl sm:text-[22px] font-semibold text-ink mb-2 font-poppins">
-                    {prog.category}
-                  </h4>
-                  <p className="text-[14px] text-ink/70 leading-relaxed font-medium">
-                    {prog.description}
-                  </p>
+                  <div className="p-6 flex-1 flex flex-col items-start bg-white z-10 relative">
+                    <div className="bg-[#ED383F] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">
+                      {prog.count} PROGRAMMES
+                    </div>
+                    <h4 className="text-xl sm:text-[22px] font-semibold text-ink mb-2 font-poppins">
+                      {prog.category}
+                    </h4>
+                    <p className="text-[14px] text-ink/70 leading-relaxed font-medium">
+                      {prog.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+
+              return prog.href ? (
+                <Link key={prog.id} href={prog.href} className="block w-full h-full">
+                  {CardContent}
+                </Link>
+              ) : (
+                <div key={prog.id} className="block w-full h-full cursor-not-allowed opacity-90">
+                  {CardContent}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
