@@ -192,7 +192,7 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
             {aboutExtraStats.map((s, idx) => (
               <div
                 key={idx}
-                className="w-full sm:w-[30%] max-w-[280px] rounded-[20px] border border-zinc-300 bg-white px-7 py-6 text-left shadow-sm mx-auto sm:mx-0"
+                className="w-full sm:w-[30%] sm:max-w-[280px] rounded-[20px] border border-zinc-300 bg-white px-7 py-6 text-left shadow-sm mx-auto sm:mx-0"
               >
                 <dt className={`font-sans font-bold leading-[1.15] text-[#0CAADD] tracking-tight ${s.titleClass}`}>
                   {s.title}

@@ -70,7 +70,7 @@ export function FinalCta({
             </p>
 
             {actions.length > 0 ? (
-              <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
+              <div className="mt-7 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3">
                 {actions.map((action) => {
                   const isPrimary = action.variant === "primary";
 
@@ -78,7 +78,7 @@ export function FinalCta({
                     <a
                       key={action.label}
                       href={action.href}
-                      className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 font-sans text-[16px] font-bold transition ${
+                      className={`inline-flex min-h-12 w-full max-w-[280px] sm:w-auto sm:max-w-none items-center justify-center gap-2 rounded-full px-6 font-sans text-[16px] font-bold transition ${
                         isPrimary
                           ? "bg-brand text-white hover:bg-brand-dark"
                           : "border border-white/30 bg-white/20 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_10px_30px_rgba(0,0,0,0.18)] backdrop-blur-md hover:bg-white/30"

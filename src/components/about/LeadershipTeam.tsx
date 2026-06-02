@@ -24,7 +24,7 @@ export function LeadershipTeam() {
   ];
 
   return (
-    <section className="bg-[#F8F8F8] py-20 px-6">
+    <section className="bg-[#F8F8F8] sm:py-20 py-5 px-6">
       <div className="mx-auto max-w-6xl">
         <div className="text-center mb-12">
           <h2 className="font-poppins font-bold text-[32px] sm:text-[44px] leading-tight text-ink">
