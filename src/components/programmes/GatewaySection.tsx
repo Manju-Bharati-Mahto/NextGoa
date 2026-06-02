@@ -12,7 +12,7 @@ export default function GatewaySection() {
         
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center justify-center">
-          <span className="bg-[#FFD523] text-ink font-semibold px-6 py-2.5 rounded-full text-[14px] sm:text-[16px] mb-6 shadow-sm">
+          <span className="bg-[#FFD523] text-ink font-bold px-6 py-2.5 rounded-full text-[16px] sm:text-[16px] mb-6 shadow-sm">
             Admissions Open 2026
           </span>
           
@@ -20,7 +20,7 @@ export default function GatewaySection() {
             Ready to apply, Or still deciding?
           </h2>
           
-          <p className="text-white/95 text-[15px] sm:text-[17px] max-w-4xl mx-auto leading-relaxed font-medium">
+          <p className="text-white/95 text-[16.5px] sm:text-[17px] max-w-4xl mx-auto leading-relaxed font-medium">
             Submit your application for 2026-27, talk to an admissions counsellor, or download the master brochure
             with fees, eligibility and entrance details for every programme.
           </p>

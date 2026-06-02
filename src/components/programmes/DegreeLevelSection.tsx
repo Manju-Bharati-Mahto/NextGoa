@@ -39,10 +39,10 @@ const degrees = [
 ];
 
 const DocumentIcon = () => (
-  <img 
-    src="/programmes/Academic Document.svg" 
-    alt="Academic Document" 
-    className="w-[30px] h-[30px] object-contain shrink-0" 
+  <img
+    src="/programmes/Academic Document.svg"
+    alt="Academic Document"
+    className="w-[30px] h-[30px] object-contain shrink-0"
   />
 );
 
@@ -58,14 +58,14 @@ const DegreeCard = ({ data }: { data: typeof degrees[0] }) => (
         {data.count}
       </div>
     </div>
-    
+
     {/* Body */}
     <div className="p-6">
       <ul className="flex flex-col">
         {data.items.map((item, index) => (
           <li key={index} className="flex items-start gap-4 py-4 border-b border-gray-100 last:border-0 last:pb-0 first:pt-0">
             <div className="mt-1.5 w-[9px] h-[9px] rounded-full bg-[#1AC15D] shrink-0" />
-            <span className="text-[15px] text-ink font-medium leading-snug">{item}</span>
+            <span className="text-[17px] sm:text-[15px] text-ink font-medium leading-snug">{item}</span>
           </li>
         ))}
       </ul>
@@ -75,20 +75,17 @@ const DegreeCard = ({ data }: { data: typeof degrees[0] }) => (
 
 export default function DegreeLevelSection() {
   return (
-    <section 
-      className="relative w-full min-h-[800px] flex items-center py-24 sm:py-32"
+    <section
+      className="relative w-full min-h-[800px] flex items-center py-40 sm:py-32 bg-no-repeat bg-cover bg-top sm:bg-[length:100%_100%] sm:bg-center"
       style={{
-        backgroundImage: "url('/programmes/Ocean Wave Frame.png')",
-        backgroundSize: "100% 100%",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat"
+        backgroundImage: "url('/programmes/Ocean Wave Frame.png')"
       }}
     >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 font-[family-name:var(--font-poppins)]">
         {/* Header Content */}
         <div className="text-center text-white mb-16 sm:mb-20">
           <h2 className="text-xl sm:text-[22px] font-bold mb-3 tracking-wide font-poppins">By Degree Level</h2>
-          <h3 className="text-4xl sm:text-[3.2rem] font-semibold text-[#FFD523] mb-5 tracking-tight leading-tight font-poppins">
+          <h3 className="text-4xl sm:text-[3.2rem] font-bold text-[#FFD523] mb-5 tracking-tight leading-tight font-poppins">
             Choose by qualification.
           </h3>
           <p className="text-[15px] sm:text-[17px] max-w-2xl mx-auto opacity-95 font-medium">
@@ -103,12 +100,12 @@ export default function DegreeLevelSection() {
             <DegreeCard data={degrees[0]} /> {/* Diploma */}
             <DegreeCard data={degrees[3]} /> {/* Doctoral */}
           </div>
-          
+
           {/* Column 2 */}
           <div className="flex flex-col gap-6">
             <DegreeCard data={degrees[1]} /> {/* Bachelor's */}
           </div>
-          
+
           {/* Column 3 */}
           <div className="flex flex-col gap-6">
             <DegreeCard data={degrees[2]} /> {/* Master's */}
@@ -117,10 +114,10 @@ export default function DegreeLevelSection() {
 
         {/* Decorative Badge */}
         <div className="absolute bottom-10 right-10 lg:right-20 pointer-events-none opacity-80 mix-blend-overlay z-0 hidden md:block">
-          <img 
-            src="/programmes/Excellence Badge.svg" 
-            alt="Excellence Badge" 
-            className="w-[350px] lg:w-[450px] h-auto object-contain" 
+          <img
+            src="/programmes/Excellence Badge.svg"
+            alt="Excellence Badge"
+            className="w-[350px] lg:w-[450px] h-auto object-contain"
           />
         </div>
       </div>
