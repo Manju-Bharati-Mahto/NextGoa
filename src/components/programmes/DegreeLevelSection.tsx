@@ -76,7 +76,7 @@ const DegreeCard = ({ data }: { data: typeof degrees[0] }) => (
 export default function DegreeLevelSection() {
   return (
     <section
-      className="relative w-full min-h-[800px] flex items-center py-40 sm:py-32 bg-no-repeat bg-cover bg-top sm:bg-[length:100%_100%] sm:bg-center"
+      className="relative w-full min-h-[800px] flex items-center py-40 sm:py-32 bg-no-repeat bg-cover bg-center"
       style={{
         backgroundImage: "url('/programmes/Ocean Wave Frame.png')"
       }}

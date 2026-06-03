@@ -20,7 +20,7 @@ export default function StudyAbroadComparison() {
 
   return (
     <section 
-      className="relative w-full font-[family-name:var(--font-poppins)] pt-24 pb-32 bg-[#f9f9f9] bg-no-repeat bg-cover bg-top sm:bg-[length:100%_100%] sm:bg-center"
+      className="relative w-full font-[family-name:var(--font-poppins)] pt-24 pb-32 bg-[#f9f9f9] bg-no-repeat bg-cover bg-center"
       style={{ 
         backgroundImage: "url('/abroad/Red Wave Border.png')"
       }}

@@ -14,7 +14,7 @@ export default function StudyAbroadModels() {
     >
       {/* Background Frame */}
       <div
-        className="absolute inset-0 z-0 pointer-events-none bg-cover bg-top sm:bg-[length:100%_100%] sm:bg-center bg-no-repeat"
+        className="absolute inset-0 z-0 pointer-events-none bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: "url('/abroad/Global Journey Frame.png')"
         }}
