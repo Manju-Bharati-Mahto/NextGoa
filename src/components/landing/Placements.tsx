@@ -53,7 +53,7 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
 
   return (
     <section id="placements" className={isAbout ? "bg-gradient-to-b from-[#D6F0FA] via-[#F8F8F8]/50 to-brand-white -mt-10 pt-10 relative z-0" : "bg-brand-white"}>
-      <div className="mx-auto max-w-6xl px-6 pt-15 pb-20 sm:py-20">
+      <div className="mx-auto max-w-6xl px-7 pt-15 pb-20 sm:py-20">
         <div className="flex justify-center mb-6">
           <img src="/Test.svg" alt="" aria-hidden="true" className="h-[97px] w-auto" />
         </div>
@@ -76,29 +76,33 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
         <div className="relative mt-8 sm:pt-16" style={{ overflow: "visible" }}>
 
           {/* ── MOBILE CARD (vertical, shown below sm) ── */}
-          <div className="sm:hidden relative mx-auto w-full scale-[1.12] origin-top pb-10">
-            {/* SVG card as the only background/structure */}
-            <img
-              src="/mobile-card.svg"
-              alt="MS Dhoni with Parul University students"
-              className="w-full h-auto block"
-            />
-            {/* Text overlaid directly over the SVG */}
-            <div className="absolute top-0 left-0 right-0 p-5 flex flex-col justify-start pointer-events-none">
+          <div className="sm:hidden relative mx-auto w-full rounded-[24px] bg-[#E73649] text-white shadow-lg overflow-hidden flex flex-col" style={{ minHeight: "450px" }}>
+            {/* Text content */}
+            <div className="p-6 pb-0 flex flex-col justify-start relative z-20">
               <div>
                 <span className="inline-block rounded-full bg-white px-4 py-2 mb-1 font-[family-name:var(--font-poppins)] font-normal text-[14px] text-[#1F1F1F]">
                   Highest package · 2027
                 </span>
               </div>
-              <div className="mt-2 flex items-end gap-1 text-white">
-                <span className="font-[family-name:var(--font-gotham)] font-bold leading-none" style={{ fontSize: "56px" }}>₹60</span>
-                <span className="mb-1 font-[family-name:var(--font-gotham)] font-bold text-2xl">LPA<span className="text-[#FEDB2F]">*</span></span>
+              <div className="mt-4 flex items-end gap-1 text-white">
+                <span className="font-[family-name:var(--font-gotham)] font-bold leading-none" style={{ fontSize: "64px" }}>₹60</span>
+                <span className="mb-2 font-[family-name:var(--font-gotham)] font-bold text-2xl">LPA<span className="text-[#FEDB2F]">*</span></span>
               </div>
-              <div className="w-full h-px bg-white/30 my-2.5" />
-              <p className="font-[family-name:var(--font-poppins)] font-normal text-[14px] leading-relaxed text-white/90 pr-4">
+              <div className="w-full h-px bg-white/30 my-4" />
+              <p className="font-[family-name:var(--font-poppins)] font-normal text-[15px] leading-relaxed text-white/90">
                 Awarded to two B.Tech CSE students in a single recruitment
                 cycle — the benchmark the PU ecosystem is producing today.
               </p>
+            </div>
+
+            {/* Image at bottom */}
+            <div className="relative mt-5 z-10 w-full flex-grow flex items-end justify-center pointer-events-none">
+              <img
+                src="/Image-opt.webp"
+                alt="MS Dhoni with Parul University students"
+                className="w-[110%] max-w-none ml-[5%] block"
+                style={{ marginBottom: "-30px" }}
+              />
             </div>
           </div>
 
