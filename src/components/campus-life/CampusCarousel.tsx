@@ -1,4 +1,3 @@
-import { WaveBandBg } from "@/components/landing/WaveBand";
 
 const carouselItems = [
   { id: 1, title: "Academic Block" },
@@ -9,11 +8,13 @@ const carouselItems = [
 
 export function CampusCarousel() {
   return (
-    <section className="relative overflow-hidden bg-[#FEF3BA]">
-      {/* Background Blue Wavy SVG */}
-      <div className="absolute inset-0 z-0 pointer-events-none h-full w-full">
-        <WaveBandBg band="#0CAADD" accent="#0094C4" />
-      </div>
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#FEF3BA] to-[#F8F8F8]">
+      {/* Background Blue Wavy Image from Figma */}
+      <img
+        src="/Group 32863.png"
+        alt=""
+        className="absolute inset-0 w-full h-full object-fill z-0 pointer-events-none"
+      />
 
       <div className="relative z-10 mx-auto w-full flex flex-col items-center py-32 sm:py-48">
         {/* Header content */}

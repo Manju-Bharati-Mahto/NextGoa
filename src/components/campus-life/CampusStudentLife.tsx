@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { WaveBandBg } from "@/components/landing/WaveBand";
 
 const clubs = [
   {
@@ -27,10 +26,12 @@ const clubs = [
 export function CampusStudentLife() {
   return (
     <section className="relative w-full py-24 lg:py-32 overflow-hidden flex flex-col justify-center min-h-[800px]">
-      {/* Background Wave Band */}
-      <div className="absolute inset-0 z-0">
-        <WaveBandBg band="#1DA1D2" accent="#1483AB" />
-      </div>
+      {/* Background Blue Wavy Image from Figma */}
+      <img
+        src="/Group 32863.png"
+        alt=""
+        className="absolute inset-0 w-full h-full object-fill z-0 pointer-events-none"
+      />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full flex flex-col items-center text-center mb-12 sm:mb-16 mt-8">
         <h3 className="font-poppins font-semibold text-[20px] sm:text-[24px] text-white mb-2">

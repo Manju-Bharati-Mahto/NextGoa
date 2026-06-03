@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { WaveBandBg } from "@/components/landing/WaveBand";
 import { Icon } from "@iconify/react";
 import { CareerOutcomesData } from "@/data/programmes/types";
 
@@ -21,10 +20,18 @@ export function DynamicCareerOutcomes({
       className="relative overflow-hidden z-10 w-full"
       style={{ backgroundImage: `linear-gradient(to bottom, ${topBgColor} 50%, transparent 50%)` }}
     >
-      {/* Background wave band */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <WaveBandBg band={themeColor.waveBand} accent={themeColor.waveAccent} />
-      </div>
+      {/* Background Wavy Image from Figma */}
+      <img
+        src={
+          themeColor.waveBand.toUpperCase() === "#E73649"
+            ? "/Group 32864.png"
+            : themeColor.waveBand.toUpperCase() === "#1F1F1F"
+            ? "/Group 32865.png"
+            : "/Group 32863.png"
+        }
+        alt=""
+        className="absolute inset-0 w-full h-full object-fill z-0 pointer-events-none"
+      />
 
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-12 py-24 sm:py-32 text-center flex flex-col items-center">
         <h2 className="text-white font-semibold text-lg sm:text-xl mb-4 tracking-wide">

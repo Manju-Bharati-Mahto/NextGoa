@@ -8,7 +8,6 @@
  * Replicated faithfully here; confirm the intended eyebrow copy per card.
  */
 import { Eyebrow } from "./Decor";
-import { WaveBandBg } from "./WaveBand";
 
 function LighthouseIcon() {
   return (
@@ -83,11 +82,13 @@ export function Philosophy({ variant = "default" }: { variant?: "default" | "cle
       id="philosophy"
       className={`relative overflow-hidden ${isClean ? "bg-transparent py-5 sm:py-20" : "bg-gradient-to-b from-[var(--color-ink-warm)] to-[var(--color-brand-white)]"}`}
     >
-      {/* Background Blue Wavy SVG from Figma */}
+      {/* Background Blue Wavy Image from Figma */}
       {!isClean && (
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <WaveBandBg band="#0CAADD" accent="#0094C4" />
-        </div>
+        <img
+          src="/Group 32863.png"
+          alt=""
+          className="absolute inset-0 w-full h-full object-fill z-0 pointer-events-none"
+        />
       )}
       
       <div className={`relative z-10 mx-auto max-w-[1440px] px-6 ${isClean ? "py-16" : "py-50 sm:py-50"} flex flex-col items-center justify-center`}>

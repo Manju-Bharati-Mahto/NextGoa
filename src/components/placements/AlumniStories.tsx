@@ -1,18 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
-import { WaveBandBg } from '../landing/WaveBand';
 
 export function AlumniStories() {
   return (
     <section className="relative overflow-hidden bg-white pt-[11vw] pb-[11vw] sm:pt-[9vw] sm:pb-[9vw]">
-      {/* Background Blue Wavy SVG from Figma - Split into Top, Middle, Bottom */}
-      <div className="absolute top-0 left-0 right-0 h-[10vw] min-h-[60px] z-0 pointer-events-none">
-        <WaveBandBg band="#0CAADD" accent="#0094C4" topOnly />
-      </div>
-      <div className="absolute top-[9vw] bottom-[9vw] left-0 right-0 bg-[#0CAADD] z-0 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 right-0 h-[10vw] min-h-[60px] bg-[#F8F9FA] z-0 pointer-events-none">
-        <WaveBandBg band="#0CAADD" accent="#0094C4" bottomOnly />
-      </div>
+      {/* Background Red Wavy Image from Figma */}
+      <img
+        src="/Group 32864.png"
+        alt=""
+        className="absolute inset-0 w-full h-full object-fill z-0 pointer-events-none"
+      />
       
       <div className="relative z-10 max-w-6xl mx-auto px-6 mt-4 sm:mt-6 mb-4 sm:mb-6">
         {/* Title Section */}

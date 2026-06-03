@@ -1,15 +1,16 @@
 "use client";
 
 import React from "react";
-import { WaveBandBg } from "@/components/landing/WaveBand";
 
 export default function WhyPUGoa() {
   return (
     <section className="relative overflow-hidden z-10 w-full bg-[linear-gradient(to_bottom,#FAFAFA_50%,#BAE6FD_50%)]">
-      {/* Background wave band */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <WaveBandBg band="#E73649" accent="#C92B3C" />
-      </div>
+      {/* Background Red Wavy Image from Figma */}
+      <img
+        src="/Group 32864.png"
+        alt=""
+        className="absolute inset-0 w-full h-full object-fill z-0 pointer-events-none"
+      />
 
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-12 py-24 sm:py-36 flex flex-col items-start justify-center">
         

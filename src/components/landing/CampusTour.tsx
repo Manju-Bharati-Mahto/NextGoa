@@ -1,5 +1,4 @@
 import { Eyebrow } from "./Decor";
-import { WaveBandBg } from "./WaveBand";
 
 /**
  * "Campus Walkthrough" — red band introducing the 3D campus tour video.
@@ -41,10 +40,12 @@ export function CampusTour() {
       id="campus-tour"
       className="relative overflow-hidden bg-gradient-to-b from-[#CBEFFD] to-[#F8F8F8]"
     >
-      {/* Background: same scalloped wave band as "Our Philosophy", recoloured red */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <WaveBandBg band="#E73649" accent="#C92B3C" />
-      </div>
+      {/* Background Red Wavy Image from Figma */}
+      <img
+        src="/Group 32864.png"
+        alt=""
+        className="absolute inset-0 w-full h-full object-fill z-0 pointer-events-none"
+      />
 
       {/* Decorative Shell Icons */}
       <SunWaveIcon className="absolute left-[-20px] top-1/4 h-20 w-auto text-white/20 pointer-events-none select-none z-10 sm:h-24" />

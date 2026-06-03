@@ -31,7 +31,6 @@ import ManagementSpecialisations from "@/components/programmes/ManagementSpecial
 import ManagementLearningEnvironment from "@/components/programmes/ManagementLearningEnvironment";
 import { FinalCta } from "@/components/landing/FinalCta";
 import HotelManagementDestinations from "@/components/programmes/HotelManagementDestinations";
-import FloatingCta from "@/components/layout/FloatingCta";
 
 import AlliedHealthProgrammePicker from "@/components/programmes/AlliedHealthProgrammePicker";
 import PhdResearchAreas from "@/components/programmes/PhdResearchAreas";
@@ -192,8 +191,6 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
           { label: "1800 890 9090", href: "tel:18008909090", variant: "dark", icon: "phone" }
         ]}
       />
-      
-      <FloatingCta />
     </main>
   );
 }

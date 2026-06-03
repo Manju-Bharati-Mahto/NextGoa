@@ -1,4 +1,3 @@
-import { WaveBandBg } from "@/components/landing/WaveBand";
 import { Icon } from '@iconify/react';
 
 export function CampusHostel() {
@@ -7,8 +6,12 @@ export function CampusHostel() {
       {/* Background for the top part (above the top wave) */}
       <div className="absolute inset-x-0 top-0 h-[10vw] bg-[#F8F8F8] z-0 pointer-events-none" />
 
-      {/* Background image with red wave */}
-      <div className="absolute inset-0 z-0 pointer-events-none bg-[url('/abroad/goa-home-wave-red-background.png')] bg-cover bg-center md:bg-[length:100%_100%] bg-no-repeat" />  
+      {/* Background Red Wavy Image from Figma */}
+      <img
+        src="/Group 32864.png"
+        alt=""
+        className="absolute inset-0 w-full h-full object-fill z-0 pointer-events-none"
+      />
 
       <div className="relative z-10 mx-auto max-w-[1300px] px-6 lg:px-12 flex flex-col items-center pt-40 pb-32 lg:pt-56 lg:pb-48">
         {/* Header */}

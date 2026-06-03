@@ -1,7 +1,5 @@
 "use client";
 
-import React from "react";
-import { WaveBandBg } from "@/components/landing/WaveBand";
 import { WhyData } from "@/data/programmes/types";
 
 export function DynamicWhyPUGoa({ 
@@ -13,10 +11,18 @@ export function DynamicWhyPUGoa({
 }) {
   return (
     <section className="relative overflow-hidden z-10 w-full bg-[#FAFAFA]">
-      {/* Background wave band */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <WaveBandBg band={themeColor.waveBand} accent={themeColor.waveAccent} />
-      </div>
+      {/* Background Wavy Image from Figma */}
+      <img
+        src={
+          themeColor.waveBand.toUpperCase() === "#E73649"
+            ? "/Group 32864.png"
+            : themeColor.waveBand.toUpperCase() === "#1F1F1F"
+            ? "/Group 32865.png"
+            : "/Group 32863.png"
+        }
+        alt=""
+        className="absolute inset-0 w-full h-full object-fill z-0 pointer-events-none"
+      />
 
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-12 py-24 sm:py-36 flex flex-col items-start justify-center">
         
@@ -28,7 +34,7 @@ export function DynamicWhyPUGoa({
           {data.subtitle}
         </h3>
 
-        <div className="flex flex-wrap justify-center gap-6 sm:gap-8 w-full">
+        <div className="flex flex-wrap justify-start gap-6 sm:gap-8 w-full">
           {data.cards.map((card, idx) => (
             <div 
               key={idx} 

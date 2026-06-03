@@ -1,5 +1,4 @@
 import { Eyebrow } from "@/components/landing/Decor";
-import { WaveBandBg } from "@/components/landing/WaveBand";
 
 export function Governance() {
   const cards = [
@@ -71,10 +70,11 @@ export function Governance() {
 
   return (
     <section className="relative overflow-hidden bg-transparent">
-      {/* Patterned red background spanning the entire section */}
-      <div
-        className="absolute inset-0 z-0 pointer-events-none bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/abroad/governance-red-wave-border.png')" }}
+      {/* Background Red Wavy Image from Figma */}
+      <img
+        src="/Group 32864.png"
+        alt=""
+        className="absolute inset-0 w-full h-full object-fill z-0 pointer-events-none"
       />
 
       {/* Decorative Background Graphics */}

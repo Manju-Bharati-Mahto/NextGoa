@@ -7,6 +7,7 @@ import { organizationSchema, websiteSchema } from "@/lib/structured-data";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { EnquiryModal } from "@/components/layout/EnquiryModal";
+import FloatingCta from "@/components/layout/FloatingCta";
 
 /**
  * Site-wide metadata defaults. `metadataBase` lets every page emit absolute
@@ -73,6 +74,7 @@ export default function RootLayout({
         {children}
         <SiteFooter />
         <EnquiryModal />
+        <FloatingCta />
       </body>
     </html>
   );
