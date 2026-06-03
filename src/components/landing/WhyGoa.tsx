@@ -1,5 +1,4 @@
 import { Eyebrow } from "./Decor";
-import { WaveBandBg } from "./WaveBand";
 
 /**
  * "Why Goa" — cyan band arguing Goa itself is an academic advantage. Uses the
@@ -13,13 +12,12 @@ export function WhyGoa({ variant = "blue" }: { variant?: "blue" | "red" }) {
   
   return (
     <section className={`relative overflow-hidden ${isRed ? "bg-transparent" : "bg-gradient-to-b from-[#F8F8F8] to-[#CBEFFD]"}`}>
-      {/* Background wave band */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <WaveBandBg 
-          band={isRed ? "#E73649" : "#0CAADD"} 
-          accent={isRed ? "#C92B3C" : "#0094C4"} 
-        />
-      </div>
+      {/* Background Wavy Image from Figma */}
+      <img
+        src={isRed ? "/Group 32864.png" : "/Group 32863.png"}
+        alt=""
+        className="absolute inset-0 w-full h-full object-fill z-0 pointer-events-none"
+      />
 
       <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 pt-44 pb-64 md:grid-cols-[1fr_1.3fr] lg:grid-cols-[1fr_1.2fr] md:gap-24 lg:gap-32">
         <div className="relative mx-auto w-full max-w-none lg:max-w-[550px]">

@@ -1,5 +1,4 @@
 import React from "react";
-import { WaveBandBg } from "@/components/landing/WaveBand";
 import { Icon } from "@iconify/react";
 
 export default function NursingDestinations() {
@@ -28,10 +27,12 @@ export default function NursingDestinations() {
 
   return (
     <section className="relative overflow-hidden z-10 w-full bg-transparent">
-      {/* Background wave bands */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <WaveBandBg band="#0CAADD" accent="#0094C4" />
-      </div>
+      {/* Background Blue Wavy Image from Figma */}
+      <img
+        src="/Group 32863.png"
+        alt=""
+        className="absolute inset-0 w-full h-full object-fill z-0 pointer-events-none"
+      />
 
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-12 py-24 sm:py-32">
         

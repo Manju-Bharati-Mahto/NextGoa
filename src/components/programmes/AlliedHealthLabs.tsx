@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import { WaveBandBg } from "@/components/landing/WaveBand";
 
 export default function AlliedHealthLabs() {
   const labs = [

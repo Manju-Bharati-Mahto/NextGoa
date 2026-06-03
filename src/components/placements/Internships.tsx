@@ -1,18 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
-import { WaveBandBg } from "@/components/landing/WaveBand";
 
 export function InternshipsAndPPOs() {
   return (
     <section className="relative overflow-hidden bg-white pt-40 sm:pt-56 pb-40 sm:pb-56">
-      {/* Background Blue Wavy SVG from Figma - Split into Top, Middle, and Bottom to prevent stretching */}
-      <div className="absolute top-0 left-0 right-0 h-[10vw] min-h-[60px] z-0 pointer-events-none">
-        <WaveBandBg band="#0CAADD" accent="#0094C4" topOnly />
-      </div>
-      <div className="absolute top-[9vw] bottom-[9vw] left-0 right-0 bg-[#0CAADD] z-0 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 right-0 h-[10vw] min-h-[60px] bg-[#FAFAFA] z-0 pointer-events-none">
-        <WaveBandBg band="#0CAADD" accent="#0094C4" bottomOnly />
-      </div>
+      {/* Background Blue Wavy Image from Figma */}
+      <img
+        src="/Group 32863.png"
+        alt=""
+        className="absolute inset-0 w-full h-full object-fill z-0 pointer-events-none"
+      />
       
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">

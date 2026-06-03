@@ -1,7 +1,5 @@
 "use client";
 
-import React from "react";
-import { WaveBandBg } from "@/components/landing/WaveBand";
 import { Icon } from "@iconify/react";
 
 const jobRoles = [
@@ -40,10 +38,12 @@ const jobRoles = [
 export default function CareerOutcomes() {
   return (
     <section className="relative overflow-hidden z-10 w-full bg-[linear-gradient(to_bottom,#FDE047_50%,transparent_50%)]">
-      {/* Background wave band */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <WaveBandBg band="#E73649" accent="#C92B3C" />
-      </div>
+      {/* Background Red Wavy Image from Figma */}
+      <img
+        src="/Group 32864.png"
+        alt=""
+        className="absolute inset-0 w-full h-full object-fill z-0 pointer-events-none"
+      />
 
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-12 py-24 sm:py-32 text-center flex flex-col items-center">
         <h2 className="text-white font-semibold text-lg sm:text-xl mb-4 tracking-wide">

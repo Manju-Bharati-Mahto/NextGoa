@@ -25,31 +25,6 @@ export function AdmissionsHero() {
 
       <div className="flex-1" />
 
-      {/* Glassy CTA container at bottom of frame (matches landing page hero) */}
-      <div className="fixed inset-x-0 bottom-6 sm:bottom-10 z-50 flex justify-center px-4 pointer-events-none">
-        <div className="pointer-events-auto flex flex-wrap items-center justify-center gap-3 rounded-full bg-white/20 px-4 py-3 backdrop-blur-md shadow-xl border border-white/30">
-          <a
-            href="#enquiry"
-            className="rounded-full bg-brand px-8 py-3.5 text-base font-bold text-white shadow-md transition-colors hover:bg-brand-dark"
-          >
-            Apply for 2026 &rarr;
-          </a>
-          <a
-            href="#enquiry"
-            className="rounded-full bg-white px-8 py-3.5 text-base font-bold text-ink shadow-md transition-colors hover:bg-zinc-50"
-          >
-            Talk to Counsellor
-          </a>
-          <a
-            href="/parul-goa-brochure-2026.pdf"
-            download
-            className="rounded-full bg-white px-8 py-3.5 text-base font-bold text-ink shadow-md transition-colors hover:bg-zinc-50"
-          >
-            Brochure
-          </a>
-        </div>
-      </div>
-
       {/* Bottom fade to transition smoothly into the next section */}
       <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#faf9f6] to-transparent pointer-events-none" />
     </section>
