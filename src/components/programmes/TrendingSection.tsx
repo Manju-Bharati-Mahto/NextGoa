@@ -1,6 +1,42 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
+
+const trendingCourses = [
+  {
+    course: "B.Tech CSE",
+    specialization: "AI & ML",
+    tags: ["12 Seats Left", "Most Applied"],
+  },
+  {
+    course: "B.Sc. Nursing",
+    specialization: "Critical Care",
+    tags: ["5 Seats Left", "High Demand"],
+  },
+  {
+    course: "MBA",
+    specialization: "Finance",
+    tags: ["18 Seats Left", "Top Placement"],
+  },
+  {
+    course: "BHMCT",
+    specialization: "Culinary Arts",
+    tags: ["8 Seats Left", "Fast Filling"],
+  }
+];
 
 export default function TrendingSection() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveIndex((current) => (current + 1) % trendingCourses.length);
+    }, 4000); // Change every 4 seconds
+    return () => clearInterval(timer);
+  }, []);
+
+  const activeCourse = trendingCourses[activeIndex];
+
   return (
     <section
       className="relative z-20 w-full min-h-[600px] flex items-center bg-transparent -mt-12 sm:-mt-24 lg:-mt-5 pt-32 pb-24 bg-cover sm:bg-[length:100%_100%] bg-top bg-no-repeat"
@@ -23,42 +59,53 @@ export default function TrendingSection() {
                   View all <span>&rarr;</span>
                 </a>
               </div>
-
-              <div className="bg-white rounded-[24px] p-6 sm:px-10 sm:py-8 text-ink shadow-2xl relative overflow-hidden">
-                {/* Subtle gear watermark (optional) */}
-                <div className="absolute right-[7%] top-[10%] pointer-events-none">
-                  <img src="/programmes/industry-symbol.png" alt="Industry Symbol" width={195} height={195} className="w-[195px] h-[195px] object-contain" />
+              <div className="bg-white rounded-[24px] p-6 sm:px-10 sm:py-8 text-ink shadow-2xl relative overflow-hidden min-h-[240px] flex flex-col justify-center">
+                {/* Subtle gear watermark */}
+                <div className="absolute right-[7%] top-[10%] pointer-events-none transition-opacity duration-500">
+                  <img src="/programmes/industry-symbol.png" alt="Industry Symbol" width={195} height={195} className="w-[195px] h-[195px] object-contain opacity-50" />
                 </div>
 
-                <div className="flex flex-wrap gap-2 sm:gap-3 mb-5 relative z-10">
-                  <span className="bg-sunshine text-[11px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest text-ink">12 Seats Left</span>
-                  <span className="bg-sunshine text-[11px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest text-ink">Most Applied</span>
+                {/* Animated content wrapper */}
+                <div key={activeIndex} className="animate-fade-in relative z-10">
+                  <div className="flex flex-wrap gap-2 sm:gap-3 mb-5">
+                    {activeCourse.tags.map((tag, idx) => (
+                      <span key={idx} className="bg-sunshine text-[11px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest text-ink">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  <h4 className="text-3xl sm:text-[38px] font-semibold tracking-tight mb-1 font-[family-name:var(--font-poppins)]">{activeCourse.course}</h4>
+                  <p className="text-lg sm:text-[20px] font-medium mb-6 text-ink/80">{activeCourse.specialization}</p>
+                  
+                  <button className="bg-[#0EB1E1] hover:bg-[#0BA1CD] transition-colors text-white text-[14px] font-medium px-6 py-2.5 rounded-full flex items-center gap-2 w-max">
+                    Apply Now <span>&rarr;</span>
+                  </button>
                 </div>
 
-                <h4 className="text-3xl sm:text-[38px] font-semibold tracking-tight mb-1 font-[family-name:var(--font-poppins)] relative z-10">B.Tech CSE</h4>
-                <p className="text-lg sm:text-[20px] font-medium mb-6 text-ink/80 relative z-10">AI & ML</p>
-
-                <button className="bg-[#0EB1E1] hover:bg-[#0BA1CD] transition-colors text-white text-[14px] font-medium px-6 py-2.5 rounded-full flex items-center gap-2 w-max relative z-10">
-                  Apply Now <span>&rarr;</span>
-                </button>
               </div>
 
               {/* Pagination Dots */}
               <div className="flex items-center gap-2 mt-8 pl-4">
-                <div className="h-2 w-8 bg-[#FFD523] rounded-full"></div>
-                <div className="h-2 w-2 bg-white/40 rounded-full"></div>
-                <div className="h-2 w-2 bg-white/40 rounded-full"></div>
+                {trendingCourses.map((_, idx) => (
+                  <button 
+                    key={idx}
+                    onClick={() => setActiveIndex(idx)}
+                    className={`h-2 rounded-full transition-all duration-300 ${activeIndex === idx ? 'w-8 bg-[#FFD523]' : 'w-2 bg-white/40 hover:bg-white/60'}`}
+                    aria-label={`Go to slide ${idx + 1}`}
+                  />
+                ))}
               </div>
             </div>
           </div>
 
           {/* Right Column */}
-          <div className="flex justify-center lg:justify-end relative h-full mt-16 lg:mt-0 lg:-ml-16 z-0">
-            <img
-              src="/programmes/trending-right.png"
-              alt="MS Dhoni trending programmes"
-              className="w-full max-w-[500px] object-contain drop-shadow-2xl"
-            />
+          <div className="flex justify-center lg:justify-end relative h-full mt-16 lg:mt-0 lg:-ml-16 z-0 pointer-events-none">
+              <img 
+                src="/programmes/trending-right.png" 
+                alt="MS Dhoni trending programmes"
+                className="w-full max-w-[500px] object-contain drop-shadow-2xl"
+              />
           </div>
         </div>
       </div>

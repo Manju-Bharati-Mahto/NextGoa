@@ -130,7 +130,7 @@ export default function StudyAbroadModels() {
           <div className="flex flex-col gap-3 flex-1 w-full">
             <h4 className="text-white text-xl font-semibold">Available in:</h4>
             <div className="flex flex-wrap gap-2 md:gap-3">
-              {['USA', 'NEW ZEALAND', 'AUSTRALIA', 'CANADA', 'FRANCE', 'UK', 'GERMANY'].map((country) => (
+              {['USA', 'NEW ZEALAND', 'CANADA', 'UK', 'GERMANY'].map((country) => (
                 <div key={country} className="bg-white px-4 py-2 rounded-full text-[#1f2022] text-[16px] font-bold shadow-sm">
                   {country}
                 </div>

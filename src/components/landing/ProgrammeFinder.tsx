@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useId, useEffect, useRef } from "react";
+import Link from "next/link";
 import { Eyebrow } from "./Decor";
 
 /**
@@ -28,37 +29,57 @@ const faculties = [
     tags: ["Diploma", "B.Tech", "BCA", "MCA"],
     levels: ["Diploma", "Undergraduate", "Postgraduate"],
     fields: ["Engineering & Technology", "Science & Computing"],
+    slug: "engineering-and-technology",
   },
   {
     name: "Management Studies",
     tags: ["BBA", "MBA", "BCom"],
     levels: ["Undergraduate", "Postgraduate"],
     fields: ["Management & Commerce"],
+    slug: "management-studies",
   },
   {
     name: "Pharmacy",
     tags: ["B.Pharm", "M.Pharm", "D.Pharm"],
     levels: ["Undergraduate", "Postgraduate", "Diploma"],
     fields: ["Medicine & Health Sciences"],
+    slug: "pharmacy",
   },
   {
     name: "Nursing",
     tags: ["B.Sc", "GNM", "Post Basic"],
     levels: ["Undergraduate", "Diploma", "Postgraduate"],
     fields: ["Medicine & Health Sciences"],
+    slug: "nursing",
   },
   {
     name: "Hotel Management",
     tags: ["BHMCT", "Diploma"],
     levels: ["Undergraduate", "Diploma"],
     fields: ["Management & Commerce"],
+    slug: "hotel-management",
   },
   {
     name: "Physiotherapy",
     tags: ["BPT", "MPT"],
     levels: ["Undergraduate", "Postgraduate"],
     fields: ["Medicine & Health Sciences"],
+    slug: "physiotherapy",
   },
+  {
+    name: "Allied Health Sciences",
+    tags: ["B.Sc", "Diploma"],
+    levels: ["Undergraduate", "Diploma"],
+    fields: ["Medicine & Health Sciences"],
+    slug: "allied-and-health-sciences",
+  },
+  {
+    name: "Doctoral Research",
+    tags: ["PhD"],
+    levels: ["Doctoral (PhD)"],
+    fields: ["Engineering & Technology", "Management & Commerce", "Science & Computing"],
+    slug: "phd",
+  }
 ];
 
 type CardColor = "blue" | "yellow" | "red" | "black" | "white";
@@ -67,9 +88,10 @@ interface CourseCardProps {
   color: CardColor;
   title: string;
   tags: string[];
+  href: string;
 }
 
-function CourseCard({ color, title, tags }: CourseCardProps) {
+function CourseCard({ color, title, tags, href }: CourseCardProps) {
   const styles = {
     blue: {
       bg: "bg-[#0CAADD] border-[#0CAADD] text-white",
@@ -111,8 +133,9 @@ function CourseCard({ color, title, tags }: CourseCardProps) {
   const theme = styles[color];
 
   return (
-    <div
-      className={`relative w-full h-[268px] rounded-[16px] p-8 flex flex-col justify-between overflow-hidden border text-left ${theme.bg}`}
+    <Link
+      href={href}
+      className={`relative block w-full h-[268px] rounded-[16px] p-8 flex flex-col justify-between overflow-hidden border text-left cursor-pointer ${theme.bg}`}
     >
       {/* Decorative background pattern (isolated to the right portion of the card) */}
       <svg
@@ -163,15 +186,14 @@ function CourseCard({ color, title, tags }: CourseCardProps) {
 
         {/* View Program button */}
         <div>
-          <a
-            href="#admissions"
+          <span
             className={`inline-flex items-center justify-center rounded-full px-5 py-2.5 text-xs font-bold transition-colors shadow-sm ${theme.btn}`}
           >
             View Program
-          </a>
+          </span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
@@ -235,6 +257,8 @@ export function ProgrammeFinder() {
   const [field, setField] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
+  const [showAll, setShowAll] = useState(false);
+
   const ready = level !== "" && field !== "";
 
   const filteredFaculties = faculties.filter((fac) => {
@@ -244,9 +268,14 @@ export function ProgrammeFinder() {
     return matchesLevel && matchesField;
   });
 
+  const displayedFaculties = showAll ? filteredFaculties : filteredFaculties.slice(0, 6);
+
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (ready) setSubmitted(true);
+    if (ready) {
+      setSubmitted(true);
+      setShowAll(true); // Automatically show all when searching
+    }
   }
 
   return (
@@ -310,7 +339,7 @@ export function ProgrammeFinder() {
         )}
 
         {/* Faculty cards grid */}
-        {filteredFaculties.length === 0 ? (
+        {displayedFaculties.length === 0 ? (
           <div className="mt-12 text-center py-16 px-6 rounded-3xl border border-zinc-200 max-w-xl mx-auto bg-white shadow-sm">
             <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-zinc-50 ring-4 ring-zinc-50/50">
               <svg
@@ -337,6 +366,7 @@ export function ProgrammeFinder() {
                 setLevel("");
                 setField("");
                 setSubmitted(false);
+                setShowAll(false);
               }}
               className="mt-6 inline-flex items-center justify-center rounded-full bg-brand px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-brand-dark transition-colors"
             >
@@ -344,20 +374,34 @@ export function ProgrammeFinder() {
             </button>
           </div>
         ) : (
-          <ul className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {filteredFaculties.map((fac, i) => {
-              const colors: CardColor[] = ["blue", "yellow", "red"];
-              return (
-                <li key={fac.name}>
-                  <CourseCard
-                    color={colors[i % colors.length]}
-                    title={fac.name}
-                    tags={fac.tags}
-                  />
-                </li>
-              );
-            })}
-          </ul>
+          <>
+            <ul className="mt-12 flex flex-wrap justify-center gap-5 max-w-6xl mx-auto">
+              {displayedFaculties.map((fac, i) => {
+                const colors: CardColor[] = ["blue", "yellow", "red"];
+                return (
+                  <li key={fac.name} className="w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.833rem)]">
+                    <CourseCard
+                      color={colors[i % colors.length]}
+                      title={fac.name}
+                      tags={fac.tags}
+                      href={`/programmes/${fac.slug}`}
+                    />
+                  </li>
+                );
+              })}
+            </ul>
+            
+            {!showAll && filteredFaculties.length > 6 && (
+              <div className="mt-8 flex justify-center">
+                <button
+                  onClick={() => setShowAll(true)}
+                  className="inline-flex items-center justify-center rounded-full border-2 border-zinc-200 bg-white px-8 py-3 text-sm font-semibold text-ink transition-colors hover:border-zinc-300 hover:bg-zinc-50"
+                >
+                  View all faculties
+                </button>
+              </div>
+            )}
+          </>
         )}
 
         {/* Counsellor band */}
