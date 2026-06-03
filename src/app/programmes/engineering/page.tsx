@@ -9,7 +9,6 @@ import DeanAndFaculty from "@/components/programmes/DeanAndFaculty";
 import StudyAbroadModels from "@/components/study-abroad/StudyAbroadModels";
 import AdmissionsSnapshot from "@/components/programmes/AdmissionsSnapshot";
 import EngineeringFaq from "@/components/programmes/EngineeringFaq";
-import FloatingCta from "@/components/layout/FloatingCta";
 import Image from "next/image";
 
 export const metadata: Metadata = {
@@ -132,7 +131,6 @@ export default function EngineeringPage() {
       {/* FAQs Section */}
       <EngineeringFaq />
 
-      <FloatingCta />
     </main>
   );
 }
