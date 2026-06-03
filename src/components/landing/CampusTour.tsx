@@ -44,7 +44,7 @@ export function CampusTour() {
       <img
         src="/Group 32864.png"
         alt=""
-        className="absolute inset-0 w-full h-full object-fill z-0 pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
       />
 
       {/* Decorative Shell Icons */}

@@ -87,7 +87,7 @@ export function Philosophy({ variant = "default" }: { variant?: "default" | "cle
         <img
           src="/Group 32863.png"
           alt=""
-          className="absolute inset-0 w-full h-full object-fill z-0 pointer-events-none"
+          className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
         />
       )}
       

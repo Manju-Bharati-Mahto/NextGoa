@@ -8,7 +8,7 @@ export function AlumniStories() {
       <img
         src="/Group 32864.png"
         alt=""
-        className="absolute inset-0 w-full h-full object-fill z-0 pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
       />
       
       <div className="relative z-10 max-w-6xl mx-auto px-6 mt-4 sm:mt-6 mb-4 sm:mb-6">
