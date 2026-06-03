@@ -1,5 +1,6 @@
 import { Eyebrow } from "./Decor";
 import { cta } from "@/lib/navigation";
+import { ExamDatesTicket } from "../layout/ExamDatesTicket";
 
 /**
  * "Admissions 2026 — LIVE" key-dates section. Plain, crawlable dates + accepted
@@ -47,18 +48,9 @@ export function Admissions() {
             </div>
           </div>
 
-          {/* Right — window card SVG */}
-          <div className="flex items-center justify-center py-6 sm:py-0">
-            <a
-              href={cta.apply}
-              className="block w-full scale-[1.15] sm:scale-100 sm:w-full max-w-none sm:max-w-[585px] origin-center"
-            >
-              <img
-                src="/Group 32629.svg"
-                alt="Entrance test window"
-                className="w-full h-auto"
-              />
-            </a>
+          {/* Right — window card with text overlay */}
+          <div className="flex items-center justify-center py-6 sm:py-0 w-full">
+            <ExamDatesTicket />
           </div>
         </div>
 

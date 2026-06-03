@@ -1,0 +1,56 @@
+"use client";
+
+import React from "react";
+import Link from "next/link";
+import { cta } from "@/lib/navigation";
+
+export function ExamDatesTicket() {
+  return (
+    <div
+      className="relative block w-full max-w-[585px] aspect-[1170/844] overflow-hidden select-none [container-type:inline-size]"
+    >
+      <img
+        src="/exam.png"
+        alt="Entrance test window"
+        className="w-full h-full object-contain"
+      />
+      {/* Ticket Content Overlay */}
+      <div className="absolute left-[13.5cqw] right-[13.5cqw] top-[22.5cqw] bottom-[21.5cqw] flex flex-col justify-between text-left font-[family-name:var(--font-poppins)]">
+        {/* Top part */}
+        <div className="flex flex-col">
+          <h4 className="font-poppins font-semibold text-[#333333] text-[5.8cqw] leading-[1.1] tracking-tight">
+            May-July 2026
+          </h4>
+          <p className="font-semibold text-[#ee364f] text-[2.2cqw] mt-[0.8cqw] tracking-normal">
+            Registration deadline: 22nd April
+          </p>
+        </div>
+
+        {/* Divider */}
+        <div className="w-full border-t border-gray-200/80 my-[1cqw]" />
+
+        {/* Bottom part */}
+        <div className="flex items-center justify-between gap-[2cqw] mb-[1cqw]">
+          <div className="flex flex-col gap-[1.2cqw] text-[#1f1f1f] text-left">
+            <div className="flex items-center gap-[2.8cqw] text-[2.2cqw] font-bold tracking-normal">
+              <span>B.SC. NURSING</span>
+              <span>BPT</span>
+              <span>PHD</span>
+            </div>
+            <div className="text-[2.2cqw] font-bold tracking-normal">
+              SELECT PG SEATS.
+            </div>
+          </div>
+
+          {/* Apply Now button */}
+          <Link
+            href={cta.apply}
+            className="inline-flex items-center justify-center rounded-full bg-black px-[4.5cqw] py-[1.8cqw] text-[2.4cqw] font-bold text-white shadow-sm hover:bg-[#ee364f] transition-colors duration-300"
+          >
+            Apply Now
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}

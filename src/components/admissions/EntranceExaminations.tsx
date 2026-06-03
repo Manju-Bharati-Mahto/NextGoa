@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { cta } from "@/lib/navigation";
+import { ExamDatesTicket } from "../layout/ExamDatesTicket";
 
 export function EntranceExaminations() {
   const [activeTab, setActiveTab] = useState<"pu-goa" | "other">("pu-goa");
@@ -68,11 +69,9 @@ export function EntranceExaminations() {
                 </div>
               </div>
 
-              {/* Right — window card SVG */}
-              <div className="flex items-center justify-center">
-                <a href={cta.apply} className="block w-full max-w-[585px]">
-                  <img src="/Group 32629.svg" alt="Entrance test window" className="w-full h-auto" />
-                </a>
+              {/* Right — window card with text overlay */}
+              <div className="flex items-center justify-center w-full">
+                <ExamDatesTicket />
               </div>
             </div>
 
