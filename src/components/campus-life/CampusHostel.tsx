@@ -7,13 +7,8 @@ export function CampusHostel() {
       {/* Background for the top part (above the top wave) */}
       <div className="absolute inset-x-0 top-0 h-[10vw] bg-[#F8F8F8] z-0 pointer-events-none" />
 
-      {/* Solid red background starting below the top wave dip and ending just before the bottom wave */}
-      <div className="absolute inset-x-0 bottom-[5vw] top-[2vw] z-0 bg-[#E73649] pointer-events-none" />
-
-      {/* Background wave band perfectly proportioned (Top) */}
-      <div className="absolute inset-x-0 top-0 w-full aspect-[1440/75] z-0 pointer-events-none">
-        <WaveBandBg band="#E73649" accent="#C92B3C" topOnly={true} />
-      </div>
+      {/* Background image with red wave */}
+      <div className="absolute inset-0 z-0 pointer-events-none bg-[url('/abroad/goa-home-wave-red-background.png')] bg-cover bg-center md:bg-[length:100%_100%] bg-no-repeat" />  
 
       <div className="relative z-10 mx-auto max-w-[1300px] px-6 lg:px-12 flex flex-col items-center pt-40 pb-32 lg:pt-56 lg:pb-48">
         {/* Header */}
@@ -144,11 +139,6 @@ export function CampusHostel() {
           </div>
         </div>
 
-      </div>
-
-      {/* Background wave band perfectly proportioned (Bottom) */}
-      <div className="absolute inset-x-0 bottom-0 w-full aspect-[1440/77] z-0 pointer-events-none">
-        <WaveBandBg band="#E73649" accent="#C92B3C" bottomOnly={true} />
       </div>
     </section>
   );
