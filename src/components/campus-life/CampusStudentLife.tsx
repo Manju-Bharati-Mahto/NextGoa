@@ -32,7 +32,7 @@ export function CampusStudentLife() {
         <WaveBandBg band="#1DA1D2" accent="#1483AB" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full flex flex-col items-center text-center mb-12 sm:mb-16 mt-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full flex flex-col items-center text-center mb-12 sm:mb-16 mt-8">
         <h3 className="font-poppins font-semibold text-[20px] sm:text-[24px] text-white mb-2">
           Clubs, Events & Student Life
         </h3>
@@ -46,7 +46,7 @@ export function CampusStudentLife() {
 
       {/* Carousel Container */}
       <div className="relative z-10 w-full mb-12">
-        <div className="flex overflow-x-auto gap-6 px-6 lg:px-12 snap-x snap-mandatory hide-scrollbar pb-8">
+        <div className="flex overflow-x-auto gap-4 sm:gap-6 px-4 sm:px-6 lg:px-12 scroll-pl-4 sm:scroll-pl-6 lg:scroll-pl-12 snap-x snap-mandatory hide-scrollbar pb-8">
           {clubs.map((club, idx) => (
             <div 
               key={idx} 
