@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 
-const defaultAdmissionsData = [
+const admissionsData = [
   {
     title: "Eligibility",
     description: "10+2 with PCM (B.Tech). Diploma (Lateral). 10+2 any stream (BCA). Bachelor's degree (MCA).",
@@ -30,117 +30,7 @@ const defaultAdmissionsData = [
   },
 ];
 
-const pharmacyAdmissionsData = [
-  {
-    title: "Eligibility",
-    description: "10+2 with PCB/PCM (Physics, Chemistry, Biology/Maths)",
-    linkText: "Open admissions \u2192",
-    linkHref: "#",
-  },
-  {
-    title: "Entrance",
-    description: "Merit + counselling-based admissions",
-    linkText: "Open admissions \u2192",
-    linkHref: "#",
-  },
-  {
-    title: "Fees &\nScholarships",
-    description: "Tiered fees by programme. Merit, sport & need-based scholarships",
-    linkText: "Open admissions \u2192",
-    linkHref: "#",
-  },
-  {
-    title: "Key Dates",
-    description: "Applications open for 2026-27. Early-bird scholarship deadlines apply.",
-    linkText: "Open admissions \u2192",
-    linkHref: "#",
-  },
-];
-
-const nursingAdmissionsData = [
-  {
-    title: "Eligibility",
-    description: "10+2 (any stream, English compulsory)",
-    linkText: "Open admissions \u2192",
-    linkHref: "#",
-  },
-  {
-    title: "Entrance",
-    description: "Merit + counselling-based admissions",
-    linkText: "Open admissions \u2192",
-    linkHref: "#",
-  },
-  {
-    title: "Fees &\nScholarships",
-    description: "Tiered fees by programme. Merit, sport & need-based scholarships",
-    linkText: "Open admissions \u2192",
-    linkHref: "#",
-  },
-  {
-    title: "Key Dates",
-    description: "Applications open for 2026-27. Early-bird scholarship deadlines apply.",
-    linkText: "Open admissions \u2192",
-    linkHref: "#",
-  },
-];
-
-const physiotherapyAdmissionsData = [
-  {
-    title: "Eligibility",
-    description: "10+2 with PCB + English",
-    linkText: "Open admissions \u2192",
-    linkHref: "#",
-  },
-  {
-    title: "Entrance",
-    description: "PU Goa offline entrance test.",
-    linkText: "Open admissions \u2192",
-    linkHref: "#",
-  },
-  {
-    title: "Fees &\nScholarships",
-    description: "Tiered fees by programme. Merit, sport & need-based scholarships",
-    linkText: "Open admissions \u2192",
-    linkHref: "#",
-  },
-  {
-    title: "Key Dates",
-    description: "Applications open for 2026-27. Early-bird scholarship deadlines apply.",
-    linkText: "Open admissions \u2192",
-    linkHref: "#",
-  },
-];
-
-const hotelManagementAdmissionsData = [
-  {
-    title: "Eligibility",
-    description: "10+2 any stream + English",
-    linkText: "Open admissions \u2192",
-    linkHref: "#",
-  },
-  {
-    title: "Entrance",
-    description: "Merit + counselling-based admissions",
-    linkText: "Open admissions \u2192",
-    linkHref: "#",
-  },
-  {
-    title: "Fees &\nScholarships",
-    description: "Tiered fees by programme. Merit, sport & need-based scholarships",
-    linkText: "Open admissions \u2192",
-    linkHref: "#",
-  },
-  {
-    title: "Key Dates",
-    description: "Applications open for 2026-27. Early-bird scholarship deadlines apply.",
-    linkText: "Open admissions \u2192",
-    linkHref: "#",
-  },
-];
-
-export default function AdmissionsSnapshot({ slug }: { slug?: string }) {
-  const dataToUse = (slug === "physiotherapy" || slug === "allied-health") ? physiotherapyAdmissionsData : slug === "pharmacy" ? pharmacyAdmissionsData : slug === "nursing" ? nursingAdmissionsData : slug === "hotel-management" ? hotelManagementAdmissionsData : defaultAdmissionsData;
-
+export default function AdmissionsSnapshot() {
   return (
     <section className="w-full bg-[#FAFAFA] py-24 sm:py-32">
       <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-8">
@@ -157,7 +47,7 @@ export default function AdmissionsSnapshot({ slug }: { slug?: string }) {
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 w-full max-w-[1280px] mx-auto">
-          {dataToUse.map((item, idx) => (
+          {admissionsData.map((item, idx) => (
             <div 
               key={idx} 
               className="flex flex-col bg-[#FDE047] rounded-[24px] p-8 sm:p-10 shadow-sm hover:shadow-md transition-shadow h-full"
