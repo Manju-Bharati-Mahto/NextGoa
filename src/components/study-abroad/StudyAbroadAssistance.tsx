@@ -17,13 +17,13 @@ export default function StudyAbroadAssistance() {
   ];
 
   const SupportPill = ({ text }: { text: string }) => (
-    <div className="bg-white px-5 md:px-6 py-3.5 rounded-md shadow-md flex items-center justify-center gap-3 transition-transform hover:scale-105 w-max max-w-full mx-auto md:mx-0">
+    <div className="bg-white px-5 md:px-6 py-3.5 rounded-md shadow-md flex items-center justify-start md:justify-center gap-3 transition-transform hover:scale-105 w-full md:w-max max-w-full mx-auto md:mx-0">
       <div className="w-5 h-5 rounded-full bg-[#24c75c] flex items-center justify-center shrink-0 shadow-sm">
         <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3.5" d="M5 13l4 4L19 7"></path>
         </svg>
       </div>
-      <span className="text-[#1f2022] text-[14px] md:text-[15.5px] font-medium md:whitespace-nowrap">
+      <span className="text-[#1f2022] text-[15px] md:text-[15.5px] font-medium md:whitespace-nowrap">
         {text}
       </span>
     </div>
@@ -36,12 +36,9 @@ export default function StudyAbroadAssistance() {
     >
       {/* Background Frame */}
       <div
-        className="absolute inset-0 z-0 pointer-events-none"
+        className="absolute inset-0 z-0 pointer-events-none bg-cover bg-[position:top_center] md:bg-[length:100%_100%] md:bg-center bg-no-repeat"
         style={{
           backgroundImage: "url('/abroad/Extended Assistance Background.png')",
-          backgroundSize: "100% 100%",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
         }}
       ></div>
 
@@ -63,7 +60,7 @@ export default function StudyAbroadAssistance() {
         />
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center">
+      <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center py-10 sm:py-0 md:py-0 lg:py-0">
         {/* Header */}
         <div className="text-center mb-16">
           <p className="text-white text-lg md:text-xl font-medium mb-3">

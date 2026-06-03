@@ -22,11 +22,11 @@ export default function StudyAbroadCTA() {
             Admissions Open 2026
           </span>
 
-          <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight mb-8 leading-tight">
+          <h2 className="text-white text-3xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-8 leading-tight">
             Apply for 2026-27 and begin your Global Placement Story!
           </h2>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-center sm:gap-5 gap-3 w-full sm:w-auto">
             <a
               href="#enquiry"
               className="w-full sm:w-auto block sm:inline-block text-center bg-[#eb3b47] text-white px-8 py-3.5 rounded-full font-bold text-[16px] shadow-md hover:bg-[#d6323c] transition-colors whitespace-nowrap"
@@ -38,14 +38,14 @@ export default function StudyAbroadCTA() {
               href="#"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto block sm:inline-block text-center bg-black/50 border border-white/30 backdrop-blur-sm text-white px-8 py-3.5 rounded-full font-bold text-[16px] shadow-md hover:bg-black/70 transition-colors whitespace-nowrap"
+              className="w-full sm:w-auto block sm:inline-block text-center bg-white/20 border border-white/40 backdrop-blur-md text-white px-8 py-3.5 rounded-full font-bold text-[16px] shadow-md hover:bg-white/30 transition-colors whitespace-nowrap"
               style={{ letterSpacing: '0.3px' }}
             >
               Chat on WhatsApp
             </a>
             <a
               href="tel:18008909090"
-              className="w-full sm:w-auto flex sm:inline-flex bg-black/50 border border-white/30 backdrop-blur-sm text-white px-8 py-3.5 rounded-full font-bold text-[16px] shadow-md hover:bg-black/70 transition-colors items-center justify-center gap-2 whitespace-nowrap"
+              className="w-full sm:w-auto flex sm:inline-flex bg-white/20 border border-white/40 backdrop-blur-md text-white px-8 py-3.5 rounded-full font-bold text-[16px] shadow-md hover:bg-white/30 transition-colors items-center justify-center gap-2 whitespace-nowrap"
               style={{ letterSpacing: '0.3px' }}
             >
               <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

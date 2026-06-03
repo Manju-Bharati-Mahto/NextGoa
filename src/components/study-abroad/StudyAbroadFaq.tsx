@@ -72,7 +72,7 @@ export default function StudyAbroadFaq() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className={`bg-[#fff9e6] pb-24 pt-20 ${poppins.className}`} style={poppins.style}>
+    <section id="faq" className={`bg-[#f8f8f8] pb-24 pt-20 ${poppins.className}`} style={poppins.style}>
       <JsonLd data={faqSchema(faqs)} />
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">

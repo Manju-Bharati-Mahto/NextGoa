@@ -62,7 +62,7 @@ export default function StudyAbroadTimeline() {
         </div>
 
         {/* Timeline Container */}
-        <div className="relative w-full mt-8 px-4">
+        <div className="relative w-full mt-8 px-0 sm:px-4">
           
           {/* Blue connecting line (Background) */}
           <div className="absolute top-[28px] md:top-[32px] left-[7.5%] right-[7.5%] h-[4px] bg-[#0ca7dd] z-0 hidden md:block opacity-30"></div>
@@ -77,12 +77,12 @@ export default function StudyAbroadTimeline() {
           </div>
 
           {/* Mobile connecting line (Background) */}
-          <div className="absolute top-[28px] bottom-[28px] left-[50%] -translate-x-1/2 w-[4px] bg-[#0ca7dd] z-0 md:hidden opacity-30"></div>
+          <div className="absolute top-[28px] bottom-[28px] left-[26px] w-[4px] bg-[#0ca7dd] z-0 md:hidden opacity-30"></div>
           
           {/* Mobile connecting line (Animated Fill) */}
           <div 
-            className="absolute top-[28px] left-[50%] -translate-x-1/2 w-[4px] bg-[#0ca7dd] z-0 md:hidden transition-all duration-700 ease-in-out"
-            style={{ height: `${(activeStep / (steps.length - 1)) * 95}%` }}
+            className="absolute top-[28px] left-[26px] w-[4px] bg-[#0ca7dd] z-0 md:hidden transition-all duration-700 ease-in-out"
+            style={{ height: `calc(${(activeStep / (steps.length - 1))} * (100% - 56px))` }}
           ></div>
 
           {/* Steps */}
@@ -94,13 +94,13 @@ export default function StudyAbroadTimeline() {
               return (
                 <div 
                   key={index} 
-                  className="flex flex-col items-center text-center w-full md:w-[15%] group cursor-pointer"
+                  className="flex flex-row md:flex-col items-center md:items-center text-left md:text-center w-full md:w-[15%] group cursor-pointer"
                   onClick={() => setActiveStep(index)}
                 >
                   
                   {/* Circle */}
                   <div 
-                    className={`w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center text-xl md:text-2xl font-bold mb-4 transition-all duration-500 ease-out transform
+                    className={`w-14 h-14 md:w-16 md:h-16 shrink-0 rounded-full flex items-center justify-center text-xl md:text-2xl font-bold md:mb-4 transition-all duration-500 ease-out transform
                       ${isActive 
                         ? 'bg-[#eb3b47] text-white shadow-[0_0_20px_rgba(235,59,71,0.5)] scale-110' 
                         : isPast
@@ -112,12 +112,14 @@ export default function StudyAbroadTimeline() {
                   </div>
 
                   {/* Content */}
-                  <h4 className={`text-[15px] md:text-[18px] font-bold mb-2 px-2 transition-colors duration-300 ${isActive ? 'text-[#eb3b47]' : 'text-[#4a4a4a] group-hover:text-[#eb3b47]'}`}>
-                    {step.title}
-                  </h4>
-                  <p className={`text-[13px] md:text-[14px] leading-snug px-1 font-medium transition-all duration-300 ${isActive ? 'text-[#1f2022] opacity-100' : 'text-[#6a6a6a] opacity-80'}`}>
-                    {step.desc}
-                  </p>
+                  <div className="flex flex-col justify-center ml-4 md:ml-0">
+                    <h4 className={`text-[18px] md:text-[20px] font-bold mb-1 md:mb-2 md:px-2 transition-colors duration-300 ${isActive ? 'text-[#eb3b47]' : 'text-[#4a4a4a] group-hover:text-[#eb3b47]'}`}>
+                      {step.title}
+                    </h4>
+                    <p className={`text-[15px] md:text-[16px] leading-snug md:px-1 font-medium transition-all duration-300 ${isActive ? 'text-[#1f2022] opacity-100' : 'text-[#6a6a6a] opacity-80'}`}>
+                      {step.desc}
+                    </p>
+                  </div>
 
                 </div>
               );
