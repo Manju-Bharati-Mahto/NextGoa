@@ -132,7 +132,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
       )}
 
       {data.slug !== "physiotherapy" && data.slug !== "allied-health" && data.slug !== "hotel-management" && data.slug !== "phd" && (
-        <RecruitersAndDestinations hideDestinations={data.slug === "nursing"} />
+        <RecruitersAndDestinations />
       )}
 
       {(data.slug === "physiotherapy" || data.slug === "allied-health") && (
@@ -176,7 +176,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
       )}
 
       {data.slug !== "phd" && (
-        <AdmissionsSnapshot slug={data.slug} />
+        <AdmissionsSnapshot />
       )}
 
       <DynamicFaq data={data.faqs} />
