@@ -3,6 +3,7 @@ import React from 'react';
 const READINESS_DATA = [
   {
     title: "For all students",
+    color: "black",
     items: [
       "NEP 2020 curriculum",
       "Industry mentor network",
@@ -14,6 +15,7 @@ const READINESS_DATA = [
   },
   {
     title: "For Engineering & CS",
+    color: "blue",
     items: [
       "Hackathons",
       "Coding competitions",
@@ -25,6 +27,7 @@ const READINESS_DATA = [
   {
     title: "For Healthcare",
     subtitle: "(Pharmacy / Nursing / BPT / AHS)",
+    color: "yellow",
     items: [
       "Hospital postings",
       "Clinical training",
@@ -34,6 +37,7 @@ const READINESS_DATA = [
   },
   {
     title: "For Management &\nHospitality",
+    color: "red",
     items: [
       "Live consulting projects",
       "Case competitions",
@@ -42,6 +46,13 @@ const READINESS_DATA = [
     ]
   }
 ];
+
+const colorStyles = {
+  black: { bg: "bg-[#1F1F1F]", text: "text-white" },
+  blue: { bg: "bg-[#0CAADD]", text: "text-white" },
+  yellow: { bg: "bg-[#FEDB2F]", text: "text-[#1F1F1F]" },
+  red: { bg: "bg-[#E73649]", text: "text-white" },
+};
 
 export function CareerReadiness() {
   return (
@@ -73,7 +84,7 @@ export function CareerReadiness() {
                 className="flex flex-col h-auto min-h-full bg-white rounded-[24px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden border border-gray-100 w-full"
               >
                 {/* Card Header */}
-                <div className="bg-[#fb4155] p-5 flex flex-col justify-center items-center text-center text-white min-h-[100px] relative">
+                <div className={`${colorStyles[card.color as keyof typeof colorStyles].bg} ${colorStyles[card.color as keyof typeof colorStyles].text} p-5 flex flex-col justify-center items-center text-center min-h-[100px] relative`}>
                   <h4 className="font-poppins font-semibold text-[22px] leading-tight whitespace-pre-line relative z-10">{card.title}</h4>
                   {card.subtitle && (
                     <p className="text-sm font-medium opacity-90 mt-1.5 relative z-10">{card.subtitle}</p>

@@ -153,11 +153,11 @@ export function DocumentsChecklist() {
 
           {/* Card 2: Identity & Photos */}
           <div className="bg-white rounded-[24px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden flex flex-col h-full border border-gray-100">
-            <div className="bg-[#fb4155] p-5 flex items-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 -960 960 960" width="28" fill="currentColor" className="text-white">
+            <div className="bg-[#FEDB2F] p-5 flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 -960 960 960" width="28" fill="currentColor" className="text-ink">
                 <path d="M480-120q-125-34-192.5-132T220-466v-214l260-96 260 96v214q0 116-67.5 214T480-120Zm-60-246 226-226-42-42-184 184-86-86-42 42 128 128Z"/>
               </svg>
-              <h3 className="text-white font-poppins font-semibold text-[22px]">Identity & Photos</h3>
+              <h3 className="text-ink font-poppins font-semibold text-[22px]">Identity & Photos</h3>
             </div>
             <div className="p-4 lg:p-6 flex-grow">
               <ul className="divide-y divide-gray-100">
@@ -179,7 +179,7 @@ export function DocumentsChecklist() {
 
           {/* Card 3: Supporting */}
           <div className="bg-white rounded-[24px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden flex flex-col h-full border border-gray-100">
-            <div className="bg-[#fb4155] p-5 flex items-center gap-3">
+            <div className="bg-[#0caadd] p-5 flex items-center gap-3">
               <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 -960 960 960" width="28" fill="currentColor" className="text-white">
                 <path d="M480-200 160-360v-109l320 160 320-160v109L480-200Zm0-156L160-516l320-160 320 160-320 160Z"/>
               </svg>

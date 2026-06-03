@@ -48,7 +48,7 @@ export default function StudyAbroadPostGraduation() {
 
   return (
     <section 
-      className={`bg-[#f8f8f8] sm:py-24 pb-25 pt-5 px-4 md:px-8 ${poppins.className}`}
+      className={`bg-[#f8f8f8] py-24 px-4 md:px-8 ${poppins.className}`}
       style={poppins.style}
     >
       <div className="max-w-[1200px] mx-auto flex flex-col items-center">
@@ -100,8 +100,8 @@ export default function StudyAbroadPostGraduation() {
         </div>
 
         {/* Disclaimer */}
-        <p className={`text-center text-gray-400 text-sm md:text-lg max-w-4xl font-lg leading-relaxed ${poppins.className}`}>
-          Visa policies change. Verify current rules with the partner university and the destination country's official immigration website at the time of application.
+        <p className={`text-center text-gray-400 text-xs md:text-lg max-w-4xl font-lg leading-relaxed ${poppins.className}`}>
+          Visa policies change. Verify current rules with the partner university and the destination country&apos;s official immigration website at the time of application.
         </p>
 
       </div>

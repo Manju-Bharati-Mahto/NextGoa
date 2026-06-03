@@ -1,5 +1,3 @@
-"use client";
-import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { Poppins } from "next/font/google";
 
@@ -9,13 +7,8 @@ const poppins = Poppins({
 });
 
 export default function StudyAbroadPartners() {
-  const [currentFaculty, setCurrentFaculty] = useState("Any faculty");
-  const [targetFaculty, setTargetFaculty] = useState("Any faculty");
-
-  const facultyOptions = ["Any faculty", "Engineering", "IT/CS", "Management"];
-
   return (
-    <section className={`bg-[#f9f9f9] pt-25 pb-7 px-4 md:px-8 ${poppins.className}`}>
+    <section className={`bg-[#f9f9f9] py-25 px-4 md:px-8 ${poppins.className}`}>
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         {/* Header */}
         <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
@@ -30,22 +23,66 @@ export default function StudyAbroadPartners() {
         </p>
 
         {/* Filter Bar */}
-        <div className="bg-[#fdfdfd] border border-gray-200 rounded-2xl p-4 w-full max-w-4xl flex flex-col md:flex-row items-end gap-4 shadow-sm mb-12 relative z-20">
-          <CustomSelect 
-            label="I'm studying / want to study"
-            options={facultyOptions}
-            value={currentFaculty}
-            onChange={setCurrentFaculty}
-          />
+        <div className="bg-[#fdfdfd] border border-gray-200 rounded-2xl p-4 w-full max-w-4xl flex flex-col md:flex-row items-end gap-4 shadow-sm mb-12">
+          <div className="flex-1 w-full">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              I&apos;m studying / want to study
+            </label>
+            <div className="relative">
+              <select className="w-full appearance-none border border-gray-300 rounded-lg py-2.5 px-4 text-gray-500 focus:outline-none focus:ring-1 focus:ring-[#f0424e] bg-white">
+                <option>Any faculty</option>
+                <option>Engineering</option>
+                <option>IT/CS</option>
+                <option>Management</option>
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500">
+                <svg
+                  className="h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
 
-          <CustomSelect 
-            label="Any faculty I'd like to go to"
-            options={facultyOptions}
-            value={targetFaculty}
-            onChange={setTargetFaculty}
-          />
+          <div className="flex-1 w-full">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Any faculty I&apos;d like to go to
+            </label>
+            <div className="relative">
+              <select className="w-full appearance-none border border-gray-300 rounded-lg py-2.5 px-4 text-gray-500 focus:outline-none focus:ring-1 focus:ring-[#f0424e] bg-white">
+                <option>Any faculty</option>
+                <option>Engineering</option>
+                <option>IT/CS</option>
+                <option>Management</option>
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500">
+                <svg
+                  className="h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
 
-          <div className="w-full md:w-auto mt-4 md:mt-0 flex-shrink-0">
+          <div className="w-full md:w-auto mt-4 md:mt-0">
             <button className="w-full md:w-auto bg-[#f0424e] hover:bg-[#d63a44] text-white font-medium rounded-lg py-2.5 px-6 flex items-center justify-center transition-colors">
               <svg
                 className="h-5 w-5 mr-2"
@@ -149,7 +186,7 @@ function CountryCard({
 
       {/* Right Grid Column */}
       <div className="md:w-[55%] grid grid-cols-2">
-        <div className="bg-[#3a0a01] h-40 md:h-auto flex items-center justify-center p-6 border-r border-b border-[#3e1610]">
+        <div className="bg-[#3e1610] h-40 md:h-auto flex items-center justify-center p-6 border-r border-b border-[#3e1610]">
           <Image
             src="/abroad/Rowan University.png"
             alt="Rowan University"
@@ -158,7 +195,7 @@ function CountryCard({
             className="object-contain"
           />
         </div>
-        <div className="bg-[#461d7d] h-40 md:h-auto flex items-center justify-center p-6 border-b border-[#3b1d7d]">
+        <div className="bg-[#3b1d7d] h-40 md:h-auto flex items-center justify-center p-6 border-b border-[#3b1d7d]">
           <Image
             src="/abroad/LSUS Shreveport.png"
             alt="LSUS Shreveport"
@@ -167,7 +204,7 @@ function CountryCard({
             className="object-contain"
           />
         </div>
-        <div className="bg-[#1a5634] h-40 md:h-auto flex items-center justify-center p-6 border-r border-[#1f5938]">
+        <div className="bg-[#1f5938] h-40 md:h-auto flex items-center justify-center p-6 border-r border-[#1f5938]">
           <Image
             src="/abroad/Marywood University.png"
             alt="Marywood University"
@@ -179,63 +216,12 @@ function CountryCard({
         <div className="bg-white h-40 md:h-auto flex items-center justify-center p-6">
           <Image
             src="/abroad/Saint Peter's University.png"
-            alt="Saint Peter's University"
+            alt="Saint Peter&apos;s University"
             width={160}
             height={100}
             className="object-contain"
           />
         </div>
-      </div>
-    </div>
-  );
-}
-
-function CustomSelect({ label, options, value, onChange }: { label: string, options: string[], value: string, onChange: (val: string) => void }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  return (
-    <div className="flex-1 w-full" ref={containerRef}>
-      <label className="block text-sm font-medium text-gray-700 mb-2">
-        {label}
-      </label>
-      <div className="relative">
-        <div 
-          onClick={() => setIsOpen(!isOpen)}
-          className={`w-full border rounded-lg py-2.5 px-4 text-gray-500 bg-white flex justify-between items-center cursor-pointer transition-colors ${isOpen ? 'border-[#f0424e] ring-1 ring-[#f0424e]' : 'border-gray-300 hover:border-gray-400'}`}
-        >
-          <span className="truncate pr-4">{value}</span>
-          <svg className={`flex-shrink-0 h-5 w-5 transition-transform duration-200 ${isOpen ? 'rotate-180 text-[#f0424e]' : 'text-gray-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </div>
-        
-        {isOpen && (
-          <div className="absolute z-50 w-full mt-2 bg-white border border-gray-100 rounded-lg shadow-xl overflow-hidden py-1 transform origin-top transition-all">
-            {options.map((opt) => (
-              <div 
-                key={opt}
-                onClick={() => {
-                  onChange(opt);
-                  setIsOpen(false);
-                }}
-                className={`py-2.5 px-4 cursor-pointer transition-colors text-sm ${value === opt ? 'bg-[#f0424e]/10 text-[#f0424e] font-semibold' : 'text-gray-600 hover:bg-gray-50'}`}
-              >
-                {opt}
-              </div>
-            ))}
-          </div>
-        )}
       </div>
     </div>
   );

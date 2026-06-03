@@ -100,7 +100,7 @@ export function SiteFooter() {
   const fullAddress = `${address.streetAddress}, ${address.addressLocality}, ${address.addressRegion} ${address.postalCode}`;
 
   return (
-    <footer id="contact" className="relative mt-auto overflow-hidden bg-transparent text-white">
+    <footer id="contact" className="relative mt-auto overflow-hidden bg-transparent text-white -mt-16">
       <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
         <Image
           src="/footer.svg"

@@ -11,7 +11,7 @@ interface EligibilityCard {
   qualification: string;
   minimum: string;
   entrance: string;
-  theme: "blue" | "red" | "yellow" | "white";
+  theme: "blue" | "red" | "yellow" | "white" | "black";
 }
 
 const CARDS: EligibilityCard[] = [
@@ -77,12 +77,13 @@ const CARDS: EligibilityCard[] = [
     qualification: "Graduation in any discipline",
     minimum: "50%",
     entrance: "UGC-NET / GATE / GPAT / PU Goa test",
-    theme: "white",
+    theme: "black",
   },
 ];
 
 export function EligibilitySection() {
   const [activeFilter, setActiveFilter] = useState<Level>("All levels");
+  const [showAll, setShowAll] = useState(false);
 
   const filters: { label: Level; color: string }[] = [
     { label: "All levels", color: "bg-[#ee364f] text-white border-transparent" },
@@ -98,7 +99,7 @@ export function EligibilitySection() {
 
   return (
     <section className="w-full bg-[#faf9f6] py-20 px-4 sm:px-8 xl:px-16">
-      <div className="max-w-[1000px] mx-auto">
+      <div className="max-w-[1200px] mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
           <h2 className="text-2xl font-bold text-ink mb-2 font-poppins">Eligibility</h2>
@@ -115,7 +116,10 @@ export function EligibilitySection() {
           {filters.map((f) => (
             <button
               key={f.label}
-              onClick={() => setActiveFilter(f.label)}
+              onClick={() => {
+                setActiveFilter(f.label);
+                setShowAll(false);
+              }}
               className={`px-5 py-2 rounded-full text-sm font-semibold border transition-all hover:scale-105 ${
                 activeFilter === f.label || (activeFilter === "All levels" && f.label === "All levels")
                   ? f.color
@@ -128,14 +132,15 @@ export function EligibilitySection() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 transition-all duration-300">
-          {filteredCards.map((card, idx) => {
+        <div className="flex flex-wrap justify-center gap-6 mb-8 transition-all duration-300">
+          {(showAll ? filteredCards : filteredCards.slice(0, 3)).map((card, idx) => {
             const isDarkText = card.theme === "yellow" || card.theme === "white";
             const bgClass = {
               blue: "bg-[#0caadd]",
               red: "bg-[#ee364f]",
               yellow: "bg-[#fedb2f]",
               white: "bg-white border border-gray-200",
+              black: "bg-ink",
             }[card.theme];
 
             const textColor = isDarkText ? "text-ink" : "text-white";
@@ -153,39 +158,52 @@ export function EligibilitySection() {
             return (
               <div
                 key={idx}
-                className={`${bgClass} rounded-[20px] p-8`}
+                className={`${bgClass} rounded-[20px] overflow-hidden border border-gray-100 shadow-sm flex flex-col w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]`}
               >
-                <div className="flex justify-between items-start gap-4 mb-6">
-                  <h4 className={`text-3xl font-bold ${textColor} leading-snug w-[80%]`}>
-                    {card.title}
-                  </h4>
-                  <span
-                    className={`${tagBg} ${tagText} text-sm font-bold px-4 py-1.5 rounded-full whitespace-nowrap`}
-                  >
-                    {card.level}
-                  </span>
+                {/* Top Section */}
+                <div className="p-8 pb-6 flex-grow flex flex-col justify-center">
+                  <div className="flex justify-between items-start gap-4">
+                    <h4 className={`text-xl sm:text-2xl font-bold ${textColor} leading-snug w-[80%]`}>
+                      {card.title}
+                    </h4>
+                    <span
+                      className={`${tagBg} ${tagText} text-sm font-bold px-4 py-1.5 rounded-full whitespace-nowrap shrink-0`}
+                    >
+                      {card.level}
+                    </span>
+                  </div>
                 </div>
 
-                <hr className={`mb-6 ${dividerColor}`} />
-
-                <div className={`space-y-4 text-base ${textColor}`}>
+                {/* Bottom Section */}
+                <div className="bg-white p-8 pt-6 space-y-4 text-base text-ink">
                   <div className="flex justify-between gap-4">
                     <span className="opacity-80 w-1/3">Qualification</span>
-                    <span className={`text-right w-2/3 ${valueBold}`}>{card.qualification}</span>
+                    <span className="text-right w-2/3 font-semibold">{card.qualification}</span>
                   </div>
                   <div className="flex justify-between gap-4">
                     <span className="opacity-80 w-1/3">Minimum</span>
-                    <span className={`text-right w-2/3 ${valueBold}`}>{card.minimum}</span>
+                    <span className="text-right w-2/3 font-semibold">{card.minimum}</span>
                   </div>
                   <div className="flex justify-between gap-4">
                     <span className="opacity-80 w-1/3">Entrance test</span>
-                    <span className={`text-right w-2/3 ${valueBold}`}>{card.entrance}</span>
+                    <span className="text-right w-2/3 font-semibold">{card.entrance}</span>
                   </div>
                 </div>
               </div>
             );
           })}
         </div>
+
+        {filteredCards.length > 3 && (
+          <div className="flex justify-center mb-12">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="border border-gray-300 hover:border-gray-400 text-ink font-semibold px-6 py-2.5 rounded-full transition-colors bg-white shadow-sm"
+            >
+              {showAll ? "View less" : "View all programmes"}
+            </button>
+          </div>
+        )}
 
         {/* Footer Note */}
         <div className="bg-[#1f1f1f] rounded-full p-2 flex flex-col sm:flex-row items-center justify-between shadow-lg">

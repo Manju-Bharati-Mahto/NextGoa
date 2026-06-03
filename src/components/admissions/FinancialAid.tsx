@@ -18,13 +18,15 @@ export function FinancialAid() {
               alt="Online Payment Options background" 
               className="absolute inset-0 w-full h-full object-fill pointer-events-none"
             />
-            <div className="relative z-10 w-full h-full flex flex-col justify-center items-end p-6 sm:p-8">
-              <div className="w-[50%] sm:w-[45%] xl:w-[42%]">
-                <h4 className="font-poppins font-semibold text-white text-[20px] sm:text-[26px] mb-2 leading-tight">Online Payment</h4>
-                <p className="font-[family-name:var(--font-poppins)] text-white text-[12px] sm:text-[14px] leading-[1.4] mb-3 sm:mb-5">
-                  Drop your details below - a counsellor will call you within 24 hours.
-                </p>
-                <div className="flex flex-wrap gap-2">
+            <div className="relative z-10 w-full h-full flex flex-col justify-start items-end p-6 sm:p-8">
+              <div className="w-[50%] sm:w-[45%] xl:w-[42%] flex flex-col h-full">
+                <div>
+                  <h4 className="font-poppins font-semibold text-white text-[24px] sm:text-[28px] mb-2 leading-tight">Online Payment</h4>
+                  <p className="font-[family-name:var(--font-poppins)] text-white text-[14px] sm:text-[16px] leading-[1.4]">
+                    Drop your details below - a counsellor will call you within 24 hours.
+                  </p>
+                </div>
+                <div className="mt-auto flex flex-wrap gap-2 pt-4">
                   <span className="bg-white text-ink text-[9px] sm:text-[10px] font-bold px-2 sm:px-3 py-1 rounded-full uppercase">Card</span>
                   <span className="bg-white text-ink text-[9px] sm:text-[10px] font-bold px-2 sm:px-3 py-1 rounded-full uppercase">UPI</span>
                   <span className="bg-white text-ink text-[9px] sm:text-[10px] font-bold px-2 sm:px-3 py-1 rounded-full uppercase">Net Banking</span>
@@ -40,12 +42,14 @@ export function FinancialAid() {
               alt="Education Loans background" 
               className="absolute inset-0 w-full h-full object-fill pointer-events-none"
             />
-            <div className="relative z-10 w-full h-full p-6 sm:p-8 flex flex-col justify-center">
-              <h4 className="font-poppins font-semibold text-white text-[24px] sm:text-[28px] mb-2 leading-tight">Education<br />Loans</h4>
-              <p className="font-[family-name:var(--font-poppins)] text-white text-[12px] sm:text-[14px] leading-[1.4] mb-4 pr-2">
-                Drop your details below - a counsellor will call you within 24 hours.
-              </p>
-              <div className="flex flex-wrap gap-2">
+            <div className="relative z-10 w-full h-full p-6 sm:p-8 flex flex-col justify-start">
+              <div>
+                <h4 className="font-poppins font-semibold text-white text-[24px] sm:text-[28px] mb-2 leading-tight">Education<br />Loans</h4>
+                <p className="font-[family-name:var(--font-poppins)] text-white text-[14px] sm:text-[16px] leading-[1.4] pr-2">
+                  Drop your details below - a counsellor will call you within 24 hours.
+                </p>
+              </div>
+              <div className="mt-auto flex flex-wrap gap-2 pt-4">
                 <span className="bg-white text-ink text-[9px] sm:text-[10px] font-bold px-2 sm:px-3 py-1 rounded-full uppercase">HDFC</span>
                 <span className="bg-white text-ink text-[9px] sm:text-[10px] font-bold px-2 sm:px-3 py-1 rounded-full uppercase">Avanse</span>
                 <span className="bg-white text-ink text-[9px] sm:text-[10px] font-bold px-2 sm:px-3 py-1 rounded-full uppercase">Auxilo</span>
@@ -60,11 +64,13 @@ export function FinancialAid() {
               alt="Instalment Plans background" 
               className="absolute inset-0 w-full h-full object-fill pointer-events-none"
             />
-            <div className="relative z-10 w-full h-full p-6 sm:p-8 flex flex-col justify-center">
-              <h4 className="font-poppins font-semibold text-ink text-[24px] sm:text-[28px] mb-3 leading-tight">Instalment<br />Plans</h4>
-              <p className="font-[family-name:var(--font-poppins)] text-ink text-[14px] sm:text-[16px] leading-[1.4] pr-2">
-                Available where<br />applicable
-              </p>
+            <div className="relative z-10 w-full h-full p-6 sm:p-8 flex flex-col justify-start">
+              <div>
+                <h4 className="font-poppins font-semibold text-ink text-[24px] sm:text-[28px] mb-3 leading-tight">Instalment<br />Plans</h4>
+                <p className="font-[family-name:var(--font-poppins)] text-ink text-[14px] sm:text-[16px] leading-[1.4] pr-2">
+                  Available where<br />applicable
+                </p>
+              </div>
             </div>
           </div>
         </div>
