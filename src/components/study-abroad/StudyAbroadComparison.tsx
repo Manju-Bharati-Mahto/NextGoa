@@ -20,13 +20,12 @@ export default function StudyAbroadComparison() {
 
   return (
     <section 
-      className="relative w-full font-[family-name:var(--font-poppins)] pt-24 pb-32 bg-no-repeat bg-center bg-[#f9f9f9]"
+      className="relative w-full font-[family-name:var(--font-poppins)] pt-24 pb-32 bg-[#f9f9f9] bg-no-repeat bg-cover bg-top sm:bg-[length:100%_100%] sm:bg-center"
       style={{ 
-        backgroundImage: "url('/abroad/Red Wave Border.png')",
-        backgroundSize: "100% 100%"
+        backgroundImage: "url('/abroad/Red Wave Border.png')"
       }}
     >
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10 pt-10">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10 py-15">
         
         {/* Header Section */}
         <div className="text-center mb-12 pt-6">
@@ -50,7 +49,7 @@ export default function StudyAbroadComparison() {
                 <span className="material-symbols-rounded text-2xl font-bold">close</span>
               </div>
               <div>
-                <p className="text-gray-400 text-xs font-bold tracking-widest uppercase mb-1">Option A</p>
+                <p className="text-gray-400 text-xs font-bold tracking-widest uppercase mb-1 font-poppins">Option A</p>
                 <h3 className="text-white text-lg sm:text-[22px] font-semibold leading-tight font-poppins">Direct foreign admission</h3>
               </div>
             </div>
@@ -60,7 +59,7 @@ export default function StudyAbroadComparison() {
                 {directAdmissionPoints.map((point, idx) => (
                   <li key={idx} className="flex items-start gap-4">
                     <span className="flex-shrink-0 w-2.5 h-2.5 rounded-full bg-[#FF4C4C] mt-1.5 shadow-[0_0_8px_rgba(255,76,76,0.6)]"></span>
-                    <span className="text-[#333333] font-medium leading-relaxed">{point}</span>
+                    <span className="text-[16px] sm:text-[16.5px] text-[#333333] font-medium leading-relaxed">{point}</span>
                   </li>
                 ))}
               </ul>
@@ -75,7 +74,7 @@ export default function StudyAbroadComparison() {
                 <span className="material-symbols-rounded text-2xl font-bold">check</span>
               </div>
               <div>
-                <p className="text-[#222222] text-[11px] font-bold tracking-widest uppercase mb-1">Option B · Recommended</p>
+                <p className="text-[#222222] text-[11px] font-bold tracking-widest uppercase mb-1 font-poppins">Option B · Recommended</p>
                 <h3 className="text-[#222222] text-lg sm:text-[22px] font-semibold leading-tight font-poppins">Study Abroad with PU Goa</h3>
               </div>
             </div>
@@ -85,7 +84,7 @@ export default function StudyAbroadComparison() {
                 {puGoaPathwayPoints.map((point, idx) => (
                   <li key={idx} className="flex items-start gap-4">
                     <span className="flex-shrink-0 w-2.5 h-2.5 rounded-full bg-[#2DD4BF] mt-1.5 shadow-[0_0_8px_rgba(45,212,191,0.6)]"></span>
-                    <span className="text-[#333333] font-medium leading-relaxed">{point}</span>
+                    <span className="text-[16px] sm:text-[16.5px] text-[#333333] font-medium leading-relaxed">{point}</span>
                   </li>
                 ))}
               </ul>

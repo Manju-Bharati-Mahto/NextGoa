@@ -79,7 +79,7 @@ export function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="bg-gradient-to-t from-[#FFF9E6] to-[#F8F8F8] pb-24">
+    <section id="faq" className="bg-[#F8F8F8] pb-15 sm:pb-15">
       <JsonLd data={faqSchema(faqs)} />
       <div className="mx-auto max-w-6xl px-6 py-20">
         <Eyebrow className="text-ink">Questions parents ask</Eyebrow>

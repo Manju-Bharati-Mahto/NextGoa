@@ -2,9 +2,9 @@ import React from "react";
 
 export function Legacy() {
   return (
-    <section className="bg-brand-white py-24 px-6">
+    <section className="bg-brand-white sm:py-24 pb-24 pt-10 px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+        <div className="grid grid-cols-1 gap-8 sm:gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
           
           {/* Left Text */}
           <div className="relative">
@@ -32,7 +32,7 @@ export function Legacy() {
           </div>
 
           {/* Right Image */}
-          <div className="px-4 sm:px-0 mt-8 lg:mt-0">
+          <div className="px-2 sm:px-0 mt-8 lg:mt-0">
             <div className="relative inline-block w-full">
               {/* Bottom-Right Decorative SVG */}
               <img 

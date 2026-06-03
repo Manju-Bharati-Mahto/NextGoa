@@ -287,7 +287,7 @@ export default function ProgramFilter() {
           <h2 className="text-xl sm:text-2xl font-bold mb-2 text-ink font-poppins">
             Find your programme
           </h2>
-          <h3 className="text-4xl sm:text-[2.75rem] font-semibold text-[#ED383F] mb-4 tracking-tight leading-tight font-poppins">
+          <h3 className="text-4xl sm:text-[2.75rem] font-bold text-[#ED383F] mb-4 tracking-tight leading-tight font-poppins">
             Build your shortlist in seconds.
           </h3>
           <p className="text-sm sm:text-[15px] text-ink/80 max-w-lg mx-auto leading-relaxed">
@@ -318,7 +318,7 @@ export default function ProgramFilter() {
                 <h3 className="text-2xl font-semibold text-ink font-poppins">Filters</h3>
               </div>
 
-              <div className="space-y-12">
+              <div className="space-y-12 max-h-[350px] overflow-y-auto sm:max-h-none sm:overflow-visible pr-2">
                 {Object.entries(filterOptions).map(([category, options]) => (
                   <div key={category}>
                     <h4 className="text-xl sm:text-[22px] font-semibold text-ink mb-5 border-b-[1.7px] border-gray-200 pb-4 font-poppins">{category}</h4>

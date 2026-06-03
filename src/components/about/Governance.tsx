@@ -71,41 +71,36 @@ export function Governance() {
 
   return (
     <section className="relative overflow-hidden bg-transparent">
-      {/* Solid red background starting below the top wave dip and ending above the bottom wave dip */}
-      <div className="absolute inset-x-0 bottom-[2vw] top-[2vw] z-0 bg-[#E73649] pointer-events-none" />
-
-      {/* Background wave band perfectly proportioned (Top) */}
-      <div className="absolute inset-x-0 top-0 w-full aspect-[1440/75] z-0 pointer-events-none">
-        <WaveBandBg band="#E73649" accent="#C92B3C" topOnly={true} />
-      </div>
-
-      {/* Background wave band perfectly proportioned (Bottom) */}
-      <div className="absolute inset-x-0 bottom-0 w-full aspect-[1440/77] z-0 pointer-events-none">
-        <WaveBandBg band="#E73649" accent="#C92B3C" bottomOnly={true} />
-      </div>
+      {/* Patterned red background spanning the entire section */}
+      <div
+        className="absolute inset-0 z-0 pointer-events-none bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/abroad/governance-red-wave-border.png')" }}
+      />
 
       {/* Decorative Background Graphics */}
       {/* Left Lighthouse */}
-      <div className="absolute left-0 bottom-12 z-0 w-72 h-96 pointer-events-none -translate-x-10">
+      <div className="absolute left-0 top-24 sm:top-auto sm:bottom-12 z-0 w-48 h-64 sm:w-72 sm:h-96 pointer-events-none -translate-x-6 sm:-translate-x-10">
         <img
           src="/1.svg"
           alt=""
           aria-hidden="true"
-          className="w-full h-full object-contain brightness-0 invert opacity-20"
+          className="w-full h-full object-contain brightness-0 invert opacity-10 sm:opacity-20"
         />
       </div>
 
       {/* Right Shell */}
-      <div className="absolute right-0 bottom-12 z-0 w-96 h-96 pointer-events-none translate-x-12">
+      <div className="absolute right-0 bottom-16 sm:bottom-12 z-0 w-56 h-56 sm:w-96 sm:h-96 pointer-events-none translate-x-8 sm:translate-x-12">
         <img
           src="/3.svg"
           alt=""
           aria-hidden="true"
-          className="w-full h-full object-contain brightness-0 invert opacity-20"
+          className="w-full h-full object-contain brightness-0 invert opacity-10 sm:opacity-20"
         />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-5xl px-6 pt-60 pb-52 sm:pt-64 sm:pb-56">
+
+
+      <div className="relative z-10 mx-auto max-w-5xl px-6 pt-48 pb-52 sm:pt-56 sm:pb-56">
         <div className="text-center mb-14 text-white">
           <h3 className="font-poppins text-[24px] font-semibold leading-tight text-white sm:text-brand-subheading">
             Governance and Recognition

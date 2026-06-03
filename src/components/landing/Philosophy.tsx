@@ -81,7 +81,7 @@ export function Philosophy({ variant = "default" }: { variant?: "default" | "cle
   return (
     <section
       id="philosophy"
-      className={`relative overflow-hidden ${isClean ? "bg-transparent py-20" : "bg-gradient-to-b from-[var(--color-ink-warm)] to-[var(--color-brand-white)]"}`}
+      className={`relative overflow-hidden ${isClean ? "bg-transparent py-5 sm:py-20" : "bg-gradient-to-b from-[var(--color-ink-warm)] to-[var(--color-brand-white)]"}`}
     >
       {/* Background Blue Wavy SVG from Figma */}
       {!isClean && (
@@ -90,7 +90,7 @@ export function Philosophy({ variant = "default" }: { variant?: "default" | "cle
         </div>
       )}
       
-      <div className={`relative z-10 mx-auto max-w-[1440px] px-6 ${isClean ? "py-16" : "py-32 sm:py-48"} flex flex-col items-center justify-center`}>
+      <div className={`relative z-10 mx-auto max-w-[1440px] px-6 ${isClean ? "py-16" : "py-50 sm:py-50"} flex flex-col items-center justify-center`}>
         <Eyebrow className={isClean ? "text-ink" : "text-white"}>Our Philosophy</Eyebrow>
         <h2 className={`mt-1 text-center font-sans font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight ${isClean ? "text-brand" : "text-white"}`}>
           What Shapes Everything We Do

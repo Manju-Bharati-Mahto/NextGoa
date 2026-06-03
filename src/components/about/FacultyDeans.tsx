@@ -54,10 +54,10 @@ export function FacultyDeans() {
           {deans.map((dean, idx) => (
             <div
               key={idx}
-              className="flex flex-row rounded-[20px] bg-white shadow-sm border border-zinc-200/60 overflow-hidden"
+              className="flex flex-col sm:flex-row rounded-[20px] bg-white shadow-sm border border-zinc-200/60 overflow-hidden"
             >
               {/* Image Section Placeholder */}
-              <div className="relative w-[35%] sm:w-[30%] bg-gradient-to-b from-[#EBF8FD] to-[#D6F0FA] flex-shrink-0 flex items-end justify-center overflow-hidden">
+              <div className="relative w-full h-[180px] sm:h-auto sm:w-[30%] bg-gradient-to-b from-[#EBF8FD] to-[#D6F0FA] flex-shrink-0 flex items-end justify-center overflow-hidden">
                 {/* Space left for future image. Mockups removed. */}
               </div>
 

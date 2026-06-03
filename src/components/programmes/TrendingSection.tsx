@@ -38,19 +38,20 @@ export default function TrendingSection() {
   const activeCourse = trendingCourses[activeIndex];
 
   return (
-    <section 
-      className="relative z-20 w-full min-h-[600px] flex items-center bg-transparent -mt-12 sm:-mt-24 lg:-mt-5 pt-32 pb-24"
-      style={{ backgroundImage: "url('/programmes/trending-section.png')", backgroundSize: "100% 100%", backgroundRepeat: "no-repeat" }}
+    <section
+      className="relative z-20 w-full min-h-[600px] flex items-center bg-transparent -mt-12 sm:-mt-24 lg:-mt-5 pt-32 pb-24 bg-cover sm:bg-[length:100%_100%] bg-top bg-no-repeat"
+      style={{ backgroundImage: "url('/programmes/trending-section.png')" }}
     >
-      <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-4 lg:gap-0 items-center">
+
+      <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-0 lg:gap-0 items-center sm:gap-4">
           {/* Left Column */}
           <div className="flex flex-col text-white lg:pr-4 relative z-10">
             <h2 className="text-xl sm:text-[22px] font-[family-name:var(--font-poppins)] tracking-wide">Trending now</h2>
-            <h3 className="text-4xl sm:text-5xl lg:text-[4rem] font-semibold text-[#FFD523] mt-2 leading-[1.1] font-[family-name:var(--font-poppins)]">
-              Limited seats for<br/>2026-27
+            <h3 className="text-4xl sm:text-5xl lg:text-[4rem] font-bold text-[#FFD523] mt-2 leading-[1.1] font-[family-name:var(--font-poppins)]">
+              Limited seats for<br />2026-27
             </h3>
-            
+
             {/* Card Section */}
             <div className="mt-0 sm:mt-2 w-full max-w-[800px]">
               <div className="flex justify-end mb-3 pr-2">
@@ -58,7 +59,6 @@ export default function TrendingSection() {
                   View all <span>&rarr;</span>
                 </a>
               </div>
-              
               <div className="bg-white rounded-[24px] p-6 sm:px-10 sm:py-8 text-ink shadow-2xl relative overflow-hidden min-h-[240px] flex flex-col justify-center">
                 {/* Subtle gear watermark */}
                 <div className="absolute right-[7%] top-[10%] pointer-events-none transition-opacity duration-500">
@@ -82,8 +82,9 @@ export default function TrendingSection() {
                     Apply Now <span>&rarr;</span>
                   </button>
                 </div>
+
               </div>
-              
+
               {/* Pagination Dots */}
               <div className="flex items-center gap-2 mt-8 pl-4">
                 {trendingCourses.map((_, idx) => (
@@ -97,12 +98,12 @@ export default function TrendingSection() {
               </div>
             </div>
           </div>
-          
+
           {/* Right Column */}
           <div className="flex justify-center lg:justify-end relative h-full mt-16 lg:mt-0 lg:-ml-16 z-0 pointer-events-none">
               <img 
                 src="/programmes/trending-right.png" 
-                alt="Trending programmes"
+                alt="MS Dhoni trending programmes"
                 className="w-full max-w-[500px] object-contain drop-shadow-2xl"
               />
           </div>

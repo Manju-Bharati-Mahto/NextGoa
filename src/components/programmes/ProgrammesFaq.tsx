@@ -35,9 +35,17 @@ function FaqAccordionItem({ f, isOpen, onToggle }: { f: FaqItem; isOpen: boolean
         className="flex w-full cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left font-[family-name:var(--font-poppins)] text-base font-medium text-ink"
       >
         {f.question}
-        <span className="shrink-0 text-[#ED383F] text-2xl font-light leading-none">
-          {isOpen ? "−" : "+"}
-        </span>
+        <svg
+          className={`shrink-0 text-[#ED383F] w-6 h-6 transition-transform duration-300 ease-in-out ${
+            isOpen ? "rotate-45" : "rotate-0"
+          }`}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+        </svg>
       </button>
       <div
         className={`grid transition-all duration-300 ease-in-out ${
@@ -58,14 +66,14 @@ export default function ProgrammesFaq() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="bg-[#F9F9F9] pb-24 pt-10 font-[family-name:var(--font-poppins)]">
+    <section id="faq" className="bg-[#F9F9F9] pb-24 pt-20 font-[family-name:var(--font-poppins)]">
       <JsonLd data={faqSchema(faqs)} />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-xl sm:text-[22px] font-bold text-ink mb-3 tracking-wide font-poppins">
             FAQs
           </h2>
-          <h3 className="text-4xl sm:text-[3.2rem] font-semibold text-[#ED383F] tracking-tight leading-tight font-poppins">
+          <h3 className="text-4xl sm:text-[3.2rem] font-bold text-[#ED383F] tracking-tight leading-tight font-poppins max-w-3xl mx-auto">
             Frequently asked questions about campus life.
           </h3>
         </div>

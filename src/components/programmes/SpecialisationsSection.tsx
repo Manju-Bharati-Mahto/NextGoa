@@ -34,7 +34,7 @@ const specialisationsData = [
 
 export default function SpecialisationsSection() {
   return (
-    <section className="py-24 sm:py-32 bg-[#F9F9F9] font-[family-name:var(--font-poppins)]">
+    <section className="pt-20 pb-5 sm:pb-15 sm:pt-30 bg-[#F9F9F9] font-[family-name:var(--font-poppins)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Content */}
@@ -42,7 +42,7 @@ export default function SpecialisationsSection() {
           <h2 className="text-xl sm:text-[22px] font-bold text-ink mb-3 tracking-wide font-poppins">
             Specialisations
           </h2>
-          <h3 className="text-4xl sm:text-[3.2rem] font-semibold text-[#ED383F] mb-6 tracking-tight leading-tight font-poppins">
+          <h3 className="text-4xl sm:text-[3.2rem] font-bold text-[#ED383F] mb-6 tracking-tight leading-tight font-poppins">
             Pick a specialisation, not just a programme.
           </h3>
           <p className="text-[15px] sm:text-[17px] max-w-3xl mx-auto text-ink/80 font-medium">
@@ -75,7 +75,7 @@ export default function SpecialisationsSection() {
                 {spec.tags.map((tag, i) => (
                   <span 
                     key={`${tag}-${i}`} 
-                    className="inline-flex items-center justify-center text-center bg-white text-ink font-medium text-[13px] sm:text-[14px] px-5 py-2.5 rounded-full hover:scale-[1.05] transition-transform duration-300 ease-in-out will-change-transform backface-hidden antialiased cursor-pointer"
+                    className="inline-flex items-center justify-start text-left sm:justify-center sm:text-center bg-white text-ink font-medium text-[15px] sm:text-[15px] px-5 py-2.5 rounded-full hover:scale-[1.05] transition-transform duration-300 ease-in-out will-change-transform backface-hidden antialiased cursor-pointer"
                   >
                     {tag}
                   </span>

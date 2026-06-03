@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useId } from "react";
+import { useState, useId, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Eyebrow } from "./Decor";
 
@@ -140,7 +140,7 @@ function CourseCard({ color, title, tags, href }: CourseCardProps) {
       {/* Decorative background pattern (isolated to the right portion of the card) */}
       <svg
         viewBox="250 0 125 268"
-        className="absolute right-0 top-0 h-full w-[33%] pointer-events-none opacity-40"
+        className="absolute right-[5%] sm:right-0 -top-[13%] sm:top-0 h-full w-[20%] sm:w-[33%] pointer-events-none opacity-40"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -197,6 +197,61 @@ function CourseCard({ color, title, tags, href }: CourseCardProps) {
   );
 }
 
+function FinderSelect({ options, value, onChange, defaultText }: { options: string[], value: string, onChange: (val: string) => void, defaultText: string }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  return (
+    <div className="flex-1 w-full relative font-poppins" ref={containerRef}>
+      <div 
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full appearance-none border-0 bg-transparent px-0 text-base text-zinc-500 focus:outline-none focus:ring-0 flex justify-between items-center cursor-pointer py-2 pr-2"
+      >
+        <span className="truncate">{value || defaultText}</span>
+        <svg className={`flex-shrink-0 h-5 w-5 transition-transform duration-200 ${isOpen ? 'rotate-180 text-brand' : 'text-zinc-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+      
+      {isOpen && (
+        <div className="absolute z-50 w-[calc(100%+2rem)] -left-4 sm:left-0 sm:w-full sm:min-w-full mt-4 bg-white border border-gray-100 rounded-xl shadow-xl overflow-hidden py-2 transform origin-top transition-all top-full max-h-60 overflow-y-auto">
+          <div 
+            onClick={() => {
+              onChange("");
+              setIsOpen(false);
+            }}
+            className={`py-3 px-4 cursor-pointer transition-colors text-base sm:text-sm ${value === "" ? 'bg-brand/5 text-brand font-semibold' : 'text-gray-600 hover:bg-gray-50'}`}
+          >
+            {defaultText}
+          </div>
+          {options.map((opt) => (
+            <div 
+              key={opt}
+              onClick={() => {
+                onChange(opt);
+                setIsOpen(false);
+              }}
+              className={`py-3 px-4 cursor-pointer transition-colors text-base sm:text-sm ${value === opt ? 'bg-brand/5 text-brand font-semibold' : 'text-gray-600 hover:bg-gray-50'}`}
+            >
+              {opt}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function ProgrammeFinder() {
   const [level, setLevel] = useState("");
   const [field, setField] = useState("");
@@ -238,44 +293,30 @@ export function ProgrammeFinder() {
           onSubmit={handleSubmit}
           className="mx-auto mt-10 flex w-full max-w-4xl flex-col items-stretch rounded-3xl bg-white p-2 ring-1 ring-zinc-300 sm:flex-row sm:items-center sm:rounded-[100px]"
         >
-          <div className="flex flex-1 items-center px-4 py-2">
-            <select
-              aria-label="Level"
+          <div className="flex flex-1 items-center px-4 py-2 w-full">
+            <FinderSelect
+              options={levels}
               value={level}
-              onChange={(e) => {
-                setLevel(e.target.value);
+              defaultText="I am exploring"
+              onChange={(val) => {
+                setLevel(val);
                 setSubmitted(false);
               }}
-              className="w-full appearance-none border-0 bg-transparent px-0 text-base text-zinc-500 focus:outline-none focus:ring-0 bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:1.1rem_1.1rem] bg-[position:right_12px_center] bg-no-repeat pr-8 cursor-pointer"
-            >
-              <option value="">I am exploring</option>
-              {levels.map((l) => (
-                <option key={l} value={l}>
-                  {l}
-                </option>
-              ))}
-            </select>
+            />
           </div>
 
           <div className="hidden h-6 w-px bg-zinc-300 sm:block mx-2"></div>
 
-          <div className="flex flex-1 items-center px-4 py-2">
-            <select
-              aria-label="Field"
+          <div className="flex flex-1 items-center px-4 py-2 w-full">
+            <FinderSelect
+              options={fields}
               value={field}
-              onChange={(e) => {
-                setField(e.target.value);
+              defaultText="Field"
+              onChange={(val) => {
+                setField(val);
                 setSubmitted(false);
               }}
-              className="w-full appearance-none border-0 bg-transparent px-0 text-base text-zinc-500 focus:outline-none focus:ring-0 bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:1.1rem_1.1rem] bg-[position:right_12px_center] bg-no-repeat pr-8 cursor-pointer"
-            >
-              <option value="">Field</option>
-              {fields.map((f) => (
-                <option key={f} value={f}>
-                  {f}
-                </option>
-              ))}
-            </select>
+            />
           </div>
 
           <button
@@ -364,7 +405,7 @@ export function ProgrammeFinder() {
         )}
 
         {/* Counsellor band */}
-        <div className="mt-8 flex flex-col items-center justify-between gap-4 rounded-2xl bg-ink-warm px-6 py-5 sm:flex-row">
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 rounded-2xl bg-ink-warm px-6 py-8 sm:py-5 sm:flex-row font-[family-name:var(--font-poppins)]">
           <p className="text-center text-base sm:text-lg font-medium text-white/90 sm:text-left">
             <span className="font-bold">Don&apos;t know what to choose?</span>{" "}
             Talk to a counsellor — we&apos;ll match you to the right program.
