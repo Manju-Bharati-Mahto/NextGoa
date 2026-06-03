@@ -39,7 +39,7 @@ export default function StudyAbroadAssistance() {
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
           backgroundImage: "url('/abroad/Extended Assistance Background.png')",
-          backgroundSize: "100% 100%",
+          backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
