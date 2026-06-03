@@ -81,7 +81,7 @@ export function Faq() {
   return (
     <section id="faq" className="bg-[#F8F8F8] pb-15 sm:pb-15">
       <JsonLd data={faqSchema(faqs)} />
-      <div className="mx-auto max-w-6xl px-6 py-20">
+      <div className="mx-auto max-w-6xl px-6 sm:py-20 pt-10">
         <Eyebrow className="text-ink">Questions parents ask</Eyebrow>
         <h2 className="mt-2 text-center font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
           Straight answers before you ask.
