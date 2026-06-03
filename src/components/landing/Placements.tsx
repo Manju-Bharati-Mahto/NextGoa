@@ -53,7 +53,7 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
 
   return (
     <section id="placements" className={isAbout ? "bg-gradient-to-b from-[#D6F0FA] via-[#F8F8F8]/50 to-brand-white -mt-10 pt-10 relative z-0" : "bg-brand-white"}>
-      <div className="mx-auto max-w-6xl px-7 pt-15 pb-20 sm:py-20">
+      <div className="mx-auto max-w-6xl px-4 pt-15 pb-20 sm:py-20">
         <div className="flex justify-center mb-6">
           <img src="/Test.svg" alt="" aria-hidden="true" className="h-[97px] w-auto" />
         </div>
