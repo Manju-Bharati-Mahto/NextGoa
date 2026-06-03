@@ -202,7 +202,7 @@ function FinderSelect({ options, value, onChange, defaultText }: { options: stri
       </div>
       
       {isOpen && (
-        <div className="absolute z-50 w-full min-w-[260px] sm:min-w-full mt-4 bg-white border border-gray-100 rounded-2xl shadow-xl overflow-hidden py-2 transform origin-top transition-all left-0 top-full max-h-60 overflow-y-auto">
+        <div className="absolute z-50 w-[calc(100%+2rem)] -left-4 sm:left-0 sm:w-full sm:min-w-full mt-4 bg-white border border-gray-100 rounded-xl shadow-xl overflow-hidden py-2 transform origin-top transition-all top-full max-h-60 overflow-y-auto">
           <div 
             onClick={() => {
               onChange("");
