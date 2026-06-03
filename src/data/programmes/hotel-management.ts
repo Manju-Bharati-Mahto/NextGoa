@@ -80,6 +80,7 @@ export const hotelManagementData: ProgrammeData = {
   labs: {
     subtitle: "Training Facilities",
     title: "Where you'll actually plate, host, run.",
+    description: "Hands-on experience in simulated luxury hospitality environments.",
     features: [
       { title: "Food Production Lab", description: "Industrial-grade kitchens for Indian, Continental and Asian cuisines — same equipment you'll see in a 5-star hotel." },
       { title: "Bakery & Confectionery Studio", description: "Dedicated patisserie and bread-making space with deck ovens, proofers and chocolate-tempering setups." },
