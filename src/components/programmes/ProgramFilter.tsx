@@ -1,67 +1,230 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const programmes = [
+const allCourses = [
   {
     id: 1,
-    category: "Engineering & CS",
-    description: "The finest technical exposure in the field of technology.",
-    count: 8,
+    title: "B.Tech Computer Science & Engineering",
+    description: "Specializations in AI, Machine Learning, Cyber Security.",
+    level: "Bachelor's",
+    field: "Engineering",
+    mode: "Full-Time",
+    entranceTest: "JEE- main",
     image: "/programmes/ARVR Innovation Lab.png",
-    href: "/programmes/engineering",
+    href: "/programmes/engineering-and-technology",
   },
   {
     id: 2,
-    category: "Management Studies",
-    description: "Where tomorrow's industry leaders are shaped.",
-    count: 2,
+    title: "MBA",
+    description: "Master of Business Administration with global specializations.",
+    level: "Master's",
+    field: "Management",
+    mode: "Full-Time",
+    entranceTest: "CAT",
     image: "/programmes/Interactive Classroom Session.png",
+    href: "/programmes/management-studies",
   },
   {
     id: 3,
-    category: "Pharmacy",
-    description: "From molecule to medicine — pharmacy that transforms lives.",
-    count: 2,
-    image: "/programmes/Pharmaceutical Lab Practice.png",
+    title: "B.Sc Nursing",
+    description: "Professional nursing program with clinical practice.",
+    level: "Bachelor's",
+    field: "Nursing",
+    mode: "Full-Time",
+    entranceTest: "PU Goa Enterance",
+    image: "/programmes/Clinical Simulation Learning.png",
+    href: "/programmes/nursing",
   },
   {
     id: 4,
-    category: "Nursing",
-    description: "Where dedication becomes healing.",
-    count: 8,
-    image: "/programmes/Clinical Simulation Learning.png",
+    title: "B.Pharm",
+    description: "Bachelor of Pharmacy.",
+    level: "Bachelor's",
+    field: "Pharmacy",
+    mode: "Full-Time",
+    entranceTest: "PU Goa Enterance",
+    image: "/programmes/Pharmaceutical Lab Practice.png",
+    href: "/programmes/pharmacy",
   },
   {
     id: 5,
-    category: "Physiotherapy",
-    description: "Where movement meets recovery.",
-    count: 1,
-    image: "/programmes/Physiotherapy Training.png",
+    title: "Ph.D in Engineering",
+    description: "Doctoral research program.",
+    level: "Doctral",
+    field: "Engineering",
+    mode: "Full-Time",
+    entranceTest: "GATE",
+    image: "/programmes/Library Learning Experience.png",
+    href: "/programmes/phd",
   },
   {
     id: 6,
-    category: "Allied and Health Sciences",
-    description: "Where science serves humanity.",
-    count: 6,
-    image: "/programmes/Advanced Science Research.png",
+    title: "BHMCT",
+    description: "Bachelor of Hotel Management and Catering Technology.",
+    level: "Bachelor's",
+    field: "Hotel Management",
+    mode: "Full-Time",
+    entranceTest: "PU Goa Enterance",
+    image: "/programmes/Digital Classroom Excellence.png",
+    href: "/programmes/hotel-management",
   },
   {
     id: 7,
-    category: "Hotel Management",
-    description: "Where dedication becomes healing.",
-    count: 6,
-    image: "/programmes/Digital Classroom Excellence.png",
+    title: "Bachelor of Physiotherapy (BPT)",
+    description: "Comprehensive physiotherapy program.",
+    level: "Bachelor's",
+    field: "Physiotherapy",
+    mode: "Full-Time",
+    entranceTest: "PU Goa Enterance",
+    image: "/programmes/Physiotherapy Training.png",
+    href: "/programmes/physiotherapy",
   },
   {
     id: 8,
-    category: "PhD",
-    description: "For those who push the boundaries of what is known.",
-    count: 5,
-    image: "/programmes/Library Learning Experience.png",
+    title: "B.Sc Allied Health Sciences",
+    description: "Specializations in Medical Lab Technology, Radiology, etc.",
+    level: "Bachelor's",
+    field: "Allied Health",
+    mode: "Full-Time",
+    entranceTest: "PU Goa Enterance",
+    image: "/programmes/Advanced Science Research.png",
+    href: "/programmes/allied-and-health-sciences",
   },
+  {
+    id: 9,
+    title: "Diploma in Pharmacy",
+    description: "D.Pharm program.",
+    level: "Diploma",
+    field: "Pharmacy",
+    mode: "Full-Time",
+    entranceTest: "PU Goa Enterance",
+    image: "/programmes/Pharmaceutical Lab Practice.png",
+    href: "/programmes/pharmacy",
+  },
+  {
+    id: 10,
+    title: "Ph.D in Management",
+    description: "Doctoral research program in business and management.",
+    level: "Doctral",
+    field: "Management",
+    mode: "Full-Time",
+    entranceTest: "UCG net",
+    image: "/programmes/Library Learning Experience.png",
+    href: "/programmes/phd",
+  },
+  {
+    id: 11,
+    title: "BBA",
+    description: "Bachelor of Business Administration.",
+    level: "Bachelor's",
+    field: "Management",
+    mode: "Full-Time",
+    entranceTest: "PU Goa Enterance",
+    image: "/programmes/Interactive Classroom Session.png",
+    href: "/programmes/management-studies",
+  },
+  {
+    id: 12,
+    title: "B.Tech (Lateral Entry)",
+    description: "Direct second-year admission for diploma holders.",
+    level: "Bachelor's",
+    field: "Engineering",
+    mode: "Lateral entry",
+    entranceTest: "PU Goa Enterance",
+    image: "/programmes/ARVR Innovation Lab.png",
+    href: "/programmes/engineering-and-technology",
+  },
+  {
+    id: 13,
+    title: "Diploma in Engineering",
+    description: "3-year polytechnic diploma program.",
+    level: "Diploma",
+    field: "Engineering",
+    mode: "Full-Time",
+    entranceTest: "PU Goa Enterance",
+    image: "/programmes/ARVR Innovation Lab.png",
+    href: "/programmes/engineering-and-technology",
+  },
+  {
+    id: 14,
+    title: "M.Tech",
+    description: "Master of Technology with advanced specializations.",
+    level: "Master's",
+    field: "Engineering",
+    mode: "Full-Time",
+    entranceTest: "GATE",
+    image: "/programmes/ARVR Innovation Lab.png",
+    href: "/programmes/engineering-and-technology",
+  },
+  {
+    id: 15,
+    title: "GNM (General Nursing and Midwifery)",
+    description: "Diploma in nursing.",
+    level: "Diploma",
+    field: "Nursing",
+    mode: "Full-Time",
+    entranceTest: "PU Goa Enterance",
+    image: "/programmes/Clinical Simulation Learning.png",
+    href: "/programmes/nursing",
+  },
+  {
+    id: 16,
+    title: "M.Sc Nursing",
+    description: "Postgraduate nursing program.",
+    level: "Master's",
+    field: "Nursing",
+    mode: "Full-Time",
+    entranceTest: "PU Goa Enterance",
+    image: "/programmes/Clinical Simulation Learning.png",
+    href: "/programmes/nursing",
+  },
+  {
+    id: 17,
+    title: "M.Pharm",
+    description: "Master of Pharmacy.",
+    level: "Master's",
+    field: "Pharmacy",
+    mode: "Full-Time",
+    entranceTest: "GPAT",
+    image: "/programmes/Pharmaceutical Lab Practice.png",
+    href: "/programmes/pharmacy",
+  },
+  {
+    id: 18,
+    title: "Master of Physiotherapy (MPT)",
+    description: "Advanced physiotherapy program.",
+    level: "Master's",
+    field: "Physiotherapy",
+    mode: "Full-Time",
+    entranceTest: "PU Goa Enterance",
+    image: "/programmes/Physiotherapy Training.png",
+    href: "/programmes/physiotherapy",
+  },
+  {
+    id: 19,
+    title: "M.Sc Allied Health Sciences",
+    description: "Postgraduate studies in allied health.",
+    level: "Master's",
+    field: "Allied Health",
+    mode: "Full-Time",
+    entranceTest: "PU Goa Enterance",
+    image: "/programmes/Advanced Science Research.png",
+    href: "/programmes/allied-and-health-sciences",
+  },
+  {
+    id: 20,
+    title: "Diploma in Hotel Management",
+    description: "Diploma program for hospitality.",
+    level: "Diploma",
+    field: "Hotel Management",
+    mode: "Full-Time",
+    entranceTest: "PU Goa Enterance",
+    image: "/programmes/Digital Classroom Excellence.png",
+    href: "/programmes/hotel-management",
+  }
 ];
 
 const filterOptions = {
@@ -94,7 +257,7 @@ const filterOptions = {
 export default function ProgramFilter() {
   const [activeFilters, setActiveFilters] = useState<Record<string, string>>({
     Level: "All",
-    Field: "Management",
+    Field: "All",
     Mode: "All",
     "Entrance Test": "All",
   });
@@ -105,6 +268,16 @@ export default function ProgramFilter() {
       [category]: value,
     }));
   };
+
+  const filteredCourses = useMemo(() => {
+    return allCourses.filter(course => {
+      if (activeFilters.Level !== "All" && course.level !== activeFilters.Level) return false;
+      if (activeFilters.Field !== "All" && course.field !== activeFilters.Field) return false;
+      if (activeFilters.Mode !== "All" && course.mode !== activeFilters.Mode) return false;
+      if (activeFilters["Entrance Test"] !== "All" && course.entranceTest !== activeFilters["Entrance Test"]) return false;
+      return true;
+    });
+  }, [activeFilters]);
 
   return (
     <section className="py-20 bg-[#F9F9F9] font-[family-name:var(--font-poppins)]">
@@ -118,7 +291,7 @@ export default function ProgramFilter() {
             Build your shortlist in seconds.
           </h3>
           <p className="text-sm sm:text-[15px] text-ink/80 max-w-lg mx-auto leading-relaxed">
-            Pick a level, a field, or the entrance test you&apos;ve taken,
+            Pick a level, a field, or the entrance test you've taken,
             <br className="hidden sm:block" /> results update instantly.
           </p>
         </div>
@@ -177,43 +350,56 @@ export default function ProgramFilter() {
           </div>
 
           {/* Grid */}
-          <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
-            {programmes.map((prog) => {
-              const CardContent = (
-                <div className="bg-white rounded-[20px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.04)] border-3 border-gray-200 flex flex-col group hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all h-full">
-                  <div className="relative h-[260px] w-full overflow-hidden">
-                    <Image
-                      src={prog.image}
-                      alt={prog.category}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  </div>
-                  <div className="p-6 flex-1 flex flex-col items-start bg-white z-10 relative">
-                    <div className="bg-[#ED383F] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">
-                      {prog.count} PROGRAMMES
+          <div className="flex-1 w-full">
+            {filteredCourses.length > 0 ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+                {filteredCourses.map((prog) => {
+                  return (
+                    <div key={prog.id} className="bg-white rounded-[20px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.04)] border-3 border-gray-200 flex flex-col group hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all h-full">
+                      <div className="relative h-[220px] w-full overflow-hidden">
+                        <Image
+                          src={prog.image}
+                          alt={prog.title}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                        />
+                      </div>
+                      <div className="p-6 flex-1 flex flex-col items-start bg-white z-10 relative">
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          <span className="bg-[#ED383F] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+                            {prog.level}
+                          </span>
+                          <span className="bg-[#0EB1E1] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+                            {prog.field}
+                          </span>
+                        </div>
+                        <h4 className="text-[20px] font-semibold text-ink mb-2 font-poppins leading-snug">
+                          {prog.title}
+                        </h4>
+                        <p className="text-[14px] text-ink/70 leading-relaxed font-medium mb-6 flex-1">
+                          {prog.description}
+                        </p>
+                        <Link href={prog.href} className="inline-flex items-center text-[#ED383F] font-bold text-sm hover:text-[#c72d33] transition-colors mt-auto">
+                          View details <span className="ml-1">&rarr;</span>
+                        </Link>
+                      </div>
                     </div>
-                    <h4 className="text-xl sm:text-[22px] font-semibold text-ink mb-2 font-poppins">
-                      {prog.category}
-                    </h4>
-                    <p className="text-[14px] text-ink/70 leading-relaxed font-medium">
-                      {prog.description}
-                    </p>
-                  </div>
-                </div>
-              );
-
-              return prog.href ? (
-                <Link key={prog.id} href={prog.href} className="block w-full h-full">
-                  {CardContent}
-                </Link>
-              ) : (
-                <div key={prog.id} className="block w-full h-full cursor-not-allowed opacity-90">
-                  {CardContent}
-                </div>
-              );
-            })}
+                  );
+                })}
+              </div>
+            ) : (
+              <div className="bg-white rounded-[24px] p-12 text-center border-[1.7px] border-gray-200 flex flex-col items-center justify-center min-h-[400px]">
+                <h4 className="text-2xl font-semibold text-ink mb-2">No programmes found</h4>
+                <p className="text-ink/70">Try adjusting your filters to see more results.</p>
+                <button 
+                  onClick={() => setActiveFilters({ Level: "All", Field: "All", Mode: "All", "Entrance Test": "All" })}
+                  className="mt-6 bg-[#0EB1E1] text-white font-medium px-6 py-2.5 rounded-full hover:bg-[#0BA1CD] transition-colors"
+                >
+                  Clear all filters
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>

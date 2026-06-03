@@ -34,8 +34,60 @@ const programmeData: Record<string, Programme[]> = {
 
 export default function ProgrammePicker() {
   const [activeLevel, setActiveLevel] = useState<string>("Bachelor's");
+  const [showAll, setShowAll] = useState<boolean>(false);
+
+  const btechEligibility = "10+2 Science (Physics & Maths compulsory) with Chem/CS/IT + 45% (40% Reserved).";
+
+  const programmeData: Record<string, any[]> = {
+    "Diploma": [
+      { 
+        title: "Diploma in Engineering (D.E.)\nComputer Engineering", 
+        duration: "3 Years", 
+        eligibility: "10th Pass with English, Maths, and Science from a recognized board.", 
+        intake: "120", 
+        mode: "Full-time", 
+        specialisations: [] 
+      }
+    ],
+    "Bachelor's": [
+      { 
+        title: "B.Tech.\nComputer Science and Engineering", 
+        duration: "4 Years", 
+        eligibility: btechEligibility, 
+        intake: "120", 
+        mode: "Full-time", 
+        specialisations: [] 
+      },
+      ...[
+        "Artificial Intelligence and Machine Learning",
+        "Artificial Intelligence and Data Science",
+        "Artificial Intelligence",
+        "Cyber Security",
+        "Quantum Computing in AI"
+      ].map(spec => ({
+        title: `B.Tech. Computer Science and Engineering\nwith ${spec}`,
+        isNew: true,
+        duration: "4 Years",
+        eligibility: btechEligibility,
+        intake: "120",
+        mode: "Full-time",
+        specialisations: []
+      }))
+    ],
+    "Lateral Entry": [
+      { 
+        title: "B.Tech. - Lateral Entry\nComputer Science and Engineering", 
+        duration: "3 Years", 
+        eligibility: "Diploma Engineering with 45% (40% Reserved). Direct admission to 2nd year B.Tech.", 
+        intake: "120", 
+        mode: "Full-time", 
+        specialisations: [] 
+      }
+    ]
+  };
 
   const currentProgrammes = programmeData[activeLevel] || [];
+  const visibleProgrammes = showAll ? currentProgrammes : currentProgrammes.slice(0, 2);
 
   return (
     <section className="w-full bg-[#FAFAFA] py-24 sm:py-32">
@@ -52,10 +104,13 @@ export default function ProgrammePicker() {
           
           {/* Toggles */}
           <div className="flex flex-wrap justify-center items-center gap-3">
-            {["Diploma", "Bachelor's", "Master's"].map((level) => (
+            {["Diploma", "Bachelor's", "Lateral Entry"].map((level) => (
               <button
                 key={level}
-                onClick={() => setActiveLevel(level)}
+                onClick={() => {
+                  setActiveLevel(level);
+                  setShowAll(false);
+                }}
                 className={`rounded-full px-8 py-2.5 font-bold text-sm sm:text-base transition-all duration-200 border ${
                   activeLevel === level
                     ? "bg-[#0CAADD] text-white border-[#0CAADD] shadow-md shadow-[#0CAADD]/20"
@@ -69,63 +124,57 @@ export default function ProgrammePicker() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 w-full mx-auto">
-          {currentProgrammes.slice(0, 4).map((prog, idx) => {
-            const isYellow = idx < 2;
+        <div className="flex flex-wrap justify-center gap-6 sm:gap-10 w-full mx-auto items-stretch">
+          {visibleProgrammes.map((prog, idx) => {
+            const isYellow = idx % 2 === 0;
 
             return (
               <div 
                 key={idx}
-                className={`rounded-[24px] p-8 sm:p-10 flex flex-col ${
+                className={`w-full md:w-[calc(50%-1.25rem)] rounded-[24px] p-8 sm:p-10 flex flex-col ${
                   isYellow ? "bg-[#FCE34B] text-ink" : "bg-[#E73649] text-white"
                 }`}
               >
-                <h4 className="font-poppins font-bold text-[28px] sm:text-[32px] leading-tight mb-8">
+                <h4 className="font-poppins font-bold text-[28px] sm:text-[32px] leading-tight mb-3 whitespace-pre-line">
                   {prog.title}
                 </h4>
+                {prog.isNew && (
+                  <div className="mb-8">
+                    <span className={`inline-block px-3 py-1 text-xs font-bold uppercase rounded-full tracking-wider ${isYellow ? "bg-[#E73649] text-white" : "bg-[#FCE34B] text-ink"}`}>
+                      New and In-Demand
+                    </span>
+                  </div>
+                )}
+                {!prog.isNew && <div className="mb-8"></div>}
 
-                <div className="grid grid-cols-2 gap-y-6 mb-8">
+                <div className="grid grid-cols-2 gap-y-8 mb-8">
                   <div>
-                    <p className={`text-base mb-1.5 opacity-80 font-medium ${isYellow ? "text-ink" : "text-white"}`}>Duration</p>
-                    <p className="font-bold text-[20px] sm:text-[22px]">{prog.duration}</p>
+                    <p className={`text-[15px] mb-1.5 opacity-90 font-medium ${isYellow ? "text-ink" : "text-white"}`}>Duration</p>
+                    <p className="font-bold text-[18px] sm:text-[20px]">{prog.duration}</p>
                   </div>
                   <div>
-                    <p className={`text-base mb-1.5 opacity-80 font-medium ${isYellow ? "text-ink" : "text-white"}`}>Eligibility</p>
-                    <p className="font-bold text-[20px] sm:text-[22px]">{prog.eligibility}</p>
+                    <p className={`text-[15px] mb-1.5 opacity-90 font-medium ${isYellow ? "text-ink" : "text-white"}`}>Eligibility</p>
+                    <p className="font-bold text-[14px] sm:text-[15px] leading-snug max-w-[250px] whitespace-pre-wrap">{prog.eligibility}</p>
                   </div>
                   <div>
-                    <p className={`text-base mb-1.5 opacity-80 font-medium ${isYellow ? "text-ink" : "text-white"}`}>Intake</p>
-                    <p className="font-bold text-[20px] sm:text-[22px]">{prog.intake}</p>
+                    <p className={`text-[15px] mb-1.5 opacity-90 font-medium ${isYellow ? "text-ink" : "text-white"}`}>Intake</p>
+                    <p className="font-bold text-[18px] sm:text-[20px]">{prog.intake}</p>
                   </div>
                   <div>
-                    <p className={`text-base mb-1.5 opacity-80 font-medium ${isYellow ? "text-ink" : "text-white"}`}>Mode</p>
-                    <p className="font-bold text-[20px] sm:text-[22px]">{prog.mode}</p>
+                    <p className={`text-[15px] mb-1.5 opacity-90 font-medium ${isYellow ? "text-ink" : "text-white"}`}>Mode</p>
+                    <p className="font-bold text-[18px] sm:text-[20px]">{prog.mode}</p>
                   </div>
                 </div>
 
-                <div className={`border-t pt-6 mb-10 flex-grow ${isYellow ? "border-ink/10" : "border-white/20"}`}>
-                  <p className={`text-base mb-3.5 opacity-80 font-medium ${isYellow ? "text-ink" : "text-white"}`}>Specialisations</p>
-                  <div className="flex flex-wrap gap-2.5">
-                    {prog.specialisations.map((spec, sIdx) => (
-                      <span 
-                        key={sIdx}
-                        className={`text-[12px] font-bold px-4 py-1.5 rounded-full uppercase tracking-wider ${
-                          isYellow ? "bg-white text-ink" : "bg-white/20 text-white"
-                        }`}
-                      >
-                        {spec}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                <div className="flex-grow"></div>
 
                 <div className="flex flex-wrap items-center gap-4 mt-auto">
-                  <button className={`rounded-full px-7 py-3 font-bold text-base transition-transform hover:scale-105 ${
+                  <button className={`rounded-full px-7 py-2.5 font-bold text-[15px] transition-transform hover:scale-105 ${
                     isYellow ? "bg-[#E73649] text-white" : "bg-[#FCE34B] text-ink"
                   }`}>
                     View Details &rarr;
                   </button>
-                  <button className={`rounded-full px-7 py-3 font-bold text-base transition-transform hover:scale-105 border ${
+                  <button className={`rounded-full px-7 py-2.5 font-bold text-[15px] transition-transform hover:scale-105 border ${
                     isYellow ? "border-ink text-ink hover:bg-ink/5" : "border-white text-white hover:bg-white/10"
                   }`}>
                     Brochure
@@ -136,11 +185,16 @@ export default function ProgrammePicker() {
           })}
         </div>
 
-        <div className="text-center mt-12">
-          <a href="#" className="font-bold text-[#E73649] hover:underline text-[15px]">
-            View more &rarr;
-          </a>
-        </div>
+        {!showAll && currentProgrammes.length > 2 && (
+          <div className="text-center mt-12">
+            <button 
+              onClick={() => setShowAll(true)}
+              className="font-bold text-[#E73649] hover:underline text-[15px] cursor-pointer"
+            >
+              View all &rarr;
+            </button>
+          </div>
+        )}
 
       </div>
     </section>

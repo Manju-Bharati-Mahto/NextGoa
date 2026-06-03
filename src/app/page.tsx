@@ -15,6 +15,7 @@ import { International } from "@/components/landing/International";
 import { News } from "@/components/landing/News";
 import { Faq } from "@/components/landing/Faq";
 import { FinalCta } from "@/components/landing/FinalCta";
+import FloatingCta from "@/components/layout/FloatingCta";
 
 /**
  * Landing page — composes the sections in the order of the Figma "Landing page"
@@ -48,6 +49,7 @@ export default function Home() {
         <FinalCta />
         <Faq />
       </main>
+      <FloatingCta />
     </>
   );
 }
