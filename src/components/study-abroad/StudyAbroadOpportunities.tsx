@@ -97,7 +97,7 @@ export default function StudyAbroadOpportunities() {
           Turn your wanderlust into a globally recognised degree
         </h2>
         <p className="text-white/90 text-center text-[15px] md:text-base max-w-5xl mb-12">
-          At PU Goa, your education doesn't have to stop in India. Through
+          At PU Goa, your education doesn&apos;t have to stop in India. Through
           international pathways, academic partnerships and broadway programmes,
           students can begin their journey in Goa and continue it across leading
           global destinations. Backed by a global ecosystem of 800+ international

@@ -3,6 +3,16 @@
 import { useState, useId } from "react";
 import Link from "next/link";
 import { Eyebrow } from "./Decor";
+import {
+  EngineeringIcon,
+  ManagementIcon,
+  PharmacyIcon,
+  NursingIcon,
+  HotelIcon,
+  PhysiotherapyIcon,
+  AlliedHealthIcon,
+  DoctoralIcon
+} from "./FacultyIcons";
 
 /**
  * "Find your programme" funnel + faculty card grid (matches the Figma section).
@@ -30,6 +40,7 @@ const faculties = [
     levels: ["Diploma", "Undergraduate", "Postgraduate"],
     fields: ["Engineering & Technology", "Science & Computing"],
     slug: "engineering-and-technology",
+    icon: EngineeringIcon,
   },
   {
     name: "Management Studies",
@@ -37,6 +48,7 @@ const faculties = [
     levels: ["Undergraduate", "Postgraduate"],
     fields: ["Management & Commerce"],
     slug: "management-studies",
+    icon: ManagementIcon,
   },
   {
     name: "Pharmacy",
@@ -44,6 +56,7 @@ const faculties = [
     levels: ["Undergraduate", "Postgraduate", "Diploma"],
     fields: ["Medicine & Health Sciences"],
     slug: "pharmacy",
+    icon: PharmacyIcon,
   },
   {
     name: "Nursing",
@@ -51,6 +64,7 @@ const faculties = [
     levels: ["Undergraduate", "Diploma", "Postgraduate"],
     fields: ["Medicine & Health Sciences"],
     slug: "nursing",
+    icon: NursingIcon,
   },
   {
     name: "Hotel Management",
@@ -58,6 +72,7 @@ const faculties = [
     levels: ["Undergraduate", "Diploma"],
     fields: ["Management & Commerce"],
     slug: "hotel-management",
+    icon: HotelIcon,
   },
   {
     name: "Physiotherapy",
@@ -65,6 +80,7 @@ const faculties = [
     levels: ["Undergraduate", "Postgraduate"],
     fields: ["Medicine & Health Sciences"],
     slug: "physiotherapy",
+    icon: PhysiotherapyIcon,
   },
   {
     name: "Allied Health Sciences",
@@ -72,6 +88,7 @@ const faculties = [
     levels: ["Undergraduate", "Diploma"],
     fields: ["Medicine & Health Sciences"],
     slug: "allied-and-health-sciences",
+    icon: AlliedHealthIcon,
   },
   {
     name: "Doctoral Research",
@@ -79,6 +96,7 @@ const faculties = [
     levels: ["Doctoral (PhD)"],
     fields: ["Engineering & Technology", "Management & Commerce", "Science & Computing"],
     slug: "phd",
+    icon: DoctoralIcon,
   }
 ];
 
@@ -89,9 +107,10 @@ interface CourseCardProps {
   title: string;
   tags: string[];
   href: string;
+  icon: React.ComponentType<any>;
 }
 
-function CourseCard({ color, title, tags, href }: CourseCardProps) {
+function CourseCard({ color, title, tags, href, icon: IconComponent }: CourseCardProps) {
   const styles = {
     blue: {
       bg: "bg-[#0CAADD] border-[#0CAADD] text-white",
@@ -122,8 +141,8 @@ function CourseCard({ color, title, tags, href }: CourseCardProps) {
       btn: "bg-white text-black hover:bg-zinc-200",
     },
     white: {
-      bg: "bg-[#F8F8F8] border-zinc-200 text-[#1F1F1F]",
-      svgFill: "#E5E5E5",
+      bg: "bg-[#F8F8F8] border-2 border-zinc-300 text-[#1F1F1F]",
+      svgFill: "#CCCCCC",
       svgStroke: "#F8F8F8",
       tag: "bg-black text-white",
       btn: "bg-[#0CAADD] text-white hover:bg-[#0094C4]",
@@ -137,34 +156,13 @@ function CourseCard({ color, title, tags, href }: CourseCardProps) {
       href={href}
       className={`relative block w-full h-[268px] rounded-[16px] p-8 flex flex-col justify-between overflow-hidden border text-left cursor-pointer ${theme.bg}`}
     >
-      {/* Decorative background pattern (isolated to the right portion of the card) */}
-      <svg
-        viewBox="250 0 125 268"
-        className="absolute right-0 top-0 h-full w-[33%] pointer-events-none opacity-40"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g>
-          <path
-            d="M279.918 96.1157C285.888 107.687 297.761 115.1 310.877 115.1C323.992 115.1 335.866 107.686 341.836 96.1157L355.349 96.1157C354.213 99.3087 352.83 102.398 351.037 105.267L351.003 105.322L351.036 105.377L353.77 109.938C354.493 111.142 354.302 112.684 353.31 113.675L344.362 122.624C343.37 123.612 341.829 123.802 340.626 123.083L336.065 120.348L336.01 120.315L335.955 120.349C331.512 123.13 326.681 125.128 321.545 126.305L321.481 126.32L321.466 126.382L320.171 131.559C319.827 132.928 318.599 134.084 317.205 134.084L304.549 134.084C303.154 134.084 301.926 132.928 301.583 131.559L300.288 126.382L300.272 126.32L300.21 126.305L299.25 126.075C294.471 124.875 289.964 122.956 285.8 120.349L285.745 120.315L285.69 120.348L281.129 123.083C279.918 123.8 278.381 123.617 277.392 122.624L277.391 122.624L268.443 113.675C267.451 112.684 267.261 111.142 267.984 109.938L270.719 105.377L270.752 105.322L270.718 105.267C268.923 102.398 267.541 99.3087 266.404 96.1157L279.918 96.1157Z"
-            fill={theme.svgFill}
-            stroke={theme.svgStroke}
-            strokeWidth="0.210938"
-          />
-          <path
-            d="M261.623 80.2954L360.131 80.2954C362.693 80.2954 364.771 82.3732 364.771 84.936C364.771 87.4988 362.693 89.5767 360.131 89.5767L261.623 89.5767C259.06 89.5767 256.982 87.4988 256.982 84.936C256.982 82.3732 259.06 80.2954 261.623 80.2954Z"
-            fill={theme.svgFill}
-            stroke={theme.svgStroke}
-            strokeWidth="0.210938"
-          />
-          <path
-            d="M304.549 26.2954L317.205 26.2954C320.642 26.2954 323.427 29.081 323.427 32.5181L323.427 54.8774C323.427 56.6841 324.89 58.1469 326.697 58.147C328.504 58.147 329.967 56.6842 329.967 54.8774L329.967 37.1245C332.099 38.0739 334.141 39.1605 336.084 40.3979L336.084 54.8774C336.084 56.6841 337.547 58.1469 339.353 58.147C341.16 58.147 342.623 56.6842 342.623 54.8774L342.623 45.3481C350.681 52.7107 356.157 62.7181 357.709 73.7563L264.045 73.7563C265.596 62.7183 271.073 52.7117 279.131 45.3491L279.131 54.8774C279.131 56.6841 280.593 58.1469 282.4 58.147C284.207 58.147 285.67 56.6842 285.67 54.8774L285.67 40.3979C287.613 39.1605 289.654 38.0739 291.787 37.1245L291.787 54.8774C291.787 56.6841 293.25 58.1469 295.056 58.147C296.863 58.147 298.326 56.6842 298.326 54.8774L298.326 32.5181C298.326 29.1892 300.939 26.4706 304.228 26.3032L304.549 26.2954Z"
-            fill={theme.svgFill}
-            stroke={theme.svgStroke}
-            strokeWidth="0.210938"
-          />
-        </g>
-      </svg>
+      {/* Decorative background icon */}
+      <div className="absolute -right-4 -top-8 h-[120%] w-[55%] pointer-events-none opacity-40 flex items-center justify-end overflow-hidden">
+        <IconComponent
+          className="h-full w-full object-contain"
+          style={{ color: theme.svgFill, '--svg-stroke': theme.svgStroke } as React.CSSProperties}
+        />
+      </div>
       {/* Content wrapper */}
       <div className="flex flex-col h-full justify-end z-10 relative">
         {/* Title */}
@@ -336,7 +334,7 @@ export function ProgrammeFinder() {
           <>
             <ul className="mt-12 flex flex-wrap justify-center gap-5 max-w-6xl mx-auto">
               {displayedFaculties.map((fac, i) => {
-                const colors: CardColor[] = ["blue", "yellow", "red"];
+                const colors: CardColor[] = ["blue", "yellow", "red", "white"];
                 return (
                   <li key={fac.name} className="w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.833rem)]">
                     <CourseCard
@@ -344,6 +342,7 @@ export function ProgrammeFinder() {
                       title={fac.name}
                       tags={fac.tags}
                       href={`/programmes/${fac.slug}`}
+                      icon={fac.icon}
                     />
                   </li>
                 );

@@ -18,6 +18,7 @@ export function EnquiryModal() {
     document.addEventListener("click", handleClick);
     
     if (typeof window !== "undefined" && window.location.hash === "#enquiry") {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsOpen(true);
     }
 
@@ -28,8 +29,8 @@ export function EnquiryModal() {
 
   const close = () => {
     setIsOpen(false);
-    if (window.location.hash === "#enquiry") {
-      window.history.pushState("", document.title, window.location.pathname + window.location.search);
+    if (typeof window !== "undefined" && window.location.hash === "#enquiry") {
+      window.history.pushState({}, "", window.location.pathname + window.location.search);
     }
   };
 
@@ -92,8 +93,8 @@ export function EnquiryModal() {
 
           <div className="space-y-1 relative">
             <label htmlFor="programme" className="text-[14px] font-medium text-ink">Programme of Interest *</label>
-            <select id="programme" required className="w-full appearance-none rounded-md border border-gray-200 bg-[#FAFAFA] px-4 py-2.5 text-ink outline-none focus:border-[#11B1E3] focus:ring-1 focus:ring-[#11B1E3] transition-all">
-              <option value="" disabled selected hidden className="text-gray-400">Select a programme</option>
+            <select id="programme" defaultValue="" required className="w-full appearance-none rounded-md border border-gray-200 bg-[#FAFAFA] px-4 py-2.5 text-ink outline-none focus:border-[#11B1E3] focus:ring-1 focus:ring-[#11B1E3] transition-all">
+              <option value="" disabled hidden className="text-gray-400">Select a programme</option>
               <option value="engineering">Engineering, IT & CS</option>
               <option value="management">Management Studies</option>
               <option value="pharmacy">Pharmacy</option>

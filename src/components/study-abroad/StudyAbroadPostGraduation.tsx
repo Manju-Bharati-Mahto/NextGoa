@@ -101,7 +101,7 @@ export default function StudyAbroadPostGraduation() {
 
         {/* Disclaimer */}
         <p className={`text-center text-gray-400 text-xs md:text-lg max-w-4xl font-lg leading-relaxed ${poppins.className}`}>
-          Visa policies change. Verify current rules with the partner university and the destination country's official immigration website at the time of application.
+          Visa policies change. Verify current rules with the partner university and the destination country&apos;s official immigration website at the time of application.
         </p>
 
       </div>

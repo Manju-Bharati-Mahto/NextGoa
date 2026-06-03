@@ -2,26 +2,37 @@
 
 import React, { useState, useEffect } from "react";
 
+import {
+  EngineeringIcon,
+  NursingIcon,
+  ManagementIcon,
+  HotelIcon
+} from "../landing/FacultyIcons";
+
 const trendingCourses = [
   {
     course: "B.Tech CSE",
     specialization: "AI & ML",
     tags: ["12 Seats Left", "Most Applied"],
+    icon: EngineeringIcon,
   },
   {
     course: "B.Sc. Nursing",
     specialization: "Critical Care",
     tags: ["5 Seats Left", "High Demand"],
+    icon: NursingIcon,
   },
   {
     course: "MBA",
     specialization: "Finance",
     tags: ["18 Seats Left", "Top Placement"],
+    icon: ManagementIcon,
   },
   {
     course: "BHMCT",
     specialization: "Culinary Arts",
     tags: ["8 Seats Left", "Fast Filling"],
+    icon: HotelIcon,
   }
 ];
 
@@ -60,9 +71,12 @@ export default function TrendingSection() {
               </div>
               
               <div className="bg-white rounded-[24px] p-6 sm:px-10 sm:py-8 text-ink shadow-2xl relative overflow-hidden min-h-[240px] flex flex-col justify-center">
-                {/* Subtle gear watermark */}
-                <div className="absolute right-[7%] top-[10%] pointer-events-none transition-opacity duration-500">
-                  <img src="/programmes/industry-symbol.png" alt="Industry Symbol" width={195} height={195} className="w-[195px] h-[195px] object-contain opacity-50" />
+                {/* Dynamic SVG watermark */}
+                <div key={`icon-${activeIndex}`} className="absolute -right-4 -top-4 pointer-events-none transition-all duration-500 w-[240px] h-[240px] opacity-[0.4] flex items-center justify-end animate-fade-in">
+                  <activeCourse.icon 
+                    className="w-full h-full object-contain" 
+                    style={{ color: '#E5E5E5', '--svg-stroke': '#FFFFFF' } as React.CSSProperties} 
+                  />
                 </div>
 
                 {/* Animated content wrapper */}

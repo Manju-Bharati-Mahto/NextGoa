@@ -26,7 +26,7 @@ export default function StudyAbroadPartners() {
         <div className="bg-[#fdfdfd] border border-gray-200 rounded-2xl p-4 w-full max-w-4xl flex flex-col md:flex-row items-end gap-4 shadow-sm mb-12">
           <div className="flex-1 w-full">
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              I'm studying / want to study
+              I&apos;m studying / want to study
             </label>
             <div className="relative">
               <select className="w-full appearance-none border border-gray-300 rounded-lg py-2.5 px-4 text-gray-500 focus:outline-none focus:ring-1 focus:ring-[#f0424e] bg-white">
@@ -55,7 +55,7 @@ export default function StudyAbroadPartners() {
 
           <div className="flex-1 w-full">
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Any faculty I'd like to go to
+              Any faculty I&apos;d like to go to
             </label>
             <div className="relative">
               <select className="w-full appearance-none border border-gray-300 rounded-lg py-2.5 px-4 text-gray-500 focus:outline-none focus:ring-1 focus:ring-[#f0424e] bg-white">
@@ -216,7 +216,7 @@ function CountryCard({
         <div className="bg-white h-40 md:h-auto flex items-center justify-center p-6">
           <Image
             src="/abroad/Saint Peter's University.png"
-            alt="Saint Peter's University"
+            alt="Saint Peter&apos;s University"
             width={160}
             height={100}
             className="object-contain"

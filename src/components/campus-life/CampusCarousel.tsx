@@ -9,7 +9,7 @@ const carouselItems = [
 
 export function CampusCarousel() {
   return (
-    <section className="relative overflow-hidden bg-[#F8F8F8]">
+    <section className="relative overflow-hidden bg-[#FEF3BA]">
       {/* Background Blue Wavy SVG */}
       <div className="absolute inset-0 z-0 pointer-events-none h-full w-full">
         <WaveBandBg band="#0CAADD" accent="#0094C4" />

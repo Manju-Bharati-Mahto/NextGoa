@@ -41,7 +41,7 @@ export default function HotelManagementProgrammePicker() {
         
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h2 className="text-ink font-semibold text-[22px] sm:text-[26px] tracking-wide mb-2">
+          <h2 className="text-ink font-semibold text-[20px] sm:text-[24px] tracking-wide mb-2">
             Programmes
           </h2>
           <h3 className="font-poppins font-bold text-[36px] sm:text-[48px] leading-[1.1] tracking-tight text-[#E73649] mb-10">
@@ -72,46 +72,54 @@ export default function HotelManagementProgrammePicker() {
             const isYellow = idx % 2 === 0;
 
             return (
+
               <div 
                 key={idx}
-                className={`w-full md:w-[calc(50%-1.25rem)] rounded-[24px] p-8 sm:p-10 flex flex-col h-full ${
-                  isYellow ? "bg-[#FCE34B] text-ink" : "bg-[#E73649] text-white"
-                }`}
+                className="w-full md:w-[calc(50%-1.25rem)] rounded-[24px] overflow-hidden flex flex-col bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 transition-shadow hover:shadow-lg"
               >
-                <h4 className="font-poppins font-bold text-[28px] sm:text-[32px] leading-tight mb-8 whitespace-pre-line">
-                  {prog.title}
-                </h4>
-
-                <div className="grid grid-cols-2 gap-y-8 mb-12 flex-grow">
-                  <div>
-                    <p className={`text-[15px] mb-1.5 opacity-90 font-medium ${isYellow ? "text-ink" : "text-white"}`}>Duration</p>
-                    <p className="font-bold text-[18px] sm:text-[20px]">{prog.duration}</p>
+                {/* Top Section */}
+                <div className={`p-6 sm:p-8 ${isYellow ? "bg-[#FCE34B] text-ink" : "bg-[#E73649] text-white"}`}>
+                  <div className="mb-3">
+                    <span className={`inline-block px-3 py-1.5 text-[11px] font-bold uppercase rounded-full tracking-[0.15em] ${isYellow ? "bg-[#E73649] text-white" : "bg-[#FCE34B] text-ink"}`}>
+                      New and In-Demand
+                    </span>
                   </div>
-                  <div className="col-span-2 sm:col-span-1">
-                    <p className={`text-[15px] mb-1.5 opacity-90 font-medium ${isYellow ? "text-ink" : "text-white"}`}>Eligibility</p>
-                    <p className="font-bold text-[14px] sm:text-[15px] leading-snug max-w-[250px] whitespace-pre-wrap">{prog.eligibility}</p>
-                  </div>
-                  <div>
-                    <p className={`text-[15px] mb-1.5 opacity-90 font-medium ${isYellow ? "text-ink" : "text-white"}`}>Intake</p>
-                    <p className="font-bold text-[18px] sm:text-[20px]">{prog.intake}</p>
-                  </div>
-                  <div>
-                    <p className={`text-[15px] mb-1.5 opacity-90 font-medium ${isYellow ? "text-ink" : "text-white"}`}>Mode</p>
-                    <p className="font-bold text-[18px] sm:text-[20px]">{prog.mode}</p>
-                  </div>
+                  <h4 className="font-poppins font-bold text-[20px] sm:text-[24px] leading-snug whitespace-pre-line">
+                    {prog.title}
+                  </h4>
                 </div>
 
-                <div className="flex flex-wrap items-center gap-4 mt-auto pt-6 border-t border-black/5">
-                  <button className={`rounded-full px-7 py-2.5 font-bold text-[15px] transition-transform hover:scale-105 ${
-                    isYellow ? "bg-[#E73649] text-white" : "bg-[#FCE34B] text-ink"
-                  }`}>
-                    View Details &rarr;
-                  </button>
-                  <button className={`rounded-full px-7 py-2.5 font-bold text-[15px] transition-transform hover:scale-105 border ${
-                    isYellow ? "border-ink text-ink hover:bg-ink/5" : "border-white text-white hover:bg-white/10"
-                  }`}>
-                    Brochure
-                  </button>
+                {/* Bottom Section */}
+                <div className="p-6 sm:p-8 flex flex-col flex-grow text-ink">
+                  <div className="grid grid-cols-2 gap-y-5 mb-6">
+                    <div>
+                      <p className="text-[14px] uppercase tracking-wider mb-1 opacity-50 font-bold">Duration</p>
+                      <p className="font-bold text-[17px]">{prog.duration}</p>
+                    </div>
+                    <div>
+                      <p className="text-[14px] uppercase tracking-wider mb-1 opacity-50 font-bold">Eligibility</p>
+                      <p className="font-bold text-[17px] leading-snug max-w-[250px] whitespace-pre-wrap">{prog.eligibility}</p>
+                    </div>
+                    <div>
+                      <p className="text-[14px] uppercase tracking-wider mb-1 opacity-50 font-bold">Intake</p>
+                      <p className="font-bold text-[17px]">{prog.intake}</p>
+                    </div>
+                    <div>
+                      <p className="text-[14px] uppercase tracking-wider mb-1 opacity-50 font-bold">Mode</p>
+                      <p className="font-bold text-[17px]">{prog.mode}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex-grow"></div>
+
+                  <div className="flex flex-wrap items-center gap-4 mt-auto">
+                    <button className="bg-[#E73649] text-white rounded-full px-7 py-2.5 font-bold text-[15px] transition-transform hover:scale-105">
+                      View Details &rarr;
+                    </button>
+                    <button className="border border-gray-300 hover:bg-gray-50 rounded-full px-7 py-2.5 font-bold text-[15px] transition-transform hover:scale-105">
+                      Brochure
+                    </button>
+                  </div>
                 </div>
               </div>
             );

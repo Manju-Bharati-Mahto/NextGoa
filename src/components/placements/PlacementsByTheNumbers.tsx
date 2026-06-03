@@ -75,7 +75,57 @@ export function PlacementsByTheNumbers() {
   const animKeyTimesString = keyTimes.map(n => n.toFixed(4)).join(';');
 
   let cumulativeForPie = 0;
+  const pieSlices = animatedData.map((slice, i) => {
+    const startPercent = cumulativeForPie / 100;
+    // eslint-disable-next-line react-hooks/immutability
+    cumulativeForPie += slice.value;
+    const endPercent = cumulativeForPie / 100;
+
+    const startAngle = startPercent * 360;
+    const endAngle = endPercent * 360;
+
+    const startRad = startAngle * (Math.PI / 180);
+    const endRad = endAngle * (Math.PI / 180);
+
+    const x1 = Number((cx + R * Math.cos(startRad)).toFixed(4));
+    const y1 = Number((cy + R * Math.sin(startRad)).toFixed(4));
+    const x2 = Number((cx + R * Math.cos(endRad)).toFixed(4));
+    const y2 = Number((cy + R * Math.sin(endRad)).toFixed(4));
+
+    const largeArcFlag = endAngle - startAngle > 180 ? 1 : 0;
+    const d = `M ${cx} ${cy} L ${x1} ${y1} A ${R} ${R} 0 ${largeArcFlag} 1 ${x2} ${y2} Z`;
+
+    return (
+      <path
+        key={`slice-${i}`}
+        d={d}
+        fill={slice.color}
+        className="transition-all duration-300 hover:opacity-90 cursor-pointer"
+      />
+    );
+  });
+
   let cumulativeForGaps = 0;
+  const pieGaps = animatedData.map((slice, i) => {
+    // eslint-disable-next-line react-hooks/immutability
+    cumulativeForGaps += slice.value;
+    const endPercent = cumulativeForGaps / 100;
+    const rad = endPercent * 360 * (Math.PI / 180);
+    const x = Number((cx + R * Math.cos(rad)).toFixed(4));
+    const y = Number((cy + R * Math.sin(rad)).toFixed(4));
+    return (
+      <line
+        key={`gap-${i}`}
+        x1={cx}
+        y1={cy}
+        x2={x}
+        y2={y}
+        stroke="white"
+        strokeWidth="3.5"
+      />
+    );
+  });
+
   let cumulativeForLabels = 0;
 
   return (
@@ -153,61 +203,12 @@ export function PlacementsByTheNumbers() {
             <g mask="url(#pie-wipe-mask)">
               {/* Pie Slices */}
               <g transform={`rotate(-90 ${cx} ${cy})`}>
-                {(() => {
-                  let tempSum = 0;
-                  return animatedData.map((slice, i) => {
-                    const startPercent = tempSum / 100;
-                    tempSum += slice.value;
-                    const endPercent = tempSum / 100;
-
-                    const startAngle = startPercent * 360;
-                    const endAngle = endPercent * 360;
-
-                    const startRad = startAngle * (Math.PI / 180);
-                    const endRad = endAngle * (Math.PI / 180);
-
-                  const x1 = Number((cx + R * Math.cos(startRad)).toFixed(4));
-                  const y1 = Number((cy + R * Math.sin(startRad)).toFixed(4));
-                  const x2 = Number((cx + R * Math.cos(endRad)).toFixed(4));
-                  const y2 = Number((cy + R * Math.sin(endRad)).toFixed(4));
-
-                  const largeArcFlag = endAngle - startAngle > 180 ? 1 : 0;
-                  const d = `M ${cx} ${cy} L ${x1} ${y1} A ${R} ${R} 0 ${largeArcFlag} 1 ${x2} ${y2} Z`;
-
-                  return (
-                    <path
-                      key={`slice-${i}`}
-                      d={d}
-                      fill={slice.color}
-                      className="transition-all duration-300 hover:opacity-90 cursor-pointer"
-                    />
-                  );
-                })})()}
+                {pieSlices}
               </g>
 
               {/* Gaps (White lines radiating from center) */}
               <g transform={`rotate(-90 ${cx} ${cy})`}>
-                {(() => {
-                  let tempGaps = 0;
-                  return animatedData.map((slice, i) => {
-                    tempGaps += slice.value;
-                    const endPercent = tempGaps / 100;
-                    const rad = endPercent * 360 * (Math.PI / 180);
-                    const x = Number((cx + R * Math.cos(rad)).toFixed(4));
-                    const y = Number((cy + R * Math.sin(rad)).toFixed(4));
-                    return (
-                      <line
-                        key={`gap-${i}`}
-                        x1={cx}
-                        y1={cy}
-                        x2={x}
-                        y2={y}
-                        stroke="white"
-                        strokeWidth="3.5"
-                      />
-                    );
-                  })
-                })()}
+                {pieGaps}
               </g>
             </g>
 
