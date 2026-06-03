@@ -39,7 +39,7 @@ const faculties = [
     tags: ["Diploma", "B.Tech", "BCA", "MCA"],
     levels: ["Diploma", "Undergraduate", "Postgraduate"],
     fields: ["Engineering & Technology", "Science & Computing"],
-    slug: "engineering-and-technology",
+    slug: "engineering",
     icon: EngineeringIcon,
   },
   {

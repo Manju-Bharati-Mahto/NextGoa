@@ -19,6 +19,7 @@ const programmes = [
     description: "Where tomorrow's industry leaders are shaped.",
     count: 2,
     image: "/programmes/Interactive Classroom Session.png",
+    href: "/programmes/management-studies",
   },
   {
     id: 3,
@@ -26,6 +27,7 @@ const programmes = [
     description: "From molecule to medicine — pharmacy that transforms lives.",
     count: 2,
     image: "/programmes/Pharmaceutical Lab Practice.png",
+    href: "/programmes/pharmacy",
   },
   {
     id: 4,
@@ -33,6 +35,7 @@ const programmes = [
     description: "Where dedication becomes healing.",
     count: 8,
     image: "/programmes/Clinical Simulation Learning.png",
+    href: "/programmes/nursing",
   },
   {
     id: 5,
@@ -40,6 +43,7 @@ const programmes = [
     description: "Where movement meets recovery.",
     count: 1,
     image: "/programmes/Physiotherapy Training.png",
+    href: "/programmes/physiotherapy",
   },
   {
     id: 6,
@@ -47,6 +51,7 @@ const programmes = [
     description: "Where science serves humanity.",
     count: 6,
     image: "/programmes/Advanced Science Research.png",
+    href: "/programmes/allied-and-health-sciences",
   },
   {
     id: 7,
@@ -54,6 +59,7 @@ const programmes = [
     description: "Where dedication becomes healing.",
     count: 6,
     image: "/programmes/Digital Classroom Excellence.png",
+    href: "/programmes/hotel-management",
   },
   {
     id: 8,
@@ -61,6 +67,7 @@ const programmes = [
     description: "For those who push the boundaries of what is known.",
     count: 5,
     image: "/programmes/Library Learning Experience.png",
+    href: "/programmes/phd",
   },
 ];
 
