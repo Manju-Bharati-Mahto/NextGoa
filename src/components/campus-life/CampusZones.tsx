@@ -1,7 +1,7 @@
 export function CampusZones() {
   return (
     <section className="relative w-full bg-[#F8F8F8] py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-6 lg:px-12">
+      <div className="mx-auto max-w-7xl sm:px-6 px-4 lg:px-12">
         {/* Header */}
         <div className="flex flex-col items-center text-center max-w-5xl mx-auto mb-16">
           <h3 className="font-poppins font-semibold text-[20px] sm:text-[24px] text-[#1F1F1F] mb-2">
@@ -56,16 +56,16 @@ export function CampusZones() {
 
               {/* Pills */}
               <div className="flex flex-wrap gap-3 mb-12">
-                <span className="px-4 py-2 rounded-full bg-[#333333] text-white/80 font-[family-name:var(--font-poppins)] text-[12px] sm:text-[13px]">
+                <span className="px-4 py-2 rounded-full bg-[#333333] text-white/80 font-[family-name:var(--font-poppins)] text-[14px] sm:text-[14px]">
                   Smart classrooms with hybrid AV
                 </span>
-                <span className="px-4 py-2 rounded-full bg-[#333333] text-white/80 font-[family-name:var(--font-poppins)] text-[12px] sm:text-[13px]">
+                <span className="px-4 py-2 rounded-full bg-[#333333] text-white/80 font-[family-name:var(--font-poppins)] text-[14px] sm:text-[14px]">
                   Engineering • Pharmacy • Health labs
                 </span>
-                <span className="px-4 py-2 rounded-full bg-[#333333] text-white/80 font-[family-name:var(--font-poppins)] text-[12px] sm:text-[13px]">
+                <span className="px-4 py-2 rounded-full bg-[#333333] text-white/80 font-[family-name:var(--font-poppins)] text-[14px] sm:text-[14px]">
                   Auditorium for major events
                 </span>
-                <span className="px-4 py-2 rounded-full bg-[#333333] text-white/80 font-[family-name:var(--font-poppins)] text-[12px] sm:text-[13px]">
+                <span className="px-4 py-2 rounded-full bg-[#333333] text-white/80 font-[family-name:var(--font-poppins)] text-[14px] sm:text-[14px]">
                   Digital library + research databases
                 </span>
               </div>
