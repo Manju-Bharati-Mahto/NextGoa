@@ -30,8 +30,8 @@ const spaces = [
 
 export function CampusAcademicSpaces() {
   return (
-    <section className="relative w-full bg-white py-20 lg:py-28 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-12 sm:mb-16 flex flex-col items-center text-center">
+    <section className="relative w-full bg-white sm:py-20 pt-2 pb-10 lg:py-28 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mb-12 sm:mb-16 flex flex-col items-center text-center">
         <h3 className="font-poppins font-semibold text-[20px] sm:text-[24px] text-[#1F1F1F] mb-2">
           Academic Spaces
         </h3>
@@ -45,7 +45,7 @@ export function CampusAcademicSpaces() {
 
       {/* Carousel Container */}
       <div className="w-full relative">
-        <div className="flex overflow-x-auto gap-6 px-6 lg:px-12 snap-x snap-mandatory hide-scrollbar pb-8">
+        <div className="flex overflow-x-auto gap-4 sm:gap-6 px-4 sm:px-6 lg:px-12 scroll-pl-4 sm:scroll-pl-6 lg:scroll-pl-12 snap-x snap-mandatory hide-scrollbar pb-8">
           {spaces.map((space, idx) => (
             <div 
               key={idx} 

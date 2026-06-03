@@ -19,7 +19,7 @@ export function VisionMission() {
           <h2 className="font-poppins font-bold text-[32px] text-ink leading-tight">
             Our Direction
           </h2>
-          <h3 className="mt-2 font-poppins font-semibold text-[56px] text-brand leading-[1.05] tracking-tight">
+          <h3 className="mt-2 font-poppins font-bold sm:text-[56px] text-[50px] text-brand leading-[1.05] tracking-tight">
             Vision and Mission.
           </h3>
         </div>
@@ -27,7 +27,7 @@ export function VisionMission() {
         {/* Cards */}
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
           {/* Vision Card */}
-          <div className="flex flex-col rounded-[24px] bg-brand-black p-10 text-white shadow-lg">
+          <div className="flex flex-col rounded-[24px] bg-brand-black p-8 sm:p-10 text-white shadow-lg">
             <img src="/mission.svg" alt="Vision Icon" className="h-20 w-20 object-contain mb-6" />
             <h4 className="font-poppins text-[32px] font-semibold mb-4">Vision</h4>
             <p className="font-[family-name:var(--font-poppins)] text-white/90 text-[18px] leading-relaxed">
@@ -38,7 +38,7 @@ export function VisionMission() {
           </div>
 
           {/* Mission Card */}
-          <div className="flex flex-col rounded-[24px] bg-brand-blue p-10 text-white shadow-lg">
+          <div className="flex flex-col rounded-[24px] bg-brand-blue p-8 sm:p-10 text-white shadow-lg">
             <img src="/vision.svg" alt="Mission Icon" className="h-20 w-20 object-contain mb-6" />
             <h4 className="font-poppins text-[32px] font-semibold mb-4">Mission</h4>
             <p className="font-[family-name:var(--font-poppins)] text-white/95 text-[18px] leading-relaxed">
@@ -55,7 +55,7 @@ export function VisionMission() {
           {pills.map((pill) => (
             <span
               key={pill}
-              className="rounded-full bg-black/5 px-5 py-2 font-[family-name:var(--font-poppins)] text-xs sm:text-sm font-bold text-ink border border-black/10 transition-colors hover:bg-black/10"
+              className="rounded-full bg-black/5 px-5 py-2 font-[family-name:var(--font-poppins)] text-sm sm:text-sm font-bold text-ink border border-black/10 transition-colors hover:bg-black/10"
             >
               {pill}
             </span>

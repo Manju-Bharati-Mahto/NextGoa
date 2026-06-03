@@ -55,7 +55,7 @@ export function WhyGoa({ variant = "blue" }: { variant?: "blue" | "red" }) {
             <img
               src="/why-goa.jpg"
               alt="Parul University Mission Possible event in Goa"
-              className="aspect-square w-full object-cover"
+              className="w-full h-auto object-contain sm:aspect-square sm:object-cover bg-white"
             />
           </div>
         </div>

@@ -104,7 +104,7 @@ export function CampusLocation() {
           animation: fadeSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
       `}</style>
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col items-center">
+      <div className="max-w-7xl mx-auto sm:px-6 px-4 lg:px-12 flex flex-col items-center">
         
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">

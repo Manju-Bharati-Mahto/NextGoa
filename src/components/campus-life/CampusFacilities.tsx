@@ -35,12 +35,12 @@ const cards = [
 
 export function CampusFacilities() {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-white via-white to-[#FEF3BA] py-20 lg:py-28">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-white via-white to-[#FEF3BA] pb-20 pt-25 lg:py-28">
       {/* Decorative Trees */}
-      <img src="/campus-life/left-tree.svg" alt="" className="absolute left-0 top-[10%] w-[140px] md:w-[200px] lg:w-[280px] pointer-events-none z-10" />
-      <img src="/campus-life/right-tree.svg" alt="" className="absolute right-0 top-[10%] w-[140px] md:w-[200px] lg:w-[280px] pointer-events-none z-10" />
+      <img src="/campus-life/left-tree.svg" alt="" className="absolute left-0 top-0 sm:top-[10%] opacity-30 sm:opacity-100 w-[140px] md:w-[200px] lg:w-[280px] pointer-events-none z-10" />
+      <img src="/campus-life/right-tree.svg" alt="" className="absolute right-0 top-0 sm:top-[10%] opacity-30 sm:opacity-100 w-[140px] md:w-[200px] lg:w-[280px] pointer-events-none z-10" />
 
-      <div className="mx-auto max-w-6xl px-6 relative z-20 flex flex-col items-center">
+      <div className="mx-auto max-w-6xl sm:px-6 px-4 relative z-20 flex flex-col items-center">
         {/* Header content */}
         <div className="flex flex-col items-center text-center max-w-4xl">
           <img src="/campus-life/sa.svg" alt="Campus Life Icon" className="w-[80px] sm:w-[100px] h-auto mb-4" />
@@ -60,12 +60,12 @@ export function CampusFacilities() {
           {cards.map((card, i) => (
             <div 
               key={i} 
-              className="relative overflow-hidden rounded-[16px] p-6 sm:p-8 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] min-h-[160px] flex flex-col justify-center shadow-lg"
+              className="relative overflow-hidden rounded-[16px] p-6 sm:p-8 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] min-h-[160px] flex flex-col justify-center shadow-lg bg-[#E73649]"
             >
               {/* Background SVG */}
-              <img src={card.bgImage} alt="" className="absolute inset-0 w-full h-full object-cover z-0" />
+              <img src={card.bgImage} alt="" className="absolute inset-0 w-full h-full object-cover object-right-bottom sm:object-center scale-[0.8] sm:scale-100 origin-bottom-right sm:origin-center transition-transform z-0" />
               
-              <h4 className="font-poppins font-semibold text-[22px] sm:text-[26px] text-[#FEDB2F] relative z-20">
+              <h4 className="font-poppins font-semibold text-[26px] sm:text-[32px] text-[#FEDB2F] relative z-20">
                 {card.title}
               </h4>
               <hr className="border-t border-white/30 my-3 w-1/2 relative z-20" />

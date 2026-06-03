@@ -76,14 +76,14 @@ export function StatsBar() {
         <dl className="grid grid-cols-1 gap-10 sm:grid-cols-3 sm:divide-x sm:divide-white/10">
           {stats.map((s) => (
             <div key={s.label} className="text-center">
-              <dt className="font-[family-name:var(--font-gotham)] text-5xl sm:text-6xl font-bold tracking-tight text-brand-bright">
+              <dt className="font-[family-name:var(--font-gotham)] text-6xl font-bold tracking-tight text-brand-bright">
                 <AnimatedNumber value={s.value} />
               </dt>
               <dd className="mt-2 text-base font-medium text-white/70">{s.label}</dd>
             </div>
           ))}
         </dl>
-        <p className="mt-10 text-center text-sm text-white/40">
+        <p className="mt-10 text-center text-base sm:text-sm text-white/40">
           *Across the Parul University ecosystem.
         </p>
       </div>

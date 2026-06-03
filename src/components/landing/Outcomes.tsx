@@ -38,7 +38,7 @@ export function Outcomes() {
   return (
     <section className="bg-brand-white">
       {/* Constrained Header Container */}
-      <div className="mx-auto max-w-5xl px-6 pt-20">
+      <div className="mx-auto max-w-5xl px-6 sm:pt-20 pt-5">
         <Eyebrow className="text-ink">Outcomes</Eyebrow>
         <h2 className="mt-2 text-center font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
           Where graduates go by sector, not by accident.

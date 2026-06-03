@@ -34,23 +34,23 @@ export default function StudyAbroadEligibility() {
               <ul className="space-y-6">
                 <li className="flex items-start gap-4">
                   <div className="w-2 h-2 rounded-full bg-[#24c75c] mt-2.5 shrink-0"></div>
-                  <span className="text-gray-800 text-[15px] leading-snug font-medium">Minimum 7.00 CGPA on a 10-point scale<br/>(≈ 70%) at the time of application</span>
+                  <span className="text-gray-800 text-[16px] sm:text-[15px] leading-snug font-medium">Minimum 7.00 CGPA on a 10-point scale<br/>(≈ 70%) at the time of application</span>
                 </li>
                 <li className="flex items-start gap-4">
                   <div className="w-2 h-2 rounded-full bg-[#24c75c] mt-2 shrink-0"></div>
-                  <span className="text-gray-800 text-[15px] leading-snug font-medium">Zero backlogs</span>
+                  <span className="text-gray-800 text-[16px] sm:text-[15px] leading-snug font-medium">Zero backlogs</span>
                 </li>
                 <li className="flex items-start gap-4">
                   <div className="w-2 h-2 rounded-full bg-[#24c75c] mt-2 shrink-0"></div>
-                  <span className="text-gray-800 text-[15px] leading-snug font-medium">No prior visa rejection</span>
+                  <span className="text-gray-800 text-[16px] sm:text-[15px] leading-snug font-medium">No prior visa rejection</span>
                 </li>
                 <li className="flex items-start gap-4">
                   <div className="w-2 h-2 rounded-full bg-[#24c75c] mt-2 shrink-0"></div>
-                  <span className="text-gray-800 text-[15px] leading-snug font-medium">No pending fees</span>
+                  <span className="text-gray-800 text-[16px] sm:text-[15px] leading-snug font-medium">No pending fees</span>
                 </li>
                 <li className="flex items-start gap-4">
                   <div className="w-2 h-2 rounded-full bg-[#24c75c] mt-2 shrink-0"></div>
-                  <span className="text-gray-800 text-[15px] leading-snug font-medium">Good conduct certificate</span>
+                  <span className="text-gray-800 text-[16px] sm:text-[15px] leading-snug font-medium">Good conduct certificate</span>
                 </li>
               </ul>
             </div>
@@ -70,29 +70,29 @@ export default function StudyAbroadEligibility() {
               {/* Table */}
               <div className="w-full flex flex-col">
                 <div className="flex border-b border-gray-200">
-                  <div className="w-[35%] text-[#eb3b47] text-[14px] font-medium py-4 px-6 flex items-center">IELTS Academic</div>
-                  <div className="w-[30%] text-gray-800 text-[14px] py-4 px-6 border-l border-gray-200 flex items-center font-medium">6.0 - 6.5 overall</div>
-                  <div className="w-[35%] text-gray-500 text-[14px] py-4 px-6 border-l border-gray-200 flex items-center">Most partners</div>
+                  <div className="w-[35%] text-[#eb3b47] text-[15px] sm:text-[14px] font-medium py-4 px-3 sm:px-6 flex items-center">IELTS Academic</div>
+                  <div className="w-[30%] text-gray-800 text-[15px] sm:text-[14px] py-4 px-3 sm:px-6 border-l border-gray-200 flex items-center font-medium">6.0 - 6.5 overall</div>
+                  <div className="w-[35%] text-gray-500 text-[15px] sm:text-[14px] py-4 px-3 sm:px-6 border-l border-gray-200 flex items-center">Most partners</div>
                 </div>
                 <div className="flex border-b border-gray-200">
-                  <div className="w-[35%] text-[#eb3b47] text-[14px] font-medium py-4 px-6 flex items-center">TOEFL iBT</div>
-                  <div className="w-[30%] text-gray-800 text-[14px] py-4 px-6 border-l border-gray-200 flex items-center font-medium">79 - 90</div>
-                  <div className="w-[35%] text-gray-500 text-[14px] py-4 px-6 border-l border-gray-200 flex items-center">Some US, Canada partners</div>
+                  <div className="w-[35%] text-[#eb3b47] text-[15px] sm:text-[14px] font-medium py-4 px-3 sm:px-6 flex items-center">TOEFL iBT</div>
+                  <div className="w-[30%] text-gray-800 text-[15px] sm:text-[14px] py-4 px-3 sm:px-6 border-l border-gray-200 flex items-center font-medium">79 - 90</div>
+                  <div className="w-[35%] text-gray-500 text-[15px] sm:text-[14px] py-4 px-3 sm:px-6 border-l border-gray-200 flex items-center">Some US, Canada partners</div>
                 </div>
                 <div className="flex border-b border-gray-200">
-                  <div className="w-[35%] text-[#eb3b47] text-[14px] font-medium py-4 px-6 flex items-center">PTE Academic</div>
-                  <div className="w-[30%] text-gray-800 text-[14px] py-4 px-6 border-l border-gray-200 flex items-center font-medium">50 - 58</div>
-                  <div className="w-[35%] text-gray-500 text-[14px] py-4 px-6 border-l border-gray-200 flex items-center">Australia, UK partners</div>
+                  <div className="w-[35%] text-[#eb3b47] text-[15px] sm:text-[14px] font-medium py-4 px-3 sm:px-6 flex items-center">PTE Academic</div>
+                  <div className="w-[30%] text-gray-800 text-[15px] sm:text-[14px] py-4 px-3 sm:px-6 border-l border-gray-200 flex items-center font-medium">50 - 58</div>
+                  <div className="w-[35%] text-gray-500 text-[15px] sm:text-[14px] py-4 px-3 sm:px-6 border-l border-gray-200 flex items-center">Australia, UK partners</div>
                 </div>
                 <div className="flex border-b border-gray-200">
-                  <div className="w-[35%] text-[#eb3b47] text-[14px] font-medium py-4 px-6 flex items-center">Duolingo English Test</div>
-                  <div className="w-[30%] text-gray-800 text-[14px] py-4 px-6 border-l border-gray-200 flex items-center font-medium">105 - 115</div>
-                  <div className="w-[35%] text-gray-500 text-[14px] py-4 px-6 border-l border-gray-200 flex items-center">Selected partners</div>
+                  <div className="w-[35%] text-[#eb3b47] text-[15px] sm:text-[14px] font-medium py-4 px-3 sm:px-6 flex items-center">Duolingo English Test</div>
+                  <div className="w-[30%] text-gray-800 text-[15px] sm:text-[14px] py-4 px-3 sm:px-6 border-l border-gray-200 flex items-center font-medium">105 - 115</div>
+                  <div className="w-[35%] text-gray-500 text-[15px] sm:text-[14px] py-4 px-3 sm:px-6 border-l border-gray-200 flex items-center">Selected partners</div>
                 </div>
                 <div className="flex">
-                  <div className="w-[35%] text-[#eb3b47] text-[14px] font-medium py-4 px-6 flex items-center">English-medium 10+2</div>
-                  <div className="w-[30%] text-gray-800 text-[14px] py-4 px-6 border-l border-gray-200 flex items-center font-medium">Letter from PU Goa</div>
-                  <div className="w-[35%] text-gray-500 text-[14px] py-4 px-6 border-l border-gray-200 flex items-center">UK / NZ specific</div>
+                  <div className="w-[35%] text-[#eb3b47] text-[15px] sm:text-[14px] font-medium py-4 px-3 sm:px-6 flex items-center">English-medium 10+2</div>
+                  <div className="w-[30%] text-gray-800 text-[15px] sm:text-[14px] py-4 px-3 sm:px-6 border-l border-gray-200 flex items-center font-medium">Letter from PU Goa</div>
+                  <div className="w-[35%] text-gray-500 text-[15px] sm:text-[14px] py-4 px-3 sm:px-6 border-l border-gray-200 flex items-center">UK / NZ specific</div>
                 </div>
               </div>
             </div>
@@ -107,10 +107,10 @@ export default function StudyAbroadEligibility() {
             </svg>
           </div>
           <div className="flex flex-col gap-5">
-            <p className="text-gray-800 text-[15px] leading-relaxed font-medium">
+            <p className="text-gray-800 text-[16px] sm:text-[15px] leading-relaxed font-medium">
               1. <span className="font-semibold">Past visa rejection:</span> a single rejection on a tourist or unrelated student visa may not disqualify you. Talk to our advisor with your case details.
             </p>
-            <p className="text-gray-800 text-[15px] leading-relaxed font-medium">
+            <p className="text-gray-800 text-[16px] sm:text-[15px] leading-relaxed font-medium">
               2. Scores vary by partner. Some partners waive the English test for English-medium high-school graduates with a letter from PU Goa. Confirm partner-specific requirements with the Global Pathway advisor.
             </p>
           </div>

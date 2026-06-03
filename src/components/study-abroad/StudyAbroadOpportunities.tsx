@@ -79,12 +79,9 @@ export default function StudyAbroadOpportunities() {
     >
       {/* Background Image for waves */}
       <div
-        className="absolute inset-0 z-0 pointer-events-none"
+        className="absolute inset-0 z-0 pointer-events-none bg-cover bg-top sm:bg-[length:100%_100%] sm:bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/abroad/Global Opportunities Background.png')",
-          backgroundSize: "100% 100%",
-          backgroundPosition: "top center",
-          backgroundRepeat: "no-repeat",
+          backgroundImage: "url('/abroad/Global Opportunities Background.png')"
         }}
       ></div>
 
