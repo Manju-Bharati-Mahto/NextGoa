@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import CareerOutcomes from "@/components/programmes/CareerOutcomes";
 import RecruitersAndDestinations from "@/components/programmes/RecruitersAndDestinations";
 import ProgrammePicker from "@/components/programmes/ProgrammePicker";
+import ItComputerSciencePicker from "@/components/programmes/ItComputerSciencePicker";
 import Specialisations from "@/components/programmes/Specialisations";
 import WhyPUGoa from "@/components/programmes/WhyPUGoa";
 import LabsAndLearning from "@/components/programmes/LabsAndLearning";
@@ -109,6 +110,9 @@ export default function EngineeringPage() {
 
       {/* Programme Picker Section */}
       <ProgrammePicker />
+
+      {/* IT & Computer Science Programme Picker Section */}
+      <ItComputerSciencePicker />
 
       {/* Specialisations Section */}
       <Specialisations />

@@ -10,7 +10,7 @@ export function CampusHostel() {
       <img
         src="/Group 32864.png"
         alt=""
-        className="absolute inset-0 w-full h-full object-fill z-0 pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
       />
 
       <div className="relative z-10 mx-auto max-w-[1300px] px-6 lg:px-12 flex flex-col items-center pt-40 pb-32 lg:pt-56 lg:pb-48">

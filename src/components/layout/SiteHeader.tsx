@@ -94,23 +94,7 @@ export function SiteHeader() {
         </div>
       </div>
 
-      {/* Row 2 — secondary nav strip (desktop) */}
-      <div className="hidden bg-white/10 backdrop-blur-md border-b border-white/20 lg:block">
-        <nav
-          aria-label="Sections"
-          className="mx-auto flex max-w-7xl items-center justify-center gap-10 px-6 py-3"
-        >
-          {navItems.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className="whitespace-nowrap text-sm font-semibold text-ink/90 transition-colors hover:text-brand"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-      </div>
+
 
       {/* Mobile Nav Sidebar */}
       <div

@@ -13,7 +13,7 @@ export function CampusCarousel() {
       <img
         src="/Group 32863.png"
         alt=""
-        className="absolute inset-0 w-full h-full object-fill z-0 pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
       />
 
       <div className="relative z-10 mx-auto w-full flex flex-col items-center py-32 sm:py-48">

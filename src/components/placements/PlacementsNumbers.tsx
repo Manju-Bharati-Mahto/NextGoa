@@ -8,7 +8,7 @@ export function PlacementsNumbers() {
       <img
         src="/Group 32863.png"
         alt=""
-        className="absolute inset-0 w-full h-full object-fill z-0 pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
       />
       
       <div className="relative z-10 mx-auto max-w-7xl px-6 py-28 sm:py-40 flex flex-col items-center justify-center">
