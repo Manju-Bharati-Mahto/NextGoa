@@ -58,7 +58,8 @@ export function BeyondPlacements() {
   return (
     <section className="w-full bg-[#FAFAFA] py-24 sm:py-32 xl:py-40 overflow-hidden">
       <div className="max-w-[1600px] mx-auto px-6 sm:px-10 lg:px-12 2xl:px-16">
-        <div className="grid grid-cols-1 xl:grid-cols-[4fr_6fr] gap-16 lg:gap-20 items-center">
+        {/* Desktop Layout (xl and up) */}
+        <div className="hidden xl:grid xl:grid-cols-[4fr_6fr] gap-16 lg:gap-20 items-center">
           
           {/* Left Content */}
           <div className="max-w-xl lg:max-w-2xl lg:pr-8 mx-auto xl:mx-0">
@@ -168,6 +169,68 @@ export function BeyondPlacements() {
               ))}
             </div>
           </div>
+        </div>
+
+        {/* Mobile Layout (below xl) */}
+        <div className="block xl:hidden">
+          <div className="mb-6">
+            <h3 className="text-[#1F1F1F] mb-2 text-left section-subheading">
+              Beyond Placements
+            </h3>
+            <h2 className="text-[#E73649] mb-4 text-left section-heading !text-[28px] sm:!text-[36px] leading-tight">
+              Not every graduate takes a job offer.
+            </h2>
+            <p className="text-gray-800 text-left section-body text-base sm:text-lg mb-6">
+              ~11% of each cohort chooses higher studies - at IITs, IIMs, and at universities across seven countries. The same career cell also guides applications, test prep and visas.
+            </p>
+          </div>
+
+          {/* Mobile Image Carousel */}
+          <div className="w-full overflow-x-auto scrollbar-hide -mx-6 px-6 py-2 flex gap-4">
+            {CAROUSEL_DATA.map((slide, idx) => (
+              <div 
+                key={idx} 
+                className="w-[280px] xs:w-[320px] shrink-0 aspect-[16/10] rounded-[20px] border-2 border-dashed border-gray-200 bg-white flex items-center justify-center relative overflow-hidden shadow-sm"
+              >
+                {/* Empty Image Placeholder icon */}
+                <svg className="w-8 h-8 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.9 2.9m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375 0 11-.75 0 .375 0 01.75 0z" />
+                </svg>
+
+                {/* Country Name Tag Overlay */}
+                <div className="absolute bottom-4 left-4 bg-black/75 backdrop-blur-sm rounded-full py-1.5 px-3.5 flex items-center gap-2 shadow-md">
+                  <img 
+                    src={`https://flagcdn.com/w40/${slide.flagCode}.png`} 
+                    alt={`${slide.country} Flag`} 
+                    className="w-[20px] h-auto rounded-[1px] object-cover" 
+                  />
+                  <span className="font-sans font-bold text-[12px] tracking-wider text-white uppercase">{slide.country}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile Stats */}
+          <div className="border-t border-b border-gray-200 py-6 my-8">
+            <div className="grid grid-cols-3 divide-x divide-gray-200 text-center">
+              <div className="flex flex-col">
+                <span className="font-sans font-bold text-3xl text-[#0CAADD] mb-1">7</span>
+                <span className="font-poppins text-xs text-gray-500 font-medium">Countries</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="font-sans font-bold text-3xl text-[#0CAADD] mb-1">120+</span>
+                <span className="font-poppins text-xs text-gray-500 font-medium">Partners</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="font-sans font-bold text-3xl text-[#0CAADD] mb-1">800+</span>
+                <span className="font-poppins text-xs text-gray-500 font-medium">Students</span>
+              </div>
+            </div>
+          </div>
+
+          <button className="w-full bg-[#1F1F1F] hover:bg-black text-white font-poppins font-semibold text-base py-4 rounded-full flex items-center justify-center gap-2.5 transition-colors">
+            Study Abroad pathways <span aria-hidden="true" className="text-lg">&rarr;</span>
+          </button>
         </div>
       </div>
     </section>

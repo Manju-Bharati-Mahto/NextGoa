@@ -63,7 +63,7 @@ export function Research() {
               <div>
                 <dl className="mt-8 grid grid-cols-[1fr_auto_1fr_auto_1fr] items-center gap-2">
                   <div className="flex flex-col">
-                    <dt className="font-[family-name:var(--font-poppins)] text-2xl sm:text-[28px] md:text-[32px] font-bold text-white leading-none tracking-tight">
+                    <dt className="font-[family-name:var(--font-poppins)] text-lg sm:text-[24px] md:text-[28px] lg:text-[32px] font-bold text-white leading-none tracking-tight whitespace-nowrap">
                       {c.stats[0].value}
                     </dt>
                     <dd className="mt-2 font-[family-name:var(--font-poppins)] text-xs sm:text-sm text-white/90 leading-tight">
@@ -72,7 +72,7 @@ export function Research() {
                   </div>
                   <div className="h-10 w-px bg-white/25" aria-hidden="true" />
                   <div className="flex flex-col pl-2 sm:pl-4">
-                    <dt className="font-[family-name:var(--font-poppins)] text-2xl sm:text-[28px] md:text-[32px] font-bold text-white leading-none tracking-tight">
+                    <dt className="font-[family-name:var(--font-poppins)] text-lg sm:text-[24px] md:text-[28px] lg:text-[32px] font-bold text-white leading-none tracking-tight whitespace-nowrap">
                       {c.stats[1].value}
                     </dt>
                     <dd className="mt-2 font-[family-name:var(--font-poppins)] text-xs sm:text-sm text-white/90 leading-tight">
@@ -81,7 +81,7 @@ export function Research() {
                   </div>
                   <div className="h-10 w-px bg-white/25" aria-hidden="true" />
                   <div className="flex flex-col pl-2 sm:pl-4">
-                    <dt className="font-[family-name:var(--font-poppins)] text-2xl sm:text-[28px] md:text-[32px] font-bold text-white leading-none tracking-tight">
+                    <dt className="font-[family-name:var(--font-poppins)] text-lg sm:text-[24px] md:text-[28px] lg:text-[32px] font-bold text-white leading-none tracking-tight whitespace-nowrap">
                       {c.stats[2].value}
                     </dt>
                     <dd className="mt-2 font-[family-name:var(--font-poppins)] text-xs sm:text-sm text-white/90 leading-tight">

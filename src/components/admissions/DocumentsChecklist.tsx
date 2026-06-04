@@ -106,13 +106,13 @@ export function DocumentsChecklist() {
         </div>
 
         {/* Tabs */}
-        <div className="flex justify-center mb-12">
-          <div className="inline-flex flex-wrap items-center justify-center gap-2 rounded-full border border-gray-200 bg-white p-1.5 shadow-sm">
+        <div className="w-full overflow-x-auto scrollbar-hide -mx-4 px-4 sm:-mx-8 sm:px-8 md:mx-0 md:px-0 md:flex md:justify-center mb-12 py-1.5">
+          <div className="inline-flex flex-nowrap items-center gap-2 rounded-full border border-gray-200 bg-white p-1.5 shadow-sm min-w-max">
             {(["all", "ug", "pg", "international"] as const).map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`rounded-full px-6 py-2 text-[14px] font-semibold transition-colors ${
+                className={`rounded-full px-6 py-2 text-[14px] font-semibold transition-colors shrink-0 whitespace-nowrap ${
                   activeTab === tab ? "bg-[#e73649] text-white" : "text-ink hover:bg-gray-50"
                 }`}
               >
