@@ -87,7 +87,7 @@ export function FinancialAid() {
             {/* Left aligned text and tags container */}
             <div className="w-full max-w-[90%] relative z-10 text-left pt-6 flex flex-col gap-4">
               <div>
-                <h4 className="font-bold text-white text-4xl sm:text-5xl mb-2 leading-tight">Online Payment</h4>
+                <h4 className="font-bold text-white text-[28px] xs:text-3xl sm:text-5xl mb-2 leading-tight whitespace-nowrap">Online Payment</h4>
                 <p className="font-poppins text-white/95 text-base sm:text-lg leading-relaxed">
                   Drop your details below - a counsellor will call you within 24 hours.
                 </p>
