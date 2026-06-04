@@ -110,8 +110,8 @@ export function InternshipsAndPPOs() {
           {/* Right Column */}
           <div className="flex flex-col gap-6 lg:gap-8 justify-between">
             {/* PPO Card */}
-            <div className="bg-[#E73649] rounded-[25px] p-6 sm:p-10 shadow-xl relative overflow-hidden flex-grow flex flex-col justify-start md:justify-center min-h-[220px] aspect-[320/370] md:aspect-auto">
-              <div className="relative z-10 w-[55%] sm:w-[60%] pt-2 md:pt-0">
+            <div className="bg-[#E73649] rounded-[25px] p-6 sm:p-10 shadow-xl relative overflow-hidden flex-grow flex flex-col justify-center min-h-[220px]">
+              <div className="relative z-10 w-full md:w-[60%]">
                 <svg className="w-10 h-10 text-white mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                 <h4 className="text-white font-poppins font-bold text-[32px] mb-3">PPO</h4>
                 <p className="text-white/95 font-poppins font-semibold text-[15px] leading-relaxed">
@@ -122,15 +122,11 @@ export function InternshipsAndPPOs() {
               <div className="hidden md:block">
                 <Image src="/placements/ppo-shape.svg" alt="PPO Graphic" fill className="object-cover object-right" />
               </div>
-              {/* Mobile background */}
-              <div className="block md:hidden">
-                <Image src="/fees/Group 32879.svg" alt="PPO Mobile Graphic" fill className="object-fill opacity-50" />
-              </div>
             </div>
 
             {/* Embedded in curriculum Card */}
-            <div className="bg-[#242424] rounded-[25px] p-6 sm:p-10 shadow-xl relative overflow-hidden flex-grow flex flex-col justify-start md:justify-center min-h-[220px] aspect-[320/370] md:aspect-auto">
-              <div className="relative z-10 w-[55%] sm:w-[60%] pt-2 md:pt-0">
+            <div className="bg-[#242424] rounded-[25px] p-6 sm:p-10 shadow-xl relative overflow-hidden flex-grow flex flex-col justify-center min-h-[220px]">
+              <div className="relative z-10 w-full md:w-[60%]">
                 <svg className="w-10 h-10 text-[#FEDB2F] mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
                 <h4 className="text-white font-poppins font-bold text-[32px] mb-3">Embedded in curriculum</h4>
                 <p className="text-white/80 font-poppins font-semibold text-[15px] leading-relaxed">
@@ -141,13 +137,8 @@ export function InternshipsAndPPOs() {
               <div className="hidden md:block">
                 <Image src="/placements/embedded-shape.svg" alt="Embedded Curriculum Graphic" fill className="object-cover object-right" />
               </div>
-              {/* Mobile background */}
-              <div className="block md:hidden">
-                <Image src="/fees/Group 32878.svg" alt="Embedded Curriculum Mobile Graphic" fill className="object-fill scale-x-[-1] opacity-50" />
-              </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
