@@ -19,11 +19,11 @@ export function CampusCarousel() {
       <div className="relative z-10 mx-auto w-full flex flex-col items-center py-32 sm:py-48">
         {/* Header content */}
         <div className="text-center px-6 max-w-3xl mb-12">
-          <h3 className="font-poppins font-semibold text-[20px] sm:text-[24px] text-white mb-2">The Campus</h3>
-          <h2 className="font-poppins font-bold text-[34px] sm:text-[46px] lg:text-[54px] leading-[1.1] tracking-tight text-white mb-6">
+          <h3 className="text-white mb-2 section-subheading">The Campus</h3>
+          <h2 className="text-white mb-6 section-heading">
             A Campus Built for Inspiration
           </h2>
-          <p className="font-[family-name:var(--font-poppins)] text-white text-[14px] sm:text-[16px] leading-relaxed mx-auto max-w-2xl">
+          <p className="text-white mx-auto max-w-2xl section-body">
             The PU Goa campus is located near ONGC Betul, Tal. Quepem, Dist. Kushavati, South Goa.<br className="hidden sm:block" />
             Modern, purposefully designed, and built to stimulate ideas and collaboration.
           </p>

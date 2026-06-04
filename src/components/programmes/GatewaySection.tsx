@@ -16,11 +16,11 @@ export default function GatewaySection() {
             Admissions Open 2026
           </span>
           
-          <h2 className="text-white text-4xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight mb-6 leading-tight font-poppins">
+          <h2 className="text-white mb-6 section-heading">
             Ready to apply, Or still deciding?
           </h2>
           
-          <p className="text-white/95 text-[16.5px] sm:text-[17px] max-w-4xl mx-auto leading-relaxed font-medium">
+          <p className="text-white/95 max-w-4xl mx-auto section-body">
             Submit your application for 2026-27, talk to an admissions counsellor, or download the master brochure
             with fees, eligibility and entrance details for every programme.
           </p>

@@ -4,13 +4,13 @@ export function CampusZones() {
       <div className="mx-auto max-w-7xl sm:px-6 px-4 lg:px-12">
         {/* Header */}
         <div className="flex flex-col items-center text-center max-w-5xl mx-auto mb-16">
-          <h3 className="font-poppins font-semibold text-[20px] sm:text-[24px] text-[#1F1F1F] mb-2">
+          <h3 className="text-[#1F1F1F] mb-2 section-subheading">
             Five Campus Zones
           </h3>
-          <h2 className="font-poppins font-bold text-[34px] sm:text-[46px] lg:text-[54px] leading-[1.1] tracking-tight text-[#E73649] mb-4 lg:whitespace-nowrap">
+          <h2 className="text-[#E73649] mb-4 lg:whitespace-nowrap section-heading">
             A Campus Designed On Five Pillars
           </h2>
-          <p className="font-[family-name:var(--font-poppins)] text-[#1F1F1F]/80 text-[16px] sm:text-[18px] leading-relaxed">
+          <p className="text-[#1F1F1F]/80 section-body">
             Academic, Residential, Cultural, Dining, and Sports - where students<br className="hidden sm:block" /> can live and learn.
           </p>
         </div>

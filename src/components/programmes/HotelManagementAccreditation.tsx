@@ -19,7 +19,7 @@ export default function HotelManagementAccreditation() {
         
         {/* Accreditation Section */}
         <div className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-10 mb-20 sm:mb-32">
-          <h2 className="font-poppins font-bold text-[32px] sm:text-[44px] text-[#E73649] text-center md:text-left leading-tight max-w-[400px]">
+          <h2 className="text-[#E73649] text-center md:text-left max-w-[400px] section-heading">
             Recognition &<br/>Accreditation
           </h2>
           
@@ -45,7 +45,7 @@ export default function HotelManagementAccreditation() {
         <p className="text-ink/80 text-[14px] sm:text-[16px] font-medium mb-2 uppercase tracking-widest">
           Partner Hotels
         </p>
-        <h3 className="font-poppins font-bold text-[32px] sm:text-[44px] text-[#E73649] mb-12">
+        <h3 className="text-[#E73649] mb-12 section-heading">
           Internships across India's best.
         </h3>
         

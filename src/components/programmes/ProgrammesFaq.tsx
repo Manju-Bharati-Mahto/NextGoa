@@ -70,10 +70,10 @@ export default function ProgrammesFaq() {
       <JsonLd data={faqSchema(faqs)} />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-xl sm:text-[22px] font-bold text-ink mb-3 tracking-wide font-poppins">
+          <h2 className="text-ink mb-3 section-subheading">
             FAQs
           </h2>
-          <h3 className="text-4xl sm:text-[3.2rem] font-bold text-[#ED383F] tracking-tight leading-tight font-poppins max-w-3xl mx-auto">
+          <h3 className="text-[#ED383F] tracking-tight leading-tight max-w-3xl mx-auto section-heading">
             Frequently asked questions about academic programmes.
           </h3>
         </div>

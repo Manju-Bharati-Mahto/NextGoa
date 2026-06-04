@@ -54,10 +54,10 @@ export default function RecruitersAndDestinations() {
       `}</style>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center mb-10">
-        <h2 className="text-[#E73649] font-bold text-[36px] sm:text-[44px] tracking-tight mb-3">
+        <h2 className="text-[#E73649] mb-3 section-heading">
           Top recruiter network
         </h2>
-        <p className="text-ink/80 text-base sm:text-lg">
+        <p className="text-ink/80 section-body">
           Indicative recruiters from the wider Parul University network.
         </p>
       </div>

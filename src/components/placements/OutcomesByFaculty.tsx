@@ -55,9 +55,9 @@ export function OutcomesByFaculty() {
         
         {/* Header */}
         <div className="text-center mb-12">
-          <h3 className="text-[#333333] font-poppins font-semibold text-xl sm:text-2xl mb-2">By faculty</h3>
-          <h2 className="text-[#F14646] font-poppins font-bold text-4xl sm:text-5xl md:text-6xl tracking-tight mb-4">Outcomes by faculty.</h2>
-          <p className="text-[#666666] font-sans text-base sm:text-lg max-w-2xl mx-auto">
+          <h3 className="text-[#333333] mb-2 section-subheading">By faculty</h3>
+          <h2 className="text-[#F14646] mb-4 section-heading">Outcomes by faculty.</h2>
+          <p className="text-[#666666] max-w-2xl mx-auto section-body">
             Every faculty has its own recruiter network and graduate destinations. Pick yours.
           </p>
         </div>

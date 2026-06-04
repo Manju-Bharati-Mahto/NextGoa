@@ -17,10 +17,10 @@ export default function AlliedHealthLabs() {
     <section className="relative overflow-hidden z-10 w-full bg-[#FAFAFA]">
       <div className="relative z-10 mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
         <div className="text-center mb-12 sm:mb-16">
-          <p className="text-ink font-semibold text-[18px] sm:text-[20px] mb-2">
+          <p className="text-ink mb-2 section-subheading">
             Labs & Hands-on Learning
           </p>
-          <h2 className="font-poppins font-bold text-[32px] sm:text-[48px] leading-[1.2] text-[#E73649]">
+          <h2 className="text-[#E73649] section-heading">
             Where you'll actually practice.
           </h2>
         </div>

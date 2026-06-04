@@ -36,10 +36,10 @@ export default function NursingDestinations() {
 
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-12 py-24 sm:py-32">
         
-        <h2 className="text-[#FCE34B] font-semibold text-lg sm:text-[22px] mb-2 tracking-wide">
+        <h2 className="text-[#FCE34B] mb-2 section-subheading">
           Programme Picker
         </h2>
-        <h3 className="font-poppins font-bold text-[36px] sm:text-[48px] leading-[1.1] tracking-tight text-white mb-12">
+        <h3 className="text-white mb-12 section-heading">
           Pick your degree level.
         </h3>
 

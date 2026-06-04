@@ -60,8 +60,8 @@ export default function TrendingSection() {
         <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-4 lg:gap-0 items-center">
           {/* Left Column */}
           <div className="flex flex-col text-white lg:pr-4 relative z-10">
-            <h2 className="text-xl sm:text-[22px] font-[family-name:var(--font-poppins)] tracking-wide">Trending now</h2>
-            <h3 className="text-4xl sm:text-5xl lg:text-[4rem] font-semibold text-[#FFD523] mt-2 leading-[1.1] font-[family-name:var(--font-poppins)]">
+            <h2 className="section-subheading text-white">Trending now</h2>
+            <h3 className="text-[#FFD523] mt-2 leading-[1.1] section-heading">
               Limited seats for<br/>2026-27
             </h3>
             

@@ -22,10 +22,10 @@ export function StartupEcosystem() {
         
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <h3 className="text-black font-semibold text-lg sm:text-xl mb-3 tracking-wide">
+          <h3 className="text-black mb-3 section-subheading">
             Startup ecosystem
           </h3>
-          <h2 className="text-[#DF3B4B] font-bold text-[32px] sm:text-5xl md:text-[56px] leading-tight">
+          <h2 className="text-[#DF3B4B] section-heading">
             For those who want to build,<br />Not Just Placed
           </h2>
         </div>

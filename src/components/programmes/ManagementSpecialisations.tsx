@@ -12,10 +12,10 @@ export default function ManagementSpecialisations() {
         
         {/* Header Section */}
         <div className="text-center mb-10">
-          <h2 className="text-ink font-semibold text-[22px] sm:text-[26px] tracking-wide mb-2">
+          <h2 className="text-ink mb-2 section-subheading">
             Specialisations
           </h2>
-          <h3 className="font-poppins font-bold text-[40px] sm:text-[56px] leading-[1.1] tracking-tight text-[#E73649] mb-8">
+          <h3 className="text-[#E73649] mb-8 section-heading">
             Pick a domain.
           </h3>
           

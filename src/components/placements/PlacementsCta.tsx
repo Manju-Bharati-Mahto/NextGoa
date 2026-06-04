@@ -25,10 +25,10 @@ export function PlacementsCta() {
             <span className="inline-block rounded-full bg-[#FACC15] px-5 py-2 text-[14px] font-semibold text-black mb-5">
               Admissions Open 2026
             </span>
-            <h2 className="text-center font-poppins font-bold text-3xl sm:text-[48px] leading-[1.1] tracking-tight text-white mb-5">
+            <h2 className="text-center text-white mb-5 section-heading">
               Be part of next placement story.
             </h2>
-            <p className="mx-auto max-w-[800px] text-center font-[family-name:var(--font-poppins)] font-medium text-[15px] sm:text-[17px] text-white/90 leading-relaxed">
+            <p className="mx-auto max-w-[800px] text-center text-white/90 section-body">
               Parul placements have been shaping careers and futures for over two decades. PU Goa students inherit this legacy from day one. Apply for 2026-27, speak with a career counsellor, or download the official placement report.
             </p>
           </div>

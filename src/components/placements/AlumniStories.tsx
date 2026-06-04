@@ -14,10 +14,10 @@ export function AlumniStories() {
       <div className="relative z-10 max-w-6xl mx-auto px-6 mt-4 sm:mt-6 mb-4 sm:mb-6">
         {/* Title Section */}
         <div className="text-center mb-16 sm:mb-20">
-          <h3 className="text-white font-poppins font-semibold text-lg sm:text-xl tracking-wide mb-3">
+          <h3 className="text-white mb-3 section-subheading">
             Alumni stories
           </h3>
-          <h2 className="text-white font-poppins font-bold text-3xl sm:text-5xl tracking-tight leading-tight">
+          <h2 className="text-white tracking-tight section-heading">
             Real outcomes from the PU ecosystem.
           </h2>
         </div>

@@ -37,7 +37,7 @@ export default function DeanAndFaculty() {
         
         {/* Top Heading */}
         <div className="text-center mb-12">
-          <h2 className="font-poppins font-bold text-[32px] sm:text-[40px] text-ink">
+          <h2 className="text-ink section-heading">
             Dean & Faculty
           </h2>
         </div>
@@ -88,7 +88,7 @@ export default function DeanAndFaculty() {
 
         {/* Mid Heading */}
         <div className="text-center mb-12">
-          <h2 className="font-poppins font-bold text-[28px] sm:text-[36px] text-ink">
+          <h2 className="text-ink section-subheading">
             Research areas
           </h2>
         </div>

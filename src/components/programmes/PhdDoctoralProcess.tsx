@@ -38,13 +38,13 @@ export default function PhdDoctoralProcess() {
     <section className="w-full bg-[#FAFAFA] py-24 sm:py-32">
       <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 sm:mb-20">
-          <h2 className="text-ink font-semibold text-[22px] sm:text-[24px] tracking-wide mb-3">
+          <h2 className="text-ink mb-3 section-subheading">
             Doctoral Process
           </h2>
-          <h3 className="font-poppins font-bold text-[40px] sm:text-[56px] leading-[1.1] tracking-tight text-[#E73649] mb-4">
+          <h3 className="text-[#E73649] mb-4 section-heading">
             Coursework to viva.
           </h3>
-          <p className="text-[17px] sm:text-[19px] text-ink/90 font-medium max-w-2xl mx-auto">
+          <p className="text-ink/90 max-w-2xl mx-auto section-body">
             A clear, milestone-driven path from enrolment to defence.
           </p>
         </div>

@@ -6,13 +6,13 @@ export default function PhysiotherapyNetwork() {
       <div className="py-16 sm:py-24">
         <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8 text-center">
           
-          <h3 className="font-bold text-[18px] sm:text-[22px] text-ink mb-2">
+          <h3 className="text-ink mb-2 section-subheading">
             Hospital & Industry Network
           </h3>
-          <h2 className="font-poppins font-bold text-[36px] sm:text-[48px] text-[#E73649] mb-4">
+          <h2 className="text-[#E73649] mb-4 section-heading">
             Where you'll train and serve.
           </h2>
-          <p className="text-ink/70 text-[15px] sm:text-[16px] mb-12 sm:mb-16 max-w-2xl mx-auto">
+          <p className="text-ink/70 mb-12 sm:mb-16 max-w-2xl mx-auto section-body">
             Indicative network from the wider Parul University clinical and industry partnerships.
           </p>
           

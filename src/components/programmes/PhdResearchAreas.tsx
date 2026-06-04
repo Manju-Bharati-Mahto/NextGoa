@@ -67,10 +67,10 @@ export default function PhdResearchAreas() {
     <section className="w-full bg-[#FAFAFA] py-24 sm:py-32">
       <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-ink font-semibold text-[20px] sm:text-[22px] tracking-wide mb-2">
+          <h2 className="text-ink mb-2 section-subheading">
             Research Areas
           </h2>
-          <h3 className="font-poppins font-bold text-[36px] sm:text-[48px] leading-[1.1] tracking-tight text-[#E73649] mb-4">
+          <h3 className="text-[#E73649] mb-4 section-heading">
             By discipline.
           </h3>
         </div>

@@ -37,10 +37,10 @@ export default function AdmissionsSnapshot() {
         
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h2 className="text-ink font-semibold text-[20px] sm:text-[22px] tracking-wide mb-2">
+          <h2 className="text-ink mb-2 section-subheading">
             Admissions Snapshot
           </h2>
-          <h3 className="font-poppins font-bold text-[36px] sm:text-[48px] leading-[1.1] tracking-tight text-[#E73649] mb-4">
+          <h3 className="text-[#E73649] mb-4 section-heading">
             Everything you need to apply.
           </h3>
         </div>

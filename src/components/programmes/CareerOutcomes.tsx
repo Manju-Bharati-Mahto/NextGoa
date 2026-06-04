@@ -46,15 +46,15 @@ export default function CareerOutcomes() {
       />
 
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-12 py-24 sm:py-32 text-center flex flex-col items-center">
-        <h2 className="text-white font-semibold text-lg sm:text-xl mb-4 tracking-wide">
+        <h2 className="text-white mb-4 section-subheading">
           Career Outcomes
         </h2>
         
-        <h3 className="font-poppins font-bold text-[40px] sm:text-[56px] leading-[1.1] tracking-tight text-sunshine mb-6">
+        <h3 className="text-sunshine mb-6 section-heading">
           Where this degree takes you.
         </h3>
         
-        <p className="font-poppins text-white/90 text-sm sm:text-base max-w-3xl mb-16 leading-relaxed">
+        <p className="text-white/90 max-w-3xl mb-16 section-body">
           Roles, recruiters and global Master's destinations our engineering graduates build careers around.
         </p>
 

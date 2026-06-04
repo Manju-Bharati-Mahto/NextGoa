@@ -44,13 +44,13 @@ export default function LabsAndLearning() {
         
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h2 className="text-ink font-semibold text-[20px] sm:text-[22px] tracking-wide mb-2">
+          <h2 className="text-ink mb-2 section-subheading">
             Labs & Hands-on Learning
           </h2>
-          <h3 className="font-poppins font-bold text-[36px] sm:text-[48px] leading-[1.1] tracking-tight text-[#E73649] mb-4">
+          <h3 className="text-[#E73649] mb-4 section-heading">
             Where you'll actually build.
           </h3>
-          <p className="text-ink/80 text-[16px] sm:text-[18px] max-w-2xl mx-auto leading-relaxed">
+          <p className="text-ink/80 max-w-2xl mx-auto leading-relaxed section-body">
             Purpose-built spaces from AI clusters to a maker studio. Theory matters. Practice ships.
           </p>
         </div>

@@ -7,7 +7,7 @@ export default function PhysiotherapyAccreditation() {
       <div className="py-16 sm:py-24">
         <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8 text-center">
           
-          <h2 className="font-poppins font-bold text-[32px] sm:text-[44px] text-[#E73649] mb-12">
+          <h2 className="text-[#E73649] mb-12 section-heading">
             Recognition & Accreditation
           </h2>
           

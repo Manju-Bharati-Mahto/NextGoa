@@ -2,10 +2,10 @@ export function Accreditations() {
   return (
     <section className="bg-brand-white py-5 sm:py-20 px-6">
       <div className="mx-auto max-w-7xl text-center">
-        <h2 className="font-[family-name:var(--font-poppins)] text-[20px] sm:text-[32px] font-bold text-ink">
+        <h2 className="text-ink section-subheading">
           Accreditations and Rankings of
         </h2>
-        <h3 className="mt-2 font-poppins font-bold text-[36px] sm:text-[48px] leading-tight tracking-tight text-brand">
+        <h3 className="mt-2 text-brand section-heading">
           Parul University, Vadodara!
         </h3>
 

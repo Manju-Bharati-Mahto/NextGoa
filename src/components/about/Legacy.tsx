@@ -17,13 +17,13 @@ export function Legacy() {
             />
 
             <div className="relative z-10">
-              <h2 className="font-poppins font-bold text-[32px] sm:text-[36px] leading-tight text-brand mb-6">
+              <h2 className="text-brand mb-6 !text-left section-heading">
                 Where a 3-Decade-Old <br />
                 Legacy Meets <br />
                 India&apos;s Coastal Paradise!
               </h2>
               
-              <div className="font-[family-name:var(--font-poppins)] text-[16px] sm:text-[18px] text-ink leading-relaxed">
+              <div className="text-ink !text-left section-body">
                 <p>
                   Though Parul University Goa opened its doors in 2025 as the State&apos;s First Private University-inaugurated by Honourable Chief Minister Dr. Pramod Sawant-its legacy began over three decades ago in Vadodara, Gujarat. Built on the singular belief that every student deserves the best chance at life, Parul University has shaped the futures of thousands through government-funded research, national startups, and top-tier placements at global giants like Microsoft, Google, Meta, and Goldman Sachs. Now, India&apos;s Most Award-Winning University brings this world-class educational ecosystem to the coastal paradise of Goa.
                 </p>

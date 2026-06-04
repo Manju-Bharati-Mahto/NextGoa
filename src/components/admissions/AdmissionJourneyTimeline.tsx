@@ -107,9 +107,9 @@ export function AdmissionJourneyTimeline() {
       <div className="max-w-[1400px] mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-xl sm:text-2xl font-bold text-ink mb-2 font-poppins">2026-27 Timeline</h2>
-          <h3 className="text-4xl sm:text-5xl font-semibold text-brand mb-4 font-poppins">Your Admission Journey, Your Way!</h3>
-          <p className="text-ink text-lg">Pick your current stage and then follow the next action!</p>
+          <h2 className="text-ink mb-2 section-subheading">2026-27 Timeline</h2>
+          <h3 className="text-brand mb-4 section-heading">Your Admission Journey, Your Way!</h3>
+          <p className="text-ink section-body">Pick your current stage and then follow the next action!</p>
         </div>
 
         {/* Selection Box */}

@@ -284,13 +284,13 @@ export default function ProgramFilter() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-xl sm:text-2xl font-bold mb-2 text-ink font-poppins">
+          <h2 className="text-ink mb-2 section-subheading">
             Find your programme
           </h2>
-          <h3 className="text-4xl sm:text-[2.75rem] font-bold text-[#ED383F] mb-4 tracking-tight leading-tight font-poppins">
+          <h3 className="text-[#ED383F] mb-4 section-heading">
             Build your shortlist in seconds.
           </h3>
-          <p className="text-sm sm:text-[15px] text-ink/80 max-w-lg mx-auto leading-relaxed">
+          <p className="text-ink/80 max-w-lg mx-auto leading-relaxed section-body">
             Pick a level, a field, or the entrance test you've taken,
             <br className="hidden sm:block" /> results update instantly.
           </p>

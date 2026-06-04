@@ -26,11 +26,11 @@ export function DynamicWhyPUGoa({
 
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-12 py-24 sm:py-36 flex flex-col items-start justify-center">
         
-        <h2 className="text-white font-medium text-lg sm:text-xl mb-3 tracking-wide">
+        <h2 className="text-white mb-3 section-subheading">
           {data.title}
         </h2>
         
-        <h3 className="font-poppins font-bold text-[40px] sm:text-[56px] leading-[1.1] tracking-tight text-[#FDE047] mb-16 max-w-2xl">
+        <h3 className="text-[#FDE047] mb-16 max-w-2xl section-heading">
           {data.subtitle}
         </h3>
 

@@ -63,8 +63,8 @@ export function PlacementsFaq() {
       <div className="mx-auto max-w-[1100px] px-4 sm:px-6">
         
         <div className="text-center mb-12">
-          <h3 className="text-black font-bold text-[22px] sm:text-2xl mb-2 tracking-tight">FAQs</h3>
-          <h2 className="text-[#EF4444] font-black text-3xl sm:text-[46px] tracking-tight leading-tight">
+          <h3 className="text-black mb-2 section-subheading">FAQs</h3>
+          <h2 className="text-[#EF4444] section-heading">
             Frequently asked questions about placements.
           </h2>
         </div>

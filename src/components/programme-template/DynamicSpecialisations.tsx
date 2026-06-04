@@ -14,13 +14,13 @@ export function DynamicSpecialisations({ data }: { data: SpecialisationsData }) 
         
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h2 className="text-ink font-semibold text-[22px] sm:text-[26px] tracking-wide mb-2">
+          <h2 className="text-ink mb-2 section-subheading">
             Specialisations
           </h2>
-          <h3 className="font-poppins font-bold text-[40px] sm:text-[56px] leading-[1.1] tracking-tight text-[#E73649] mb-4">
+          <h3 className="text-[#E73649] mb-4 section-heading">
             Multiple futures. One degree.
           </h3>
-          <p className="text-ink/80 text-base sm:text-lg max-w-2xl mx-auto">
+          <p className="text-ink/80 max-w-2xl mx-auto section-body">
             {data.description} Tap a specialisation to see what you'll learn, the tools you'll use and the careers it opens up.
           </p>
         </div>

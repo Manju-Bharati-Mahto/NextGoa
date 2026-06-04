@@ -131,13 +131,13 @@ export function PlacementsByTheNumbers() {
   return (
     <section className="w-full bg-white py-20 border-t border-gray-100">
       <div className="max-w-6xl mx-auto px-6 flex flex-col items-center">
-        <h3 className="font-poppins font-semibold text-lg text-gray-900 tracking-wide mb-2 transition-all duration-300">
+        <h3 className="text-gray-900 mb-2 transition-all duration-300 section-subheading text-center">
           {activeSlide === 0 ? "Sector destinations" : "Package distribution"}
         </h3>
-        <h2 className="font-poppins font-bold text-3xl sm:text-5xl text-[#E73649] text-center mb-3 transition-all duration-300">
+        <h2 className="text-[#E73649] text-center mb-3 transition-all duration-300 section-heading">
           {activeSlide === 0 ? "Where graduates go and what they earn." : "% of placed students per band"}
         </h2>
-        <p className="font-[family-name:var(--font-poppins)] text-sm sm:text-base text-gray-800 text-center mb-16 transition-all duration-300">
+        <p className="text-gray-800 text-center mb-16 transition-all duration-300 section-body">
           {activeSlide === 0 
             ? "Two views of one cohort - package bands on the left, sector destinations on the right."
             : "Highest: ₹60 LPA · Median confirmed in official placement report."}

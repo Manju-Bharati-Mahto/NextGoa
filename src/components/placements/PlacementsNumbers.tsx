@@ -13,13 +13,13 @@ export function PlacementsNumbers() {
       
       <div className="relative z-10 mx-auto max-w-7xl px-6 py-28 sm:py-40 flex flex-col items-center justify-center">
         {/* Heading Section */}
-        <p className="font-[family-name:var(--font-poppins)] text-sm sm:text-base font-semibold tracking-wider text-white/90">
+        <p className="text-white mb-2 text-center section-subheading">
           Numbers that matter
         </p>
-        <h2 className="mt-2 text-center font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-white">
+        <h2 className="text-center text-white section-heading">
           The ecosystem in figures.
         </h2>
-        <p className="mt-3 text-center font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] leading-relaxed text-white/90">
+        <p className="text-center text-white/90 section-body">
           Two decades of placement results, distilled.
         </p>
 

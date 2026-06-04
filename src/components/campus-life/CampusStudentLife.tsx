@@ -34,13 +34,13 @@ export function CampusStudentLife() {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full flex flex-col items-center text-center mb-12 sm:mb-16 mt-8">
-        <h3 className="font-poppins font-semibold text-[20px] sm:text-[24px] text-white mb-2">
+        <h3 className="text-white mb-2 section-subheading">
           Clubs, Events & Student Life
         </h3>
-        <h2 className="font-poppins font-bold text-[36px] sm:text-[46px] lg:text-[54px] leading-[1.1] tracking-tight text-white mb-4">
+        <h2 className="text-white mb-4 section-heading">
           A campus alive with possibility.
         </h2>
-        <p className="font-[family-name:var(--font-poppins)] text-white/90 text-[15px] sm:text-[18px] max-w-2xl mx-auto leading-relaxed">
+        <p className="text-white/90 max-w-2xl mx-auto section-body">
           Student-led clubs across academic, arts, sports, social impact, and entrepreneurship.
         </p>
       </div>

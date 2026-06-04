@@ -42,10 +42,10 @@ export function FacultyDeans() {
     <section className="bg-[#F8F8F8] py-20 px-6">
       <div className="mx-auto max-w-6xl">
         <div className="text-center mb-12">
-          <h2 className="font-poppins font-bold text-[32px] sm:text-[44px] leading-tight text-ink">
+          <h2 className="text-ink section-heading">
             Faculty Deans
           </h2>
-          <p className="mt-2 font-[family-name:var(--font-poppins)] text-[16px] sm:text-[18px] text-ink/80">
+          <p className="mt-2 text-ink/80 section-body">
             Six deans leading our faculties.
           </p>
         </div>
