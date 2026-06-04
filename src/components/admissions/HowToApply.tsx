@@ -6,7 +6,7 @@ export function HowToApply() {
     <section className="w-full bg-[#faf9f6] py-20 px-4 sm:px-8 xl:px-16">
       <div className="max-w-[1200px] mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-ink mb-2 section-subheading">How to apply</h2>
+          <h2 className="text-ink mb-2 section-subheading">How to Apply</h2>
           <h3 className="text-brand mb-4 section-heading">Follow These 4 Simple Steps</h3>
           <p className="text-ink section-body">Choose what suits you. Every channel reaches to our admissions team!</p>
         </div>

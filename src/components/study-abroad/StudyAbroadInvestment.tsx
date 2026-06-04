@@ -15,7 +15,7 @@ export default function StudyAbroadInvestment() {
           one EMI at a time.
         </h2>
         <p className="text-[#1f2022] text-center mb-12 section-subheading">
-          Explore your fees options carefully!
+          Explore Your Fees Options Carefully!
         </p>
 
         {/* Cards Container */}

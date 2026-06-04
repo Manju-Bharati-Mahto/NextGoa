@@ -55,7 +55,7 @@ export function OutcomesByFaculty() {
         
         {/* Header */}
         <div className="text-center mb-12">
-          <h3 className="text-[#333333] mb-2 section-subheading">By faculty</h3>
+          <h3 className="text-[#333333] mb-2 section-subheading">By Faculty</h3>
           <h2 className="text-[#F14646] mb-4 section-heading">Outcomes by faculty.</h2>
           <p className="text-[#666666] max-w-2xl mx-auto section-body">
             Every faculty has its own recruiter network and graduate destinations. Pick yours.

@@ -112,7 +112,7 @@ export default function StudyAbroadPathways() {
       <div className="max-w-6xl mx-auto flex flex-col items-center">
         {/* Header */}
         <h3 className="text-gray-900 mb-2 text-center section-subheading">
-          Compare pathways
+          Compare Pathways
         </h3>
         <h2 className="text-[#f0424e] mb-4 text-center section-heading">
           From Goa To Global Degree,<br className="hidden md:block" />

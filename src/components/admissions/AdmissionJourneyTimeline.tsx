@@ -107,7 +107,7 @@ export function AdmissionJourneyTimeline() {
       <div className="max-w-[1400px] mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-ink mb-2 section-subheading">2026-27 timeline</h2>
+          <h2 className="text-ink mb-2 section-subheading">2026-27 Timeline</h2>
           <h3 className="text-brand mb-4 section-heading">Your Admission Journey, Your Way!</h3>
           <p className="text-ink section-body">Pick your current stage and then follow the next action!</p>
         </div>

@@ -71,7 +71,7 @@ export function CareerReadiness() {
         
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <h3 className="text-black mb-2 section-subheading">Career readiness</h3>
+          <h3 className="text-black mb-2 section-subheading">Career Readiness</h3>
           <h2 className="text-[#F13C4D] section-heading">How PU Goa prepares you.</h2>
         </div>
 

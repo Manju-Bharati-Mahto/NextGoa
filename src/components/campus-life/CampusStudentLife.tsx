@@ -35,7 +35,7 @@ export function CampusStudentLife() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full flex flex-col items-center text-center mb-12 sm:mb-16 mt-8">
         <h3 className="text-white mb-2 section-subheading">
-          Clubs, events & student life
+          Clubs, Events & Student Life
         </h3>
         <h2 className="text-white mb-4 section-heading">
           A campus alive with possibility.

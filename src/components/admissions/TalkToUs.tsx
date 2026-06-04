@@ -31,7 +31,7 @@ export function TalkToUs() {
         {/* Left Side: Copy & Info */}
         <div className="w-full lg:w-[45%] xl:w-1/2 flex flex-col pt-4">
           <h3 className="text-ink mb-2 !text-left section-subheading">
-            Talk to us
+            Talk to Us
           </h3>
           <h2 className="text-[#ee364f] !text-left mb-6 section-heading">
             Talk to a<br className="hidden lg:block" /> counsellor in 24<br className="hidden lg:block" /> hours.

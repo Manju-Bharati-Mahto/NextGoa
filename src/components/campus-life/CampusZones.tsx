@@ -5,7 +5,7 @@ export function CampusZones() {
         {/* Header */}
         <div className="flex flex-col items-center text-center max-w-5xl mx-auto mb-16">
           <h3 className="text-[#1F1F1F] mb-2 section-subheading">
-            Five campus zones
+            Five Campus Zones
           </h3>
           <h2 className="text-[#E73649] mb-4 lg:whitespace-nowrap section-heading">
             A Campus Designed On Five Pillars

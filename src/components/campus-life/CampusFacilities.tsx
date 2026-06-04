@@ -43,7 +43,7 @@ export function CampusFacilities() {
       <div className="mx-auto max-w-6xl sm:px-6 px-4 relative z-20 flex flex-col items-center">
         {/* Header content */}
         <div className="flex flex-col items-center text-center max-w-4xl">
-          <img src="/campus-life/sa.svg" alt="Campus life Icon" className="w-[80px] sm:w-[100px] h-auto mb-4" />
+          <img src="/campus-life/sa.svg" alt="Campus Life Icon" className="w-[80px] sm:w-[100px] h-auto mb-4" />
           <h3 className="text-[#1F1F1F] mb-1 section-subheading">Campus Life</h3>
           <h2 className="leading-[1.1] text-[#E53B4A] section-heading">
             A campus that feels like a<br className="hidden sm:block" /> destination.

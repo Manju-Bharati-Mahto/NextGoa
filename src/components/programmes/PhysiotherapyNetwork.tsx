@@ -7,7 +7,7 @@ export default function PhysiotherapyNetwork() {
         <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8 text-center">
           
           <h3 className="text-ink mb-2 section-subheading">
-            Hospital & industry network
+            Hospital & Industry Network
           </h3>
           <h2 className="text-[#E73649] mb-4 section-heading">
             Where you'll train and serve.

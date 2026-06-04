@@ -243,7 +243,7 @@ export function LatestStories() {
               The PU Goa Weekly
             </span>
             <h3 className="text-white section-subheading">
-              Placements, programme launches, scholarships — once a week.
+              Placements, Programme Launches, Scholarships — Once a Week.
             </h3>
             <p className="mt-3 text-white/60 text-sm">
               No spam. Unsubscribe any time.

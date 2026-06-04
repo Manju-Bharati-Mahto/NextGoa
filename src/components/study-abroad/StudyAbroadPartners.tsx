@@ -12,7 +12,7 @@ export default function StudyAbroadPartners() {
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         {/* Header */}
         <h3 className="text-gray-900 mb-2 text-center section-subheading">
-          Partner universities
+          Partner Universities
         </h3>
         <h2 className="text-[#f0424e] mb-4 text-center section-heading">
           A global degree, one connected path.

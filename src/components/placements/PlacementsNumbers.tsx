@@ -14,7 +14,7 @@ export function PlacementsNumbers() {
       <div className="relative z-10 mx-auto max-w-7xl px-6 py-28 sm:py-40 flex flex-col items-center justify-center">
         {/* Heading Section */}
         <p className="text-white mb-2 text-center section-subheading">
-          Numbers that matter
+          Numbers That Matter
         </p>
         <h2 className="text-center text-white section-heading">
           The ecosystem in figures.

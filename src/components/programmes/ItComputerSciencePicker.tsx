@@ -92,7 +92,7 @@ export default function ItComputerSciencePicker() {
         {/* Header Section */}
         <div className="text-center mb-12">
           <h2 className="text-ink mb-2 section-subheading">
-            IT &amp; computer science
+            IT &amp; Computer Science
           </h2>
           <h3 className="text-[#0CAADD] mb-10 section-heading">
             Faculty of IT &amp; Computer Science

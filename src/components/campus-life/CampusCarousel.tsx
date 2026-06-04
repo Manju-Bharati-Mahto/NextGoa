@@ -19,7 +19,7 @@ export function CampusCarousel() {
       <div className="relative z-10 mx-auto w-full flex flex-col items-center py-32 sm:py-48">
         {/* Header content */}
         <div className="text-center px-6 max-w-3xl mb-12">
-          <h3 className="text-white mb-2 section-subheading">The campus</h3>
+          <h3 className="text-white mb-2 section-subheading">The Campus</h3>
           <h2 className="text-white mb-6 section-heading">
             A Campus Built for Inspiration
           </h2>

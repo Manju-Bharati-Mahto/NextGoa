@@ -13,7 +13,7 @@ export function DynamicLabsAndLearning({ data }: { data: LabsData }) {
         {/* Header Section */}
         <div className="text-center mb-16">
           <h2 className="text-ink mb-2 section-subheading">
-            {data.subtitle || "Labs & hands-on learning"}
+            {data.subtitle || "Labs & Hands-on Learning"}
           </h2>
           <h3 className="text-[#E73649] mb-4 section-heading">
             {data.title}

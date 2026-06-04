@@ -63,7 +63,7 @@ export function BeyondPlacements() {
           {/* Left Content */}
           <div className="max-w-xl lg:max-w-2xl lg:pr-8 mx-auto xl:mx-0">
             <h3 className="text-[#1F1F1F] mb-3 !text-left section-subheading">
-              Beyond placements
+              Beyond Placements
             </h3>
             <h2 className="text-[#E73649] mb-8 !text-left section-heading">
               Not every graduate takes a job offer.

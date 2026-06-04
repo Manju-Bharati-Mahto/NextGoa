@@ -41,7 +41,7 @@ export default function StudyAbroadModels() {
         {/* Header */}
         <div className="relative mb-14 text-center">
           <p className="text-white mb-1 section-subheading">
-            Global pathways
+            Global Pathways
           </p>
           <h2 className="text-white tracking-tight section-heading">
             Three Models. Six Countries.

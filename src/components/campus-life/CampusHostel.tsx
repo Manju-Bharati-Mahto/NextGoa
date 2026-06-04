@@ -17,7 +17,7 @@ export function CampusHostel() {
         {/* Header */}
         <div className="text-center mb-16 lg:mb-24">
           <h3 className="text-white mb-2 section-subheading">
-            Hostels & residences
+            Hostels & Residences
           </h3>
           <h2 className="leading-[1.1] text-[#FEDB2F] mb-6 section-heading">
             Your home at PU Goa.
