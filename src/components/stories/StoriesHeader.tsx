@@ -4,7 +4,7 @@ export function StoriesHeader() {
   return (
     <section 
       id="hero"
-      className="relative flex w-full min-h-[100vh] md:min-h-[68.6vw] flex-col items-center justify-start pt-32 overflow-hidden bg-[url('/story-bg.png')] bg-cover bg-center bg-no-repeat"
+      className="relative flex w-full min-h-[100vh] md:min-h-[68.6vw] flex-col items-center justify-start pt-32 overflow-hidden bg-[url('/story-bg.webp')] bg-cover bg-center bg-no-repeat"
     >
       {/* Light gradient overlay to ensure text is readable if background gets too bright */}
       <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-transparent pointer-events-none" />

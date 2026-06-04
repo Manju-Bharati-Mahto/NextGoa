@@ -15,7 +15,7 @@ export default function PharmacyAccreditation() {
           
           <div className="relative w-full max-w-[900px] h-[120px] sm:h-[180px]">
             <Image 
-              src="/AICTE.png" 
+              src="/AICTE.webp" 
               alt="Recognition and Accreditation Logos" 
               fill
               className="object-contain"

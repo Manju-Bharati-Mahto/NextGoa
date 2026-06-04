@@ -17,28 +17,28 @@ const carouselCards: CarouselCard[] = [
     tagClass: "bg-brand text-white",
     title: "Awareness Session on HIV/AIDS",
     body: "An expert session emphasised awareness, dignity and innovation in building a healthier future.",
-    image: "/latest-hiv-aids.png",
+    image: "/latest-hiv-aids.webp",
   },
   {
     tag: "Innovation",
     tagClass: "bg-violet-600 text-white",
     title: "State Private University Status Granted",
     body: "Parul University Goa officially receives private state university status, introducing state-of-the-art labs and academic courses.",
-    image: "/latest-campus-status.png",
+    image: "/latest-campus-status.webp",
   },
   {
     tag: "Placements",
     tagClass: "bg-ocean text-white",
     title: "Placement Drive 2026 Commences",
     body: "Top recruiters including tier-1 tech firms and hotel chains visit the South Goa campus for placement drives.",
-    image: "/latest-placements-start.png",
+    image: "/latest-placements-start.webp",
   },
   {
     tag: "Research",
     tagClass: "bg-teal-600 text-white",
     title: "Marine Life Preservation Research",
     body: "Lighthouse research cell launches a study on preservation of coastal marine ecosystems in collaboration with international bodies.",
-    image: "/latest-marine-research.png",
+    image: "/latest-marine-research.webp",
   },
 ];
 
