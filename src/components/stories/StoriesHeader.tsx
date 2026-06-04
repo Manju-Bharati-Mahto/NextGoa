@@ -18,7 +18,7 @@ export function StoriesHeader() {
 
         {/* Large heading */}
         <h1 className="mx-auto w-full max-w-none tracking-tight text-brand section-heading">
-          PU Goa Stories-News, Academics, Placements, Research and more.
+          PU Goa Stories
         </h1>
 
         {/* Sub-heading description */}
