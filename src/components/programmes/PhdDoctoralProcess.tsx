@@ -39,7 +39,7 @@ export default function PhdDoctoralProcess() {
       <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 sm:mb-20">
           <h2 className="text-ink mb-3 section-subheading">
-            Doctoral Process
+            Doctoral process
           </h2>
           <h3 className="text-[#E73649] mb-4 section-heading">
             Coursework to viva.

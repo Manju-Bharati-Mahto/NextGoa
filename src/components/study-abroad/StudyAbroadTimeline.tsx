@@ -54,7 +54,7 @@ export default function StudyAbroadTimeline() {
         {/* Header */}
         <div className="text-center mb-16">
           <p className="text-[#1f2022] mb-2 section-subheading">
-            How It Works
+            How it works
           </p>
           <h2 className="text-[#eb3b47] tracking-tight leading-tight section-heading">
             Application timeline and process.

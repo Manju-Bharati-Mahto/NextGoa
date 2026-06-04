@@ -45,7 +45,7 @@ export default function LabsAndLearning() {
         {/* Header Section */}
         <div className="text-center mb-16">
           <h2 className="text-ink mb-2 section-subheading">
-            Labs & Hands-on Learning
+            Labs & hands-on learning
           </h2>
           <h3 className="text-[#E73649] mb-4 section-heading">
             Where you'll actually build.

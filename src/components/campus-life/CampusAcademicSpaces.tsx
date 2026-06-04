@@ -33,7 +33,7 @@ export function CampusAcademicSpaces() {
     <section className="relative w-full bg-white sm:py-20 pt-2 pb-10 lg:py-28 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mb-12 sm:mb-16 flex flex-col items-center text-center">
         <h3 className="text-[#1F1F1F] mb-2 section-subheading">
-          Academic Spaces
+          Academic spaces
         </h3>
         <h2 className="leading-[1.1] text-[#E73649] mb-4 section-heading">
           Built for inspiration.

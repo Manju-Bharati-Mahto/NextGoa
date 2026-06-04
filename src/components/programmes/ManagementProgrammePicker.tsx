@@ -47,7 +47,7 @@ export default function ManagementProgrammePicker() {
         {/* Header Section */}
         <div className="text-center mb-12">
           <h2 className="text-ink mb-2 section-subheading">
-            Programme Picker
+            Programme picker
           </h2>
           <h3 className="text-[#E73649] mb-10 section-heading">
             Pick your degree level.

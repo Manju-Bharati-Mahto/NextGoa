@@ -12,7 +12,7 @@ export function EntranceExaminations() {
       <div className="max-w-[1200px] mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
-          <h2 className="text-ink mb-2 section-subheading">Entrance Examinations</h2>
+          <h2 className="text-ink mb-2 section-subheading">Entrance examinations</h2>
           <h3 className="text-[#ee364f] mb-4 section-heading">
             Two Pathways, <br className="hidden sm:block" />
             Designed Around Your Journey

@@ -18,7 +18,7 @@ export default function AlliedHealthLabs() {
       <div className="relative z-10 mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
         <div className="text-center mb-12 sm:mb-16">
           <p className="text-ink mb-2 section-subheading">
-            Labs & Hands-on Learning
+            Labs & hands-on learning
           </p>
           <h2 className="text-[#E73649] section-heading">
             Where you'll actually practice.

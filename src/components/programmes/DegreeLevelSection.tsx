@@ -101,7 +101,7 @@ export default function DegreeLevelSection() {
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 font-[family-name:var(--font-poppins)]">
         {/* Header Content */}
         <div className="text-center text-white mb-16 sm:mb-20">
-          <h2 className="text-white mb-3 section-subheading">By Degree Level</h2>
+          <h2 className="text-white mb-3 section-subheading">By degree level</h2>
           <h3 className="text-[#FFD523] mb-5 section-heading">
             Choose by qualification.
           </h3>

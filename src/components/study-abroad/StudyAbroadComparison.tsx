@@ -30,7 +30,7 @@ export default function StudyAbroadComparison() {
         
         {/* Header Section */}
         <div className="text-center mb-12 pt-6">
-          <p className="text-white mb-3 section-subheading">Why PU Goa Pathway</p>
+          <p className="text-white mb-3 section-subheading">Why PU Goa pathway</p>
           <h2 className="text-[#FFD523] mb-4 section-heading">
             Why study abroad with PU Goa<br className="hidden sm:block" /> instead of going directly.
           </h2>

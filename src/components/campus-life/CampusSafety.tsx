@@ -24,7 +24,7 @@ export function CampusSafety() {
         {/* Title Section */}
         <div className="text-center mb-12 sm:mb-16">
           <h3 className="text-[#1F1F1F] mb-2 section-subheading">
-            Safety & Security
+            Safety & security
           </h3>
           <h2 className="leading-[1.1] text-[#1B8136] mb-4 section-heading">
             Safe for students,<br />reassuring for parents.

@@ -37,7 +37,7 @@ export default function ManagementLearningEnvironment() {
         {/* Header Section */}
         <div className="text-center mb-16">
           <h2 className="text-ink mb-2 section-subheading">
-            Learning Environment
+            Learning environment
           </h2>
           <h3 className="text-[#E73649] section-heading">
             More than a classroom.

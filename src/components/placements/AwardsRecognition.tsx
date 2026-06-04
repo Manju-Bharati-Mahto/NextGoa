@@ -11,7 +11,7 @@ export function AwardsRecognition() {
         {/* Left Column */}
         <div className="flex flex-col justify-center text-left py-4">
           <h3 className="text-[#FFD700] mb-4 sm:mb-6 !text-left section-subheading">
-            Awards & Recognition
+            Awards & recognition
           </h3>
           <h2 className="text-white tracking-tight !text-left section-heading">
             Recognised,<br />

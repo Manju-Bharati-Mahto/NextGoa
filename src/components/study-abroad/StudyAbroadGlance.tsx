@@ -7,7 +7,7 @@ export default function StudyAbroadGlance() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h3 className="text-ink mb-4 section-subheading">At a Glance</h3>
+          <h3 className="text-ink mb-4 section-subheading">At a glance</h3>
           <h2 className="text-[#E9324D] section-heading">
             Your global degree, in numbers.
           </h2>

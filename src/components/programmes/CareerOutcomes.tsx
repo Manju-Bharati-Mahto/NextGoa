@@ -47,7 +47,7 @@ export default function CareerOutcomes() {
 
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-12 py-24 sm:py-32 text-center flex flex-col items-center">
         <h2 className="text-white mb-4 section-subheading">
-          Career Outcomes
+          Career outcomes
         </h2>
         
         <h3 className="text-sunshine mb-6 section-heading">

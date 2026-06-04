@@ -109,7 +109,7 @@ export function CampusLocation() {
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <h3 className="text-[#1F1F1F] mb-2 section-subheading">
-            Location & Transport
+            Location & transport
           </h3>
           <h2 className="leading-[1.1] text-[#E73649] mb-4 section-heading">
             Getting to campus and around Goa.

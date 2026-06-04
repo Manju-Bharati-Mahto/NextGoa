@@ -56,7 +56,7 @@ export default function StudyAbroadPostGraduation() {
         {/* Header */}
         <div className="text-center mb-12">
           <p className="text-[#1f2022] mb-2 section-subheading">
-            After You Finish
+            After you finish
           </p>
           <h2 className="text-[#eb3b47] tracking-tight leading-tight mb-4 section-heading">
             Work-Life-Style After Graduation<br className="hidden md:block" /> begins right here!

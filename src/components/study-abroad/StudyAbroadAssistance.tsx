@@ -63,7 +63,7 @@ export default function StudyAbroadAssistance() {
         {/* Header */}
         <div className="text-center mb-16">
           <p className="text-white mb-3 section-subheading">
-            Extended Assistance
+            Extended assistance
           </p>
           <h2 className="text-white tracking-tight section-heading">
             We go an extra mile to support you!

@@ -87,7 +87,7 @@ export default function StudyAbroadOpportunities() {
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col items-center py-24">
         {/* Header Text */}
         <p className="text-white mb-3 section-subheading">
-          Begin in Goa · Graduate in the World
+          Begin in Goa · graduate in the world
         </p>
         <h2 className="text-white text-center leading-tight mb-6 max-w-4xl section-heading">
           Turn your wanderlust into a globally recognised degree

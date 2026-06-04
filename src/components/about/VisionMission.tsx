@@ -17,7 +17,7 @@ export function VisionMission() {
         {/* Header */}
         <div className="text-center">
           <h2 className="text-ink section-subheading">
-            Our Direction
+            Our direction
           </h2>
           <h3 className="mt-2 text-brand section-heading">
             Vision and Mission.
