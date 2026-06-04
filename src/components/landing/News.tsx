@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Eyebrow } from "./Decor";
 
 /**
@@ -58,9 +59,9 @@ export function News() {
         </ul>
 
         <p className="mt-10 text-center">
-          <a href="#news" className="font-poppins text-lg font-bold text-brand hover:text-brand-dark">
+          <Link href="/stories" className="font-poppins text-lg font-bold text-brand hover:text-brand-dark">
             All news →
-          </a>
+          </Link>
         </p>
       </div>
     </section>

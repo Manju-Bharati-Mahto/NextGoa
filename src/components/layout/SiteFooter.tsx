@@ -16,7 +16,7 @@ const columns: { heading: string; links: { label: string; href: string }[] }[] =
       { label: "Campus Life", href: "/campus-life" },
       { label: "Placements", href: "/placements" },
       { label: "Study Abroad", href: "#international" },
-      { label: "Stories", href: "#news" },
+      { label: "Stories", href: "/stories" },
     ],
   },
   {

@@ -42,6 +42,13 @@ export const staticRoutes: StaticRoute[] = [
     title: "Admissions 2026",
     summary: "Eligibility, application process, fees, and how to apply for the 2026 intake.",
   },
+  {
+    path: "/stories",
+    changeFrequency: "weekly",
+    priority: 0.8,
+    title: "Stories",
+    summary: "News, placements, research, academics, and student life stories from Parul University Goa.",
+  },
   // --- Add as each section ships ---
   // { path: "/programmes", changeFrequency: "weekly",  priority: 0.9, title: "Programmes", summary: "All undergraduate, postgraduate, and doctoral programmes." },
   // { path: "/about",      changeFrequency: "monthly", priority: 0.6, title: "About",      summary: "History, accreditation, leadership, and rankings." },
