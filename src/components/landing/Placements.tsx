@@ -16,17 +16,17 @@ const stats = [
       </>
     ),
     titleClass: "text-[36px] sm:text-[32px] lg:text-[36px]",
-    label: "Best Placement University - consecutive years.",
+    label: "Best University in Placements for 3 Consecutive Years",
   },
   {
-    title: "₹58 Cr+",
+    title: "58Cr+",
     titleClass: "text-[56px] sm:text-[48px] lg:text-[56px]",
-    label: "Best Placement University - consecutive years.",
+    label: "Govt. Research Grant",
   },
   {
     title: "120+",
     titleClass: "text-[56px] sm:text-[48px] lg:text-[56px]",
-    label: "Best Placement University - consecutive years.",
+    label: "Partnerships with Foreign Universities",
   },
 ];
 
@@ -64,7 +64,7 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
           {isAbout ? "Excellence That Needs No Introduction!" : "The ecosystem in figures."}
         </h2>
         <p className="mt-3 text-center section-body text-ink">
-          {isAbout ? "Figures from Parul University, Gujarat." : "Two decades of placement results, distilled."}
+          {isAbout ? "Figures from Parul University, Gujarat." : "Three decades of placement results, distilled."}
         </p>
 
         {/* ── Headline package card ────────────────────────────────────────
@@ -81,7 +81,7 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
             <div className="p-6 pb-0 flex flex-col justify-start relative z-20">
               <div>
                 <span className="inline-block rounded-full bg-white px-4 py-2 mb-1 font-[family-name:var(--font-poppins)] font-normal text-[14px] text-[#1F1F1F]">
-                  Highest package · 2027
+                  Highest package · batch of 2027
                 </span>
               </div>
               <div className="mt-4 flex items-end gap-1 text-white">
@@ -90,8 +90,8 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
               </div>
               <div className="w-full h-px bg-white/30 my-4" />
               <p className="section-body text-white/90">
-                Awarded to two B.Tech CSE students in a single recruitment
-                cycle - the benchmark the PU ecosystem is producing today.
+                Awarded to two B.Tech. CSE students (Batch of 2027) in a single recruitment
+                cycle. It&apos;s the benchmark the PU ecosystem is producing today.
               </p>
             </div>
 
@@ -115,7 +115,7 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
             <div className="p-10 flex flex-col justify-center max-w-[40%]" style={{ minHeight: "260px" }}>
               <div>
                 <span className="inline-block rounded-full bg-white px-5 py-2 font-[family-name:var(--font-poppins)] font-normal text-[20px] text-[#1F1F1F]">
-                  Highest package · 2027
+                  Highest package · batch of 2027
                 </span>
               </div>
               <div className="mt-5 flex items-end gap-2 text-white">
@@ -124,8 +124,8 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
               </div>
               <div className="w-full h-px bg-white/30 my-4" />
               <p className="section-body text-white/90">
-                Awarded to two B.Tech CSE students in a single recruitment
-                cycle - the benchmark the PU ecosystem is producing today.
+                Awarded to two B.Tech. CSE students (Batch of 2027) in a single recruitment
+                cycle. It&apos;s the benchmark the PU ecosystem is producing today.
               </p>
             </div>
           </div>
@@ -168,7 +168,7 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
               Recruiting companies*
             </h3>
             <p className="mt-0.5 sm:mt-2 font-[family-name:var(--font-poppins)] font-normal text-[11px] sm:text-[18px] text-zinc-500">
-              Across the Parul ecosystem, every year.
+              Across the Parul University ecosystem, every year.
             </p>
           </div>
         </div>

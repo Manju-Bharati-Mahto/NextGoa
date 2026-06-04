@@ -22,7 +22,7 @@ const columns: { heading: string; links: { label: string; href: string }[] }[] =
   {
     heading: "Programmes",
     links: [
-      { label: "Engineering, IT & CS", href: "#programmes" },
+      { label: "B.Tech", href: "#programmes" },
       { label: "Management Studies", href: "#programmes" },
       { label: "Pharmacy", href: "#programmes" },
       { label: "Nursing", href: "#programmes" },

@@ -15,9 +15,9 @@ export function LeadershipTeam() {
         "He brings 17+ years of academic and administrative expertise. His major focus is on IoT, cloud security, and mobile technologies with 29+ globally published research papers.",
     },
     {
-      name: "Dr. Dhaval Nimavat",
-      title: "Registrar",
-      tagline: "CONTROLLER OF EXAMINATION",
+      name: "Dr. Ganesh S. Chavan",
+      title: "Chief Finance and Accounts Officer",
+      tagline: "FINANCE & ACCOUNTS",
       description:
         "An academic strategist with 17+ years in teaching, industry, and consultancy. He has authored 45+ research papers along with books and patents in digital finance.",
     },

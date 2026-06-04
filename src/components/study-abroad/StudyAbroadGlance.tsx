@@ -23,7 +23,7 @@ export default function StudyAbroadGlance() {
             <div className="relative z-10">
               <h4 className="text-6xl sm:text-7xl font-bold text-white mb-2 leading-none font-poppins">120+</h4>
               <p className="text-xl font-bold text-white tracking-wide mb-1 uppercase">Partner Universities</p>
-              <p className="text-md text-white/90">Across the Parul Ecosystem</p>
+              <p className="text-md text-white/90">Across the Parul University Ecosystem</p>
             </div>
             {/* Logos cluster at bottom right */}
             <div className="absolute bottom-3 -right-5 flex items-center pointer-events-none">

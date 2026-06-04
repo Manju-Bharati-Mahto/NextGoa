@@ -23,7 +23,7 @@ export function TransportAndHostel() {
           </h2>
           
           <p className="text-ink/80 mb-8 max-w-[500px] section-body">
-            PU Goa operates a structured bus service covering the entire state - Panaji,
+            PU Goa operates a structured bus service covering the entire state: Panaji,
             Margao, Vasco, Mapusa, Ponda, Pernem, Bicholim, Canacona and more.
           </p>
           

@@ -39,7 +39,7 @@ const faqs: FaqItem[] = [
   {
     question: "What's the difference between PU Goa and Parul University Gujarat?",
     answer:
-      "PU Goa is Goa's first State Private University, drawing on two decades of teaching, research, and placement experience from Parul University in Gujarat while operating as its own campus on the Goan coast.",
+      "PU Goa is Goa's First State Private University, drawing on three decades of teaching, research, and placement experience from Parul University in Gujarat while operating as its own campus on the Goan coast.",
   },
 ];
 

@@ -328,7 +328,7 @@ export function PlacementsByTheNumbers() {
         {/* CTA Bar */}
         <div className="w-full max-w-[1000px] bg-black rounded-[20px] py-5 px-6 md:px-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl mx-auto mt-2">
           <div className="text-center md:text-left">
-            <h4 className="text-white font-poppins font-semibold text-[22px] tracking-tight">Want PU Goa to recruit you next?</h4>
+            <h4 className="text-white font-poppins font-semibold text-[22px] tracking-tight">Want to be the next choice of these top recruiters?</h4>
             <p className="text-[#A1A1AA] font-sans text-[15px] mt-0.5 font-light">
               Apply now or talk to a career counsellor.
             </p>

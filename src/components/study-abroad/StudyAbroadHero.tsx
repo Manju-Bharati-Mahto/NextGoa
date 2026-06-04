@@ -21,9 +21,7 @@ export default function StudyAbroadHero() {
         </h1>
 
         <p className="max-w-[900px] text-ink/80 section-body">
-          Kickstart your degree at Parul University Goa and finish abroad with a globally recognised qualification.
-          Study Pathway Programmes (2+2, 1+1, 3+1+1, 3.5+1.5) with partner universities across the USA, UK, Canada,
-          Germany, France, Australia and New Zealand.
+          Start your degree in India and finish abroad through our Pathway Programs with partner universities across the USA, UK, Canada, Germany, France, Australia, and New Zealand
         </p>
       </div>
 

@@ -26,7 +26,7 @@ export function StartupEcosystem() {
             Startup Ecosystem
           </h3>
           <h2 className="text-[#DF3B4B] section-heading">
-            For those who want to build,<br />Not Just Placed
+            For Those Who Want to Build,<br />Not Just Be Placed!
           </h2>
         </div>
 
@@ -68,7 +68,7 @@ export function StartupEcosystem() {
                 ASSOCHAM AWARD
               </div>
               <p className="text-gray-600 text-sm mt-3 leading-relaxed">
-                Best Placement University - consecutive years.
+                Best University in Placements for 3 Consecutive Years
               </p>
             </div>
 

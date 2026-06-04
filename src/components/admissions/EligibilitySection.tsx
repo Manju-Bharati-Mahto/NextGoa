@@ -16,7 +16,7 @@ interface EligibilityCard {
 
 const CARDS: EligibilityCard[] = [
   {
-    title: "B.Tech, BCA, BBA, B.Pharm, BHMCT, B.Sc, B.AOTT, B.MLS",
+    title: "B.Tech., BCA, BBA, B.Pharm., BHMCT, B.Sc., B.AOTT, B.MLS",
     level: "UG",
     qualification: "10+2 in relevant stream",
     minimum: "45-50%",
@@ -24,7 +24,7 @@ const CARDS: EligibilityCard[] = [
     theme: "blue",
   },
   {
-    title: "Lateral Entry (B.Tech LE, B.Pharm LE)",
+    title: "Lateral Entry (B.Tech. LE, B.Pharm. LE)",
     level: "UG",
     qualification: "Diploma in relevant discipline",
     minimum: "45%",
@@ -200,7 +200,7 @@ export function EligibilitySection() {
               onClick={() => setShowAll(!showAll)}
               className="border border-gray-300 hover:border-gray-400 text-ink font-semibold px-6 py-2.5 rounded-full transition-colors bg-white shadow-sm"
             >
-              {showAll ? "View less" : "View all programmes"}
+              {showAll ? "View less" : "View all programs"}
             </button>
           </div>
         )}

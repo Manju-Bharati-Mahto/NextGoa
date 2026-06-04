@@ -83,7 +83,7 @@ export function AlumniStories() {
                 <div className="relative z-10 grid grid-cols-2 gap-4">
                   <div>
                     <p className="text-gray-400 font-sans text-xs uppercase tracking-wider mb-1.5">Now at</p>
-                    <p className="text-white font-sans font-medium text-sm sm:text-[15px]">Tier-1 Tech Recruiter</p>
+                    <p className="text-white font-sans font-medium text-sm sm:text-[15px]">Microsoft</p>
                   </div>
                   <div>
                     <p className="text-gray-400 font-sans text-xs uppercase tracking-wider mb-1.5">Package</p>

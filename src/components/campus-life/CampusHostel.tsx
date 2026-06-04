@@ -23,7 +23,7 @@ export function CampusHostel() {
             Your home at PU Goa.
           </h2>
           <p className="text-white/90 max-w-2xl mx-auto section-body">
-            On-campus residential blocks designed around safety, study and<br className="hidden sm:block" /> community. separate accommodation for males and females.
+            On-campus residential blocks designed around safety, study and<br className="hidden sm:block" /> community. Separate accommodation for males and females.
           </p>
         </div>
 

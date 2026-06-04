@@ -31,14 +31,13 @@ export function ExamDatesTicket() {
 
         {/* Bottom part */}
         <div className="flex items-center justify-between gap-[2cqw] mb-[1cqw]">
-          <div className="flex flex-col gap-[1.2cqw] text-[#1f1f1f] text-left">
-            <div className="flex items-center gap-[2.8cqw] text-[2.2cqw] font-bold tracking-normal">
-              <span>B.SC. NURSING</span>
-              <span>BPT</span>
-              <span>PHD</span>
+          <div className="flex flex-col gap-[0.8cqw] text-[#1f1f1f] text-left max-w-[75%]">
+            <div className="text-[14px] font-semibold tracking-normal text-[#1f1f1f]">
+              Applicable to admissions in
             </div>
-            <div className="text-[2.2cqw] font-bold tracking-normal">
-              SELECT PG SEATS.
+            <div className="text-[16px] font-bold tracking-normal leading-[1.3] flex flex-col gap-1">
+              <span>B.Sc. in Nursing | BPT | Ph.D.</span>
+              <span>Select PG Programs</span>
             </div>
           </div>
 

@@ -2,7 +2,7 @@ export function FacultyDeans() {
   const deans = [
     {
       name: "Dr. Anuradha Pillai",
-      faculty: "Faculty of Engineering, IT & CS",
+      faculty: "Faculty of B.Tech",
       stats: "Ph.D. Computer Engineering • 21+ yrs • 48 papers",
       image: "/leader-1.webp",
     },

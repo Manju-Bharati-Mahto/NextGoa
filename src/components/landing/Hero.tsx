@@ -12,11 +12,11 @@ export function Hero() {
         <h1 className="font-[family-name:var(--font-poppins)] mx-auto w-full max-w-none text-4xl font-bold leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-[3.5rem] lg:whitespace-nowrap">
           For <span className="text-brand">GOA</span>L Getters, For Unstoppables.
           <br />
-          <span className="text-brand">For Futures That Refuse Average</span>
+          <span className="text-brand">For Futures That Average</span>
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-sm font-medium text-ink sm:text-lg">
-          Goa&apos;s first State Private University, backed by two decades of teaching, research, and placements at Parul University in Gujarat.
+          Goa&apos;s First State Private University, backed by three decades of teaching, research, and placements at Parul University in Gujarat.
         </p>
 
         <span className="mt-8 inline-block rounded-full bg-sunshine px-6 py-2 text-sm font-bold text-ink shadow-sm">

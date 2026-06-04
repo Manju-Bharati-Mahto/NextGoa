@@ -63,7 +63,7 @@ export function AwardsRecognition() {
           </div>
           <div className="w-full h-px bg-white/10 my-4"></div>
           <div className="text-white/90 text-[15px] lg:text-[17px] leading-relaxed">
-            Best Placement University -<br/>consecutive years.
+            Best University in Placements for<br/>3 Consecutive Years
           </div>
         </div>
 

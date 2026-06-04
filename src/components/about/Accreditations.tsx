@@ -3,10 +3,10 @@ export function Accreditations() {
     <section className="bg-brand-white py-5 sm:py-20 px-6">
       <div className="mx-auto max-w-7xl text-center">
         <h2 className="text-ink section-subheading">
-          Accreditations and Rankings of
+          Legacy of
         </h2>
         <h3 className="mt-2 text-brand section-heading">
-          Parul University, Vadodara!
+          Parul University, Vadodara
         </h3>
 
         {/* Top faded divider */}

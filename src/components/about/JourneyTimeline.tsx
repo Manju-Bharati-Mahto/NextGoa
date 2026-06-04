@@ -21,7 +21,7 @@ const milestones = [
     year: "2023",
     label: "PLACEMENTS",
     description:
-      "Parul ecosystem crosses 2,200+ recruiting companies and 60 LPA highest package.",
+      "Parul University ecosystem crosses 2,200+ recruiting companies and 60 LPA highest package.",
   },
   {
     year: "2024",
@@ -62,7 +62,7 @@ export function JourneyTimeline() {
           Milestones That Thrive Our Story!
         </h2>
         <p className="mx-auto mt-4 max-w-3xl text-ink section-body">
-          20+ Years of building India&apos;s most recognised private university
+          30+ Years of building India&apos;s most recognised private university
           ecosystem and bringing it to Goa&apos;s coast.
         </p>
       </div>

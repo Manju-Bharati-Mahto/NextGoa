@@ -11,10 +11,7 @@ export function CampusLifeHero() {
           </span>
 
           <h1 className="font-poppins font-bold text-[42px] sm:text-[52px] lg:text-[64px] tracking-tight leading-[1.05] text-[#1F1F1F] mb-5">
-            A campus that <br className="hidden sm:block" />
-            nurtures and helps <br className="hidden sm:block" />
-            students learn and <br className="hidden sm:block" />
-            grow.
+            A campus that nurtures and helps students learn and grow.
           </h1>
 
           <p className="font-[family-name:var(--font-poppins)] text-[16px] sm:text-[18px] text-[#1F1F1F]/60 max-w-md">

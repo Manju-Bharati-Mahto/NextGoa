@@ -7,7 +7,7 @@ export function Leadership() {
         <div className="text-center mb-12">
           <Eyebrow className="text-ink">Our Leadership</Eyebrow>
           <h2 className="mt-2 text-center text-brand section-heading">
-            The people leading PU Goa.
+            The People Leading PU Goa
           </h2>
 
           <div className="mt-6 flex flex-wrap justify-center gap-4">
@@ -96,7 +96,7 @@ export function Leadership() {
                 </p>
                 <div className="my-6 h-px w-full bg-white/30" />
                 <p className="font-[family-name:var(--font-poppins)] text-[15px] sm:text-[16px] leading-relaxed text-white/95">
-                  Co-founder and Director of Parul Education Foundation. She is a strong
+                  Co-founder and Director of Parul Education Foundation, She is a strong
                   advocate for student-centric, not-for-profit higher education and the
                   inspiration behind the institution's name.
                 </p>

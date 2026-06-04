@@ -3,7 +3,7 @@ import { Eyebrow } from "./Decor";
 /**
  * "Outcomes" recruiter wall. The design shows brand logos; we render the names
  * as a muted, monochrome wordmark wall instead of fabricating trademarked logo
- * images. The copy keeps it honest ("indicative recruiter list"). Drop real
+ * images. The copy keeps it honest ("Leading recruiters"). Drop real
  * permitted logo SVGs into /public and swap the spans for <Image> when available.
  */
 const row1Logos = [
@@ -44,8 +44,8 @@ export function Outcomes() {
           Where graduates go by sector, not by accident.
         </h2>
         <p className="mx-auto mt-3 max-w-2xl text-center section-body text-ink">
-          Recruiters return year after year because graduates arrive job-ready. Indicative
-          recruiter list across the Parul University ecosystem.
+          Recruiters return year after year because graduates arrive job-ready. Leading
+          recruiters across the Parul University ecosystem.
         </p>
       </div>
 

@@ -86,7 +86,7 @@ export function EntranceExaminations() {
                 <p className="mt-4 font-sans font-medium text-[26px] sm:text-[32px] leading-tight">30 June 2026</p>
                 <div className="w-full h-px bg-white/20 my-4" />
                 <p className="font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] text-white/90">
-                  All UG, PG and Diploma programmes - 2026 intake.
+                  All Diploma, UG, and PG Programs for 2026 Intake.
                 </p>
               </div>
               <div className="rounded-[24px] bg-[#0caadd] p-8 text-white shadow-sm">
