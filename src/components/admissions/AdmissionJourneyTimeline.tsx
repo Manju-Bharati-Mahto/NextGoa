@@ -113,127 +113,218 @@ export function AdmissionJourneyTimeline() {
         </div>
 
         {/* Selection Box */}
-        <div className="bg-white rounded-3xl border border-gray-200 p-6 sm:p-8 flex flex-col lg:flex-row items-center justify-between lg:items-start gap-6 lg:gap-12 mb-20 shadow-sm w-full mx-auto max-w-[1200px]">
-          <div className="lg:w-1/3 text-center lg:text-left">
-            <h4 className="font-semibold text-xl text-ink mb-2 font-poppins">Where are you right now?</h4>
-            <p className="text-gray-600">Select your current status, the timeline, process card, and next step update altogether.</p>
+        <div className="bg-white rounded-3xl border border-gray-200 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between md:items-start gap-6 md:gap-12 mb-16 shadow-sm w-full mx-auto max-w-[1000px]">
+          <div className="md:w-1/3 text-center md:text-left">
+            <h4 className="font-semibold text-xl text-ink mb-2 font-poppins font-bold">Where are you right now?</h4>
+            <p className="text-gray-500 text-sm leading-relaxed">Select your current status to see the timeline, process, and next action.</p>
           </div>
           
-          <div className="lg:w-px lg:h-24 bg-gray-300 hidden lg:block"></div>
+          <div className="md:w-px md:h-20 bg-gray-200 hidden md:block"></div>
 
-          <div className="lg:w-2/3 flex flex-wrap justify-center lg:justify-start gap-3">
+          <div className="md:w-2/3 flex flex-wrap justify-center md:justify-start gap-2.5">
             <button 
               onClick={() => handlePillClick(0)}
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition-colors ${activeStep === 0 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
+              className={`px-5 py-2 rounded-full text-xs font-semibold transition-colors ${activeStep === 0 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
             >
               I AM A BEGINNER
             </button>
             <button 
               onClick={() => handlePillClick(1)}
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition-colors ${activeStep === 1 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
+              className={`px-5 py-2 rounded-full text-xs font-semibold transition-colors ${activeStep === 1 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
             >
               SUBMITTED APPLICATION
             </button>
             <button 
               onClick={() => handlePillClick(3)}
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition-colors ${activeStep === 3 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
+              className={`px-5 py-2 rounded-full text-xs font-semibold transition-colors ${activeStep === 3 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
             >
               DONE WITH ENTRANCE TEST
             </button>
             <button 
               onClick={() => handlePillClick(4)}
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition-colors ${activeStep === 4 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
+              className={`px-5 py-2 rounded-full text-xs font-semibold transition-colors ${activeStep === 4 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
             >
               AWAITING MERIT LIST
             </button>
             <button 
               onClick={() => handlePillClick(5)}
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition-colors ${activeStep === 5 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
+              className={`px-5 py-2 rounded-full text-xs font-semibold transition-colors ${activeStep === 5 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
             >
               COMPLETED COUNSELLING
             </button>
           </div>
         </div>
 
-        {/* Timeline Visualization */}
-        <div className="relative mb-20 w-full mx-auto px-4 sm:px-12">
-          {/* Progress Bar Background */}
-          <div className="absolute top-8 left-[6%] right-[6%] h-2 bg-[#e0f2fe] rounded-full z-0"></div>
-          
-          {/* Active Progress Bar */}
-          <div 
-            className="absolute top-8 left-[6%] h-2 bg-[#00aee8] rounded-full transition-all duration-500 z-0"
-            style={{ width: `calc(${(activeStep / (steps.length - 1)) * 100}% - ${(activeStep / (steps.length - 1)) * 12}%)` }}
-          ></div>
+        {/* ── DESKTOP TIMELINE VIEW (shown on lg screens) ── */}
+        <div className="hidden lg:block">
+          {/* Timeline Visualization */}
+          <div className="relative mb-16 w-full mx-auto max-w-[1200px] px-8">
+            {/* Progress Bar Background */}
+            <div className="absolute top-[26px] left-[8%] right-[8%] h-[3px] bg-gray-200 rounded-full z-0"></div>
+            
+            {/* Active Progress Bar */}
+            <div 
+              className="absolute top-[26px] left-[8%] h-[3px] bg-[#00aee8] rounded-full transition-all duration-500 z-0"
+              style={{ width: `${(activeStep / (steps.length - 1)) * 84}%` }}
+            ></div>
 
-          <div className="flex justify-between relative z-10">
-            {steps.map((step, index) => {
-              const isActive = index === activeStep;
-              const isPast = index < activeStep;
-              
-              return (
-                <div 
-                  key={step.id} 
-                  className="flex flex-col items-center cursor-pointer group"
-                  onClick={() => setActiveStep(index)}
-                >
+            <div className="flex justify-between relative z-10">
+              {steps.map((step, index) => {
+                const isActive = index === activeStep;
+                const isPast = index < activeStep;
+                
+                return (
                   <div 
-                    className={`w-16 h-16 rounded-full flex items-center justify-center shadow-sm transition-all duration-300 mb-4 ${
-                      isActive 
-                        ? 'bg-brand text-white scale-110 shadow-md ring-8 ring-brand/10' 
-                        : isPast
-                          ? 'bg-white text-ink border-2 border-[#00aee8]'
-                          : 'bg-white text-gray-400 group-hover:text-ink border-2 border-transparent'
-                    }`}
+                    key={step.id} 
+                    className="flex flex-col items-center cursor-pointer group"
+                    onClick={() => setActiveStep(index)}
                   >
-                    <span className="material-symbols-rounded" style={{ fontSize: isActive ? '32px' : '24px' }}>
-                      {step.icon}
-                    </span>
+                    {/* Circle Node (Image 1 style) */}
+                    <div 
+                      className={`w-14 h-14 rounded-full flex items-center justify-center shadow-sm transition-all duration-300 mb-4 ${
+                        isActive 
+                          ? 'bg-brand text-white scale-110 shadow-[0_0_0_8px_rgba(238,54,79,0.15)] z-20' 
+                          : isPast
+                            ? 'bg-white text-[#00aee8] border-2 border-[#00aee8] z-10'
+                            : 'bg-white text-gray-400 border-2 border-gray-100 group-hover:border-gray-300 group-hover:text-ink z-10'
+                      }`}
+                    >
+                      <span className="material-symbols-rounded" style={{ fontSize: isActive ? '28px' : '22px' }}>
+                        {step.icon}
+                      </span>
+                    </div>
+                    
+                    <div className="text-center w-28">
+                      <p className={`text-[11px] font-bold mb-0.5 tracking-wide uppercase ${isActive || isPast ? 'text-brand' : 'text-gray-400'}`}>
+                        Step {index + 1}
+                      </p>
+                      <p className={`text-[12px] font-semibold leading-tight ${isActive ? 'text-ink font-bold' : 'text-gray-500'}`}>
+                        {step.title}
+                      </p>
+                    </div>
                   </div>
-                  
-                  <div className="text-center w-32">
-                    <p className={`text-sm font-bold mb-1 ${isActive || isPast ? 'text-brand' : 'text-brand/60'}`}>
-                      Step {index + 1}
-                    </p>
-                    <p className={`text-[13px] font-semibold leading-tight ${isActive ? 'text-ink' : 'text-gray-600'}`}>
-                      {step.title}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Cards Section */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full mx-auto max-w-[1200px]">
+            {/* Red Card */}
+            <div className="bg-[#ee364f] rounded-[24px] p-8 sm:p-10 text-white min-h-[220px] flex flex-col justify-between shadow-md transition-all duration-300">
+              <div>
+                <p className="text-brand-yellow font-bold text-xs uppercase tracking-widest mb-2">Step {activeStep + 1} of 7</p>
+                <h4 className="text-2xl sm:text-3xl font-bold mb-3 font-poppins">{currentStepData.redCardTitle}</h4>
+                <p className="text-white/90 text-[15px] leading-relaxed max-w-md">
+                  {currentStepData.redCardDescription}
+                </p>
+              </div>
+            </div>
+
+            {/* White Card */}
+            <div className="bg-white rounded-[24px] border border-gray-200 p-8 sm:p-10 min-h-[220px] flex flex-col justify-between shadow-sm transition-all duration-300">
+              <div>
+                <p className="text-brand font-bold text-xs uppercase tracking-widest mb-2">{currentStepData.whiteCardTitle}</p>
+                <p className="text-ink text-lg font-medium mb-6 leading-relaxed">
+                  {currentStepData.whiteCardDescription}
+                </p>
+              </div>
+              <div>
+                <button 
+                  onClick={handleNextPhaseClick}
+                  className="bg-[#00aee8] hover:bg-[#0095c7] text-white font-semibold rounded-full px-6 py-2.5 transition-colors inline-block text-xs"
+                >
+                  {currentStepData.nextButtonLabel}
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Cards Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full mx-auto">
-          {/* Red Card */}
-          <div className="bg-[#ee364f] rounded-[20px] p-8 sm:px-12 sm:py-10 text-white min-h-[220px] flex flex-col justify-start transition-all duration-300 transform shadow-lg">
-            <p className="text-brand-yellow font-medium mb-3">Step {activeStep + 1}</p>
-            <h4 className="text-3xl sm:text-4xl font-semibold mb-3 font-poppins">{currentStepData.redCardTitle}</h4>
-            <p className="text-white/90 text-lg leading-relaxed">
-              {currentStepData.redCardDescription}
-            </p>
-          </div>
+        {/* ── MOBILE/TABLET VERTICAL TIMELINE VIEW (shown on md and below) ── */}
+        <div className="lg:hidden w-full max-w-[600px] mx-auto">
+          <div className="relative mt-8">
+            {/* Vertical timeline track line */}
+            <div className="absolute left-[18px] top-6 bottom-6 w-0.5 bg-[#e0f2fe]"></div>
 
-          {/* White Card */}
-          <div className="bg-white rounded-[20px] border border-gray-200 p-8 sm:px-12 sm:py-10 min-h-[220px] flex flex-col justify-start transition-all duration-300 transform shadow-sm relative overflow-hidden">
-            <p className="text-brand font-medium mb-3">{currentStepData.whiteCardTitle}</p>
-            <p className="text-ink text-xl mb-6 leading-relaxed">
-              {currentStepData.whiteCardDescription}
-            </p>
-            
-            <div>
-              <button 
-                onClick={handleNextPhaseClick}
-                className="bg-[#00aee8] hover:bg-[#0095c7] text-white font-medium rounded-full px-6 py-2.5 transition-colors inline-block"
-              >
-                {currentStepData.nextButtonLabel}
-              </button>
+            <div className="space-y-6">
+              {steps.map((step, index) => {
+                const isActive = index === activeStep;
+                const isPast = index < activeStep;
+
+                return (
+                  <div key={step.id} className="relative pl-10 pr-2 transition-all duration-300">
+                    {/* Timeline Marker Point (Image 2 style) */}
+                    <div className="absolute left-[9px] top-6 w-5 h-5 z-10 flex items-center justify-center">
+                      {isActive ? (
+                        <div className="w-6 h-6 rounded-full border-2 border-[#00aee8] bg-white flex items-center justify-center shadow-sm -ml-0.5 -mt-0.5">
+                          <div className="w-2.5 h-2.5 rounded-full bg-[#00aee8]"></div>
+                        </div>
+                      ) : isPast ? (
+                        <div className="w-5 h-5 rounded-full border-2 border-[#00aee8] bg-white flex items-center justify-center"></div>
+                      ) : (
+                        <div className="w-5 h-5 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center"></div>
+                      )}
+                    </div>
+
+                    {/* Timeline Card */}
+                    <div 
+                      onClick={() => setActiveStep(index)}
+                      className={`w-full rounded-2xl p-5 text-left cursor-pointer transition-all duration-300 shadow-sm ${
+                        isActive 
+                          ? 'bg-[#ee364f] text-white shadow-md scale-[1.01]' 
+                          : 'bg-white hover:bg-gray-50 border border-gray-100 text-ink'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <span className={`text-[10px] font-bold uppercase tracking-wider ${isActive ? 'text-brand-yellow' : 'text-brand'}`}>
+                            Step {index + 1}
+                          </span>
+                          <h4 className={`text-base font-bold font-poppins ${isActive ? 'text-white' : 'text-ink'}`}>
+                            {step.title}
+                          </h4>
+                        </div>
+                        {/* Compact Icon */}
+                        <div className={`p-1.5 rounded-full ${isActive ? 'bg-white/10 text-white' : 'bg-gray-50 text-gray-400'}`}>
+                          <span className="material-symbols-rounded block" style={{ fontSize: '18px' }}>
+                            {step.icon}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Expanded Card Details (Active Step only) */}
+                      {isActive && (
+                        <div className="mt-4 pt-4 border-t border-white/20">
+                          <p className="text-white/90 text-sm leading-relaxed mb-4">
+                            {step.redCardDescription}
+                          </p>
+                          
+                          <div className="bg-white/10 rounded-xl p-3.5 mb-4">
+                            <span className="block text-[10px] font-bold uppercase tracking-wider text-brand-yellow mb-1">
+                              {step.whiteCardTitle}
+                            </span>
+                            <p className="text-white text-[13px] leading-relaxed">
+                              {step.whiteCardDescription}
+                            </p>
+                          </div>
+
+                          <button 
+                            onClick={(e) => {
+                              e.stopPropagation(); // Prevent re-triggering card click
+                              handleNextPhaseClick();
+                            }}
+                            className="w-full bg-white hover:bg-gray-100 text-ink font-semibold text-xs rounded-full py-2.5 transition-colors shadow-sm"
+                          >
+                            {step.nextButtonLabel}
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-            
-            {/* Background pattern/decorations for the white card (optional) */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gray-50 rounded-bl-full -z-10 opacity-50"></div>
           </div>
         </div>
       </div>
