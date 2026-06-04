@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 
 export default function PhysiotherapyProgrammePicker() {
-  const [activeLevel, setActiveLevel] = useState<string>("All Programmes");
+  const [activeLevel, setActiveLevel] = useState<string>("All Programs");
   const [showAll, setShowAll] = useState<boolean>(false);
 
   const physiotherapyProgrammes = [
@@ -33,7 +33,7 @@ export default function PhysiotherapyProgrammePicker() {
           
           {/* Toggles */}
           <div className="flex flex-wrap justify-center items-center gap-3">
-            {["All Programmes"].map((level) => (
+            {["All Programs"].map((level) => (
               <button
                 key={level}
                 onClick={() => setActiveLevel(level)}

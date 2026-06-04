@@ -20,7 +20,7 @@ export function PlacementsNumbers() {
           The ecosystem in figures.
         </h2>
         <p className="mt-3 text-center font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] leading-relaxed text-white/90">
-          Two decades of placement results, distilled.
+          Three decades of placement results, distilled.
         </p>
 
         {/* ── Headline package card from landing page ── */}
@@ -31,7 +31,7 @@ export function PlacementsNumbers() {
             <div className="p-6 pb-0 flex flex-col justify-start relative z-20">
               <div>
                 <span className="inline-block rounded-full bg-white px-4 py-1.5 font-[family-name:var(--font-poppins)] font-normal text-[14px] text-[#1F1F1F]">
-                  Highest package · 2027
+                  Highest package · batch of 2027
                 </span>
               </div>
               <div className="mt-4 flex items-end gap-1 text-white">
@@ -40,8 +40,8 @@ export function PlacementsNumbers() {
               </div>
               <div className="w-full h-px bg-white/30 my-4" />
               <p className="font-[family-name:var(--font-poppins)] font-normal text-[15px] leading-relaxed text-white/90">
-                Awarded to two B.Tech CSE students in a single recruitment
-                cycle - the benchmark the PU ecosystem is producing today.
+                Awarded to two B.Tech. CSE students (Batch of 2027) in a single recruitment
+                cycle. It&apos;s the benchmark the PU ecosystem is producing today.
               </p>
             </div>
             
@@ -65,7 +65,7 @@ export function PlacementsNumbers() {
             <div className="p-12 lg:p-16 flex flex-col justify-center max-w-[45%]" style={{ minHeight: "340px" }}>
               <div>
                 <span className="inline-block rounded-full bg-white px-5 py-2 font-[family-name:var(--font-poppins)] font-normal text-[16px] text-[#1F1F1F]">
-                  Highest package · 2027
+                  Highest package · batch of 2027
                 </span>
               </div>
               <div className="mt-5 flex items-end gap-2 text-white">
@@ -74,8 +74,8 @@ export function PlacementsNumbers() {
               </div>
               <div className="w-full h-px bg-white/30 my-4" />
               <p className="font-[family-name:var(--font-poppins)] font-normal text-[15px] leading-[1.65] text-white/95">
-                Awarded to two B.Tech CSE students in a single recruitment
-                cycle the benchmark the PU ecosystem is producing today.
+                Awarded to two B.Tech. CSE students (Batch of 2027) in a single recruitment
+                cycle. It&apos;s the benchmark the PU ecosystem is producing today.
               </p>
             </div>
           </div>
@@ -115,7 +115,7 @@ export function PlacementsNumbers() {
               Recruiting companies<span className="text-white">*</span>
             </h3>
             <p className="mt-1 md:mt-2 font-[family-name:var(--font-poppins)] font-normal text-[14px] sm:text-[18px] md:text-[24px] text-white/90">
-              Across the Parul ecosystem, every year.
+              Across the Parul University ecosystem, every year.
             </p>
           </div>
         </div>

@@ -44,7 +44,7 @@ export function WhyChoosePU() {
               Recruiting companies*
             </h3>
             <p className="font-[family-name:var(--font-poppins)] text-gray-500 text-[16px] md:text-[18px] lg:text-[20px]">
-              Across the Parul ecosystem, every year.
+              Across the Parul University ecosystem, every year.
             </p>
           </div>
         </div>

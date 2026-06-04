@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function PhdResearchAreas() {
   const areas = [
     {
-      title: "Engineering, IT & CS",
+      title: "B.Tech",
       level: "PhD",
       theme: "red",
       topics: [

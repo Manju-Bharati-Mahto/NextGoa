@@ -15,7 +15,7 @@ import {
 } from "./FacultyIcons";
 
 /**
- * "Find your programme" funnel + faculty card grid (matches the Figma section).
+ * "Find your program!" funnel + faculty card grid (matches the Figma section).
  *
  * The selector is functional today: pick a level + field and it confirms the
  * selection inline. When the programme catalogue ships, swap the inline result
@@ -35,7 +35,7 @@ const fields = [
 
 const faculties = [
   {
-    name: "Engineering, IT & CS",
+    name: "B.Tech",
     tags: ["Diploma", "B.Tech", "BCA", "MCA"],
     levels: ["Diploma", "Undergraduate", "Postgraduate"],
     fields: ["Engineering & Technology", "Science & Computing"],
@@ -224,12 +224,12 @@ export function ProgrammeFinder() {
   return (
     <section id="programmes" className="bg-brand-white">
       <div className="mx-auto max-w-6xl px-6 py-20">
-        <Eyebrow className="text-ink">Find your programme</Eyebrow>
+        <Eyebrow className="text-ink">Find your program!</Eyebrow>
         <h2 className="mt-2 text-center font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
           Tell us where you&apos;re headed.
         </h2>
         <p className="mt-3 text-center font-[family-name:var(--font-poppins)] font-normal text-base sm:text-lg text-ink leading-relaxed">
-          Pick a level and a field - we&apos;ll take you straight to the right faculty.
+          Pick a level and a field. We&apos;ll take you straight to the right faculty.
         </p>
 
         <form
@@ -366,13 +366,13 @@ export function ProgrammeFinder() {
         <div className="mt-8 flex flex-col items-center justify-between gap-4 rounded-2xl bg-ink-warm px-6 py-5 sm:flex-row">
           <p className="text-center text-base sm:text-lg font-medium text-white/90 sm:text-left">
             <span className="font-bold">Don&apos;t know what to choose?</span>{" "}
-            Talk to a counsellor - we&apos;ll match you to the right program.
+            Talk to a counsellor we&apos;ll match you to the right program.
           </p>
           <a
             href="#admissions"
             className="whitespace-nowrap rounded-full bg-sunshine px-6 py-3 text-sm font-bold text-ink transition-transform hover:scale-[1.03]"
           >
-            All programmes
+            All Programs
           </a>
         </div>
       </div>

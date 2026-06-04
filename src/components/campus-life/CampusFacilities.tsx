@@ -21,7 +21,7 @@ const cards = [
   },
   {
     title: "Food",
-    line1: "Mult-Cuisine",
+    line1: "Multi-cuisine",
     line2: "",
     bgImage: "/campus-life/cards/Group 32670.svg"
   },

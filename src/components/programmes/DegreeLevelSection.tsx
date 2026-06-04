@@ -42,7 +42,7 @@ const degrees = [
     count: "5 Prog",
     items: [
       "PhD - Allied & Health Sciences",
-      "PhD - Engineering, IT & CS",
+      "PhD - B.Tech",
       "PhD - Pharmacy",
       "PhD - Management",
       "PhD - Nursing",

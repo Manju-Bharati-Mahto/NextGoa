@@ -44,7 +44,7 @@ export function VisionMission() {
             <p className="font-[family-name:var(--font-poppins)] text-white/95 text-[18px] leading-relaxed">
               We deliver NEP 2020-aligned programmes across eight faculties,
               supported by hands-on labs, real industry exposure on Goa&apos;s coast,
-              international pathways across 7 countries, and the 20 years&apos;+
+              international pathways across 7 countries, and the 30 years&apos;+
               ecosystem of Parul University, Vadodara.
             </p>
           </div>

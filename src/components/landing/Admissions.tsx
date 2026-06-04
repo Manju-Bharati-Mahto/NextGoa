@@ -3,7 +3,7 @@ import { cta } from "@/lib/navigation";
 import { ExamDatesTicket } from "../layout/ExamDatesTicket";
 
 /**
- * "Admissions 2026 - LIVE" key-dates section. Plain, crawlable dates + accepted
+ * "Admissions for A.Y. 2026-27 are Live!" key-dates section. Plain, crawlable dates + accepted
  * entrance tests - exactly the kind of facts AI answer engines cite. Update the
  * dates / tests here as the cycle progresses.
  */
@@ -19,11 +19,11 @@ export function Admissions() {
         <Eyebrow className="mt-3 text-ink">
           <span className="inline-flex items-center gap-2">
             <span className="h-2 w-2 animate-pulse rounded-full bg-brand" />
-            Admissions 2026 - Live
+            Admissions for A.Y. 2026-27 are Live!
           </span>
         </Eyebrow>
         <h2 className="mt-2 text-center font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
-          Key dates you can plan around.
+          Key Dates You Can Plan Around
         </h2>
 
         <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
@@ -33,8 +33,8 @@ export function Admissions() {
               Apply for PU Goa&apos;s<br />Entrance Test
             </h3>
             <p className="mt-4 max-w-md font-[family-name:var(--font-poppins)] font-normal text-[18px] sm:text-[18px] leading-[1.65] text-ink/70">
-              The Goa Entrance Exam is designed to assess your readiness for B.Tech programmes in
-              Computer Science &amp; AI. Sit it online, get your result fast, and lock your seat.
+              The Goa Entrance Exam is designed to assess your readiness for B.Tech. programs  in
+              Computer Science &amp; AI. Appear for it online, get your results quickly, and lock in your seat.
             </p>
             <div className="mt-6 flex items-center gap-3">
               <img
@@ -65,7 +65,7 @@ export function Admissions() {
             <p className="mt-4 font-sans font-medium text-[26px] sm:text-[32px] leading-tight">30 June 2026</p>
             <div className="w-full h-px bg-white/20 my-4" />
             <p className="font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] text-white/90">
-              All UG, PG and Diploma programmes - 2026 intake.
+              All Diploma, UG, and PG Programs for 2026 Intake.
             </p>
           </div>
           <div className="rounded-[24px] bg-ocean p-8 text-white shadow-sm">

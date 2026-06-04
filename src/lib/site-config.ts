@@ -28,7 +28,7 @@ export const siteConfig = {
   defaultTitle: "Parul University Goa - Goa's First State Private University",
   /** Default meta description (≤ ~155 chars). Inner pages should override this. */
   description:
-    "Parul University Goa is Goa's first State Private University, backed by two decades of teaching, research, and placements at Parul University in Gujarat. Admissions open for 2026.",
+    "Parul University Goa is Goa's First State Private University, backed by three decades of teaching, research, and placements at Parul University in Gujarat. Admissions open for 2026.",
   url: SITE_URL,
   /** Locale used for og:locale and <html lang>. */
   locale: "en_IN",

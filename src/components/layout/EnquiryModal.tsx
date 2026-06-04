@@ -95,7 +95,7 @@ export function EnquiryModal() {
             <label htmlFor="programme" className="text-[14px] font-medium text-ink">Programme of Interest *</label>
             <select id="programme" defaultValue="" required className="w-full appearance-none rounded-md border border-gray-200 bg-[#FAFAFA] px-4 py-2.5 text-ink outline-none focus:border-[#11B1E3] focus:ring-1 focus:ring-[#11B1E3] transition-all">
               <option value="" disabled hidden className="text-gray-400">Select a programme</option>
-              <option value="engineering">Engineering, IT & CS</option>
+              <option value="engineering">B.Tech</option>
               <option value="management">Management Studies</option>
               <option value="pharmacy">Pharmacy</option>
               <option value="nursing">Nursing</option>

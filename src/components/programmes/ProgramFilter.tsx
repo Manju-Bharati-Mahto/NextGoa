@@ -285,7 +285,7 @@ export default function ProgramFilter() {
         {/* Header Section */}
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-xl sm:text-2xl font-bold mb-2 text-ink font-poppins">
-            Find your programme
+            Find your program!
           </h2>
           <h3 className="text-4xl sm:text-[2.75rem] font-bold text-[#ED383F] mb-4 tracking-tight leading-tight font-poppins">
             Build your shortlist in seconds.
