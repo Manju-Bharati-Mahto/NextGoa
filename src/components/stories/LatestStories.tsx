@@ -92,13 +92,19 @@ export function LatestStories() {
   // Bulletproof fallback if index goes out of bounds
   useEffect(() => {
     if (currentIndex >= extendedCards.length) {
-      setIsTransitioning(false);
-      setCurrentIndex(1);
-      setSlideLock(false);
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentIndex(1);
+        setSlideLock(false);
+      }, 0);
+      return () => clearTimeout(timer);
     } else if (currentIndex < 0) {
-      setIsTransitioning(false);
-      setCurrentIndex(carouselCards.length);
-      setSlideLock(false);
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentIndex(carouselCards.length);
+        setSlideLock(false);
+      }, 0);
+      return () => clearTimeout(timer);
     }
   }, [currentIndex, extendedCards.length]);
 
