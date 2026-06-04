@@ -20,10 +20,10 @@ export default function StudyAbroadGlance() {
 
           {/* 1. Blue Box (Partner Universities) */}
           <div className="lg:col-span-2 rounded-2xl bg-[#0EB1E1] p-5 sm:p-6 relative overflow-hidden flex flex-col justify-start min-h-[120px] sm:min-h-[150px]">
-            <div className="relative z-10 max-w-[58%]">
+            <div className="relative z-10 w-full">
               <h4 className="text-6xl sm:text-7xl font-bold text-white mb-1 leading-none font-poppins">120+</h4>
-              <p className="text-xl font-bold text-white tracking-wide mb-1 uppercase">Partner Universities</p>
-              <p className="text-md text-white/90">Across the Parul University Ecosystem</p>
+              <p className="text-lg xs:text-xl font-bold text-white tracking-wide mb-1 uppercase whitespace-nowrap">Partner Universities</p>
+              <p className="text-md text-white/90 max-w-[60%] sm:max-w-none">Across the Parul University Ecosystem</p>
             </div>
             {/* Logos cluster at bottom right */}
             <div className="absolute bottom-3 -right-5 flex items-center pointer-events-none">
