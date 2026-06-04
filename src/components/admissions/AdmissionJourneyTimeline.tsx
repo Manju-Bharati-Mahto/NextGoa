@@ -211,31 +211,35 @@ export function AdmissionJourneyTimeline() {
           {/* Cards Section */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full mx-auto max-w-[1200px]">
             {/* Red Card */}
-            <div className="bg-[#ee364f] rounded-[24px] p-8 sm:p-10 text-white min-h-[220px] flex flex-col justify-between shadow-md transition-all duration-300">
-              <div>
-                <p className="text-brand-yellow font-bold text-xs uppercase tracking-widest mb-2">Step {activeStep + 1} of 7</p>
-                <h4 className="text-2xl sm:text-3xl font-bold mb-3 font-poppins">{currentStepData.redCardTitle}</h4>
-                <p className="text-white/90 text-[15px] leading-relaxed max-w-md">
-                  {currentStepData.redCardDescription}
-                </p>
+            <div className="bg-[#ee364f] rounded-[24px] p-8 sm:p-10 text-white min-h-[225px] flex flex-col justify-between shadow-md transition-all duration-300">
+              <div key={activeStep} className="animate-fade-in h-full flex flex-col justify-between">
+                <div>
+                  <p className="text-brand-yellow font-bold text-xs uppercase tracking-widest mb-2">Step {activeStep + 1} of 7</p>
+                  <h4 className="text-2xl sm:text-3xl font-bold mb-3 font-poppins">{currentStepData.redCardTitle}</h4>
+                  <p className="text-white/90 text-[15px] leading-relaxed max-w-md">
+                    {currentStepData.redCardDescription}
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* White Card */}
-            <div className="bg-white rounded-[24px] border border-gray-200 p-8 sm:p-10 min-h-[220px] flex flex-col justify-between shadow-sm transition-all duration-300">
-              <div>
-                <p className="text-brand font-bold text-xs uppercase tracking-widest mb-2">{currentStepData.whiteCardTitle}</p>
-                <p className="text-ink text-lg font-medium mb-6 leading-relaxed">
-                  {currentStepData.whiteCardDescription}
-                </p>
-              </div>
-              <div>
-                <button 
-                  onClick={handleNextPhaseClick}
-                  className="bg-[#00aee8] hover:bg-[#0095c7] text-white font-semibold rounded-full px-6 py-2.5 transition-colors inline-block text-xs"
-                >
-                  {currentStepData.nextButtonLabel}
-                </button>
+            <div className="bg-white rounded-[24px] border border-gray-200 p-8 sm:p-10 min-h-[225px] flex flex-col justify-between shadow-sm transition-all duration-300">
+              <div key={activeStep} className="animate-fade-in h-full flex flex-col justify-between">
+                <div>
+                  <p className="text-brand font-bold text-xs uppercase tracking-widest mb-2">{currentStepData.whiteCardTitle}</p>
+                  <p className="text-ink text-lg font-medium mb-6 leading-relaxed">
+                    {currentStepData.whiteCardDescription}
+                  </p>
+                </div>
+                <div>
+                  <button 
+                    onClick={handleNextPhaseClick}
+                    className="bg-[#00aee8] hover:bg-[#0095c7] text-white font-semibold rounded-full px-6 py-2.5 transition-colors inline-block text-xs"
+                  >
+                    {currentStepData.nextButtonLabel}
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -293,33 +297,35 @@ export function AdmissionJourneyTimeline() {
                         </div>
                       </div>
 
-                      {/* Expanded Card Details (Active Step only) */}
-                      {isActive && (
-                        <div className="mt-4 pt-4 border-t border-white/20">
-                          <p className="text-white/90 text-sm leading-relaxed mb-4">
-                            {step.redCardDescription}
-                          </p>
-                          
-                          <div className="bg-white/10 rounded-xl p-3.5 mb-4">
-                            <span className="block text-[10px] font-bold uppercase tracking-wider text-brand-yellow mb-1">
-                              {step.whiteCardTitle}
-                            </span>
-                            <p className="text-white text-[13px] leading-relaxed">
-                              {step.whiteCardDescription}
+                      {/* Expanded Card Details (Vertical Accordion with CSS Grid transition) */}
+                      <div className={`grid transition-all duration-300 ease-in-out ${isActive ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0 pointer-events-none'}`}>
+                        <div className="overflow-hidden">
+                          <div className="mt-4 pt-4 border-t border-white/20 animate-fade-in">
+                            <p className="text-white/90 text-sm leading-relaxed mb-4">
+                              {step.redCardDescription}
                             </p>
-                          </div>
+                            
+                            <div className="bg-white/10 rounded-xl p-3.5 mb-4">
+                              <span className="block text-[10px] font-bold uppercase tracking-wider text-brand-yellow mb-1">
+                                {step.whiteCardTitle}
+                              </span>
+                              <p className="text-white text-[13px] leading-relaxed">
+                                {step.whiteCardDescription}
+                              </p>
+                            </div>
 
-                          <button 
-                            onClick={(e) => {
-                              e.stopPropagation(); // Prevent re-triggering card click
-                              handleNextPhaseClick();
-                            }}
-                            className="w-full bg-white hover:bg-gray-100 text-ink font-semibold text-xs rounded-full py-2.5 transition-colors shadow-sm"
-                          >
-                            {step.nextButtonLabel}
-                          </button>
+                            <button 
+                              onClick={(e) => {
+                                e.stopPropagation(); // Prevent re-triggering card click
+                                handleNextPhaseClick();
+                              }}
+                              className="w-full bg-white hover:bg-gray-100 text-ink font-semibold text-xs rounded-full py-2.5 transition-colors shadow-sm"
+                            >
+                              {step.nextButtonLabel}
+                            </button>
+                          </div>
                         </div>
-                      )}
+                      </div>
                     </div>
                   </div>
                 );
