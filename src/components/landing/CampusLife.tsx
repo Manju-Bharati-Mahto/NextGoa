@@ -62,10 +62,10 @@ export function CampusLife() {
     <section id="campus-life" className="bg-brand-white">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <Eyebrow className="text-ink">Campus Life</Eyebrow>
-        <h2 className="mt-2 text-center font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
+        <h2 className="mt-2 text-center section-heading text-brand">
           A campus that feels like a destination.
         </h2>
-        <p className="mx-auto mt-4 w-full text-center font-[family-name:var(--font-poppins)] font-normal text-base sm:text-[17px] text-ink leading-relaxed">
+        <p className="mx-auto mt-4 w-full text-center section-body text-ink">
           Modern classrooms. Fully equipped labs. A central auditorium. Comfortable residences. Smart digital libraries.
           <br className="hidden sm:block" />{" "}
           An in-campus bank, salon, and supermarket. A cafeteria alongside a swimming pool. And a Goan beach beyond the gate.

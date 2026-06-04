@@ -15,12 +15,12 @@ export default function StudyAbroadHero() {
           Global Pathways
         </span>
 
-        <h1 className="text-4xl sm:text-5xl lg:text-[45px] font-bold text-[#E9324D] leading-[1.2] mb-6 font-poppins">
+        <h1 className="text-[#E9324D] mb-6 section-heading">
           Study Abroad from PU Goa<br />
           Global Pathway Programmes
         </h1>
 
-        <p className="max-w-[900px] text-[14px] sm:text-[17px] text-ink/80 leading-relaxed font-medium">
+        <p className="max-w-[900px] text-ink/80 section-body">
           Kickstart your degree at Parul University Goa and finish abroad with a globally recognised qualification.
           Study Pathway Programmes (2+2, 1+1, 3+1+1, 3.5+1.5) with partner universities across the USA, UK, Canada,
           Germany, France, Australia and New Zealand.

@@ -60,10 +60,10 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
         <Eyebrow className="mt-3 text-ink">
           {isAbout ? "LEGACY IN NUMBERS" : "Numbers that matter"}
         </Eyebrow>
-        <h2 className="mt-2 text-center font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
+        <h2 className="mt-2 text-center section-heading text-brand">
           {isAbout ? "Excellence That Needs No Introduction!" : "The ecosystem in figures."}
         </h2>
-        <p className="mt-3 text-center font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] leading-relaxed text-ink">
+        <p className="mt-3 text-center section-body text-ink">
           {isAbout ? "Figures from Parul University, Gujarat." : "Two decades of placement results, distilled."}
         </p>
 

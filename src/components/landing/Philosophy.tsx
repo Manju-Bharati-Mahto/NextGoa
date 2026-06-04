@@ -93,7 +93,7 @@ export function Philosophy({ variant = "default" }: { variant?: "default" | "cle
       
       <div className={`relative z-10 mx-auto max-w-[1440px] px-6 ${isClean ? "py-16" : "py-50 sm:py-50"} flex flex-col items-center justify-center`}>
         <Eyebrow className={isClean ? "text-ink" : "text-white"}>Our Philosophy</Eyebrow>
-        <h2 className={`mt-1 text-center font-sans font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight ${isClean ? "text-brand" : "text-white"}`}>
+        <h2 className={`mt-1 text-center section-heading ${isClean ? "text-brand" : "text-white"}`}>
           What Shapes Everything We Do
         </h2>
 
@@ -185,7 +185,7 @@ export function Philosophy({ variant = "default" }: { variant?: "default" | "cle
               </span>
               <p className={`mt-5 font-[family-name:var(--font-poppins)] text-sm font-semibold ${isClean ? "text-white/90" : "text-ink/70"}`}>{eyebrow}</p>
               <h3 className={`mt-1 font-sans font-medium text-[24px] sm:text-[32px] leading-tight tracking-tight ${isClean ? "text-white" : "text-ink"}`}>{title}</h3>
-              <p className={`mt-3 font-[family-name:var(--font-poppins)] font-normal text-base sm:text-[18px] leading-relaxed ${isClean ? "text-white/95" : "text-ink/80"}`}>{body}</p>
+              <p className={`mt-3 section-body ${isClean ? "text-white/95" : "text-ink/80"}`}>{body}</p>
             </li>
           ))}
           </ul>

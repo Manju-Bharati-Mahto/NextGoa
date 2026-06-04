@@ -40,10 +40,10 @@ export default function StudyAbroadModels() {
       <div className="relative z-10 max-w-6xl mx-auto flex flex-col items-center">
         {/* Header */}
         <div className="relative mb-14 text-center">
-          <p className="text-white text-lg md:text-xl font-medium mb-1">
+          <p className="text-white mb-1 section-subheading">
             Global Pathways
           </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight">
+          <h2 className="text-white tracking-tight section-heading">
             Three Models. Six Countries.
           </h2>
 

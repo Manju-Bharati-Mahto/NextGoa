@@ -53,15 +53,15 @@ export function JourneyTimeline() {
   return (
     <section className="overflow-hidden bg-brand-white px-0 py-24 sm:py-32">
       <div className="mx-auto max-w-5xl px-6 text-center">
-        <p className="font-sans text-[24px] font-medium leading-tight text-ink sm:text-brand-subheading">
+        <p className="text-ink section-subheading">
           Journey
         </p>
-        <h2 className="mx-auto mt-5 max-w-5xl font-poppins text-[38px] font-bold leading-tight text-brand sm:text-[48px] lg:text-brand-heading">
+        <h2 className="mx-auto mt-5 max-w-5xl text-brand section-heading">
           From Vadodara To Goa,
           <br className="hidden sm:block" />
           Milestones That Thrive Our Story!
         </h2>
-        <p className="mx-auto mt-4 max-w-3xl font-[family-name:var(--font-poppins)] text-[16px] font-normal leading-relaxed text-ink sm:text-brand-body">
+        <p className="mx-auto mt-4 max-w-3xl text-ink section-body">
           20+ Years of building India&apos;s most recognised private university
           ecosystem and bringing it to Goa&apos;s coast.
         </p>

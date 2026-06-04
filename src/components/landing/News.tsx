@@ -32,7 +32,7 @@ export function News() {
     <section id="news" className="bg-brand-white">
       <div className="mx-auto max-w-6xl px-6 py-10 sm:py-15">
         <Eyebrow className="text-ink">News &amp; stories</Eyebrow>
-        <h2 className="mt-2 text-center font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
+        <h2 className="mt-2 text-center section-heading text-brand">
           What&apos;s happening on campus.
         </h2>
 

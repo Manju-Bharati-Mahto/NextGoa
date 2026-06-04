@@ -86,13 +86,13 @@ export default function StudyAbroadOpportunities() {
 
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col items-center py-24">
         {/* Header Text */}
-        <p className="text-white text-lg md:text-xl font-medium mb-3">
+        <p className="text-white mb-3 section-subheading">
           Begin in Goa · Graduate in the World
         </p>
-        <h2 className="text-3xl md:text-[2.75rem] font-bold text-white text-center leading-tight mb-6 max-w-4xl">
+        <h2 className="text-white text-center leading-tight mb-6 max-w-4xl section-heading">
           Turn your wanderlust into a globally recognised degree
         </h2>
-        <p className="text-white/90 text-center text-[15px] md:text-base max-w-5xl mb-12">
+        <p className="text-white/90 text-center max-w-5xl mb-12 section-body">
           At PU Goa, your education doesn&apos;t have to stop in India. Through
           international pathways, academic partnerships and broadway programmes,
           students can begin their journey in Goa and continue it across leading

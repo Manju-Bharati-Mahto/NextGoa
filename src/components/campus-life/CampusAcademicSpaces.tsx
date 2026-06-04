@@ -32,13 +32,13 @@ export function CampusAcademicSpaces() {
   return (
     <section className="relative w-full bg-white sm:py-20 pt-2 pb-10 lg:py-28 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mb-12 sm:mb-16 flex flex-col items-center text-center">
-        <h3 className="font-poppins font-semibold text-[20px] sm:text-[24px] text-[#1F1F1F] mb-2">
+        <h3 className="text-[#1F1F1F] mb-2 section-subheading">
           Academic Spaces
         </h3>
-        <h2 className="font-poppins font-bold text-[34px] sm:text-[46px] lg:text-[54px] leading-[1.1] tracking-tight text-[#E73649] mb-4">
+        <h2 className="leading-[1.1] text-[#E73649] mb-4 section-heading">
           Built for inspiration.
         </h2>
-        <p className="font-[family-name:var(--font-poppins)] text-[#1F1F1F]/80 text-[15px] sm:text-[18px] max-w-2xl mx-auto leading-relaxed">
+        <p className="max-w-2xl mx-auto text-[#1F1F1F]/80 section-body">
           Labs and classrooms designed with modern technology to prepare students for the future.
         </p>
       </div>

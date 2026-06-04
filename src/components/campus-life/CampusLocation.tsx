@@ -108,13 +108,13 @@ export function CampusLocation() {
         
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <h3 className="font-poppins font-semibold text-[20px] sm:text-[24px] text-[#1F1F1F] mb-2">
+          <h3 className="text-[#1F1F1F] mb-2 section-subheading">
             Location & Transport
           </h3>
-          <h2 className="font-poppins font-bold text-[34px] sm:text-[46px] lg:text-[54px] leading-[1.1] tracking-tight text-[#E73649] mb-4">
+          <h2 className="leading-[1.1] text-[#E73649] mb-4 section-heading">
             Getting to campus and around Goa.
           </h2>
-          <p className="font-[family-name:var(--font-poppins)] text-[#1F1F1F]/80 text-[15px] sm:text-[18px] max-w-2xl mx-auto leading-relaxed">
+          <p className="max-w-2xl mx-auto text-[#1F1F1F]/80 section-body">
             Pick a hub below to see the distance, drive time and how we can pick you up.
           </p>
         </div>

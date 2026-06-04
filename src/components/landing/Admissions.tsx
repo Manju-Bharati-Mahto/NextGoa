@@ -22,7 +22,7 @@ export function Admissions() {
             Admissions 2026 - Live
           </span>
         </Eyebrow>
-        <h2 className="mt-2 text-center font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
+        <h2 className="mt-2 text-center section-heading text-brand">
           Key dates you can plan around.
         </h2>
 
@@ -32,7 +32,7 @@ export function Admissions() {
             <h3 className="font-poppins font-semibold text-[32px] leading-tight tracking-tight text-ink">
               Apply for PU Goa&apos;s<br />Entrance Test
             </h3>
-            <p className="mt-4 max-w-md font-[family-name:var(--font-poppins)] font-normal text-[18px] sm:text-[18px] leading-[1.65] text-ink/70">
+            <p className="mt-4 max-w-md section-body text-ink/70">
               The Goa Entrance Exam is designed to assess your readiness for B.Tech programmes in
               Computer Science &amp; AI. Sit it online, get your result fast, and lock your seat.
             </p>
@@ -64,7 +64,7 @@ export function Admissions() {
             </div>
             <p className="mt-4 font-sans font-medium text-[26px] sm:text-[32px] leading-tight">30 June 2026</p>
             <div className="w-full h-px bg-white/20 my-4" />
-            <p className="font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] text-white/90">
+            <p className="section-body text-white/90">
               All UG, PG and Diploma programmes - 2026 intake.
             </p>
           </div>
@@ -76,7 +76,7 @@ export function Admissions() {
             </div>
             <p className="mt-4 font-sans font-medium text-[26px] sm:text-[32px] leading-tight">July 2026</p>
             <div className="w-full h-px bg-white/20 my-4" />
-            <p className="font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] text-white/90">
+            <p className="section-body text-white/90">
               Rolling rounds with hostel allotment.
             </p>
           </div>

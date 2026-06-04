@@ -53,10 +53,10 @@ export function CampusTour() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 py-40 sm:py-64 text-center">
         <Eyebrow className="text-white">Campus Walkthrough</Eyebrow>
-        <h2 className="mt-2 text-center font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-white">
+        <h2 className="mt-2 text-center section-heading text-white">
           Step inside PU Goa.
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-center font-[family-name:var(--font-poppins)] font-normal text-base sm:text-lg text-white leading-relaxed">
+        <p className="mx-auto mt-4 max-w-2xl text-center section-body text-white">
           A 3D walkthrough of the academic blocks, residences, dining hall, swimming pool, and the
           green campus that opens out to the Goan coast.
         </p>

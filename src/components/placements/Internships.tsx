@@ -13,8 +13,8 @@ export function InternshipsAndPPOs() {
       
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h3 className="text-white font-poppins font-semibold text-xl sm:text-2xl mb-2">Internships & PPOs</h3>
-          <h2 className="text-white font-poppins font-bold text-3xl sm:text-4xl lg:text-[46px] xl:text-[52px] tracking-tight mb-4 whitespace-nowrap">
+          <h3 className="text-white mb-2 section-subheading">Internships & PPOs</h3>
+          <h2 className="text-white tracking-tight mb-4 whitespace-nowrap section-heading">
             Industry exposure begins in Year 1, not Year 4.
           </h2>
         </div>

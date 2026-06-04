@@ -31,10 +31,10 @@ export default function BenefitsSection() {
           <span className="mb-4 inline-block rounded-full bg-[#FFD523] px-4 py-1.5 text-xs font-bold text-ink shadow-sm uppercase tracking-wider">
             Why Study Abroad?
           </span>
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-ink mb-6 font-poppins">
+          <h2 className="text-ink mb-6 section-heading">
             Beyond Boundaries
           </h2>
-          <p className="mx-auto max-w-2xl text-[16px] text-ink/80">
+          <p className="mx-auto max-w-2xl text-ink/80 section-body">
             A study abroad experience is more than just an academic journey; it is a life-changing opportunity to discover the world and yourself.
           </p>
         </div>

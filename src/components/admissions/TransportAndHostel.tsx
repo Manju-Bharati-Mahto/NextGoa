@@ -18,11 +18,11 @@ export function TransportAndHostel() {
             </span>
           </div>
           
-          <h2 className="font-poppins font-bold text-[36px] sm:text-[44px] lg:text-[48px] text-ink leading-[1.1] mb-6 tracking-tight">
+          <h2 className="text-ink mb-6 !text-left section-heading">
             Getting here is not a problem.
           </h2>
           
-          <p className="font-[family-name:var(--font-poppins)] text-ink/80 text-[16px] sm:text-[18px] leading-relaxed mb-8 max-w-[500px]">
+          <p className="text-ink/80 mb-8 max-w-[500px] section-body">
             PU Goa operates a structured bus service covering the entire state - Panaji,
             Margao, Vasco, Mapusa, Ponda, Pernem, Bicholim, Canacona and more.
           </p>

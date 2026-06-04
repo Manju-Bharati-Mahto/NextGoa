@@ -15,7 +15,7 @@ export function Eyebrow({
 }) {
   return (
     <p
-      className={`text-center font-sans font-bold text-[18px] sm:text-[22px] tracking-tight ${className}`}
+      className={`text-center section-subheading tracking-tight ${className}`}
     >
       {children}
     </p>

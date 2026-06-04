@@ -11,13 +11,13 @@ export default function StudyAbroadPartners() {
     <section className={`bg-[#f9f9f9] py-25 px-4 md:px-8 ${poppins.className}`}>
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         {/* Header */}
-        <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+        <h3 className="text-gray-900 mb-2 text-center section-subheading">
           Partner Universities
         </h3>
-        <h2 className="text-4xl md:text-5xl font-bold text-[#f0424e] mb-4 text-center tracking-tight">
+        <h2 className="text-[#f0424e] mb-4 text-center section-heading">
           A global degree, one connected path.
         </h2>
-        <p className="text-gray-800 text-center mb-20 max-w-2xl font-medium">
+        <p className="text-gray-800 text-center mb-20 max-w-2xl section-body">
           Browse partner universities, faculties served, and the pathways available
           in each country
         </p>

@@ -127,7 +127,7 @@ export function StoriesGrid() {
       <section className="bg-[#5B6933] text-white">
         {/* Title */}
         <div className="mx-auto max-w-[1680px] px-6 sm:px-10 pt-16 pb-10 text-center">
-          <h2 className="font-poppins text-2xl sm:text-4xl lg:text-[44px] font-semibold tracking-tight text-white leading-tight">
+          <h2 className="text-white section-subheading">
             Browse by category Pick a topic.
           </h2>
         </div>

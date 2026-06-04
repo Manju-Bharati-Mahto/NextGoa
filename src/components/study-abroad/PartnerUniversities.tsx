@@ -15,10 +15,10 @@ export default function PartnerUniversities() {
   return (
     <section className="bg-white py-24 font-[family-name:var(--font-poppins)] overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-12 text-center">
-        <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-ink mb-4 font-poppins">
+        <h2 className="text-ink mb-4 section-heading">
           Our Global Partners
         </h2>
-        <p className="mx-auto max-w-2xl text-[16px] text-ink/70">
+        <p className="mx-auto max-w-2xl text-ink/70 section-body">
           We have established partnerships with over 50+ leading universities across the globe to ensure you get the best international exposure.
         </p>
       </div>

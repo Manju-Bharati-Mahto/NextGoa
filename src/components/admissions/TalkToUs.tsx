@@ -30,14 +30,14 @@ export function TalkToUs() {
         
         {/* Left Side: Copy & Info */}
         <div className="w-full lg:w-[45%] xl:w-1/2 flex flex-col pt-4">
-          <h3 className="font-poppins font-semibold text-[20px] md:text-[22px] text-ink mb-2">
+          <h3 className="text-ink mb-2 !text-left section-subheading">
             Talk to Us
           </h3>
-          <h2 className="font-poppins font-bold text-[40px] sm:text-[48px] lg:text-[56px] text-[#ee364f] leading-[1.1] mb-6 tracking-tight">
+          <h2 className="text-[#ee364f] !text-left mb-6 section-heading">
             Talk to a<br className="hidden lg:block" /> counsellor in 24<br className="hidden lg:block" /> hours.
           </h2>
           
-          <p className="font-[family-name:var(--font-poppins)] text-ink text-[16px] sm:text-[18px] leading-relaxed mb-8 max-w-[500px]">
+          <p className="text-ink mb-8 max-w-[500px] section-body">
             Tell us a bit about yourself. We'll call back with programme details, fees, and your next steps.
           </p>
           

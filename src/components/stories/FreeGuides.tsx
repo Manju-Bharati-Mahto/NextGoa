@@ -77,10 +77,10 @@ export function FreeGuides() {
           <p className="font-sans font-bold text-sm uppercase tracking-[0.15em] text-ink/60">
             Free Guides
           </p>
-          <h2 className="mt-2 text-center font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
+          <h2 className="mt-2 text-center text-brand section-heading">
             Download free guides - straight to your inbox.
           </h2>
-          <p className="mt-4 font-[family-name:var(--font-poppins)] text-sm sm:text-base md:text-lg text-ink/70">
+          <p className="mt-4 text-ink/70 section-body">
             Our most popular admissions, programme and pathway guides. One email, one PDF, zero spam.
           </p>
         </div>

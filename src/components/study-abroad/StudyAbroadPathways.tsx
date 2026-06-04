@@ -111,14 +111,14 @@ export default function StudyAbroadPathways() {
     <section className={`bg-[#f8f8f8] py-20 px-4 md:px-8 ${poppins.className}`}>
       <div className="max-w-6xl mx-auto flex flex-col items-center">
         {/* Header */}
-        <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+        <h3 className="text-gray-900 mb-2 text-center section-subheading">
           Compare Pathways
         </h3>
-        <h2 className="text-4xl md:text-5xl font-bold text-[#f0424e] mb-4 text-center tracking-tight">
+        <h2 className="text-[#f0424e] mb-4 text-center section-heading">
           From Goa To Global Degree,<br className="hidden md:block" />
           Study Via One Connected Path!
         </h2>
-        <p className="text-gray-800 text-center mb-12 font-medium">
+        <p className="text-gray-800 text-center mb-12 section-body">
           A quick reference for you & your family.
         </p>
 

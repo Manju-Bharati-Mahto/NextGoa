@@ -7,7 +7,7 @@ export function WhyChoosePU() {
   return (
     <section className="w-full bg-[#fcfcfc] py-20 px-4 sm:px-8 xl:px-16 border-t border-gray-100">
       <div className="max-w-[1200px] mx-auto text-center">
-        <h2 className="font-poppins font-bold text-[36px] sm:text-[44px] lg:text-[48px] text-[#ee364f] mb-12 tracking-tight">
+        <h2 className="mb-12 text-[#ee364f] section-heading">
           Why students choose PU Goa.
         </h2>
         

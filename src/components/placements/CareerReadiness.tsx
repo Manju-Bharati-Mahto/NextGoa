@@ -71,8 +71,8 @@ export function CareerReadiness() {
         
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <h3 className="text-black font-bold text-[22px] sm:text-2xl mb-2 tracking-tight">Career readiness</h3>
-          <h2 className="text-[#F13C4D] font-black text-4xl sm:text-[52px] tracking-tight">How PU Goa prepares you.</h2>
+          <h3 className="text-black mb-2 section-subheading">Career readiness</h3>
+          <h2 className="text-[#F13C4D] section-heading">How PU Goa prepares you.</h2>
         </div>
 
         {/* Grid Container */}

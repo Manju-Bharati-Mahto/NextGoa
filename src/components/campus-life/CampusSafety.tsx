@@ -23,13 +23,13 @@ export function CampusSafety() {
       <div className="relative z-10 max-w-6xl mx-auto flex flex-col items-center">
         {/* Title Section */}
         <div className="text-center mb-12 sm:mb-16">
-          <h3 className="font-poppins font-semibold text-[20px] sm:text-[24px] text-[#1F1F1F] mb-2">
+          <h3 className="text-[#1F1F1F] mb-2 section-subheading">
             Safety & Security
           </h3>
-          <h2 className="font-poppins font-bold text-[34px] sm:text-[46px] lg:text-[54px] leading-[1.1] tracking-tight text-[#1B8136] mb-4">
+          <h2 className="leading-[1.1] text-[#1B8136] mb-4 section-heading">
             Safe for students,<br />reassuring for parents.
           </h2>
-          <p className="font-[family-name:var(--font-poppins)] text-[#1F1F1F]/80 text-[15px] sm:text-[18px] max-w-none mx-auto leading-relaxed">
+          <p className="text-[#1F1F1F]/80 max-w-none mx-auto section-body">
             Layered security across academic and residential zones, with statutory committees and a dedicated 24×7 helpline.
           </p>
         </div>

@@ -14,12 +14,12 @@ export function WhoWeAre() {
         {/* Left Side: Text */}
         <div className="text-white order-2 md:order-1">
           <Eyebrow className="!text-left text-white">Who We Are</Eyebrow>
-          <h2 className="mt-2 font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-sunshine">
+          <h2 className="mt-2 text-sunshine !text-left section-heading">
             The Goan Chapter Of
             <br />
             Excellence
           </h2>
-          <div className="mt-5 space-y-4 font-[family-name:var(--font-poppins)] font-normal text-base sm:text-[18px] leading-relaxed text-white/90">
+          <div className="mt-5 space-y-4 text-white/90 section-body">
             <p>
               Parul University Goa is a not-for-profit institution, committed to academic
               excellence, real-world readiness, and lifelong growth. We are built for

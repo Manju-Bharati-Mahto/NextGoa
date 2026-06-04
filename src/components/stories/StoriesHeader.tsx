@@ -17,12 +17,12 @@ export function StoriesHeader() {
         </span>
 
         {/* Large heading */}
-        <h1 className="font-poppins mx-auto w-full max-w-none text-[38px] sm:text-[56px] font-bold leading-[1.1] tracking-tight text-brand">
+        <h1 className="mx-auto w-full max-w-none tracking-tight text-brand section-heading">
           PU Goa Stories-News, Academics, Placements, Research and more.
         </h1>
 
         {/* Sub-heading description */}
-        <p className="mx-auto mt-6 max-w-[1100px] text-[16px] sm:text-[20px] font-[family-name:var(--font-poppins)] font-normal leading-relaxed text-ink/90">
+        <p className="mx-auto mt-6 max-w-[1100px] text-ink/90 section-body">
           Everything happening at Parul University Goa, told in real time. Industry visits, placement wins, research breakthroughs, student life and admissions guides — across every faculty.
         </p>
       </div>

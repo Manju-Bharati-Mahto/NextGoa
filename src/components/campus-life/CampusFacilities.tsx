@@ -44,11 +44,11 @@ export function CampusFacilities() {
         {/* Header content */}
         <div className="flex flex-col items-center text-center max-w-4xl">
           <img src="/campus-life/sa.svg" alt="Campus Life Icon" className="w-[80px] sm:w-[100px] h-auto mb-4" />
-          <h3 className="font-poppins font-semibold text-[20px] sm:text-[24px] text-[#1F1F1F] mb-1">Campus Life</h3>
-          <h2 className="font-poppins font-bold text-[34px] sm:text-[46px] lg:text-[54px] leading-[1.1] tracking-tight text-[#E53B4A]">
+          <h3 className="text-[#1F1F1F] mb-1 section-subheading">Campus Life</h3>
+          <h2 className="leading-[1.1] text-[#E53B4A] section-heading">
             A campus that feels like a<br className="hidden sm:block" /> destination.
           </h2>
-          <p className="font-[family-name:var(--font-poppins)] text-[#1F1F1F]/80 text-[14px] sm:text-[16px] leading-relaxed max-w-3xl mt-6 mb-12">
+          <p className="text-[#1F1F1F]/80 max-w-3xl mt-6 mb-12 section-body">
             Modern classrooms. Fully equipped labs. A central auditorium. Comfortable residences.
             Smart digital libraries. An on-campus bank facility, salon, and supermarket. A cafeteria
             alongside a swimming pool. And beyond the gate, a Goan beach view awaits.

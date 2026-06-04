@@ -40,10 +40,10 @@ export function Outcomes() {
       {/* Constrained Header Container */}
       <div className="mx-auto max-w-5xl px-6 sm:pt-20 pt-5">
         <Eyebrow className="text-ink">Outcomes</Eyebrow>
-        <h2 className="mt-2 text-center font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
+        <h2 className="mt-2 text-center section-heading text-brand">
           Where graduates go by sector, not by accident.
         </h2>
-        <p className="mx-auto mt-3 max-w-2xl text-center font-[family-name:var(--font-poppins)] font-normal text-base sm:text-lg text-ink leading-relaxed">
+        <p className="mx-auto mt-3 max-w-2xl text-center section-body text-ink">
           Recruiters return year after year because graduates arrive job-ready. Indicative
           recruiter list across the Parul University ecosystem.
         </p>

@@ -6,7 +6,7 @@ export function Leadership() {
       <div className="mx-auto max-w-6xl">
         <div className="text-center mb-12">
           <Eyebrow className="text-ink">Our Leadership</Eyebrow>
-          <h2 className="mt-2 font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
+          <h2 className="mt-2 text-center text-brand section-heading">
             The people leading PU Goa.
           </h2>
 
@@ -22,10 +22,10 @@ export function Leadership() {
             </button>
           </div>
 
-          <h3 className="mt-12 font-poppins font-semibold text-[24px] sm:text-[32px] text-ink">
+          <h3 className="mt-12 text-ink section-subheading">
             Leadership - Parul Education Foundation
           </h3>
-          <p className="mt-2 font-[family-name:var(--font-poppins)] text-sm sm:text-base text-ink/80">
+          <p className="mt-2 text-ink/80 section-body">
             The visionaries behind the not-for-profit organisation that runs PU Goa.
           </p>
         </div>

@@ -69,11 +69,11 @@ export function FeePlans() {
       <div className="max-w-[1100px] mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="font-poppins font-bold text-[32px] text-ink mb-2">Fees · 2026-27</h2>
-          <h3 className="font-poppins font-semibold text-4xl sm:text-[56px] text-[#ee364f] mb-4">
+          <h2 className="text-ink mb-2 section-subheading">Fees · 2026-27</h2>
+          <h3 className="text-[#ee364f] mb-4 section-heading">
             Flexible Fee Plans!
           </h3>
-          <p className="font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] text-ink max-w-2xl mx-auto">
+          <p className="text-ink max-w-2xl mx-auto section-body">
             Annual tuition for every programme. Hostel, mess and transport are billed separately.
           </p>
         </div>

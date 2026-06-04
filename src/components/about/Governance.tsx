@@ -102,10 +102,10 @@ export function Governance() {
 
       <div className="relative z-10 mx-auto max-w-5xl px-6 pt-48 pb-52 sm:pt-56 sm:pb-56">
         <div className="text-center mb-14 text-white">
-          <h3 className="font-poppins text-[24px] font-semibold leading-tight text-white sm:text-brand-subheading">
+          <h3 className="text-center text-white section-subheading">
             Governance and Recognition
           </h3>
-          <h2 className="mt-5 font-poppins text-[38px] font-bold leading-tight text-white sm:text-[48px] lg:text-brand-heading">
+          <h2 className="mt-5 text-center text-white section-heading">
             The Holistic Framework Behind PU Goa!
           </h2>
         </div>

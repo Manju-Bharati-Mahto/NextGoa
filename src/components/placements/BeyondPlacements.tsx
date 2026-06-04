@@ -62,13 +62,13 @@ export function BeyondPlacements() {
           
           {/* Left Content */}
           <div className="max-w-xl lg:max-w-2xl lg:pr-8 mx-auto xl:mx-0">
-            <h3 className="font-poppins font-bold text-xl lg:text-[22px] text-[#1F1F1F] mb-3 tracking-wide">
+            <h3 className="text-[#1F1F1F] mb-3 !text-left section-subheading">
               Beyond placements
             </h3>
-            <h2 className="font-sans font-medium text-4xl sm:text-[46px] lg:text-[54px] leading-[1.1] text-[#E73649] mb-8">
+            <h2 className="text-[#E73649] mb-8 !text-left section-heading">
               Not every graduate takes a job offer.
             </h2>
-            <p className="font-sans text-gray-800 text-[18px] lg:text-[20px] leading-relaxed mb-12">
+            <p className="text-gray-800 mb-12 !text-left section-body">
               ~11% of each cohort chooses higher studies - at IITs, IIMs, and at universities across seven countries. The same career cell that places students in companies also guides applications, test prep and visas.
             </p>
             

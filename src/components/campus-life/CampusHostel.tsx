@@ -16,13 +16,13 @@ export function CampusHostel() {
       <div className="relative z-10 mx-auto max-w-[1300px] px-6 lg:px-12 flex flex-col items-center pt-40 pb-32 lg:pt-56 lg:pb-48">
         {/* Header */}
         <div className="text-center mb-16 lg:mb-24">
-          <h3 className="font-poppins font-semibold text-[20px] sm:text-[24px] text-white mb-2">
+          <h3 className="text-white mb-2 section-subheading">
             Hostels & Residences
           </h3>
-          <h2 className="font-poppins font-bold text-[34px] sm:text-[46px] lg:text-[54px] leading-[1.1] tracking-tight text-[#FEDB2F] mb-6">
+          <h2 className="leading-[1.1] text-[#FEDB2F] mb-6 section-heading">
             Your home at PU Goa.
           </h2>
-          <p className="font-[family-name:var(--font-poppins)] text-white/90 text-[15px] sm:text-[18px] leading-relaxed max-w-2xl mx-auto">
+          <p className="text-white/90 max-w-2xl mx-auto section-body">
             On-campus residential blocks designed around safety, study and<br className="hidden sm:block" /> community. separate accommodation for males and females.
           </p>
         </div>

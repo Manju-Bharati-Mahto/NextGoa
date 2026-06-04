@@ -161,3 +161,37 @@ img, svg {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+@utility section-subheading {
+  font-family: var(--font-gotham), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.2;
+  @media (min-width: 640px) {
+    font-size: 32px;
+  }
+}
+
+@utility section-heading {
+  font-family: var(--font-gotham), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  @media (min-width: 640px) {
+    font-size: 48px;
+  }
+  @media (min-width: 1024px) {
+    font-size: 56px;
+  }
+}
+
+@utility section-body {
+  font-family: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.65;
+  @media (min-width: 640px) {
+    font-size: 18px;
+  }
+}

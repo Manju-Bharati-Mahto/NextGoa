@@ -80,10 +80,10 @@ export function UpcomingEvents() {
           <p className="font-sans font-bold text-sm uppercase tracking-[0.15em] text-brand">
             Upcoming
           </p>
-          <h2 className="mt-2 text-center font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-ink">
+          <h2 className="mt-2 text-center text-ink section-heading">
             Events you can attend.
           </h2>
-          <p className="mt-4 font-[family-name:var(--font-poppins)] text-sm sm:text-base md:text-lg text-ink/70">
+          <p className="mt-4 text-ink/70 section-body">
             Open days, webinars, hackathons, expert sessions. Reserve your spot.
           </p>
         </div>

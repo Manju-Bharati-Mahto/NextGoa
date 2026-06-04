@@ -62,10 +62,10 @@ export function FinalCta({
             <span className="inline-block rounded-full bg-sunshine px-5 py-2 text-sm font-bold text-ink">
               {eyebrow}
             </span>
-            <h2 className="mt-6 text-center font-poppins font-bold text-[44px] sm:text-[64px] leading-[1.05] tracking-tight text-white">
+            <h2 className="mt-6 text-center text-white section-heading">
               {title}
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-center font-[family-name:var(--font-poppins)] font-normal text-base sm:text-lg text-white leading-relaxed">
+            <p className="mx-auto mt-4 max-w-2xl text-center text-white section-body">
               {description}
             </p>
 

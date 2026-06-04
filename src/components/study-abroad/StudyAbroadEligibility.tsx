@@ -10,10 +10,10 @@ export default function StudyAbroadEligibility() {
     <section className={`bg-[#f8f8f8] py-20 px-4 md:px-8 ${poppins.className}`}>
       <div className="max-w-[1180px] mx-auto flex flex-col items-center">
         {/* Header */}
-        <h2 className="text-3xl md:text-[2.75rem] font-bold text-[#eb3b47] text-center mb-6">
+        <h2 className="text-[#eb3b47] text-center mb-6 section-heading">
           International Pathway Programmes
         </h2>
-        <p className="text-gray-700 text-center max-w-4xl text-[15px] md:text-[16px] leading-relaxed mb-16">
+        <p className="text-gray-700 text-center max-w-4xl mb-16 section-body">
           Through Pathway Programs, you can begin your degree at PU Goa and complete the rest at a reputable foreign partner university, earning a degree recognised worldwide. With a foreign degree, exposure to the world, and a solid Indian academic foundation, you get the best of both worlds.
         </p>
 

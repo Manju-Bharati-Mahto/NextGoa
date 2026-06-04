@@ -12,12 +12,12 @@ export function EntranceExaminations() {
       <div className="max-w-[1200px] mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
-          <h2 className="font-poppins font-bold text-[32px] text-ink mb-2">Entrance Examinations</h2>
-          <h3 className="font-poppins font-semibold text-4xl sm:text-[56px] text-[#ee364f] mb-4">
+          <h2 className="text-ink mb-2 section-subheading">Entrance Examinations</h2>
+          <h3 className="text-[#ee364f] mb-4 section-heading">
             Two Pathways, <br className="hidden sm:block" />
             Designed Around Your Journey
           </h3>
-          <p className="font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] text-ink">
+          <p className="text-ink section-body">
             Take our in-house entrance test or apply with a valid national score. Pick the route that fits you.
           </p>
         </div>

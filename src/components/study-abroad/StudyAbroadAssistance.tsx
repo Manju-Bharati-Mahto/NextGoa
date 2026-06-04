@@ -62,10 +62,10 @@ export default function StudyAbroadAssistance() {
       <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-white text-lg md:text-xl font-medium mb-3">
+          <p className="text-white mb-3 section-subheading">
             Extended Assistance
           </p>
-          <h2 className="text-3xl md:text-[2.75rem] font-bold text-white tracking-tight">
+          <h2 className="text-white tracking-tight section-heading">
             We go an extra mile to support you!
           </h2>
         </div>

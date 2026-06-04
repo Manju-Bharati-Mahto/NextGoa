@@ -102,11 +102,11 @@ export function EligibilitySection() {
       <div className="max-w-[1200px] mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
-          <h2 className="text-2xl font-bold text-ink mb-2 font-poppins">Eligibility</h2>
-          <h3 className="text-4xl sm:text-5xl font-semibold text-[#ee364f] mb-4 font-poppins">
+          <h2 className="text-ink mb-2 section-subheading">Eligibility</h2>
+          <h3 className="text-[#ee364f] mb-4 section-heading">
             Find your fit in seconds.
           </h3>
-          <p className="text-ink text-lg">
+          <p className="text-ink section-body">
             Pick a level to see the qualification, minimum marks and entrance test for each programme.
           </p>
         </div>

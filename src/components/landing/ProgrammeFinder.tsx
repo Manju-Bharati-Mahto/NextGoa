@@ -225,10 +225,10 @@ export function ProgrammeFinder() {
     <section id="programmes" className="bg-brand-white">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <Eyebrow className="text-ink">Find your programme</Eyebrow>
-        <h2 className="mt-2 text-center font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
+        <h2 className="mt-2 text-center section-heading text-brand">
           Tell us where you&apos;re headed.
         </h2>
-        <p className="mt-3 text-center font-[family-name:var(--font-poppins)] font-normal text-base sm:text-lg text-ink leading-relaxed">
+        <p className="mt-3 text-center section-body text-ink">
           Pick a level and a field - we&apos;ll take you straight to the right faculty.
         </p>
 

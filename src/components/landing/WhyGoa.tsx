@@ -60,14 +60,14 @@ export function WhyGoa({ variant = "blue" }: { variant?: "blue" | "red" }) {
 
         <div className="text-white">
           <Eyebrow className="!text-left text-white">Why Goa</Eyebrow>
-          <h2 className="mt-2 font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-sunshine sm:whitespace-nowrap">
+          <h2 className="mt-2 text-sunshine sm:whitespace-nowrap !text-left section-heading">
             We chose Goa because
             <br />
             no classroom can teach
             <br />
             what Goa can.
           </h2>
-          <div className="mt-5 space-y-4 font-[family-name:var(--font-poppins)] font-normal text-base sm:text-[18px] leading-relaxed text-white/90">
+          <div className="mt-5 space-y-4 section-body text-white/90">
             <p>
               Goa is a global tourism hub, a creative economy, a place where Indian and
               international cultures have been meeting for centuries. It hosts some of the

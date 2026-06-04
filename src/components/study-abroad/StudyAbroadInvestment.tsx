@@ -10,11 +10,11 @@ export default function StudyAbroadInvestment() {
     <section className={`bg-[#f8f8f8] py-20 px-4 md:px-8 ${poppins.className}`}>
       <div className="max-w-[1180px] mx-auto flex flex-col items-center">
         {/* Header */}
-        <h2 className="text-3xl md:text-[2.75rem] font-bold text-[#eb3b47] text-center mb-5 leading-tight">
+        <h2 className="text-[#eb3b47] text-center mb-5 section-heading">
           Ideate & Plan your investment wisely,<br />
           one EMI at a time.
         </h2>
-        <p className="text-[#1f2022] text-center text-[16px] md:text-[18px] font-medium mb-12">
+        <p className="text-[#1f2022] text-center mb-12 section-subheading">
           Explore your Fees Options carefully!
         </p>
 

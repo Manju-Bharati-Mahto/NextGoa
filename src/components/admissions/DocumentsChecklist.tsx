@@ -94,13 +94,13 @@ export function DocumentsChecklist() {
         
         {/* Header Section */}
         <div className="text-center mb-10">
-          <h2 className="font-poppins font-bold text-[24px] sm:text-[32px] text-ink mb-2">
+          <h2 className="text-ink mb-2 section-subheading">
             Documents Checklist
           </h2>
-          <h3 className="font-poppins font-semibold text-[36px] sm:text-[48px] lg:text-[56px] text-[#ee364f] mb-4 tracking-tight">
+          <h3 className="text-[#ee364f] mb-4 section-heading">
             What to bring on admission day.
           </h3>
-          <p className="font-[family-name:var(--font-poppins)] text-ink/80 text-[16px] sm:text-[18px]">
+          <p className="text-ink/80 section-body">
             Grouped by purpose, filtered by your applicant type. Tick items off as you prepare.
           </p>
         </div>

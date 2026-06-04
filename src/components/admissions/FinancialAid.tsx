@@ -5,7 +5,7 @@ export function FinancialAid() {
     <section className="w-full bg-[#f8f8f8] py-20 px-4 sm:px-8 xl:px-16">
       <div className="max-w-[1200px] mx-auto">
         {/* Header */}
-        <h2 className="font-poppins font-bold text-4xl sm:text-[56px] text-[#e73649] text-center mb-12">
+        <h2 className="text-[#e73649] text-center mb-12 section-heading">
           Financial Aid &amp; Payment Options
         </h2>
 

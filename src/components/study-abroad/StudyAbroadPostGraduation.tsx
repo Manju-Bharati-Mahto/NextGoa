@@ -55,13 +55,13 @@ export default function StudyAbroadPostGraduation() {
         
         {/* Header */}
         <div className="text-center mb-12">
-          <p className="text-[#1f2022] text-lg md:text-xl font-semibold mb-2">
+          <p className="text-[#1f2022] mb-2 section-subheading">
             After You Finish
           </p>
-          <h2 className="text-3xl md:text-[3.5rem] font-bold text-[#eb3b47] tracking-tight leading-tight mb-4">
+          <h2 className="text-[#eb3b47] tracking-tight leading-tight mb-4 section-heading">
             Work-Life-Style After Graduation<br className="hidden md:block" /> begins right here!
           </h2>
-          <p className="text-[#1f2022] text-md md:text-lg font-medium">
+          <p className="text-[#1f2022] section-body">
             Post-study work rights, by country.
           </p>
         </div>

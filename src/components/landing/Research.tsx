@@ -39,7 +39,7 @@ export function Research() {
           <img src="/Fade1.svg" alt="" aria-hidden="true" className="h-[97px] w-auto" />
         </div>
         <Eyebrow className="mt-3 text-ink">Beyond the classroom</Eyebrow>
-        <h2 className="mt-2 text-center font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
+        <h2 className="mt-2 text-center section-heading text-brand">
           Research that funds itself. Ventures that ship.
         </h2>
 
@@ -55,7 +55,7 @@ export function Research() {
                 >
                   {c.badge}
                 </span>
-                <p className="mt-6 font-[family-name:var(--font-poppins)] font-normal text-base sm:text-[18px] leading-relaxed text-white/95">
+                <p className="mt-6 section-body text-white/95">
                   {c.description}
                 </p>
               </div>

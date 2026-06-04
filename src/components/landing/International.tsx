@@ -42,10 +42,10 @@ export function International() {
 
       <div className="relative z-10 mx-auto max-w-6xl px-6 py-20">
         <Eyebrow className="text-ink">International Teaser</Eyebrow>
-        <h2 className="mt-2 text-center font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
+        <h2 className="mt-2 text-center section-heading text-brand">
           Your Degree Can Take You Global
         </h2>
-        <p className="mx-auto mt-4 max-w-6xl text-center font-[family-name:var(--font-poppins)] font-normal text-base sm:text-lg text-ink leading-relaxed">
+        <p className="mx-auto mt-4 max-w-6xl text-center section-body text-ink">
           Through Pathway Programmes, Semester Exchanges, Summer Schools, and Global Internships, PU
           Goa students can start here and finish their degree at partner universities in the USA, UK,
           Australia, New Zealand, Canada, France, and Germany.

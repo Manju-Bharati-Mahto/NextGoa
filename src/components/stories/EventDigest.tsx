@@ -39,7 +39,7 @@ export function EventDigest() {
           <p className="font-sans font-bold text-sm uppercase tracking-[0.15em] text-ink/60">
             Digest
           </p>
-          <h2 className="mt-2 text-center font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
+          <h2 className="mt-2 text-center text-brand section-heading">
             Latest in Event category
           </h2>
         </div>
@@ -49,7 +49,7 @@ export function EventDigest() {
           
           {/* Header Row */}
           <div className="flex justify-between items-end mb-8 border-b border-black/5 pb-4">
-            <h3 className="font-poppins text-3xl font-bold tracking-tight text-ink">
+            <h3 className="text-ink section-subheading">
               Events
             </h3>
             <Link

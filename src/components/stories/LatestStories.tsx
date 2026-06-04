@@ -134,7 +134,7 @@ export function LatestStories() {
           <p className="font-sans font-bold text-sm uppercase tracking-[0.15em] text-ink/60">
             LATEST
           </p>
-          <h2 className="mt-2 text-center font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
+          <h2 className="mt-2 text-center text-brand section-heading">
             Across all categories.
           </h2>
         </div>
@@ -242,7 +242,7 @@ export function LatestStories() {
             <span className="text-[#E73649] font-bold text-xs uppercase tracking-wider block mb-2">
               The PU Goa Weekly
             </span>
-            <h3 className="text-white font-poppins font-bold text-2xl sm:text-[32px] leading-tight tracking-tight">
+            <h3 className="text-white section-subheading">
               Placements, programme launches, scholarships — once a week.
             </h3>
             <p className="mt-3 text-white/60 text-sm">

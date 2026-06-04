@@ -22,7 +22,7 @@ export default function StudyAbroadCTA() {
             Admissions Open 2026
           </span>
 
-          <h2 className="text-white text-3xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-8 leading-tight">
+          <h2 className="text-white mb-8 section-heading">
             Apply for 2026-27 and begin your Global Placement Story!
           </h2>
 
