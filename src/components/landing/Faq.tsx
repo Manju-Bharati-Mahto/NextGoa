@@ -82,7 +82,7 @@ export function Faq() {
     <section id="faq" className="bg-brand-white pb-24">
       <JsonLd data={faqSchema(faqs)} />
       <div className="mx-auto max-w-6xl px-6 py-20">
-        <Eyebrow className="text-ink">Questions parents ask</Eyebrow>
+        <Eyebrow className="text-ink">Questions Parents Ask</Eyebrow>
         <h2 className="mt-2 text-center section-heading text-brand">
           Straight answers before you ask.
         </h2>

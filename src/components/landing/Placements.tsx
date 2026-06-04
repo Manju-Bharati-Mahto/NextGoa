@@ -58,7 +58,7 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
           <img src="/Test.svg" alt="" aria-hidden="true" className="h-[97px] w-auto" />
         </div>
         <Eyebrow className="mt-3 text-ink">
-          {isAbout ? "LEGACY IN NUMBERS" : "Numbers that matter"}
+          {isAbout ? "Legacy in Numbers" : "Numbers That Matter"}
         </Eyebrow>
         <h2 className="mt-2 text-center section-heading text-brand">
           {isAbout ? "Excellence That Needs No Introduction!" : "The ecosystem in figures."}
@@ -89,7 +89,7 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
                 <span className="mb-2 font-[family-name:var(--font-gotham)] font-bold text-2xl">LPA<span className="text-[#FEDB2F]">*</span></span>
               </div>
               <div className="w-full h-px bg-white/30 my-4" />
-              <p className="font-[family-name:var(--font-poppins)] font-normal text-[15px] leading-relaxed text-white/90">
+              <p className="section-body text-white/90">
                 Awarded to two B.Tech CSE students in a single recruitment
                 cycle - the benchmark the PU ecosystem is producing today.
               </p>
@@ -123,7 +123,7 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
                 <span className="mb-3 font-[family-name:var(--font-gotham)] font-bold text-5xl">LPA<span className="text-[#FEDB2F]">*</span></span>
               </div>
               <div className="w-full h-px bg-white/30 my-4" />
-              <p className="font-[family-name:var(--font-poppins)] font-normal text-[16px] leading-[1.65] text-white/90">
+              <p className="section-body text-white/90">
                 Awarded to two B.Tech CSE students in a single recruitment
                 cycle - the benchmark the PU ecosystem is producing today.
               </p>

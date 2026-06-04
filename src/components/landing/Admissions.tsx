@@ -42,7 +42,7 @@ export function Admissions() {
                 alt="5,235 registered students"
                 className="h-8 w-auto object-contain"
               />
-              <p className="font-[family-name:var(--font-poppins)] font-normal text-sm sm:text-base text-ink/70">
+              <p className="section-body text-ink/70">
                 5,235 students have registered
               </p>
             </div>

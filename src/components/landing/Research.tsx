@@ -38,7 +38,7 @@ export function Research() {
         <div className="flex justify-center">
           <img src="/Fade1.svg" alt="" aria-hidden="true" className="h-[97px] w-auto" />
         </div>
-        <Eyebrow className="mt-3 text-ink">Beyond the classroom</Eyebrow>
+        <Eyebrow className="mt-3 text-ink">Beyond the Classroom</Eyebrow>
         <h2 className="mt-2 text-center section-heading text-brand">
           Research that funds itself. Ventures that ship.
         </h2>

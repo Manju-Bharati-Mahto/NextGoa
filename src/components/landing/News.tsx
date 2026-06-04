@@ -31,7 +31,7 @@ export function News() {
   return (
     <section id="news" className="bg-brand-white">
       <div className="mx-auto max-w-6xl px-6 py-10 sm:py-15">
-        <Eyebrow className="text-ink">News &amp; stories</Eyebrow>
+        <Eyebrow className="text-ink">News &amp; Stories</Eyebrow>
         <h2 className="mt-2 text-center section-heading text-brand">
           What&apos;s happening on campus.
         </h2>
@@ -52,7 +52,7 @@ export function News() {
                   {s.tag}
                 </span>
                 <h3 className="mt-4 font-poppins text-xl font-semibold leading-snug tracking-tight text-ink">{s.title}</h3>
-                <p className="mt-3 font-[family-name:var(--font-poppins)] text-[15px] leading-relaxed text-ink/70">{s.body}</p>
+                <p className="mt-3 section-body text-ink/70">{s.body}</p>
               </div>
             </li>
           ))}

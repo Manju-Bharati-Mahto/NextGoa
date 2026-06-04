@@ -48,7 +48,7 @@ function CardItem({ card }: { card: (typeof cards)[number] }) {
     <li className={`relative overflow-hidden rounded-[20px] p-8 sm:p-10 min-h-[280px] sm:min-h-[320px] ${cls}`}>
       <div className={`relative z-10 ${textClass}`}>
         <h3 className="font-poppins font-semibold text-[24px] sm:text-[32px] leading-tight tracking-tight">{title}</h3>
-        <p className="mt-3 font-[family-name:var(--font-poppins)] font-normal text-base sm:text-[18px] leading-relaxed opacity-90">
+        <p className="mt-3 section-body opacity-90">
           {body}
         </p>
       </div>
