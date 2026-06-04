@@ -15,7 +15,7 @@ CSS variable `--font-gotham`, which `globals.css` maps onto Tailwind's
 | `Gotham-Black.otf`      | 800        | Hero headline, big titles |
 
 (+ matching `*Italic.otf` for each.) The remaining weights present here (Thin,
-XLight, Light, Ultra) aren't loaded yet — add them to `fonts.ts` if a design
+XLight, Light, Ultra) aren't loaded yet - add them to `fonts.ts` if a design
 calls for them.
 
 > **No SemiBold:** this Gotham set has no 600 weight, so Tailwind's
@@ -24,6 +24,6 @@ calls for them.
 ## Notes
 
 - `OFL.txt` is the **Poppins** Open Font License. Gotham is a **commercial**
-  typeface — ensure you hold a valid web-embedding license for it.
+  typeface - ensure you hold a valid web-embedding license for it.
 - The `Poppins-*.ttf` files in this folder are **unused** (the project was
   briefly on Poppins). Safe to delete if you don't want them as a fallback.

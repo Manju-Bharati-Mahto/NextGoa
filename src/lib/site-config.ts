@@ -2,7 +2,7 @@
  * Central source of truth for site-wide identity, contact, and SEO defaults.
  *
  * Every metadata tag, JSON-LD block, sitemap entry, and robots rule reads from
- * here — change a fact once and it propagates across the whole site.
+ * here - change a fact once and it propagates across the whole site.
  *
  * ⚠️ TODO (verify before launch): confirm the NAP (name / address / phone)
  * details below with the university. Search engines and AI answer engines treat
@@ -25,7 +25,7 @@ export const siteConfig = {
   /** Full legal/marketing name for structured data. */
   legalName: "Parul University Goa",
   /** Default home/landing title (the template adds the brand suffix on inner pages). */
-  defaultTitle: "Parul University Goa — Goa's First State Private University",
+  defaultTitle: "Parul University Goa - Goa's First State Private University",
   /** Default meta description (≤ ~155 chars). Inner pages should override this. */
   description:
     "Parul University Goa is Goa's first State Private University, backed by two decades of teaching, research, and placements at Parul University in Gujarat. Admissions open for 2026.",
@@ -35,7 +35,7 @@ export const siteConfig = {
   lang: "en",
 
   /**
-   * NAP — Name, Address, Phone. ⚠️ Verify these.
+   * NAP - Name, Address, Phone. ⚠️ Verify these.
    * Powers the EducationalOrganization JSON-LD and the footer.
    */
   contact: {
@@ -56,7 +56,7 @@ export const siteConfig = {
     },
   },
 
-  /** Official social/profile URLs — emitted as schema `sameAs` for entity linking. */
+  /** Official social/profile URLs - emitted as schema `sameAs` for entity linking. */
   social: {
     facebook: "", // TODO
     instagram: "", // TODO

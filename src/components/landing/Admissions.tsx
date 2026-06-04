@@ -3,8 +3,8 @@ import { cta } from "@/lib/navigation";
 import { ExamDatesTicket } from "../layout/ExamDatesTicket";
 
 /**
- * "Admissions 2026 — LIVE" key-dates section. Plain, crawlable dates + accepted
- * entrance tests — exactly the kind of facts AI answer engines cite. Update the
+ * "Admissions 2026 - LIVE" key-dates section. Plain, crawlable dates + accepted
+ * entrance tests - exactly the kind of facts AI answer engines cite. Update the
  * dates / tests here as the cycle progresses.
  */
 const acceptedTests = ["JEE", "CUET", "CAT", "MAT", "GPAT", "UGC NET", "PU Goa Entrance"];
@@ -19,7 +19,7 @@ export function Admissions() {
         <Eyebrow className="mt-3 text-ink">
           <span className="inline-flex items-center gap-2">
             <span className="h-2 w-2 animate-pulse rounded-full bg-brand" />
-            Admissions 2026 — Live
+            Admissions 2026 - Live
           </span>
         </Eyebrow>
         <h2 className="mt-2 text-center font-poppins font-bold text-[38px] sm:text-[56px] leading-[1.05] tracking-tight text-brand">
@@ -27,7 +27,7 @@ export function Admissions() {
         </h2>
 
         <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
-          {/* Left — entrance test pitch */}
+          {/* Left - entrance test pitch */}
           <div className="flex flex-col justify-center text-left">
             <h3 className="font-poppins font-semibold text-[32px] leading-tight tracking-tight text-ink">
               Apply for PU Goa&apos;s<br />Entrance Test
@@ -48,7 +48,7 @@ export function Admissions() {
             </div>
           </div>
 
-          {/* Right — window card with text overlay */}
+          {/* Right - window card with text overlay */}
           <div className="flex items-center justify-center py-6 sm:py-0 w-full">
             <ExamDatesTicket />
           </div>
@@ -65,7 +65,7 @@ export function Admissions() {
             <p className="mt-4 font-sans font-medium text-[26px] sm:text-[32px] leading-tight">30 June 2026</p>
             <div className="w-full h-px bg-white/20 my-4" />
             <p className="font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] text-white/90">
-              All UG, PG and Diploma programmes — 2026 intake.
+              All UG, PG and Diploma programmes - 2026 intake.
             </p>
           </div>
           <div className="rounded-[24px] bg-ocean p-8 text-white shadow-sm">

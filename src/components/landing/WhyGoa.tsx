@@ -1,7 +1,7 @@
 import { Eyebrow } from "./Decor";
 
 /**
- * "Why Goa" — cyan band arguing Goa itself is an academic advantage. Uses the
+ * "Why Goa" - cyan band arguing Goa itself is an academic advantage. Uses the
  * same scalloped wave-band background as "Our Philosophy" (blue #0CAADD band
  * with #0094C4 decorative waves); the band's bottom scallop hands off into the
  * white International section below. The image is a placeholder (drop a real

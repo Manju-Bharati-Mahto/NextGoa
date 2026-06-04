@@ -5,24 +5,24 @@ import Image from "next/image";
 
 const faqs = [
   {
-    question: "What is the placement record at Parul University Goa?",
-    answer: "Parul University Goa has a strong placement record, with numerous top-tier companies recruiting from our campus every year. We offer dedicated career support and robust industry connections to ensure our students secure excellent opportunities.",
+    question: "Are the Engineering and IT programmes AICTE-approved?",
+    answer: "Yes, the B.Tech, BCA, and MCA programmes at Parul University Goa are strictly approved by the All India Council for Technical Education (AICTE).",
   },
   {
-    question: "Who are the top recruiters at PU Goa?",
-    answer: "Our top recruiters include leading multinational corporations, innovative startups, and major national enterprises across sectors like IT, manufacturing, finance, and consulting.",
+    question: "What specialisations are available under B.Tech Computer Science?",
+    answer: "We offer cutting-edge B.Tech specialisations aligned with future industry requirements: Artificial Intelligence (AI), Cyber Security, Data Science, and Full Stack Development.",
   },
   {
-    question: "What is the highest package offered to a PU graduate?",
-    answer: "The highest package varies by year and programme, but our graduates consistently receive competitive offers, with top packages often matching premium industry standards for fresh talent.",
+    question: "What labs and research infrastructure are available for engineering students?",
+    answer: "Students train in specialized labs equipped with high-performance computing (HPC) clusters, dedicated IoT kits, cloud architecting setups, and open-source software tools.",
   },
   {
-    question: "Are placements available for non-engineering students?",
-    answer: "Absolutely. We have dedicated placement drives for all faculties including Management, Arts, Design, and Sciences, partnering with sector-specific recruiters.",
+    question: "Can non-science students apply for BCA?",
+    answer: "Yes, students from any stream (Science, Commerce, or Arts) with Mathematics/Business Mathematics or Statistics at 10+2 level are eligible to apply for the BCA programme.",
   },
   {
-    question: "Are pre-placement offers available through internships?",
-    answer: "Yes, many of our students secure pre-placement offers (PPOs) after successfully completing their industry internships during their final or pre-final years.",
+    question: "Are there industry certifications integrated into the curriculum?",
+    answer: "Yes. Our curriculum integrates professional industry certifications from AWS, Microsoft, RedHat, and Cisco to ensure students graduate with globally recognized credentials.",
   },
 ];
 
@@ -43,7 +43,7 @@ export default function EngineeringFaq() {
             FAQs
           </h2>
           <h3 className="font-poppins font-bold text-[36px] sm:text-[48px] leading-[1.1] tracking-tight text-[#E73649]">
-            Frequently asked questions about campus life.
+            Frequently asked questions about engineering and IT programmes.
           </h3>
         </div>
 

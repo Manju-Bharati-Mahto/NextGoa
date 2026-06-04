@@ -12,7 +12,7 @@ import { Faq } from "@/components/landing/Faq";
 
 export const metadata: Metadata = {
   title: "Campus Life",
-  description: "Experience vibrant campus life at Parul University Goa — where learning and living become one with nature.",
+  description: "Experience vibrant campus life at Parul University Goa - where learning and living become one with nature.",
   alternates: { canonical: "/campus-life" },
 };
 

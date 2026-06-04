@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 
 /**
- * Dark stats band beneath the hero. Plain, crawlable text (good for SEO/AEO —
+ * Dark stats band beneath the hero. Plain, crawlable text (good for SEO/AEO -
  * these numbers are the kind of facts AI engines cite). Edit the figures here.
  */
 const stats = [

@@ -2,7 +2,7 @@ import { Eyebrow } from "./Decor";
 import { TwoThousandPlusIcon } from "./TwoThousandPlusIcon";
 
 /**
- * "Numbers that matter" — the placement ecosystem in figures. The headline
+ * "Numbers that matter" - the placement ecosystem in figures. The headline
  * package card + the stat trio. Figures are plain text (cited by AI engines);
  * keep the asterisked "ecosystem" caveat honest.
  */
@@ -68,8 +68,8 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
         </p>
 
         {/* ── Headline package card ────────────────────────────────────────
-             Mobile  : vertical stack  — text top, photo bottom (inside card)
-             Desktop : horizontal band — text left, photo overflows above right
+             Mobile  : vertical stack  - text top, photo bottom (inside card)
+             Desktop : horizontal band - text left, photo overflows above right
         ──────────────────────────────────────────────────────────────────── */}
 
         {/* Outer wrapper: on desktop only we add pt-16 for the photo overflow */}
@@ -91,7 +91,7 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
               <div className="w-full h-px bg-white/30 my-4" />
               <p className="font-[family-name:var(--font-poppins)] font-normal text-[15px] leading-relaxed text-white/90">
                 Awarded to two B.Tech CSE students in a single recruitment
-                cycle — the benchmark the PU ecosystem is producing today.
+                cycle - the benchmark the PU ecosystem is producing today.
               </p>
             </div>
 
@@ -125,12 +125,12 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
               <div className="w-full h-px bg-white/30 my-4" />
               <p className="font-[family-name:var(--font-poppins)] font-normal text-[16px] leading-[1.65] text-white/90">
                 Awarded to two B.Tech CSE students in a single recruitment
-                cycle — the benchmark the PU ecosystem is producing today.
+                cycle - the benchmark the PU ecosystem is producing today.
               </p>
             </div>
           </div>
 
-          {/* Desktop photo — wrapped to clip bottom-right corner but allow pop-out at top */}
+          {/* Desktop photo - wrapped to clip bottom-right corner but allow pop-out at top */}
           <div
             className="hidden sm:block absolute right-0 bottom-0 z-10 w-[62%] pointer-events-none rounded-br-[24px]"
             style={{

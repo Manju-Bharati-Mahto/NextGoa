@@ -24,17 +24,17 @@ export const nursingData: ProgrammeData = {
       {
         badge: "",
         title: "Central\nInstrumentation",
-        description: "HPLC, UV-Vis, FTIR, dissolution apparatus and more — every student gets hands-on time."
+        description: "HPLC, UV-Vis, FTIR, dissolution apparatus and more - every student gets hands-on time."
       },
       {
         badge: "",
         title: "Scholarships for Girl\nStudents",
-        description: "Merit and need-based scholarships specifically for women in nursing — meet a counsellor to map your eligibility."
+        description: "Merit and need-based scholarships specifically for women in nursing - meet a counsellor to map your eligibility."
       },
       {
         badge: "",
         title: "Hospital-Attached\nPostings",
-        description: "Clinical postings from second year across tertiary-care partner hospitals — paid stipend in final year internship."
+        description: "Clinical postings from second year across tertiary-care partner hospitals - paid stipend in final year internship."
       }
     ]
   },
@@ -59,7 +59,7 @@ export const nursingData: ProgrammeData = {
       { value: "500+", label: "Alumni Globally" }
     ],
     topRoles: [
-      { title: "Staff Nurse — Tertiary Care", tag: "APOLLO · MANIPAL · FORTIS", icon: "ph:first-aid-fill" },
+      { title: "Staff Nurse - Tertiary Care", tag: "APOLLO · MANIPAL · FORTIS", icon: "ph:first-aid-fill" },
       { title: "ICU / Critical Care Nurse", tag: "SPECIALISED HOSPITAL UNITS", icon: "ph:pulse-fill" },
       { title: "Community Health Nurse", tag: "PUBLIC HEALTH & PHC", icon: "ph:users-fill" },
       { title: "Nurse Educator", tag: "TEACHING & TRAINING", icon: "ph:chalkboard-teacher-fill" },
@@ -79,7 +79,7 @@ export const nursingData: ProgrammeData = {
   },
   dean: {
     name: "Dr. Jeyalakshmi.K",
-    role: "Dean — Faculty of Nursing",
+    role: "Dean - Faculty of Nursing",
     bio: "A leader in nursing education with deep clinical and academic experience across community health, midwifery and critical care nursing.",
     image: "/programmes/engineering_hero_bg.png",
     faculty: [

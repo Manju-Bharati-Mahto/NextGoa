@@ -1,5 +1,5 @@
 /**
- * Full-bleed scalloped "wave band" background from the Figma design — a solid
+ * Full-bleed scalloped "wave band" background from the Figma design - a solid
  * coloured band (`band`) with a darker decorative wave layer (`accent`) along
  * the top and bottom edges. Stretched to fill its (absolutely-positioned)
  * parent. Shared by the Philosophy band (blue) and Campus Walkthrough (red).

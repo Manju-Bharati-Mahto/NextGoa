@@ -6,7 +6,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Eyebrow } from "./Decor";
 
 /**
- * "Questions parents ask" — smooth animated accordion.
+ * "Questions parents ask" - smooth animated accordion.
  * The same `faqs` array feeds both the visible accordion and the FAQPage
  * JSON-LD to ensure perfect SEO alignment.
  */
@@ -14,7 +14,7 @@ const faqs: FaqItem[] = [
   {
     question: "Is PU Goa UGC-recognised?",
     answer:
-      "Yes. Parul University Goa is established as a State Private University and is recognised by the UGC. Programmes carry their respective regulatory approvals — AICTE for engineering and management, PCI for pharmacy, INC for nursing, and NCHMCT for hotel management.",
+      "Yes. Parul University Goa is established as a State Private University and is recognised by the UGC. Programmes carry their respective regulatory approvals - AICTE for engineering and management, PCI for pharmacy, INC for nursing, and NCHMCT for hotel management.",
   },
   {
     question: "Which entrance tests are accepted, by programme?",
@@ -88,7 +88,7 @@ export function Faq() {
         </h2>
 
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-[340px_1fr] md:items-stretch lg:gap-12">
-          {/* Yellow accent card — stretches to match the accordion height */}
+          {/* Yellow accent card - stretches to match the accordion height */}
           <div className="relative hidden min-h-[320px] overflow-hidden rounded-[24px] bg-sunshine md:block">
             <svg
               viewBox="57 102 238 228"

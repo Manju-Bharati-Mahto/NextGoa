@@ -4,7 +4,7 @@ export default function StudyAbroadComparison() {
   const directAdmissionPoints = [
     "₹40-80 L total tuition",
     "Family support far away from day one",
-    "Standalone application — bear all visa risk",
+    "Standalone application - bear all visa risk",
     "One-shot decision",
     "No fall-back if foreign plan fails",
     "No EMI structure",
@@ -19,12 +19,13 @@ export default function StudyAbroadComparison() {
   ];
 
   return (
-    <section 
-      className="relative w-full font-[family-name:var(--font-poppins)] pt-24 pb-32 bg-[#f9f9f9] bg-no-repeat bg-cover bg-center"
-      style={{ 
-        backgroundImage: "url('/abroad/Red Wave Border.png')"
-      }}
-    >
+    <section className="relative w-full font-[family-name:var(--font-poppins)] pt-24 pb-32 bg-transparent overflow-hidden">
+      {/* Background Red Wavy Image */}
+      <img
+        src="/Group 32864.png"
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
+      />
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10 py-15">
         
         {/* Header Section */}

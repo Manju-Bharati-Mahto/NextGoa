@@ -139,7 +139,7 @@ export function PlacementsByTheNumbers() {
         </h2>
         <p className="font-[family-name:var(--font-poppins)] text-sm sm:text-base text-gray-800 text-center mb-16 transition-all duration-300">
           {activeSlide === 0 
-            ? "Two views of one cohort — package bands on the left, sector destinations on the right."
+            ? "Two views of one cohort - package bands on the left, sector destinations on the right."
             : "Highest: ₹60 LPA · Median confirmed in official placement report."}
         </p>
 
@@ -322,7 +322,7 @@ export function PlacementsByTheNumbers() {
         </div>
 
         <p className="text-xs sm:text-sm text-gray-500 mb-14 transition-all duration-300">
-          Indicative — verified annually in the placement report.
+          Indicative - verified annually in the placement report.
         </p>
 
         {/* CTA Bar */}

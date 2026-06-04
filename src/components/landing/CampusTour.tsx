@@ -1,7 +1,7 @@
 import { Eyebrow } from "./Decor";
 
 /**
- * "Campus Walkthrough" — red band introducing the 3D campus tour video.
+ * "Campus Walkthrough" - red band introducing the 3D campus tour video.
  * Background is the same scalloped Figma wave band used by "Our Philosophy",
  * recoloured to the brand red (#E73649) with a darker red wave layer (#C92B3C).
  */

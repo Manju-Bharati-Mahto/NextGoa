@@ -82,9 +82,9 @@ export const hotelManagementData: ProgrammeData = {
     title: "Where you'll actually plate, host, run.",
     description: "Hands-on experience in simulated luxury hospitality environments.",
     features: [
-      { title: "Food Production Lab", description: "Industrial-grade kitchens for Indian, Continental and Asian cuisines — same equipment you'll see in a 5-star hotel." },
+      { title: "Food Production Lab", description: "Industrial-grade kitchens for Indian, Continental and Asian cuisines - same equipment you'll see in a 5-star hotel." },
       { title: "Bakery & Confectionery Studio", description: "Dedicated patisserie and bread-making space with deck ovens, proofers and chocolate-tempering setups." },
-      { title: "Model Hotel Rooms", description: "Real housekeeping training rooms — bedmaking, turndown, amenity setup, fault-finding under supervision." },
+      { title: "Model Hotel Rooms", description: "Real housekeeping training rooms - bedmaking, turndown, amenity setup, fault-finding under supervision." },
       { title: "Training Restaurant", description: "Live-cover training restaurant where students plate, serve and run service for real guests." },
       { title: "Mocktail & Bar Lab", description: "Bartending station with full glassware, garnish prep and mixology training." },
       { title: "Front Office Suite", description: "Live PMS terminals (Opera/IDS-style) for check-in, check-out, GRC and revenue training." }

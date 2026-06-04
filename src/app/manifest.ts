@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/site-config";
 
 /**
  * Generates /manifest.webmanifest. Improves mobile/PWA signals and gives the
- * "add to home screen" experience. Icons are referenced from /public — add the
+ * "add to home screen" experience. Icons are referenced from /public - add the
  * real PNGs (192px and 512px) when brand assets are exported from Figma.
  */
 export default function manifest(): MetadataRoute.Manifest {

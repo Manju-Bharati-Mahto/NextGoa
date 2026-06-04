@@ -2,7 +2,7 @@ import { siteConfig, SITE_URL } from "@/lib/site-config";
 import { staticRoutes } from "@/lib/routes";
 
 /**
- * Serves /llms.txt — an emerging convention (llmstxt.org) giving AI engines a
+ * Serves /llms.txt - an emerging convention (llmstxt.org) giving AI engines a
  * concise, curated map of the site's most useful pages in Markdown. Complements
  * robots.txt (which controls access) by guiding *what matters* for citation.
  *

@@ -7,7 +7,7 @@ import { SITE_URL } from "@/lib/site-config";
  * GEO note: AI answer engines (ChatGPT, Perplexity, Google AI Overviews, Claude)
  * crawl with named user agents. To be *cited* by them, those agents must be
  * allowed. They're listed explicitly below so the intent is documented and easy
- * to flip — if the university ever wants to opt a specific engine OUT (e.g. out
+ * to flip - if the university ever wants to opt a specific engine OUT (e.g. out
  * of model training while staying in search), change its `allow` to `disallow`.
  */
 const AI_CRAWLERS = [

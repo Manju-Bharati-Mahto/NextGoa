@@ -80,7 +80,7 @@ export default function StudyAbroadFaq() {
             FAQs
           </h2>
           <h3 className="text-4xl sm:text-[3.2rem] font-extrabold text-[#ED383F] tracking-tight leading-tight">
-            Frequently asked questions about campus life.
+            Frequently asked questions about studying abroad.
           </h3>
         </div>
 

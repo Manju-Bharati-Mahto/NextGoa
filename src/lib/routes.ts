@@ -2,7 +2,7 @@
  * Registry of indexable, statically-known routes.
  *
  * Single source of truth shared by the sitemap and llms.txt so they never drift
- * apart. Only add a path here once a real page exists for it — a sitemap that
+ * apart. Only add a path here once a real page exists for it - a sitemap that
  * lists 404s erodes crawl trust.
  *
  * As you build out the university sections, uncomment / add entries below.
@@ -33,7 +33,7 @@ export const staticRoutes: StaticRoute[] = [
     priority: 1,
     title: "Home",
     summary:
-      "Parul University Goa — Goa's first State Private University. Programmes, admissions, and campus life.",
+      "Parul University Goa - Goa's first State Private University. Programmes, admissions, and campus life.",
   },
   {
     path: "/admissions",

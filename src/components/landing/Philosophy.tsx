@@ -3,7 +3,7 @@
  * from the dark stats band, bottom into the white section below) and three
  * yellow value cards.
  *
- * NOTE: the design shows the eyebrow "The Lighthouse" on all three cards — that
+ * NOTE: the design shows the eyebrow "The Lighthouse" on all three cards - that
  * looks like a copy placeholder (the icons differ: lighthouse / pearl / sunrise).
  * Replicated faithfully here; confirm the intended eyebrow copy per card.
  */

@@ -95,7 +95,7 @@ export const managementData: ProgrammeData = {
   },
   dean: {
     name: "Dr. Kshitiz Sharma",
-    role: "Dean — Faculty of Management Studies",
+    role: "Dean - Faculty of Management Studies",
     bio: "A seasoned academic and management strategist with extensive experience leading business schools and consulting for global enterprises across analytics, finance and operations.",
     image: "/programmes/engineering_hero_bg.png", // Placeholder
     faculty: [

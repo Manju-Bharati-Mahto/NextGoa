@@ -65,7 +65,7 @@ export function PlacementsFaq() {
         <div className="text-center mb-12">
           <h3 className="text-black font-bold text-[22px] sm:text-2xl mb-2 tracking-tight">FAQs</h3>
           <h2 className="text-[#EF4444] font-black text-3xl sm:text-[46px] tracking-tight leading-tight">
-            Frequently asked questions about campus life.
+            Frequently asked questions about placements.
           </h2>
         </div>
 

@@ -1,7 +1,7 @@
 import { Eyebrow } from "./Decor";
 
 /**
- * "News & stories" — three story cards. Card images are gradient placeholders
+ * "News & stories" - three story cards. Card images are gradient placeholders
  * (drop real thumbnails at /public/news/*.jpg and swap in <Image>). Category
  * badges are colour-coded; titles/links become real article routes later.
  */
@@ -16,7 +16,7 @@ const stories = [
     tag: "Alumni",
     tagClass: "bg-ocean text-white",
     title: "From BHMCT to The Leela: Aman's two-year journey to property operations.",
-    body: "How training pairs hands-on career years — without a single skip in between.",
+    body: "How training pairs hands-on career years - without a single skip in between.",
   },
   {
     tag: "Industry",

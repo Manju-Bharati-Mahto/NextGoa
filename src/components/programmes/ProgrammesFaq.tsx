@@ -6,24 +6,24 @@ import { JsonLd } from "@/components/seo/JsonLd";
 
 const faqs: FaqItem[] = [
   {
-    question: "What is the placement record at Parul University Goa?",
-    answer: "Parul University Goa has a strong placement record, with dedicated training and placement cells working year-round to ensure students are industry-ready and connected with top employers.",
+    question: "What degree structures are offered at Parul University Goa?",
+    answer: "We offer a wide range of undergraduate (B.Tech, B.Sc, BCA, BBA, BPT, GNM), postgraduate (MBA, MCA, M.Pharm), and Doctoral (PhD) programmes aligned with the modern needs of industries.",
   },
   {
-    question: "Who are the top recruiters at PU Goa?",
-    answer: "Our top recruiters include leading multinational corporations, tech giants, and prominent national companies across various sectors such as IT, Management, and Healthcare.",
+    question: "How are the programmes aligned with NEP 2020?",
+    answer: "All our undergraduate programmes are fully aligned with the National Education Policy (NEP) 2020, offering 4-year Honours degree pathways, multiple entry/exit options, and a choice-based credit system.",
   },
   {
-    question: "What is the highest package offered to a PU graduate?",
-    answer: "The highest package offered varies by year and programme, but our graduates consistently secure highly competitive salaries in top-tier companies.",
+    question: "What is the medium of instruction?",
+    answer: "The medium of instruction for all lectures, course materials, and examinations at Parul University Goa is English.",
   },
   {
-    question: "Are placements available for non-engineering students?",
-    answer: "Yes, absolutely. We have dedicated placement drives for Management, Pharmacy, Arts, and other non-engineering faculties with equal opportunities for high-value packages.",
+    question: "Can I choose minor courses from other departments?",
+    answer: "Yes. Under our choice-based credit system (CBCS), students can choose open electives and minor specialisations from other faculties (e.g., an Engineering student can take a minor in Management or Analytics).",
   },
   {
-    question: "Are pre-placement offers available through internships?",
-    answer: "Yes, many of our students secure Pre-Placement Offers (PPOs) during their final-year internships and industry training programmes.",
+    question: "Are the programmes approved by national regulatory bodies?",
+    answer: "Absolutely. Our programmes are approved by their respective apex bodies including the AICTE (for Engineering and Management), PCI (for Pharmacy), INC (for Nursing), and are fully UGC-recognised.",
   },
 ];
 
@@ -74,7 +74,7 @@ export default function ProgrammesFaq() {
             FAQs
           </h2>
           <h3 className="text-4xl sm:text-[3.2rem] font-bold text-[#ED383F] tracking-tight leading-tight font-poppins max-w-3xl mx-auto">
-            Frequently asked questions about campus life.
+            Frequently asked questions about academic programmes.
           </h3>
         </div>
 

@@ -48,7 +48,7 @@ export function EntranceExaminations() {
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
             {/* Entrance Test Grid */}
             <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2 mb-6">
-              {/* Left — entrance test pitch */}
+              {/* Left - entrance test pitch */}
               <div className="flex flex-col justify-center text-left">
                 <h3 className="font-poppins font-semibold text-[32px] sm:text-[42px] leading-tight tracking-tight text-ink">
                   Apply for PU Goa&apos;s<br />Entrance Test
@@ -69,7 +69,7 @@ export function EntranceExaminations() {
                 </div>
               </div>
 
-              {/* Right — window card with text overlay */}
+              {/* Right - window card with text overlay */}
               <div className="flex items-center justify-center w-full">
                 <ExamDatesTicket />
               </div>
@@ -86,7 +86,7 @@ export function EntranceExaminations() {
                 <p className="mt-4 font-sans font-medium text-[26px] sm:text-[32px] leading-tight">30 June 2026</p>
                 <div className="w-full h-px bg-white/20 my-4" />
                 <p className="font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] text-white/90">
-                  All UG, PG and Diploma programmes — 2026 intake.
+                  All UG, PG and Diploma programmes - 2026 intake.
                 </p>
               </div>
               <div className="rounded-[24px] bg-[#0caadd] p-8 text-white shadow-sm">

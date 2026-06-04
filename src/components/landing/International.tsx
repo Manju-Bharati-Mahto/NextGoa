@@ -1,7 +1,7 @@
 import { Eyebrow } from "./Decor";
 
 /**
- * "International Teaser" — global pathways. Countries are listed as plain text
+ * "International Teaser" - global pathways. Countries are listed as plain text
  * (good for AEO); the cards summarise the three routes abroad.
  */
 const countries = [

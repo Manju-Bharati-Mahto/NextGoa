@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/site-config";
 
 /**
  * Site-wide footer (matches the Figma footer): cyan band, white brand lockup,
- * NAP contact column, and three link columns. The NAP is real, crawlable text —
+ * NAP contact column, and three link columns. The NAP is real, crawlable text -
  * a local-SEO trust signal that must match the JSON-LD and external listings.
  */
 const columns: { heading: string; links: { label: string; href: string }[] }[] = [

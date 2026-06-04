@@ -69,7 +69,7 @@ export function BeyondPlacements() {
               Not every graduate takes a job offer.
             </h2>
             <p className="font-sans text-gray-800 text-[18px] lg:text-[20px] leading-relaxed mb-12">
-              ~11% of each cohort chooses higher studies — at IITs, IIMs, and at universities across seven countries. The same career cell that places students in companies also guides applications, test prep and visas.
+              ~11% of each cohort chooses higher studies - at IITs, IIMs, and at universities across seven countries. The same career cell that places students in companies also guides applications, test prep and visas.
             </p>
             
             {/* Stats */}

@@ -27,7 +27,7 @@ export function Eyebrow({
  * section: `top` is the colour of the band above, `bottom` the band below.
  * `accent` (optional) draws a translucent second wave for depth.
  *
- * Pass CSS colour strings — hex or `var(--color-…)`.
+ * Pass CSS colour strings - hex or `var(--color-…)`.
  */
 export function Wave({
   top,

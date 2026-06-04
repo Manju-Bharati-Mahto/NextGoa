@@ -1,7 +1,7 @@
 import { Eyebrow } from "./Decor";
 
 /**
- * "Beyond the classroom" — two cyan cards: Research (grant-funded) and
+ * "Beyond the classroom" - two cyan cards: Research (grant-funded) and
  * Entrepreneurship (incubator). Figures are plain text for AEO/GEO citability.
  */
 const cards = [

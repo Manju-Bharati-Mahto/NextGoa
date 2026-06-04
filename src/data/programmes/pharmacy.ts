@@ -24,7 +24,7 @@ export const pharmacyData: ProgrammeData = {
       {
         badge: "",
         title: "Central\nInstrumentation",
-        description: "HPLC, UV-Vis, FTIR, dissolution apparatus and more — every student gets hands-on time."
+        description: "HPLC, UV-Vis, FTIR, dissolution apparatus and more - every student gets hands-on time."
       },
       {
         badge: "",
@@ -34,7 +34,7 @@ export const pharmacyData: ProgrammeData = {
       {
         badge: "",
         title: "Higher Studies\nPath",
-        description: "Direct route to M.Pharm, Pharm.D and MBA in Pharma Management — internal mentorship from final year."
+        description: "Direct route to M.Pharm, Pharm.D and MBA in Pharma Management - internal mentorship from final year."
       }
     ]
   },

@@ -41,7 +41,7 @@ export function PlacementsNumbers() {
               <div className="w-full h-px bg-white/30 my-4" />
               <p className="font-[family-name:var(--font-poppins)] font-normal text-[15px] leading-relaxed text-white/90">
                 Awarded to two B.Tech CSE students in a single recruitment
-                cycle — the benchmark the PU ecosystem is producing today.
+                cycle - the benchmark the PU ecosystem is producing today.
               </p>
             </div>
             
@@ -80,7 +80,7 @@ export function PlacementsNumbers() {
             </div>
           </div>
 
-          {/* Desktop photo — wrapped to clip bottom-right corner but allow pop-out at top */}
+          {/* Desktop photo - wrapped to clip bottom-right corner but allow pop-out at top */}
           <div
             className="hidden sm:block absolute right-0 bottom-0 z-10 w-[62%] pointer-events-none rounded-br-[24px]"
             style={{

@@ -31,19 +31,15 @@ const SupportPill = ({ text }: { text: string }) => (
 export default function StudyAbroadAssistance() {
   return (
     <section
-      className={`relative bg-[#f8f8f8] py-24 md:py-32 px-4 md:px-8 overflow-hidden ${poppins.className}`}
+      className={`relative bg-transparent py-24 md:py-32 px-4 md:px-8 overflow-hidden ${poppins.className}`}
       style={poppins.style}
     >
-      {/* Background Frame */}
-      <div
-        className="absolute inset-0 z-0 pointer-events-none"
-        style={{
-          backgroundImage: "url('/abroad/Extended Assistance Background.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      ></div>
+      {/* Background Red Wavy Image */}
+      <img
+        src="/Group 32864.png"
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
+      />
 
       {/* Decorative Assets */}
       <div className="absolute left-[5%] bottom-[5%] z-0 w-32 md:w-[280px] h-48 md:h-[350px] pointer-events-none opacity-40">

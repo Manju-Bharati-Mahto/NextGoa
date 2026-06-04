@@ -29,7 +29,7 @@ export default function ProgrammesPage() {
             <span className="text-brand">Delivered in Goa.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-[16px] font-[family-name:var(--font-poppins)] font-normal text-ink">
-            Specialisations Research — all NEP 2020 aligned, all built for the real world.
+            Specialisations Research - all NEP 2020 aligned, all built for the real world.
           </p>
         </div>
 

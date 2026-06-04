@@ -9,16 +9,15 @@ const poppins = Poppins({
 export default function StudyAbroadModels() {
   return (
     <section
-      className={`relative bg-[#f8f8f8] py-45 md:py-24 px-4 md:px-8 lg:py-45 overflow-hidden ${poppins.className}`}
+      className={`relative bg-transparent py-45 md:py-24 px-4 md:px-8 lg:py-45 overflow-hidden ${poppins.className}`}
       style={poppins.style}
     >
-      {/* Background Frame */}
-      <div
-        className="absolute inset-0 z-0 pointer-events-none bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/abroad/Global Journey Frame.png')"
-        }}
-      ></div>
+      {/* Background Blue Wavy Image */}
+      <img
+        src="/Group 32863.png"
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
+      />
 
       {/* Decorative Assets */}
       <div className="absolute left-0 bottom-[10%] z-0 w-32 md:w-64 h-64 md:h-[400px] pointer-events-none opacity-40">

@@ -49,11 +49,14 @@ export default function TrendingSection() {
   const activeCourse = trendingCourses[activeIndex];
 
   return (
-    <section 
-      className="relative z-20 w-full min-h-[600px] flex items-center bg-transparent -mt-12 sm:-mt-24 lg:-mt-5 pt-32 pb-24"
-      style={{ backgroundImage: "url('/programmes/trending-section.png')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}
-    >
-      <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <section className="relative z-20 w-full min-h-[600px] flex items-center bg-transparent -mt-12 sm:-mt-24 lg:-mt-5 pt-32 pb-24">
+      {/* Background Red Wavy Image */}
+      <img
+        src="/Group 32864.png"
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
+      />
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-4 lg:gap-0 items-center">
           {/* Left Column */}
           <div className="flex flex-col text-white lg:pr-4 relative z-10">

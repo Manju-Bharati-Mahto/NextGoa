@@ -229,7 +229,7 @@ export function ProgrammeFinder() {
           Tell us where you&apos;re headed.
         </h2>
         <p className="mt-3 text-center font-[family-name:var(--font-poppins)] font-normal text-base sm:text-lg text-ink leading-relaxed">
-          Pick a level and a field — we&apos;ll take you straight to the right faculty.
+          Pick a level and a field - we&apos;ll take you straight to the right faculty.
         </p>
 
         <form
@@ -290,7 +290,7 @@ export function ProgrammeFinder() {
             role="status"
             className="mx-auto mt-5 max-w-3xl rounded-2xl bg-sunshine/30 px-4 py-3 text-center text-sm font-medium text-ink"
           >
-            Showing <strong>{level}</strong> programmes in <strong>{field}</strong> — the full
+            Showing <strong>{level}</strong> programmes in <strong>{field}</strong> - the full
             catalogue is coming soon.
           </p>
         )}
@@ -366,7 +366,7 @@ export function ProgrammeFinder() {
         <div className="mt-8 flex flex-col items-center justify-between gap-4 rounded-2xl bg-ink-warm px-6 py-5 sm:flex-row">
           <p className="text-center text-base sm:text-lg font-medium text-white/90 sm:text-left">
             <span className="font-bold">Don&apos;t know what to choose?</span>{" "}
-            Talk to a counsellor — we&apos;ll match you to the right program.
+            Talk to a counsellor - we&apos;ll match you to the right program.
           </p>
           <a
             href="#admissions"

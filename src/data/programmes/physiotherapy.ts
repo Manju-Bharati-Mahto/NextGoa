@@ -24,7 +24,7 @@ export const physiotherapyData: ProgrammeData = {
       {
         badge: "",
         title: "In-House Rehab\nClinic",
-        description: "A working physiotherapy and rehabilitation centre on campus — students treat real patients from semester one under supervision."
+        description: "A working physiotherapy and rehabilitation centre on campus - students treat real patients from semester one under supervision."
       },
       {
         badge: "",
@@ -79,7 +79,7 @@ export const physiotherapyData: ProgrammeData = {
   },
   dean: {
     name: "Dr. Aseem Yadav",
-    role: "Dean — Faculty of Physiotherapy",
+    role: "Dean - Faculty of Physiotherapy",
     bio: "A clinician-educator with extensive experience in musculoskeletal rehabilitation, sports physiotherapy and community physiotherapy programmes.",
     image: "/programmes/engineering_hero_bg.png",
     faculty: [

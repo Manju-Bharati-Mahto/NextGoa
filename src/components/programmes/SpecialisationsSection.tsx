@@ -46,7 +46,7 @@ export default function SpecialisationsSection() {
             Pick a specialisation, not just a programme.
           </h3>
           <p className="text-[15px] sm:text-[17px] max-w-3xl mx-auto text-ink/80 font-medium">
-            Industry-aligned tracks across faculties — each tag opens its faculty page.
+            Industry-aligned tracks across faculties - each tag opens its faculty page.
           </p>
         </div>
 

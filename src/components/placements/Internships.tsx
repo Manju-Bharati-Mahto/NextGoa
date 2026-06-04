@@ -127,7 +127,7 @@ export function InternshipsAndPPOs() {
                 <svg className="w-10 h-10 text-[#FEDB2F] mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
                 <h4 className="text-white font-poppins font-bold text-[32px] mb-3">Embedded in curriculum</h4>
                 <p className="text-white/80 font-poppins font-semibold text-[15px] leading-relaxed">
-                  Internships are part of the programme — not an optional add-on. From Year 1 across faculties.
+                  Internships are part of the programme - not an optional add-on. From Year 1 across faculties.
                 </p>
               </div>
               <Image src="/placements/embedded-shape.svg" alt="Embedded Curriculum Graphic" fill className="object-cover object-right" />

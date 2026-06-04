@@ -75,15 +75,14 @@ export default function StudyAbroadOpportunities() {
 
   return (
     <section
-      className={`relative bg-[#f8f8f8] py-24 px-4 md:px-8 overflow-hidden ${poppins.className}`}
+      className={`relative bg-transparent py-24 px-4 md:px-8 overflow-hidden ${poppins.className}`}
     >
-      {/* Background Image for waves */}
-      <div
-        className="absolute inset-0 z-0 pointer-events-none bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/abroad/Global Opportunities Background.png')"
-        }}
-      ></div>
+      {/* Background Blue Wavy Image */}
+      <img
+        src="/Group 32863.png"
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
+      />
 
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col items-center py-24">
         {/* Header Text */}

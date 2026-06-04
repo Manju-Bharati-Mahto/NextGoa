@@ -4,38 +4,38 @@
  * Brand design tokens for Parul University Goa.
  * Defining --color-* here makes Tailwind utilities (bg-brand, text-sunshine,
  * border-ocean, …) available automatically in Tailwind v4. Source of truth for
- * the palette — tweak here, not in component classes.
+ * the palette - tweak here, not in component classes.
  */
 @theme {
   /*
    * Palette sampled directly from the Figma "Landing page" export
-   * (design/brand/Landing page.pdf). Source of truth — tweak here, not in classes.
+   * (design/brand/Landing page.pdf). Source of truth - tweak here, not in classes.
    */
 
-  /* Primary red — logo accent, CTAs, headlines (#e73649 in the design) */
+  /* Primary red - logo accent, CTAs, headlines (#e73649 in the design) */
   --color-brand: #e73649;
   --color-brand-bright: #ff3148; /* lighter pop for stat numbers / accents */
   --color-brand-dark: #c92b3c; /* hover state for red buttons */
   --color-brand-blue: #0CAADD; /* brand blue */
 
-  /* Sky blues — header bar + hero backdrop (header blends into the hero sky) */
+  /* Sky blues - header bar + hero backdrop (header blends into the hero sky) */
   --color-sky: #83c6ef; /* hero sky */
   --color-sky-soft: #c0d7ea; /* header row-2 strip */
   --color-sky-deep: #74aad3; /* header row-1 bar */
   --color-sky-light: #dceefb; /* palest sky wash */
 
-  /* Bright cyan — philosophy band, info cards, "Why Goa", footer (#0CAADD) */
+  /* Bright cyan - philosophy band, info cards, "Why Goa", footer (#0CAADD) */
   --color-ocean: #0CAADD;
   --color-ocean-deep: #0A94C2;
 
-  /* Sunshine yellow — badges, philosophy/food cards (#FEDB2F) */
+  /* Sunshine yellow - badges, philosophy/food cards (#FEDB2F) */
   --color-sunshine: #FEDB2F;
   --color-sunshine-deep: #F4C800;
 
-  /* Cream — the soft wave wash behind the final CTA */
+  /* Cream - the soft wave wash behind the final CTA */
   --color-cream: #fbf3cf;
 
-  /* Inks — body text (#1f1f1f) + the warm near-black stats band (#1F1F1F) */
+  /* Inks - body text (#1f1f1f) + the warm near-black stats band (#1F1F1F) */
   --color-ink: #1F1F1F;
   --color-ink-warm: #1F1F1F;
 
@@ -107,7 +107,7 @@ body {
 }
 
 /*
- * Hero intro sequence (pure CSS, no JS — runs in SSG, crawlable):
+ * Hero intro sequence (pure CSS, no JS - runs in SSG, crawlable):
  *  1. The big "Parul University Goa" lockup is shown.
  *  2. It swipes left + fades out.
  *  3. The headline / CTA content fades up into view.

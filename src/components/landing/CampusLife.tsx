@@ -1,7 +1,7 @@
 import { Eyebrow } from "./Decor";
 
 /**
- * "Campus Life" — four facility cards (Food / Medical / Hostels / Transport)
+ * "Campus Life" - four facility cards (Food / Medical / Hostels / Transport)
  * laid out 2×2 with asymmetric column widths: Food & Transport are the wide
  * cards, Medical & Hostels the narrow ones. Each card has copy on the left and
  * a large filled illustration bleeding off the bottom-right. Owns the

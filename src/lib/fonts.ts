@@ -12,7 +12,7 @@ export const poppins = Poppins({
 });
 
 /**
- * Gotham — the brand typeface, self-hosted from src/fonts via next/font/local.
+ * Gotham - the brand typeface, self-hosted from src/fonts via next/font/local.
  * Exposed as the CSS variable --font-gotham, which globals.css maps onto
  * Tailwind's `font-sans`, so every element inherits it by default.
  *
