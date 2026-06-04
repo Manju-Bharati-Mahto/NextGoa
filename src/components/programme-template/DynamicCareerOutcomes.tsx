@@ -24,10 +24,10 @@ export function DynamicCareerOutcomes({
       <img
         src={
           themeColor.waveBand.toUpperCase() === "#E73649"
-            ? "/Group 32864.png"
+            ? "/70.png"
             : themeColor.waveBand.toUpperCase() === "#1F1F1F"
-            ? "/Group 32865.png"
-            : "/Group 32863.png"
+            ? "/71.png"
+            : "/69.png"
         }
         alt=""
         className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"

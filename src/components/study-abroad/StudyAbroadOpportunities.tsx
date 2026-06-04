@@ -79,7 +79,7 @@ export default function StudyAbroadOpportunities() {
     >
       {/* Background Blue Wavy Image */}
       <img
-        src="/Group 32863.png"
+        src="/69.png"
         alt=""
         className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
       />

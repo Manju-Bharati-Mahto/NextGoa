@@ -42,7 +42,7 @@ export function CampusTour() {
     >
       {/* Background Red Wavy Image from Figma */}
       <img
-        src="/Group 32864.png"
+        src="/70.png"
         alt=""
         className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
       />

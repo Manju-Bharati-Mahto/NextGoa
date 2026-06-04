@@ -5,7 +5,7 @@ export function WhoWeAre() {
     <section className="relative overflow-hidden bg-transparent z-10">
       {/* Background Blue Wavy Image from Figma */}
       <img
-        src="/Group 32863.png"
+        src="/69.png"
         alt=""
         className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
       />

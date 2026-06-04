@@ -85,7 +85,7 @@ export function Philosophy({ variant = "default" }: { variant?: "default" | "cle
       {/* Background Blue Wavy Image from Figma */}
       {!isClean && (
         <img
-          src="/Group 32863.png"
+          src="/69.png"
           alt=""
           className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
         />

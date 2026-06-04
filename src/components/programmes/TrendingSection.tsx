@@ -52,7 +52,7 @@ export default function TrendingSection() {
     <section className="relative z-20 w-full min-h-[600px] flex items-center bg-transparent -mt-12 sm:-mt-24 lg:-mt-5 pt-32 pb-24">
       {/* Background Red Wavy Image */}
       <img
-        src="/Group 32864.png"
+        src="/70.png"
         alt=""
         className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
       />

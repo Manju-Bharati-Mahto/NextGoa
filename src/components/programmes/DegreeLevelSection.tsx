@@ -94,7 +94,7 @@ export default function DegreeLevelSection() {
     <section className="relative w-full min-h-[800px] flex items-center py-40 sm:py-32 bg-transparent overflow-hidden">
       {/* Background Blue Wavy Image */}
       <img
-        src="/Group 32863.png"
+        src="/69.png"
         alt=""
         className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
       />

@@ -22,7 +22,7 @@ export default function StudyAbroadComparison() {
     <section className="relative w-full font-[family-name:var(--font-poppins)] pt-24 pb-32 bg-transparent overflow-hidden">
       {/* Background Red Wavy Image */}
       <img
-        src="/Group 32864.png"
+        src="/70.png"
         alt=""
         className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
       />

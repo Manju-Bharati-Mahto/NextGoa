@@ -166,7 +166,7 @@ export function SiteFooter() {
           ))}
         </div>
 
-        <div className="pointer-events-none absolute bottom-0 right-0 hidden lg:block z-0">
+        <div className="pointer-events-none absolute bottom-[-30px] right-[-30px] hidden lg:block z-0">
           <ShellMark />
         </div>
       </div>

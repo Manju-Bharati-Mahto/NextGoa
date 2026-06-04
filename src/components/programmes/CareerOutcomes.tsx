@@ -40,7 +40,7 @@ export default function CareerOutcomes() {
     <section className="relative overflow-hidden z-10 w-full bg-[linear-gradient(to_bottom,#FDE047_50%,transparent_50%)]">
       {/* Background Red Wavy Image from Figma */}
       <img
-        src="/Group 32864.png"
+        src="/70.png"
         alt=""
         className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
       />

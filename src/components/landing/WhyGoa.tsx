@@ -14,7 +14,7 @@ export function WhyGoa({ variant = "blue" }: { variant?: "blue" | "red" }) {
     <section className={`relative overflow-hidden ${isRed ? "bg-transparent" : "bg-gradient-to-b from-[#F8F8F8] to-[#CBEFFD]"}`}>
       {/* Background Wavy Image from Figma */}
       <img
-        src={isRed ? "/Group 32864.png" : "/Group 32863.png"}
+        src={isRed ? "/70.png" : "/69.png"}
         alt=""
         className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
       />

@@ -6,7 +6,7 @@ export function PlacementsNumbers() {
     <section className="relative z-10 overflow-hidden bg-transparent text-white -mt-6 sm:-mt-12">
       {/* Background Blue Wavy Image from Figma */}
       <img
-        src="/Group 32863.png"
+        src="/69.png"
         alt=""
         className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
       />

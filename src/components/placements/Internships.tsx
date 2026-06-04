@@ -6,7 +6,7 @@ export function InternshipsAndPPOs() {
     <section className="relative overflow-hidden bg-white pt-40 sm:pt-56 pb-40 sm:pb-56">
       {/* Background Blue Wavy Image from Figma */}
       <img
-        src="/Group 32863.png"
+        src="/69.png"
         alt=""
         className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
       />

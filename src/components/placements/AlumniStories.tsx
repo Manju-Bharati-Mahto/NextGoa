@@ -6,7 +6,7 @@ export function AlumniStories() {
     <section className="relative overflow-hidden bg-white pt-[11vw] pb-[11vw] sm:pt-[9vw] sm:pb-[9vw]">
       {/* Background Red Wavy Image from Figma */}
       <img
-        src="/Group 32864.png"
+        src="/70.png"
         alt=""
         className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
       />

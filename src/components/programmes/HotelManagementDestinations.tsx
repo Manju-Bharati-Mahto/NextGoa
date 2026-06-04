@@ -29,7 +29,7 @@ export default function HotelManagementDestinations() {
     <section className="relative overflow-hidden z-10 w-full bg-transparent">
       {/* Background Blue Wavy Image from Figma */}
       <img
-        src="/Group 32863.png"
+        src="/69.png"
         alt=""
         className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
       />

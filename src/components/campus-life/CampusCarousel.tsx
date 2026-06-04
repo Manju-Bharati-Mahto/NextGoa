@@ -11,7 +11,7 @@ export function CampusCarousel() {
     <section className="relative overflow-hidden bg-gradient-to-b from-[#FEF3BA] to-[#F8F8F8]">
       {/* Background Blue Wavy Image from Figma */}
       <img
-        src="/Group 32863.png"
+        src="/69.png"
         alt=""
         className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
       />
