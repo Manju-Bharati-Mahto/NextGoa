@@ -27,18 +27,20 @@ export function TransportAndHostel() {
             Margao, Vasco, Mapusa, Ponda, Pernem, Bicholim, Canacona and more.
           </p>
           
-          <div className="flex flex-wrap gap-3">
-            {["Pernem", "Mapusa", "Panjim", "Ponda", "Margao", "Vasco", "Bicholim", "Canacona", "Quepem"].map((city) => (
-              <span 
-                key={city}
-                className="bg-white text-ink font-bold text-[13px] px-4 py-2 rounded-full shadow-sm"
-              >
-                {city}
+          <div className="w-full overflow-x-auto scrollbar-hide -mx-4 px-4 sm:-mx-8 sm:px-8 lg:mx-0 lg:px-0 py-1.5">
+            <div className="flex flex-nowrap gap-3 min-w-max">
+              {["Pernem", "Mapusa", "Panjim", "Ponda", "Margao", "Vasco", "Bicholim", "Canacona", "Quepem"].map((city) => (
+                <span 
+                  key={city}
+                  className="bg-white text-ink font-bold text-[13px] px-4 py-2 rounded-full shadow-sm shrink-0 whitespace-nowrap"
+                >
+                  {city}
+                </span>
+              ))}
+              <span className="bg-ink text-white font-bold text-[13px] px-4 py-2 rounded-full shadow-sm shrink-0 whitespace-nowrap">
+                + many more
               </span>
-            ))}
-            <span className="bg-ink text-white font-bold text-[13px] px-4 py-2 rounded-full shadow-sm">
-              + many more
-            </span>
+            </div>
           </div>
         </div>
 

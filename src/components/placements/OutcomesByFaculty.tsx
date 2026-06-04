@@ -69,21 +69,21 @@ export function OutcomesByFaculty() {
           <div className="bg-[#FCFCFC] rounded-[24px] border border-gray-200 p-6 lg:p-8 shadow-sm flex flex-col justify-between">
             {/* Top Recruiters */}
             <div className="mb-4">
-              <h4 className="text-[#1A1A1A] font-poppins font-semibold text-[19px] mb-3">Top recruiters</h4>
+              <h4 className="text-[#1A1A1A] font-poppins font-semibold text-[19px] mb-3 text-center">Top recruiters</h4>
               <div className="w-full relative h-16 sm:h-20">
                 <Image 
                   src="/placements/169.svg" 
                   alt="Top Recruiters" 
                   fill 
-                  className="object-contain object-left" 
+                  className="object-contain object-center" 
                 />
               </div>
             </div>
 
             {/* Roles */}
             <div className="mb-4">
-              <h4 className="text-[#1A1A1A] font-poppins font-semibold text-[19px] mb-3">Roles</h4>
-              <div className="flex flex-wrap gap-2.5">
+              <h4 className="text-[#1A1A1A] font-poppins font-semibold text-[19px] mb-3 text-center">Roles</h4>
+              <div className="flex flex-wrap justify-center gap-2.5">
                 {roles.map((role) => (
                   <span key={role} className="px-3.5 py-1.5 rounded-full border border-gray-300 text-gray-700 text-xs font-sans tracking-wide">
                     {role}
@@ -94,8 +94,8 @@ export function OutcomesByFaculty() {
 
             {/* Higher studies destinations */}
             <div>
-              <h4 className="text-[#1A1A1A] font-poppins font-semibold text-[19px] mb-3">Higher studies destinations</h4>
-              <div className="flex flex-wrap gap-2.5">
+              <h4 className="text-[#1A1A1A] font-poppins font-semibold text-[19px] mb-3 text-center">Higher studies destinations</h4>
+              <div className="flex flex-wrap justify-center gap-2.5">
                 {destinations.map((dest) => (
                   <span key={dest} className="px-3.5 py-1.5 rounded-full bg-[#FFEBEB] text-[#F14646] text-xs font-medium font-sans">
                     {dest}
@@ -119,20 +119,22 @@ export function OutcomesByFaculty() {
         </div>
 
         {/* Tabs */}
-        <div className="flex flex-wrap justify-center gap-3 mb-8">
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`px-5 py-2.5 rounded-full font-sans text-[15px] transition-colors ${
-                activeTab === tab 
-                  ? 'bg-[#F14646] text-white shadow-sm' 
-                  : 'bg-white text-gray-700 border border-gray-200 hover:border-[#007BFF] hover:text-[#007BFF]'
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
+        <div className="w-full overflow-x-auto scrollbar-hide -mx-4 px-4 sm:-mx-8 sm:px-8 md:mx-0 md:px-0 py-1.5 mb-8">
+          <div className="flex flex-nowrap md:flex-wrap md:justify-center gap-3 min-w-max md:min-w-0">
+            {tabs.map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`px-5 py-2.5 rounded-full font-sans text-[15px] transition-colors shrink-0 whitespace-nowrap ${
+                  activeTab === tab 
+                    ? 'bg-[#F14646] text-white shadow-sm' 
+                    : 'bg-white text-gray-700 border border-gray-200 hover:border-[#007BFF] hover:text-[#007BFF]'
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Footnote */}

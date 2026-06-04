@@ -121,34 +121,34 @@ export function AdmissionJourneyTimeline() {
           
           <div className="md:w-px md:h-20 bg-gray-200 hidden md:block"></div>
 
-          <div className="md:w-2/3 flex flex-wrap justify-center md:justify-start gap-2.5">
+          <div className="w-full md:w-2/3 flex overflow-x-auto md:overflow-x-visible pb-2 md:pb-0 gap-2.5 justify-start md:flex-wrap md:justify-start scrollbar-none [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
             <button 
               onClick={() => handlePillClick(0)}
-              className={`px-5 py-2 rounded-full text-xs font-semibold transition-colors ${activeStep === 0 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
+              className={`shrink-0 px-5 py-2 rounded-full text-xs font-semibold transition-colors ${activeStep === 0 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
             >
               I AM A BEGINNER
             </button>
             <button 
               onClick={() => handlePillClick(1)}
-              className={`px-5 py-2 rounded-full text-xs font-semibold transition-colors ${activeStep === 1 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
+              className={`shrink-0 px-5 py-2 rounded-full text-xs font-semibold transition-colors ${activeStep === 1 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
             >
               SUBMITTED APPLICATION
             </button>
             <button 
               onClick={() => handlePillClick(3)}
-              className={`px-5 py-2 rounded-full text-xs font-semibold transition-colors ${activeStep === 3 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
+              className={`shrink-0 px-5 py-2 rounded-full text-xs font-semibold transition-colors ${activeStep === 3 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
             >
               DONE WITH ENTRANCE TEST
             </button>
             <button 
               onClick={() => handlePillClick(4)}
-              className={`px-5 py-2 rounded-full text-xs font-semibold transition-colors ${activeStep === 4 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
+              className={`shrink-0 px-5 py-2 rounded-full text-xs font-semibold transition-colors ${activeStep === 4 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
             >
               AWAITING MERIT LIST
             </button>
             <button 
               onClick={() => handlePillClick(5)}
-              className={`px-5 py-2 rounded-full text-xs font-semibold transition-colors ${activeStep === 5 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
+              className={`shrink-0 px-5 py-2 rounded-full text-xs font-semibold transition-colors ${activeStep === 5 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
             >
               COMPLETED COUNSELLING
             </button>
