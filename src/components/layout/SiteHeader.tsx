@@ -47,7 +47,7 @@ export function SiteHeader() {
   }, [open]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-[100]">
+    <header className="fixed inset-x-0 top-0 z-[150]">
       {/* Row 1 - Brand Blue bar */}
       <div className="bg-brand-blue/80 backdrop-blur-md border-b border-white/20">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-5">
