@@ -16,66 +16,66 @@ interface LocationData {
 }
 
 const locations: LocationData[] = [
-  { 
-    id: 'dabolim', 
-    type: 'airport', 
-    name: 'Goa International Airport (Dabolim)', 
-    distance: '45km', 
-    time: '1h 0m', 
+  {
+    id: 'dabolim',
+    type: 'airport',
+    name: 'Goa International Airport (Dabolim)',
+    distance: '45km',
+    time: '1h 0m',
     pickupTitle: 'Campus pick-up available.',
     pickupDesc: 'Friday home drop & Monday return for North Goa hostel students. Statewide bus service across all major towns.'
   },
-  { 
-    id: 'mopa', 
-    type: 'airport', 
-    name: 'Manohar International Airport (Mopa)', 
-    distance: '78km', 
-    time: '1h 50m', 
+  {
+    id: 'mopa',
+    type: 'airport',
+    name: 'Manohar International Airport (Mopa)',
+    distance: '78km',
+    time: '1h 50m',
     pickupTitle: 'Campus pick-up available on request.',
     pickupDesc: 'Special shuttle service arranged at start and end of semesters for outstation hostel students.'
   },
-  { 
-    id: 'madgaon', 
-    type: 'train', 
-    name: 'Madgaon Railway Station', 
-    distance: '18km', 
-    time: '35m', 
+  {
+    id: 'madgaon',
+    type: 'train',
+    name: 'Madgaon Railway Station',
+    distance: '18km',
+    time: '35m',
     pickupTitle: 'Regular transit available.',
     pickupDesc: 'Frequent university shuttles and public transport available from Madgaon directly to campus.'
   },
-  { 
-    id: 'karmali', 
-    type: 'train', 
-    name: 'Karmali Railway Station', 
-    distance: '48km', 
-    time: '1h 10m', 
+  {
+    id: 'karmali',
+    type: 'train',
+    name: 'Karmali Railway Station',
+    distance: '48km',
+    time: '1h 10m',
     pickupTitle: 'Transit assistance provided.',
     pickupDesc: 'Pre-book our university transport services prior to arrival for a smooth campus transfer.'
   },
-  { 
-    id: 'panaji', 
-    type: 'city', 
-    name: 'Panaji', 
-    distance: '52km', 
-    time: '1h 20m', 
+  {
+    id: 'panaji',
+    type: 'city',
+    name: 'Panaji',
+    distance: '52km',
+    time: '1h 20m',
     pickupTitle: 'Daily bus routes active.',
     pickupDesc: 'Dedicated fleet of university buses connecting Panaji and surrounding areas to the campus daily.'
   },
-  { 
-    id: 'margao', 
-    type: 'city', 
-    name: 'Margao', 
-    distance: '15km', 
-    time: '30m', 
+  {
+    id: 'margao',
+    type: 'city',
+    name: 'Margao',
+    distance: '15km',
+    time: '30m',
     pickupTitle: 'High frequency bus service.',
     pickupDesc: 'Multiple bus trips per day bridging Margao city center with our Quepem campus.'
   },
-  { 
-    id: 'vasco', 
-    type: 'city', 
-    name: 'Vasco', 
-    distance: '42km', 
-    time: '1h 5m', 
+  {
+    id: 'vasco',
+    type: 'city',
+    name: 'Vasco',
+    distance: '42km',
+    time: '1h 5m',
     pickupTitle: 'Statewide bus service.',
     pickupDesc: 'Convenient boarding points across Vasco with comfortable daily commute for day scholars.'
   },
@@ -105,7 +105,7 @@ export function CampusLocation() {
         }
       `}</style>
       <div className="max-w-7xl mx-auto sm:px-6 px-4 lg:px-12 flex flex-col items-center">
-        
+
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <h3 className="text-[#1F1F1F] mb-2 section-subheading">
@@ -121,33 +121,31 @@ export function CampusLocation() {
 
         {/* Main Content Split */}
         <div className="w-full max-w-[1200px] flex flex-col lg:flex-row gap-8 lg:gap-12">
-          
+
           {/* Left: Location List */}
           <div className="w-full lg:w-[45%] flex flex-col gap-4">
             {locations.map((loc) => {
               const isSelected = loc.id === selectedId;
-              const typeColorClass = 
-                loc.type === 'airport' ? 'bg-[#0CAADD] text-white' : 
-                loc.type === 'train' ? 'bg-[#E73649] text-white' : 
-                'bg-[#FEDB2F] text-[#1F1F1F]';
+              const typeColorClass =
+                loc.type === 'airport' ? 'bg-[#0CAADD] text-white' :
+                  loc.type === 'train' ? 'bg-[#E73649] text-white' :
+                    'bg-[#FEDB2F] text-[#1F1F1F]';
 
               return (
                 <button
                   key={loc.id}
                   onClick={() => setSelectedId(loc.id)}
-                  className={`flex-1 w-full flex items-center justify-between p-2 sm:p-3 pr-4 sm:pr-6 rounded-[16px] shadow-sm transition-all duration-300 border ${
-                    isSelected 
-                      ? 'bg-[#0CAADD] border-[#0CAADD] text-white scale-[1.02] shadow-md' 
-                      : 'bg-white border-black/5 text-[#1F1F1F] hover:bg-gray-50 hover:border-black/10'
-                  }`}
+                  className={`flex-1 w-full flex items-center justify-between p-2 sm:p-3 pr-4 sm:pr-6 rounded-[16px] shadow-sm transition-all duration-300 border ${isSelected
+                    ? 'bg-[#0CAADD] border-[#0CAADD] text-white scale-[1.02] shadow-md'
+                    : 'bg-white border-black/5 text-[#1F1F1F] hover:bg-gray-50 hover:border-black/10'
+                    }`}
                 >
                   <div className="flex items-center gap-3 sm:gap-4">
                     {/* Icon Block */}
-                    <div className={`w-[48px] h-[48px] shrink-0 flex items-center justify-center rounded-[12px] transition-colors ${
-                      isSelected 
-                        ? 'bg-white text-[#0CAADD]' 
-                        : typeColorClass
-                    }`}>
+                    <div className={`w-[48px] h-[48px] shrink-0 flex items-center justify-center rounded-[12px] transition-colors ${isSelected
+                      ? 'bg-white text-[#0CAADD]'
+                      : typeColorClass
+                      }`}>
                       <Icon icon={getTypeIcon(loc.type)} className="text-[24px]" />
                     </div>
                     <span className="font-[family-name:var(--font-poppins)] font-medium text-[15px] sm:text-[16px] text-left">
@@ -168,22 +166,22 @@ export function CampusLocation() {
               {/* Inner Dashed Border (Exact Figma Properties: Dash 8, Gap 8) */}
               <div className="absolute inset-4 sm:inset-6 pointer-events-none">
                 <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                  <rect 
-                    x="1" 
-                    y="1" 
-                    width="calc(100% - 2px)" 
-                    height="calc(100% - 2px)" 
-                    rx="24" 
-                    fill="none" 
-                    stroke="white" 
-                    strokeWidth="2" 
-                    strokeDasharray="8 8" 
+                  <rect
+                    x="1"
+                    y="1"
+                    width="calc(100% - 2px)"
+                    height="calc(100% - 2px)"
+                    rx="24"
+                    fill="none"
+                    stroke="white"
+                    strokeWidth="2"
+                    strokeDasharray="8 8"
                   />
                 </svg>
               </div>
-              
+
               <div key={selectedLocation.id} className="relative z-10 flex flex-col h-full px-6 sm:px-10 py-8 sm:py-10 animate-fade-slide">
-                
+
                 {/* Top Pill */}
                 <div className="flex justify-center mb-8">
                   <div className="bg-[#2D2D2D] px-8 py-3 rounded-[12px]">
@@ -204,7 +202,7 @@ export function CampusLocation() {
                       {selectedLocation.name}
                     </div>
                   </div>
-                  
+
                   {/* Long Arrow */}
                   <div className="shrink-0 flex items-center justify-center px-2 sm:px-4 mt-6">
                     <svg className="w-12 sm:w-20 text-[#FEDB2F]" viewBox="0 0 100 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -212,7 +210,7 @@ export function CampusLocation() {
                       <path d="M100 7L86 0V14L100 7Z" fill="currentColor" />
                     </svg>
                   </div>
-                  
+
                   <div className="flex-1">
                     <div className="font-sans text-[#FEDB2F] text-[12px] font-medium tracking-wide mb-2">TO</div>
                     <div className="font-sans font-bold text-white text-[18px] sm:text-[24px] leading-snug">
@@ -258,7 +256,7 @@ export function CampusLocation() {
               </div>
             </div>
           </div>
-          
+
         </div>
 
         {/* Bottom Address Bar */}
