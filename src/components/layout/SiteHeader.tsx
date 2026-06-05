@@ -159,7 +159,7 @@ export function SiteHeader() {
           <Link
             href={cta.apply}
             onClick={() => setOpen(false)}
-            className="flex w-full items-center justify-center rounded-full bg-[#E73649] px-6 py-4 text-lg font-bold text-white shadow-xl transition-all hover:bg-[#D62B3D] hover:scale-[1.02]"
+            className="flex w-full items-center justify-center rounded-full bg-[#E73649] px-6 py-4 text-md font-bold text-white transition-all hover:bg-[#D62B3D]"
           >
             Apply Now &rarr;
           </Link>
