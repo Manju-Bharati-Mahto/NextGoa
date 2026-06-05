@@ -117,7 +117,7 @@ export function SiteHeader() {
         <nav
           id="mobile-nav"
           aria-label="Mobile"
-          className="flex flex-col px-6 pt-12"
+          className="flex flex-col px-3 pt-17"
         >
           <ul className="flex flex-col gap-8">
             {navItems.map((item, idx) => (
@@ -153,6 +153,17 @@ export function SiteHeader() {
             ))}
           </ul>
         </nav>
+        
+        {/* Bottom CTA */}
+        <div className="absolute bottom-10 left-6 right-6">
+          <Link
+            href={cta.apply}
+            onClick={() => setOpen(false)}
+            className="flex w-full items-center justify-center rounded-full bg-[#E73649] px-6 py-4 text-lg font-bold text-white shadow-xl transition-all hover:bg-[#D62B3D] hover:scale-[1.02]"
+          >
+            Apply Now &rarr;
+          </Link>
+        </div>
       </div>
     </header>
   );
