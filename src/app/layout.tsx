@@ -8,7 +8,7 @@ import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { EnquiryModal } from "@/components/layout/EnquiryModal";
 import FloatingCta from "@/components/layout/FloatingCta";
-
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
 /**
  * Site-wide metadata defaults. `metadataBase` lets every page emit absolute
  * canonical/OG URLs from relative paths. The title `template` appends the brand
@@ -75,6 +75,7 @@ export default function RootLayout({
         <SiteFooter />
         <EnquiryModal />
         <FloatingCta />
+        <ScrollToTop />
       </body>
     </html>
   );
