@@ -129,9 +129,24 @@ export function SiteHeader() {
                 <Link
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="block font-[family-name:var(--font-poppins)] text-lg font-medium text-white transition-colors hover:text-white/80"
+                  className="group inline-flex flex-col font-[family-name:var(--font-poppins)] text-xl font-medium text-white transition-colors"
                 >
-                  {item.label}
+                  <div className="flex items-center gap-3">
+                    <svg 
+                      className="w-5 h-5 opacity-0 -translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 text-white" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="3" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                    >
+                      <path d="M7 17L17 7" />
+                      <path d="M7 7h10v10" />
+                    </svg>
+                    <span className="transition-transform duration-300 group-hover:translate-x-1">{item.label}</span>
+                  </div>
+                  <div className="h-[3px] bg-white w-0 transition-all duration-300 group-hover:w-[calc(100%-2rem)] ml-8 mt-1 rounded-full"></div>
                 </Link>
               </li>
             ))}
