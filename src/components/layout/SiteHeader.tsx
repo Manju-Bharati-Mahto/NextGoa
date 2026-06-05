@@ -101,7 +101,8 @@ export function SiteHeader() {
         className={`fixed inset-0 z-50 bg-brand-blue transition-transform duration-300 ease-in-out lg:hidden ${open ? "translate-x-0" : "-translate-x-full"
           }`}
       >
-        <div className="flex justify-end p-6">
+        <div className="flex items-center justify-between p-6">
+          <Logo />
           <button
             type="button"
             aria-label="Close menu"
