@@ -36,8 +36,8 @@ export function StartupEcosystem() {
           {/* Left Column: Stats Cards */}
           <div className="flex flex-col gap-4 sm:gap-6">
             
-            <div className="bg-white border border-gray-100 rounded-[20px] p-6 sm:p-8 flex flex-col items-end justify-center text-right shadow-sm flex-1">
-              <div className="text-[#00A8E8] font-black text-5xl sm:text-6xl leading-none flex items-baseline justify-end tracking-tighter">
+            <div className="bg-white border border-gray-100 rounded-[20px] p-6 sm:p-8 flex flex-col items-center sm:items-end justify-center text-center sm:text-right shadow-sm flex-1">
+              <div className="text-[#00A8E8] font-black text-5xl sm:text-6xl leading-none flex items-baseline justify-center sm:justify-end tracking-tighter">
                 <span className="text-3xl sm:text-4xl mr-1 font-bold">₹</span>20<span className="text-3xl sm:text-4xl font-bold ml-1">Cr+</span>
               </div>
               <div className="text-black text-[11px] sm:text-xs font-bold uppercase mt-4 tracking-widest">
@@ -48,8 +48,8 @@ export function StartupEcosystem() {
               </p>
             </div>
 
-            <div className="bg-white border border-gray-100 rounded-[20px] p-6 sm:p-8 flex flex-col items-end justify-center text-right shadow-sm flex-1">
-              <div className="text-[#00A8E8] font-black text-5xl sm:text-6xl leading-none flex items-baseline justify-end tracking-tighter">
+            <div className="bg-white border border-gray-100 rounded-[20px] p-6 sm:p-8 flex flex-col items-center sm:items-end justify-center text-center sm:text-right shadow-sm flex-1">
+              <div className="text-[#00A8E8] font-black text-5xl sm:text-6xl leading-none flex items-baseline justify-center sm:justify-end tracking-tighter">
                 254
               </div>
               <div className="text-black text-[11px] sm:text-xs font-bold uppercase mt-4 tracking-widest">
@@ -60,8 +60,8 @@ export function StartupEcosystem() {
               </p>
             </div>
 
-            <div className="bg-white border border-gray-100 rounded-[20px] p-6 sm:p-8 flex flex-col items-end justify-center text-right shadow-sm flex-1">
-              <div className="text-[#00A8E8] font-black text-5xl sm:text-6xl leading-none flex items-baseline justify-end tracking-tighter">
+            <div className="bg-white border border-gray-100 rounded-[20px] p-6 sm:p-8 flex flex-col items-center sm:items-end justify-center text-center sm:text-right shadow-sm flex-1">
+              <div className="text-[#00A8E8] font-black text-5xl sm:text-6xl leading-none flex items-baseline justify-center sm:justify-end tracking-tighter">
                 <span className="text-3xl sm:text-4xl mr-1 font-bold">₹</span>40<span className="text-3xl sm:text-4xl font-bold ml-1">Cr+</span>
               </div>
               <div className="text-black text-[11px] sm:text-xs font-bold uppercase mt-4 tracking-widest">
@@ -109,7 +109,7 @@ export function StartupEcosystem() {
             </div>
 
             {/* Carousel Dots */}
-            <div className="absolute -bottom-10 sm:-bottom-12 left-0 w-full flex justify-center items-center gap-2.5">
+            <div className="absolute -bottom-12 sm:-bottom-12 left-0 w-full flex justify-center items-center gap-2.5">
               {CAROUSEL_SLIDES.map((_, idx) => (
                 <button
                   key={idx}
@@ -126,7 +126,7 @@ export function StartupEcosystem() {
         </div>
 
         {/* Bottom Call to Action Card */}
-        <div className="bg-white rounded-[20px] sm:rounded-[24px] border border-gray-100 overflow-hidden flex flex-col md:flex-row shadow-sm max-w-5xl mx-auto items-stretch mt-[45px] sm:mt-[61px]">
+        <div className="bg-white rounded-[20px] sm:rounded-[24px] border border-gray-100 overflow-hidden flex flex-col md:flex-row shadow-sm max-w-5xl mx-auto items-stretch mt-[80px] sm:mt-[61px]">
           
           <div className="flex items-center p-6 md:p-8 gap-5 md:gap-8 flex-1">
             <div className="relative flex-shrink-0 w-[50px] h-[50px] sm:w-[64px] sm:h-[64px] flex items-center justify-center">

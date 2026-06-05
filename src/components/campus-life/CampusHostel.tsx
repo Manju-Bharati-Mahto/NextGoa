@@ -6,14 +6,40 @@ export function CampusHostel() {
       {/* Background for the top part (above the top wave) */}
       <div className="absolute inset-x-0 top-0 h-[10vw] bg-[#F8F8F8] z-0 pointer-events-none" />
 
-      {/* Background Red Wavy Image from Figma */}
-      <img
-        src="/70.png"
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
-      />
+            <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Middle Solid Red Background */}
+        <div 
+          className="absolute inset-x-0 bg-[#E73649]" 
+          style={{ 
+            top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
+            bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+          }} 
+        />
+        {/* Top Wave */}
+        <div 
+          className="absolute top-0 left-0 right-0 overflow-hidden"
+          style={{ height: "clamp(50px, 8vw, 120px)" }}
+        >
+          <img
+            src="/89.svg"
+            alt=""
+            className="absolute top-0 left-0 w-full h-auto"
+          />
+        </div>
+        {/* Bottom Wave */}
+        <div 
+          className="absolute bottom-0 left-0 right-0 overflow-hidden"
+          style={{ height: "clamp(50px, 8vw, 120px)" }}
+        >
+          <img
+            src="/89.svg"
+            alt=""
+            className="absolute bottom-0 left-0 w-full h-auto"
+          />
+        </div>
+      </div>
 
-      <div className="relative z-10 mx-auto max-w-[1300px] px-6 lg:px-12 flex flex-col items-center pt-40 pb-32 lg:pt-56 lg:pb-48">
+      <div className="relative z-10 mx-auto max-w-[1300px] px-6 lg:px-12 flex flex-col items-center pt-16 pb-16 lg:pt-56 lg:pb-48">
         {/* Header */}
         <div className="text-center mb-16 lg:mb-24">
           <h3 className="text-white mb-2 section-subheading">

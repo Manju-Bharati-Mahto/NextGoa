@@ -91,13 +91,40 @@ const DegreeCard = ({ data }: { data: typeof degrees[0] }) => (
 
 export default function DegreeLevelSection() {
   return (
-    <section className="relative w-full min-h-[500px] md:min-h-[800px] flex items-center pt-72 pb-72 md:py-32 lg:py-40 bg-transparent overflow-hidden">
+    <section className="relative w-full min-h-[500px] md:min-h-[800px] flex items-center pt-16 pb-16 md:py-32 lg:py-40 bg-transparent overflow-hidden">
       {/* Background Blue Wavy Image */}
-      <img
-        src="/69.png"
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
-      />
+            <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Middle Solid Blue Background */}
+        <div 
+          className="absolute inset-x-0 bg-[#0CAADD]" 
+          style={{ 
+            top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
+            bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+          }} 
+        />
+        {/* Top Wave */}
+        <div 
+          className="absolute top-0 left-0 right-0 overflow-hidden"
+          style={{ height: "clamp(50px, 8vw, 120px)" }}
+        >
+          <img
+            src="/88.svg"
+            alt=""
+            className="absolute top-0 left-0 w-full h-auto"
+          />
+        </div>
+        {/* Bottom Wave */}
+        <div 
+          className="absolute bottom-0 left-0 right-0 overflow-hidden"
+          style={{ height: "clamp(50px, 8vw, 120px)" }}
+        >
+          <img
+            src="/88.svg"
+            alt=""
+            className="absolute bottom-0 left-0 w-full h-auto"
+          />
+        </div>
+      </div>
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 font-[family-name:var(--font-poppins)]">
         {/* Header Content */}
         <div className="text-center text-white mb-10 md:mb-16 lg:mb-20">

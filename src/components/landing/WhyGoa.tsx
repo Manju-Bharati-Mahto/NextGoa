@@ -7,19 +7,81 @@ import { Eyebrow } from "./Decor";
  * white International section below. The image is a placeholder (drop a real
  * campus/culture photo at /public/why-goa.jpg and swap in <Image>).
  */
-export function WhyGoa({ variant = "blue" }: { variant?: "blue" | "red" }) {
+export function WhyGoa({ variant = "blue", image = "/why-goa.png" }: { variant?: "blue" | "red"; image?: string }) {
   const isRed = variant === "red";
   
   return (
     <section className={`relative overflow-hidden ${isRed ? "bg-transparent" : "bg-gradient-to-b from-[#F8F8F8] to-[#CBEFFD]"}`}>
       {/* Background Wavy Image from Figma */}
-      <img
-        src={isRed ? "/70.png" : "/69.png"}
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
-      />
+      {!isRed ? (
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          {/* Middle Solid Blue Background */}
+          <div 
+            className="absolute inset-x-0 bg-[#0CAADD]" 
+            style={{ 
+              top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
+              bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+            }} 
+          />
+          {/* Top Wave */}
+          <div 
+            className="absolute top-0 left-0 right-0 overflow-hidden"
+            style={{ height: "clamp(50px, 8vw, 120px)" }}
+          >
+            <img
+              src="/88.svg"
+              alt=""
+              className="absolute top-0 left-0 w-full h-auto"
+            />
+          </div>
+          {/* Bottom Wave */}
+          <div 
+            className="absolute bottom-0 left-0 right-0 overflow-hidden"
+            style={{ height: "clamp(50px, 8vw, 120px)" }}
+          >
+            <img
+              src="/88.svg"
+              alt=""
+              className="absolute bottom-0 left-0 w-full h-auto"
+            />
+          </div>
+        </div>
+      ) : (
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          {/* Middle Solid Red Background */}
+          <div 
+            className="absolute inset-x-0 bg-[#E73649]" 
+            style={{ 
+              top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
+              bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+            }} 
+          />
+          {/* Top Wave */}
+          <div 
+            className="absolute top-0 left-0 right-0 overflow-hidden"
+            style={{ height: "clamp(50px, 8vw, 120px)" }}
+          >
+            <img
+              src="/89.svg"
+              alt=""
+              className="absolute top-0 left-0 w-full h-auto"
+            />
+          </div>
+          {/* Bottom Wave */}
+          <div 
+            className="absolute bottom-0 left-0 right-0 overflow-hidden"
+            style={{ height: "clamp(50px, 8vw, 120px)" }}
+          >
+            <img
+              src="/89.svg"
+              alt=""
+              className="absolute bottom-0 left-0 w-full h-auto"
+            />
+          </div>
+        </div>
+      )}
 
-      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 pt-44 pb-64 md:grid-cols-[1fr_1.3fr] lg:grid-cols-[1fr_1.2fr] md:gap-24 lg:gap-32">
+      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 pt-20 pb-20 md:pt-48 md:pb-48 lg:pt-56 lg:pb-56 md:grid-cols-[1fr_1.3fr] lg:grid-cols-[1fr_1.2fr] md:gap-24 lg:gap-32">
         <div className="relative mx-auto w-full max-w-none lg:max-w-[550px]">
           {/* Top-left blueprint crosshair (Group 3062.svg) */}
           <svg
@@ -51,8 +113,8 @@ export function WhyGoa({ variant = "blue" }: { variant?: "blue" | "red" }) {
           {/* Event photo */}
           <div className="relative z-10 overflow-hidden rounded-[28px] shadow-2xl ring-1 ring-black/10">
             <img
-              src="/why-goa.jpg"
-              alt="Parul University Mission Possible event in Goa"
+              src={image}
+              alt="Parul University Goa Campus Life"
               className="w-full h-auto object-contain sm:aspect-square sm:object-cover bg-white"
             />
           </div>

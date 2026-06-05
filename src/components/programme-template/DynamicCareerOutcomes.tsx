@@ -21,17 +21,139 @@ export function DynamicCareerOutcomes({
       style={{ backgroundImage: `linear-gradient(to bottom, ${topBgColor} 50%, transparent 50%)` }}
     >
       {/* Background Wavy Image from Figma */}
-      <img
-        src={
-          themeColor.waveBand.toUpperCase() === "#E73649"
-            ? "/70.png"
-            : themeColor.waveBand.toUpperCase() === "#1F1F1F"
-            ? "/71.png"
-            : "/69.png"
-        }
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
-      />
+      {themeColor.waveBand.toUpperCase() === "#E73649" ? (
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          {/* Middle Solid Red Background */}
+          <div 
+            className="absolute inset-x-0 bg-[#E73649]" 
+            style={{ 
+              top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
+              bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+            }} 
+          />
+          {/* Top Wave */}
+          <div 
+            className="absolute top-0 left-0 right-0 overflow-hidden"
+            style={{ height: "clamp(50px, 8vw, 120px)" }}
+          >
+            <img
+              src="/89.svg"
+              alt=""
+              className="absolute top-0 left-0 w-full h-auto"
+            />
+          </div>
+          {/* Bottom Wave */}
+          <div 
+            className="absolute bottom-0 left-0 right-0 overflow-hidden"
+            style={{ height: "clamp(50px, 8vw, 120px)" }}
+          >
+            <img
+              src="/89.svg"
+              alt=""
+              className="absolute bottom-0 left-0 w-full h-auto"
+            />
+          </div>
+        </div>
+      ) : themeColor.waveBand.toUpperCase() === "#FEDB2F" ? (
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          {/* Middle Solid Yellow Background */}
+          <div 
+            className="absolute inset-x-0 bg-[#FEDB2F]" 
+            style={{ 
+              top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
+              bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+            }} 
+          />
+          {/* Top Wave */}
+          <div 
+            className="absolute top-0 left-0 right-0 overflow-hidden"
+            style={{ height: "clamp(50px, 8vw, 120px)" }}
+          >
+            <img
+              src="/87.svg"
+              alt=""
+              className="absolute top-0 left-0 w-full h-auto"
+            />
+          </div>
+          {/* Bottom Wave */}
+          <div 
+            className="absolute bottom-0 left-0 right-0 overflow-hidden"
+            style={{ height: "clamp(50px, 8vw, 120px)" }}
+          >
+            <img
+              src="/87.svg"
+              alt=""
+              className="absolute bottom-0 left-0 w-full h-auto"
+            />
+          </div>
+        </div>
+      ) : themeColor.waveBand.toUpperCase() === "#1F1F1F" ? (
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          {/* Middle Solid Black Background */}
+          <div 
+            className="absolute inset-x-0 bg-[#1F1F1F]" 
+            style={{ 
+              top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
+              bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+            }} 
+          />
+          {/* Top Wave */}
+          <div 
+            className="absolute top-0 left-0 right-0 overflow-hidden"
+            style={{ height: "clamp(50px, 8vw, 120px)" }}
+          >
+            <img
+              src="/90.svg"
+              alt=""
+              className="absolute top-0 left-0 w-full h-auto"
+            />
+          </div>
+          {/* Bottom Wave */}
+          <div 
+            className="absolute bottom-0 left-0 right-0 overflow-hidden"
+            style={{ height: "clamp(50px, 8vw, 120px)" }}
+          >
+            <img
+              src="/90.svg"
+              alt=""
+              className="absolute bottom-0 left-0 w-full h-auto"
+            />
+          </div>
+        </div>
+      ) : (
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          {/* Middle Solid Blue Background */}
+          <div 
+            className="absolute inset-x-0 bg-[#0CAADD]" 
+            style={{ 
+              top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
+              bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+            }} 
+          />
+          {/* Top Wave */}
+          <div 
+            className="absolute top-0 left-0 right-0 overflow-hidden"
+            style={{ height: "clamp(50px, 8vw, 120px)" }}
+          >
+            <img
+              src="/88.svg"
+              alt=""
+              className="absolute top-0 left-0 w-full h-auto"
+            />
+          </div>
+          {/* Bottom Wave */}
+          <div 
+            className="absolute bottom-0 left-0 right-0 overflow-hidden"
+            style={{ height: "clamp(50px, 8vw, 120px)" }}
+          >
+            <img
+              src="/88.svg"
+              alt=""
+              className="absolute bottom-0 left-0 w-full h-auto"
+            />
+          </div>
+        </div>
+      )}
 
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-12 py-24 sm:py-32 text-center flex flex-col items-center">
         <h2 className="text-white mb-4 section-subheading">

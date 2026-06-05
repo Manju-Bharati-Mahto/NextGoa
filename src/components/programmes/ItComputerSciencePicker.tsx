@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import ProgrammeCard from "./ProgrammeCard";
 
 type Programme = {
   title: string;
@@ -83,7 +84,7 @@ export default function ItComputerSciencePicker() {
   };
 
   const currentProgrammes = programmeData[activeLevel] || [];
-  const visibleProgrammes = showAll ? currentProgrammes : currentProgrammes.slice(0, 2);
+  const visibleProgrammes = showAll ? currentProgrammes : currentProgrammes.slice(0, 3);
 
   return (
     <section className="w-full bg-[#FAFAFA] py-24 sm:py-32 border-t border-gray-150">
@@ -121,65 +122,20 @@ export default function ItComputerSciencePicker() {
 
         {/* Cards Grid */}
         <div className="flex flex-wrap justify-center gap-6 sm:gap-10 w-full mx-auto items-stretch">
-          {visibleProgrammes.map((prog, idx) => {
-            const isYellow = idx % 2 === 0;
-
-            return (
-              <div 
-                key={idx}
-                className="w-full md:w-[calc(50%-1.25rem)] rounded-[24px] overflow-hidden flex flex-col bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 transition-shadow hover:shadow-lg"
-              >
-                {/* Top Section */}
-                <div className={`p-6 sm:p-8 ${isYellow ? "bg-[#FCE34B] text-ink" : "bg-[#0CAADD] text-white"}`}>
-                  <div className="mb-3">
-                    <span className={`inline-block px-3 py-1.5 text-[11px] font-bold uppercase rounded-full tracking-[0.15em] ${isYellow ? "bg-[#0CAADD] text-white" : "bg-[#FCE34B] text-ink"}`}>
-                      {prog.isNew ? "Specialised Track" : "Core Programme"}
-                    </span>
-                  </div>
-                  <h4 className="font-poppins font-bold text-[20px] sm:text-[24px] leading-snug whitespace-pre-line">
-                    {prog.title}
-                  </h4>
-                </div>
-
-                {/* Bottom Section */}
-                <div className="p-6 sm:p-8 flex flex-col flex-grow text-ink">
-                  <div className="grid grid-cols-2 gap-y-5 mb-6">
-                    <div>
-                      <p className="text-[14px] uppercase tracking-wider mb-1 opacity-50 font-bold">Duration</p>
-                      <p className="font-bold text-[17px]">{prog.duration}</p>
-                    </div>
-                    <div>
-                      <p className="text-[14px] uppercase tracking-wider mb-1 opacity-50 font-bold">Eligibility</p>
-                      <p className="font-bold text-[17px] leading-snug max-w-[250px] whitespace-pre-wrap">{prog.eligibility}</p>
-                    </div>
-                    <div>
-                      <p className="text-[14px] uppercase tracking-wider mb-1 opacity-50 font-bold">Intake</p>
-                      <p className="font-bold text-[17px]">{prog.intake}</p>
-                    </div>
-                    <div>
-                      <p className="text-[14px] uppercase tracking-wider mb-1 opacity-50 font-bold">Mode</p>
-                      <p className="font-bold text-[17px]">{prog.mode}</p>
-                    </div>
-                  </div>
-
-                  <div className="flex-grow"></div>
-
-                  <div className="flex flex-wrap items-center gap-4 mt-auto">
-                    <button className="bg-[#E73649] text-white rounded-full px-7 py-2.5 font-bold text-[15px] transition-transform hover:scale-105">
-                      View Details &rarr;
-                    </button>
-                    <button className="border border-gray-300 hover:bg-gray-50 rounded-full px-7 py-2.5 font-bold text-[15px] transition-transform hover:scale-105">
-                      Brochure
-                    </button>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+          {visibleProgrammes.map((prog, idx) => (
+            <ProgrammeCard
+              key={idx}
+              title={prog.title}
+              duration={prog.duration}
+              eligibility={prog.eligibility}
+              intake={prog.intake}
+              mode={prog.mode}
+            />
+          ))}
         </div>
 
         {/* View All / View Less Button */}
-        {currentProgrammes.length > 2 && (
+        {currentProgrammes.length > 3 && (
           <div className="text-center mt-12">
             <button 
               onClick={() => setShowAll(!showAll)}

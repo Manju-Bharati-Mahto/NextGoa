@@ -9,15 +9,42 @@ const poppins = Poppins({
 export default function StudyAbroadModels() {
   return (
     <section
-      className={`relative bg-transparent py-45 md:py-24 px-4 md:px-8 lg:py-45 overflow-hidden ${poppins.className}`}
+      className={`relative bg-transparent py-12 md:py-24 px-4 md:px-8 lg:py-48 overflow-hidden ${poppins.className}`}
       style={poppins.style}
     >
       {/* Background Blue Wavy Image */}
-      <img
-        src="/69.png"
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
-      />
+            <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Middle Solid Blue Background */}
+        <div 
+          className="absolute inset-x-0 bg-[#0CAADD]" 
+          style={{ 
+            top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
+            bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+          }} 
+        />
+        {/* Top Wave */}
+        <div 
+          className="absolute top-0 left-0 right-0 overflow-hidden"
+          style={{ height: "clamp(50px, 8vw, 120px)" }}
+        >
+          <img
+            src="/88.svg"
+            alt=""
+            className="absolute top-0 left-0 w-full h-auto"
+          />
+        </div>
+        {/* Bottom Wave */}
+        <div 
+          className="absolute bottom-0 left-0 right-0 overflow-hidden"
+          style={{ height: "clamp(50px, 8vw, 120px)" }}
+        >
+          <img
+            src="/88.svg"
+            alt=""
+            className="absolute bottom-0 left-0 w-full h-auto"
+          />
+        </div>
+      </div>
 
       {/* Decorative Assets */}
       <div className="absolute left-0 bottom-[10%] z-0 w-32 md:w-64 h-64 md:h-[400px] pointer-events-none opacity-40">
@@ -37,9 +64,9 @@ export default function StudyAbroadModels() {
         />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto flex flex-col items-center">
+      <div className="relative z-10 max-w-6xl mx-auto flex flex-col items-center pt-8 md:pt-0">
         {/* Header */}
-        <div className="relative mb-14 text-center">
+        <div className="relative mb-8 md:mb-14 text-center">
           <p className="text-white mb-1 section-subheading">
             Global Pathways
           </p>

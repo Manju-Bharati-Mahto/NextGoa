@@ -3,14 +3,40 @@ import { Eyebrow } from "@/components/landing/Decor";
 export function WhoWeAre() {
   return (
     <section className="relative overflow-hidden bg-transparent z-10">
-      {/* Background Blue Wavy Image from Figma */}
-      <img
-        src="/69.png"
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
-      />
+            <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Middle Solid Blue Background */}
+        <div 
+          className="absolute inset-x-0 bg-[#0CAADD]" 
+          style={{ 
+            top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
+            bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+          }} 
+        />
+        {/* Top Wave */}
+        <div 
+          className="absolute top-0 left-0 right-0 overflow-hidden"
+          style={{ height: "clamp(50px, 8vw, 120px)" }}
+        >
+          <img
+            src="/88.svg"
+            alt=""
+            className="absolute top-0 left-0 w-full h-auto"
+          />
+        </div>
+        {/* Bottom Wave */}
+        <div 
+          className="absolute bottom-0 left-0 right-0 overflow-hidden"
+          style={{ height: "clamp(50px, 8vw, 120px)" }}
+        >
+          <img
+            src="/88.svg"
+            alt=""
+            className="absolute bottom-0 left-0 w-full h-auto"
+          />
+        </div>
+      </div>
 
-      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 pt-44 pb-64 md:grid-cols-[1.3fr_1fr] lg:grid-cols-[1.2fr_1fr] md:gap-24 lg:gap-32">
+      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 pt-20 pb-24 sm:pt-40 sm:pb-48 md:grid-cols-[1.3fr_1fr] lg:grid-cols-[1.2fr_1fr] md:gap-24 lg:gap-32">
         {/* Left Side: Text */}
         <div className="text-white order-2 md:order-1">
           <Eyebrow className="!text-left text-white">Who We Are</Eyebrow>
@@ -70,9 +96,9 @@ export function WhoWeAre() {
           {/* Event photo */}
           <div className="relative z-10 overflow-hidden rounded-[28px] shadow-2xl ring-1 ring-black/10">
             <img
-              src="/why-goa.jpg"
+              src="/who-we-are.png"
               alt="Parul University Goa Student"
-              className="aspect-square w-full object-cover"
+              className="aspect-square w-full object-cover object-right"
             />
           </div>
         </div>

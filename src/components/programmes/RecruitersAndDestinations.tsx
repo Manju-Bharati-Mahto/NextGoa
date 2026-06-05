@@ -35,7 +35,30 @@ const destinations = [
   { name: "France", icon: "flag:fr-4x3" },
 ];
 
-export default function RecruitersAndDestinations() {
+export default function RecruitersAndDestinations({ slug }: { slug?: string }) {
+  const managementCompanies = [
+    "Alembic Pharmaceutical.png", "Apidel Technologies.png", "Bajaj Finance Limited.png",
+    "Banco.png", "Bank of Baroda.png", "Berger.jpg", "Blinkit.png", "DBS Bank India Ltd.png",
+    "DCB Bank.png", "DMart.png", "DTDC Express Ltd.jpg", "Dbcorp_logo.png",
+    "Dicabs logo.png", "GODREJ.png", "HDFC_Life_Logo.svg.png", "Haldiram_s_2024_Logo.svg.png",
+    "IndusInd_Bank_SVG_Logo.svg.png", "Joyalukkas.jpg", "Kiosist.png", "LOGO-TORRECID-2021.jpg",
+    "McKinley Rice, Inc..jpg", "Muthoot.png", "NUMERATOR.jpg", "NielsenIQ.png",
+    "OM LOGISTIC.jpg", "Odoo-Logo.wine.png", "PANTALOONS.png", "RGB-Withum-Digital.png",
+    "SEW_LOGO.svg.png", "SWIGGY.png", "Shadowfax.png", "ZOMATO.png", "ZYDUS H.png",
+    "bosch logo.png", "mirae-asset-sharekhan-logo.jpg", "suzlon_logo.jpg"
+  ];
+  const pharmacyCompanies = [
+    "Alembic Pharmaceutical.png", "GSK.png", "Intas Pharma.jfif", 
+    "Piramal Pharma Ltd.png", "Sun Pharma.png", "Zydus_Lifesciences.svg.png", 
+    "cadila-pharmaceuticals6224.jpg"
+  ];
+  const activeCompanies = slug === "management-studies" ? managementCompanies : slug === "pharmacy" ? pharmacyCompanies : companies;
+  const getSrc = (fileName: string) => {
+    if (slug === "management-studies") return `/recruiters/management/${fileName}`;
+    if (slug === "pharmacy") return `/recruiters/pharmacy/${fileName}`;
+    return `/companies/${fileName}`;
+  };
+
   return (
     <section className="w-full bg-[#FAFAFA] py-20 overflow-hidden border-t border-gray-100">
       <style>{`
@@ -46,7 +69,7 @@ export default function RecruitersAndDestinations() {
         .animate-marquee {
           display: flex;
           width: max-content;
-          animation: marquee 40s linear infinite;
+          animation: marquee ${slug === "pharmacy" ? "15s" : "40s"} linear infinite;
         }
         .animate-marquee:hover {
           animation-play-state: paused;
@@ -69,10 +92,10 @@ export default function RecruitersAndDestinations() {
         
         <div className="animate-marquee items-center gap-12 sm:gap-20 px-6">
           {/* Duplicate the array twice to ensure seamless infinite scrolling */}
-          {[...companies, ...companies].map((fileName, idx) => (
-            <div key={idx} className="relative w-36 h-16 shrink-0">
+          {[...activeCompanies, ...activeCompanies].map((fileName, idx) => (
+            <div key={idx} className="relative w-36 h-16 shrink-0 mix-blend-multiply">
               <Image
-                src={`/companies/${fileName}`}
+                src={getSrc(fileName)}
                 alt={`Recruiter ${idx}`}
                 fill
                 className="object-contain"

@@ -110,11 +110,11 @@ export function HowToApply() {
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="w-[52%] relative z-10 flex flex-col items-start text-left ml-auto">
-              <h4 className="text-3xl xs:text-4xl font-bold text-ink mb-1 leading-tight">Callback</h4>
-              <p className="text-ink/80 text-sm xs:text-base leading-snug mb-2 pr-1 font-poppins">
+              <h4 className="text-2xl xs:text-3xl font-bold text-ink mb-1 leading-tight">Callback</h4>
+              <p className="text-ink/80 text-xs xs:text-sm leading-snug mb-2 pr-1 font-poppins">
                 Drop your details below - a counsellor will call you within 24 hours.
               </p>
-              <button className="bg-[#00aee8] hover:bg-[#0095c7] text-white text-xs xs:text-sm font-semibold py-1.5 px-4 sm:py-2 sm:px-5 rounded-full transition-colors font-poppins">
+              <button className="bg-[#00aee8] hover:bg-[#0095c7] text-white text-[10px] xs:text-xs font-semibold py-1.5 px-3 sm:py-2 sm:px-4 rounded-full transition-colors font-poppins">
                 Request a Callback
               </button>
             </div>
@@ -168,11 +168,11 @@ export function HowToApply() {
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="w-[52%] relative z-10 flex flex-col items-start text-left ml-auto">
-              <h4 className="text-3xl xs:text-4xl font-bold text-white mb-1 leading-tight">Visit Campus</h4>
-              <p className="text-white/80 text-sm xs:text-base leading-snug mb-2 font-poppins">
+              <h4 className="text-2xl xs:text-3xl font-bold text-white mb-1 leading-tight">Visit<br/>Campus</h4>
+              <p className="text-white/80 text-xs xs:text-sm leading-snug mb-2 font-poppins">
                 Book a campus tour and apply on the spot with our admissions team.
               </p>
-              <button className="bg-[#fedb2f] hover:bg-[#e5c52a] text-ink text-xs xs:text-sm font-bold py-1.5 px-4 sm:py-2 sm:px-5 rounded-full transition-colors font-poppins">
+              <button className="bg-[#fedb2f] hover:bg-[#e5c52a] text-ink text-[10px] xs:text-xs font-bold py-1.5 px-3 sm:py-2 sm:px-4 rounded-full transition-colors font-poppins">
                 Book Campus Tour!
               </button>
             </div>

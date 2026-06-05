@@ -79,11 +79,11 @@ export const pharmacyData: ProgrammeData = {
     title: "Where you'll actually practise.",
     description: "",
     features: [
-      { title: "Pharmacology Laboratory", description: "" },
-      { title: "Pharmaceutics Laboratory", description: "" },
-      { title: "Pharmacognosy and Biotechnology Laboratory", description: "" },
-      { title: "Pharmacognosy and Biotechnology Laboratory", description: "" },
-      { title: "Chemistry Qualitative Analysis and Biochemistry Laboratory", description: "" }
+      { title: "Pharmacology Laboratory", description: "", image: "/pharmacy/DSC09672.jpg" },
+      { title: "Pharmaceutics Laboratory", description: "", image: "/pharmacy/DSC09691.jpg" },
+      { title: "Pharmacognosy and Biotechnology Laboratory", description: "", image: "/pharmacy/DSC09708.jpg" },
+      { title: "Quality Assurance Laboratory", description: "", image: "/pharmacy/DSC09735.jpg" },
+      { title: "Chemistry Qualitative Analysis and Biochemistry Laboratory", description: "", image: "/pharmacy/DSC09906.jpg" }
     ],
     image: "/programmes/engineering_hero_bg.png"
   },

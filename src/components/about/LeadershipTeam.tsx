@@ -4,6 +4,7 @@ export function LeadershipTeam() {
       name: "Dr. Lalit Lata Jha",
       title: "Provost",
       tagline: "PH.D. IN PHARMACY",
+      image: "/leadership/Dr. Lalit Lata Jha.png",
       description:
         "Renowned academician and pharmacy expert. Spearheads Parul University as a hub of excellence in health sciences and allied disciplines.",
     },
@@ -11,6 +12,7 @@ export function LeadershipTeam() {
       name: "Dr. Dhaval Nimavat",
       title: "Registrar",
       tagline: "CONTROLLER OF EXAMINATION",
+      image: "/leadership/Dr. Dhaval Nimavat.png",
       description:
         "He brings 17+ years of academic and administrative expertise. His major focus is on IoT, cloud security, and mobile technologies with 29+ globally published research papers.",
     },
@@ -18,6 +20,7 @@ export function LeadershipTeam() {
       name: "Dr. Ganesh S. Chavan",
       title: "Chief Finance and Accounts Officer",
       tagline: "FINANCE & ACCOUNTS",
+      image: "/leadership/Dr. Ganesh S. Chavan.png",
       description:
         "An academic strategist with 17+ years in teaching, industry, and consultancy. He has authored 45+ research papers along with books and patents in digital finance.",
     },
@@ -43,7 +46,7 @@ export function LeadershipTeam() {
             >
               {/* Image Section Placeholder with gradient background */}
               {/* The image should be placed inside here, anchored to the bottom */}
-              <div className="relative h-[320px] w-full bg-gradient-to-t from-[#D6F0FA] to-transparent flex-shrink-0">
+              <div className="relative h-[380px] w-full bg-gradient-to-t from-[#D6F0FA] to-transparent flex-shrink-0 overflow-hidden">
                 {/* Vertical Lines Pattern */}
                 <div className="absolute inset-0 flex justify-evenly opacity-[0.04]">
                   <div className="w-px h-full bg-black"></div>
@@ -51,12 +54,14 @@ export function LeadershipTeam() {
                   <div className="w-px h-full bg-black"></div>
                   <div className="w-px h-full bg-black"></div>
                 </div>
-                
-                {/* 
-                  Space left for the image. 
-                  When an image is added, it should use: 
-                  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[85%] h-auto object-contain object-bottom z-10" 
-                */}
+
+                {member.image && (
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="absolute inset-0 w-full h-full object-cover object-top z-10"
+                  />
+                )}
               </div>
 
               {/* Text Body */}
