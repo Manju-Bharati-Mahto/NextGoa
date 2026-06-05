@@ -12,7 +12,7 @@ const pills = [
 
 export function VisionMission() {
   return (
-    <section className="bg-brand-white py-20 px-6">
+    <section className="bg-brand-white py-10 sm:py-16 px-6">
       <div className="mx-auto max-w-5xl">
         {/* Header */}
         <div className="text-center">
@@ -27,7 +27,7 @@ export function VisionMission() {
         {/* Cards */}
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
           {/* Vision Card */}
-          <div className="flex flex-col rounded-[24px] bg-brand-black p-8 sm:p-10 text-white shadow-lg">
+          <div className="flex flex-col rounded-[24px] bg-brand-black p-8 sm:p-10 text-white shadow-lg text-center sm:text-left items-center sm:items-start">
             <img src="/mission.svg" alt="Vision Icon" className="h-20 w-20 object-contain mb-6" />
             <h4 className="font-poppins text-[32px] font-semibold mb-4">Vision</h4>
             <p className="text-white/90 section-body">
@@ -38,7 +38,7 @@ export function VisionMission() {
           </div>
 
           {/* Mission Card */}
-          <div className="flex flex-col rounded-[24px] bg-brand-blue p-8 sm:p-10 text-white shadow-lg">
+          <div className="flex flex-col rounded-[24px] bg-brand-blue p-8 sm:p-10 text-white shadow-lg text-center sm:text-left items-center sm:items-start">
             <img src="/vision.svg" alt="Mission Icon" className="h-20 w-20 object-contain mb-6" />
             <h4 className="font-poppins text-[32px] font-semibold mb-4">Mission</h4>
             <p className="text-white/95 section-body">

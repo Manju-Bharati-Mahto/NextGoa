@@ -311,11 +311,19 @@ export default function ProgramFilter() {
 
             {/* Filter Panel */}
             <div className="bg-[#F5F5F5] rounded-[24px] p-8 border-[1.7px] border-gray-300">
-              <div className="flex items-center gap-3 mb-8">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#ED383F]">
-                  <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
-                </svg>
-                <h3 className="text-2xl font-semibold text-ink font-poppins">Filters</h3>
+              <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center gap-3">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#ED383F]">
+                    <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                  </svg>
+                  <h3 className="text-2xl font-semibold text-ink font-poppins">Filters</h3>
+                </div>
+                <button
+                  onClick={() => setActiveFilters({ Level: "All", Field: "All", Mode: "All", "Entrance Test": "All" })}
+                  className="text-sm font-semibold text-ink/60 hover:text-[#ED383F] transition-colors underline underline-offset-4"
+                >
+                  Reset
+                </button>
               </div>
 
               <div className="space-y-12 max-h-[350px] overflow-y-auto sm:max-h-none sm:overflow-visible pr-2">

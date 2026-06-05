@@ -62,6 +62,25 @@ export function OutcomesByFaculty() {
           </p>
         </div>
 
+        {/* Tabs */}
+        <div className="w-full overflow-x-auto scrollbar-hide -mx-4 px-4 sm:-mx-8 sm:px-8 md:mx-0 md:px-0 py-1.5 mb-10">
+          <div className="flex flex-nowrap md:flex-wrap md:justify-center gap-3 min-w-max md:min-w-0">
+            {tabs.map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`px-5 py-2.5 rounded-full font-sans text-[15px] transition-colors shrink-0 whitespace-nowrap ${
+                  activeTab === tab 
+                    ? 'bg-[#F14646] text-white shadow-sm' 
+                    : 'bg-white text-gray-700 border border-gray-200 hover:border-[#007BFF] hover:text-[#007BFF]'
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+        </div>
+
         {/* Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-[4.5fr_6.5fr] gap-6 lg:gap-8 mb-16 items-stretch">
           
@@ -116,25 +135,6 @@ export function OutcomesByFaculty() {
              />
           </div>
 
-        </div>
-
-        {/* Tabs */}
-        <div className="w-full overflow-x-auto scrollbar-hide -mx-4 px-4 sm:-mx-8 sm:px-8 md:mx-0 md:px-0 py-1.5 mb-8">
-          <div className="flex flex-nowrap md:flex-wrap md:justify-center gap-3 min-w-max md:min-w-0">
-            {tabs.map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`px-5 py-2.5 rounded-full font-sans text-[15px] transition-colors shrink-0 whitespace-nowrap ${
-                  activeTab === tab 
-                    ? 'bg-[#F14646] text-white shadow-sm' 
-                    : 'bg-white text-gray-700 border border-gray-200 hover:border-[#007BFF] hover:text-[#007BFF]'
-                }`}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
         </div>
 
         {/* Footnote */}

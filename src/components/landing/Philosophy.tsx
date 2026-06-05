@@ -84,14 +84,41 @@ export function Philosophy({ variant = "default" }: { variant?: "default" | "cle
     >
       {/* Background Blue Wavy Image from Figma */}
       {!isClean && (
-        <img
-          src="/69.png"
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
-        />
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          {/* Middle Solid Blue Background */}
+          <div 
+            className="absolute inset-x-0 bg-[#0CAADD]" 
+            style={{ 
+              top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
+              bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+            }} 
+          />
+          {/* Top Wave */}
+          <div 
+            className="absolute top-0 left-0 right-0 overflow-hidden"
+            style={{ height: "clamp(50px, 8vw, 120px)" }}
+          >
+            <img
+              src="/88.svg"
+              alt=""
+              className="absolute top-0 left-0 w-full h-auto"
+            />
+          </div>
+          {/* Bottom Wave */}
+          <div 
+            className="absolute bottom-0 left-0 right-0 overflow-hidden"
+            style={{ height: "clamp(50px, 8vw, 120px)" }}
+          >
+            <img
+              src="/88.svg"
+              alt=""
+              className="absolute bottom-0 left-0 w-full h-auto"
+            />
+          </div>
+        </div>
       )}
       
-      <div className={`relative z-10 mx-auto max-w-[1440px] px-6 ${isClean ? "py-16" : "py-50 sm:py-50"} flex flex-col items-center justify-center`}>
+      <div className={`relative z-10 mx-auto max-w-[1440px] px-6 ${isClean ? "py-16" : "pt-20 pb-20 sm:pt-44 sm:pb-48"} flex flex-col items-center justify-center`}>
         <Eyebrow className={isClean ? "text-ink" : "text-white"}>Our Philosophy</Eyebrow>
         <h2 className={`mt-1 text-center section-heading ${isClean ? "text-brand" : "text-white"}`}>
           What Shapes Everything We Do

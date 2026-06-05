@@ -72,8 +72,8 @@ export function JourneyTimeline() {
         <div className="pointer-events-none absolute inset-y-0 left-0 z-20 w-24 bg-gradient-to-r from-brand-white to-transparent sm:w-40" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-20 w-24 bg-gradient-to-l from-brand-white to-transparent sm:w-40" />
 
-        <div className="scrollbar-hide snap-x snap-mandatory overflow-x-auto pb-12 pt-12">
-          <div className="relative flex w-max min-w-full items-center px-[5vw] sm:px-[15vw] h-[550px]">
+        <div className="scrollbar-hide snap-x snap-mandatory overflow-x-auto pb-12 pt-12 touch-pan-x overscroll-x-contain -webkit-overflow-scrolling-touch">
+          <div className="relative flex w-max min-w-full items-center px-[50vw] sm:px-[15vw] h-[550px]" style={{ paddingLeft: "calc(50vw - 140px)", paddingRight: "calc(50vw - 140px)" }}>
             {/* Continuous gradient timeline line */}
             <div className="absolute left-0 right-0 top-1/2 h-[3px] -translate-y-1/2 bg-gradient-to-r from-brand-blue-guideline/10 via-brand-blue-guideline to-brand/10" />
 
@@ -82,7 +82,7 @@ export function JourneyTimeline() {
               return (
                 <article
                   key={`${item.year}-${item.label}-${index}`}
-                  className="relative flex w-[340px] shrink-0 snap-center flex-col items-center group cursor-default"
+                  className="relative flex w-[280px] sm:w-[340px] shrink-0 snap-center flex-col items-center group cursor-default"
                 >
                   {/* Center Node / Dot */}
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white border-[3px] border-brand flex items-center justify-center transition-all duration-300 group-hover:scale-125 group-hover:shadow-[0_0_20px_rgba(231,54,73,0.4)]">
@@ -98,7 +98,7 @@ export function JourneyTimeline() {
 
                   {/* Milestone Card */}
                   <div 
-                    className={`absolute left-1/2 -translate-x-1/2 w-[290px] bg-white rounded-[20px] p-7 shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-black/5 transition-all duration-500 group-hover:shadow-[0_12px_40px_rgb(0,0,0,0.12)] ${
+                    className={`absolute left-1/2 -translate-x-1/2 w-[260px] sm:w-[290px] bg-white rounded-[20px] p-6 sm:p-7 shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-black/5 transition-all duration-500 group-hover:shadow-[0_12px_40px_rgb(0,0,0,0.12)] ${
                       isEven 
                         ? 'bottom-[calc(50%+5rem)] group-hover:-translate-y-3' 
                         : 'top-[calc(50%+5rem)] group-hover:translate-y-3'
@@ -112,13 +112,13 @@ export function JourneyTimeline() {
                     />
 
                     <div className="relative z-10 flex flex-col items-start text-left">
-                      <span className="font-poppins text-[42px] font-black text-brand tracking-tight leading-none mb-3">
+                      <span className="font-poppins text-[36px] sm:text-[42px] font-black text-brand tracking-tight leading-none mb-3">
                         {item.year}
                       </span>
-                      <span className="inline-block px-3.5 py-1.5 bg-brand-blue-guideline/10 text-brand-blue-guideline text-[11px] font-bold uppercase tracking-[0.15em] rounded-full mb-4">
+                      <span className="inline-block px-3.5 py-1.5 bg-brand-blue-guideline/10 text-brand-blue-guideline text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.15em] rounded-full mb-4">
                         {item.label}
                       </span>
-                      <p className="font-[family-name:var(--font-poppins)] text-[15px] font-medium leading-relaxed text-ink/85">
+                      <p className="font-[family-name:var(--font-poppins)] text-[14px] sm:text-[15px] font-medium leading-relaxed text-ink/85">
                         {item.description}
                       </p>
                     </div>

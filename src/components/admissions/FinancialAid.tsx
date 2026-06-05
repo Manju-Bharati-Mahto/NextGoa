@@ -101,15 +101,10 @@ export function FinancialAid() {
           </div>
 
           {/* Card 2: Education Loans */}
-          <div className="w-full relative aspect-[324/262] rounded-[24px] overflow-hidden shadow-sm flex flex-col justify-between p-6 sm:p-10">
-            <img 
-              src="/fees/Rectangle 367.svg" 
-              alt="Education Loans background" 
-              className="absolute inset-0 w-full h-full object-fill pointer-events-none"
-            />
-            <div className="relative z-10 text-left pt-6">
-              <h4 className="font-bold text-white text-4xl sm:text-5xl mb-2 leading-tight">Education Loans</h4>
-              <p className="font-poppins text-white/95 text-base sm:text-lg leading-relaxed mb-4">
+          <div className="w-full relative bg-[#0CAADD] min-h-[180px] rounded-[24px] overflow-hidden shadow-sm flex flex-col justify-between p-6 sm:p-10">
+            <div className="relative z-10 text-left pt-2">
+              <h4 className="font-bold text-white text-3xl sm:text-5xl mb-2 leading-tight">Education Loans</h4>
+              <p className="font-poppins text-white/95 text-sm sm:text-lg leading-relaxed mb-4">
                 Drop your details below - a counsellor will call you within 24 hours.
               </p>
             </div>
@@ -121,15 +116,15 @@ export function FinancialAid() {
           </div>
 
           {/* Card 3: Instalment Plans */}
-          <div className="w-full relative aspect-[324/262] rounded-[24px] overflow-hidden shadow-sm flex flex-col justify-between p-6 sm:p-10">
-            <img 
-              src="/fees/Group 32876.svg" 
-              alt="Instalment Plans background" 
-              className="absolute inset-0 w-full h-full object-fill pointer-events-none"
-            />
-            <div className="relative z-10 text-left pt-6">
-              <h4 className="font-bold text-ink text-4xl sm:text-5xl mb-2.5 leading-tight">Instalment Plans</h4>
-              <p className="font-poppins text-ink/85 text-lg sm:text-xl leading-relaxed">
+          <div className="w-full relative bg-[#FEDB2F] min-h-[180px] rounded-[24px] overflow-hidden shadow-sm flex flex-col justify-between p-6 sm:p-10">
+            {/* CSS Pattern to replace SVG background */}
+            <div className="absolute -bottom-10 -right-10 w-[200px] h-[200px] pointer-events-none z-0 opacity-40">
+              <div className="absolute top-0 right-10 w-[120px] h-[120px] rounded-full bg-white/50 mix-blend-overlay"></div>
+              <div className="absolute bottom-10 right-0 w-[120px] h-[120px] rounded-full bg-white/50 mix-blend-overlay"></div>
+            </div>
+            <div className="relative z-10 text-left pt-2">
+              <h4 className="font-bold text-ink text-3xl sm:text-5xl mb-2.5 leading-tight">Instalment Plans</h4>
+              <p className="font-poppins text-ink/85 text-sm sm:text-xl leading-relaxed">
                 Available where<br />applicable
               </p>
             </div>

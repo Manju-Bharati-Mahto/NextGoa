@@ -76,7 +76,7 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
         <div className="relative mt-8 sm:pt-16" style={{ overflow: "visible" }}>
 
           {/* ── MOBILE CARD (vertical, shown below sm) ── */}
-          <div className="sm:hidden relative mx-auto w-full rounded-[24px] bg-[#E73649] text-white shadow-lg overflow-hidden flex flex-col" style={{ minHeight: "450px" }}>
+          <div className="sm:hidden relative mx-auto w-full rounded-[24px] bg-[#E73649] text-white shadow-lg overflow-hidden flex flex-col" style={{ minHeight: "330px" }}>
             {/* Text content */}
             <div className="p-6 pb-0 flex flex-col justify-start relative z-20">
               <div>
@@ -96,7 +96,7 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
             </div>
 
             {/* Image at bottom */}
-            <div className="relative mt-5 z-10 w-full flex-grow flex items-end justify-center pointer-events-none">
+            <div className="relative mt-2 z-10 w-full flex-grow flex items-end justify-center pointer-events-none">
               <img
                 src="/Image-opt.webp"
                 alt="MS Dhoni with Parul University students"
@@ -178,7 +178,7 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
           {stats.map((s, idx) => (
             <div
               key={idx}
-              className="rounded-[20px] border border-zinc-300 bg-white px-7 py-6 text-left shadow-sm"
+              className="rounded-[20px] border border-zinc-300 bg-white px-7 py-6 text-center sm:text-left shadow-sm"
             >
               <dt className={`font-sans font-bold leading-[1.15] text-[#0CAADD] tracking-tight ${("titleClass" in s && s.titleClass) || "text-[26px] sm:text-[28px] lg:text-[30px]"}`}>
                 {s.title}
@@ -196,7 +196,7 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
             {aboutExtraStats.map((s, idx) => (
               <div
                 key={idx}
-                className="w-full sm:w-[30%] sm:max-w-[280px] rounded-[20px] border border-zinc-300 bg-white px-7 py-6 text-left shadow-sm mx-auto sm:mx-0"
+                className="w-full sm:w-[30%] sm:max-w-[280px] rounded-[20px] border border-zinc-300 bg-white px-7 py-6 text-center sm:text-left shadow-sm mx-auto sm:mx-0"
               >
                 <dt className={`font-sans font-bold leading-[1.15] text-[#0CAADD] tracking-tight ${s.titleClass}`}>
                   {s.title}

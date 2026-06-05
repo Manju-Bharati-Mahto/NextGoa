@@ -25,15 +25,41 @@ const clubs = [
 
 export function CampusStudentLife() {
   return (
-    <section className="relative w-full py-24 lg:py-32 overflow-hidden flex flex-col justify-center min-h-[800px]">
-      {/* Background Blue Wavy Image from Figma */}
-      <img
-        src="/69.png"
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
-      />
+    <section className="relative w-full py-8 lg:py-32 overflow-hidden flex flex-col justify-center min-h-[400px] lg:min-h-[800px]">
+            <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Middle Solid Blue Background */}
+        <div 
+          className="absolute inset-x-0 bg-[#0CAADD]" 
+          style={{ 
+            top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
+            bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+          }} 
+        />
+        {/* Top Wave */}
+        <div 
+          className="absolute top-0 left-0 right-0 overflow-hidden"
+          style={{ height: "clamp(50px, 8vw, 120px)" }}
+        >
+          <img
+            src="/88.svg"
+            alt=""
+            className="absolute top-0 left-0 w-full h-auto"
+          />
+        </div>
+        {/* Bottom Wave */}
+        <div 
+          className="absolute bottom-0 left-0 right-0 overflow-hidden"
+          style={{ height: "clamp(50px, 8vw, 120px)" }}
+        >
+          <img
+            src="/88.svg"
+            alt=""
+            className="absolute bottom-0 left-0 w-full h-auto"
+          />
+        </div>
+      </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full flex flex-col items-center text-center mb-12 sm:mb-16 mt-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full flex flex-col items-center text-center mb-8 sm:mb-16 mt-4 lg:mt-8">
         <h3 className="text-white mb-2 section-subheading">
           Clubs, Events & Student Life
         </h3>
@@ -46,8 +72,8 @@ export function CampusStudentLife() {
       </div>
 
       {/* Carousel Container */}
-      <div className="relative z-10 w-full mb-12">
-        <div className="flex overflow-x-auto gap-4 sm:gap-6 px-4 sm:px-6 lg:px-12 scroll-pl-4 sm:scroll-pl-6 lg:scroll-pl-12 snap-x snap-mandatory hide-scrollbar pb-8">
+      <div className="relative z-10 w-full mb-6 lg:mb-12">
+        <div className="flex overflow-x-auto gap-4 sm:gap-6 px-4 sm:px-6 lg:px-12 scroll-pl-4 sm:scroll-pl-6 lg:scroll-pl-12 snap-x snap-mandatory hide-scrollbar pb-2 lg:pb-8">
           {clubs.map((club, idx) => (
             <div 
               key={idx} 

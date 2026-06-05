@@ -13,13 +13,75 @@ export function WhyGoa({ variant = "blue" }: { variant?: "blue" | "red" }) {
   return (
     <section className={`relative overflow-hidden ${isRed ? "bg-transparent" : "bg-gradient-to-b from-[#F8F8F8] to-[#CBEFFD]"}`}>
       {/* Background Wavy Image from Figma */}
-      <img
-        src={isRed ? "/70.png" : "/69.png"}
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
-      />
+      {!isRed ? (
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          {/* Middle Solid Blue Background */}
+          <div 
+            className="absolute inset-x-0 bg-[#0CAADD]" 
+            style={{ 
+              top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
+              bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+            }} 
+          />
+          {/* Top Wave */}
+          <div 
+            className="absolute top-0 left-0 right-0 overflow-hidden"
+            style={{ height: "clamp(50px, 8vw, 120px)" }}
+          >
+            <img
+              src="/88.svg"
+              alt=""
+              className="absolute top-0 left-0 w-full h-auto"
+            />
+          </div>
+          {/* Bottom Wave */}
+          <div 
+            className="absolute bottom-0 left-0 right-0 overflow-hidden"
+            style={{ height: "clamp(50px, 8vw, 120px)" }}
+          >
+            <img
+              src="/88.svg"
+              alt=""
+              className="absolute bottom-0 left-0 w-full h-auto"
+            />
+          </div>
+        </div>
+      ) : (
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          {/* Middle Solid Red Background */}
+          <div 
+            className="absolute inset-x-0 bg-[#E73649]" 
+            style={{ 
+              top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
+              bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+            }} 
+          />
+          {/* Top Wave */}
+          <div 
+            className="absolute top-0 left-0 right-0 overflow-hidden"
+            style={{ height: "clamp(50px, 8vw, 120px)" }}
+          >
+            <img
+              src="/89.svg"
+              alt=""
+              className="absolute top-0 left-0 w-full h-auto"
+            />
+          </div>
+          {/* Bottom Wave */}
+          <div 
+            className="absolute bottom-0 left-0 right-0 overflow-hidden"
+            style={{ height: "clamp(50px, 8vw, 120px)" }}
+          >
+            <img
+              src="/89.svg"
+              alt=""
+              className="absolute bottom-0 left-0 w-full h-auto"
+            />
+          </div>
+        </div>
+      )}
 
-      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 pt-44 pb-64 md:grid-cols-[1fr_1.3fr] lg:grid-cols-[1fr_1.2fr] md:gap-24 lg:gap-32">
+      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 pt-20 pb-20 md:pt-36 md:pb-36 md:grid-cols-[1fr_1.3fr] lg:grid-cols-[1fr_1.2fr] md:gap-24 lg:gap-32">
         <div className="relative mx-auto w-full max-w-none lg:max-w-[550px]">
           {/* Top-left blueprint crosshair (Group 3062.svg) */}
           <svg

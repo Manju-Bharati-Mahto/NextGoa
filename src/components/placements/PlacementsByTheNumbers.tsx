@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 const sectorData = [
@@ -23,6 +23,55 @@ const packageData = [
 
 export function PlacementsByTheNumbers() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const [inView, setInView] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    
+    if (isLeftSwipe) {
+      setActiveSlide((prev) => (prev === 0 ? 1 : 0));
+    }
+    if (isRightSwipe) {
+      setActiveSlide((prev) => (prev === 1 ? 0 : 1));
+    }
+  };
 
   const rawData = activeSlide === 0 ? sectorData : packageData;
   const sortedData = [...rawData].sort((a, b) => b.value - a.value);
@@ -47,10 +96,11 @@ export function PlacementsByTheNumbers() {
   const pauseDuration = totalPauseTime / numPauses;
   const totalMoveTime = 1 - totalPauseTime;
 
+  const totalAnimDur = 5.5; // Slow down the animation
   const animatedData = sortedData.map((slice, index) => {
     const moveDuration = (slice.value / 100) * totalMoveTime;
     const midMoveKeyTime = currentKeyTime + moveDuration / 2;
-    const animDelay = (midMoveKeyTime * 3.5).toFixed(2);
+    const animDelay = (midMoveKeyTime * totalAnimDur).toFixed(2);
     
     currentKeyTime += moveDuration;
     currentPercentForAnim += slice.value;
@@ -129,7 +179,7 @@ export function PlacementsByTheNumbers() {
   let cumulativeForLabels = 0;
 
   return (
-    <section className="w-full bg-white py-20 border-t border-gray-100">
+    <section ref={sectionRef} className="w-full bg-white py-20 border-t border-gray-100">
       <div className="max-w-6xl mx-auto px-6 flex flex-col items-center">
         <h3 className="text-gray-900 mb-2 transition-all duration-300 section-subheading text-center">
           {activeSlide === 0 ? "Sector destinations" : "Package distribution"}
@@ -143,11 +193,26 @@ export function PlacementsByTheNumbers() {
             : "Highest: ₹60 LPA · Median confirmed in official placement report."}
         </p>
 
-        <div className="relative w-full max-w-5xl mx-auto mb-10" key={`slide-${activeSlide}`}>
+        <div 
+          className="relative w-full max-w-5xl mx-auto mb-10 animate-fade-in" 
+          key={`slide-${activeSlide}`}
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+        >
           <svg viewBox="0 0 900 600" className="w-full h-auto overflow-visible">
             
-            <style>
+            {inView && (
+              <>
+                <style>
               {`
+                @keyframes fadeIn {
+                  from { opacity: 0; transform: scale(0.98); }
+                  to { opacity: 1; transform: scale(1); }
+                }
+                .animate-fade-in {
+                  animation: fadeIn 0.5s ease-out forwards;
+                }
                 @keyframes popOutCenter {
                   0% {
                     transform: scale(0);
@@ -165,7 +230,7 @@ export function PlacementsByTheNumbers() {
                 .animate-pop-center {
                   transform-origin: 450px 300px;
                   transform: scale(0);
-                  animation: popOutCenter 0.6s ease-in-out 3.5s forwards;
+                  animation: popOutCenter 0.6s ease-in-out ${totalAnimDur}s forwards;
                 }
               `}
             </style>
@@ -186,7 +251,7 @@ export function PlacementsByTheNumbers() {
                   <animate
                     attributeName="stroke-dashoffset"
                     values={animValuesString}
-                    dur="3.5s"
+                    dur={`${totalAnimDur}s`}
                     fill="freeze"
                     calcMode="linear"
                     keyTimes={animKeyTimesString}
@@ -304,6 +369,8 @@ export function PlacementsByTheNumbers() {
                 </g>
               );
             })}
+              </>
+            )}
           </svg>
 
           {/* Dots below chart */}
