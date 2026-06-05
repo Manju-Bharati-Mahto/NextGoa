@@ -98,7 +98,7 @@ export function SiteHeader() {
 
       {/* Mobile Nav Sidebar */}
       <div
-        className={`fixed inset-0 z-50 bg-gradient-to-br from-black/90 via-black/80 to-brand-blue/20 backdrop-blur-2xl transition-transform duration-500 ease-out lg:hidden ${open ? "translate-x-0" : "-translate-x-full"
+        className={`fixed inset-0 z-50 bg-brand-blue transition-transform duration-300 ease-in-out lg:hidden ${open ? "translate-x-0" : "-translate-x-full"
           }`}
       >
         <div className="flex justify-end p-6">
@@ -132,13 +132,13 @@ export function SiteHeader() {
                   className="group inline-flex flex-col font-[family-name:var(--font-poppins)] text-xl font-medium text-white transition-colors"
                 >
                   <div className="flex items-center gap-3">
-                    <svg 
-                      className="w-5 h-5 opacity-0 -translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 text-white" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      strokeWidth="3" 
-                      strokeLinecap="round" 
+                    <svg
+                      className="w-5 h-5 opacity-0 -translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 text-white"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      strokeLinecap="round"
                       strokeLinejoin="round"
                     >
                       <path d="M7 17L17 7" />
