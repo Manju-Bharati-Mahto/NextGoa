@@ -10,11 +10,11 @@ export function CampusSafety() {
       {/* Background Safe Graphic */}
       <div className="hidden sm:flex absolute inset-x-0 top-[10%] bottom-0 justify-center pointer-events-none z-0 opacity-20">
         <div className="relative w-full max-w-[1000px] h-full flex justify-center items-end">
-          <Image 
-            src="/campus-life/safe3.png" 
-            alt="Campus Safety Graphic" 
-            fill 
-            className="object-contain object-bottom" 
+          <Image
+            src="/campus-life/safe3.png"
+            alt="Campus Safety Graphic"
+            fill
+            className="object-contain object-bottom"
             priority
           />
         </div>
@@ -36,7 +36,7 @@ export function CampusSafety() {
 
         {/* Cards Grid */}
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-16">
-          
+
           {/* Card 1 */}
           <div className="group relative w-full aspect-[16/9] sm:aspect-[2/1] md:aspect-[4/3] lg:aspect-[16/9] rounded-[24px] sm:rounded-[32px] overflow-hidden bg-black/10 shadow-lg">
             {/* Gradient Overlay */}
