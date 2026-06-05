@@ -98,7 +98,7 @@ export function SiteHeader() {
 
       {/* Mobile Nav Sidebar */}
       <div
-        className={`fixed inset-0 z-50 bg-brand transition-transform duration-300 ease-in-out lg:hidden ${open ? "translate-x-0" : "-translate-x-full"
+        className={`fixed inset-0 z-50 bg-gradient-to-br from-black/90 via-black/80 to-brand-blue/20 backdrop-blur-2xl transition-transform duration-500 ease-out lg:hidden ${open ? "translate-x-0" : "-translate-x-full"
           }`}
       >
         <div className="flex justify-end p-6">
@@ -116,7 +116,7 @@ export function SiteHeader() {
         <nav
           id="mobile-nav"
           aria-label="Mobile"
-          className="flex flex-col px-6 pt-4"
+          className="flex flex-col px-4 pt-4"
         >
           <ul className="flex flex-col gap-8">
             {navItems.map((item, idx) => (
