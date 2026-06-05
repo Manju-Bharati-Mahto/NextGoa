@@ -116,7 +116,7 @@ export function SiteHeader() {
         <nav
           id="mobile-nav"
           aria-label="Mobile"
-          className="flex flex-col px-10 pt-4"
+          className="flex flex-col px-6 pt-4"
         >
           <ul className="flex flex-col gap-8">
             {navItems.map((item, idx) => (
