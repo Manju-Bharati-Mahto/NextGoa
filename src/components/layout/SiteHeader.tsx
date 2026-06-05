@@ -47,7 +47,7 @@ export function SiteHeader() {
   }, [open]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-[100]">
+    <header className="fixed inset-x-0 top-0 z-[200]">
       {/* Row 1 - Brand Blue bar */}
       <div className="bg-brand-blue/80 backdrop-blur-md border-b border-white/20">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-5">
@@ -58,7 +58,7 @@ export function SiteHeader() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="whitespace-nowrap text-sm font-medium text-white transition-colors hover:text-white/80"
+                className="whitespace-nowrap text-base font-medium text-white transition-colors hover:text-white/80"
               >
                 {item.label}
               </Link>
