@@ -58,7 +58,7 @@ export function SiteHeader() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="whitespace-nowrap text-sm font-medium text-white transition-colors hover:text-white/80"
+                className="whitespace-nowrap text-base font-medium text-white transition-colors hover:text-white/80"
               >
                 {item.label}
               </Link>
