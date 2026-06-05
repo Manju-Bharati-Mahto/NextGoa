@@ -157,8 +157,8 @@ export function EnquiryModal() {
     else if (showSuccess) borderColor = "border-[#10B981] focus:border-[#10B981] focus:ring-[#10B981]";
 
     return (
-      <div className="relative flex flex-col gap-2">
-        <label htmlFor={id} className="text-[15px] font-medium text-ink font-poppins">
+      <div className="relative">
+        <label htmlFor={id} className="mb-2 block text-[15px] font-medium text-ink font-poppins">
           {label}
           {required && <span className="text-[#E73649]">*</span>}
         </label>
@@ -295,8 +295,8 @@ export function EnquiryModal() {
                 {renderField({ id: "city", label: "Your City ", required: true })}
               </div>
 
-              <div className="relative flex flex-col gap-2">
-                <label htmlFor="help" className="text-[14px] font-medium text-ink font-poppins">How can we help? <span className="text-gray-400 font-normal">(optional)</span></label>
+              <div className="relative">
+                <label htmlFor="help" className="mb-2 block text-[14px] font-medium text-ink font-poppins">How can we help? <span className="text-gray-400 font-normal">(optional)</span></label>
                 <textarea
                   id="help"
                   value={formData.help}
