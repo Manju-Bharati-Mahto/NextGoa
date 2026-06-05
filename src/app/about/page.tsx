@@ -27,7 +27,7 @@ export default function About() {
         <AboutHero />
         <VisionMission />
         <Legacy />
-        <WhyGoa variant="red" />
+        <WhyGoa variant="red" image="/why-goa-about.jpg" />
         <Philosophy variant="clean" />
         <WhoWeAre />
         <Placements variant="about" />

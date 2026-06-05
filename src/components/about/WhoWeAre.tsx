@@ -96,9 +96,9 @@ export function WhoWeAre() {
           {/* Event photo */}
           <div className="relative z-10 overflow-hidden rounded-[28px] shadow-2xl ring-1 ring-black/10">
             <img
-              src="/why-goa.jpg"
+              src="/who-we-are.png"
               alt="Parul University Goa Student"
-              className="aspect-square w-full object-cover"
+              className="aspect-square w-full object-cover object-right"
             />
           </div>
         </div>

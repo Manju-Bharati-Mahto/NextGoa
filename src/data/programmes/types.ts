@@ -61,6 +61,7 @@ export interface CareerOutcomesData {
 export interface LabFeature {
   title: string;
   description: string;
+  image?: string;
 }
 
 export interface LabsData {

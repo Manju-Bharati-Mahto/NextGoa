@@ -7,7 +7,7 @@ import { Eyebrow } from "./Decor";
  * white International section below. The image is a placeholder (drop a real
  * campus/culture photo at /public/why-goa.jpg and swap in <Image>).
  */
-export function WhyGoa({ variant = "blue" }: { variant?: "blue" | "red" }) {
+export function WhyGoa({ variant = "blue", image = "/why-goa.png" }: { variant?: "blue" | "red"; image?: string }) {
   const isRed = variant === "red";
   
   return (
@@ -81,7 +81,7 @@ export function WhyGoa({ variant = "blue" }: { variant?: "blue" | "red" }) {
         </div>
       )}
 
-      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 pt-20 pb-20 md:pt-36 md:pb-36 md:grid-cols-[1fr_1.3fr] lg:grid-cols-[1fr_1.2fr] md:gap-24 lg:gap-32">
+      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 pt-20 pb-20 md:pt-48 md:pb-48 lg:pt-56 lg:pb-56 md:grid-cols-[1fr_1.3fr] lg:grid-cols-[1fr_1.2fr] md:gap-24 lg:gap-32">
         <div className="relative mx-auto w-full max-w-none lg:max-w-[550px]">
           {/* Top-left blueprint crosshair (Group 3062.svg) */}
           <svg
@@ -113,8 +113,8 @@ export function WhyGoa({ variant = "blue" }: { variant?: "blue" | "red" }) {
           {/* Event photo */}
           <div className="relative z-10 overflow-hidden rounded-[28px] shadow-2xl ring-1 ring-black/10">
             <img
-              src="/why-goa.jpg"
-              alt="Parul University Mission Possible event in Goa"
+              src={image}
+              alt="Parul University Goa Campus Life"
               className="w-full h-auto object-contain sm:aspect-square sm:object-cover bg-white"
             />
           </div>
