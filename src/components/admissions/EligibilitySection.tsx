@@ -112,7 +112,7 @@ export function EligibilitySection() {
         </div>
 
         {/* Filters */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
+        <div className="flex overflow-x-auto gap-3 justify-start md:justify-center scrollbar-hide mb-12 -mx-4 px-4 sm:-mx-8 sm:px-8 md:mx-0 md:px-0 py-1.5">
           {filters.map((f) => (
             <button
               key={f.label}
@@ -120,7 +120,7 @@ export function EligibilitySection() {
                 setActiveFilter(f.label);
                 setShowAll(false);
               }}
-              className={`px-5 py-2 rounded-full text-sm font-semibold border transition-all hover:scale-105 ${
+              className={`px-5 py-2 rounded-full text-sm font-semibold border transition-all hover:scale-105 shrink-0 whitespace-nowrap ${
                 activeFilter === f.label || (activeFilter === "All levels" && f.label === "All levels")
                   ? f.color
                   : "bg-white text-ink border-gray-200 hover:border-gray-300 opacity-60"
@@ -206,13 +206,13 @@ export function EligibilitySection() {
         )}
 
         {/* Footer Note */}
-        <div className="bg-[#1f1f1f] rounded-full p-2 flex flex-col sm:flex-row items-center justify-between shadow-lg">
-          <p className="text-white text-sm font-semibold px-6 py-3 sm:py-0 text-center sm:text-left">
+        <div className="bg-[#1f1f1f] rounded-[24px] sm:rounded-full p-3 sm:p-2 flex flex-col sm:flex-row gap-4 sm:gap-0 items-center justify-between shadow-lg">
+          <p className="text-white text-sm font-semibold px-6 py-2 sm:py-0 text-center sm:text-left font-poppins">
             Final eligibility is subject to applicable statutory council requirements.
           </p>
           <Link
             href="#enquiry"
-            className="bg-[#fedb2f] hover:bg-[#e5c52a] text-ink text-sm font-bold px-6 py-3 rounded-full transition-colors whitespace-nowrap w-full sm:w-auto text-center"
+            className="bg-[#fedb2f] hover:bg-[#e5c52a] text-ink text-sm font-bold px-6 py-3 rounded-[20px] sm:rounded-full transition-colors whitespace-nowrap w-full sm:w-auto text-center font-poppins"
           >
             Not sure? Talk to a counsellor &rarr;
           </Link>

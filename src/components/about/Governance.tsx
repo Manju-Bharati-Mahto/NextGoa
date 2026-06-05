@@ -70,12 +70,38 @@ export function Governance() {
 
   return (
     <section className="relative overflow-hidden bg-transparent">
-      {/* Background Red Wavy Image from Figma */}
-      <img
-        src="/70.png"
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
-      />
+            <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Middle Solid Red Background */}
+        <div 
+          className="absolute inset-x-0 bg-[#E73649]" 
+          style={{ 
+            top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
+            bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+          }} 
+        />
+        {/* Top Wave */}
+        <div 
+          className="absolute top-0 left-0 right-0 overflow-hidden"
+          style={{ height: "clamp(50px, 8vw, 120px)" }}
+        >
+          <img
+            src="/89.svg"
+            alt=""
+            className="absolute top-0 left-0 w-full h-auto"
+          />
+        </div>
+        {/* Bottom Wave */}
+        <div 
+          className="absolute bottom-0 left-0 right-0 overflow-hidden"
+          style={{ height: "clamp(50px, 8vw, 120px)" }}
+        >
+          <img
+            src="/89.svg"
+            alt=""
+            className="absolute bottom-0 left-0 w-full h-auto"
+          />
+        </div>
+      </div>
 
       {/* Decorative Background Graphics */}
       {/* Left Lighthouse */}
@@ -100,7 +126,7 @@ export function Governance() {
 
 
 
-      <div className="relative z-10 mx-auto max-w-5xl px-6 pt-48 pb-52 sm:pt-56 sm:pb-56">
+      <div className="relative z-10 mx-auto max-w-5xl px-6 pt-24 pb-28 sm:pt-32 sm:pb-32">
         <div className="text-center mb-14 text-white">
           <h3 className="text-center text-white section-subheading">
             Governance and Recognition

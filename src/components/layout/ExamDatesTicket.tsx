@@ -21,9 +21,6 @@ export function ExamDatesTicket() {
           <h4 className="font-poppins font-semibold text-[#333333] text-[5.8cqw] leading-[1.1] tracking-tight">
             May-July 2026
           </h4>
-          <p className="font-semibold text-[#ee364f] text-[2.2cqw] mt-[0.8cqw] tracking-normal">
-            Registration deadline: 22nd April
-          </p>
         </div>
 
         {/* Divider */}
@@ -32,7 +29,7 @@ export function ExamDatesTicket() {
         {/* Bottom part */}
         <div className="flex items-center justify-between gap-[2cqw] mb-[1cqw]">
           <div className="flex flex-col gap-[0.4cqw] text-[#1f1f1f] text-left max-w-[75%] font-bold text-[2.7cqw] tracking-normal leading-[1.3]">
-            <span>Applicable to admissions in</span>
+            <span className="text-[#ee364f] font-semibold text-[2.2cqw] mb-[0.8cqw]">Applicable to admissions in</span>
             <span>B.Sc. in Nursing | BPT | Ph.D.</span>
             <span>Select PG Programs</span>
           </div>

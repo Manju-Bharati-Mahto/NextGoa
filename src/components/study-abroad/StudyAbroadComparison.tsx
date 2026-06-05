@@ -19,17 +19,44 @@ export default function StudyAbroadComparison() {
   ];
 
   return (
-    <section className="relative w-full font-[family-name:var(--font-poppins)] pt-24 pb-32 bg-transparent overflow-hidden">
+    <section className="relative w-full font-[family-name:var(--font-poppins)] pt-12 sm:pt-24 pb-16 sm:pb-32 bg-transparent overflow-hidden">
       {/* Background Red Wavy Image */}
-      <img
-        src="/70.png"
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
-      />
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10 py-15">
+            <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Middle Solid Red Background */}
+        <div 
+          className="absolute inset-x-0 bg-[#E73649]" 
+          style={{ 
+            top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
+            bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+          }} 
+        />
+        {/* Top Wave */}
+        <div 
+          className="absolute top-0 left-0 right-0 overflow-hidden"
+          style={{ height: "clamp(50px, 8vw, 120px)" }}
+        >
+          <img
+            src="/89.svg"
+            alt=""
+            className="absolute top-0 left-0 w-full h-auto"
+          />
+        </div>
+        {/* Bottom Wave */}
+        <div 
+          className="absolute bottom-0 left-0 right-0 overflow-hidden"
+          style={{ height: "clamp(50px, 8vw, 120px)" }}
+        >
+          <img
+            src="/89.svg"
+            alt=""
+            className="absolute bottom-0 left-0 w-full h-auto"
+          />
+        </div>
+      </div>
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10 py-8 sm:py-16">
         
         {/* Header Section */}
-        <div className="text-center mb-12 pt-6">
+        <div className="text-center mb-8 sm:mb-12 pt-2 sm:pt-6">
           <p className="text-white mb-3 section-subheading">Why PU Goa Pathway</p>
           <h2 className="text-[#FFD523] mb-4 section-heading">
             Why study abroad with PU Goa<br className="hidden sm:block" /> instead of going directly.

@@ -41,17 +41,44 @@ export function CampusTour() {
       className="relative overflow-hidden bg-gradient-to-b from-[#CBEFFD] to-[#F8F8F8]"
     >
       {/* Background Red Wavy Image from Figma */}
-      <img
-        src="/70.png"
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
-      />
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Middle Solid Red Background */}
+        <div 
+          className="absolute inset-x-0 bg-[#E73649]" 
+          style={{ 
+            top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
+            bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+          }} 
+        />
+        {/* Top Wave */}
+        <div 
+          className="absolute top-0 left-0 right-0 overflow-hidden"
+          style={{ height: "clamp(50px, 8vw, 120px)" }}
+        >
+          <img
+            src="/89.svg"
+            alt=""
+            className="absolute top-0 left-0 w-full h-auto"
+          />
+        </div>
+        {/* Bottom Wave */}
+        <div 
+          className="absolute bottom-0 left-0 right-0 overflow-hidden"
+          style={{ height: "clamp(50px, 8vw, 120px)" }}
+        >
+          <img
+            src="/89.svg"
+            alt=""
+            className="absolute bottom-0 left-0 w-full h-auto"
+          />
+        </div>
+      </div>
 
       {/* Decorative Shell Icons */}
       <SunWaveIcon className="absolute left-[-20px] top-1/4 h-20 w-auto text-white/20 pointer-events-none select-none z-10 sm:h-24" />
       <SunWaveIcon className="absolute right-[-20px] bottom-1/4 h-20 w-auto text-white/20 pointer-events-none select-none rotate-[20deg] z-10 sm:h-24" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 py-40 sm:py-64 text-center">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-20 pb-20 sm:pt-44 sm:pb-48 text-center">
         <Eyebrow className="text-white">Campus Walkthrough</Eyebrow>
         <h2 className="mt-2 text-center section-heading text-white">
           Step inside PU Goa.

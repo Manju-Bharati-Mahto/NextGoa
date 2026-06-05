@@ -58,30 +58,30 @@ const DocumentIcon = ({ className }: { className?: string }) => (
   <img
     src="/programmes/Academic Document.svg"
     alt="Academic Document"
-    className={`w-[30px] h-[30px] object-contain shrink-0 ${className || ""}`}
+    className={`w-[24px] h-[24px] md:w-[30px] md:h-[30px] object-contain shrink-0 ${className || ""}`}
   />
 );
 
 const DegreeCard = ({ data }: { data: typeof degrees[0] }) => (
-  <div className="rounded-[24px] overflow-hidden shadow-xl bg-white border border-transparent">
+  <div className="rounded-[24px] overflow-hidden shadow-xl bg-white border border-transparent max-w-[380px] sm:max-w-[420px] md:max-w-none mx-auto w-full">
     {/* Header */}
-    <div className={`${data.headerBg} ${data.textColor} p-6 flex items-center justify-between relative overflow-hidden`}>
-      <div className="flex items-center gap-3 relative z-10">
+    <div className={`${data.headerBg} ${data.textColor} p-5 md:p-6 flex items-center justify-between relative overflow-hidden`}>
+      <div className="flex items-center gap-2.5 md:gap-3 relative z-10">
         <DocumentIcon className={data.iconBrightness} />
-        <h4 className="text-[22px] font-semibold font-[family-name:var(--font-poppins)] tracking-tight">{data.title}</h4>
+        <h4 className="text-[18px] md:text-[22px] font-semibold font-[family-name:var(--font-poppins)] tracking-tight">{data.title}</h4>
       </div>
-      <div className={`${data.badgeBg} px-3 py-1 rounded-full text-[11px] font-bold tracking-widest uppercase relative z-10`}>
+      <div className={`${data.badgeBg} px-2.5 py-1 rounded-full text-[10px] md:text-[11px] font-bold tracking-widest uppercase relative z-10`}>
         {data.count}
       </div>
     </div>
 
     {/* Body */}
-    <div className="p-6">
+    <div className="p-5 md:p-6">
       <ul className="flex flex-col">
         {data.items.map((item, index) => (
-          <li key={index} className="flex items-start gap-4 py-4 border-b border-gray-100 last:border-0 last:pb-0 first:pt-0">
-            <div className="mt-1.5 w-[9px] h-[9px] rounded-full bg-[#1AC15D] shrink-0" />
-            <span className="text-[17px] sm:text-[15px] text-ink font-medium leading-snug">{item}</span>
+          <li key={index} className="flex items-start gap-3 md:gap-4 py-2.5 md:py-4 border-b border-gray-100 last:border-0 last:pb-0 first:pt-0">
+            <div className="mt-1.5 w-[7px] h-[7px] md:w-[9px] md:h-[9px] rounded-full bg-[#1AC15D] shrink-0" />
+            <span className="text-[15px] md:text-[17px] text-ink font-medium leading-snug">{item}</span>
           </li>
         ))}
       </ul>
@@ -91,16 +91,43 @@ const DegreeCard = ({ data }: { data: typeof degrees[0] }) => (
 
 export default function DegreeLevelSection() {
   return (
-    <section className="relative w-full min-h-[800px] flex items-center py-40 sm:py-32 bg-transparent overflow-hidden">
+    <section className="relative w-full min-h-[500px] md:min-h-[800px] flex items-center pt-16 pb-16 md:py-32 lg:py-40 bg-transparent overflow-hidden">
       {/* Background Blue Wavy Image */}
-      <img
-        src="/69.png"
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
-      />
+            <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Middle Solid Blue Background */}
+        <div 
+          className="absolute inset-x-0 bg-[#0CAADD]" 
+          style={{ 
+            top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
+            bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+          }} 
+        />
+        {/* Top Wave */}
+        <div 
+          className="absolute top-0 left-0 right-0 overflow-hidden"
+          style={{ height: "clamp(50px, 8vw, 120px)" }}
+        >
+          <img
+            src="/88.svg"
+            alt=""
+            className="absolute top-0 left-0 w-full h-auto"
+          />
+        </div>
+        {/* Bottom Wave */}
+        <div 
+          className="absolute bottom-0 left-0 right-0 overflow-hidden"
+          style={{ height: "clamp(50px, 8vw, 120px)" }}
+        >
+          <img
+            src="/88.svg"
+            alt=""
+            className="absolute bottom-0 left-0 w-full h-auto"
+          />
+        </div>
+      </div>
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 font-[family-name:var(--font-poppins)]">
         {/* Header Content */}
-        <div className="text-center text-white mb-16 sm:mb-20">
+        <div className="text-center text-white mb-10 md:mb-16 lg:mb-20">
           <h2 className="text-white mb-3 section-subheading">By Degree Level</h2>
           <h3 className="text-[#FFD523] mb-5 section-heading">
             Choose by qualification.

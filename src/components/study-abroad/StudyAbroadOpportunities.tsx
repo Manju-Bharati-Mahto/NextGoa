@@ -62,6 +62,33 @@ const SLIDES = [
 
 export default function StudyAbroadOpportunities() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEndEvent = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      setCurrentSlide((prev) => (prev + 1) % SLIDES.length);
+    }
+    if (isRightSwipe) {
+      setCurrentSlide((prev) => (prev === 0 ? SLIDES.length - 1 : prev - 1));
+    }
+  };
 
   // Auto-play slider
   // useEffect(() => {
@@ -75,18 +102,54 @@ export default function StudyAbroadOpportunities() {
 
   return (
     <section
-      className={`relative bg-transparent py-24 px-4 md:px-8 overflow-hidden ${poppins.className}`}
+      className={`relative bg-transparent py-12 md:py-24 px-4 md:px-8 overflow-hidden ${poppins.className}`}
     >
       {/* Background Blue Wavy Image */}
-      <img
-        src="/69.png"
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
-      />
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <style>{`
+          @keyframes slideFadeIn {
+            0% { opacity: 0; transform: translateX(15px); }
+            100% { opacity: 1; transform: translateX(0); }
+          }
+          .animate-slide-fade {
+            animation: slideFadeIn 0.5s ease-out forwards;
+          }
+        `}</style>
+        {/* Middle Solid Blue Background */}
+        <div 
+          className="absolute inset-x-0 bg-[#0CAADD]" 
+          style={{ 
+            top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
+            bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+          }} 
+        />
+        {/* Top Wave */}
+        <div 
+          className="absolute top-0 left-0 right-0 overflow-hidden"
+          style={{ height: "clamp(50px, 8vw, 120px)" }}
+        >
+          <img
+            src="/88.svg"
+            alt=""
+            className="absolute top-0 left-0 w-full h-auto"
+          />
+        </div>
+        {/* Bottom Wave */}
+        <div 
+          className="absolute bottom-0 left-0 right-0 overflow-hidden"
+          style={{ height: "clamp(50px, 8vw, 120px)" }}
+        >
+          <img
+            src="/88.svg"
+            alt=""
+            className="absolute bottom-0 left-0 w-full h-auto"
+          />
+        </div>
+      </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto flex flex-col items-center py-24">
+      <div className="relative z-10 max-w-7xl mx-auto flex flex-col items-center py-8 md:py-24">
         {/* Header Text */}
-        <p className="text-white mb-3 section-subheading">
+        <p className="text-white mb-3 section-subheading text-center">
           Begin in Goa · Graduate in the World
         </p>
         <h2 className="text-white text-center leading-tight mb-6 max-w-4xl section-heading">
@@ -101,57 +164,66 @@ export default function StudyAbroadOpportunities() {
         </p>
 
         {/* Featured Card Slider */}
-        <div className="w-full max-w-[1200px] bg-white/40 p-2 rounded-[2rem] shadow-xl backdrop-blur-sm transition-all duration-500">
+        <div 
+          className="w-full max-w-[1200px] bg-white/40 p-2 rounded-[2rem] shadow-xl backdrop-blur-sm transition-all duration-500"
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEndEvent}
+        >
           <div className="flex flex-col md:flex-row w-full bg-white rounded-3xl overflow-hidden min-h-[400px]">
             {/* Image side */}
             <div className="md:w-1/2 relative h-64 md:h-auto min-h-[350px]">
-              <Image
-                src={activeSlide.image}
-                alt={activeSlide.title}
-                fill
-                className="object-cover transition-opacity duration-500"
-              />
+              <div key={`img-${activeSlide.id}`} className="absolute inset-0 animate-slide-fade">
+                <Image
+                  src={activeSlide.image}
+                  alt={activeSlide.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
 
             {/* Content side */}
             <div className="md:w-1/2 bg-[#eb3b47] p-8 md:p-12 flex flex-col justify-center text-white transition-colors duration-500">
-              <div className="mb-6 flex items-end">
-                <span className="text-4xl font-semibold tracking-tighter lowercase">
-                  {activeSlide.logoText}
-                </span>
-                <span className="w-2 h-2 bg-yellow-400 rounded-full mb-2 ml-0.5"></span>
-                <div className="ml-3 mb-1">
-                  <div className="text-[7px] uppercase font-bold tracking-widest opacity-80 leading-tight whitespace-pre-line">
-                    {activeSlide.logoDesc}
+              <div key={`content-${activeSlide.id}`} className="animate-slide-fade">
+                <div className="mb-6 flex items-end">
+                  <span className="text-4xl font-semibold tracking-tighter lowercase">
+                    {activeSlide.logoText}
+                  </span>
+                  <span className="w-2 h-2 bg-yellow-400 rounded-full mb-2 ml-0.5"></span>
+                  <div className="ml-3 mb-1">
+                    <div className="text-[7px] uppercase font-bold tracking-widest opacity-80 leading-tight whitespace-pre-line">
+                      {activeSlide.logoDesc}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <h3 className="text-[26px] md:text-3xl font-bold mb-6 leading-snug whitespace-pre-line">
-                {activeSlide.title}
-              </h3>
+                <h3 className="text-[26px] md:text-3xl font-bold mb-6 leading-snug whitespace-pre-line">
+                  {activeSlide.title}
+                </h3>
 
-              <p className="text-sm text-white/95 mb-8 leading-relaxed font-medium">
-                {activeSlide.description}
-              </p>
+                <p className="text-sm text-white/95 mb-8 leading-relaxed font-medium">
+                  {activeSlide.description}
+                </p>
 
-              <div>
-                <button className="bg-[#fbdc2a] hover:bg-[#eac516] text-black text-xs font-bold px-6 py-2.5 rounded-full shadow-sm transition-colors flex items-center gap-2">
-                  Explore More
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button>
+                <div>
+                  <button className="bg-[#fbdc2a] hover:bg-[#eac516] text-black text-xs font-bold px-6 py-2.5 rounded-full shadow-sm transition-colors flex items-center gap-2">
+                    Explore More
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2.5"
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </div>

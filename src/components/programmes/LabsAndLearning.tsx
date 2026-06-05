@@ -6,34 +6,42 @@ const labs = [
   {
     title: "Artificial Intelligence & Machine Learning Lab",
     color: "bg-[#E73649]",
+    image: "/labs/engineering/DSC03169.jpg",
   },
   {
     title: "Cyber Security & Network Forensics Lab",
     color: "bg-[#FDE047]",
+    image: "/labs/engineering/DSC03171.jpg",
   },
   {
     title: "Cloud Computing & DevOps Lab",
     color: "bg-[#0CAADD]",
+    image: "/labs/engineering/DSC03177.jpg",
   },
   {
     title: "IoT & Embedded Systems Lab",
     color: "bg-[#252525]",
+    image: "/labs/engineering/DSC03190.jpg",
   },
   {
     title: "Quantum Computing Sandbox",
     color: "bg-[#E73649]",
+    image: "/labs/engineering/DSC03217.jpg",
   },
   {
     title: "Data Science & Analytics Lab",
     color: "bg-[#FDE047]",
+    image: "/labs/engineering/DSC03219.jpg",
   },
   {
     title: "Maker Space & Innovation Studio",
     color: "bg-[#0CAADD]",
+    image: "/labs/engineering/DSC03227.jpg",
   },
   {
     title: "High-Performance Computing Cluster",
     color: "bg-[#252525]",
+    image: "/labs/engineering/DSC03237.jpg",
   },
 ];
 
@@ -62,9 +70,14 @@ export default function LabsAndLearning() {
               key={idx} 
               className="flex flex-col bg-white rounded-[16px] overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-shadow h-full"
             >
-              {/* Image Placeholder Area */}
-              <div className={`w-full aspect-square sm:aspect-[4/3] ${lab.color}`}>
-                {/* Image will go here later */}
+              {/* Image Area */}
+              <div className="w-full aspect-square sm:aspect-[4/3] relative">
+                <img 
+                  src={lab.image} 
+                  alt={lab.title} 
+                  className="absolute inset-0 w-full h-full object-cover" 
+                />
+                <div className="absolute inset-0 bg-black/20"></div>
               </div>
               
               {/* Content Area */}

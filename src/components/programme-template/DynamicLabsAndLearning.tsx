@@ -34,16 +34,22 @@ export function DynamicLabsAndLearning({ data }: { data: LabsData }) {
             return (
               <div 
                 key={idx} 
-                className="w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.5rem)] flex flex-col rounded-[24px] overflow-hidden shadow-[0_4px_20px_rgb(0,0,0,0.05)] border border-gray-100 h-[400px]"
+                className="w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.5rem)] flex flex-col rounded-[24px] overflow-hidden shadow-[0_4px_20px_rgb(0,0,0,0.05)] border border-gray-100 min-h-[340px]"
               >
-                {/* Top Colored Half */}
-                <div className={`${bgClass} flex-grow p-6 sm:p-8 flex flex-col justify-end relative overflow-hidden`}>
-                  {/* Image Placeholder */}
-                  {/* <div className="absolute inset-0 w-full h-full opacity-30 bg-[url('/programmes/engineering_hero_bg.png')] bg-cover bg-center mix-blend-overlay"></div> */}
+                {/* Top Half */}
+                <div className={`${lab.image ? 'bg-gray-100' : bgClass} flex-grow p-6 sm:p-8 flex flex-col justify-end relative overflow-hidden`}>
+                  {lab.image && (
+                    <>
+                      <img src={lab.image} alt={lab.title} className="absolute inset-0 w-full h-full object-cover" />
+                      <div className="absolute inset-0 bg-black/20"></div>
+                    </>
+                  )}
                   
-                  <p className={`text-[15px] sm:text-[16px] leading-relaxed relative z-10 mt-auto ${isYellow ? "text-ink" : "text-white"}`}>
-                    {lab.description}
-                  </p>
+                  {lab.description && (
+                    <p className={`text-[15px] sm:text-[16px] leading-relaxed relative z-10 mt-auto ${lab.image ? 'text-white' : (isYellow ? "text-ink" : "text-white")} font-medium`}>
+                      {lab.description}
+                    </p>
+                  )}
                 </div>
                 
                 {/* Bottom White Half */}

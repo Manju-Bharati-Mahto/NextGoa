@@ -3,10 +3,10 @@ export function AdmissionsHero() {
   return (
     <section 
       id="hero"
-      className="relative flex w-full min-h-[100vh] md:min-h-[68.6vw] flex-col items-center justify-start pt-32 overflow-hidden bg-[url('/b3-stretched.webp')] bg-cover bg-top bg-no-repeat"
+      className="relative flex w-full min-h-[75vh] sm:min-h-[85vh] md:min-h-[68.6vw] flex-col items-center justify-start pt-32 overflow-hidden bg-white md:bg-[url('/b3-stretched.webp')] bg-cover bg-top bg-no-repeat"
     >
-      {/* Light gradient overlay to ensure text is readable if sky gets too bright */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-transparent pointer-events-none" />
+      {/* Light gradient overlay to ensure text is readable */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-transparent pointer-events-none hidden md:block" />
 
       {/* Hero content */}
       <div className="relative z-10 w-full max-w-7xl px-4 pt-8 sm:px-6 sm:pt-12 lg:pt-16 text-center">

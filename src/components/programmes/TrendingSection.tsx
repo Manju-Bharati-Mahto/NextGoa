@@ -49,13 +49,40 @@ export default function TrendingSection() {
   const activeCourse = trendingCourses[activeIndex];
 
   return (
-    <section className="relative z-20 w-full min-h-[600px] flex items-center bg-transparent -mt-12 sm:-mt-24 lg:-mt-5 pt-32 pb-24">
+    <section className="relative z-20 w-full min-h-[600px] flex items-center bg-transparent -mt-12 sm:-mt-24 lg:-mt-5 pt-8 pb-6 sm:pt-32 sm:pb-24">
       {/* Background Red Wavy Image */}
-      <img
-        src="/70.png"
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover md:object-fill z-0 pointer-events-none"
-      />
+            <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Middle Solid Red Background */}
+        <div 
+          className="absolute inset-x-0 bg-[#E73649]" 
+          style={{ 
+            top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
+            bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+          }} 
+        />
+        {/* Top Wave */}
+        <div 
+          className="absolute top-0 left-0 right-0 overflow-hidden"
+          style={{ height: "clamp(50px, 8vw, 120px)" }}
+        >
+          <img
+            src="/89.svg"
+            alt=""
+            className="absolute top-0 left-0 w-full h-auto"
+          />
+        </div>
+        {/* Bottom Wave */}
+        <div 
+          className="absolute bottom-0 left-0 right-0 overflow-hidden"
+          style={{ height: "clamp(50px, 8vw, 120px)" }}
+        >
+          <img
+            src="/89.svg"
+            alt=""
+            className="absolute bottom-0 left-0 w-full h-auto"
+          />
+        </div>
+      </div>
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-4 lg:gap-0 items-center">
           {/* Left Column */}
@@ -75,7 +102,7 @@ export default function TrendingSection() {
               
               <div className="bg-white rounded-[24px] p-6 sm:px-10 sm:py-8 text-ink shadow-2xl relative overflow-hidden min-h-[240px] flex flex-col justify-center">
                 {/* Dynamic SVG watermark */}
-                <div key={`icon-${activeIndex}`} className="absolute -right-4 -top-4 pointer-events-none transition-all duration-500 w-[240px] h-[240px] opacity-[0.4] flex items-center justify-end animate-fade-in">
+                <div key={`icon-${activeIndex}`} className="absolute -right-4 -top-4 sm:-right-4 sm:-top-4 pointer-events-none transition-all duration-500 w-[140px] h-[140px] sm:w-[240px] sm:h-[240px] opacity-[0.4] flex items-center justify-end animate-fade-in">
                   <activeCourse.icon 
                     className="w-full h-full object-contain" 
                     style={{ color: '#E5E5E5', '--svg-stroke': '#FFFFFF' } as React.CSSProperties} 
