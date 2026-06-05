@@ -131,7 +131,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
       )}
 
       {data.slug !== "physiotherapy" && data.slug !== "allied-health" && data.slug !== "hotel-management" && data.slug !== "phd" && (
-        <RecruitersAndDestinations />
+        <RecruitersAndDestinations slug={data.slug} />
       )}
 
       {(data.slug === "physiotherapy" || data.slug === "allied-health") && (
