@@ -92,6 +92,9 @@ export function AdmissionJourneyTimeline() {
 
   const handlePillClick = (stepIndex: number) => {
     setActiveStep(stepIndex);
+    setTimeout(() => {
+      document.getElementById("timeline-view")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 100);
   };
 
   const handleNextPhaseClick = () => {
@@ -154,6 +157,8 @@ export function AdmissionJourneyTimeline() {
             </button>
           </div>
         </div>
+
+        <div id="timeline-view" className="scroll-mt-24 md:scroll-mt-32" aria-hidden="true" />
 
         {/* ── DESKTOP TIMELINE VIEW (shown on lg screens) ── */}
         <div className="hidden lg:block">
