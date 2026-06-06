@@ -20,12 +20,12 @@ const stats = [
   },
   {
     title: "58Cr+",
-    titleClass: "text-[56px] sm:text-[48px] lg:text-[56px]",
+    titleClass: "text-[32px] sm:text-[48px] lg:text-[56px]",
     label: "Govt. Research Grant",
   },
   {
     title: "120+",
-    titleClass: "text-[56px] sm:text-[48px] lg:text-[56px]",
+    titleClass: "text-[32px] sm:text-[48px] lg:text-[56px]",
     label: "Partnerships with Foreign Universities",
   },
 ];
@@ -174,16 +174,16 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
         </div>
 
         {/* Stat trio - Row 1 */}
-        <dl className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3">
+        <dl className="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-5">
           {stats.map((s, idx) => (
             <div
               key={idx}
-              className="rounded-[20px] border border-zinc-300 bg-white px-7 py-6 text-center sm:text-left shadow-sm"
+              className={`${idx === 0 ? "col-span-2 sm:col-span-1" : ""} rounded-[16px] sm:rounded-[20px] border border-zinc-300 bg-white text-center sm:text-left shadow-sm ${idx === 0 ? "px-7 py-6" : "px-4 py-4 sm:px-7 sm:py-6"}`}
             >
-              <dt className={`font-sans font-bold leading-[1.15] text-[#0CAADD] tracking-tight ${("titleClass" in s && s.titleClass) || "text-[26px] sm:text-[28px] lg:text-[30px]"}`}>
+              <dt className={`font-sans font-bold leading-[1.15] text-[#0CAADD] tracking-tight ${("titleClass" in s && s.titleClass) || "text-[22px] sm:text-[28px] lg:text-[30px]"}`}>
                 {s.title}
               </dt>
-              <dd className="mt-3 font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[15px] text-ink leading-[1.45]">
+              <dd className={`mt-2 sm:mt-3 font-[family-name:var(--font-poppins)] font-normal text-ink leading-[1.45] ${idx === 0 ? "text-[14px] sm:text-[15px]" : "text-[12px] sm:text-[15px]"}`}>
                 {s.label}
               </dd>
             </div>

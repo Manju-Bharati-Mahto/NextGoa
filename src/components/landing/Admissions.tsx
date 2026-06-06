@@ -50,7 +50,9 @@ export function Admissions() {
 
           {/* Right - window card with text overlay */}
           <div className="flex items-center justify-center py-6 sm:py-0 w-full">
-            <ExamDatesTicket />
+            <div className="w-full scale-[1.25] sm:scale-100 origin-center">
+              <ExamDatesTicket />
+            </div>
           </div>
         </div>
 

@@ -154,10 +154,10 @@ function CourseCard({ color, title, tags, href, icon: IconComponent }: CourseCar
   return (
     <Link
       href={href}
-      className={`relative block w-full h-[268px] rounded-[16px] p-8 flex flex-col justify-between overflow-hidden border text-left cursor-pointer ${theme.bg}`}
+      className={`relative block w-full h-[148px] sm:h-[268px] rounded-[12px] sm:rounded-[16px] p-3.5 sm:p-8 flex flex-col justify-between overflow-hidden border text-left cursor-pointer ${theme.bg}`}
     >
-      {/* Decorative background icon */}
-      <div className="absolute -right-4 -top-8 h-[120%] w-[55%] pointer-events-none opacity-40 flex items-center justify-end overflow-hidden">
+      {/* Decorative background icon — smaller on mobile */}
+      <div className="absolute -right-2 -top-4 sm:-right-4 sm:-top-8 h-[80%] w-[45%] sm:h-[120%] sm:w-[55%] pointer-events-none opacity-40 flex items-center justify-end overflow-hidden">
         <IconComponent
           className="h-full w-full object-contain"
           style={{ color: theme.svgFill, '--svg-stroke': theme.svgStroke } as React.CSSProperties}
@@ -166,24 +166,37 @@ function CourseCard({ color, title, tags, href, icon: IconComponent }: CourseCar
       {/* Content wrapper */}
       <div className="flex flex-col h-full justify-end z-10 relative">
         {/* Title */}
-        <h3 className="font-poppins font-semibold text-[24px] sm:text-[32px] leading-tight tracking-tight pr-12 mb-3.5">
+        <h3 className="font-poppins font-semibold text-[18px] sm:text-[32px] leading-tight tracking-tight sm:pr-12 mb-2 sm:mb-3.5">
           {title}
         </h3>
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-4">
-          {tags.map((tag) => (
+        <div className="flex flex-wrap gap-1 sm:gap-2 mb-2 sm:mb-4">
+          {tags.slice(0, 2).map((tag) => (
             <span
               key={tag}
-              className={`inline-flex items-center justify-center rounded-full px-3.5 py-1 text-[11px] font-bold uppercase tracking-wider animate-none ${theme.tag}`}
+              className={`inline-flex items-center justify-center rounded-full px-2 py-0.5 sm:px-3.5 sm:py-1 text-[9px] sm:text-[11px] font-bold uppercase tracking-wider ${theme.tag}`}
+            >
+              {tag}
+            </span>
+          ))}
+          {tags.length > 2 && (
+            <span className={`inline-flex items-center justify-center rounded-full px-2 py-0.5 text-[9px] font-bold ${theme.tag} sm:hidden`}>
+              +{tags.length - 2}
+            </span>
+          )}
+          {tags.slice(2).map((tag) => (
+            <span
+              key={tag}
+              className={`hidden sm:inline-flex items-center justify-center rounded-full px-3.5 py-1 text-[11px] font-bold uppercase tracking-wider ${theme.tag}`}
             >
               {tag}
             </span>
           ))}
         </div>
 
-        {/* View Program button */}
-        <div>
+        {/* View Program button — hidden on mobile */}
+        <div className="hidden sm:block">
           <span
             className={`inline-flex items-center justify-center rounded-full px-5 py-2.5 text-xs font-bold transition-colors shadow-sm ${theme.btn}`}
           >
@@ -332,11 +345,11 @@ export function ProgrammeFinder() {
           </div>
         ) : (
           <>
-            <ul className="mt-12 flex flex-wrap justify-center gap-5 max-w-6xl mx-auto">
+            <ul className="mt-8 grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5 max-w-6xl mx-auto">
               {displayedFaculties.map((fac, i) => {
                 const colors: CardColor[] = ["blue", "yellow", "red", "white"];
                 return (
-                  <li key={fac.name} className="w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.833rem)]">
+                  <li key={fac.name} className="w-full">
                     <CourseCard
                       color={colors[i % colors.length]}
                       title={fac.name}
