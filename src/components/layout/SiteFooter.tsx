@@ -22,12 +22,12 @@ const columns: { heading: string; links: { label: string; href: string }[] }[] =
   {
     heading: "Programmes",
     links: [
-      { label: "B.Tech", href: "/programmes" },
-      { label: "Management Studies", href: "/programmes" },
-      { label: "Pharmacy", href: "/programmes" },
-      { label: "Nursing", href: "/programmes" },
-      { label: "Hotel Management", href: "/programmes" },
-      { label: "Physiotherapy", href: "/programmes" },
+      { label: "B.Tech", href: "/programmes/engineering" },
+      { label: "Management Studies", href: "/programmes/management-studies" },
+      { label: "Pharmacy", href: "/programmes/pharmacy" },
+      { label: "Nursing", href: "/programmes/nursing" },
+      { label: "Hotel Management", href: "/programmes/hotel-management" },
+      { label: "Physiotherapy", href: "/programmes/physiotherapy" },
     ],
   },
   {
