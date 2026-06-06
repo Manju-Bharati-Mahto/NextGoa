@@ -47,7 +47,7 @@ export function SiteHeader() {
   }, [open]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-[100]">
+    <header className="fixed inset-x-0 top-0 z-[150]">
       {/* Row 1 - Brand Blue bar */}
       <div className="bg-brand-blue/80 backdrop-blur-md border-b border-white/20">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-5">
@@ -58,7 +58,7 @@ export function SiteHeader() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="whitespace-nowrap text-sm font-medium text-white transition-colors hover:text-white/80"
+                className="whitespace-nowrap text-base font-medium text-white transition-colors hover:text-white/80"
               >
                 {item.label}
               </Link>
@@ -98,10 +98,11 @@ export function SiteHeader() {
 
       {/* Mobile Nav Sidebar */}
       <div
-        className={`fixed inset-0 z-50 bg-black transition-transform duration-300 ease-in-out lg:hidden ${open ? "translate-x-0" : "-translate-x-full"
+        className={`fixed inset-0 z-50 bg-brand-blue transition-transform duration-300 ease-in-out lg:hidden ${open ? "translate-x-0" : "-translate-x-full"
           }`}
       >
-        <div className="flex justify-end p-6">
+        <div className="flex items-center justify-between p-6">
+          <Logo />
           <button
             type="button"
             aria-label="Close menu"
@@ -116,7 +117,7 @@ export function SiteHeader() {
         <nav
           id="mobile-nav"
           aria-label="Mobile"
-          className="flex flex-col px-10 pt-4"
+          className="flex flex-col px-3 pt-17"
         >
           <ul className="flex flex-col gap-8">
             {navItems.map((item, idx) => (
@@ -129,14 +130,40 @@ export function SiteHeader() {
                 <Link
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="block font-[family-name:var(--font-poppins)] text-lg font-medium text-white transition-colors hover:text-white/80"
+                  className="group inline-flex flex-col font-[family-name:var(--font-poppins)] text-xl font-medium text-white transition-colors"
                 >
-                  {item.label}
+                  <div className="flex items-center gap-3">
+                    <svg
+                      className="w-5 h-5 opacity-0 -translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 text-white"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M7 17L17 7" />
+                      <path d="M7 7h10v10" />
+                    </svg>
+                    <span className="transition-transform duration-300 group-hover:translate-x-1">{item.label}</span>
+                  </div>
+                  <div className="h-[3px] bg-white w-0 transition-all duration-300 group-hover:w-[calc(100%-2rem)] ml-8 mt-1 rounded-full"></div>
                 </Link>
               </li>
             ))}
           </ul>
         </nav>
+        
+        {/* Bottom CTA */}
+        <div className="absolute bottom-10 left-6 right-6">
+          <Link
+            href={cta.apply}
+            onClick={() => setOpen(false)}
+            className="flex w-full items-center justify-center rounded-full bg-[#E73649] px-6 py-4 text-md font-bold text-white transition-all hover:bg-[#D62B3D]"
+          >
+            Apply Now &rarr;
+          </Link>
+        </div>
       </div>
     </header>
   );
