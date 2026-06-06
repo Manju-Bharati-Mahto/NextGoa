@@ -29,7 +29,7 @@ export function EnquiryModal() {
     const handleClick = (e: MouseEvent) => {
       const target = (e.target as Element).closest("a, button, [data-enquiry-trigger]");
       const isEnquiry = target && (
-        target.getAttribute("href")?.endsWith("#enquiry") || 
+        target.getAttribute("href")?.endsWith("#enquiry") ||
         target.getAttribute("href")?.endsWith("/enquiry") ||
         target.getAttribute("data-enquiry-trigger") === "true"
       );
@@ -99,7 +99,7 @@ export function EnquiryModal() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
-    
+
     if (id === 'mobile') {
       // Only allow digits and restrict to exactly 10 characters
       const numericValue = value.replace(/\D/g, '').slice(0, 10);
@@ -248,94 +248,94 @@ export function EnquiryModal() {
         {/* Scrollable Content Area */}
         <div className={`overflow-y-auto flex-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] ${submitState === 'success' ? 'p-6 sm:p-10' : 'px-6 pb-6 sm:px-10 sm:pb-10 pt-2'}`}>
           {submitState === 'success' ? (
-          <div className="flex flex-col items-center justify-center py-16 space-y-6 animate-in zoom-in-50 fade-in duration-500 font-poppins">
-            <div className="rounded-full bg-[#10B981]/10 p-5">
-              <div className="rounded-full bg-[#10B981] p-4 text-white shadow-[0_0_20px_rgba(16,185,129,0.4)]">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
+            <div className="flex flex-col items-center justify-center py-16 space-y-6 animate-in zoom-in-50 fade-in duration-500 font-poppins">
+              <div className="rounded-full bg-[#10B981]/10 p-5">
+                <div className="rounded-full bg-[#10B981] p-4 text-white shadow-[0_0_20px_rgba(16,185,129,0.4)]">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <div className="space-y-2 text-center">
+                <h3 className="text-3xl sm:text-4xl font-bold text-ink">Thank You!</h3>
+                <p className="text-lg text-gray-500 max-w-sm mx-auto">
+                  Your request has been successfully received. Our team will reach out to you shortly.
+                </p>
               </div>
             </div>
-            <div className="space-y-2 text-center">
-              <h3 className="text-3xl sm:text-4xl font-bold text-ink">Thank You!</h3>
-              <p className="text-lg text-gray-500 max-w-sm mx-auto">
-                Your request has been successfully received. Our team will reach out to you shortly.
-              </p>
-            </div>
-          </div>
-        ) : (
-          <>
-            <form className="space-y-5 font-[family-name:var(--font-poppins)]" onSubmit={handleSubmit}>
-              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                {renderField({ id: "name", label: "Name", required: true })}
-                {renderField({ id: "mobile", label: "Mobile Number", type: "tel", required: true })}
-              </div>
+          ) : (
+            <>
+              <form className="space-y-5 font-[family-name:var(--font-poppins)]" onSubmit={handleSubmit}>
+                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                  {renderField({ id: "name", label: "Name", required: true })}
+                  {renderField({ id: "mobile", label: "Mobile Number", type: "tel", required: true })}
+                </div>
 
-              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                {renderField({ id: "email", label: "Email", type: "email", required: true })}
-                {renderField({
-                  id: "programme",
-                  label: "Programme of Interest ",
-                  isSelect: true,
-                  required: true,
-                  placeholder: "Select a programme",
-                  options: [
-                    { value: "engineering", label: "B.Tech" },
-                    { value: "management", label: "Management Studies" },
-                    { value: "pharmacy", label: "Pharmacy" },
-                    { value: "nursing", label: "Nursing" },
-                    { value: "hotel-management", label: "Hotel Management" },
-                    { value: "physiotherapy", label: "Physiotherapy" }
-                  ]
-                })}
-              </div>
+                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                  {renderField({ id: "email", label: "Email", type: "email", required: true })}
+                  {renderField({
+                    id: "programme",
+                    label: "Programme of Interest ",
+                    isSelect: true,
+                    required: true,
+                    placeholder: "Select a programme",
+                    options: [
+                      { value: "engineering", label: "B.Tech" },
+                      { value: "management", label: "Management Studies" },
+                      { value: "pharmacy", label: "Pharmacy" },
+                      { value: "nursing", label: "Nursing" },
+                      { value: "hotel-management", label: "Hotel Management" },
+                      { value: "physiotherapy", label: "Physiotherapy" }
+                    ]
+                  })}
+                </div>
 
-              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                {renderField({ id: "marks", label: "Class 12 / Last %" })}
-                {renderField({ id: "city", label: "Your City ", required: true })}
-              </div>
+                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                  {renderField({ id: "marks", label: "Class 12 / Last %" })}
+                  {renderField({ id: "city", label: "Your City ", required: true })}
+                </div>
 
-              <div className="relative">
-                <label htmlFor="help" className="mb-2 block text-[14px] font-medium text-ink font-poppins">How can we help? <span className="text-gray-400 font-normal">(optional)</span></label>
-                <textarea
-                  id="help"
-                  value={formData.help}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  rows={3}
-                  className="w-full resize-none rounded-md border border-gray-200 bg-[#FAFAFA] px-4 py-2.5 outline-none focus:border-[#11B1E3] focus:ring-1 focus:ring-[#11B1E3] transition-all"
-                />
-              </div>
+                <div className="relative">
+                  <label htmlFor="help" className="mb-2 block text-[14px] font-medium text-ink font-poppins">How can we help? <span className="text-gray-400 font-normal">(optional)</span></label>
+                  <textarea
+                    id="help"
+                    value={formData.help}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    rows={3}
+                    className="w-full resize-none rounded-md border border-gray-200 bg-[#FAFAFA] px-4 py-2.5 outline-none focus:border-[#11B1E3] focus:ring-1 focus:ring-[#11B1E3] transition-all"
+                  />
+                </div>
 
-              <div className="flex justify-center mt-6">
-                <button
-                  type="submit"
-                  disabled={submitState === 'submitting'}
-                  className={`w-full sm:w-1/2 rounded-full py-3.5 font-bold text-white transition-all text-[18px] ${submitState === 'submitting'
+                <div className="flex justify-center mt-6">
+                  <button
+                    type="submit"
+                    disabled={submitState === 'submitting'}
+                    className={`w-full sm:w-1/2 rounded-full py-3.5 font-bold text-white transition-all text-[18px] ${submitState === 'submitting'
                       ? 'bg-[#11B1E3]/70 cursor-not-allowed'
                       : 'bg-[#11B1E3] hover:bg-[#11B1E3]/90 hover:scale-[1.02] active:scale-95'
-                    }`}
-                >
-                  {submitState === 'submitting' ? (
-                    <span className="flex items-center justify-center gap-2">
-                      <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                      Submitting...
-                    </span>
-                  ) : (
-                    "Request a Callback"
-                  )}
-                </button>
-              </div>
+                      }`}
+                  >
+                    {submitState === 'submitting' ? (
+                      <span className="flex items-center justify-center gap-2">
+                        <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Submitting...
+                      </span>
+                    ) : (
+                      "Request a Callback"
+                    )}
+                  </button>
+                </div>
 
-              <p className="mt-4 text-center text-[11px] text-gray-400">
-                We'll only use this to respond to your enquiry. No spam. No sharing.
-              </p>
-            </form>
-          </>
-        )}
+                <p className="mt-4 text-center text-[11px] text-gray-400">
+                  We'll only use this to respond to your enquiry. No spam. No sharing.
+                </p>
+              </form>
+            </>
+          )}
         </div>
       </div>
     </div>
