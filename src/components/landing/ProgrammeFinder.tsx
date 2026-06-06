@@ -236,7 +236,7 @@ export function ProgrammeFinder() {
           onSubmit={handleSubmit}
           className="mx-auto mt-10 flex w-full max-w-4xl flex-col items-stretch rounded-3xl bg-white p-2 ring-1 ring-zinc-300 sm:flex-row sm:items-center sm:rounded-[100px]"
         >
-          <div className="flex flex-1 items-center px-4 py-2">
+          <div className="flex flex-1 items-center">
             <select
               aria-label="Level"
               value={level}
@@ -244,11 +244,11 @@ export function ProgrammeFinder() {
                 setLevel(e.target.value);
                 setSubmitted(false);
               }}
-              className="w-full appearance-none border-0 bg-transparent px-0 text-base text-zinc-500 focus:outline-none focus:ring-0 bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:1.1rem_1.1rem] bg-[position:right_12px_center] bg-no-repeat pr-8 cursor-pointer"
+              className="w-full appearance-none border-0 bg-transparent px-6 py-4 text-base text-zinc-500 focus:outline-none focus:ring-0 bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:1.1rem_1.1rem] bg-[position:right_1.5rem_center] bg-no-repeat pr-12 cursor-pointer"
             >
-              <option value="">I am exploring</option>
+              <option value="" className="py-3 px-4 text-base">I am exploring</option>
               {levels.map((l) => (
-                <option key={l} value={l}>
+                <option key={l} value={l} className="py-3 px-4 text-base">
                   {l}
                 </option>
               ))}
@@ -257,7 +257,7 @@ export function ProgrammeFinder() {
 
           <div className="hidden h-6 w-px bg-zinc-300 sm:block mx-2"></div>
 
-          <div className="flex flex-1 items-center px-4 py-2">
+          <div className="flex flex-1 items-center">
             <select
               aria-label="Field"
               value={field}
@@ -265,11 +265,11 @@ export function ProgrammeFinder() {
                 setField(e.target.value);
                 setSubmitted(false);
               }}
-              className="w-full appearance-none border-0 bg-transparent px-0 text-base text-zinc-500 focus:outline-none focus:ring-0 bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:1.1rem_1.1rem] bg-[position:right_12px_center] bg-no-repeat pr-8 cursor-pointer"
+              className="w-full appearance-none border-0 bg-transparent px-6 py-4 text-base text-zinc-500 focus:outline-none focus:ring-0 bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:1.1rem_1.1rem] bg-[position:right_1.5rem_center] bg-no-repeat pr-12 cursor-pointer"
             >
-              <option value="">Field</option>
+              <option value="" className="py-3 px-4 text-base">Field</option>
               {fields.map((f) => (
-                <option key={f} value={f}>
+                <option key={f} value={f} className="py-3 px-4 text-base">
                   {f}
                 </option>
               ))}
