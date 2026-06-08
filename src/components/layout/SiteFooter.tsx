@@ -117,6 +117,7 @@ export function SiteFooter() {
           {/* Brand + NAP */}
           <div className="max-w-[34rem]">
             <Logo />
+            {/* University Contact Information & Physical Address */}
             <address className="mt-6 space-y-4 text-sm not-italic leading-6 text-white sm:text-base">
               <p className="flex items-start gap-2">
                 <span className="mt-1 text-white/80">
