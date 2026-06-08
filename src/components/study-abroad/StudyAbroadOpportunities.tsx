@@ -102,7 +102,11 @@ export default function StudyAbroadOpportunities() {
 
   return (
     <section
-      className={`relative bg-transparent py-12 md:py-24 px-4 md:px-8 overflow-hidden ${poppins.className}`}
+      className={`relative w-full bg-transparent px-4 md:px-8 overflow-hidden ${poppins.className}`}
+      style={{
+        paddingTop: "clamp(5rem, 12.2vw, 600px)",
+        paddingBottom: "clamp(5rem, 13.3vw, 600px)"
+      }}
     >
       {/* Background Blue Wavy Image */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -119,25 +123,25 @@ export default function StudyAbroadOpportunities() {
         <div 
           className="absolute inset-x-0 bg-[#0CAADD]" 
           style={{ 
-            top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
-            bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+            top: "calc(clamp(50px, 8vw, 500px) - 1.5px)", 
+            bottom: "calc(clamp(50px, 8vw, 500px) - 1.5px)" 
           }} 
         />
         {/* Top Wave */}
         <div 
           className="absolute top-0 left-0 right-0 overflow-hidden"
-          style={{ height: "clamp(50px, 8vw, 120px)" }}
+          style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
           <img
             src="/88.svg"
             alt=""
-            className="absolute top-0 left-0 w-full h-auto"
+            className="absolute top-0 left-0 w-full h-auto block"
           />
         </div>
         {/* Bottom Wave */}
-        <div 
+        <div
           className="absolute bottom-0 left-0 right-0 overflow-hidden"
-          style={{ height: "clamp(50px, 8vw, 120px)" }}
+          style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
           <img
             src="/88.svg"
@@ -147,7 +151,7 @@ export default function StudyAbroadOpportunities() {
         </div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto flex flex-col items-center py-8 md:py-24">
+      <div className="relative z-10 max-w-7xl mx-auto flex flex-col items-center">
         {/* Header Text */}
         <p className="text-white mb-3 section-subheading text-center">
           Begin in Goa · Graduate in the World
@@ -164,7 +168,7 @@ export default function StudyAbroadOpportunities() {
         </p>
 
         {/* Featured Card Slider */}
-        <div 
+        <div
           className="w-full max-w-[1200px] bg-white/40 p-2 rounded-[2rem] shadow-xl backdrop-blur-sm transition-all duration-500"
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
@@ -235,9 +239,8 @@ export default function StudyAbroadOpportunities() {
             <button
               key={slide.id}
               onClick={() => setCurrentSlide(index)}
-              className={`w-2.5 h-2.5 rounded-full transition-colors duration-300 ${
-                currentSlide === index ? "bg-[#eb3b47]" : "bg-white hover:bg-gray-200"
-              }`}
+              className={`w-2.5 h-2.5 rounded-full transition-colors duration-300 ${currentSlide === index ? "bg-[#eb3b47]" : "bg-white hover:bg-gray-200"
+                }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}

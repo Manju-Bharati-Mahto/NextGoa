@@ -49,21 +49,27 @@ export default function TrendingSection() {
   const activeCourse = trendingCourses[activeIndex];
 
   return (
-    <section className="relative z-20 w-full min-h-[600px] flex items-center bg-transparent -mt-12 sm:-mt-24 lg:-mt-5 pt-8 pb-6 sm:pt-32 sm:pb-24">
+    <section 
+      className="relative z-20 w-full min-h-[600px] flex items-center bg-transparent -mt-12 sm:-mt-24 lg:-mt-5"
+      style={{ 
+        paddingTop: "clamp(5rem, 12.2vw, 600px)", 
+        paddingBottom: "clamp(5rem, 13.3vw, 600px)" 
+      }}
+    >
       {/* Background Red Wavy Image */}
             <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Middle Solid Red Background */}
         <div 
           className="absolute inset-x-0 bg-[#E73649]" 
           style={{ 
-            top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
-            bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+            top: "calc(clamp(50px, 8vw, 500px) - 1.5px)", 
+            bottom: "calc(clamp(50px, 8vw, 500px) - 1.5px)" 
           }} 
         />
         {/* Top Wave */}
         <div 
           className="absolute top-0 left-0 right-0 overflow-hidden"
-          style={{ height: "clamp(50px, 8vw, 120px)" }}
+          style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
           <img
             src="/89.svg"
@@ -74,7 +80,7 @@ export default function TrendingSection() {
         {/* Bottom Wave */}
         <div 
           className="absolute bottom-0 left-0 right-0 overflow-hidden"
-          style={{ height: "clamp(50px, 8vw, 120px)" }}
+          style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
           <img
             src="/89.svg"

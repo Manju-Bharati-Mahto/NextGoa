@@ -19,21 +19,27 @@ export default function StudyAbroadComparison() {
   ];
 
   return (
-    <section className="relative w-full font-[family-name:var(--font-poppins)] pt-12 sm:pt-24 pb-16 sm:pb-32 bg-transparent overflow-hidden">
+    <section
+      className="relative w-full font-[family-name:var(--font-poppins)] bg-transparent overflow-hidden"
+      style={{
+        paddingTop: "clamp(5rem, 12.2vw, 600px)",
+        paddingBottom: "clamp(5rem, 13.3vw, 600px)"
+      }}
+    >
       {/* Background Red Wavy Image */}
-            <div className="absolute inset-0 z-0 pointer-events-none">
+      <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Middle Solid Red Background */}
-        <div 
-          className="absolute inset-x-0 bg-[#E73649]" 
-          style={{ 
-            top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
-            bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
-          }} 
+        <div
+          className="absolute inset-x-0 bg-[#E73649]"
+          style={{
+            top: "calc(clamp(50px, 8vw, 500px) - 1.5px)",
+            bottom: "calc(clamp(50px, 8vw, 500px) - 1.5px)"
+          }}
         />
         {/* Top Wave */}
-        <div 
-          className="absolute top-0 left-0 right-0 overflow-hidden"
-          style={{ height: "clamp(50px, 8vw, 120px)" }}
+        <div
+          className="absolute top-0 left-0 right-0 overflow-hidden bg-[#f9f9f9]"
+          style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
           <img
             src="/89.svg"
@@ -42,9 +48,9 @@ export default function StudyAbroadComparison() {
           />
         </div>
         {/* Bottom Wave */}
-        <div 
-          className="absolute bottom-0 left-0 right-0 overflow-hidden"
-          style={{ height: "clamp(50px, 8vw, 120px)" }}
+        <div
+          className="absolute bottom-0 left-0 right-0 overflow-hidden bg-[#f9f9f9]"
+          style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
           <img
             src="/89.svg"
@@ -54,7 +60,7 @@ export default function StudyAbroadComparison() {
         </div>
       </div>
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10 py-8 sm:py-16">
-        
+
         {/* Header Section */}
         <div className="text-center mb-8 sm:mb-12 pt-2 sm:pt-6">
           <p className="text-white mb-3 section-subheading">Why PU Goa Pathway</p>
@@ -68,7 +74,7 @@ export default function StudyAbroadComparison() {
 
         {/* Comparison Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto py-3">
-          
+
           {/* Card 1: Direct Admission */}
           <div className="rounded-3xl overflow-hidden shadow-2xl flex flex-col bg-white">
             {/* Header */}

@@ -18,7 +18,11 @@ export function DynamicCareerOutcomes({
   return (
     <section 
       className="relative overflow-hidden z-10 w-full"
-      style={{ backgroundImage: `linear-gradient(to bottom, ${topBgColor} 50%, transparent 50%)` }}
+      style={{ 
+        backgroundImage: `linear-gradient(to bottom, ${topBgColor} 50%, transparent 50%)`,
+        paddingTop: "clamp(5rem, 12.2vw, 600px)",
+        paddingBottom: "clamp(5rem, 13.3vw, 600px)"
+      }}
     >
       {/* Background Wavy Image from Figma */}
       {themeColor.waveBand.toUpperCase() === "#E73649" ? (
@@ -27,14 +31,14 @@ export function DynamicCareerOutcomes({
           <div 
             className="absolute inset-x-0 bg-[#E73649]" 
             style={{ 
-              top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
-              bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+              top: "calc(clamp(50px, 8vw, 500px) - 1.5px)", 
+              bottom: "calc(clamp(50px, 8vw, 500px) - 1.5px)" 
             }} 
           />
           {/* Top Wave */}
           <div 
             className="absolute top-0 left-0 right-0 overflow-hidden"
-            style={{ height: "clamp(50px, 8vw, 120px)" }}
+            style={{ height: "clamp(50px, 8vw, 500px)" }}
           >
             <img
               src="/89.svg"
@@ -45,7 +49,7 @@ export function DynamicCareerOutcomes({
           {/* Bottom Wave */}
           <div 
             className="absolute bottom-0 left-0 right-0 overflow-hidden"
-            style={{ height: "clamp(50px, 8vw, 120px)" }}
+            style={{ height: "clamp(50px, 8vw, 500px)" }}
           >
             <img
               src="/89.svg"
@@ -60,14 +64,14 @@ export function DynamicCareerOutcomes({
           <div 
             className="absolute inset-x-0 bg-[#FEDB2F]" 
             style={{ 
-              top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
-              bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+              top: "calc(clamp(50px, 8vw, 500px) - 1.5px)", 
+              bottom: "calc(clamp(50px, 8vw, 500px) - 1.5px)" 
             }} 
           />
           {/* Top Wave */}
           <div 
             className="absolute top-0 left-0 right-0 overflow-hidden"
-            style={{ height: "clamp(50px, 8vw, 120px)" }}
+            style={{ height: "clamp(50px, 8vw, 500px)" }}
           >
             <img
               src="/87.svg"
@@ -78,7 +82,7 @@ export function DynamicCareerOutcomes({
           {/* Bottom Wave */}
           <div 
             className="absolute bottom-0 left-0 right-0 overflow-hidden"
-            style={{ height: "clamp(50px, 8vw, 120px)" }}
+            style={{ height: "clamp(50px, 8vw, 500px)" }}
           >
             <img
               src="/87.svg"
@@ -93,14 +97,14 @@ export function DynamicCareerOutcomes({
           <div 
             className="absolute inset-x-0 bg-[#1F1F1F]" 
             style={{ 
-              top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
-              bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+              top: "calc(clamp(50px, 8vw, 500px) - 1.5px)", 
+              bottom: "calc(clamp(50px, 8vw, 500px) - 1.5px)" 
             }} 
           />
           {/* Top Wave */}
           <div 
             className="absolute top-0 left-0 right-0 overflow-hidden"
-            style={{ height: "clamp(50px, 8vw, 120px)" }}
+            style={{ height: "clamp(50px, 8vw, 500px)" }}
           >
             <img
               src="/90.svg"
@@ -111,7 +115,7 @@ export function DynamicCareerOutcomes({
           {/* Bottom Wave */}
           <div 
             className="absolute bottom-0 left-0 right-0 overflow-hidden"
-            style={{ height: "clamp(50px, 8vw, 120px)" }}
+            style={{ height: "clamp(50px, 8vw, 500px)" }}
           >
             <img
               src="/90.svg"
@@ -126,14 +130,14 @@ export function DynamicCareerOutcomes({
           <div 
             className="absolute inset-x-0 bg-[#0CAADD]" 
             style={{ 
-              top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
-              bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+              top: "calc(clamp(50px, 8vw, 500px) - 1.5px)", 
+              bottom: "calc(clamp(50px, 8vw, 500px) - 1.5px)" 
             }} 
           />
           {/* Top Wave */}
           <div 
             className="absolute top-0 left-0 right-0 overflow-hidden"
-            style={{ height: "clamp(50px, 8vw, 120px)" }}
+            style={{ height: "clamp(50px, 8vw, 500px)" }}
           >
             <img
               src="/88.svg"
@@ -144,7 +148,7 @@ export function DynamicCareerOutcomes({
           {/* Bottom Wave */}
           <div 
             className="absolute bottom-0 left-0 right-0 overflow-hidden"
-            style={{ height: "clamp(50px, 8vw, 120px)" }}
+            style={{ height: "clamp(50px, 8vw, 500px)" }}
           >
             <img
               src="/88.svg"
@@ -155,7 +159,7 @@ export function DynamicCareerOutcomes({
         </div>
       )}
 
-      <div className="relative z-10 mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-12 py-24 sm:py-32 text-center flex flex-col items-center">
+      <div className="relative z-10 mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-12 text-center flex flex-col items-center">
         <h2 className="text-white mb-4 section-subheading">
           Career Outcomes
         </h2>

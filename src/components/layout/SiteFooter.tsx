@@ -112,7 +112,7 @@ export function SiteFooter() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-[1380px] px-6 pb-32 pt-32 sm:pt-48 sm:pb-40">
+      <div className="relative z-10 mx-auto max-w-[1400px] px-6 pb-32 pt-32 sm:pt-[clamp(12rem,8vw+4rem,35rem)] sm:pb-40">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.7fr_0.95fr_0.95fr_1.08fr] lg:gap-16">
           {/* Brand + NAP */}
           <div className="max-w-[34rem]">

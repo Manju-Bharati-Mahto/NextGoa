@@ -46,14 +46,14 @@ export function CampusTour() {
         <div 
           className="absolute inset-x-0 bg-[#E73649]" 
           style={{ 
-            top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
-            bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+            top: "calc(clamp(50px, 8vw, 500px) - 1.5px)", 
+            bottom: "calc(clamp(50px, 8vw, 500px) - 1.5px)" 
           }} 
         />
         {/* Top Wave */}
         <div 
           className="absolute top-0 left-0 right-0 overflow-hidden"
-          style={{ height: "clamp(50px, 8vw, 120px)" }}
+          style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
           <img
             src="/89.svg"
@@ -64,7 +64,7 @@ export function CampusTour() {
         {/* Bottom Wave */}
         <div 
           className="absolute bottom-0 left-0 right-0 overflow-hidden"
-          style={{ height: "clamp(50px, 8vw, 120px)" }}
+          style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
           <img
             src="/89.svg"
@@ -78,7 +78,13 @@ export function CampusTour() {
       <SunWaveIcon className="absolute left-[-20px] top-1/4 h-20 w-auto text-white/20 pointer-events-none select-none z-10 sm:h-24" />
       <SunWaveIcon className="absolute right-[-20px] bottom-1/4 h-20 w-auto text-white/20 pointer-events-none select-none rotate-[20deg] z-10 sm:h-24" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-20 pb-20 sm:pt-44 sm:pb-48 text-center">
+      <div 
+        className="relative z-10 mx-auto max-w-7xl px-6 text-center"
+        style={{ 
+          paddingTop: "clamp(5rem, 12.2vw, 600px)", 
+          paddingBottom: "clamp(5rem, 13.3vw, 600px)" 
+        }}
+      >
         <Eyebrow className="text-white">Campus Walkthrough</Eyebrow>
         <h2 className="mt-2 text-center section-heading text-white">
           Step inside PU Goa.
