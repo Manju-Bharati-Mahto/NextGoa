@@ -3,20 +3,26 @@ import Image from 'next/image';
 
 export function InternshipsAndPPOs() {
   return (
-    <section className="relative overflow-hidden bg-[#F8F9FA] pt-16 sm:pt-56 pb-16 sm:pb-56">
-            <div className="absolute inset-0 z-0 pointer-events-none">
+    <section
+      className="relative w-full overflow-hidden bg-[#F8F9FA]"
+      style={{
+        paddingTop: "clamp(5rem, 12.2vw, 600px)",
+        paddingBottom: "clamp(5rem, 13.3vw, 600px)"
+      }}
+    >
+      <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Middle Solid Blue Background */}
         <div 
           className="absolute inset-x-0 bg-[#0CAADD]" 
           style={{ 
-            top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
-            bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+            top: "calc(clamp(50px, 8vw, 500px) - 1.5px)", 
+            bottom: "calc(clamp(50px, 8vw, 500px) - 1.5px)" 
           }} 
         />
         {/* Top Wave */}
         <div 
           className="absolute top-0 left-0 right-0 overflow-hidden"
-          style={{ height: "clamp(50px, 8vw, 120px)" }}
+          style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
           <img
             src="/88.svg"
@@ -27,7 +33,7 @@ export function InternshipsAndPPOs() {
         {/* Bottom Wave */}
         <div 
           className="absolute bottom-0 left-0 right-0 overflow-hidden"
-          style={{ height: "clamp(50px, 8vw, 120px)" }}
+          style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
           <img
             src="/88.svg"

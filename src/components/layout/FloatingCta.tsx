@@ -1,7 +1,16 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function FloatingCta() {
+  const pathname = usePathname();
+
+  if (pathname === "/career" || pathname?.startsWith("/career/")) {
+    return null;
+  }
+
   return (
     <div className="fixed bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-[100] w-[95%] max-w-[800px] flex justify-center pointer-events-none">
       <div className="bg-black/30 backdrop-blur-xl border border-white/20 p-2 sm:p-2.5 rounded-full flex items-center justify-between gap-2 sm:gap-4 shadow-[0_8px_32px_rgba(0,0,0,0.15)] pointer-events-auto">

@@ -3,20 +3,26 @@ import { Animated2200Icon } from "@/components/placements/Animated2200Icon";
 
 export function PlacementsNumbers() {
   return (
-    <section className="relative z-10 overflow-hidden bg-transparent text-white -mt-6 sm:-mt-12">
-            <div className="absolute inset-0 z-0 pointer-events-none">
+    <section
+      className="relative w-full z-10 overflow-hidden bg-transparent text-white -mt-6 sm:-mt-12"
+      style={{
+        paddingTop: "clamp(5rem, 12.2vw, 600px)",
+        paddingBottom: "clamp(5rem, 13.3vw, 600px)"
+      }}
+    >
+      <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Middle Solid Blue Background */}
         <div 
           className="absolute inset-x-0 bg-[#0CAADD]" 
           style={{ 
-            top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
-            bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+            top: "calc(clamp(50px, 8vw, 500px) - 1.5px)", 
+            bottom: "calc(clamp(50px, 8vw, 500px) - 1.5px)" 
           }} 
         />
         {/* Top Wave */}
         <div 
           className="absolute top-0 left-0 right-0 overflow-hidden"
-          style={{ height: "clamp(50px, 8vw, 120px)" }}
+          style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
           <img
             src="/88.svg"
@@ -27,7 +33,7 @@ export function PlacementsNumbers() {
         {/* Bottom Wave */}
         <div 
           className="absolute bottom-0 left-0 right-0 overflow-hidden"
-          style={{ height: "clamp(50px, 8vw, 120px)" }}
+          style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
           <img
             src="/88.svg"
@@ -37,7 +43,7 @@ export function PlacementsNumbers() {
         </div>
       </div>
       
-      <div className="relative z-10 mx-auto max-w-7xl px-6 py-12 sm:py-28 lg:py-40 flex flex-col items-center justify-center">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 flex flex-col items-center justify-center">
         {/* Heading Section */}
         <p className="text-white mb-2 text-center section-subheading">
           Numbers That Matter

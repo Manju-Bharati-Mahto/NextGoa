@@ -41,7 +41,7 @@ export function Outcomes() {
       <div className="mx-auto max-w-5xl px-6 sm:pt-20 pt-5">
         <Eyebrow className="text-ink">Outcomes</Eyebrow>
         <h2 className="mt-2 text-center section-heading text-brand">
-          Where graduates go by sector, not by accident.
+          Where graduates go by sector, <span className="whitespace-nowrap">not by accident.</span>
         </h2>
         <p className="mx-auto mt-3 max-w-2xl text-center section-body text-ink">
           Recruiters return year after year because graduates arrive job-ready. Leading

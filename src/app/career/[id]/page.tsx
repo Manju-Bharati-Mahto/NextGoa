@@ -1,0 +1,99 @@
+import Image from "next/image";
+import { notFound } from "next/navigation";
+import { MOCK_JOBS } from "@/data/jobs";
+import Link from "next/link";
+
+export default async function CareerDetailsPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const jobId = parseInt(id);
+  const job = MOCK_JOBS.find((j) => j.id === jobId);
+
+  if (!job) {
+    notFound();
+  }
+
+  return (
+    <main className="w-full flex flex-col min-h-screen">
+      {/* Hero Section */}
+      <section 
+        className="w-full relative pt-32 lg:pt-40 flex items-center z-20"
+        style={{ minHeight: 'max(500px, 42vw)' }}
+      >
+        {/* Background Image Overflowing Downward */}
+        <img 
+          src="/car-2.png" 
+          alt="Hero Background" 
+          className="absolute top-0 left-0 w-full object-cover object-bottom z-0"
+          style={{ height: 'calc(100% + 10vw)', minHeight: '52vw' }}
+        />
+
+        {/* Absolute Content Overlay */}
+        <div className="absolute inset-0 z-10 flex items-center pointer-events-none">
+          <div className="max-w-[1440px] w-full mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center h-full pointer-events-auto">
+            
+            {/* Left Content */}
+            <div className="flex-1 flex flex-col justify-center w-full max-w-[750px] md:pr-8">
+              <Link href="/career" className="text-white hover:opacity-80 transition-opacity mb-6 font-medium text-sm w-fit flex items-center gap-2">
+                &larr; Back to Listings
+              </Link>
+
+              {/* Pill */}
+              <div className="border border-white text-white font-medium px-6 py-2 rounded-full w-fit mb-6 text-sm lg:text-base">
+                {job.position} Position
+              </div>
+              
+              {/* Title */}
+              <h1 className="text-white font-bold text-[48px] md:text-[60px] lg:text-[76px] leading-[1.1] mb-8 tracking-tight">
+                {job.title}
+              </h1>
+              
+              {/* CTA */}
+              <Link href={`/career/${jobId}/apply`} className="bg-[#EF3341] hover:bg-[#D92A36] transition-colors text-white text-[18px] font-bold px-10 py-3.5 rounded-full w-fit shadow-md text-center">
+                Apply Now
+              </Link>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      {/* Details Content Section */}
+      <section className="w-full pt-48 lg:pt-64 pb-16 lg:pb-24 relative z-10">
+        <div className="max-w-5xl mx-auto px-6 lg:px-12 flex flex-col gap-6">
+          
+          {/* Card 1: Key Responsibilities */}
+          <div className="bg-white rounded-[1rem] border border-gray-200 p-8 shadow-sm">
+            <h2 className="text-[22px] font-bold mb-5 text-[#111111]">Key Responsibilities</h2>
+            <ul className="list-disc pl-5 text-[#111111] leading-[1.6] text-[15px] space-y-1.5">
+              <li>Managing academic data and records</li>
+              <li>Assisting in the development and maintenance of academic policies and resources</li>
+              <li>Planning and implementing various academic programs and departmental initiatives</li>
+              <li>Supporting overall academic services and operations</li>
+            </ul>
+          </div>
+
+          {/* Card 2: Who Can Apply? */}
+          <div className="bg-white rounded-[1rem] border border-gray-200 p-8 shadow-sm">
+            <h2 className="text-[22px] font-bold mb-5 text-[#111111]">Who Can Apply?</h2>
+            <ul className="list-disc pl-5 text-[#111111] leading-[1.6] text-[15px] space-y-1.5">
+              <li>Bachelor's or master's Degree (B.A., M.A., B.Ed. or equivalent)</li>
+              <li>Minimum 5 years of relevant experience</li>
+              <li>Proficiency in Microsoft Office</li>
+              <li>Good communication skills in English, Hindi, and Gujarati</li>
+            </ul>
+          </div>
+
+          {/* Card 3: Application Deadline */}
+          <div className="bg-white rounded-[1rem] border border-gray-200 p-8 shadow-sm">
+            <h2 className="text-[22px] font-bold mb-5 text-[#111111]">Application Deadline</h2>
+            <div className="text-[#111111] leading-[1.6] text-[15px] flex flex-col gap-1">
+              <p>Interested candidates can send their resume to vacancies.paruluniversity.ac.in within 7 days of this advertisement.</p>
+              <p>For Any Queries, Please Contact +91 90161 34646</p>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+    </main>
+  );
+}

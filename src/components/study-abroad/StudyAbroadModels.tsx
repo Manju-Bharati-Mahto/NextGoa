@@ -9,23 +9,27 @@ const poppins = Poppins({
 export default function StudyAbroadModels() {
   return (
     <section
-      className={`relative bg-transparent py-12 md:py-24 px-4 md:px-8 lg:py-48 overflow-hidden ${poppins.className}`}
-      style={poppins.style}
+      className={`relative w-full bg-transparent px-4 md:px-8 overflow-hidden ${poppins.className}`}
+      style={{
+        ...poppins.style,
+        paddingTop: "clamp(5rem, 12.2vw, 600px)",
+        paddingBottom: "clamp(5rem, 13.3vw, 600px)"
+      }}
     >
       {/* Background Blue Wavy Image */}
-            <div className="absolute inset-0 z-0 pointer-events-none">
+      <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Middle Solid Blue Background */}
-        <div 
-          className="absolute inset-x-0 bg-[#0CAADD]" 
-          style={{ 
-            top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
-            bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
-          }} 
+        <div
+          className="absolute inset-x-0 bg-[#0CAADD]"
+          style={{
+            top: "calc(clamp(50px, 8vw, 500px) - 1.5px)",
+            bottom: "calc(clamp(50px, 8vw, 500px) - 1.5px)"
+          }}
         />
         {/* Top Wave */}
-        <div 
+        <div
           className="absolute top-0 left-0 right-0 overflow-hidden"
-          style={{ height: "clamp(50px, 8vw, 120px)" }}
+          style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
           <img
             src="/88.svg"
@@ -34,9 +38,9 @@ export default function StudyAbroadModels() {
           />
         </div>
         {/* Bottom Wave */}
-        <div 
+        <div
           className="absolute bottom-0 left-0 right-0 overflow-hidden"
-          style={{ height: "clamp(50px, 8vw, 120px)" }}
+          style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
           <img
             src="/88.svg"

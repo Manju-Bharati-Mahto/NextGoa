@@ -58,25 +58,27 @@ export function International() {
           className="mx-auto mt-10 w-full max-w-6xl"
         />
 
-        <ul className="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <ul className="mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
           {countries.map((c) => (
             <li
               key={c.name}
-              className="rounded-full border border-ink/15 bg-white/70 px-5 py-2 text-xs font-bold uppercase tracking-wide text-ink/70"
+              className="rounded-full border border-ink/15 bg-white/70 px-3 py-1.5 sm:px-5 sm:py-2 text-[10px] sm:text-xs font-bold uppercase tracking-normal sm:tracking-wide text-ink/70"
             >
               {c.name}
             </li>
           ))}
         </ul>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">
-          {cards.map((c) => (
+        <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6">
+          {cards.map((c, i) => (
             <div
               key={c.title}
-              className="flex min-h-[210px] flex-col items-center justify-center rounded-3xl bg-ocean px-6 py-10 text-center text-white shadow-sm"
+              className={`flex min-h-[140px] sm:min-h-[210px] flex-col items-center justify-center rounded-[20px] bg-ocean px-3 py-6 sm:px-6 sm:py-10 text-center text-white shadow-sm ${
+                i === 2 ? "col-span-2 sm:col-span-1" : ""
+              }`}
             >
-              <p className="font-sans font-bold text-5xl sm:text-6xl leading-none tracking-tight">{c.value}</p>
-              <h3 className="mt-3 font-poppins font-semibold text-[24px] sm:text-[32px] leading-tight tracking-tight text-white/90">{c.title}</h3>
+              <p className="font-sans font-bold text-[2rem] sm:text-6xl leading-none tracking-tight">{c.value}</p>
+              <h3 className="mt-2 sm:mt-3 font-poppins font-semibold text-base sm:text-[32px] leading-tight tracking-tight text-white/90">{c.title}</h3>
             </div>
           ))}
         </div>

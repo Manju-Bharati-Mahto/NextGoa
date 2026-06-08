@@ -7,7 +7,7 @@ import { cta } from "@/lib/navigation";
 export function ExamDatesTicket() {
   return (
     <div
-      className="relative block w-full max-w-[585px] aspect-[1170/844] overflow-hidden select-none [container-type:inline-size]"
+      className="relative block w-full max-w-full sm:max-w-[585px] aspect-[1170/844] overflow-hidden select-none [container-type:inline-size]"
     >
       <img
         src="/exam.png"

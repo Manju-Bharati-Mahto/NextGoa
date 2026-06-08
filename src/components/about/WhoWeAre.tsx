@@ -8,14 +8,14 @@ export function WhoWeAre() {
         <div 
           className="absolute inset-x-0 bg-[#0CAADD]" 
           style={{ 
-            top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
-            bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+            top: "calc(clamp(50px, 8vw, 500px) - 1.5px)", 
+            bottom: "calc(clamp(50px, 8vw, 500px) - 1.5px)" 
           }} 
         />
         {/* Top Wave */}
         <div 
           className="absolute top-0 left-0 right-0 overflow-hidden"
-          style={{ height: "clamp(50px, 8vw, 120px)" }}
+          style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
           <img
             src="/88.svg"
@@ -26,7 +26,7 @@ export function WhoWeAre() {
         {/* Bottom Wave */}
         <div 
           className="absolute bottom-0 left-0 right-0 overflow-hidden"
-          style={{ height: "clamp(50px, 8vw, 120px)" }}
+          style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
           <img
             src="/88.svg"
@@ -36,7 +36,13 @@ export function WhoWeAre() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 pt-20 pb-24 sm:pt-40 sm:pb-48 md:grid-cols-[1.3fr_1fr] lg:grid-cols-[1.2fr_1fr] md:gap-24 lg:gap-32">
+      <div 
+        className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 md:grid-cols-[1.3fr_1fr] lg:grid-cols-[1.2fr_1fr] md:gap-24 lg:gap-32"
+        style={{ 
+          paddingTop: "clamp(5rem, 12.2vw, 600px)", 
+          paddingBottom: "clamp(5rem, 13.3vw, 600px)" 
+        }}
+      >
         {/* Left Side: Text */}
         <div className="text-white order-2 md:order-1">
           <Eyebrow className="!text-left text-white">Who We Are</Eyebrow>

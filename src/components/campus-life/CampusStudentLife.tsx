@@ -25,20 +25,26 @@ const clubs = [
 
 export function CampusStudentLife() {
   return (
-    <section className="relative w-full py-8 lg:py-32 overflow-hidden flex flex-col justify-center min-h-[400px] lg:min-h-[800px]">
+    <section 
+      className="relative w-full overflow-hidden flex flex-col justify-center min-h-[400px] lg:min-h-[800px]"
+      style={{ 
+        paddingTop: "clamp(5rem, 12.2vw, 600px)", 
+        paddingBottom: "clamp(5rem, 13.3vw, 600px)" 
+      }}
+    >
             <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Middle Solid Blue Background */}
         <div 
           className="absolute inset-x-0 bg-[#0CAADD]" 
           style={{ 
-            top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
-            bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+            top: "calc(clamp(50px, 8vw, 500px) - 1.5px)", 
+            bottom: "calc(clamp(50px, 8vw, 500px) - 1.5px)" 
           }} 
         />
         {/* Top Wave */}
         <div 
-          className="absolute top-0 left-0 right-0 overflow-hidden"
-          style={{ height: "clamp(50px, 8vw, 120px)" }}
+          className="absolute top-0 left-0 right-0 overflow-hidden bg-[#fff]"
+          style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
           <img
             src="/88.svg"
@@ -49,7 +55,7 @@ export function CampusStudentLife() {
         {/* Bottom Wave */}
         <div 
           className="absolute bottom-0 left-0 right-0 overflow-hidden"
-          style={{ height: "clamp(50px, 8vw, 120px)" }}
+          style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
           <img
             src="/88.svg"
