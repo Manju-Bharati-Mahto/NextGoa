@@ -90,16 +90,20 @@ const steps: TimelineStep[] = [
 export function AdmissionJourneyTimeline() {
   const [activeStep, setActiveStep] = useState(0);
 
-  const handlePillClick = (stepIndex: number) => {
+  const handleStepSelect = (stepIndex: number) => {
     setActiveStep(stepIndex);
     setTimeout(() => {
-      document.getElementById("timeline-view")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 100);
+      if (window.innerWidth < 1024) {
+        document.getElementById(`timeline-step-${stepIndex}`)?.scrollIntoView({ behavior: "smooth", block: "center" });
+      } else {
+        document.getElementById("timeline-view")?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }, 150);
   };
 
   const handleNextPhaseClick = () => {
     if (activeStep < steps.length - 1) {
-      setActiveStep(activeStep + 1);
+      handleStepSelect(activeStep + 1);
     }
   };
 
@@ -126,31 +130,31 @@ export function AdmissionJourneyTimeline() {
 
           <div className="w-full md:w-2/3 flex overflow-x-auto md:overflow-x-visible pb-2 md:pb-0 gap-2.5 justify-start md:flex-wrap md:justify-start scrollbar-none [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
             <button 
-              onClick={() => handlePillClick(0)}
+              onClick={() => handleStepSelect(0)}
               className={`shrink-0 px-5 py-2 rounded-full text-xs font-semibold transition-colors ${activeStep === 0 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
             >
               I AM A BEGINNER
             </button>
             <button 
-              onClick={() => handlePillClick(1)}
+              onClick={() => handleStepSelect(1)}
               className={`shrink-0 px-5 py-2 rounded-full text-xs font-semibold transition-colors ${activeStep === 1 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
             >
               SUBMITTED APPLICATION
             </button>
             <button 
-              onClick={() => handlePillClick(3)}
+              onClick={() => handleStepSelect(3)}
               className={`shrink-0 px-5 py-2 rounded-full text-xs font-semibold transition-colors ${activeStep === 3 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
             >
               DONE WITH ENTRANCE TEST
             </button>
             <button 
-              onClick={() => handlePillClick(4)}
+              onClick={() => handleStepSelect(4)}
               className={`shrink-0 px-5 py-2 rounded-full text-xs font-semibold transition-colors ${activeStep === 4 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
             >
               AWAITING MERIT LIST
             </button>
             <button 
-              onClick={() => handlePillClick(5)}
+              onClick={() => handleStepSelect(5)}
               className={`shrink-0 px-5 py-2 rounded-full text-xs font-semibold transition-colors ${activeStep === 5 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
             >
               COMPLETED COUNSELLING
@@ -182,7 +186,7 @@ export function AdmissionJourneyTimeline() {
                   <div 
                     key={step.id} 
                     className="flex flex-col items-center cursor-pointer group"
-                    onClick={() => setActiveStep(index)}
+                    onClick={() => handleStepSelect(index)}
                   >
                     {/* Circle Node (Image 1 style) */}
                     <div 
@@ -262,7 +266,7 @@ export function AdmissionJourneyTimeline() {
                 const isPast = index < activeStep;
 
                 return (
-                  <div key={step.id} className="relative pl-10 pr-2 transition-all duration-300">
+                  <div key={step.id} id={`timeline-step-${index}`} className="relative pl-10 pr-2 transition-all duration-300">
                     {/* Timeline Marker Point (Image 2 style) */}
                     <div className="absolute left-[9px] top-6 w-5 h-5 z-10 flex items-center justify-center">
                       {isActive ? (
@@ -278,7 +282,7 @@ export function AdmissionJourneyTimeline() {
 
                     {/* Timeline Card */}
                     <div 
-                      onClick={() => setActiveStep(index)}
+                      onClick={() => handleStepSelect(index)}
                       className={`w-full rounded-2xl p-5 text-left cursor-pointer transition-all duration-300 shadow-sm ${
                         isActive 
                           ? 'bg-[#ee364f] text-white shadow-md scale-[1.01]' 
