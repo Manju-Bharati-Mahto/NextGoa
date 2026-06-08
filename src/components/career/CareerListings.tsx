@@ -91,7 +91,7 @@ export function CareerListings() {
 
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
 
-  const FilterSections = () => (
+  const renderFilterSections = () => (
     <>
       {/* Job Position Filter */}
       <div className="mb-8">
@@ -194,7 +194,7 @@ export function CareerListings() {
               <h3 className="text-xl font-bold text-[#111111]">Filters</h3>
             </div>
             
-            <FilterSections />
+            {renderFilterSections()}
           </div>
         </div>
 
@@ -269,7 +269,7 @@ export function CareerListings() {
           
           <div className="relative w-full bg-white rounded-t-3xl p-6 pt-8 max-h-[85vh] flex flex-col shadow-2xl animate-slide-up">
             <div className="flex-1 overflow-y-auto pb-4">
-              <FilterSections />
+              {renderFilterSections()}
             </div>
             <div className="pt-2 mt-auto">
               <button 

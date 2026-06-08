@@ -9,7 +9,7 @@ export function EnquiryModal() {
 
   useEffect(() => {
     if (pathname === "/enquiry") {
-      setIsOpen(true);
+      setTimeout(() => setIsOpen(true), 0);
     }
   }, [pathname]);
 
