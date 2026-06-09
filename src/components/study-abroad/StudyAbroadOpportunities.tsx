@@ -132,10 +132,14 @@ export default function StudyAbroadOpportunities() {
           className="absolute top-0 left-0 right-0 overflow-hidden"
           style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
-          <img
-            src="/88.svg"
-            alt=""
-            className="absolute top-0 left-0 w-full h-auto block"
+          <div 
+            className="absolute top-0 left-0 w-[400%] h-full animate-wave-flow"
+            style={{
+              backgroundImage: "url('/88-double.svg?v=3')",
+              backgroundSize: "50% auto",
+              backgroundPosition: "top left",
+              backgroundRepeat: "repeat-x"
+            }}
           />
         </div>
         {/* Bottom Wave */}
@@ -210,28 +214,9 @@ export default function StudyAbroadOpportunities() {
                   {activeSlide.title}
                 </h3>
 
-                <p className="text-sm text-white/95 mb-8 leading-relaxed font-medium">
+                <p className="text-sm text-white/95 leading-relaxed font-medium">
                   {activeSlide.description}
                 </p>
-
-                <div>
-                  <button className="bg-[#fbdc2a] hover:bg-[#eac516] text-black text-xs font-bold px-6 py-2.5 rounded-full shadow-sm transition-colors flex items-center gap-2">
-                    Explore More
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2.5"
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
               </div>
             </div>
           </div>

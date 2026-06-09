@@ -2,31 +2,24 @@
 
 import React from "react";
 import Link from "next/link";
+import { cta } from "@/lib/navigation";
 
 const admissionsData = [
   {
     title: "Eligibility",
     description: "10+2 with PCM (B.Tech). Diploma (Lateral). 10+2 any stream (BCA). Bachelor's degree (MCA).",
-    linkText: "Open admissions \u2192",
-    linkHref: "#",
   },
   {
     title: "Entrance",
     description: "JEE / state CET / PU Goa entrance accepted. Counselling-based for Diploma & BCA.",
-    linkText: "Open admissions \u2192",
-    linkHref: "#",
   },
   {
     title: "Fees &\nScholarships",
     description: "Tiered fees by programme. Merit, sports & need-based scholarships available.",
-    linkText: "Open admissions \u2192",
-    linkHref: "#",
   },
   {
     title: "Key Dates",
     description: "Applications open for 2026-27. Early-bird scholarship deadlines apply.",
-    linkText: "Open admissions \u2192",
-    linkHref: "#",
   },
 ];
 
@@ -55,17 +48,21 @@ export default function AdmissionsSnapshot() {
               <h4 className="font-poppins font-bold text-[24px] sm:text-[28px] text-ink leading-tight mb-4 whitespace-pre-line">
                 {item.title}
               </h4>
-              <p className="text-ink/90 text-[15px] sm:text-[16px] leading-relaxed mb-6 flex-grow">
+              <p className="text-ink/90 text-[15px] sm:text-[16px] leading-relaxed flex-grow">
                 {item.description}
               </p>
-              <Link 
-                href={item.linkHref} 
-                className="font-bold text-[15px] sm:text-[16px] text-ink hover:underline underline-offset-4"
-              >
-                {item.linkText}
-              </Link>
             </div>
           ))}
+        </div>
+
+        {/* Centralized Open Admissions Button */}
+        <div className="mt-12 sm:mt-16 text-center">
+          <Link 
+            href={cta.apply} 
+            className="inline-block bg-[#E73649] text-white font-bold text-[16px] sm:text-[18px] px-8 py-4 rounded-full hover:bg-[#D62839] transition-colors shadow-sm"
+          >
+            Open admissions &rarr;
+          </Link>
         </div>
 
       </div>

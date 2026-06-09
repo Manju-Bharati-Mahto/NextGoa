@@ -34,9 +34,9 @@ const pathwaysData: TabData[] = [
       { label: "Available in", value: "All 7" },
     ],
     images: {
-      top: "/abroad/Cultural Immersion Experience.png",
-      bottomLeft: "/abroad/Laurentian University Visit.png",
-      bottomRight: "/abroad/Industry Immersion Visit.png",
+      top: "/international/bachelors/img_7026.jpg",
+      bottomLeft: "/international/bachelors/7ab9736f-ab10-4f81-bc92-99baf6fa100a.jpeg",
+      bottomRight: "/international/bachelors/img_2397.jpg",
     },
   },
   {
@@ -54,9 +54,9 @@ const pathwaysData: TabData[] = [
       { label: "Available in", value: "UK, USA, Canada" },
     ],
     images: {
-      top: "/abroad/Laurentian University Visit.png",
-      bottomLeft: "/abroad/Industry Immersion Visit.png",
-      bottomRight: "/abroad/Cultural Immersion Experience.png",
+      top: "/international/progression/20240830_100201.jpg",
+      bottomLeft: "/international/progression/20240902_084207.jpg",
+      bottomRight: "/international/progression/20240827_135708.jpg",
     },
   },
   {
@@ -74,9 +74,9 @@ const pathwaysData: TabData[] = [
       { label: "Available in", value: "UK, USA, Australia" },
     ],
     images: {
-      top: "/abroad/Industry Immersion Visit.png",
-      bottomLeft: "/abroad/Cultural Immersion Experience.png",
-      bottomRight: "/abroad/Laurentian University Visit.png",
+      top: "/international/masters/20240902_090304.jpg",
+      bottomLeft: "/international/masters/dsc01274.jpg",
+      bottomRight: "/international/masters/20240903_111812.jpg",
     },
   },
   {
@@ -94,9 +94,9 @@ const pathwaysData: TabData[] = [
       { label: "Available in", value: "UK, Europe" },
     ],
     images: {
-      top: "/abroad/Cultural Immersion Experience.png",
-      bottomLeft: "/abroad/Industry Immersion Visit.png",
-      bottomRight: "/abroad/Laurentian University Visit.png",
+      top: "/international/bachelors-transfer/d0bdcca4-a4a9-4eb0-b0d1-e1bc4cbf0dc94.jpg",
+      bottomLeft: "/international/bachelors-transfer/img_13883.jpg",
+      bottomRight: "/international/bachelors-transfer/classroom.heic3.jpg",
     },
   },
 ];

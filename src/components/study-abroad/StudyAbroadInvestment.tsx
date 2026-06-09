@@ -1,4 +1,10 @@
+"use client";
+
+import { useState } from "react";
 import { Poppins } from "next/font/google";
+import Link from "next/link";
+import { cta } from "@/lib/navigation";
+import CostSheetModal from "./CostSheetModal";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -6,6 +12,8 @@ const poppins = Poppins({
 });
 
 export default function StudyAbroadInvestment() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section className={`bg-[#f8f8f8] py-20 px-4 md:px-8 ${poppins.className}`}>
       <div className="max-w-[1180px] mx-auto flex flex-col items-center">
@@ -31,9 +39,9 @@ export default function StudyAbroadInvestment() {
               </p>
             </div>
             <div>
-              <button className="bg-[#eb3b47] hover:bg-[#d6323c] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-colors w-max shadow-md">
+              <Link href="/admissions" className="inline-block bg-[#eb3b47] hover:bg-[#d6323c] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-colors w-max shadow-md">
                 View admissions
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -47,7 +55,10 @@ export default function StudyAbroadInvestment() {
               </p>
             </div>
             <div>
-              <button className="bg-[#0ca7dd] hover:bg-[#0b92c2] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-colors w-max shadow-md">
+              <button 
+                onClick={() => setIsModalOpen(true)}
+                className="bg-[#0ca7dd] hover:bg-[#0b92c2] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-colors w-max shadow-md"
+              >
                 Request cost sheet
               </button>
             </div>
@@ -64,9 +75,9 @@ export default function StudyAbroadInvestment() {
               </p>
             </div>
             <div>
-              <button className="bg-[#232323] hover:bg-[#111111] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-colors w-max shadow-md">
+              <Link href={cta.apply} className="inline-block bg-[#232323] hover:bg-[#111111] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-colors w-max shadow-md">
                 Talk to advisor
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -88,6 +99,8 @@ export default function StudyAbroadInvestment() {
         </div>
 
       </div>
+      
+      <CostSheetModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 }
