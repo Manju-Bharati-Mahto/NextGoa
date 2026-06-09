@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import ProgramFilter from "@/components/programmes/ProgramFilter";
-import DegreeLevelSection from "@/components/programmes/DegreeLevelSection";
-import SpecialisationsSection from "@/components/programmes/SpecialisationsSection";
 import ProgrammesFaq from "@/components/programmes/ProgrammesFaq";
 import GatewaySection from "@/components/programmes/GatewaySection";
 import TrendingSection from "@/components/programmes/TrendingSection";
@@ -42,12 +40,6 @@ export default function ProgrammesPage() {
 
       {/* Program Filter Section */}
       <ProgramFilter />
-
-      {/* Degree Level Section */}
-      <DegreeLevelSection />
-
-      {/* Specialisations Section */}
-      <SpecialisationsSection />
 
       {/* Programmes FAQ Section */}
       <ProgrammesFaq />

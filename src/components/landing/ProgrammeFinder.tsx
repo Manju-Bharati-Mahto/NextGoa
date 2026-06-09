@@ -381,12 +381,12 @@ export function ProgrammeFinder() {
             <span className="font-bold">Don&apos;t know what to choose?</span>{" "}
             Talk to a counsellor we&apos;ll match you to the right program.
           </p>
-          <a
-            href="#admissions"
+          <Link
+            href="/programmes"
             className="whitespace-nowrap rounded-full bg-sunshine px-6 py-3 text-sm font-bold text-ink transition-transform hover:scale-[1.03]"
           >
             All Programs
-          </a>
+          </Link>
         </div>
       </div>
     </section>

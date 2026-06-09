@@ -1,4 +1,5 @@
 import { Eyebrow } from "./Decor";
+import Link from "next/link";
 
 /**
  * "Beyond the classroom" - two cyan cards: Research (grant-funded) and
@@ -16,6 +17,7 @@ const cards = [
       { value: "APC", label: "Publishing support" },
     ],
     cta: "Explore research →",
+    link: "/stories",
   },
   {
     badge: "Entrepreneurship",
@@ -28,6 +30,7 @@ const cards = [
       { value: "₹40 Cr+", label: "Startup revenue" },
     ],
     cta: "Visit the incubator →",
+    link: "/placements#startup-ecosystem",
   },
 ];
 
@@ -91,12 +94,12 @@ export function Research() {
                 </dl>
 
                 <div className="mt-8">
-                  <a
-                    href="#admissions"
+                  <Link
+                    href={c.link || "#"}
                     className="inline-block rounded-full bg-sunshine px-5 py-2.5 font-[family-name:var(--font-poppins)] text-xs sm:text-sm font-bold text-ink transition-transform hover:scale-[1.03]"
                   >
                     {c.cta}
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

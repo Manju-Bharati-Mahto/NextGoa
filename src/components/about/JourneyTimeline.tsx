@@ -72,7 +72,7 @@ export function JourneyTimeline() {
         <div className="pointer-events-none absolute inset-y-0 left-0 z-20 w-24 bg-gradient-to-r from-brand-white to-transparent sm:w-40" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-20 w-24 bg-gradient-to-l from-brand-white to-transparent sm:w-40" />
 
-        <div className="scrollbar-hide snap-x snap-mandatory overflow-x-auto pb-12 pt-12 overscroll-x-contain -webkit-overflow-scrolling-touch">
+        <div className="scrollbar-hide snap-x snap-mandatory overflow-x-auto overflow-y-hidden pb-12 pt-12 -webkit-overflow-scrolling-touch">
           <div className="relative flex w-max min-w-full items-center px-[50vw] sm:px-[15vw] h-[550px]" style={{ paddingLeft: "calc(50vw - 140px)", paddingRight: "calc(50vw - 140px)" }}>
             {/* Continuous gradient timeline line */}
             <div className="absolute left-0 right-0 top-1/2 h-[3px] -translate-y-1/2 bg-gradient-to-r from-brand-blue-guideline/10 via-brand-blue-guideline to-brand/10" />

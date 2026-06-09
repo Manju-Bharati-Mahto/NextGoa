@@ -1,4 +1,5 @@
 import { Eyebrow } from "./Decor";
+import Link from "next/link";
 
 /**
  * "International Teaser" - global pathways. Countries are listed as plain text
@@ -84,12 +85,12 @@ export function International() {
         </div>
 
         <p className="mt-10 text-center">
-          <a
-            href="#admissions"
+          <Link
+            href="/study-abroad"
             className="inline-block rounded-full bg-brand px-7 py-3.5 text-sm font-bold text-white transition-colors hover:bg-brand-dark"
           >
             Explore Global Opportunities →
-          </a>
+          </Link>
         </p>
       </div>
     </section>

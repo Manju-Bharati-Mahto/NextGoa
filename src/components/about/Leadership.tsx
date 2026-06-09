@@ -58,9 +58,14 @@ export function Leadership() {
                   Foundation and President of Parul University. He is the driving force
                   behind Parul University's National and Global Expansion.
                 </p>
-                <button className="mt-8 inline-flex items-center gap-2 rounded-full bg-sunshine px-6 py-3 font-semibold text-ink transition-transform hover:scale-105">
-                  Explore More <span aria-hidden="true">&rarr;</span>
-                </button>
+                <div className="mt-8 flex gap-4">
+                  <a href="#" className="inline-block transition-transform hover:scale-110" aria-label="LinkedIn">
+                    <img src="/linkedin-icon.svg" alt="LinkedIn" className="h-12 w-12 rounded-[16px] shadow-sm" />
+                  </a>
+                  <a href="#" className="inline-block transition-transform hover:scale-110" aria-label="Instagram">
+                    <img src="/instagram-icon.svg" alt="Instagram" className="h-12 w-12 rounded-[16px] shadow-sm" />
+                  </a>
+                </div>
               </div>
               
               {/* Background Silhouette Graphic */}
@@ -100,9 +105,14 @@ export function Leadership() {
                   advocate for student-centric, not-for-profit higher education and the
                   inspiration behind the institution's name.
                 </p>
-                <button className="mt-8 inline-flex items-center gap-2 rounded-full bg-sunshine px-6 py-3 font-semibold text-ink transition-transform hover:scale-105">
-                  Explore More <span aria-hidden="true">&rarr;</span>
-                </button>
+                <div className="mt-8 flex gap-4">
+                  <a href="#" className="inline-block transition-transform hover:scale-110" aria-label="LinkedIn">
+                    <img src="/linkedin-icon.svg" alt="LinkedIn" className="h-12 w-12 rounded-[16px] shadow-sm" />
+                  </a>
+                  <a href="#" className="inline-block transition-transform hover:scale-110" aria-label="Instagram">
+                    <img src="/instagram-icon.svg" alt="Instagram" className="h-12 w-12 rounded-[16px] shadow-sm" />
+                  </a>
+                </div>
               </div>
 
               {/* Background Silhouette Graphic */}

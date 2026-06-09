@@ -280,7 +280,7 @@ export default function ProgramFilter() {
   }, [activeFilters]);
 
   return (
-    <section className="py-20 bg-[#F9F9F9] font-[family-name:var(--font-poppins)]">
+    <section id="program-filter" className="py-20 bg-[#F9F9F9] font-[family-name:var(--font-poppins)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-12 sm:mb-16">
