@@ -4,7 +4,7 @@ export function CampusLifeHero() {
       <div className="mx-auto w-full max-w-7xl px-6 lg:px-12 flex flex-col lg:flex-row items-center sm:gap-12 lg:gap-0 sm:py-24 pb-5 pt-20 lg:py-0 gap-0">
 
         {/* ── Left: Text ── */}
-        <div className="flex-1 lg:pr-8 z-10 lg:-translate-x-[150px] pt-10">
+        <div className="flex-1 lg:pr-8 z-10 xl:-translate-x-[100px] 2xl:-translate-x-[150px] pt-10">
           {/* Eyebrow pill */}
           <span className="inline-block bg-[#FEDB2F] text-[#1F1F1F] text-[13px] font-bold px-4 py-1.5 rounded-full mb-6">
             Campus Life
@@ -20,11 +20,11 @@ export function CampusLifeHero() {
         </div>
 
         {/* ── Right: Collage ── */}
-        <div className="flex-1 flex items-center justify-center relative w-full mt-8 lg:mt-0 min-h-[350px] sm:min-h-[520px] lg:min-h-[600px] lg:translate-x-[50px]">
+        <div className="flex-1 flex items-center justify-center relative w-full mt-8 lg:mt-0 min-h-[350px] sm:min-h-[520px] lg:min-h-[600px] xl:translate-x-[50px]">
           <img
             src="/campus-life/hero-collage.png"
             alt="Campus Life"
-            className="w-full h-auto max-w-[100%] sm:max-w-[750px] lg:max-w-[950px] scale-100 lg:scale-125 origin-center object-contain relative z-20"
+            className="w-full h-auto max-w-[100%] sm:max-w-[750px] lg:max-w-[950px] scale-100 lg:scale-110 xl:scale-125 origin-center object-contain relative z-20"
           />
         </div>
       </div>

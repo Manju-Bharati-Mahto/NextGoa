@@ -120,7 +120,7 @@ export function DownloadBrochureModal({ isOpen, onClose }: DownloadBrochureModal
                   id="name" 
                   required
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#e73649]/20 focus:border-[#e73649] transition-colors"
-                  placeholder="John Doe"
+                  placeholder="Enter your full name"
                 />
               </div>
               
@@ -131,7 +131,7 @@ export function DownloadBrochureModal({ isOpen, onClose }: DownloadBrochureModal
                   id="email" 
                   required
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#e73649]/20 focus:border-[#e73649] transition-colors"
-                  placeholder="john@example.com"
+                  placeholder="Enter your email address"
                 />
               </div>
 
@@ -142,7 +142,7 @@ export function DownloadBrochureModal({ isOpen, onClose }: DownloadBrochureModal
                   id="phone" 
                   required
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#e73649]/20 focus:border-[#e73649] transition-colors"
-                  placeholder="+91 98765 43210"
+                  placeholder="Enter your phone number"
                 />
               </div>
 

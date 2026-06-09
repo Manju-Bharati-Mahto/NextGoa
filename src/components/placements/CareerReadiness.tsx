@@ -1,4 +1,6 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
 
 const READINESS_DATA = [
   {
@@ -55,8 +57,10 @@ const colorStyles = {
 };
 
 export function CareerReadiness() {
+  const [openCardIdx, setOpenCardIdx] = useState<number | null>(0);
+
   return (
-    <section className="w-full bg-[#F5F6F8] py-16 sm:py-24">
+    <section className="w-full bg-[#F5F6F8] pt-12 pb-0 sm:py-15">
       <style>{`
         .hide-scrollbar::-webkit-scrollbar {
           display: none;
@@ -78,39 +82,59 @@ export function CareerReadiness() {
         {/* Grid Container */}
         <div className="w-full relative mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 sm:gap-6 lg:gap-8 pb-12 pt-4 px-2">
-            {READINESS_DATA.map((card, idx) => (
-              <div 
-                key={idx} 
-                className="flex flex-col h-auto min-h-full bg-white rounded-[24px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden border border-gray-100 w-full"
-              >
-                {/* Card Header */}
-                <div className={`${colorStyles[card.color as keyof typeof colorStyles].bg} ${colorStyles[card.color as keyof typeof colorStyles].text} p-5 flex flex-col justify-center items-center text-center min-h-[100px] relative`}>
-                  <h4 className="font-poppins font-semibold text-[22px] leading-tight whitespace-pre-line relative z-10">{card.title}</h4>
-                  {card.subtitle && (
-                    <p className="text-sm font-medium opacity-90 mt-1.5 relative z-10">{card.subtitle}</p>
-                  )}
-                </div>
+            {READINESS_DATA.map((card, idx) => {
+              const isOpen = openCardIdx === idx;
+              return (
+                <div 
+                  key={idx} 
+                  className="flex flex-col h-auto min-h-full bg-white rounded-[24px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden border border-gray-100 w-full"
+                >
+                  {/* Card Header */}
+                  <div 
+                    onClick={() => setOpenCardIdx(prev => prev === idx ? null : idx)}
+                    className={`${colorStyles[card.color as keyof typeof colorStyles].bg} ${colorStyles[card.color as keyof typeof colorStyles].text} p-5 flex flex-col justify-center items-center text-center min-h-[100px] relative cursor-pointer md:cursor-default transition-colors`}
+                  >
+                    <h4 className="font-poppins font-semibold text-[22px] leading-tight whitespace-pre-line relative z-10 pr-6 md:pr-0">{card.title}</h4>
+                    {card.subtitle && (
+                      <p className="text-sm font-medium opacity-90 mt-1.5 relative z-10 pr-6 md:pr-0">{card.subtitle}</p>
+                    )}
+                    {/* Chevron for mobile */}
+                    <div className="absolute right-5 top-1/2 -translate-y-1/2 md:hidden">
+                      <svg className={`w-6 h-6 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+                  </div>
 
-                {/* Card Body */}
-                <div className="p-4 lg:p-6 flex-grow bg-white">
-                  <ul className="divide-y divide-gray-100 h-full flex flex-col">
-                    {card.items.map((item, itemIdx) => (
-                      <li 
-                        key={itemIdx} 
-                        className="flex items-center gap-4 py-3 sm:py-4"
-                      >
-                        <div className="w-6 h-6 rounded-full bg-[#10b981]/15 flex items-center justify-center shrink-0">
-                          <div className="w-2.5 h-2.5 rounded-full bg-[#10b981]"></div>
-                        </div>
-                        <p className="text-[#333333] font-medium text-[15px] sm:text-[16px] leading-snug text-left">
-                          {item}
-                        </p>
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Card Body */}
+                  <div 
+                    className={`flex-grow bg-white grid transition-all duration-300 ease-in-out md:!grid-rows-[1fr] md:!opacity-100 ${
+                      isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                    }`}
+                  >
+                    <div className="overflow-hidden flex flex-col">
+                      <div className="p-4 lg:p-6 flex-grow h-full">
+                        <ul className="divide-y divide-gray-100 h-full flex flex-col">
+                          {card.items.map((item, itemIdx) => (
+                            <li 
+                              key={itemIdx} 
+                              className="flex items-center gap-4 py-3 sm:py-4"
+                            >
+                              <div className="w-6 h-6 rounded-full bg-[#10b981]/15 flex items-center justify-center shrink-0">
+                                <div className="w-2.5 h-2.5 rounded-full bg-[#10b981]"></div>
+                              </div>
+                              <p className="text-[#333333] font-medium text-[15px] sm:text-[16px] leading-snug text-left">
+                                {item}
+                              </p>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 

@@ -93,101 +93,107 @@ export function CampusLocation() {
   const [selectedId, setSelectedId] = useState<string>(locations[0].id);
   const selectedLocation = locations.find(loc => loc.id === selectedId) || locations[0];
 
-  const renderInfoCard = (loc: LocationData) => (
-    <div className="bg-[#1C1C1C] rounded-[32px] p-4 sm:p-6 h-full shadow-2xl relative">
-      {/* Inner Dashed Border */}
-      <div className="absolute inset-4 sm:inset-6 pointer-events-none">
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <rect 
-            x="1" 
-            y="1" 
-            width="calc(100% - 2px)" 
-            height="calc(100% - 2px)" 
-            rx="24" 
-            fill="none" 
-            stroke="white" 
-            strokeWidth="2" 
-            strokeDasharray="8 8" 
-          />
-        </svg>
-      </div>
-      
-      <div key={loc.id} className="relative z-10 flex flex-col h-full px-4 sm:px-10 py-6 sm:py-10 animate-fade-slide">
+  const renderInfoCard = (loc: LocationData) => {
+    const themeText = loc.type === 'airport' ? 'text-[#0CAADD]' : loc.type === 'train' ? 'text-[#E73649]' : 'text-[#FEDB2F]';
+    const themeBg = loc.type === 'airport' ? 'bg-[#0CAADD]' : loc.type === 'train' ? 'bg-[#E73649]' : 'bg-[#FEDB2F]';
+    const pickupTextClass = loc.type === 'city' ? 'text-[#1F1F1F]' : 'text-white';
+
+    return (
+      <div className="bg-[#1C1C1C] rounded-[32px] p-4 sm:p-6 flex flex-col h-full w-full shadow-2xl relative">
+        {/* Inner Dashed Border */}
+        <div className="absolute inset-4 sm:inset-6 pointer-events-none">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <rect 
+              x="1" 
+              y="1" 
+              width="calc(100% - 2px)" 
+              height="calc(100% - 2px)" 
+              rx="24" 
+              fill="none" 
+              stroke="white" 
+              strokeWidth="2" 
+              strokeDasharray="8 8" 
+            />
+          </svg>
+        </div>
         
-        {/* Top Pill */}
-        <div className="flex justify-center mb-4 sm:mb-8">
-          <div className="bg-[#2D2D2D] px-4 sm:px-8 py-2 sm:py-3 rounded-[12px]">
-            <span className="font-sans font-medium text-[#FEDB2F] tracking-wide text-[12px] sm:text-[18px]">
-              YOUR ROUTE TO PU GOA
-            </span>
-          </div>
-        </div>
-
-        {/* Horizontal Divider 1 */}
-        <div className="w-full h-[2px] bg-white mb-6 sm:mb-8"></div>
-
-        {/* Route Section */}
-        <div className="flex flex-row items-center sm:items-start justify-between gap-2 sm:gap-4 mb-6 sm:mb-8 text-left">
-          <div className="flex-1">
-            <div className="font-sans text-[#FEDB2F] text-[10px] sm:text-[12px] font-medium tracking-wide mb-1 sm:mb-2">FROM</div>
-            <div className="font-sans font-bold text-white text-[14px] sm:text-[24px] leading-snug">
-              {loc.name}
-            </div>
-          </div>
+        <div key={loc.id} className="relative z-10 flex flex-col h-full px-4 sm:px-10 py-6 sm:py-10 animate-fade-slide">
           
-          {/* Long Arrow */}
-          <div className="shrink-0 flex items-center justify-center px-2 mt-4 sm:mt-6">
-            <svg className="w-6 sm:w-20 text-[#FEDB2F]" viewBox="0 0 100 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect y="6" width="90" height="2" fill="currentColor" />
-              <path d="M100 7L86 0V14L100 7Z" fill="currentColor" />
-            </svg>
-          </div>
-          
-          <div className="flex-1 text-right sm:text-left">
-            <div className="font-sans text-[#FEDB2F] text-[10px] sm:text-[12px] font-medium tracking-wide mb-1 sm:mb-2">TO</div>
-            <div className="font-sans font-bold text-white text-[14px] sm:text-[24px] leading-snug">
-              PU Goa Campus
+          {/* Top Pill */}
+          <div className="flex justify-center mb-4 sm:mb-8">
+            <div className="bg-[#2D2D2D] px-4 sm:px-8 py-2 sm:py-3 rounded-[12px]">
+              <span className={`font-sans font-medium tracking-wide text-[12px] sm:text-[18px] ${themeText}`}>
+                YOUR ROUTE TO PU GOA
+              </span>
             </div>
           </div>
-        </div>
 
-        {/* Horizontal Divider 2 */}
-        <div className="w-full h-[2px] bg-white"></div>
+          {/* Horizontal Divider 1 */}
+          <div className="w-full h-[2px] bg-white mb-6 sm:mb-8"></div>
 
-        {/* Metrics Section */}
-        <div className="flex flex-row">
-          <div className="flex-1 pr-4 sm:pr-6 py-4 sm:py-8 border-r-[2px] border-white text-left">
-            <div className="font-sans text-white text-[10px] sm:text-[12px] font-medium tracking-wide mb-2 sm:mb-3">DISTANCE</div>
-            <div className="font-sans font-semibold text-[#FEDB2F] text-[28px] sm:text-[54px] leading-none">
-              {loc.distance}
+          {/* Route Section */}
+          <div className="flex flex-row items-center sm:items-start justify-between gap-2 sm:gap-4 mb-6 sm:mb-8 text-left">
+            <div className="flex-1">
+              <div className={`font-sans text-[10px] sm:text-[12px] font-medium tracking-wide mb-1 sm:mb-2 ${themeText}`}>FROM</div>
+              <div className="font-sans font-bold text-white text-[14px] sm:text-[24px] leading-snug">
+                {loc.name}
+              </div>
+            </div>
+            
+            {/* Long Arrow */}
+            <div className="shrink-0 flex items-center justify-center px-2 mt-4 sm:mt-6">
+              <svg className={`w-6 sm:w-20 ${themeText}`} viewBox="0 0 100 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect y="6" width="90" height="2" fill="currentColor" />
+                <path d="M100 7L86 0V14L100 7Z" fill="currentColor" />
+              </svg>
+            </div>
+            
+            <div className="flex-1 text-right sm:text-left">
+              <div className={`font-sans text-[10px] sm:text-[12px] font-medium tracking-wide mb-1 sm:mb-2 ${themeText}`}>TO</div>
+              <div className="font-sans font-bold text-white text-[14px] sm:text-[24px] leading-snug">
+                PU Goa Campus
+              </div>
             </div>
           </div>
-          <div className="flex-1 pl-4 sm:pl-6 sm:pl-10 py-4 sm:py-8 text-right sm:text-left">
-            <div className="font-sans text-white text-[10px] sm:text-[12px] font-medium tracking-wide mb-2 sm:mb-3">DRIVE TIME</div>
-            <div className="font-sans font-semibold text-[#FEDB2F] text-[28px] sm:text-[54px] leading-none">
-              {loc.time}
+
+          {/* Horizontal Divider 2 */}
+          <div className="w-full h-[2px] bg-white"></div>
+
+          {/* Metrics Section */}
+          <div className="flex flex-row">
+            <div className="flex-1 pr-4 sm:pr-6 py-4 sm:py-8 border-r-[2px] border-white text-left">
+              <div className="font-sans text-white text-[10px] sm:text-[12px] font-medium tracking-wide mb-2 sm:mb-3">DISTANCE</div>
+              <div className={`font-sans font-semibold text-[28px] sm:text-[54px] leading-none ${themeText}`}>
+                {loc.distance}
+              </div>
+            </div>
+            <div className="flex-1 pl-4 sm:pl-6 sm:pl-10 py-4 sm:py-8 text-right sm:text-left">
+              <div className="font-sans text-white text-[10px] sm:text-[12px] font-medium tracking-wide mb-2 sm:mb-3">DRIVE TIME</div>
+              <div className={`font-sans font-semibold text-[28px] sm:text-[54px] leading-none ${themeText}`}>
+                {loc.time}
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Horizontal Divider 3 */}
-        <div className="w-full h-[2px] bg-white mb-6 sm:mb-8"></div>
+          {/* Horizontal Divider 3 */}
+          <div className="w-full h-[2px] bg-white mb-6 sm:mb-8"></div>
 
-        {/* Bottom Pick-up Card */}
-        <div className="mt-auto">
-          <div className="bg-[#0CAADD] rounded-[14px] py-4 px-4 sm:py-3 sm:px-6 text-center shadow-lg">
-            <h4 className="font-poppins font-semibold text-white text-[16px] sm:text-[20px] mb-1">
-              {loc.pickupTitle}
-            </h4>
-            <p className="font-[family-name:var(--font-poppins)] text-white/95 text-[14px] sm:text-[15px] leading-snug max-w-[95%] mx-auto">
-              {loc.pickupDesc}
-            </p>
+          {/* Bottom Pick-up Card */}
+          <div className="mt-auto">
+            <div className={`${themeBg} rounded-[14px] py-4 px-4 sm:py-3 sm:px-6 text-center shadow-lg min-h-[100px] flex flex-col justify-center`}>
+              <h4 className={`font-poppins font-semibold text-[16px] sm:text-[20px] mb-1 ${pickupTextClass}`}>
+                {loc.pickupTitle}
+              </h4>
+              <p className={`font-[family-name:var(--font-poppins)] text-[14px] sm:text-[15px] leading-snug max-w-[95%] mx-auto ${pickupTextClass === 'text-white' ? 'text-white/95' : 'text-[#1F1F1F]/90'}`}>
+                {loc.pickupDesc}
+              </p>
+            </div>
           </div>
-        </div>
 
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <section className="relative w-full bg-[#F8F8F8] py-20 lg:py-28 overflow-hidden">
@@ -227,13 +233,23 @@ export function CampusLocation() {
                   loc.type === 'train' ? 'bg-[#E73649] text-white' :
                     'bg-[#FEDB2F] text-[#1F1F1F]';
 
+              const activeContainerClass =
+                loc.type === 'airport' ? 'bg-[#0CAADD] border-[#0CAADD] text-white scale-[1.02] shadow-md' :
+                  loc.type === 'train' ? 'bg-[#E73649] border-[#E73649] text-white scale-[1.02] shadow-md' :
+                    'bg-[#FEDB2F] border-[#FEDB2F] text-[#1F1F1F] scale-[1.02] shadow-md';
+
+              const activeIconClass =
+                loc.type === 'airport' ? 'bg-white text-[#0CAADD]' :
+                  loc.type === 'train' ? 'bg-white text-[#E73649]' :
+                    'bg-[#1F1F1F] text-[#FEDB2F]';
+
               return (
                 <div key={loc.id} className="flex flex-col gap-3">
                   <button
                     onClick={() => setSelectedId(prev => prev === loc.id ? "" : loc.id)}
                     className={`w-full flex items-center justify-between p-2 sm:p-3 pr-4 sm:pr-6 rounded-[16px] shadow-sm transition-all duration-300 border ${
                       isSelected 
-                        ? 'bg-[#0CAADD] border-[#0CAADD] text-white scale-[1.02] shadow-md' 
+                        ? activeContainerClass 
                         : 'bg-white border-black/5 text-[#1F1F1F] hover:bg-gray-50 hover:border-black/10'
                     }`}
                   >
@@ -241,7 +257,7 @@ export function CampusLocation() {
                       {/* Icon Block */}
                       <div className={`w-[48px] h-[48px] shrink-0 flex items-center justify-center rounded-[12px] transition-colors ${
                         isSelected 
-                          ? 'bg-white text-[#0CAADD]' 
+                          ? activeIconClass 
                           : typeColorClass
                       }`}>
                         <Icon icon={getTypeIcon(loc.type)} className="text-[24px]" />
