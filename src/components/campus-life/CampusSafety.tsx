@@ -1,13 +1,7 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import { CallbackModal } from "../ui/CallbackModal";
 
 export function CampusSafety() {
-  const [isCallbackModalOpen, setIsCallbackModalOpen] = useState(false);
-
   return (
     <section className="relative w-full bg-white pt-[20vw] pb-24 md:pt-[10vw] md:pb-32 px-4 sm:px-6 lg:px-12 -mt-[5vw] z-0 overflow-hidden">
       {/* Top Half Green Gradient */}
@@ -104,23 +98,19 @@ export function CampusSafety() {
           <span className="font-[family-name:var(--font-poppins)] text-white font-semibold tracking-wide text-[16px] sm:text-[18px] text-center">
             Have a specific safety question?
           </span>
-          <button 
-            onClick={() => setIsCallbackModalOpen(true)}
+          <a 
+            href="#enquiry"
+            data-enquiry-trigger="true"
             className="w-full sm:w-auto bg-[#FEDB2F] hover:bg-white text-[#1F1F1F] font-[family-name:var(--font-poppins)] font-bold text-[15px] sm:text-[16px] px-8 py-3 rounded-2xl transition-colors flex items-center justify-center gap-2"
           >
             Talk to a counsellor
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
-          </button>
+          </a>
         </div>
 
       </div>
-
-      <CallbackModal 
-        isOpen={isCallbackModalOpen}
-        onClose={() => setIsCallbackModalOpen(false)}
-      />
     </section>
   );
 }

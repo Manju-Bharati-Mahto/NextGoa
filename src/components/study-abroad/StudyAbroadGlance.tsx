@@ -73,9 +73,9 @@ export default function StudyAbroadGlance() {
           <div className="lg:col-span-2 rounded-2xl bg-[#E9324D] overflow-hidden flex flex-col sm:flex-row min-h-[200px]">
             {/* Left side text */}
             <div className="w-full sm:w-1/2 p-8 flex flex-col justify-center">
-              <h4 className="text-5xl sm:text-6xl font-bold text-white mb-2 leading-none font-poppins">₹6.3 cr</h4>
-              <p className="text-xl font-bold text-white tracking-wide mb-2 uppercase">Students Gone Global</p>
-              <p className="text-md text-white/90">Pathways, exchange & internships</p>
+              <h4 className="text-5xl sm:text-6xl font-bold text-white mb-2 leading-none font-poppins">₹6.3 Cr</h4>
+              <p className="text-xl font-bold text-white tracking-wide mb-2 uppercase">EU GRANT SECURED</p>
+              <p className="text-md text-white/90">For capacity building</p>
             </div>
             {/* Right side image */}
             <div

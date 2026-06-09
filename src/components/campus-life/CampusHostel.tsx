@@ -40,10 +40,14 @@ export function CampusHostel() {
           className="absolute top-0 left-0 right-0 overflow-hidden"
           style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
-          <img
-            src="/89.svg"
-            alt=""
-            className="absolute top-0 left-0 w-full h-auto"
+          <div 
+            className="absolute top-0 left-0 w-[400%] h-full animate-wave-flow"
+            style={{
+              backgroundImage: "url('/89-double.svg?v=3')",
+              backgroundSize: "50% auto",
+              backgroundPosition: "top left",
+              backgroundRepeat: "repeat-x"
+            }}
           />
         </div>
         {/* Bottom Wave */}
@@ -51,10 +55,14 @@ export function CampusHostel() {
           className="absolute bottom-0 left-0 right-0 overflow-hidden"
           style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
-          <img
-            src="/89.svg"
-            alt=""
-            className="absolute bottom-0 left-0 w-full h-auto"
+          <div 
+            className="absolute bottom-0 left-0 w-[400%] h-full animate-wave-flow"
+            style={{
+              backgroundImage: "url('/89-double.svg?v=3')",
+              backgroundSize: "50% auto",
+              backgroundPosition: "bottom left",
+              backgroundRepeat: "repeat-x"
+            }}
           />
         </div>
       </div>
@@ -196,7 +204,7 @@ export function CampusHostel() {
               </svg>
               Admission Brochure
             </button>
-            <a href="#" className="font-[family-name:var(--font-poppins)] text-white/90 hover:text-white text-[14px] sm:text-[15px] transition-colors underline underline-offset-4">
+            <a href="#enquiry" data-enquiry-trigger="true" className="font-[family-name:var(--font-poppins)] text-white/90 hover:text-white text-[14px] sm:text-[15px] transition-colors underline underline-offset-4">
               Talk to counsellor
             </a>
           </div>
