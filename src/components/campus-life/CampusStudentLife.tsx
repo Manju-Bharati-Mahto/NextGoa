@@ -4,22 +4,22 @@ const clubs = [
   {
     title: "Academic & Tech",
     tags: ["CODING", "ROBOTICS", "AI/ML", "PHARMA", "HOSPITALITY"],
-    image: "/campus-life/clubs/academic.jpg" // placeholder
+    image: "/campus-culture/Academic & Tech.jpg"
   },
   {
     title: "Arts & Culture",
     tags: ["MUSIC", "DRAMA", "PHOTOGRAPHY", "LITERARY", "FILM"],
-    image: "/campus-life/clubs/arts.jpg" // placeholder
+    image: "/campus-culture/Arts & Culture.jpg"
   },
   {
-    title: "Sports",
-    tags: ["FOOTBALL", "INDOOR GAMES", "BASKETBALL", "ATHLETICS"],
-    image: "/campus-life/clubs/sports.jpg" // placeholder
+    title: "Freshers Fest",
+    tags: ["MUSIC", "DANCE", "DJ NIGHT", "ICE BREAKERS"],
+    image: "/campus-culture/Freshers Fest.jpg"
   },
   {
-    title: "Social Impact",
-    tags: ["VOLUNTEERING", "ENVIRONMENT", "COMMUNITY", "HEALTH"],
-    image: "/campus-life/clubs/social.jpg" // placeholder
+    title: "Goan Cultural Carnival",
+    tags: ["LOCAL CUISINE", "FOLK DANCE", "ART", "HERITAGE"],
+    image: "/campus-culture/Goan Cultural Carnival.jpg"
   }
 ];
 
@@ -43,13 +43,17 @@ export function CampusStudentLife() {
         />
         {/* Top Wave */}
         <div 
-          className="absolute top-0 left-0 right-0 overflow-hidden bg-[#fff]"
+          className="absolute top-0 left-0 right-0 overflow-hidden"
           style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
-          <img
-            src="/88.svg"
-            alt=""
-            className="absolute top-0 left-0 w-full h-auto"
+          <div 
+            className="absolute top-0 left-0 w-[400%] h-full animate-wave-flow"
+            style={{
+              backgroundImage: "url('/88-double.svg?v=3')",
+              backgroundSize: "50% auto",
+              backgroundPosition: "top left",
+              backgroundRepeat: "repeat-x"
+            }}
           />
         </div>
         {/* Bottom Wave */}
@@ -57,10 +61,14 @@ export function CampusStudentLife() {
           className="absolute bottom-0 left-0 right-0 overflow-hidden"
           style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
-          <img
-            src="/88.svg"
-            alt=""
-            className="absolute bottom-0 left-0 w-full h-auto"
+          <div 
+            className="absolute bottom-0 left-0 w-[400%] h-full animate-wave-flow"
+            style={{
+              backgroundImage: "url('/88-double.svg?v=3')",
+              backgroundSize: "50% auto",
+              backgroundPosition: "bottom left",
+              backgroundRepeat: "repeat-x"
+            }}
           />
         </div>
       </div>

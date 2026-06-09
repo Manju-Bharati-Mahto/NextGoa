@@ -1,9 +1,9 @@
 
 const carouselItems = [
-  { id: 1, title: "Academic Block" },
-  { id: 2, title: "Student Hostel" },
-  { id: 3, title: "Central Library" },
-  { id: 4, title: "Sports Complex" },
+  { id: 1, title: "Academic Block", image: "/campus-images/Academic Block.png" },
+  { id: 2, title: "Student Hostel", image: "/campus-images/Hostel.jpeg" },
+  { id: 3, title: "Cafe", image: "/campus-images/Cafe.png" },
+  { id: 4, title: "Open Spaces", image: "/campus-images/Open Spaces.jpg" },
 ];
 
 export function CampusCarousel() {
@@ -23,10 +23,14 @@ export function CampusCarousel() {
           className="absolute top-0 left-0 right-0 overflow-hidden"
           style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
-          <img
-            src="/88.svg"
-            alt=""
-            className="absolute top-0 left-0 w-full h-auto"
+          <div 
+            className="absolute top-0 left-0 w-[400%] h-full animate-wave-flow"
+            style={{
+              backgroundImage: "url('/88-double.svg?v=3')",
+              backgroundSize: "50% auto",
+              backgroundPosition: "top left",
+              backgroundRepeat: "repeat-x"
+            }}
           />
         </div>
         {/* Bottom Wave */}
@@ -34,10 +38,14 @@ export function CampusCarousel() {
           className="absolute bottom-0 left-0 right-0 overflow-hidden"
           style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
-          <img
-            src="/88.svg"
-            alt=""
-            className="absolute bottom-0 left-0 w-full h-auto"
+          <div 
+            className="absolute bottom-0 left-0 w-[400%] h-full animate-wave-flow"
+            style={{
+              backgroundImage: "url('/88-double.svg?v=3')",
+              backgroundSize: "50% auto",
+              backgroundPosition: "bottom left",
+              backgroundRepeat: "repeat-x"
+            }}
           />
         </div>
       </div>
@@ -76,8 +84,14 @@ export function CampusCarousel() {
           {carouselItems.map((item) => (
             <div 
               key={item.id}
-              className="relative w-[85vw] sm:w-[600px] h-[400px] sm:h-[450px] lg:h-[500px] rounded-[24px] overflow-hidden snap-center shrink-0 shadow-xl bg-white/20"
+              className="relative w-[85vw] sm:w-[600px] h-[250px] xs:h-[300px] sm:h-[450px] lg:h-[500px] rounded-[24px] overflow-hidden snap-center shrink-0 shadow-xl bg-white/20 group"
             >
+              <img 
+                src={item.image} 
+                alt={item.title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none"></div>
               <div className="absolute bottom-6 left-6 sm:bottom-8 sm:left-8 flex items-center gap-3 z-10">
                 <div className="w-[3px] h-[20px] sm:h-[24px] bg-[#FEDB2F]"></div>
                 <h4 className="font-[family-name:var(--font-poppins)] text-white text-[18px] sm:text-[22px] font-semibold tracking-wide leading-none mt-0.5">

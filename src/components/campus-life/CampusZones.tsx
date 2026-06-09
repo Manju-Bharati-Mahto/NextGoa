@@ -19,7 +19,7 @@ export function CampusZones() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           
           {/* Card 1: Academic Zone (Left) */}
-          <div className="lg:col-span-7 bg-[#1F1F1F] rounded-[32px] p-8 sm:p-12 flex flex-col justify-between">
+          <div className="lg:col-span-7 bg-[#1F1F1F] rounded-[32px] p-8 sm:p-12 flex flex-col justify-center">
             <div>
               <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#333333] text-[#FEDB2F] font-[family-name:var(--font-poppins)] text-sm mb-8">
                 01 - Academic Zone
@@ -55,7 +55,7 @@ export function CampusZones() {
               </div>
 
               {/* Pills */}
-              <div className="flex flex-wrap gap-3 mb-12">
+              <div className="flex flex-wrap gap-3">
                 <span className="px-4 py-2 rounded-full bg-[#333333] text-white/80 font-[family-name:var(--font-poppins)] text-[14px] sm:text-[14px]">
                   Smart classrooms with hybrid AV
                 </span>
@@ -70,17 +70,13 @@ export function CampusZones() {
                 </span>
               </div>
             </div>
-
-            <a href="#" className="font-[family-name:var(--font-poppins)] text-[#FEDB2F] hover:text-white transition-colors flex items-center gap-2">
-              Explore <span>&rarr;</span>
-            </a>
           </div>
 
           {/* Right Column Stack */}
           <div className="lg:col-span-5 flex flex-col gap-6">
             
             {/* Card 2: Student Residences */}
-            <div className="bg-[#E73649] rounded-[32px] p-8 sm:p-10 flex-1 flex flex-col justify-between">
+            <div className="bg-[#E73649] rounded-[32px] p-8 sm:p-10 flex-1 flex flex-col justify-center">
               <div>
                 <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/20 text-white font-[family-name:var(--font-poppins)] text-sm mb-6">
                   02 - Student Residences
@@ -88,17 +84,14 @@ export function CampusZones() {
                 <h3 className="font-poppins font-semibold text-[28px] sm:text-[36px] leading-[1.2] tracking-tight text-[#FEDB2F] mb-4">
                   Your home away from home.
                 </h3>
-                <p className="font-[family-name:var(--font-poppins)] text-white text-[15px] sm:text-[16px] leading-relaxed mb-8">
+                <p className="font-[family-name:var(--font-poppins)] text-white text-[15px] sm:text-[16px] leading-relaxed">
                   Safe, comfortable on-campus hostels with study spaces, storage and a residential community.
                 </p>
               </div>
-              <a href="#" className="font-[family-name:var(--font-poppins)] text-[#FEDB2F] hover:text-white transition-colors flex items-center gap-2">
-                Explore <span>&rarr;</span>
-              </a>
             </div>
 
             {/* Card 3: Dining Facilities */}
-            <div className="bg-[#F8F8F8] border border-[#1F1F1F]/10 rounded-[32px] p-8 sm:p-10 flex-1 flex flex-col justify-between">
+            <div className="bg-[#F8F8F8] border border-[#1F1F1F]/10 rounded-[32px] p-8 sm:p-10 flex-1 flex flex-col justify-center">
               <div>
                 <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#1F1F1F]/5 text-[#1F1F1F]/80 font-[family-name:var(--font-poppins)] text-sm mb-6">
                   03 - Dining Facilities
@@ -106,13 +99,10 @@ export function CampusZones() {
                 <h3 className="font-poppins font-semibold text-[28px] sm:text-[36px] leading-[1.2] tracking-tight text-[#E73649] mb-4">
                   Multi-cuisine cafeterias.
                 </h3>
-                <p className="font-[family-name:var(--font-poppins)] text-[#1F1F1F] text-[15px] sm:text-[16px] leading-relaxed mb-8">
+                <p className="font-[family-name:var(--font-poppins)] text-[#1F1F1F] text-[15px] sm:text-[16px] leading-relaxed">
                   A campus cafeteria alongside the swimming pool, with diverse menu.
                 </p>
               </div>
-              <a href="#" className="font-[family-name:var(--font-poppins)] text-[#E73649] hover:text-black transition-colors flex items-center gap-2">
-                Explore <span>&rarr;</span>
-              </a>
             </div>
 
           </div>

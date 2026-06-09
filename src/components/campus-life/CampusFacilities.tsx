@@ -56,20 +56,20 @@ export function CampusFacilities() {
         </div>
 
         {/* Cards Grid */}
-        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 w-full max-w-5xl">
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-6 w-full max-w-5xl">
           {cards.map((card, i) => (
             <div 
               key={i} 
-              className="relative overflow-hidden rounded-[16px] p-6 sm:p-8 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] min-h-[160px] flex flex-col justify-center shadow-lg bg-[#E73649]"
+              className="relative overflow-hidden rounded-[12px] sm:rounded-[16px] p-3 xs:p-4 sm:p-8 w-[calc(50%-6px)] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] min-h-[120px] sm:min-h-[160px] flex flex-col justify-center shadow-lg bg-[#E73649]"
             >
               {/* Background SVG */}
-              <img src={card.bgImage} alt="" className="absolute inset-0 w-full h-full object-cover object-right-bottom sm:object-center scale-[0.8] sm:scale-100 origin-bottom-right sm:origin-center transition-transform z-0" />
+              <img src={card.bgImage} alt="" className="absolute inset-0 w-full h-full object-cover object-right-bottom sm:object-center scale-[0.6] xs:scale-[0.7] sm:scale-100 origin-bottom-right sm:origin-center transition-transform z-0" />
               
-              <h4 className="font-poppins font-semibold text-[26px] sm:text-[32px] text-[#FEDB2F] relative z-20">
+              <h4 className="font-poppins font-semibold text-[18px] xs:text-[20px] sm:text-[32px] text-[#FEDB2F] relative z-20 leading-tight">
                 {card.title}
               </h4>
-              <hr className="border-t border-white/30 my-3 w-1/2 relative z-20" />
-              <div className="font-[family-name:var(--font-poppins)] text-white text-[14px] sm:text-[15px] relative z-20 leading-snug">
+              <hr className="border-t border-white/30 my-2 sm:my-3 w-1/2 relative z-20" />
+              <div className="font-[family-name:var(--font-poppins)] text-white text-[11px] xs:text-[12px] sm:text-[15px] relative z-20 leading-snug">
                 <p>{card.line1}</p>
                 {card.line2 && <p>{card.line2}</p>}
               </div>
