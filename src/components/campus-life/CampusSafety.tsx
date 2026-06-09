@@ -1,7 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import { CallbackModal } from "../ui/CallbackModal";
 
 export function CampusSafety() {
+  const [isCallbackModalOpen, setIsCallbackModalOpen] = useState(false);
+
   return (
     <section className="relative w-full bg-white pt-[20vw] pb-24 md:pt-[10vw] md:pb-32 px-4 sm:px-6 lg:px-12 -mt-[5vw] z-0 overflow-hidden">
       {/* Top Half Green Gradient */}
@@ -38,11 +44,11 @@ export function CampusSafety() {
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-16">
 
           {/* Card 1 */}
-          <div className="group relative w-full aspect-[16/9] sm:aspect-[2/1] md:aspect-[4/3] lg:aspect-[16/9] rounded-[24px] sm:rounded-[32px] overflow-hidden bg-black/10 shadow-lg">
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#4A64A4]/90 via-[#4A64A4]/70 to-transparent z-10"></div>
+          <div className="group relative w-full aspect-[16/9] sm:aspect-[2/1] md:aspect-[4/3] lg:aspect-[16/9] rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-lg border-none bg-transparent">
+            {/* Background SVG */}
+            <img src="/safety/1.svg" alt="" className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none transition-transform duration-700 group-hover:scale-105" />
             {/* Content */}
-            <div className="absolute inset-0 p-6 sm:p-10 flex flex-col sm:justify-end justify-center z-20 max-w-[70%]">
+            <div className="absolute inset-0 p-6 sm:p-10 flex flex-col justify-end z-20 max-w-[80%]">
               <h3 className="font-poppins font-semibold text-[24px] sm:text-[32px] text-white leading-tight mb-3">
                 24x7 Security & Surveillance
               </h3>
@@ -53,9 +59,9 @@ export function CampusSafety() {
           </div>
 
           {/* Card 2 */}
-          <div className="group relative w-full aspect-[16/9] sm:aspect-[2/1] md:aspect-[4/3] lg:aspect-[16/9] rounded-[24px] sm:rounded-[32px] overflow-hidden bg-black/10 shadow-lg">
-            <div className="absolute inset-0 bg-gradient-to-r from-[#598448]/90 via-[#598448]/70 to-transparent z-10"></div>
-            <div className="absolute inset-0 p-6 sm:p-10 flex flex-col sm:justify-end justify-center z-20 max-w-[70%]">
+          <div className="group relative w-full aspect-[16/9] sm:aspect-[2/1] md:aspect-[4/3] lg:aspect-[16/9] rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-lg border-none bg-transparent">
+            <img src="/safety/2.svg" alt="" className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none transition-transform duration-700 group-hover:scale-105" />
+            <div className="absolute inset-0 p-6 sm:p-10 flex flex-col justify-end z-20 max-w-[80%]">
               <h3 className="font-poppins font-semibold text-[24px] sm:text-[32px] text-white leading-tight mb-3">
                 Female Wardens
               </h3>
@@ -66,9 +72,9 @@ export function CampusSafety() {
           </div>
 
           {/* Card 3 */}
-          <div className="group relative w-full aspect-[16/9] sm:aspect-[2/1] md:aspect-[4/3] lg:aspect-[16/9] rounded-[24px] sm:rounded-[32px] overflow-hidden bg-black/10 shadow-lg">
-            <div className="absolute inset-0 bg-gradient-to-r from-[#94552A]/90 via-[#94552A]/70 to-transparent z-10"></div>
-            <div className="absolute inset-0 p-6 sm:p-10 flex flex-col sm:justify-end justify-center z-20 max-w-[70%]">
+          <div className="group relative w-full aspect-[16/9] sm:aspect-[2/1] md:aspect-[4/3] lg:aspect-[16/9] rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-lg border-none bg-transparent">
+            <img src="/safety/3.svg" alt="" className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none transition-transform duration-700 group-hover:scale-105" />
+            <div className="absolute inset-0 p-6 sm:p-10 flex flex-col justify-end z-20 max-w-[80%]">
               <h3 className="font-poppins font-semibold text-[24px] sm:text-[32px] text-white leading-tight mb-3">
                 Hostel Access
               </h3>
@@ -79,9 +85,9 @@ export function CampusSafety() {
           </div>
 
           {/* Card 4 */}
-          <div className="group relative w-full aspect-[16/9] sm:aspect-[2/1] md:aspect-[4/3] lg:aspect-[16/9] rounded-[24px] sm:rounded-[32px] overflow-hidden bg-black/10 shadow-lg">
-            <div className="absolute inset-0 bg-gradient-to-r from-[#393C41]/90 via-[#393C41]/70 to-transparent z-10"></div>
-            <div className="absolute inset-0 p-6 sm:p-10 flex flex-col sm:justify-end justify-center z-20 max-w-[90%]">
+          <div className="group relative w-full aspect-[16/9] sm:aspect-[2/1] md:aspect-[4/3] lg:aspect-[16/9] rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-lg border-none bg-transparent">
+            <img src="/safety/4.svg" alt="" className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none transition-transform duration-700 group-hover:scale-105" />
+            <div className="absolute inset-0 p-6 sm:p-10 flex flex-col justify-end z-20 max-w-[90%]">
               <h3 className="font-poppins font-semibold text-[24px] sm:text-[32px] text-white leading-tight mb-3">
                 Internal Complaints Committee
               </h3>
@@ -98,7 +104,10 @@ export function CampusSafety() {
           <span className="font-[family-name:var(--font-poppins)] text-white font-semibold tracking-wide text-[16px] sm:text-[18px] text-center">
             Have a specific safety question?
           </span>
-          <button className="w-full sm:w-auto bg-[#FEDB2F] hover:bg-white text-[#1F1F1F] font-[family-name:var(--font-poppins)] font-bold text-[15px] sm:text-[16px] px-8 py-3 rounded-2xl transition-colors flex items-center justify-center gap-2">
+          <button 
+            onClick={() => setIsCallbackModalOpen(true)}
+            className="w-full sm:w-auto bg-[#FEDB2F] hover:bg-white text-[#1F1F1F] font-[family-name:var(--font-poppins)] font-bold text-[15px] sm:text-[16px] px-8 py-3 rounded-2xl transition-colors flex items-center justify-center gap-2"
+          >
             Talk to a counsellor
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -107,6 +116,11 @@ export function CampusSafety() {
         </div>
 
       </div>
+
+      <CallbackModal 
+        isOpen={isCallbackModalOpen}
+        onClose={() => setIsCallbackModalOpen(false)}
+      />
     </section>
   );
 }

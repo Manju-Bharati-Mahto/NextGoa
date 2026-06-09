@@ -1,6 +1,26 @@
+"use client";
+
+import React, { useState, useEffect } from 'react';
 import { Icon } from '@iconify/react';
+import { DownloadBrochureModal } from '../admissions/DownloadBrochureModal';
+
+const hostelImages = [
+  "/hostel-images/1.jpeg",
+  "/hostel-images/2.jpeg",
+  "/hostel-images/3.jpeg"
+];
 
 export function CampusHostel() {
+  const [currentImageIdx, setCurrentImageIdx] = useState(0);
+  const [isBrochureModalOpen, setIsBrochureModalOpen] = useState(false);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIdx((prev) => (prev + 1) % hostelImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="relative w-full z-10">
       {/* Background for the top part (above the top wave) */}
@@ -82,12 +102,17 @@ export function CampusHostel() {
             </svg>
             
             {/* Image Container */}
-            <div className="relative z-10 w-full aspect-square overflow-hidden rounded-[28px] shadow-2xl ring-1 ring-black/10">
-              <img 
-                src="/campus-life/carousel/2.png" 
-                alt="Hostel Campus" 
-                className="w-full h-full object-cover"
-              />
+            <div className="relative z-10 w-full aspect-square overflow-hidden rounded-[28px] shadow-2xl border-[5px] border-white bg-[#E73649]/50">
+              {hostelImages.map((src, idx) => (
+                <img 
+                  key={src}
+                  src={src} 
+                  alt={`Hostel Campus ${idx + 1}`} 
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ease-in-out ${
+                    idx === currentImageIdx ? "opacity-100" : "opacity-0"
+                  }`}
+                />
+              ))}
             </div>
           </div>
 
@@ -162,7 +187,10 @@ export function CampusHostel() {
           
           {/* Right: Actions */}
           <div className="md:w-[40%] bg-[#0CAADD] px-8 py-8 sm:px-16 sm:py-12 flex flex-col items-center justify-center gap-5">
-            <button className="w-full max-w-[320px] bg-[#FEDB2F] hover:bg-white text-[#1F1F1F] font-[family-name:var(--font-poppins)] font-semibold text-[16px] sm:text-[18px] px-8 py-5 rounded-full transition-colors flex items-center justify-center gap-3 shadow-lg">
+            <button 
+              onClick={() => setIsBrochureModalOpen(true)}
+              className="w-full max-w-[320px] bg-[#FEDB2F] hover:bg-white text-[#1F1F1F] font-[family-name:var(--font-poppins)] font-semibold text-[16px] sm:text-[18px] px-8 py-5 rounded-full transition-colors flex items-center justify-center gap-3 shadow-lg"
+            >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
@@ -175,6 +203,11 @@ export function CampusHostel() {
         </div>
 
       </div>
+      
+      <DownloadBrochureModal 
+        isOpen={isBrochureModalOpen} 
+        onClose={() => setIsBrochureModalOpen(false)} 
+      />
     </section>
   );
 }

@@ -4,27 +4,22 @@ const spaces = [
   {
     title: "Advanced Laboratories",
     description: "Discipline-specific labs across Engineering, Pharmacy, Health Sciences and more.",
-    image: "/campus-life/carousel/1.png" // placeholder
+    image: "/labs/advance 1.png"
   },
   {
     title: "Digital Libraries",
     description: "Access to global academic resources and research databases.",
-    image: "/campus-life/carousel/2.png" // placeholder
+    image: "/labs/Digital Libraries.jpg"
   },
   {
     title: "Smart Classrooms",
     description: "Interactive learning environments equipped with hybrid and modern technology.",
-    image: "/campus-life/carousel/3.png" // placeholder
+    image: "/labs/Smart Classrooms.png"
   },
   {
     title: "Research Centers",
     description: "Dedicated spaces for innovation, incubation, and student-led projects.",
-    image: "/campus-life/carousel/1.png" // placeholder
-  },
-  {
-    title: "Auditoriums",
-    description: "State-of-the-art halls designed for seminars, workshops, and major events.",
-    image: "/campus-life/carousel/2.png" // placeholder
+    image: "/labs/Research Centers.png"
   }
 ];
 
@@ -58,7 +53,7 @@ export function CampusAcademicSpaces() {
                   src={space.image} 
                   alt={space.title}
                   fill
-                  className="object-cover"
+                  className="object-cover object-[center_15%]"
                 />
               </div>
               
