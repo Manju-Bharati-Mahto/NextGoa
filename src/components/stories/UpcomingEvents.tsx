@@ -72,7 +72,7 @@ export function UpcomingEvents() {
   const visibleEvents = showAll ? [...initialEvents, ...extraEvents] : initialEvents;
 
   return (
-    <section className="relative w-full py-20 md:py-24 overflow-hidden flex flex-col items-center bg-brand-white">
+    <section className="relative w-full sm:py-20 md:py-24 overflow-hidden flex flex-col items-center bg-brand-white">
       <div className="relative z-10 mx-auto w-full max-w-[1680px] px-6 sm:px-10 flex flex-col items-center">
         
         {/* Title block */}
