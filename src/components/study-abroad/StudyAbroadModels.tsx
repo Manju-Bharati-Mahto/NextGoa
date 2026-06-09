@@ -176,9 +176,6 @@ export default function StudyAbroadModels() {
             </div>
           </div>
 
-          <button className="bg-[#eb3b47] hover:bg-[#d6323c] text-white text-[17px] font-medium px-6 py-3 rounded-full shadow-lg transition-colors whitespace-nowrap self-start md:self-end mt-4 md:mt-0 flex items-center gap-2">
-            Explore all pathways &rarr;
-          </button>
         </div>
 
       </div>

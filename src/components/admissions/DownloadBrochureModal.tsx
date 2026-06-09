@@ -15,6 +15,7 @@ export function DownloadBrochureModal({ isOpen, onClose }: DownloadBrochureModal
   // Reset state when opened
   useEffect(() => {
     if (isOpen) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setStep(1);
       setSelectedProgram("");
       setSelectedTimeline("");
