@@ -17,7 +17,7 @@ export function StartupEcosystem() {
   }, []);
 
   return (
-    <section className="w-full bg-[#F5F6F8] py-16 sm:py-24">
+    <section id="startup-ecosystem" className="w-full bg-[#F5F6F8] py-16 sm:py-24">
       <div className="max-w-6xl mx-auto px-6">
         
         {/* Header */}

@@ -1,6 +1,11 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import { DownloadBrochureModal } from "./DownloadBrochureModal";
 
 export function FinancialAid() {
+  const [isBrochureModalOpen, setIsBrochureModalOpen] = useState(false);
+
   return (
     <section className="w-full bg-[#f8f8f8] py-20 px-4 sm:px-8 xl:px-16">
       <div className="max-w-[1200px] mx-auto">
@@ -136,7 +141,10 @@ export function FinancialAid() {
           <p className="font-poppins text-white text-sm sm:text-base xl:text-lg text-center md:text-left whitespace-normal md:whitespace-nowrap md:truncate">
             <span className="font-bold">Refund policy:</span> Fee refunds processed in line with UGC norms. Read the full refund policy in the prospectus.
           </p>
-          <button className="w-full md:w-auto justify-center flex-shrink-0 bg-[#e73649] hover:bg-[#ff3148] text-white font-medium text-base sm:text-lg py-3 px-6 rounded-xl flex items-center gap-2 transition-colors font-poppins">
+          <button 
+            onClick={() => setIsBrochureModalOpen(true)}
+            className="w-full md:w-auto justify-center flex-shrink-0 bg-[#e73649] hover:bg-[#ff3148] text-white font-medium text-base sm:text-lg py-3 px-6 rounded-xl flex items-center gap-2 transition-colors font-poppins"
+          >
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
               width="20" 
@@ -156,6 +164,11 @@ export function FinancialAid() {
           </button>
         </div>
       </div>
+      
+      <DownloadBrochureModal 
+        isOpen={isBrochureModalOpen} 
+        onClose={() => setIsBrochureModalOpen(false)} 
+      />
     </section>
   );
 }

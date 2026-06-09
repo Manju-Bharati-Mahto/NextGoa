@@ -20,12 +20,12 @@ const stats = [
   },
   {
     title: "58Cr+",
-    titleClass: "text-[32px] sm:text-[48px] lg:text-[56px]",
+    titleClass: "text-[40px] sm:text-[48px] lg:text-[56px]",
     label: "Govt. Research Grant",
   },
   {
     title: "120+",
-    titleClass: "text-[32px] sm:text-[48px] lg:text-[56px]",
+    titleClass: "text-[40px] sm:text-[48px] lg:text-[56px]",
     label: "Partnerships with Foreign Universities",
   },
 ];
@@ -36,17 +36,17 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
   const aboutExtraStats = [
     {
       title: "254",
-      titleClass: "text-[56px] sm:text-[48px] lg:text-[56px]",
+      titleClass: "text-[40px] sm:text-[48px] lg:text-[56px]",
       label: "Startups incubated",
     },
     {
       title: "800+",
-      titleClass: "text-[56px] sm:text-[48px] lg:text-[56px]",
+      titleClass: "text-[40px] sm:text-[48px] lg:text-[56px]",
       label: "Students in global programmes",
     },
     {
       title: "315",
-      titleClass: "text-[56px] sm:text-[48px] lg:text-[56px]",
+      titleClass: "text-[40px] sm:text-[48px] lg:text-[56px]",
       label: "Funded research projects",
     },
   ];
@@ -178,12 +178,12 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
           {stats.map((s, idx) => (
             <div
               key={idx}
-              className={`${idx === 0 ? "col-span-2 sm:col-span-1" : ""} rounded-[16px] sm:rounded-[20px] border border-zinc-300 bg-white text-center sm:text-left shadow-sm ${idx === 0 ? "px-7 py-6" : "px-4 py-4 sm:px-7 sm:py-6"}`}
+              className={`${idx === 0 ? "col-span-2 sm:col-span-1" : ""} rounded-[16px] sm:rounded-[20px] border border-zinc-300 bg-white text-center sm:text-left shadow-sm ${idx === 0 ? "px-7 py-6" : "px-4 py-5 sm:px-7 sm:py-6"}`}
             >
               <dt className={`font-sans font-bold leading-[1.15] text-[#0CAADD] tracking-tight ${("titleClass" in s && s.titleClass) || "text-[22px] sm:text-[28px] lg:text-[30px]"}`}>
                 {s.title}
               </dt>
-              <dd className={`mt-2 sm:mt-3 font-[family-name:var(--font-poppins)] font-normal text-ink leading-[1.45] ${idx === 0 ? "text-[14px] sm:text-[15px]" : "text-[12px] sm:text-[15px]"}`}>
+              <dd className={`mt-2 sm:mt-3 font-[family-name:var(--font-poppins)] font-normal text-ink leading-[1.45] text-[14px] sm:text-[15px]`}>
                 {s.label}
               </dd>
             </div>
@@ -192,16 +192,16 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
 
         {/* Stat trio - Row 2 (About page only) */}
         {isAbout && (
-          <dl className="mt-5 flex flex-col sm:flex-row justify-center gap-5">
+          <dl className="mt-5 grid grid-cols-2 sm:flex sm:flex-row justify-center gap-3 sm:gap-5">
             {aboutExtraStats.map((s, idx) => (
               <div
                 key={idx}
-                className="w-full sm:w-[30%] sm:max-w-[280px] rounded-[20px] border border-zinc-300 bg-white px-7 py-6 text-center sm:text-left shadow-sm mx-auto sm:mx-0"
+                className={`${idx === 2 ? "col-span-2 sm:col-span-1" : ""} w-full sm:w-[30%] sm:max-w-[280px] rounded-[20px] border border-zinc-300 bg-white px-4 py-5 sm:px-7 sm:py-6 text-center sm:text-left shadow-sm mx-auto sm:mx-0`}
               >
                 <dt className={`font-sans font-bold leading-[1.15] text-[#0CAADD] tracking-tight ${s.titleClass}`}>
                   {s.title}
                 </dt>
-                <dd className="mt-3 font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[15px] text-ink leading-[1.45]">
+                <dd className={`mt-2 sm:mt-3 font-[family-name:var(--font-poppins)] font-normal text-[14px] sm:text-[15px] text-ink leading-[1.45]`}>
                   {s.label}
                 </dd>
               </div>
