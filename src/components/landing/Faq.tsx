@@ -62,9 +62,8 @@ function FaqAccordionItem({ f, isOpen, onToggle }: { f: FaqItem; isOpen: boolean
         </span>
       </button>
       <div
-        className={`grid transition-all duration-300 ease-in-out ${
-          isOpen ? "grid-rows-[1fr] opacity-100 pb-5" : "grid-rows-[0fr] opacity-0"
-        }`}
+        className={`grid transition-all duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr] opacity-100 pb-5" : "grid-rows-[0fr] opacity-0"
+          }`}
       >
         <div className="overflow-hidden px-6">
           <p className="mt-1 font-[family-name:var(--font-poppins)] text-sm leading-7 text-ink/70">
@@ -112,8 +111,8 @@ export function Faq() {
           <ul className="space-y-4">
             {faqs.map((f, i) => (
               <li key={f.question}>
-                <FaqAccordionItem 
-                  f={f} 
+                <FaqAccordionItem
+                  f={f}
                   isOpen={openIndex === i}
                   onToggle={() => setOpenIndex(openIndex === i ? null : i)}
                 />

@@ -31,7 +31,7 @@ const smallerEvents: SmallerEvent[] = [
 
 export function EventDigest() {
   return (
-    <section className="bg-brand-white py-20 md:py-24 border-t border-black/5">
+    <section className="bg-brand-white sm:py-20 pt-20 md:py-24 border-t border-black/5">
       <div className="mx-auto w-full max-w-[1680px] px-6 sm:px-10 flex flex-col items-center">
         
         {/* Title Block */}

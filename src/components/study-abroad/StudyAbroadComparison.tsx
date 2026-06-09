@@ -22,8 +22,8 @@ export default function StudyAbroadComparison() {
     <section
       className="relative w-full font-[family-name:var(--font-poppins)] bg-transparent overflow-hidden"
       style={{
-        paddingTop: "clamp(5rem, 12.2vw, 600px)",
-        paddingBottom: "clamp(5rem, 13.3vw, 600px)"
+        paddingTop: "calc(clamp(50px, 8vw, 500px) + 4rem)",
+        paddingBottom: "calc(clamp(50px, 8vw, 500px) + 4rem)"
       }}
     >
       {/* Background Red Wavy Image */}
