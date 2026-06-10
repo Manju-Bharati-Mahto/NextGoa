@@ -97,13 +97,13 @@ export function BeyondPlacements() {
           </div>
 
           {/* Right Content - Carousel */}
-          <div className="relative w-full overflow-hidden pb-12 pt-6 xl:pt-0 -mx-6 px-6">
+          <div className="relative w-full overflow-hidden pb-12 pt-6 xl:pt-0">
             <div 
               className="flex transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]"
               style={{ transform: `translateX(-${activeIndex * 100}%)` }}
             >
               {CAROUSEL_DATA.map((slide, idx) => (
-                <div key={idx} className="w-full shrink-0 px-1">
+                <div key={idx} className="w-full shrink-0">
                   
                   {/* Gallery Grid */}
                   <div className="grid grid-cols-[5fr_4fr] gap-4 sm:gap-6 lg:gap-8 min-h-[300px] sm:min-h-[400px]">
@@ -113,10 +113,7 @@ export function BeyondPlacements() {
                     {/* Right Side Images */}
                     <div className="grid grid-rows-[5fr_4fr] gap-4 sm:gap-6 lg:gap-8 h-full">
                       <div className="bg-white rounded-[16px] shadow-sm w-full h-full border border-gray-100"></div>
-                      <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:gap-8 h-full">
-                        <div className="bg-white rounded-[16px] shadow-sm w-full h-full border border-gray-100"></div>
-                        <div className="bg-white rounded-[16px] shadow-sm w-full h-full border border-gray-100"></div>
-                      </div>
+                      <div className="bg-white rounded-[16px] shadow-sm w-full h-full border border-gray-100"></div>
                     </div>
                   </div>
 
@@ -162,7 +159,7 @@ export function BeyondPlacements() {
                   className={`w-3.5 h-3.5 rounded-full transition-colors duration-300 ${
                     activeIndex === idx 
                       ? 'bg-[#E73649]' 
-                      : 'bg-white shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:bg-gray-100'
+                      : 'bg-[#E73649]/20 hover:bg-[#E73649]/40'
                   }`}
                   aria-label={`Go to slide ${idx + 1}`}
                 />

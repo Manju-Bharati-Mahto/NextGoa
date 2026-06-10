@@ -393,7 +393,7 @@ export function PlacementsByTheNumbers() {
         </p>
 
         {/* CTA Bar */}
-        <div className="w-full max-w-[1000px] bg-black rounded-[20px] py-5 px-6 md:px-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl mx-auto mt-2">
+        <div className="w-full max-w-full bg-black rounded-[20px] py-5 px-6 md:px-10 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-2xl mx-auto mt-2">
           <div className="text-center md:text-left">
             <h4 className="text-white font-poppins font-semibold text-[22px] tracking-tight">Want to be the next choice of these top recruiters?</h4>
             <p className="text-[#A1A1AA] font-sans text-[15px] mt-0.5 font-light">
@@ -401,14 +401,14 @@ export function PlacementsByTheNumbers() {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
-            <button className="bg-[#EE384E] hover:bg-[#D32F2F] text-white px-8 py-3 rounded-full font-sans font-medium text-[15px] transition-colors text-center">
+            <button className="bg-[#EE384E] hover:bg-[#D32F2F] text-white px-8 py-3 rounded-full font-sans font-medium text-[15px] transition-colors text-center whitespace-nowrap">
               Apply Now
             </button>
-            <button className="bg-gradient-to-br from-white/10 to-white/0 hover:from-white/15 hover:to-white/5 backdrop-blur-md text-white px-6 py-3 rounded-full font-sans font-medium text-[15px] transition-all text-center border border-white/5 border-t-white/20 border-l-white/20 shadow-[0_4px_14px_rgba(0,0,0,0.5)]">
+            <button className="bg-gradient-to-br from-white/10 to-white/0 hover:from-white/15 hover:to-white/5 backdrop-blur-md text-white px-6 py-3 rounded-full font-sans font-medium text-[15px] transition-all text-center border border-white/5 border-t-white/20 border-l-white/20 shadow-[0_4px_14px_rgba(0,0,0,0.5)] whitespace-nowrap">
               Chat on WhatsApp
             </button>
-            <button className="bg-gradient-to-br from-white/10 to-white/0 hover:from-white/15 hover:to-white/5 backdrop-blur-md text-white px-6 py-3 rounded-full font-sans font-medium text-[15px] transition-all flex items-center justify-center gap-2.5 border border-white/5 border-t-white/20 border-l-white/20 shadow-[0_4px_14px_rgba(0,0,0,0.5)]">
-              <svg className="w-[18px] h-[18px] text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+            <button className="bg-gradient-to-br from-white/10 to-white/0 hover:from-white/15 hover:to-white/5 backdrop-blur-md text-white px-6 py-3 rounded-full font-sans font-medium text-[15px] transition-all flex items-center justify-center gap-2.5 border border-white/5 border-t-white/20 border-l-white/20 shadow-[0_4px_14px_rgba(0,0,0,0.5)] whitespace-nowrap">
+              <svg className="w-[18px] h-[18px] text-white shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
               1800 890 9090
             </button>
           </div>
