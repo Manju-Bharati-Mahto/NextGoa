@@ -175,14 +175,17 @@ export default function StudyAbroadOpportunities() {
           opportunities, PU Goa connects students to the world from day one.
         </p>
 
-        {/* Featured Card Slider */}
-        <div
-          className="w-full max-w-[1200px] bg-white/40 p-2 rounded-[2rem] shadow-xl backdrop-blur-sm transition-all duration-500"
-          onTouchStart={onTouchStart}
-          onTouchMove={onTouchMove}
-          onTouchEnd={onTouchEndEvent}
-        >
-          <div className="flex flex-col md:flex-row w-full bg-white rounded-3xl overflow-hidden min-h-[400px]">
+        {/* Featured Card Slider Wrapper */}
+        <div className="relative w-full max-w-[1200px] mx-auto flex flex-col items-center">
+          
+          {/* Featured Card Slider */}
+          <div
+            className="w-full bg-white/40 p-2 rounded-[2rem] shadow-xl backdrop-blur-sm transition-all duration-500"
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEndEvent}
+          >
+            <div className="flex flex-col md:flex-row w-full bg-white rounded-3xl overflow-hidden min-h-[400px]">
             {/* Image side */}
             <div className="md:w-1/2 relative h-64 md:h-auto min-h-[350px]">
               <div key={`img-${activeSlide.id}`} className="absolute inset-0 animate-slide-fade">
@@ -219,20 +222,27 @@ export default function StudyAbroadOpportunities() {
                 </p>
               </div>
             </div>
+            </div>
           </div>
         </div>
 
-        {/* Carousel Indicators */}
-        <div className="flex items-center justify-center gap-2 mt-8">
-          {SLIDES.map((slide, index) => (
-            <button
-              key={slide.id}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-2.5 h-2.5 rounded-full transition-colors duration-300 ${currentSlide === index ? "bg-[#eb3b47]" : "bg-white hover:bg-gray-200"
-                }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
+        {/* Navigation Arrows (Replacing Dots) */}
+        <div className="flex items-center justify-center gap-4 mt-8">
+          <button
+            onClick={() => setCurrentSlide((prev) => (prev === 0 ? SLIDES.length - 1 : prev - 1))}
+            className="w-12 h-12 bg-white/90 hover:bg-white text-ink rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
+            aria-label="Previous slide"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          
+          <button
+            onClick={() => setCurrentSlide((prev) => (prev + 1) % SLIDES.length)}
+            className="w-12 h-12 bg-white/90 hover:bg-white text-ink rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
+            aria-label="Next slide"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
         </div>
       </div>
     </section>
