@@ -38,7 +38,7 @@ export function DownloadBrochureModal({ isOpen, onClose }: DownloadBrochureModal
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm transition-opacity">
       <div className="bg-white rounded-2xl shadow-xl w-full max-w-md overflow-hidden relative animate-in fade-in zoom-in-95 duration-200">
         {/* Close Button */}
-        <button 
+        <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors z-10"
           aria-label="Close modal"
@@ -51,8 +51,8 @@ export function DownloadBrochureModal({ isOpen, onClose }: DownloadBrochureModal
 
         {/* Progress Bar */}
         <div className="h-1.5 w-full bg-gray-100">
-          <div 
-            className="h-full bg-[#e73649] transition-all duration-300 ease-in-out" 
+          <div
+            className="h-full bg-[#e73649] transition-all duration-300 ease-in-out"
             style={{ width: `${(step / 3) * 100}%` }}
           />
         </div>
@@ -102,8 +102,8 @@ export function DownloadBrochureModal({ isOpen, onClose }: DownloadBrochureModal
                   <svg className="w-5 h-5 text-gray-300 group-hover:text-[#e73649] transition-colors" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
                 </button>
               ))}
-              <button 
-                onClick={() => setStep(1)} 
+              <button
+                onClick={() => setStep(1)}
                 className="mt-4 text-sm text-gray-500 hover:text-ink transition-colors font-medium text-center"
               >
                 Go Back
@@ -115,20 +115,20 @@ export function DownloadBrochureModal({ isOpen, onClose }: DownloadBrochureModal
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                <input 
-                  type="text" 
-                  id="name" 
+                <input
+                  type="text"
+                  id="name"
                   required
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#e73649]/20 focus:border-[#e73649] transition-colors"
                   placeholder="Enter your full name"
                 />
               </div>
-              
+
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                <input 
-                  type="email" 
-                  id="email" 
+                <input
+                  type="email"
+                  id="email"
                   required
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#e73649]/20 focus:border-[#e73649] transition-colors"
                   placeholder="Enter your email address"
@@ -137,9 +137,9 @@ export function DownloadBrochureModal({ isOpen, onClose }: DownloadBrochureModal
 
               <div>
                 <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                <input 
-                  type="tel" 
-                  id="phone" 
+                <input
+                  type="tel"
+                  id="phone"
                   required
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#e73649]/20 focus:border-[#e73649] transition-colors"
                   placeholder="Enter your phone number"
@@ -147,16 +147,16 @@ export function DownloadBrochureModal({ isOpen, onClose }: DownloadBrochureModal
               </div>
 
               <div className="flex flex-col gap-3 mt-4">
-                <button 
+                <button
                   type="submit"
                   className="w-full bg-[#e73649] hover:bg-[#ff3148] text-white font-medium text-lg py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 transition-colors font-poppins"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                   Download Brochure
                 </button>
-                <button 
+                <button
                   type="button"
-                  onClick={() => setStep(2)} 
+                  onClick={() => setStep(2)}
                   className="text-sm text-gray-500 hover:text-ink transition-colors font-medium text-center"
                 >
                   Go Back
