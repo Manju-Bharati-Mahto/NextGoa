@@ -32,13 +32,13 @@ const columns: { heading: string; links: { label: string; href: string }[] }[] =
     ],
   },
   {
-    heading: "Accreditations",
+    heading: "Explore",
     links: [
-      { label: "NAAC Grade A++", href: "/about" },
-      { label: "THE Impact Rankings 2025", href: "/about" },
-      { label: "ASSOCHAM Best Placements 3x", href: "/about" },
-      { label: "NIRF Top 50 Innovations", href: "/about" },
-      { label: "Goa Private Universities Act 2020", href: "/about" },
+      { label: "Career", href: "/career" },
+      { label: "Redressal of Grievances of Staff", href: "/grievances/staff" },
+      { label: "Redressal of Grievances of Students", href: "/grievances/students" },
+      { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Terms of use", href: "/terms-of-use" },
     ],
   },
 ];

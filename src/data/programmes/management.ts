@@ -97,12 +97,12 @@ export const managementData: ProgrammeData = {
     name: "Dr. Kshitiz Sharma",
     role: "Dean - Faculty of Management Studies",
     bio: "A seasoned academic and management strategist with extensive experience leading business schools and consulting for global enterprises across analytics, finance and operations.",
-    image: "/programmes/engineering_hero_bg.png", // Placeholder
+    image: "/faculties/Management/Dean.jpg",
     faculty: [
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Ph.D., Marketing", specialities: "Brand Strategy, Consumer Behaviour" },
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Ph.D., Finance", specialities: "Corporate Finance, FinTech" },
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "MBA, Analytics", specialities: "Business Analytics, Data Visualization" },
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Ph.D., HR", specialities: "Organizational Behaviour, HR Analytics" }
+      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Ph.D., Marketing", specialities: "Brand Strategy, Consumer Behaviour", image: "/faculties/Management/Faculty.jpg" },
+      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Ph.D., Finance", specialities: "Corporate Finance, FinTech", image: "/faculties/Management/Faculty1.jpg" },
+      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "MBA, Analytics", specialities: "Business Analytics, Data Visualization", image: "/faculties/Management/Faculty3.jpg" },
+      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Ph.D., HR", specialities: "Organizational Behaviour, HR Analytics", image: "/faculties/Management/Faculty4.jpg" }
     ]
   },
   faqs: [

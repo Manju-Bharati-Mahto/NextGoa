@@ -13,8 +13,6 @@ export default async function SuccessPage({ params }: { params: Promise<{ id: st
 
   return (
     <main className="w-full flex flex-col min-h-screen bg-[#14A8DA]">
-      {/* Hide the global footer on this success page so it doesn't create a white patch at the bottom */}
-      <style dangerouslySetInnerHTML={{ __html: `footer { display: none !important; }` }} />
 
       {/* Full Screen Background Image */}
       <section 

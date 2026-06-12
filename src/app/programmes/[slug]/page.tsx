@@ -123,7 +123,11 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
       ) : null}
 
       {data.slug === "nursing" && (
-        <DynamicWhyPUGoa data={data.why} themeColor={data.themeColor} />
+        <DynamicWhyPUGoa 
+          data={data.why} 
+          themeColor={data.themeColor} 
+          useThickWave={true}
+        />
       )}
 
       {data.slug === "nursing" && (
@@ -151,7 +155,11 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
       )}
 
       {data.slug !== "management-studies" && data.slug !== "pharmacy" && data.slug !== "nursing" && data.slug !== "hotel-management" && (
-        <DynamicWhyPUGoa data={data.why} themeColor={data.themeColor} />
+        <DynamicWhyPUGoa 
+          data={data.why} 
+          themeColor={data.themeColor} 
+          useThickWave={data.slug === "allied-health"}
+        />
       )}
 
       {data.slug !== "management-studies" && data.slug !== "nursing" && data.slug !== "physiotherapy" && data.slug !== "allied-health" && data.slug !== "phd" && (
@@ -170,7 +178,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
         <HotelManagementDestinations />
       )}
 
-      {data.slug !== "hotel-management" && data.slug !== "phd" && (
+      {data.slug !== "phd" && (
         <DynamicDeanAndFaculty data={data.dean} />
       )}
 

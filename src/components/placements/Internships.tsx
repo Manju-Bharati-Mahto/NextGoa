@@ -68,64 +68,33 @@ export function InternshipsAndPPOs() {
               <h4 className="text-white font-poppins font-semibold text-[28px] sm:text-[32px] mb-8 leading-tight">Where students intern</h4>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {/* Microsoft */}
-                <div className="bg-white rounded-[10px] h-[88px] flex items-center justify-center p-4 shadow-sm">
-                  <div className="flex items-center gap-2">
-                    <div className="grid grid-cols-2 gap-[2px]">
-                      <div className="w-2.5 h-2.5 bg-[#F35325]"></div>
-                      <div className="w-2.5 h-2.5 bg-[#81BC06]"></div>
-                      <div className="w-2.5 h-2.5 bg-[#05A6F0]"></div>
-                      <div className="w-2.5 h-2.5 bg-[#FFBA08]"></div>
-                    </div>
-                    <span className="text-[#5E5E5E] font-sans font-semibold text-[20px] sm:text-[22px] tracking-tight">Microsoft</span>
-                  </div>
+                <div className="bg-white rounded-[10px] h-[88px] flex items-center justify-center p-2 shadow-sm relative overflow-hidden">
+                  <Image src="/placements/generated_logos/microsoft_logo_1781222040487.png" alt="Microsoft" fill className="object-contain scale-[1.3] mix-blend-multiply brightness-[1.1] contrast-[1.2]" />
                 </div>
 
                 {/* Accenture */}
-                <div className="bg-white rounded-[10px] h-[88px] flex items-center justify-center p-4 shadow-sm">
-                  <div className="flex items-center relative pt-1">
-                    <span className="text-black font-sans font-bold text-[20px] sm:text-[22px] tracking-tighter">accenture</span>
-                    <span className="text-[#A100FF] font-bold text-xl sm:text-2xl absolute -top-1.5 -right-3">{'>'}</span>
-                  </div>
+                <div className="bg-white rounded-[10px] h-[88px] flex items-center justify-center p-2 shadow-sm relative overflow-hidden">
+                  <Image src="/placements/generated_logos/accenture_logo_1781222049096.png" alt="Accenture" fill className="object-contain scale-[1.3] mix-blend-multiply brightness-[1.1] contrast-[1.2]" />
                 </div>
 
                 {/* Adobe */}
-                <div className="bg-white rounded-[10px] h-[88px] flex items-center justify-center p-4 shadow-sm gap-2">
-                   <svg width="22" height="28" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M15 0H24V32L15 0Z" fill="#FF0000"/>
-                      <path d="M9 0H0V32L9 0Z" fill="#FF0000"/>
-                      <path d="M12 11L18 26H13L11 20H6L12 11Z" fill="#FF0000"/>
-                   </svg>
-                   <span className="text-[#FF0000] font-sans font-bold text-[20px] sm:text-[24px] tracking-tight">Adobe</span>
+                <div className="bg-white rounded-[10px] h-[88px] flex items-center justify-center p-2 shadow-sm relative overflow-hidden">
+                   <Image src="/placements/generated_logos/adobe_logo_1781222059351.png" alt="Adobe" fill className="object-contain scale-[1.3] mix-blend-multiply brightness-[1.1] contrast-[1.2]" />
                 </div>
 
                 {/* Amazon */}
-                <div className="bg-white rounded-[10px] h-[88px] flex items-center justify-center p-4 shadow-sm flex-col justify-center">
-                  <div className="relative pt-2">
-                    <span className="text-black font-sans font-bold text-[20px] sm:text-[24px] tracking-tighter leading-none">amazon</span>
-                    <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 100 20" fill="none">
-                      <path d="M5,5 Q40,20 90,0" stroke="#FF9900" strokeWidth="4" strokeLinecap="round" fill="none"/>
-                      <path d="M85,5 L95,-1 L92,8 Z" fill="#FF9900"/>
-                    </svg>
-                  </div>
+                <div className="bg-white rounded-[10px] h-[88px] flex items-center justify-center p-2 shadow-sm relative overflow-hidden">
+                  <Image src="/placements/generated_logos/amazon_logo_1781222068278.png" alt="Amazon" fill className="object-contain scale-[1.3] mix-blend-multiply brightness-[1.1] contrast-[1.2]" />
                 </div>
 
                 {/* Google */}
-                <div className="bg-white rounded-[10px] h-[88px] flex items-center justify-center p-4 shadow-sm">
-                  <div className="font-sans font-bold text-[22px] sm:text-[26px] tracking-tight flex items-baseline">
-                    <span className="text-[#4285F4]">G</span>
-                    <span className="text-[#EA4335]">o</span>
-                    <span className="text-[#FBBC05]">o</span>
-                    <span className="text-[#4285F4]">g</span>
-                    <span className="text-[#34A853]">l</span>
-                    <span className="text-[#EA4335]">e</span>
-                  </div>
+                <div className="bg-white rounded-[10px] h-[88px] flex items-center justify-center p-2 shadow-sm relative overflow-hidden">
+                  <Image src="/placements/generated_logos/google_logo_1781222078551.png" alt="Google" fill className="object-contain scale-[1.3] mix-blend-multiply brightness-[1.1] contrast-[1.2]" />
                 </div>
 
                 {/* Deloitte */}
-                <div className="bg-white rounded-[10px] h-[88px] flex items-center justify-center p-4 shadow-sm">
-                  <div className="font-sans font-bold text-[22px] sm:text-[26px] tracking-tight flex items-baseline text-black">
-                    Deloitte<span className="text-[#86BC25]">.</span>
-                  </div>
+                <div className="bg-white rounded-[10px] h-[88px] flex items-center justify-center p-2 shadow-sm relative overflow-hidden">
+                  <Image src="/placements/generated_logos/deloitte_logo_1781222088859.png" alt="Deloitte" fill className="object-contain scale-[1.3] mix-blend-multiply brightness-[1.1] contrast-[1.2]" />
                 </div>
               </div>
             </div>

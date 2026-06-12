@@ -35,7 +35,7 @@ const fields = [
 
 const faculties = [
   {
-    name: "B.Tech",
+    name: "Engineering, IT & CS",
     tags: ["Diploma", "B.Tech", "BCA", "MCA"],
     levels: ["Diploma", "Undergraduate", "Postgraduate"],
     fields: ["Engineering & Technology", "Science & Computing"],

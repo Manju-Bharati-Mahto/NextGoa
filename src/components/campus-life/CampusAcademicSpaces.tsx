@@ -9,7 +9,7 @@ const spaces = [
   {
     title: "Digital Libraries",
     description: "Access to global academic resources and research databases.",
-    image: "/labs/Digital Libraries.jpg"
+    image: "/labs/Digital Libraries.png"
   },
   {
     title: "Smart Classrooms",

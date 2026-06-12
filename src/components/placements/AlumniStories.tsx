@@ -1,7 +1,77 @@
-import React from 'react';
+"use client";
+
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 
+const stories = [
+  {
+    names: "Tanish Patel",
+    batch: "B.Tech. CSE, Class of 2027",
+    quote: "Honored to be selected for this opportunity! A huge thank you to the placements at Parul University for their incredible support in making this happen. Excited for the journey ahead at Microsoft!",
+    company: "Microsoft",
+    package: "₹60 LPA",
+    image: "/placements/im1.png"
+  },
+  {
+    names: "Suraj Jagtap",
+    batch: "B.Tech. CSE, Class of 2027",
+    quote: "Grateful for this huge milestone! Thanks to placements at Parul University for always pushing me forward and believing in my journey. Excited to dive in and make the most of this opportunity!",
+    company: "Microsoft",
+    package: "₹60 LPA",
+    image: "/placements/hero2.png"
+  },
+  {
+    names: "Suhani Shah",
+    batch: "B.Tech. CSE, Class of 2025",
+    quote: "I want to be a tech leader who blends creativity with code. This is just the beginning.",
+    company: "Goldman Sachs",
+    package: "",
+    image: "/placements/suhani.svg"
+  },
+  {
+    names: "Ayush Bhuyar",
+    batch: "B.Tech. CSE & IT, Class of 2026",
+    quote: "Today, I’m happy to share that I’m stepping into the fintech world, and I couldn’t have asked for a better place to begin this journey than Bank of America. Grateful for the learnings, the setbacks, and everything that led me here.",
+    company: "Bank Of America",
+    package: "",
+    image: "/placements/hero3.png"
+  },
+  {
+    names: "Yuvraj Ranjan Singh",
+    batch: "Indian Navy Officer",
+    quote: "Commissioned as an officer in the Indian Navy - proof that PU outcomes go well beyond corporate placements.",
+    company: "Indian Navy",
+    package: "",
+    image: "/placements/solance.png"
+  },
+  {
+    names: "Pratham Pandya",
+    batch: "Hotel Management, BHMCT",
+    quote: "I’m happy to share that I’m starting a new position as Guest Service Agent at Downtown Indianapolis - Union Station Crowne Plaza!",
+    company: "Crowne Plaza",
+    package: "₹45 LPA",
+    image: "/placements/comp.png"
+  }
+];
+
 export function AlumniStories() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [fade, setFade] = useState(true);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setFade(false); // start fade out
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % stories.length);
+        setFade(true); // fade back in
+      }, 500); // 500ms transition
+    }, 6000); // changes every 6 seconds
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const currentStory = stories[currentIndex];
+
   return (
     <section
       className="relative w-full overflow-hidden bg-white"
@@ -66,14 +136,14 @@ export function AlumniStories() {
         <div className="grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-16 lg:gap-10 items-end">
           
           {/* Left Card - Image Frame */}
-          <div className="flex items-center justify-center lg:justify-start mt-16 lg:mt-0 relative z-10 w-full max-w-md mx-auto lg:max-w-none lg:w-[95%]">
+          <div className="hidden lg:flex items-center justify-center lg:justify-start mt-16 lg:mt-0 relative z-10 w-full max-w-md mx-auto lg:max-w-none lg:w-[95%]">
             <div className="relative w-full aspect-square">
-              {/* Decorative Frame SVG from CampusHostel */}
+              {/* Decorative Frame SVG */}
               <svg
                 viewBox="0 0 519 520"
                 fill="none"
                 aria-hidden="true"
-                className="pointer-events-none absolute -top-[27.5%] -left-[27.5%] w-[127.5%] h-[127.5%] z-0"
+                className="pointer-events-none absolute -top-[27.5%] -left-[27.5%] w-[127.5%] h-[127.5%] z-0 hidden lg:block"
               >
                 <rect x="271" y="271" width="239" height="238" rx="16" transform="rotate(180 271 271)" fill="#FEDB2F"/>
                 <line x1="293.293" y1="112" x2="293.293" y2="-3.09108e-08" stroke="#F8F8F8" strokeWidth="1.41431" strokeDasharray="14.14 14.14"/>
@@ -85,49 +155,58 @@ export function AlumniStories() {
               </svg>
               
               {/* Image Container */}
-              <div className="relative z-10 w-full h-full">
+              <div 
+                className={`relative z-10 w-full h-full transition-opacity duration-500 ${fade ? 'opacity-100' : 'opacity-0'}`}
+              >
                 <Image 
-                  src="/placements/im1.png" 
-                  alt="Alumni placed at Microsoft"
+                  src={currentStory.image} 
+                  alt={currentStory.names}
                   fill
-                  className="object-contain drop-shadow-2xl"
+                  className="object-cover rounded-[20px] sm:rounded-[24px] border-[4px] sm:border-[8px] border-white drop-shadow-2xl bg-[#f0f0f0]"
                 />
               </div>
             </div>
           </div>
 
           {/* Right Card - Quote */}
-          <div className="relative z-10 w-full">
-            <div className="bg-[#1C1C1C] rounded-[32px] p-2 sm:p-2.5 border-[3px] border-white shadow-2xl">
-              <div className="relative rounded-[24px] p-8 sm:p-10 flex flex-col h-full bg-[#1C1C1C]">
+          <div className="relative z-10 w-full h-full lg:h-auto">
+            <div className="bg-[#1C1C1C] rounded-[32px] p-2 sm:p-2.5 border-[3px] border-white shadow-2xl h-full">
+              <div className="relative rounded-[24px] p-8 sm:p-10 flex flex-col h-full bg-[#1C1C1C] min-h-[480px]">
                 
                 {/* 8px Dashed Border Overlay */}
                 <svg className="absolute inset-0 w-full h-full pointer-events-none rounded-[24px]" style={{ overflow: 'visible' }} xmlns="http://www.w3.org/2000/svg">
                   <rect width="100%" height="100%" rx="24" fill="none" stroke="white" strokeWidth="2" strokeDasharray="8 8" />
                 </svg>
                 
-                <div className="relative z-10 mb-6">
-                  <h4 className="text-white font-poppins font-semibold text-[22px] mb-1">Tanish Patel & Suraj Jagtap</h4>
-                  <p className="text-gray-400 font-sans text-xs sm:text-sm font-light">B.Tech CSE, Class of 2027</p>
-                </div>
-                
-                <blockquote className="relative z-10 text-[#FEDB2F] font-sans font-medium text-[22px] sm:text-[26px] leading-snug mb-10">
-                  &quot;Honored to be selected for this opportunity! A huge thank you to the placements at Parul University for their incredible support in making this happen. Excited for the journey ahead at Microsoft!&quot;
-                </blockquote>
-                
-                {/* 8px Dashed HR Separator */}
-                <svg width="100%" height="2" className="relative z-10 mb-6" aria-hidden="true">
-                  <line x1="0" y1="1" x2="100%" y2="1" stroke="white" strokeWidth="2" strokeDasharray="8 8" />
-                </svg>
-                
-                <div className="relative z-10 grid grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-gray-400 font-sans text-xs uppercase tracking-wider mb-1.5">Now at</p>
-                    <p className="text-white font-sans font-medium text-sm sm:text-[15px]">Microsoft</p>
+                <div className={`transition-opacity duration-500 flex flex-col h-full flex-grow ${fade ? 'opacity-100' : 'opacity-0'}`}>
+                  <div className="relative z-10 mb-6">
+                    <h4 className="text-white font-poppins font-semibold text-[22px] mb-1">{currentStory.names}</h4>
+                    <p className="text-gray-400 font-sans text-xs sm:text-sm font-light">{currentStory.batch}</p>
                   </div>
-                  <div>
-                    <p className="text-gray-400 font-sans text-xs uppercase tracking-wider mb-1.5">Package</p>
-                    <p className="text-[#E73649] font-sans font-bold text-sm sm:text-[15px]">₹60 LPA</p>
+                  
+                  <blockquote className="relative z-10 text-[#FEDB2F] font-sans font-medium text-[18px] sm:text-[22px] lg:text-[24px] leading-snug mb-10 flex-grow">
+                    &quot;{currentStory.quote}&quot;
+                  </blockquote>
+                  
+                  {/* Bottom section pushed to end via mt-auto */}
+                  <div className="mt-auto">
+                    {/* 8px Dashed HR Separator */}
+                    <svg width="100%" height="2" className="relative z-10 mb-6" aria-hidden="true">
+                      <line x1="0" y1="1" x2="100%" y2="1" stroke="white" strokeWidth="2" strokeDasharray="8 8" />
+                    </svg>
+                    
+                    <div className="relative z-10 grid grid-cols-2 gap-4">
+                      <div>
+                        <p className="text-gray-400 font-sans text-xs uppercase tracking-wider mb-1.5">Now at</p>
+                        <p className="text-white font-sans font-medium text-sm sm:text-[15px]">{currentStory.company}</p>
+                      </div>
+                      {currentStory.package && (
+                        <div>
+                          <p className="text-gray-400 font-sans text-xs uppercase tracking-wider mb-1.5">Package</p>
+                          <p className="text-[#E73649] font-sans font-bold text-sm sm:text-[15px]">{currentStory.package}</p>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
 

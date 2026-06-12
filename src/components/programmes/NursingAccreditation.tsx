@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 
 export default function NursingAccreditation() {
   return (
-    <section className="w-full bg-[#FAFAFA]">
+    <section className="w-full bg-white">
       <div className="py-16 sm:py-24">
         <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8 text-center">
           

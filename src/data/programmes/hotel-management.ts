@@ -92,10 +92,9 @@ export const hotelManagementData: ProgrammeData = {
     image: "/programmes/engineering_hero_bg.png"
   },
   dean: {
-    name: "Chef Marcus D'Souza",
+    name: "Dr. Prashant Sharma",
     role: "Dean, Hotel Management",
-    bio: "With 20 years as an Executive Chef in luxury properties across the Middle East and India, Chef Marcus brings world-class standards to PU Goa.",
-    image: "/programmes/engineering_hero_bg.png",
+    bio: "Dr. Prashant Sharma brings extensive experience in hospitality management and education, guiding students toward excellence in global hospitality and culinary arts.",
     faculty: [
       { role: "EXECUTIVE CHEF", name: "Chef Rahul Khanna", degree: "BHMCT, Culinary Arts", specialities: "Continental Cuisine, Advanced Baking" },
       { role: "ASSOCIATE PROFESSOR", name: "Ms. Neha Kapoor", degree: "MBA, Hospitality", specialities: "Rooms Division, Revenue Management" },

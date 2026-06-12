@@ -6,48 +6,40 @@ import Image from 'next/image';
 const facultyData = {
   'Engineering & CS': {
     roles: ['Software Engineer', 'Cyber Analyst', 'AI/ML Engineer', 'Cloud Architect'],
-    destinations: ['MS USA', 'MS Germany', 'MEng Canada', 'IITs']
+    destinations: ['MS USA', 'MS Germany', 'MEng Canada', 'IITs'],
+    recruitersImage: '/placements/169.svg'
   },
   'Management': {
     roles: ['Business Analyst', 'Financial Manager', 'Marketing Strategist', 'HR Consultant'],
-    destinations: ['MBA UK', 'MIM France', 'MBA USA', 'IIMs']
+    destinations: ['MBA UK', 'MIM France', 'MBA USA', 'IIMs'],
+    recruitersImage: '/placements/MBA.png'
   },
   'Pharmacy': {
     roles: ['Clinical Pharmacist', 'Research Scientist', 'Regulatory Affairs', 'Quality Assurance'],
-    destinations: ['MPharm UK', 'PharmD USA', 'MS Australia', 'NIPER']
-  },
-  'Nursing': {
-    roles: ['Registered Nurse', 'Clinical Nurse Specialist', 'Nurse Educator', 'Healthcare Manager'],
-    destinations: ['MSc UK', 'Nursing Canada', 'MS USA', 'AIIMS']
-  },
-  'Physiotherapy': {
-    roles: ['Sports Physiotherapist', 'Rehabilitation Specialist', 'Orthopedic PT', 'Clinical Researcher'],
-    destinations: ['MPT UK', 'MS Australia', 'DPT USA', 'Top Institutes']
+    destinations: ['MPharm UK', 'PharmD USA', 'MS Australia', 'NIPER'],
+    recruitersImage: '/placements/pHARMACY.png'
   },
   'Allied Health': {
     roles: ['Lab Technologist', 'Radiographer', 'Dietician', 'Public Health Officer'],
-    destinations: ['MPH UK', 'MSc Canada', 'Global Health Europe', 'Top Universities']
+    destinations: ['MPH UK', 'MSc Canada', 'Global Health Europe', 'Top Universities'],
+    recruitersImage: '/placements/aLLIED.png'
   },
   'Hotel Management': {
     roles: ['Hotel Manager', 'Executive Chef', 'Event Coordinator', 'Guest Relations'],
-    destinations: ['MSc Switzerland', 'Hospitality UK', 'MBA France', 'Top Institutes']
-  },
-  'PhD': {
-    roles: ['Research Scientist', 'University Professor', 'R&D Director', 'Postdoctoral Fellow'],
-    destinations: ['PostDoc USA', 'Research UK', 'Fellowship Germany', 'Top Global Labs']
+    destinations: ['MSc Switzerland', 'Hospitality UK', 'MBA France', 'Top Institutes'],
+    recruitersImage: '/placements/hOTEL.png'
   }
 };
 
 type FacultyName = keyof typeof facultyData;
 const tabs: FacultyName[] = [
-  'Engineering & CS', 'Management', 'Pharmacy', 'Nursing', 
-  'Physiotherapy', 'Allied Health', 'Hotel Management', 'PhD'
+  'Engineering & CS', 'Management', 'Pharmacy', 'Allied Health', 'Hotel Management'
 ];
 
 export function OutcomesByFaculty() {
   const [activeTab, setActiveTab] = useState<FacultyName>('Engineering & CS');
 
-  const { roles, destinations } = facultyData[activeTab];
+  const { roles, destinations, recruitersImage } = facultyData[activeTab];
 
   return (
     <section className="bg-[#F8F9FA] py-24 px-4 sm:px-6 lg:px-8">
@@ -89,9 +81,9 @@ export function OutcomesByFaculty() {
             {/* Top Recruiters */}
             <div className="mb-4">
               <h4 className="text-[#1A1A1A] font-poppins font-semibold text-[19px] mb-3 text-center">Top recruiters</h4>
-              <div className="w-full relative h-16 sm:h-20">
+              <div className="w-full relative h-[120px] sm:h-[150px]">
                 <Image 
-                  src="/placements/169.svg" 
+                  src={recruitersImage} 
                   alt="Top Recruiters" 
                   fill 
                   className="object-contain object-center" 
@@ -125,13 +117,12 @@ export function OutcomesByFaculty() {
           </div>
 
           {/* Right Card */}
-          <div className="w-full flex items-center justify-center">
+          <div className="w-full relative h-full min-h-[300px] sm:min-h-[400px] bg-[#0CAADD] rounded-[24px] overflow-hidden flex items-center justify-center">
              <Image 
                src="/placements/suhani.svg" 
-               alt="Suhani Shah Alumni Snapshot" 
-               width={655}
-               height={345}
-               className="w-full h-auto object-contain"
+               alt="Alumni Snapshot" 
+               fill
+               className="object-contain p-4"
              />
           </div>
 

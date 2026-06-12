@@ -19,13 +19,14 @@ export function InteractiveLabsLayout({
   title, 
   subtitle = "Labs & Hands-on Learning", 
   description, 
-  labs 
-}: InteractiveLabsLayoutProps) {
+  labs,
+  bgClass = "bg-gradient-to-b from-[#EAF7FD] to-white"
+}: InteractiveLabsLayoutProps & { bgClass?: string }) {
   // We'll extract up to 4 images from the labs array for the 4 frames
   const imagesToShow = labs.filter(lab => lab.image).slice(0, 4);
 
   return (
-    <section className="hidden md:block w-full bg-gradient-to-b from-[#EAF7FD] to-white py-24 sm:py-32 overflow-hidden">
+    <section className={`hidden md:block w-full ${bgClass} py-24 sm:py-32 overflow-hidden`}>
       <div className="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-12">
         
         {/* Header Section */}

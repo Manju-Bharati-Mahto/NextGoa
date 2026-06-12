@@ -4,13 +4,28 @@ import { WhyData } from "@/data/programmes/types";
 
 export function DynamicWhyPUGoa({ 
   data,
-  themeColor
+  themeColor,
+  topBgColor,
+  useThickWave = false
 }: { 
   data: WhyData,
-  themeColor: { waveBand: string; waveAccent: string; cardBg: string; cardText: string; }
+  themeColor: { waveBand: string; waveAccent: string; cardBg: string; cardText: string; },
+  topBgColor?: string,
+  useThickWave?: boolean
 }) {
+  const waveHeight = useThickWave ? "clamp(50px, 8vw, 500px)" : "clamp(30px, 5vw, 150px)";
+  
   return (
-    <section className="relative overflow-hidden z-10 w-full bg-[#FAFAFA]">
+    <section 
+      className={`relative overflow-hidden z-10 w-full ${!topBgColor ? "bg-transparent" : ""}`}
+      style={{
+        backgroundImage: topBgColor ? `linear-gradient(to bottom, ${topBgColor} 50%, transparent 50%)` : undefined,
+        ...(useThickWave && {
+          paddingTop: "clamp(5rem, 12.2vw, 600px)",
+          paddingBottom: "clamp(5rem, 13.3vw, 600px)"
+        })
+      }}
+    >
       {/* Background Wavy Image from Figma */}
       {themeColor.waveBand.toUpperCase() === "#E73649" ? (
         <div className="absolute inset-0 z-0 pointer-events-none">
@@ -18,14 +33,14 @@ export function DynamicWhyPUGoa({
           <div 
             className="absolute inset-x-0 bg-[#E73649]" 
             style={{ 
-              top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
-              bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+              top: `calc(${waveHeight} - 1.5px)`, 
+              bottom: `calc(${waveHeight} - 1.5px)` 
             }} 
           />
           {/* Top Wave */}
           <div 
             className="absolute top-0 left-0 right-0 overflow-hidden"
-            style={{ height: "clamp(50px, 8vw, 120px)" }}
+            style={{ height: waveHeight }}
           >
             <div 
             className="absolute top-0 left-0 w-[400%] h-full animate-wave-flow"
@@ -40,7 +55,7 @@ export function DynamicWhyPUGoa({
           {/* Bottom Wave */}
           <div 
             className="absolute bottom-0 left-0 right-0 overflow-hidden"
-            style={{ height: "clamp(50px, 8vw, 120px)" }}
+            style={{ height: waveHeight }}
           >
             <div 
             className="absolute bottom-0 left-0 w-[400%] h-full animate-wave-flow"
@@ -59,14 +74,14 @@ export function DynamicWhyPUGoa({
           <div 
             className="absolute inset-x-0 bg-[#FEDB2F]" 
             style={{ 
-              top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
-              bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+              top: `calc(${waveHeight} - 1.5px)`, 
+              bottom: `calc(${waveHeight} - 1.5px)` 
             }} 
           />
           {/* Top Wave */}
           <div 
             className="absolute top-0 left-0 right-0 overflow-hidden"
-            style={{ height: "clamp(50px, 8vw, 120px)" }}
+            style={{ height: waveHeight }}
           >
             <div 
               className="absolute top-0 left-0 w-[400%] h-full animate-wave-flow"
@@ -81,7 +96,7 @@ export function DynamicWhyPUGoa({
           {/* Bottom Wave */}
           <div 
             className="absolute bottom-0 left-0 right-0 overflow-hidden"
-            style={{ height: "clamp(50px, 8vw, 120px)" }}
+            style={{ height: waveHeight }}
           >
             <div 
               className="absolute bottom-0 left-0 w-[400%] h-full animate-wave-flow"
@@ -100,14 +115,14 @@ export function DynamicWhyPUGoa({
           <div 
             className="absolute inset-x-0 bg-[#1F1F1F]" 
             style={{ 
-              top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
-              bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+              top: `calc(${waveHeight} - 1.5px)`, 
+              bottom: `calc(${waveHeight} - 1.5px)` 
             }} 
           />
           {/* Top Wave */}
           <div 
             className="absolute top-0 left-0 right-0 overflow-hidden"
-            style={{ height: "clamp(50px, 8vw, 120px)" }}
+            style={{ height: waveHeight }}
           >
             <div 
               className="absolute top-0 left-0 w-[400%] h-full animate-wave-flow"
@@ -122,7 +137,7 @@ export function DynamicWhyPUGoa({
           {/* Bottom Wave */}
           <div 
             className="absolute bottom-0 left-0 right-0 overflow-hidden"
-            style={{ height: "clamp(50px, 8vw, 120px)" }}
+            style={{ height: waveHeight }}
           >
             <div 
               className="absolute bottom-0 left-0 w-[400%] h-full animate-wave-flow"
@@ -141,14 +156,14 @@ export function DynamicWhyPUGoa({
           <div 
             className="absolute inset-x-0 bg-[#0CAADD]" 
             style={{ 
-              top: "calc(clamp(50px, 8vw, 120px) - 1.5px)", 
-              bottom: "calc(clamp(50px, 8vw, 120px) - 1.5px)" 
+              top: `calc(${waveHeight} - 1.5px)`, 
+              bottom: `calc(${waveHeight} - 1.5px)` 
             }} 
           />
           {/* Top Wave */}
           <div 
             className="absolute top-0 left-0 right-0 overflow-hidden"
-            style={{ height: "clamp(50px, 8vw, 120px)" }}
+            style={{ height: waveHeight }}
           >
             <div 
             className="absolute top-0 left-0 w-[400%] h-full animate-wave-flow"
@@ -163,7 +178,7 @@ export function DynamicWhyPUGoa({
           {/* Bottom Wave */}
           <div 
             className="absolute bottom-0 left-0 right-0 overflow-hidden"
-            style={{ height: "clamp(50px, 8vw, 120px)" }}
+            style={{ height: waveHeight }}
           >
             <div 
             className="absolute bottom-0 left-0 w-[400%] h-full animate-wave-flow"

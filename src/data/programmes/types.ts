@@ -77,13 +77,14 @@ export interface FacultyMember {
   name: string;
   degree: string;
   specialities: string;
+  image?: string;
 }
 
 export interface DeanData {
   name: string;
   role: string;
   bio: string;
-  image: string;
+  image?: string;
   faculty: FacultyMember[];
 }
 
