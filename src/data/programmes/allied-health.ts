@@ -2,9 +2,9 @@ import { ProgrammeData } from "./types";
 
 export const alliedHealthData: ProgrammeData = {
   slug: "allied-health",
-  title: "Allied and Health Sciences",
+  title: "Allied and Healthcare Sciences",
   hero: {
-    badge: "Faculty of Allied Health Sciences",
+    badge: "Allied and Healthcare Sciences",
     title: "Where science",
     highlight: "serves humanity.",
     subtitle: "Powering the backbone of modern diagnostics, surgical assistance, and critical care.",

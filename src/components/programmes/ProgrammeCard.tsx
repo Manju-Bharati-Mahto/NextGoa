@@ -8,9 +8,10 @@ type ProgrammeCardProps = {
   mode: string;
   isNew?: boolean;
   level?: string;
+  tuitionFee?: string;
 };
 
-export default function ProgrammeCard({ title, duration, eligibility, intake, mode, isNew = true, level }: ProgrammeCardProps) {
+export default function ProgrammeCard({ title, duration, eligibility, intake, mode, isNew = true, level, tuitionFee }: ProgrammeCardProps) {
   let themeColor = "#0CAADD"; // Default Blue for Bachelor's
   
   const t = title.toLowerCase();
@@ -58,12 +59,27 @@ export default function ProgrammeCard({ title, duration, eligibility, intake, mo
         </div>
 
         {/* Eligibility */}
-        <div className="mb-8 text-ink">
+        <div className="text-ink">
           <p className="text-[14px] sm:text-[15px] mb-1.5 opacity-90">Eligibility</p>
           <p className="font-bold text-[14px] sm:text-[15px] leading-snug whitespace-pre-wrap">{eligibility}</p>
         </div>
 
         <div className="flex-grow"></div>
+
+        {/* Fees */}
+        {tuitionFee ? (
+          <div className="mt-6 mb-8">
+            <div className="bg-gray-50 p-3 rounded-xl border border-gray-100 text-ink">
+              <p className="text-[13px] sm:text-[14px] mb-1 opacity-90">Tuition fees a year</p>
+              <p className="font-bold text-[18px] sm:text-[20px] text-ink leading-snug whitespace-pre-wrap">{tuitionFee}</p>
+            </div>
+            <p className="text-[#E73649] text-[10px] sm:text-[11px] mt-2 leading-snug font-medium font-poppins">
+              *Exclusive homestate scholarship available for Goan domicile students
+            </p>
+          </div>
+        ) : (
+          <div className="mb-8"></div>
+        )}
 
         {/* Buttons */}
         <div className="flex flex-wrap items-center gap-3 mt-auto">

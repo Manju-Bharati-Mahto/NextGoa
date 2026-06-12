@@ -48,7 +48,7 @@ export function HowToApply() {
                   <p className="text-white/90 text-lg leading-relaxed mb-5 pr-4 font-poppins">
                     Apply through the official PU Goa admissions portal and upload documents digitally.
                   </p>
-                  <button className="bg-[#ee364f] hover:bg-[#d42d41] text-white text-base font-semibold py-2.5 px-6 rounded-full transition-colors font-poppins">
+                  <button data-enquiry-trigger="true" className="bg-[#ee364f] hover:bg-[#d42d41] text-white text-base font-semibold py-2.5 px-6 rounded-full transition-colors font-poppins">
                     Apply Now
                   </button>
                 </div>
@@ -91,7 +91,7 @@ export function HowToApply() {
                   <p className="text-white/80 text-base leading-relaxed mb-4 font-poppins">
                     Book a campus tour and apply on the spot with our admissions team.
                   </p>
-                  <button className="bg-[#fedb2f] hover:bg-[#e5c52a] text-ink text-base font-bold py-2 px-5 rounded-full transition-colors font-poppins">
+                  <button data-campus-visit-trigger="true" className="bg-[#fedb2f] hover:bg-[#e5c52a] text-ink text-base font-bold py-2 px-5 rounded-full transition-colors font-poppins">
                     Book Campus Tour!
                   </button>
                 </div>
@@ -132,7 +132,7 @@ export function HowToApply() {
               <p className="text-white/95 text-lg sm:text-xl leading-relaxed mb-6 max-w-[95%] font-medium font-poppins">
                 Apply through the official PU Goa admissions portal and upload documents digitally.
               </p>
-              <button className="bg-[#ee364f] hover:bg-[#d42d41] text-white text-base sm:text-lg font-bold py-3 px-8 rounded-full transition-colors font-poppins">
+              <button data-enquiry-trigger="true" className="bg-[#ee364f] hover:bg-[#d42d41] text-white text-base sm:text-lg font-bold py-3 px-8 rounded-full transition-colors font-poppins">
                 Apply Now
               </button>
             </div>
@@ -172,7 +172,7 @@ export function HowToApply() {
               <p className="text-white/80 text-xs xs:text-sm leading-snug mb-2 font-poppins">
                 Book a campus tour and apply on the spot with our admissions team.
               </p>
-              <button className="bg-[#fedb2f] hover:bg-[#e5c52a] text-ink text-[10px] xs:text-xs font-bold py-1.5 px-3 sm:py-2 sm:px-4 rounded-full transition-colors font-poppins">
+              <button data-campus-visit-trigger="true" className="bg-[#fedb2f] hover:bg-[#e5c52a] text-ink text-[10px] xs:text-xs font-bold py-1.5 px-3 sm:py-2 sm:px-4 rounded-full transition-colors font-poppins">
                 Book Campus Tour!
               </button>
             </div>

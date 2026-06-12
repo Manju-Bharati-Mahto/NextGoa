@@ -13,7 +13,8 @@ export default function PhysiotherapyProgrammePicker() {
       duration: "5 Years", 
       eligibility: "10+2 with PCB (50% aggregate).", 
       intake: "100", 
-      mode: "Full-time" 
+      mode: "Full-time",
+      tuitionFee: "₹1,45,000"
     }
   ];
 
@@ -58,6 +59,7 @@ export default function PhysiotherapyProgrammePicker() {
               title={prog.title}
               duration={prog.duration}
               eligibility={prog.eligibility}
+              tuitionFee={prog.tuitionFee}
               intake={prog.intake}
               mode={prog.mode}
             />

@@ -10,6 +10,7 @@ type Programme = {
   intake: string;
   mode: string;
   isNew?: boolean;
+  tuitionFee?: string;
 };
 
 export default function ItComputerSciencePicker() {
@@ -33,7 +34,8 @@ export default function ItComputerSciencePicker() {
       duration: "3 Years",
       eligibility: bcaEligibility,
       intake: "120",
-      mode: "Full-time"
+      mode: "Full-time",
+      tuitionFee: "₹65,000"
     },
     ...specialisationsList.map(spec => ({
       title: `Bachelor of Computer Application (BCA)\nwith ${spec}`,
@@ -41,14 +43,16 @@ export default function ItComputerSciencePicker() {
       duration: "3 Years",
       eligibility: bcaEligibility,
       intake: "120",
-      mode: "Full-time"
+      mode: "Full-time",
+      tuitionFee: "₹65,000"
     })),
     {
       title: "Bachelor of Computer Application - Honors (BCA Hons.)\nGeneral (NEP 2020)",
       duration: "4 Years",
       eligibility: bcaEligibility,
       intake: "120",
-      mode: "Full-time"
+      mode: "Full-time",
+      tuitionFee: "₹65,000"
     },
     ...specialisationsList.map(spec => ({
       title: `Bachelor of Computer Application - Honors (BCA Hons.)\nwith ${spec} (NEP 2020)`,
@@ -56,7 +60,8 @@ export default function ItComputerSciencePicker() {
       duration: "4 Years",
       eligibility: bcaEligibility,
       intake: "120",
-      mode: "Full-time"
+      mode: "Full-time",
+      tuitionFee: "₹95,000"
     }))
   ];
 
@@ -65,16 +70,18 @@ export default function ItComputerSciencePicker() {
       title: "Master of Computer Application (MCA)\nGeneral",
       duration: "2 Years",
       eligibility: mcaEligibility,
-      intake: "60",
-      mode: "Full-time"
+      intake: "120",
+      mode: "Full-time",
+      tuitionFee: "₹105,000"
     },
     ...specialisationsList.map(spec => ({
       title: `Master of Computer Application (MCA)\nwith ${spec}`,
       isNew: true,
       duration: "2 Years",
       eligibility: mcaEligibility,
-      intake: "60",
-      mode: "Full-time"
+      intake: "120",
+      mode: "Full-time",
+      tuitionFee: "₹105,000"
     }))
   ];
 
@@ -128,6 +135,7 @@ export default function ItComputerSciencePicker() {
               title={prog.title}
               duration={prog.duration}
               eligibility={prog.eligibility}
+              tuitionFee={prog.tuitionFee}
               intake={prog.intake}
               mode={prog.mode}
             />

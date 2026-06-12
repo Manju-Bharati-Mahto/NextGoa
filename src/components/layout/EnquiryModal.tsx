@@ -1,7 +1,51 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import { usePathname } from "next/navigation";
+
+const allProgrammes = [
+  // Engineering - Diploma
+  { value: "diploma-computer-engineering", label: "Diploma in Computer Engineering", faculty: "Engineering" },
+  { value: "diploma-mechanical-engineering", label: "Diploma in Mechanical Engineering", faculty: "Engineering" },
+  { value: "diploma-civil-engineering", label: "Diploma in Civil Engineering", faculty: "Engineering" },
+  { value: "diploma-electrical-engineering", label: "Diploma in Electrical Engineering", faculty: "Engineering" },
+  // Engineering - B.Tech
+  { value: "btech-cse", label: "B.Tech. Computer Science & Engineering", faculty: "Engineering" },
+  { value: "btech-cse-ai", label: "B.Tech. CSE with Artificial Intelligence", faculty: "Engineering" },
+  { value: "btech-cse-cybersecurity", label: "B.Tech. CSE with Cyber Security", faculty: "Engineering" },
+  { value: "btech-cse-aids", label: "B.Tech. CSE with AI & Data Science", faculty: "Engineering" },
+  { value: "btech-cse-aiml", label: "B.Tech. CSE with AI & Machine Learning", faculty: "Engineering" },
+  { value: "btech-cse-quantum", label: "B.Tech. CSE with Quantum Computing", faculty: "Engineering" },
+  { value: "btech-aids", label: "B.Tech. Artificial Intelligence & Data Science", faculty: "Engineering" },
+  { value: "btech-it", label: "B.Tech. Information Technology", faculty: "Engineering" },
+  { value: "btech-aerospace", label: "B.Tech. Aerospace Engineering", faculty: "Engineering" },
+  { value: "btech-lateral", label: "B.Tech. Lateral Entry - Computer Science and Engineering", faculty: "Engineering" },
+  // Engineering - M.Tech
+  { value: "mtech-computer", label: "M.Tech. Computer Engineering", faculty: "Engineering" },
+  { value: "mtech-structural", label: "M.Tech. Structural Engineering", faculty: "Engineering" },
+  { value: "mtech-automation", label: "M.Tech. Automation and Robotics", faculty: "Engineering" },
+  { value: "mtech-thermal", label: "M.Tech. Thermal Engineering", faculty: "Engineering" },
+  // Management
+  { value: "bba", label: "Bachelor of Business Administration (BBA)", faculty: "Management" },
+  { value: "bba-hons", label: "BBA Honours (NEP 2020)", faculty: "Management" },
+  { value: "mba", label: "Master of Business Administration (MBA)", faculty: "Management" },
+  // Pharmacy
+  { value: "bpharm", label: "Bachelor of Pharmacy (B.Pharm.)", faculty: "Pharmacy" },
+  { value: "bpharm-lateral", label: "B.Pharm. - Lateral Entry", faculty: "Pharmacy" },
+  // Nursing
+  { value: "gnm", label: "General Nursing and Midwifery (G.N.M)", faculty: "Nursing" },
+  { value: "bsc-nursing", label: "Bachelor of Science in Nursing", faculty: "Nursing" },
+  { value: "pb-bsc-nursing", label: "Post Basic B.Sc Nursing (PB-B.Sc.)", faculty: "Nursing" },
+  // Physiotherapy
+  { value: "bpt", label: "Bachelor of Physiotherapy (BPT)", faculty: "Physiotherapy" },
+  // Hotel Management
+  { value: "bhmct", label: "BHMCT", faculty: "Hotel Management" },
+  { value: "bsc-hotel-management", label: "Bachelor of Science - Hotel Management", faculty: "Hotel Management" },
+  { value: "bsc-hons-hotel-management", label: "B.Sc Hons. - Hotel Management", faculty: "Hotel Management" },
+  // Allied and Healthcare Sciences
+  { value: "baott", label: "Bachelor of Anaesthesia & Operation Theatre Technology (B.AOTT)", faculty: "Allied Health" },
+  { value: "bmls", label: "Bachelor of Medical Laboratory Science (BMLS)", faculty: "Allied Health" },
+];
 
 export function EnquiryModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,6 +68,85 @@ export function EnquiryModal() {
   });
 
   const [touched, setTouched] = useState<Record<string, boolean>>({});
+
+  // Searchable programme combobox state
+  const [programmeSearch, setProgrammeSearch] = useState("");
+  const [programmeDropdownOpen, setProgrammeDropdownOpen] = useState(false);
+  const [highlightedIndex, setHighlightedIndex] = useState(-1);
+  const programmeRef = useRef<HTMLDivElement>(null);
+  const programmeInputRef = useRef<HTMLInputElement>(null);
+  const listRef = useRef<HTMLUListElement>(null);
+
+  const filteredProgrammes = allProgrammes.filter(p =>
+    p.label.toLowerCase().includes(programmeSearch.toLowerCase())
+  );
+
+  // Group filtered programmes by faculty
+  const groupedProgrammes = filteredProgrammes.reduce((acc, p) => {
+    if (!acc[p.faculty]) acc[p.faculty] = [];
+    acc[p.faculty].push(p);
+    return acc;
+  }, {} as Record<string, typeof allProgrammes>);
+
+  // Flat list for keyboard navigation
+  const flatFiltered = Object.values(groupedProgrammes).flat();
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (programmeRef.current && !programmeRef.current.contains(e.target as Node)) {
+        setProgrammeDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Scroll highlighted item into view
+  useEffect(() => {
+    if (highlightedIndex >= 0 && listRef.current) {
+      const items = listRef.current.querySelectorAll('[data-programme-item]');
+      items[highlightedIndex]?.scrollIntoView({ block: 'nearest' });
+    }
+  }, [highlightedIndex]);
+
+  const selectProgramme = useCallback((value: string, label: string) => {
+    setFormData(prev => ({ ...prev, programme: value }));
+    setProgrammeSearch(label);
+    setProgrammeDropdownOpen(false);
+    setHighlightedIndex(-1);
+    setTouched(prev => ({ ...prev, programme: true }));
+  }, []);
+
+  const handleProgrammeKeyDown = (e: React.KeyboardEvent) => {
+    if (!programmeDropdownOpen) {
+      if (e.key === 'ArrowDown' || e.key === 'Enter') {
+        setProgrammeDropdownOpen(true);
+        e.preventDefault();
+      }
+      return;
+    }
+    switch (e.key) {
+      case 'ArrowDown':
+        e.preventDefault();
+        setHighlightedIndex(prev => (prev < flatFiltered.length - 1 ? prev + 1 : 0));
+        break;
+      case 'ArrowUp':
+        e.preventDefault();
+        setHighlightedIndex(prev => (prev > 0 ? prev - 1 : flatFiltered.length - 1));
+        break;
+      case 'Enter':
+        e.preventDefault();
+        if (highlightedIndex >= 0 && flatFiltered[highlightedIndex]) {
+          selectProgramme(flatFiltered[highlightedIndex].value, flatFiltered[highlightedIndex].label);
+        }
+        break;
+      case 'Escape':
+        setProgrammeDropdownOpen(false);
+        setHighlightedIndex(-1);
+        break;
+    }
+  };
 
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
@@ -70,6 +193,9 @@ export function EnquiryModal() {
       setSubmitState('idle');
       setFormData({ name: "", mobile: "", email: "", programme: "", marks: "", city: "", help: "" });
       setTouched({});
+      setProgrammeSearch("");
+      setProgrammeDropdownOpen(false);
+      setHighlightedIndex(-1);
     }, 300);
   };
 
@@ -273,21 +399,108 @@ export function EnquiryModal() {
 
                 <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                   {renderField({ id: "email", label: "Email", type: "email", required: true })}
-                  {renderField({
-                    id: "programme",
-                    label: "Programme of Interest ",
-                    isSelect: true,
-                    required: true,
-                    placeholder: "Select a programme",
-                    options: [
-                      { value: "engineering", label: "B.Tech" },
-                      { value: "management", label: "Management Studies" },
-                      { value: "pharmacy", label: "Pharmacy" },
-                      { value: "nursing", label: "Nursing" },
-                      { value: "hotel-management", label: "Hotel Management" },
-                      { value: "physiotherapy", label: "Physiotherapy" }
-                    ]
-                  })}
+                  {/* Searchable Programme Combobox */}
+                  <div className="relative" ref={programmeRef}>
+                    <label htmlFor="programme-search" className="mb-2 block text-[15px] font-medium text-ink font-poppins">
+                      Programme of Interest <span className="text-[#E73649]">*</span>
+                    </label>
+                    <div className="relative">
+                      <input
+                        ref={programmeInputRef}
+                        type="text"
+                        id="programme-search"
+                        autoComplete="off"
+                        value={programmeSearch}
+                        placeholder="Type to search programmes..."
+                        onChange={(e) => {
+                          setProgrammeSearch(e.target.value);
+                          setProgrammeDropdownOpen(true);
+                          setHighlightedIndex(-1);
+                          if (!e.target.value) {
+                            setFormData(prev => ({ ...prev, programme: "" }));
+                          }
+                        }}
+                        onFocus={() => setProgrammeDropdownOpen(true)}
+                        onBlur={() => {
+                          setTimeout(() => {
+                            setTouched(prev => ({ ...prev, programme: true }));
+                          }, 200);
+                        }}
+                        onKeyDown={handleProgrammeKeyDown}
+                        className={`w-full rounded-md border bg-[#FAFAFA] px-4 py-2.5 outline-none focus:ring-1 transition-all pr-10 ${
+                          touched.programme && !formData.programme
+                            ? 'border-[#E73649] focus:border-[#E73649] focus:ring-[#E73649]'
+                            : touched.programme && formData.programme
+                            ? 'border-[#10B981] focus:border-[#10B981] focus:ring-[#10B981]'
+                            : 'border-gray-200 focus:border-[#11B1E3] focus:ring-[#11B1E3]'
+                        }`}
+                      />
+                      <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <circle cx="11" cy="11" r="8" />
+                          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        </svg>
+                      </div>
+                    </div>
+
+                    {/* Dropdown */}
+                    {programmeDropdownOpen && (
+                      <ul
+                        ref={listRef}
+                        className="absolute z-50 mt-1 w-full max-h-[220px] overflow-y-auto rounded-lg border border-gray-200 bg-white shadow-xl"
+                        style={{ scrollbarWidth: 'thin' }}
+                      >
+                        {Object.keys(groupedProgrammes).length === 0 ? (
+                          <li className="px-4 py-3 text-sm text-gray-400 italic">No programmes found</li>
+                        ) : (
+                          Object.entries(groupedProgrammes).map(([faculty, programmes]) => (
+                            <li key={faculty}>
+                              <div className="sticky top-0 bg-gray-50 px-4 py-1.5 text-[11px] font-semibold text-gray-500 uppercase tracking-wider border-b border-gray-100">
+                                {faculty}
+                              </div>
+                              {programmes.map((p) => {
+                                const flatIndex = flatFiltered.findIndex(f => f.value === p.value);
+                                const isHighlighted = flatIndex === highlightedIndex;
+                                const isSelected = formData.programme === p.value;
+                                return (
+                                  <div
+                                    key={p.value}
+                                    data-programme-item
+                                    onMouseDown={(e) => {
+                                      e.preventDefault();
+                                      selectProgramme(p.value, p.label);
+                                    }}
+                                    onMouseEnter={() => setHighlightedIndex(flatIndex)}
+                                    className={`cursor-pointer px-4 py-2.5 text-sm transition-colors ${
+                                      isSelected
+                                        ? 'bg-[#11B1E3]/10 text-[#11B1E3] font-medium'
+                                        : isHighlighted
+                                        ? 'bg-gray-100 text-ink'
+                                        : 'text-gray-700 hover:bg-gray-50'
+                                    }`}
+                                  >
+                                    {p.label}
+                                    {isSelected && (
+                                      <svg className="inline-block ml-2 w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="#11B1E3" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                                        <polyline points="20 6 9 17 4 12" />
+                                      </svg>
+                                    )}
+                                  </div>
+                                );
+                              })}
+                            </li>
+                          ))
+                        )}
+                      </ul>
+                    )}
+
+                    {/* Hidden input for form data */}
+                    <input type="hidden" id="programme" value={formData.programme} />
+
+                    {touched.programme && !formData.programme && (
+                      <p className="text-[#E73649] text-[12px] mt-1">Please select a programme of interest.</p>
+                    )}
+                  </div>
                 </div>
 
                 <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">

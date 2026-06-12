@@ -47,6 +47,7 @@ export default function ProgrammePicker() {
         eligibility: "10th Pass with English, Maths, and Science from a recognized board.", 
         intake: "120", 
         mode: "Full-time", 
+        tuitionFee: "₹55,000",
         specialisations: [] 
       }
     ],
@@ -57,6 +58,7 @@ export default function ProgrammePicker() {
         eligibility: btechEligibility, 
         intake: "120", 
         mode: "Full-time", 
+        tuitionFee: "₹1,25,000",
         specialisations: [] 
       },
       ...[
@@ -72,6 +74,7 @@ export default function ProgrammePicker() {
         eligibility: btechEligibility,
         intake: "120",
         mode: "Full-time",
+        tuitionFee: "₹1,25,000",
         specialisations: []
       }))
     ],
@@ -82,6 +85,7 @@ export default function ProgrammePicker() {
         eligibility: "Diploma Engineering with 45% (40% Reserved). Direct admission to 2nd year B.Tech.", 
         intake: "120", 
         mode: "Full-time", 
+        tuitionFee: "₹1,25,000",
         specialisations: [] 
       }
     ]
@@ -132,6 +136,7 @@ export default function ProgrammePicker() {
               title={prog.title}
               duration={prog.duration}
               eligibility={prog.eligibility}
+              tuitionFee={prog.tuitionFee}
               intake={prog.intake}
               mode={prog.mode}
               isNew={prog.isNew ?? true}
