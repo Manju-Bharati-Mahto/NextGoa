@@ -25,7 +25,7 @@ function Logo() {
         alt="Parul University Goa Logo"
         width={233}
         height={26}
-        className="h-6 xl:h-7 w-auto shrink-0"
+        className="h-6 md:h-7 xl:h-8 [@media(min-width:1250px)_and_(max-width:1300px)]:h-6 w-auto shrink-0"
         priority
       />
     </Link>
@@ -50,7 +50,7 @@ export function SiteHeader() {
     <header className="fixed inset-x-0 top-0 z-[150]">
       {/* Row 1 - Brand Blue bar */}
       <div className="bg-brand-blue/80 backdrop-blur-md border-b border-white/20">
-        <div className="mx-auto flex w-full items-center justify-around gap-3 px-4 xl:px-8 py-4">
+        <div className="mx-auto flex w-full items-center sm:justify-around justify-between gap-3 px-4 xl:px-8 py-4">
           <Logo />
 
           <nav aria-label="Primary" className="hidden items-center gap-3 xl:gap-5 xl:flex">
@@ -58,7 +58,7 @@ export function SiteHeader() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="whitespace-nowrap text-[15px] font-medium text-white transition-colors hover:text-white/80"
+                className="whitespace-nowrap text-sm font-medium text-white transition-colors hover:text-white/80"
               >
                 {item.label}
               </Link>
