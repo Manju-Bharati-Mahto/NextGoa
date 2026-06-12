@@ -50,7 +50,7 @@ export function SiteHeader() {
     <header className="fixed inset-x-0 top-0 z-[150]">
       {/* Row 1 - Brand Blue bar */}
       <div className="bg-brand-blue/80 backdrop-blur-md border-b border-white/20">
-        <div className="mx-auto flex max-w-8xl items-center justify-between gap-4 px-10 py-5">
+        <div className="mx-auto flex max-w-8xl items-center sm:justify-around gap-4 sm:px-10 px-6 py-5 justify-between">
           <Logo />
 
           <nav aria-label="Primary" className="hidden items-center gap-4 xl:gap-8 lg:flex">
@@ -159,7 +159,7 @@ export function SiteHeader() {
             ))}
           </ul>
         </nav>
-        
+
         {/* Bottom CTA */}
         <div className="absolute bottom-8 left-6 right-6 flex flex-col gap-3">
           <Link
