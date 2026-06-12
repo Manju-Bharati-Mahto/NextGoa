@@ -9,24 +9,28 @@ const facultyList = [
     name: "Faculty Member",
     degree: "Ph.D., AI/ML",
     specialities: "Artificial Intelligence, Deep Learning",
+    image: "/faculties/Engineering/Faculty.jpg",
   },
   {
     role: "ASSOCIATE PROFESSOR",
     name: "Faculty Member",
     degree: "Ph.D., AI/ML",
     specialities: "Artificial Intelligence, Deep Learning",
+    image: "/faculties/Engineering/Faculty2.jpg",
   },
   {
     role: "ASSOCIATE PROFESSOR",
     name: "Faculty Member",
     degree: "Ph.D., AI/ML",
     specialities: "Artificial Intelligence, Deep Learning",
+    image: "/faculties/Engineering/Faculty3.jpg",
   },
   {
     role: "ASSOCIATE PROFESSOR",
     name: "Faculty Member",
     degree: "Ph.D., AI/ML",
     specialities: "Artificial Intelligence, Deep Learning",
+    image: "/faculties/Engineering/Faculty4.jpg",
   },
 ];
 
@@ -46,7 +50,12 @@ export default function DeanAndFaculty() {
         <div className="flex flex-col md:flex-row w-full max-w-5xl mx-auto rounded-[24px] overflow-hidden shadow-md mb-20 bg-white">
           {/* Left: Image Placeholder */}
           <div className="w-full md:w-[45%] h-[300px] md:h-auto bg-gray-200 relative shrink-0">
-            {/* Placeholder for Dean's Photo */}
+            <Image
+              src="/faculties/Engineering/Dean.jpg"
+              alt="Dr. Anuradha Pillai"
+              fill
+              className="object-cover object-top"
+            />
           </div>
           
           {/* Right: Content */}
@@ -101,7 +110,16 @@ export default function DeanAndFaculty() {
               className="bg-white rounded-[16px] border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-row h-[180px]"
             >
               {/* Left: Faculty Image Placeholder */}
-              <div className="w-[140px] sm:w-[160px] h-full bg-gray-200 shrink-0"></div>
+              <div className="w-[140px] sm:w-[160px] h-full bg-gray-200 shrink-0 relative">
+                {faculty.image && (
+                  <Image
+                    src={faculty.image}
+                    alt={faculty.name}
+                    fill
+                    className="object-cover object-top"
+                  />
+                )}
+              </div>
               
               {/* Right: Faculty Details */}
               <div className="p-5 sm:p-6 flex flex-col justify-center flex-grow">

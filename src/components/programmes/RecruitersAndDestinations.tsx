@@ -52,10 +52,22 @@ export default function RecruitersAndDestinations({ slug }: { slug?: string }) {
     "Piramal Pharma Ltd.png", "Sun Pharma.png", "Zydus_Lifesciences.svg.png", 
     "cadila-pharmaceuticals6224.jpg"
   ];
-  const activeCompanies = slug === "management-studies" ? managementCompanies : slug === "pharmacy" ? pharmacyCompanies : companies;
+  const alliedHealthCompanies = [
+    "Alembic Pharmaceutical.png", "Asian Paints.png", "Piramal Pharma Ltd.png",
+    "Reliance Industries.png", "Sun Pharma.png", "The_Lupin_Logo.svg.png",
+    "ZYDUS H.png"
+  ];
+  const activeCompanies = slug === "management-studies" 
+    ? managementCompanies 
+    : slug === "pharmacy" 
+      ? pharmacyCompanies 
+      : slug === "allied-health"
+        ? alliedHealthCompanies
+        : companies;
   const getSrc = (fileName: string) => {
     if (slug === "management-studies") return `/recruiters/management/${fileName}`;
     if (slug === "pharmacy") return `/recruiters/pharmacy/${fileName}`;
+    if (slug === "allied-health") return `/recruiters/allied-health/${fileName}`;
     return `/companies/${fileName}`;
   };
 

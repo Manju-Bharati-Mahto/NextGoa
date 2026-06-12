@@ -72,6 +72,12 @@ export function SiteHeader() {
             >
               Apply Now
             </Link>
+            <Link
+              href="/contact"
+              className="hidden sm:inline-flex whitespace-nowrap rounded-full border border-white px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-white hover:text-brand-blue"
+            >
+              Contact Us
+            </Link>
             <button
               type="button"
               aria-label={open ? "Close menu" : "Open menu"}
@@ -155,7 +161,14 @@ export function SiteHeader() {
         </nav>
         
         {/* Bottom CTA */}
-        <div className="absolute bottom-10 left-6 right-6">
+        <div className="absolute bottom-8 left-6 right-6 flex flex-col gap-3">
+          <Link
+            href="/contact"
+            onClick={() => setOpen(false)}
+            className="flex w-full items-center justify-center rounded-full border-2 border-white px-6 py-3.5 text-md font-bold text-white transition-all hover:bg-white hover:text-brand-blue"
+          >
+            Contact Us
+          </Link>
           <Link
             href={cta.apply}
             onClick={() => setOpen(false)}

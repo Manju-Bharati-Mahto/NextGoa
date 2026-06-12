@@ -81,12 +81,12 @@ export const physiotherapyData: ProgrammeData = {
     name: "Dr. Aseem Yadav",
     role: "Dean - Faculty of Physiotherapy",
     bio: "A clinician-educator with extensive experience in musculoskeletal rehabilitation, sports physiotherapy and community physiotherapy programmes.",
-    image: "/programmes/engineering_hero_bg.png",
+    image: "/faculties/Physiotherapy/Dean.jpg",
     faculty: [
-      { role: "PROFESSOR", name: "Faculty Member", degree: "Ph.D., Physiotherapy", specialities: "" },
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Ph.D., Nursing", specialities: "" },
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "MPT, Physiotherapy", specialities: "" },
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "MPT, Physiotherapy", specialities: "" }
+      { role: "PROFESSOR", name: "Faculty Member", degree: "Ph.D., Physiotherapy", specialities: "", image: "/faculties/Physiotherapy/Faculty.jpg" },
+      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Ph.D., Nursing", specialities: "", image: "/faculties/Physiotherapy/Faculty2.jpg" },
+      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "MPT, Physiotherapy", specialities: "", image: "/faculties/Physiotherapy/Faculty3.jpg" },
+      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "MPT, Physiotherapy", specialities: "", image: "/faculties/Physiotherapy/Faculty4.jpg" }
     ]
   },
   faqs: [

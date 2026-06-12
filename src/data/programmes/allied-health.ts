@@ -89,12 +89,12 @@ export const alliedHealthData: ProgrammeData = {
     name: "Dr. Anupam Kumar",
     role: "Dean, Faculty of Applied and Health Sciences",
     bio: "At the faculty of Applied and Health Sciences we are dedicated to advancing knowledge, fostering innovation, and improving the environment, health and well-being of our society through cutting-edge research, education, and practice.",
-    image: "/programmes/engineering_hero_bg.png",
+    image: "/faculties/Applied and Health Sciences/Dean.jpg",
     faculty: [
-      { role: "PROFESSOR", name: "Faculty Member", degree: "Faculty of Applied and Health Sciences", specialities: "-------------" },
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Faculty of Applied and Health Sciences", specialities: "-------------" },
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Faculty of Applied and Health Sciences", specialities: "-------------" },
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Faculty of Applied and Health Sciences", specialities: "-------------" }
+      { role: "PROFESSOR", name: "Faculty Member", degree: "Faculty of Applied and Health Sciences", specialities: "-------------", image: "/faculties/Applied and Health Sciences/Faculty.jpg" },
+      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Faculty of Applied and Health Sciences", specialities: "-------------", image: "/faculties/Applied and Health Sciences/Faculty2.jpg" },
+      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Faculty of Applied and Health Sciences", specialities: "-------------", image: "/faculties/Applied and Health Sciences/Faculty3.jpg" },
+      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Faculty of Applied and Health Sciences", specialities: "-------------", image: "/faculties/Applied and Health Sciences/Faculty4.jpg" }
     ]
   },
   faqs: [

@@ -27,9 +27,9 @@ export default async function CareerDetailsPage({ params }: { params: Promise<{ 
           style={{ height: 'calc(100% + 10vw)', minHeight: '52vw' }}
         />
 
-        {/* Absolute Content Overlay */}
-        <div className="absolute inset-0 z-10 flex items-center pointer-events-none">
-          <div className="max-w-[1440px] w-full mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center h-full pointer-events-auto">
+        {/* Relative Content Overlay */}
+        <div className="relative z-10 flex items-center w-full py-10">
+          <div className="max-w-[1440px] w-full mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center h-full">
             
             {/* Left Content */}
             <div className="flex-1 flex flex-col justify-center w-full max-w-[750px] md:pr-8">
@@ -38,17 +38,17 @@ export default async function CareerDetailsPage({ params }: { params: Promise<{ 
               </Link>
 
               {/* Pill */}
-              <div className="border border-white text-white font-medium px-6 py-2 rounded-full w-fit mb-6 text-sm lg:text-base">
+              <div className="border border-white text-white font-medium px-4 py-1.5 md:px-6 md:py-2 rounded-full w-fit mb-4 md:mb-6 text-[12px] md:text-sm lg:text-base">
                 {job.position} Position
               </div>
               
               {/* Title */}
-              <h1 className="text-white font-bold text-[48px] md:text-[60px] lg:text-[76px] leading-[1.1] mb-8 tracking-tight">
+              <h1 className="text-white font-bold text-[36px] md:text-[60px] lg:text-[76px] leading-[1.1] mb-6 md:mb-8 tracking-tight relative z-10 pr-20 sm:pr-0">
                 {job.title}
               </h1>
               
               {/* CTA */}
-              <Link href={`/career/${jobId}/apply`} className="bg-[#EF3341] hover:bg-[#D92A36] transition-colors text-white text-[18px] font-bold px-10 py-3.5 rounded-full w-fit shadow-md text-center">
+              <Link href={`/career/${jobId}/apply`} className="bg-[#EF3341] hover:bg-[#D92A36] transition-colors text-white text-[16px] md:text-[18px] font-bold px-8 py-3 md:px-10 md:py-3.5 rounded-full w-fit shadow-md text-center">
                 Apply Now
               </Link>
             </div>

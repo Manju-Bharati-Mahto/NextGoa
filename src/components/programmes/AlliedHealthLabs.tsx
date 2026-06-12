@@ -17,6 +17,7 @@ export default function AlliedHealthLabs() {
     <InteractiveLabsLayout 
       title="Where you'll actually practice."
       labs={labs}
+      bgClass="bg-white"
     />
   );
 }

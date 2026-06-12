@@ -81,12 +81,12 @@ export const nursingData: ProgrammeData = {
     name: "Dr. Jeyalakshmi.K",
     role: "Dean - Faculty of Nursing",
     bio: "A leader in nursing education with deep clinical and academic experience across community health, midwifery and critical care nursing.",
-    image: "/programmes/engineering_hero_bg.png",
+    image: "/faculties/Nursing/Dean.png",
     faculty: [
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Ph.D., Nursing", specialities: "Medical-Surgical Nursing" },
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Ph.D., Nursing", specialities: "Community Health Nursing" },
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Ph.D., Nursing", specialities: "Pediatric Nursing" },
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Ph.D., Nursing", specialities: "Medical-Surgical Nursing" }
+      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Ph.D., Nursing", specialities: "Medical-Surgical Nursing", image: "/faculties/Nursing/Faculty.jpg" },
+      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Ph.D., Nursing", specialities: "Community Health Nursing", image: "/faculties/Nursing/Faculty2.jpg" },
+      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Ph.D., Nursing", specialities: "Pediatric Nursing", image: "/faculties/Nursing/Faculty3.webp" },
+      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Ph.D., Nursing", specialities: "Medical-Surgical Nursing", image: "/faculties/Nursing/Faculty4.jpg" }
     ]
   },
   faqs: [

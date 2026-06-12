@@ -20,7 +20,14 @@ export function DynamicDeanAndFaculty({ data }: { data: DeanData }) {
         <div className="flex flex-col md:flex-row w-full max-w-5xl mx-auto rounded-[24px] overflow-hidden shadow-md mb-20 bg-white">
           {/* Left: Image Placeholder */}
           <div className="w-full md:w-[45%] h-[300px] md:h-auto bg-gray-200 relative shrink-0">
-            {/* Placeholder for Dean's Photo */}
+            {data.image && (
+              <Image
+                src={data.image}
+                alt={data.name}
+                fill
+                className="object-cover object-top"
+              />
+            )}
           </div>
           
           {/* Right: Content */}
@@ -75,7 +82,16 @@ export function DynamicDeanAndFaculty({ data }: { data: DeanData }) {
               className="bg-white rounded-[16px] border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-row h-[180px]"
             >
               {/* Left: Faculty Image Placeholder */}
-              <div className="w-[140px] sm:w-[160px] h-full bg-gray-200 shrink-0"></div>
+              <div className="w-[140px] sm:w-[160px] h-full bg-gray-200 shrink-0 relative">
+                {facultyItem.image && (
+                  <Image
+                    src={facultyItem.image}
+                    alt={facultyItem.name}
+                    fill
+                    className="object-cover object-top"
+                  />
+                )}
+              </div>
               
               {/* Right: Faculty Details */}
               <div className="p-5 sm:p-6 flex flex-col justify-center flex-grow">

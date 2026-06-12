@@ -91,12 +91,12 @@ export const pharmacyData: ProgrammeData = {
     name: "Dr. Rajesh Sharma",
     role: "Dean, Faculty of Pharmacy",
     bio: "Dr. Sharma is a renowned academician and researcher with over 25 years of experience in pharmaceutical sciences, holding multiple patents in novel drug delivery systems.",
-    image: "/programmes/engineering_hero_bg.png",
+    image: "/faculties/Pharmacy/Dean.png",
     faculty: [
-      { role: "PROFESSOR", name: "Dr. Sunita Rao", degree: "Ph.D., Pharmaceutics", specialities: "Novel Drug Delivery Systems, Nanotechnology" },
-      { role: "ASSOCIATE PROFESSOR", name: "Dr. Arvind Patel", degree: "Ph.D., Pharmacology", specialities: "Clinical Trials, Neuropharmacology" },
-      { role: "ASSISTANT PROFESSOR", name: "Dr. Kavita Menon", degree: "Ph.D., Pharmacognosy", specialities: "Herbal Formulation, Phytochemistry" },
-      { role: "ASSOCIATE PROFESSOR", name: "Dr. Vikram Joshi", degree: "Ph.D., Pharma Chemistry", specialities: "Drug Design, Synthetic Chemistry" }
+      { role: "PROFESSOR", name: "Dr. Sunita Rao", degree: "Ph.D., Pharmaceutics", specialities: "Novel Drug Delivery Systems, Nanotechnology", image: "/faculties/Pharmacy/Faculty.jpg" },
+      { role: "ASSOCIATE PROFESSOR", name: "Dr. Arvind Patel", degree: "Ph.D., Pharmacology", specialities: "Clinical Trials, Neuropharmacology", image: "/faculties/Pharmacy/Faculty1.jpg" },
+      { role: "ASSISTANT PROFESSOR", name: "Dr. Kavita Menon", degree: "Ph.D., Pharmacognosy", specialities: "Herbal Formulation, Phytochemistry", image: "/faculties/Pharmacy/Faculty2.jpg" },
+      { role: "ASSOCIATE PROFESSOR", name: "Dr. Vikram Joshi", degree: "Ph.D., Pharma Chemistry", specialities: "Drug Design, Synthetic Chemistry", image: "/faculties/Pharmacy/Faculty3.jpg" }
     ]
   },
   faqs: [

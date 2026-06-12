@@ -1,40 +1,47 @@
+import Image from "next/image";
+
 export function FacultyDeans() {
   const deans = [
     {
       name: "Dr. Anuradha Pillai",
-      faculty: "Faculty of B.Tech",
+      faculty: "Faculty of Engineering, IT & CS",
       stats: "Ph.D. Computer Engineering • 21+ yrs • 48 papers",
-      image: "/leader-1.webp",
+      image: "/faculties/Engineering/Dean.jpg",
     },
     {
       name: "Dr. Kshitiz Sharma",
       faculty: "Faculty of Management Studies",
       stats: "PhD. Management • 23+ yrs • 44 papers",
-      image: "/leader-2.webp",
+      image: "/faculties/Management/Dean.jpg",
     },
     {
       name: "Dr. Anupam Kumar",
       faculty: "Applied & Health Sciences",
       stats: "PhD. Biotechnology • 15+ yrs • 50+ papers",
-      image: "/leader-3.webp",
+      image: "/faculties/Applied and Health Sciences/Dean.jpg",
     },
     {
       name: "Dr. Lalit Lata Jha",
       faculty: "Faculty of Pharmacy",
       stats: "PhD. Pharmacy • 23+ yrs • 41 papers",
-      image: "/leader-1.webp",
+      image: "/faculties/Pharmacy/Dean.png",
     },
     {
       name: "Dr. Aseem Yadav",
       faculty: "Faculty of Physiotherapy",
       stats: "PhD. Physiotherapy • 14+ yrs • 81 papers",
-      image: "/leader-2.webp",
+      image: "/faculties/Physiotherapy/Dean.jpg",
     },
     {
       name: "Dr. Jeyalakshmi K.",
       faculty: "Faculty of Nursing",
       stats: "PhD. Community Health Nursing • 18+ yrs",
-      image: "/leader-3.webp",
+      image: "/faculties/Nursing/Dean.png",
+    },
+    {
+      name: "Dr. Prashant Sharma",
+      faculty: "Faculty of Hotel Management",
+      stats: "Extensive Experience in Hospitality and Culinary Arts",
     },
   ];
 
@@ -51,42 +58,54 @@ export function FacultyDeans() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-          {deans.map((dean, idx) => (
-            <div
-              key={idx}
-              className="flex flex-col sm:flex-row rounded-[20px] bg-white shadow-sm border border-zinc-200/60 overflow-hidden"
-            >
-              {/* Image Section Placeholder */}
-              <div className="relative w-full h-[180px] sm:h-auto sm:w-[30%] bg-gradient-to-b from-[#EBF8FD] to-[#D6F0FA] flex-shrink-0 flex items-end justify-center overflow-hidden">
-                {/* Space left for future image. Mockups removed. */}
-              </div>
-
-              {/* Text Body */}
-              <div className="p-6 sm:p-8 flex flex-col flex-1 justify-center">
-                {/* Red Dean Badge */}
-                <div className="mb-3">
-                  <span className="inline-block rounded-full bg-[#E73649] px-3 py-1 text-[9px] sm:text-[10px] font-bold uppercase tracking-wide text-white">
-                    DEAN
-                  </span>
+          {deans.map((dean, idx) => {
+            const isLastOdd = idx === deans.length - 1 && deans.length % 2 !== 0;
+            return (
+              <div
+                key={idx}
+                className={`flex flex-col sm:flex-row rounded-[20px] bg-white shadow-sm border border-zinc-200/60 overflow-hidden ${
+                  isLastOdd ? "md:col-span-2 md:w-[calc(50%-16px)] md:mx-auto" : "w-full"
+                }`}
+              >
+                {/* Image Section */}
+                <div className="relative w-full h-[180px] sm:h-auto sm:w-[30%] bg-gradient-to-b from-[#EBF8FD] to-[#D6F0FA] flex-shrink-0 flex items-end justify-center overflow-hidden">
+                  {dean.image && (
+                    <Image
+                      src={dean.image}
+                      alt={dean.name}
+                      fill
+                      className="object-cover object-top"
+                    />
+                  )}
                 </div>
 
-                <h3 className="font-poppins font-semibold text-[22px] sm:text-[24px] leading-tight text-[#1F1F1F]">
-                  {dean.name}
-                </h3>
-                <p className="font-sans font-bold text-[14px] sm:text-[15px] text-[#0CAADD] mt-1">
-                  {dean.faculty}
-                </p>
+                {/* Text Body */}
+                <div className="p-6 sm:p-8 flex flex-col flex-1 justify-center">
+                  {/* Red Dean Badge */}
+                  <div className="mb-3">
+                    <span className="inline-block rounded-full bg-[#E73649] px-3 py-1 text-[9px] sm:text-[10px] font-bold uppercase tracking-wide text-white">
+                      DEAN
+                    </span>
+                  </div>
 
-                {/* Separator */}
-                <div className="w-full h-px bg-zinc-200/80 my-4" />
+                  <h3 className="font-poppins font-semibold text-[22px] sm:text-[24px] leading-tight text-[#1F1F1F]">
+                    {dean.name}
+                  </h3>
+                  <p className="font-sans font-bold text-[14px] sm:text-[15px] text-[#0CAADD] mt-1">
+                    {dean.faculty}
+                  </p>
 
-                {/* Stats */}
-                <p className="font-[family-name:var(--font-poppins)] text-[12px] sm:text-[13px] leading-[1.6] text-ink/50">
-                  {dean.stats}
-                </p>
+                  {/* Separator */}
+                  <div className="w-full h-px bg-zinc-200/80 my-4" />
+
+                  {/* Stats */}
+                  <p className="font-[family-name:var(--font-poppins)] text-[12px] sm:text-[13px] leading-[1.6] text-ink/50">
+                    {dean.stats}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
