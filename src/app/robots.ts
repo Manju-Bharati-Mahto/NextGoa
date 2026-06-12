@@ -11,17 +11,17 @@ import { SITE_URL } from "@/lib/site-config";
  * of model training while staying in search), change its `allow` to `disallow`.
  */
 const AI_CRAWLERS = [
-  "GPTBot", // OpenAI (ChatGPT) crawling
-  "OAI-SearchBot", // OpenAI search
-  "ChatGPT-User", // ChatGPT live browsing
-  "ClaudeBot", // Anthropic
+  "GPTBot", 
+  "OAI-SearchBot", 
+  "ChatGPT-User", 
+  "ClaudeBot", 
   "Claude-Web",
-  "PerplexityBot", // Perplexity
+  "PerplexityBot", 
   "Perplexity-User",
-  "Google-Extended", // Gemini / AI Overviews training signal
-  "Applebot-Extended", // Apple Intelligence
-  "Bytespider", // TikTok/ByteDance
-  "CCBot", // Common Crawl (feeds many models)
+  "Google-Extended", 
+  "Applebot-Extended", 
+  "Bytespider", 
+  "CCBot", 
 ];
 
 export default function robots(): MetadataRoute.Robots {
