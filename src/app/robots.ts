@@ -25,6 +25,19 @@ const AI_CRAWLERS = [
 ];
 
 export default function robots(): MetadataRoute.Robots {
+  // If we are in the UAT environment, block all crawlers
+  if (process.env.NEXT_PUBLIC_ENV === "uat") {
+    return {
+      rules: {
+        userAgent: "*",
+        disallow: "/",
+      },
+      sitemap: `${SITE_URL}/sitemap.xml`,
+      host: SITE_URL,
+    };
+  }
+
+  // Production Rules (Allow normal crawling)
   return {
     rules: [
       {
