@@ -83,7 +83,7 @@ const faculties = [
     icon: PhysiotherapyIcon,
   },
   {
-    name: "Allied Health Sciences",
+    name: "Allied and Healthcare Sciences",
     tags: ["B.Sc", "Diploma"],
     levels: ["Undergraduate", "Diploma"],
     fields: ["Medicine & Health Sciences"],

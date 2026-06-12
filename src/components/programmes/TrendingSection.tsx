@@ -12,28 +12,24 @@ import {
 const trendingCourses = [
   {
     course: "B.Tech CSE",
-    specialization: "AI & ML",
     tags: ["12 Seats Left", "Most Applied"],
     icon: EngineeringIcon,
     href: "/programmes/engineering",
   },
   {
     course: "B.Sc. Nursing",
-    specialization: "Critical Care",
     tags: ["5 Seats Left", "High Demand"],
     icon: NursingIcon,
     href: "/programmes/nursing",
   },
   {
     course: "MBA",
-    specialization: "Finance",
     tags: ["18 Seats Left", "Top Placement"],
     icon: ManagementIcon,
     href: "/programmes/management-studies",
   },
   {
     course: "BHMCT",
-    specialization: "Culinary Arts",
     tags: ["8 Seats Left", "Fast Filling"],
     icon: HotelIcon,
     href: "/programmes/hotel-management",
@@ -137,8 +133,7 @@ export default function TrendingSection() {
                     ))}
                   </div>
                   
-                  <h4 className="text-3xl sm:text-[38px] font-semibold tracking-tight mb-1 font-[family-name:var(--font-poppins)]">{activeCourse.course}</h4>
-                  <p className="text-lg sm:text-[20px] font-medium mb-6 text-ink/80">{activeCourse.specialization}</p>
+                  <h4 className="text-3xl sm:text-[38px] font-semibold tracking-tight mb-6 font-[family-name:var(--font-poppins)]">{activeCourse.course}</h4>
                   
                   <a href={activeCourse.href} className="bg-[#0EB1E1] hover:bg-[#0BA1CD] transition-colors text-white text-[14px] font-medium px-6 py-2.5 rounded-full flex items-center gap-2 w-max">
                     Apply Now <span>&rarr;</span>

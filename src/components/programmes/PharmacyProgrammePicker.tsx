@@ -12,14 +12,16 @@ export default function PharmacyProgrammePicker() {
       duration: "4 Years", 
       eligibility: "10+2 Science (PCM or PCB) from a recognized board.", 
       intake: "60", 
-      mode: "Full-time" 
+      mode: "Full-time",
+      tuitionFee: "₹1,15,000"
     },
     { 
       title: "B.Pharm. - Lateral Entry", 
       duration: "3 Years", 
       eligibility: "Diploma in Pharmacy from a recognized university.", 
       intake: "10", 
-      mode: "Full-time" 
+      mode: "Full-time",
+      tuitionFee: "₹1,15,000"
     }
   ];
 
@@ -62,6 +64,7 @@ export default function PharmacyProgrammePicker() {
               title={prog.title}
               duration={prog.duration}
               eligibility={prog.eligibility}
+              tuitionFee={prog.tuitionFee}
               intake={prog.intake}
               mode={prog.mode}
             />

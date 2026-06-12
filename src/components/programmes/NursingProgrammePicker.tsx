@@ -13,21 +13,24 @@ export default function NursingProgrammePicker() {
       duration: "3 Years", 
       eligibility: "10+2 in any stream with English (40% Gen/EWS, 35% Reserved) OR 10+2 with English and 40% in vocational ANM.", 
       intake: "40", 
-      mode: "Full-time" 
+      mode: "Full-time",
+      tuitionFee: "₹90,000"
     },
     { 
       title: "Bachelor of Science\nin Nursing", 
       duration: "4 Years", 
       eligibility: "10+2 Science (PCB) with English. Minimum 45% (40% Reserved).", 
       intake: "100", 
-      mode: "Full-time" 
+      mode: "Full-time",
+      tuitionFee: "₹160,000"
     },
     { 
       title: "Post Basic Bachelor of Science\nin Nursing (PB-B.Sc.)", 
       duration: "2 Years", 
       eligibility: "GNM pass from INC/State Council recognized institution. Registered as Nurse & Midwife.", 
       intake: "40", 
-      mode: "Full-time" 
+      mode: "Full-time",
+      tuitionFee: "₹100,000"
     }
   ];
 
@@ -72,6 +75,7 @@ export default function NursingProgrammePicker() {
               title={prog.title}
               duration={prog.duration}
               eligibility={prog.eligibility}
+              tuitionFee={prog.tuitionFee}
               intake={prog.intake}
               mode={prog.mode}
             />

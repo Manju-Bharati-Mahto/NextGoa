@@ -190,7 +190,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
 
       <FinalCta 
         eyebrow="Admissions Open 2026"
-        title={data.slug === "nursing" ? "Ready to begin nursing?" : data.slug === "pharmacy" ? "Ready to enter pharmacy?" : data.slug === "physiotherapy" ? "Ready to start physio?" : data.slug === "allied-health" ? "Ready to start allied health?" : data.slug === "hotel-management" ? "Ready to enter hospitality?" : data.slug === "phd" ? "Begin your doctoral journey." : "Ready to lead?"}
+        title={data.slug === "nursing" ? "Ready to begin nursing?" : data.slug === "pharmacy" ? "Ready to enter pharmacy?" : data.slug === "physiotherapy" ? "Ready to start physio?" : data.slug === "allied-health" ? "Ready to start allied and healthcare sciences?" : data.slug === "hotel-management" ? "Ready to enter hospitality?" : data.slug === "phd" ? "Begin your doctoral journey." : "Ready to lead?"}
         description={data.slug === "phd" ? "PU Goa entrance and PhD admissions are open for the 2026-27 cycle." : "Admissions are open for the 2026-27 academic year."}
         actions={[
           { label: "Apply Now", href: "/apply", variant: "primary" },

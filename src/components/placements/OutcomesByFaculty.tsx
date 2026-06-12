@@ -3,51 +3,140 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
-const facultyData = {
+type FacultyName =
+  | 'Engineering & CS'
+  | 'Management'
+  | 'Pharmacy'
+  | 'Allied and Healthcare Sciences'
+  | 'Hotel Management'
+  | 'Diploma Engineering';
+
+interface FacultyData {
+  companies: { src: string; alt: string }[];
+  highestPackage: string;
+  avgPackage: string;
+  recruiters: string;
+}
+
+const facultyData: Record<FacultyName, FacultyData> = {
   'Engineering & CS': {
-    roles: ['Software Engineer', 'Cyber Analyst', 'AI/ML Engineer', 'Cloud Architect'],
-    destinations: ['MS USA', 'MS Germany', 'MEng Canada', 'IITs'],
-    recruitersImage: '/placements/169.svg'
+    companies: [
+      { src: '/dept-companies/engineering/TCS_Logo_(cropped).jpg',        alt: 'TCS' },
+      { src: '/dept-companies/engineering/Microsoft_logo_(2012).svg.png', alt: 'Microsoft' },
+      { src: '/dept-companies/engineering/Accenture.png',                 alt: 'Accenture' },
+      { src: '/dept-companies/engineering/IBM.png',                       alt: 'IBM' },
+      { src: '/dept-companies/engineering/Capgemini.png',                 alt: 'Capgemini' },
+      { src: '/dept-companies/engineering/Cognizant.png',                 alt: 'Cognizant' },
+      { src: '/dept-companies/engineering/WIPRO.png',                     alt: 'Wipro' },
+      { src: '/dept-companies/engineering/HCL Tech.png',                  alt: 'HCL Tech' },
+      { src: '/dept-companies/engineering/DELOITTE.png',                  alt: 'Deloitte' },
+      { src: '/dept-companies/engineering/PWC.png',                       alt: 'PwC' },
+      { src: '/dept-companies/engineering/Servicenow.png',                alt: 'ServiceNow' },
+      { src: '/dept-companies/engineering/Mastek.png',                    alt: 'Mastek' },
+      { src: '/dept-companies/engineering/Simform.png',                   alt: 'Simform' },
+      { src: '/dept-companies/engineering/Sophos.png',                    alt: 'Sophos' },
+    ],
+    highestPackage: '43 LPA',
+    avgPackage: '6 LPA',
+    recruiters: '350+',
   },
   'Management': {
-    roles: ['Business Analyst', 'Financial Manager', 'Marketing Strategist', 'HR Consultant'],
-    destinations: ['MBA UK', 'MIM France', 'MBA USA', 'IIMs'],
-    recruitersImage: '/placements/MBA.png'
+    companies: [
+      { src: '/dept-companies/management/HDFC_Life_Logo.svg.png',        alt: 'HDFC Life' },
+      { src: '/dept-companies/management/ZOMATO.png',                    alt: 'Zomato' },
+      { src: '/dept-companies/management/Blinkit.png',                   alt: 'Blinkit' },
+      { src: '/dept-companies/management/Berger.jpg',                    alt: 'Berger' },
+      { src: '/dept-companies/management/PANTALOONS.png',                alt: 'Pantaloons' },
+      { src: '/dept-companies/management/Bajaj Finance Limited.png',     alt: 'Bajaj Finance' },
+      { src: '/dept-companies/management/IndusInd_Bank_SVG_Logo.svg.png',alt: 'IndusInd Bank' },
+      { src: '/dept-companies/management/GODREJ.png',                    alt: 'Godrej' },
+      { src: '/dept-companies/management/DMart.png',                     alt: 'DMart' },
+      { src: '/dept-companies/management/SWIGGY.png',                    alt: 'Swiggy' },
+      { src: '/dept-companies/management/Haldiram_s_2024_Logo.svg.png',  alt: "Haldiram's" },
+      { src: '/dept-companies/management/Odoo-Logo.wine.png',            alt: 'Odoo' },
+    ],
+    highestPackage: '18 LPA',
+    avgPackage: '5.5 LPA',
+    recruiters: '200+',
   },
   'Pharmacy': {
-    roles: ['Clinical Pharmacist', 'Research Scientist', 'Regulatory Affairs', 'Quality Assurance'],
-    destinations: ['MPharm UK', 'PharmD USA', 'MS Australia', 'NIPER'],
-    recruitersImage: '/placements/pHARMACY.png'
+    companies: [
+      { src: '/dept-companies/pharmacy/Sun Pharma.png',                   alt: 'Sun Pharma' },
+      { src: '/dept-companies/pharmacy/GSK.png',                          alt: 'GSK' },
+      { src: '/dept-companies/pharmacy/Alembic Pharmaceutical.png',       alt: 'Alembic' },
+      { src: '/dept-companies/pharmacy/Zydus_Lifesciences.svg.png',       alt: 'Zydus' },
+      { src: '/dept-companies/pharmacy/Piramal Pharma Ltd.png',           alt: 'Piramal Pharma' },
+      { src: '/dept-companies/pharmacy/Intas Pharma.jfif',                alt: 'Intas Pharma' },
+      { src: '/dept-companies/pharmacy/cadila-pharmaceuticals6224.jpg',   alt: 'Cadila' },
+    ],
+    highestPackage: '12 LPA',
+    avgPackage: '4.5 LPA',
+    recruiters: '80+',
   },
-  'Allied Health': {
-    roles: ['Lab Technologist', 'Radiographer', 'Dietician', 'Public Health Officer'],
-    destinations: ['MPH UK', 'MSc Canada', 'Global Health Europe', 'Top Universities'],
-    recruitersImage: '/placements/aLLIED.png'
+  'Allied and Healthcare Sciences': {
+    companies: [
+      { src: '/dept-companies/allied/Alembic Pharmaceutical.png',  alt: 'Alembic' },
+      { src: '/dept-companies/allied/Asian Paints.png',             alt: 'Asian Paints' },
+      { src: '/dept-companies/allied/Piramal Pharma Ltd.png',       alt: 'Piramal Pharma' },
+      { src: '/dept-companies/allied/Reliance Industries.png',      alt: 'Reliance' },
+      { src: '/dept-companies/allied/Sun Pharma.png',               alt: 'Sun Pharma' },
+      { src: '/dept-companies/allied/The_Lupin_Logo.svg.png',       alt: 'Lupin' },
+      { src: '/dept-companies/allied/ZYDUS H.png',                  alt: 'Zydus' },
+    ],
+    highestPackage: '10 LPA',
+    avgPackage: '4 LPA',
+    recruiters: '60+',
   },
   'Hotel Management': {
-    roles: ['Hotel Manager', 'Executive Chef', 'Event Coordinator', 'Guest Relations'],
-    destinations: ['MSc Switzerland', 'Hospitality UK', 'MBA France', 'Top Institutes'],
-    recruitersImage: '/placements/hOTEL.png'
-  }
+    companies: [
+      { src: '/dept-companies/hotel/Taj Hotel.png',                          alt: 'Taj Hotels' },
+      { src: '/dept-companies/hotel/JW Marriott.png',                        alt: 'JW Marriott' },
+      { src: '/dept-companies/hotel/Hyatt-Place-Logo.png',                   alt: 'Hyatt' },
+      { src: '/dept-companies/hotel/Westin_Hotels_&_Resorts_logo.svg.png',   alt: 'Westin' },
+      { src: '/dept-companies/hotel/Crone Plaza.jpg',                        alt: 'Crowne Plaza' },
+      { src: '/dept-companies/hotel/Radisson Blue Fujairah.png',             alt: 'Radisson Blu' },
+      { src: '/dept-companies/hotel/the_zuri_hotels__resorts_logo.jpg',      alt: 'Zuri Hotels' },
+    ],
+    highestPackage: '8 LPA',
+    avgPackage: '3.5 LPA',
+    recruiters: '50+',
+  },
+  'Diploma Engineering': {
+    companies: [
+      { src: '/dept-companies/diploma/LnT.png',                  alt: 'L&T' },
+      { src: '/dept-companies/diploma/SIEMENS.png',              alt: 'Siemens' },
+      { src: '/dept-companies/diploma/Reliance Industries.png',  alt: 'Reliance' },
+      { src: '/dept-companies/diploma/GODREJ.png',               alt: 'Godrej' },
+      { src: '/dept-companies/diploma/Atlas Copco.png',          alt: 'Atlas Copco' },
+      { src: '/dept-companies/diploma/Daikin.png',               alt: 'Daikin' },
+      { src: '/dept-companies/diploma/AMNS India.png',           alt: 'AMNS India' },
+    ],
+    highestPackage: '8 LPA',
+    avgPackage: '3.5 LPA',
+    recruiters: '80+',
+  },
 };
 
-type FacultyName = keyof typeof facultyData;
 const tabs: FacultyName[] = [
-  'Engineering & CS', 'Management', 'Pharmacy', 'Allied Health', 'Hotel Management'
+  'Engineering & CS',
+  'Management',
+  'Pharmacy',
+  'Allied and Healthcare Sciences',
+  'Hotel Management',
+  'Diploma Engineering',
 ];
 
 export function OutcomesByFaculty() {
   const [activeTab, setActiveTab] = useState<FacultyName>('Engineering & CS');
-
-  const { roles, destinations, recruitersImage } = facultyData[activeTab];
+  const data = facultyData[activeTab];
 
   return (
-    <section className="bg-[#F8F9FA] py-24 px-4 sm:px-6 lg:px-8">
+    <section className="bg-[#F0F2F5] py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        
+
         {/* Header */}
         <div className="text-center mb-12">
-          <h3 className="text-[#333333] mb-2 section-subheading">By Faculty</h3>
+          <h3 className="text-[#333333] mb-2 section-subheading">By faculty</h3>
           <h2 className="text-[#F14646] mb-4 section-heading">Outcomes by faculty.</h2>
           <p className="text-[#666666] max-w-2xl mx-auto section-body">
             Every faculty has its own recruiter network and graduate destinations. Pick yours.
@@ -62,9 +151,9 @@ export function OutcomesByFaculty() {
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`px-5 py-2.5 rounded-full font-sans text-[15px] transition-colors shrink-0 whitespace-nowrap ${
-                  activeTab === tab 
-                    ? 'bg-[#F14646] text-white shadow-sm' 
-                    : 'bg-white text-gray-700 border border-gray-200 hover:border-[#007BFF] hover:text-[#007BFF]'
+                  activeTab === tab
+                    ? 'bg-[#0CAADD] text-white shadow-sm'
+                    : 'bg-white text-gray-700 border border-gray-200 hover:border-[#0CAADD] hover:text-[#0CAADD]'
                 }`}
               >
                 {tab}
@@ -73,65 +162,93 @@ export function OutcomesByFaculty() {
           </div>
         </div>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-[4.5fr_6.5fr] gap-6 lg:gap-8 mb-16 items-stretch">
-          
-          {/* Left Card */}
-          <div className="bg-[#FCFCFC] rounded-[24px] border border-gray-200 p-6 lg:p-8 shadow-sm flex flex-col justify-between">
-            {/* Top Recruiters */}
-            <div className="mb-4">
-              <h4 className="text-[#1A1A1A] font-poppins font-semibold text-[19px] mb-3 text-center">Top recruiters</h4>
-              <div className="w-full relative h-[120px] sm:h-[150px]">
-                <Image 
-                  src={recruitersImage} 
-                  alt="Top Recruiters" 
-                  fill 
-                  className="object-contain object-center" 
-                />
-              </div>
+        {/* Main Card */}
+        <div className="relative mb-16 w-full mx-auto pt-8 lg:pt-12 px-8 lg:px-12 pb-4">
+          {/* Faded Background Layer */}
+          <div
+            className="absolute inset-0 rounded-[24px] pointer-events-none"
+            style={{
+              background: 'linear-gradient(180deg, #EAECEF 0%, #FFFFFF 30%, #FFFFFF 100%)',
+              borderTop: '1px solid #D1D5DB',
+              borderLeft: '1px solid #D1D5DB',
+              borderRight: '1px solid #D1D5DB',
+              WebkitMaskImage: 'linear-gradient(to bottom, black 50%, transparent 100%)',
+              maskImage: 'linear-gradient(to bottom, black 50%, transparent 100%)',
+            }}
+          />
+
+          {/* Content Wrapper */}
+          <div className="relative z-10">
+            {/* Card Title */}
+            <h3 className="text-center text-[#E73649] font-sans font-bold text-[32px] sm:text-[44px] lg:text-[56px] tracking-tight mb-10">
+              Placement Record 2025-26
+            </h3>
+
+            {/* Company Logos Grid */}
+            <div className="grid grid-cols-4 sm:grid-cols-5 lg:grid-cols-7 gap-x-8 gap-y-8 items-center justify-items-center mt-12 sm:mt-16">
+              {data.companies.map((company) => (
+                <div
+                  key={company.alt}
+                  className="relative w-full h-10 sm:h-12"
+                >
+                  <Image
+                    src={company.src}
+                    alt={company.alt}
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 640px) 25vw, (max-width: 1024px) 14vw, 10vw"
+                  />
+                </div>
+              ))}
             </div>
 
-            {/* Roles */}
-            <div className="mb-4">
-              <h4 className="text-[#1A1A1A] font-poppins font-semibold text-[19px] mb-3 text-center">Roles</h4>
-              <div className="flex flex-wrap justify-center gap-2.5">
-                {roles.map((role) => (
-                  <span key={role} className="px-3.5 py-1.5 rounded-full border border-gray-300 text-gray-700 text-xs font-sans tracking-wide">
-                    {role}
-                  </span>
-                ))}
-              </div>
-            </div>
+            {/* Disclaimer Text */}
+            <p className="text-center text-base sm:text-lg text-gray-500 font-sans opacity-80 my-16 sm:my-14">
+              *Across the Parul University ecosystem.
+            </p>
 
-            {/* Higher studies destinations */}
-            <div>
-              <h4 className="text-[#1A1A1A] font-poppins font-semibold text-[19px] mb-3 text-center">Higher studies destinations</h4>
-              <div className="flex flex-wrap justify-center gap-2.5">
-                {destinations.map((dest) => (
-                  <span key={dest} className="px-3.5 py-1.5 rounded-full bg-[#FFEBEB] text-[#F14646] text-xs font-medium font-sans">
-                    {dest}
-                  </span>
-                ))}
+            {/* Stats Row */}
+            <div
+              className="grid grid-cols-3 rounded-2xl overflow-hidden bg-white relative z-20"
+              style={{ border: '1.5px solid #E5E7EB', boxShadow: '0 8px 30px rgba(0,0,0,0.06)' }}
+            >
+              {/* Highest Package */}
+              <div className="flex flex-col items-center justify-center py-10 px-6 sm:py-14 sm:px-8">
+                <span className="text-[#444444] font-sans text-lg sm:text-xl font-semibold mb-3 text-center">
+                  Highest Package
+                </span>
+                <span className="text-[#0CAADD] font-poppins font-bold text-4xl sm:text-6xl xl:text-[72px] leading-none tracking-tight">
+                  {data.highestPackage}
+                </span>
+              </div>
+
+              {/* Average Package */}
+              <div
+                className="flex flex-col items-center justify-center py-10 px-6 sm:py-14 sm:px-8"
+                style={{ borderLeft: '1.5px solid #E5E7EB', borderRight: '1.5px solid #E5E7EB' }}
+              >
+                <span className="text-[#444444] font-sans text-lg sm:text-xl font-semibold mb-3 text-center">
+                  Average Package
+                </span>
+                <span className="text-[#0CAADD] font-poppins font-bold text-4xl sm:text-6xl xl:text-[72px] leading-none tracking-tight">
+                  {data.avgPackage}
+                </span>
+              </div>
+
+              {/* Recruiters */}
+              <div className="flex flex-col items-center justify-center py-10 px-6 sm:py-14 sm:px-8">
+                <span className="text-[#444444] font-sans text-lg sm:text-xl font-semibold mb-3 text-center">
+                  Recruiters
+                </span>
+                <span className="text-[#0CAADD] font-poppins font-bold text-4xl sm:text-6xl xl:text-[72px] leading-none tracking-tight">
+                  {data.recruiters}
+                </span>
               </div>
             </div>
           </div>
-
-          {/* Right Card */}
-          <div className="w-full relative h-full min-h-[300px] sm:min-h-[400px] bg-[#0CAADD] rounded-[24px] overflow-hidden flex items-center justify-center">
-             <Image 
-               src="/placements/suhani.svg" 
-               alt="Alumni Snapshot" 
-               fill
-               className="object-contain p-4"
-             />
-          </div>
-
         </div>
 
-        {/* Footnote */}
-        <p className="text-center text-gray-400 font-sans text-sm">
-          *Across the Parul University ecosystem.
-        </p>
+
 
       </div>
     </section>

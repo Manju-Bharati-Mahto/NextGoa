@@ -2,16 +2,43 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import PIERCModal from './PIERCModal';
 
-const CAROUSEL_SLIDES = [0, 1, 2, 3];
+const STARTUPS = [
+  {
+    name: "Solnce",
+    image: "/placements/solance.png",
+    bar: "/placements/cardsti.svg",
+    bg: "#0C63C3",
+  },
+  {
+    name: "Cligent Aerospace",
+    image: "/placements/startups/cligent/image.png",
+    bar: "/placements/startups/cligent/bar.png",
+    bg: "#0C1A3A",
+  },
+  {
+    name: "Dori Handicrafts",
+    image: "/placements/startups/dori/image.png",
+    bar: "/placements/startups/dori/bar.png",
+    bg: "#2D1A0E",
+  },
+  {
+    name: "Rehabveda",
+    image: "/placements/startups/rehabveda/image.png",
+    bar: "/placements/startups/rehabveda/bar.png",
+    bg: "#0A3D2E",
+  },
+];
 
 export function StartupEcosystem() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [showModal, setShowModal] = useState(false);
 
   // Auto-play carousel
   useEffect(() => {
     const timer = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % CAROUSEL_SLIDES.length);
+      setActiveIndex((prev) => (prev + 1) % STARTUPS.length);
     }, 4000); // 4 seconds per slide
     return () => clearInterval(timer);
   }, []);
@@ -74,30 +101,30 @@ export function StartupEcosystem() {
 
           </div>
 
-          {/* Right Column: Solnce Image Carousel */}
+          {/* Right Column: Startup Image Carousel */}
           <div className="relative w-full h-full min-w-0">
-            <div className="rounded-[24px] overflow-hidden w-full h-full shadow-md bg-[#0C63C3] relative">
+            <div className="rounded-[24px] overflow-hidden w-full h-full shadow-md relative">
               <div 
                 className="flex h-full transition-transform duration-700 ease-in-out"
                 style={{ transform: `translateX(-${activeIndex * 100}%)` }}
               >
-                {CAROUSEL_SLIDES.map((slide, idx) => (
-                  <div key={idx} className="relative w-full shrink-0 flex flex-col h-full bg-[#0C63C3]">
-                    {/* Main Solnce Image taking up the whole card */}
+                {STARTUPS.map((startup, idx) => (
+                  <div key={idx} className="relative w-full shrink-0 flex flex-col h-full" style={{ backgroundColor: startup.bg }}>
+                    {/* Main startup image */}
                     <div className="relative w-full aspect-[4/3] sm:aspect-auto sm:flex-1 min-h-[400px] h-full">
                       <Image 
-                        src="/placements/solance.png" 
-                        alt="Solnce Startup India's First All-in-One Solar App" 
+                        src={startup.image}
+                        alt={startup.name}
                         fill 
                         className="object-cover object-center"
                         priority={idx === 0}
                       />
                     </div>
-                    {/* Bottom Ribbon Card overlapping the image */}
+                    {/* Bottom bar overlapping the image */}
                     <div className="absolute bottom-0 left-0 w-full z-10 flex flex-col justify-end">
                       <Image 
-                        src="/placements/cardsti.svg" 
-                        alt="Shark Tank India" 
+                        src={startup.bar}
+                        alt={`${startup.name} info bar`}
                         width={884}
                         height={179}
                         className="w-full h-auto block"
@@ -109,13 +136,13 @@ export function StartupEcosystem() {
             </div>
 
             {/* Carousel Dots */}
-            <div className="absolute -bottom-12 sm:-bottom-12 left-0 w-full flex justify-center items-center gap-2.5">
-              {CAROUSEL_SLIDES.map((_, idx) => (
+            <div className="absolute -bottom-12 sm:-bottom-12 left-0 w-full flex justify-center items-center gap-2.5 pointer-events-none">
+              {STARTUPS.map((_, idx) => (
                 <button
                   key={idx}
                   onClick={() => setActiveIndex(idx)}
                   aria-label={`Go to slide ${idx + 1}`}
-                  className={`w-3 h-3 rounded-full transition-colors ${
+                  className={`pointer-events-auto w-3 h-3 rounded-full transition-colors ${
                     activeIndex === idx ? 'bg-[#00A8E8]' : 'bg-black opacity-30 hover:opacity-50'
                   }`}
                 />
@@ -148,7 +175,9 @@ export function StartupEcosystem() {
           </div>
 
           <div className="bg-[#DF3B4B] p-6 sm:p-8 md:p-10 flex items-center justify-center md:w-auto w-full">
-            <button className="bg-[#FEDB2F] text-black font-bold text-[15px] sm:text-base px-8 sm:px-10 py-3 sm:py-4 rounded-full hover:bg-[#ffe042] transition-colors whitespace-nowrap shadow-sm">
+            <button
+              onClick={() => setShowModal(true)}
+              className="bg-[#FEDB2F] text-black font-bold text-[15px] sm:text-base px-8 sm:px-10 py-3 sm:py-4 rounded-full hover:bg-[#ffe042] transition-colors whitespace-nowrap shadow-sm">
               Talk to the PIERC
             </button>
           </div>
@@ -156,6 +185,9 @@ export function StartupEcosystem() {
         </div>
 
       </div>
+
+      {/* PIERC Multi-step Modal */}
+      {showModal && <PIERCModal onClose={() => setShowModal(false)} />}
     </section>
   );
 }
