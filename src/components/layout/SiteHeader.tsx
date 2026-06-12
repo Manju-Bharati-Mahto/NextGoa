@@ -104,10 +104,10 @@ export function SiteHeader() {
 
       {/* Mobile Nav Sidebar */}
       <div
-        className={`fixed inset-0 z-50 bg-brand-blue transition-transform duration-300 ease-in-out xl:hidden ${open ? "translate-x-0" : "-translate-x-full"
+        className={`fixed inset-0 z-50 flex flex-col overflow-y-auto bg-brand-blue transition-transform duration-300 ease-in-out xl:hidden ${open ? "translate-x-0" : "-translate-x-full"
           }`}
       >
-        <div className="flex items-center justify-between p-6">
+        <div className="flex shrink-0 items-center justify-between p-6">
           <Logo />
           <button
             type="button"
@@ -123,9 +123,9 @@ export function SiteHeader() {
         <nav
           id="mobile-nav"
           aria-label="Mobile"
-          className="flex flex-col px-3 pt-15"
+          className="my-auto flex flex-col sm:px-6 px-4 py-4"
         >
-          <ul className="flex flex-col gap-8">
+          <ul className="flex flex-col gap-6">
             {navItems.map((item, idx) => (
               <li
                 key={item.label}
@@ -161,7 +161,7 @@ export function SiteHeader() {
         </nav>
 
         {/* Bottom CTA */}
-        <div className="absolute bottom-8 left-6 right-6 flex flex-col gap-3">
+        <div className="flex shrink-0 flex-col gap-3 p-6 pt-8">
           <Link
             href="/contact"
             onClick={() => setOpen(false)}
