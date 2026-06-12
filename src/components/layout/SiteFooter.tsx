@@ -17,7 +17,6 @@ const columns: { heading: string; links: { label: string; href: string }[] }[] =
       { label: "Placements", href: "/placements" },
       { label: "Study Abroad", href: "/study-abroad" },
       { label: "Stories", href: "/stories" },
-      { label: "Career", href: "/career" },
     ],
   },
   {

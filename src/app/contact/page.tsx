@@ -7,6 +7,8 @@ export const metadata: Metadata = {
 
 import ContactOffices from "@/components/contact/ContactOffices";
 
+import GetInTouch from "@/components/contact/GetInTouch";
+
 export default function ContactUs() {
   return (
     <main className="flex-1 overflow-x-hidden font-poppins">
@@ -98,7 +100,6 @@ export default function ContactUs() {
                     className="w-full h-full object-cover rounded-[24px] shadow-sm"
                   />
                 </div>
-
               </div>
 
             </div>
@@ -254,6 +255,8 @@ export default function ContactUs() {
       </section>
 
       <ContactOffices />
+
+      <GetInTouch />
     </main>
   );
 }
