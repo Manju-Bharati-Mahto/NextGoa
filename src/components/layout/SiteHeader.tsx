@@ -13,11 +13,12 @@ import { navItems, cta } from "@/lib/navigation";
  *
  * Client component for the mobile menu toggle; still prerenders (SSG) + hydrates.
  */
+
 function Logo() {
   return (
     <Link
       href="/"
-      className="flex items-center gap-2"
+      className="flex shrink-0 items-center gap-2"
       aria-label="Parul University Goa home"
     >
       <Image
@@ -25,7 +26,7 @@ function Logo() {
         alt="Parul University Goa Logo"
         width={233}
         height={26}
-        className="h-7 sm:h-8 w-auto"
+        className="h-6 md:h-7 xl:h-8 [@media(min-width:1250px)_and_(max-width:1300px)]:h-6 w-auto shrink-0"
         priority
       />
     </Link>
@@ -50,31 +51,31 @@ export function SiteHeader() {
     <header className="fixed inset-x-0 top-0 z-[150]">
       {/* Row 1 - Brand Blue bar */}
       <div className="bg-brand-blue/80 backdrop-blur-md border-b border-white/20">
-        <div className="mx-auto flex max-w-8xl items-center sm:justify-around gap-4 sm:px-10 px-6 py-5 justify-between">
+        <div className="mx-auto flex w-full items-center sm:justify-around justify-between gap-3 px-4 xl:px-8 py-4">
           <Logo />
 
-          <nav aria-label="Primary" className="hidden items-center gap-4 xl:gap-8 lg:flex">
+          <nav aria-label="Primary" className="hidden items-center gap-3 xl:gap-5 xl:flex">
             {navItems.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
-                className="whitespace-nowrap text-base font-medium text-white transition-colors hover:text-white/80"
+                className="whitespace-nowrap text-sm font-medium text-white transition-colors hover:text-white/80"
               >
                 {item.label}
               </Link>
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex shrink-0 items-center gap-2 xl:gap-3">
             <Link
               href={cta.apply}
-              className="hidden sm:inline-flex whitespace-nowrap rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-bright"
+              className="hidden sm:inline-flex whitespace-nowrap rounded-full bg-brand px-4 xl:px-5 py-2 xl:py-2.5 text-[13px] xl:text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-bright"
             >
               Apply Now
             </Link>
             <Link
               href="/contact"
-              className="hidden sm:inline-flex whitespace-nowrap rounded-full border border-white px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-white hover:text-brand-blue"
+              className="hidden sm:inline-flex whitespace-nowrap rounded-full border border-white px-4 xl:px-5 py-2 xl:py-2.5 text-[13px] xl:text-sm font-semibold text-white shadow-sm transition-colors hover:bg-white hover:text-brand-blue"
             >
               Contact Us
             </Link>
@@ -84,7 +85,7 @@ export function SiteHeader() {
               aria-expanded={open}
               aria-controls="mobile-nav"
               onClick={() => setOpen((v) => !v)}
-              className="inline-flex h-12 w-12 items-center justify-center rounded-lg text-white lg:hidden"
+              className="inline-flex h-12 w-12 items-center justify-center rounded-lg text-white xl:hidden"
             >
               {open ? (
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -104,11 +105,10 @@ export function SiteHeader() {
 
       {/* Mobile Nav Sidebar */}
       <div
-        className={`fixed inset-0 z-50 bg-brand-blue transition-transform duration-300 ease-in-out lg:hidden flex flex-col ${
-          open ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={`fixed inset-0 z-50 flex flex-col overflow-y-auto bg-brand-blue transition-transform duration-300 ease-in-out xl:hidden ${open ? "translate-x-0" : "-translate-x-full"
+          }`}
       >
-        <div className="flex items-center justify-between p-6 shrink-0">
+        <div className="flex shrink-0 items-center justify-between p-6">
           <Logo />
           <button
             type="button"
@@ -125,9 +125,9 @@ export function SiteHeader() {
         <nav
           id="mobile-nav"
           aria-label="Mobile"
-          className="flex-1 overflow-y-auto px-6 py-4"
+          className="my-auto flex flex-col sm:px-6 px-4 py-4"
         >
-          <ul className="flex flex-col gap-8 pb-4">
+          <ul className="flex flex-col gap-6">
             {navItems.map((item, idx) => (
               <li
                 key={item.label}
@@ -164,7 +164,7 @@ export function SiteHeader() {
         </nav>
 
         {/* Bottom CTA */}
-        <div className="p-6 pb-8 shrink-0 flex flex-col gap-3 mt-auto bg-brand-blue border-t border-white/10">
+        <div className="flex shrink-0 flex-col gap-3 p-6 pt-8">
           <Link
             href="/contact"
             onClick={() => setOpen(false)}
