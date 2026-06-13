@@ -20,9 +20,9 @@ export default function StudyAbroadPartners() {
       partnersCount: "3",
       facultiesServed: "Design • Engineering • IT/CS • Management",
       partners: [
-        { name: "University of Waikato", src: "/abroad/The University of Waikato.svg", bg: "white" },
-        { name: "Victoria University of Wellington", src: "/abroad/Victoria University.png", bg: "#115740" },
-        { name: "Massey University", src: "/abroad/Massey University.png", bg: "#0e2b58" }
+        { name: "University of Waikato", src: "/abroad/partners/NEW ZELAND/WAIKATO.png", bg: "white" },
+        { name: "Victoria University of Wellington", src: "/abroad/partners/NEW ZELAND/WELLINGTON.png", bg: "white" },
+        { name: "Massey University", src: "/abroad/partners/NEW ZELAND/Massey.png", bg: "white" }
       ]
     },
     {
@@ -31,7 +31,7 @@ export default function StudyAbroadPartners() {
       partnersCount: "1",
       facultiesServed: "Design • Engineering • Management",
       partners: [
-        { name: "Neoma Business School", src: "/abroad/Neoma Business School.png", bg: "#59267c" }
+        { name: "Neoma Business School", src: "/abroad/partners/FRANCE/NEOMA.png", bg: "white" }
       ]
     },
     {
@@ -40,7 +40,7 @@ export default function StudyAbroadPartners() {
       partnersCount: "1",
       facultiesServed: "Management",
       partners: [
-        { name: "Humber Polytechnic", src: "/abroad/Humber Polytechnic.png", bg: "#004b87" }
+        { name: "Humber Polytechnic", src: "/abroad/partners/CANADA/HUMBER.png", bg: "white" }
       ]
     },
     {
@@ -49,32 +49,32 @@ export default function StudyAbroadPartners() {
       partnersCount: "4",
       facultiesServed: "Engineering • Management",
       partners: [
-        { name: "Rowan University", src: "/abroad/Rowan University.png", bg: "#3e1610" },
-        { name: "LSUS Shreveport", src: "/abroad/LSUS Shreveport.png", bg: "#3b1d7d" },
-        { name: "Marywood University", src: "/abroad/Marywood University.png", bg: "#1f5938" },
-        { name: "Saint Peter's University", src: "/abroad/Saint Peter's University.png", bg: "white" }
+        { name: "Rowan University", src: "/abroad/partners/AMERICA/ROWAN.png", bg: "white" },
+        { name: "LSUS Shreveport", src: "/abroad/partners/AMERICA/LSUShreveport_logo.png", bg: "white" },
+        { name: "Marywood University", src: "/abroad/partners/AMERICA/MARYWOOD.png", bg: "white" },
+        { name: "Saint Peter's University", src: "/abroad/partners/AMERICA/Saint_Peters_University_Logo.png", bg: "white" }
       ]
     },
     {
       country: "UK",
       flagSrc: "/abroad/United Kingdom Flag.png",
       partnersCount: "4",
-      facultiesServed: "Design • Media & VFX Animation • Architecture • Engineering • IT/CS • Management",
+      facultiesServed: "Design • Media & VFX Animation • Architecture • Engineering • IT/CS • Management • Liberal Arts",
       partners: [
-        { name: "Nottingham Trent University", src: "/abroad/Nottingham Trent University.png", bg: "#5c068c" },
-        { name: "University of Bradford", src: "/abroad/University of Bradford.png", bg: "#004780" },
-        { name: "University of Surrey", src: "/abroad/University of Surrey.png", bg: "#002f5d" },
-        { name: "Birmingham City University", src: "/abroad/Birmingham City University.png", bg: "#002147" }
+        { name: "Nottingham Trent University", src: "/abroad/Nottingham Trent University.png", bg: "white" },
+        { name: "University of Bradford", src: "/abroad/partners/UK/BRADFORD.png", bg: "white" },
+        { name: "University of Surrey", src: "/abroad/partners/UK/SURREY.png", bg: "white" },
+        { name: "Birmingham City University", src: "/abroad/partners/UK/birmingham.png", bg: "white" }
       ]
     },
     {
       country: "Australia",
       flagSrc: "/abroad/australia-flag.png",
       partnersCount: "2",
-      facultiesServed: "Agricultre • Engineering • IT/CS",
+      facultiesServed: "Agriculture • Engineering • IT/CS",
       partners: [
-        { name: "Charles Sturt University", src: "/abroad/Charles Sturt University.svg", bg: "white" },
-        { name: "Western Sydney University", src: "/abroad/Western Sydney University.png", bg: "#d12630" }
+        { name: "Charles Sturt University", src: "/abroad/partners/AUSTRALIA/CHARLES STRUT.webp", bg: "white" },
+        { name: "Western Sydney University", src: "/abroad/partners/AUSTRALIA/WESTERN SYDNEY.png", bg: "white" }
       ]
     }
   ];
@@ -271,10 +271,18 @@ function CountryCard({
       </div>
 
       {/* Right Grid Column */}
-      <div className="md:w-[55%] grid grid-cols-2">
-        {partners.map((partner, index) => (
-          <PartnerLogoCard key={index} partner={partner} />
-        ))}
+      <div className="md:w-[55%] flex flex-wrap content-stretch items-stretch">
+        {partners.map((partner, index) => {
+          const isLastAndOdd = partners.length % 2 !== 0 && index === partners.length - 1 && partners.length > 1;
+          const wClass = partners.length === 1 ? "w-full" : (isLastAndOdd ? "w-full" : "w-1/2");
+          return (
+            <PartnerLogoCard 
+              key={index} 
+              partner={partner} 
+              className={wClass}
+            />
+          );
+        })}
       </div>
 
       <CountryCallbackModal
@@ -286,23 +294,25 @@ function CountryCard({
   );
 }
 
-function PartnerLogoCard({ partner }: { partner: { name: string; src: string; bg: string } }) {
+function PartnerLogoCard({ partner, className = "" }: { partner: { name: string; src: string; bg: string }, className?: string }) {
   const [imgError, setImgError] = useState(false);
 
   return (
     <div
-      className="h-40 md:h-auto flex items-center justify-center p-6 border-r border-b"
+      className={`flex items-center justify-center p-4 sm:p-6 border-r border-b min-h-[140px] md:min-h-0 relative ${className}`}
       style={{ backgroundColor: partner.bg, borderColor: partner.bg === "white" ? "#e5e7eb" : partner.bg }}
     >
       {!imgError ? (
-        <Image
-          src={partner.src}
-          alt={partner.name}
-          width={160}
-          height={100}
-          className="object-contain"
-          onError={() => setImgError(true)}
-        />
+        <div className="relative w-full h-full min-h-[80px] flex items-center justify-center">
+          <Image
+            src={partner.src}
+            alt={partner.name}
+            fill
+            className="object-contain p-2"
+            onError={() => setImgError(true)}
+            sizes="(max-width: 768px) 50vw, 33vw"
+          />
+        </div>
       ) : (
         <div 
           className="text-center font-bold text-sm leading-snug px-2"
