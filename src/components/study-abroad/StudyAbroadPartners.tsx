@@ -20,22 +20,18 @@ export default function StudyAbroadPartners() {
       partnersCount: "3",
       facultiesServed: "Design • Engineering • IT/CS • Management",
       partners: [
-        { name: "Rowan University", src: "/abroad/Rowan University.png", bg: "#3e1610" },
-        { name: "LSUS Shreveport", src: "/abroad/LSUS Shreveport.png", bg: "#3b1d7d" },
-        { name: "Marywood University", src: "/abroad/Marywood University.png", bg: "#1f5938" },
-        { name: "Saint Peter's University", src: "/abroad/Saint Peter's University.png", bg: "white" }
+        { name: "University of Waikato", src: "/abroad/The University of Waikato.svg", bg: "white" },
+        { name: "Victoria University of Wellington", src: "/abroad/Victoria University.png", bg: "#115740" },
+        { name: "Massey University", src: "/abroad/Massey University.png", bg: "#0e2b58" }
       ]
     },
     {
       country: "France",
       flagSrc: "/abroad/france-flag.png",
-      partnersCount: "2",
+      partnersCount: "1",
       facultiesServed: "Design • Engineering • Management",
       partners: [
-        { name: "Rowan University", src: "/abroad/Rowan University.png", bg: "#3e1610" },
-        { name: "LSUS Shreveport", src: "/abroad/LSUS Shreveport.png", bg: "#3b1d7d" },
-        { name: "Marywood University", src: "/abroad/Marywood University.png", bg: "#1f5938" },
-        { name: "Saint Peter's University", src: "/abroad/Saint Peter's University.png", bg: "white" }
+        { name: "Neoma Business School", src: "/abroad/Neoma Business School.png", bg: "#59267c" }
       ]
     },
     {
@@ -44,10 +40,7 @@ export default function StudyAbroadPartners() {
       partnersCount: "1",
       facultiesServed: "Management",
       partners: [
-        { name: "Rowan University", src: "/abroad/Rowan University.png", bg: "#3e1610" },
-        { name: "LSUS Shreveport", src: "/abroad/LSUS Shreveport.png", bg: "#3b1d7d" },
-        { name: "Marywood University", src: "/abroad/Marywood University.png", bg: "#1f5938" },
-        { name: "Saint Peter's University", src: "/abroad/Saint Peter's University.png", bg: "white" }
+        { name: "Humber Polytechnic", src: "/abroad/Humber Polytechnic.png", bg: "#004b87" }
       ]
     },
     {
@@ -68,10 +61,10 @@ export default function StudyAbroadPartners() {
       partnersCount: "4",
       facultiesServed: "Design • Media & VFX Animation • Architecture • Engineering • IT/CS • Management",
       partners: [
-        { name: "Rowan University", src: "/abroad/Rowan University.png", bg: "#3e1610" },
-        { name: "LSUS Shreveport", src: "/abroad/LSUS Shreveport.png", bg: "#3b1d7d" },
-        { name: "Marywood University", src: "/abroad/Marywood University.png", bg: "#1f5938" },
-        { name: "Saint Peter's University", src: "/abroad/Saint Peter's University.png", bg: "white" }
+        { name: "Nottingham Trent University", src: "/abroad/Nottingham Trent University.png", bg: "#5c068c" },
+        { name: "University of Bradford", src: "/abroad/University of Bradford.png", bg: "#004780" },
+        { name: "University of Surrey", src: "/abroad/University of Surrey.png", bg: "#002f5d" },
+        { name: "Birmingham City University", src: "/abroad/Birmingham City University.png", bg: "#002147" }
       ]
     },
     {
@@ -80,10 +73,8 @@ export default function StudyAbroadPartners() {
       partnersCount: "2",
       facultiesServed: "Agricultre • Engineering • IT/CS",
       partners: [
-        { name: "Rowan University", src: "/abroad/Rowan University.png", bg: "#3e1610" },
-        { name: "LSUS Shreveport", src: "/abroad/LSUS Shreveport.png", bg: "#3b1d7d" },
-        { name: "Marywood University", src: "/abroad/Marywood University.png", bg: "#1f5938" },
-        { name: "Saint Peter's University", src: "/abroad/Saint Peter's University.png", bg: "white" }
+        { name: "Charles Sturt University", src: "/abroad/Charles Sturt University.svg", bg: "white" },
+        { name: "Western Sydney University", src: "/abroad/Western Sydney University.png", bg: "#d12630" }
       ]
     }
   ];
@@ -282,19 +273,7 @@ function CountryCard({
       {/* Right Grid Column */}
       <div className="md:w-[55%] grid grid-cols-2">
         {partners.map((partner, index) => (
-          <div
-            key={index}
-            className="h-40 md:h-auto flex items-center justify-center p-6 border-r border-b"
-            style={{ backgroundColor: partner.bg, borderColor: partner.bg === "white" ? "#e5e7eb" : partner.bg }}
-          >
-            <Image
-              src={partner.src}
-              alt={partner.name}
-              width={160}
-              height={100}
-              className="object-contain"
-            />
-          </div>
+          <PartnerLogoCard key={index} partner={partner} />
         ))}
       </div>
 
@@ -303,6 +282,35 @@ function CountryCard({
         onClose={() => setIsModalOpen(false)}
         country={country}
       />
+    </div>
+  );
+}
+
+function PartnerLogoCard({ partner }: { partner: { name: string; src: string; bg: string } }) {
+  const [imgError, setImgError] = useState(false);
+
+  return (
+    <div
+      className="h-40 md:h-auto flex items-center justify-center p-6 border-r border-b"
+      style={{ backgroundColor: partner.bg, borderColor: partner.bg === "white" ? "#e5e7eb" : partner.bg }}
+    >
+      {!imgError ? (
+        <Image
+          src={partner.src}
+          alt={partner.name}
+          width={160}
+          height={100}
+          className="object-contain"
+          onError={() => setImgError(true)}
+        />
+      ) : (
+        <div 
+          className="text-center font-bold text-sm leading-snug px-2"
+          style={{ color: partner.bg === "white" || partner.bg === "#white" ? "#333" : "white" }}
+        >
+          {partner.name}
+        </div>
+      )}
     </div>
   );
 }
