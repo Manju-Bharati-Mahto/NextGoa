@@ -61,10 +61,10 @@ export default function StudyAbroadPartners() {
       partnersCount: "4",
       facultiesServed: "Design • Media & VFX Animation • Architecture • Engineering • IT/CS • Management • Liberal Arts",
       partners: [
-        { name: "Nottingham Trent University", src: "/abroad/partners/UK/notti1.png", bg: "white" },
-        { name: "University of Bradford", src: "/abroad/partners/UK/BRADFORD.png", bg: "white" },
-        { name: "University of Surrey", src: "/abroad/partners/UK/SURREY.png", bg: "white" },
-        { name: "Birmingham City University", src: "/abroad/partners/UK/bcu_logo.png", bg: "white" }
+        { name: "Nottingham Trent University", src: "/abroad/partners/UK/notti1.png", bg: "white", scale: "scale-[1.8]" },
+        { name: "University of Bradford", src: "/abroad/partners/UK/BRADFORD.png", bg: "white", scale: "scale-100" },
+        { name: "University of Surrey", src: "/abroad/partners/UK/SURREY.png", bg: "white", scale: "scale-100" },
+        { name: "Birmingham City University", src: "/abroad/partners/UK/bcu_logo.png", bg: "white", scale: "scale-[1.8]" }
       ]
     },
     {
@@ -294,28 +294,28 @@ function CountryCard({
   );
 }
 
-function PartnerLogoCard({ partner, className = "" }: { partner: { name: string; src: string; bg: string }, className?: string }) {
+function PartnerLogoCard({ partner, className = "" }: { partner: { name: string; src: string; bg: string; scale?: string }, className?: string }) {
   const [imgError, setImgError] = useState(false);
 
   return (
     <div
-      className={`flex items-center justify-center p-4 sm:p-6 border-r border-b min-h-[140px] md:min-h-0 relative ${className}`}
+      className={`flex items-center justify-center p-4 sm:p-8 border-r border-b min-h-[140px] md:min-h-0 relative ${className}`}
       style={{ backgroundColor: partner.bg, borderColor: partner.bg === "white" ? "#e5e7eb" : partner.bg }}
     >
       {!imgError ? (
-        <div className="relative w-full h-full min-h-[80px] flex items-center justify-center">
+        <div className="relative flex-1 w-full min-h-[80px] flex items-center justify-center">
           <Image
             src={partner.src}
             alt={partner.name}
             fill
-            className="object-contain p-2"
+            className={`object-contain ${partner.scale || 'scale-100'}`}
             onError={() => setImgError(true)}
             sizes="(max-width: 768px) 50vw, 33vw"
           />
         </div>
       ) : (
         <div 
-          className="text-center font-bold text-sm leading-snug px-2"
+          className="w-full flex items-center justify-center text-center font-bold text-sm leading-snug px-2"
           style={{ color: partner.bg === "white" || partner.bg === "#white" ? "#333" : "white" }}
         >
           {partner.name}
