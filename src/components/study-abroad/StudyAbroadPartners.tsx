@@ -64,7 +64,7 @@ export default function StudyAbroadPartners() {
         { name: "Nottingham Trent University", src: "/abroad/Nottingham Trent University.png", bg: "white" },
         { name: "University of Bradford", src: "/abroad/partners/UK/BRADFORD.png", bg: "white" },
         { name: "University of Surrey", src: "/abroad/partners/UK/SURREY.png", bg: "white" },
-        { name: "Birmingham City University", src: "/abroad/partners/UK/birmingham.png", bg: "white" }
+        { name: "Birmingham City University", src: "/abroad/partners/UK/bcu_logo.png", bg: "white" }
       ]
     },
     {
