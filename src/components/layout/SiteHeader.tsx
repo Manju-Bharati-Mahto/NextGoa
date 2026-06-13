@@ -13,6 +13,7 @@ import { navItems, cta } from "@/lib/navigation";
  *
  * Client component for the mobile menu toggle; still prerenders (SSG) + hydrates.
  */
+
 function Logo() {
   return (
     <Link
