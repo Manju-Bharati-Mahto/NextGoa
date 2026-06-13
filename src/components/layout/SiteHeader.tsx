@@ -121,6 +121,7 @@ export function SiteHeader() {
             </svg>
           </button>
         </div>
+        
         <nav
           id="mobile-nav"
           aria-label="Mobile"
@@ -130,8 +131,9 @@ export function SiteHeader() {
             {navItems.map((item, idx) => (
               <li
                 key={item.label}
-                className={`transform transition-all duration-500 ease-out ${open ? "translate-x-0 opacity-100" : "-translate-x-8 opacity-0"
-                  }`}
+                className={`transform transition-all duration-500 ease-out ${
+                  open ? "translate-x-0 opacity-100" : "-translate-x-8 opacity-0"
+                }`}
                 style={{ transitionDelay: open ? `${150 + idx * 75}ms` : "0ms" }}
               >
                 <Link

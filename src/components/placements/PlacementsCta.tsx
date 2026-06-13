@@ -38,9 +38,9 @@ export function PlacementsCta() {
           <button className="bg-[#EF4444] text-white px-8 py-3.5 rounded-full font-bold text-[15px] hover:bg-red-600 transition-colors shadow-sm">
             Apply Now
           </button>
-          <button className="bg-white text-black border border-gray-200 shadow-sm px-8 py-3.5 rounded-full font-bold text-[15px] hover:bg-gray-50 transition-colors">
+          <a href="https://wa.me/919558210145" target="_blank" rel="noopener noreferrer" className="bg-white text-black border border-gray-200 shadow-sm px-8 py-3.5 rounded-full font-bold text-[15px] hover:bg-gray-50 transition-colors">
             Chat on WhatsApp
-          </button>
+          </a>
           <button className="bg-white text-black border border-gray-200 shadow-sm px-8 py-3.5 rounded-full font-bold text-[15px] hover:bg-gray-50 transition-colors flex items-center gap-2">
             <PhoneIcon />
             1800 890 9090

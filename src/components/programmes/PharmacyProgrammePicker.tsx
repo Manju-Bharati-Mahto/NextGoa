@@ -13,7 +13,7 @@ export default function PharmacyProgrammePicker() {
       eligibility: "10+2 Science (PCM or PCB) from a recognized board.", 
       intake: "60", 
       mode: "Full-time",
-      tuitionFee: "₹1,15,000"
+      tuitionFee: "₹1,35,000"
     },
     { 
       title: "B.Pharm. - Lateral Entry", 
@@ -21,7 +21,7 @@ export default function PharmacyProgrammePicker() {
       eligibility: "Diploma in Pharmacy from a recognized university.", 
       intake: "10", 
       mode: "Full-time",
-      tuitionFee: "₹1,15,000"
+      tuitionFee: "₹1,35,000"
     }
   ];
 

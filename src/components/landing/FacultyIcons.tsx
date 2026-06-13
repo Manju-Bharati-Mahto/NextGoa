@@ -119,3 +119,18 @@ export const DoctoralIcon = (props: FacultyIconProps) => (
     <circle cx="50" cy="35" r="6" fill="currentColor" opacity="0.9"/>
   </svg>
 );
+
+export const AppliedSciencesIcon = (props: FacultyIconProps) => (
+  <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    {/* Erlenmeyer Flask */}
+    <path d="M40 20h20v15l20 40a10 10 0 0 1-10 10H30a10 10 0 0 1-10-10l20-40V20z" stroke="currentColor" strokeWidth="6" fill="none" strokeLinecap="round" className="stroke-[var(--svg-stroke,currentColor)]" opacity="0.9"/>
+    {/* Liquid inside */}
+    <path d="M35 45l-10 20a10 10 0 0 0 10 10h30a10 10 0 0 0 10-10l-10-20H35z" fill="currentColor" opacity="0.6"/>
+    {/* Bubbles */}
+    <circle cx="45" cy="65" r="3" fill="currentColor" opacity="0.8"/>
+    <circle cx="55" cy="55" r="4" fill="currentColor" opacity="0.8"/>
+    <circle cx="40" cy="50" r="2" fill="currentColor" opacity="0.8"/>
+    {/* Lines on flask neck */}
+    <path d="M45 25h10M45 30h10" stroke="currentColor" strokeWidth="2" opacity="0.5"/>
+  </svg>
+);

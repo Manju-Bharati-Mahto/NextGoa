@@ -107,7 +107,7 @@ export function InternshipsAndPPOs() {
               </div>
               <div className="flex flex-wrap items-center gap-3">
                 <button className="bg-[#0CAADD] text-white px-6 py-3 rounded-full font-poppins text-[14px] font-semibold hover:bg-opacity-90 transition-opacity whitespace-nowrap">Apply Now</button>
-                <button className="bg-[#00A859] text-white px-6 py-3 rounded-full font-poppins text-[14px] font-semibold hover:bg-opacity-90 transition-opacity whitespace-nowrap">Chat on WhatsApp</button>
+                <a href="https://wa.me/919558210145" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#00A859] text-white px-6 py-3 rounded-full font-poppins text-[14px] font-semibold hover:bg-opacity-90 transition-opacity whitespace-nowrap">Chat on WhatsApp</a>
                 <button className="bg-[#E73649] text-white px-6 py-3 rounded-full font-poppins text-[14px] font-semibold hover:bg-opacity-90 transition-opacity flex items-center gap-2 whitespace-nowrap">
                   <svg className="w-[16px] h-[16px]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                   1800 890 9090

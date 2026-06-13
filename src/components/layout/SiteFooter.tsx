@@ -22,12 +22,14 @@ const columns: { heading: string; links: { label: string; href: string }[] }[] =
   {
     heading: "Programmes",
     links: [
-      { label: "B.Tech", href: "/programmes/engineering" },
+      { label: "Engineering, IT & CS", href: "/programmes/engineering" },
       { label: "Management Studies", href: "/programmes/management-studies" },
       { label: "Pharmacy", href: "/programmes/pharmacy" },
       { label: "Nursing", href: "/programmes/nursing" },
       { label: "Hotel Management", href: "/programmes/hotel-management" },
       { label: "Physiotherapy", href: "/programmes/physiotherapy" },
+      { label: "Allied and Healthcare Sciences", href: "/programmes/allied-health" },
+      { label: "Applied Sciences", href: "/programmes/applied-sciences" },
     ],
   },
   {

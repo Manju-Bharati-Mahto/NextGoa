@@ -80,8 +80,8 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
             {/* Text content */}
             <div className="p-6 pb-0 flex flex-col justify-start relative z-20">
               <div>
-                <span className="inline-block rounded-full bg-white px-4 py-2 mb-1 font-[family-name:var(--font-poppins)] font-normal text-[14px] text-[#1F1F1F]">
-                  Highest package · batch of 2027
+                <span className="whitespace-nowrap inline-block rounded-full bg-white px-4 py-2 mb-1 font-[family-name:var(--font-poppins)] font-normal text-[14px] text-[#1F1F1F]">
+                  Highest Package - Batch of 2025 - 26
                 </span>
               </div>
               <div className="mt-4 flex items-end gap-1 text-white">
@@ -114,8 +114,8 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
             {/* Left: text content */}
             <div className="p-10 flex flex-col justify-center max-w-[40%]" style={{ minHeight: "260px" }}>
               <div>
-                <span className="inline-block rounded-full bg-white px-5 py-2 font-[family-name:var(--font-poppins)] font-normal text-[20px] text-[#1F1F1F]">
-                  Highest package · batch of 2027
+                <span className="whitespace-nowrap inline-block rounded-full bg-white px-5 py-2 font-[family-name:var(--font-poppins)] font-normal text-[20px] text-[#1F1F1F]">
+                  Highest Package - Batch of 2025 - 26
                 </span>
               </div>
               <div className="mt-5 flex items-end gap-2 text-white">

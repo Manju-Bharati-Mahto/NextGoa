@@ -99,9 +99,7 @@ export function LeadershipTeam() {
                   <a href="#" className="inline-block transition-transform hover:scale-110" aria-label="LinkedIn">
                     <img src="/linkedin-icon-red.svg" alt="LinkedIn" className="h-10 w-10 rounded-[12px] shadow-sm" />
                   </a>
-                  <a href="#" className="inline-block transition-transform hover:scale-110" aria-label="Instagram">
-                    <img src="/instagram-icon-red.svg" alt="Instagram" className="h-10 w-10 rounded-[12px] shadow-sm" />
-                  </a>
+
                 </div>
               </div>
             </div>

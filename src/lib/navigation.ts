@@ -10,12 +10,12 @@ export type NavItem = { label: string; href: string };
 
 export const navItems: NavItem[] = [
   { label: "About", href: "/about" },
+  { label: "Admissions", href: "/admissions" },
   { label: "Programmes", href: "/programmes" },
   { label: "Examinations", href: "/examination" },
-  { label: "Admissions", href: "/admissions" },
-  { label: "Campus Life", href: "/campus-life" },
   { label: "Study Abroad", href: "/study-abroad" },
   { label: "Placements", href: "/placements" },
+  { label: "Campus Life", href: "/campus-life" },
   { label: "Stories", href: "/stories" },
 ];
 

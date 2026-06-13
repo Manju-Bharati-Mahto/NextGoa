@@ -13,7 +13,7 @@ export default function AlliedHealthProgrammePicker() {
       eligibility: "Candidate shall have passed 12th Examination in Science stream with Physics, Chemistry & Biology subjects from a recognized board.", 
       intake: "60", 
       mode: "Full-time",
-      tuitionFee: "₹65,000"
+      tuitionFee: "₹85,000"
     },
     { 
       title: "Bachelor of Medical Laboratory Science (BMLS)", 
@@ -21,7 +21,7 @@ export default function AlliedHealthProgrammePicker() {
       eligibility: "Candidate shall have passed 12th Examination in Science stream with Physics, Chemistry & Biology subjects from a recognized board.", 
       intake: "60", 
       mode: "Full-time",
-      tuitionFee: "₹65,000"
+      tuitionFee: "₹85,000"
     }
   ];
 

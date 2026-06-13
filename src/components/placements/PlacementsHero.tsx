@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 const desktopImages = [
-  "/placements/carousel/Desktop/Microsoft.png",
   "/placements/carousel/Desktop/HCL 36.png",
   "/placements/carousel/Desktop/LTIM  79.png",
   "/placements/carousel/Desktop/Reliance 108.png",
@@ -12,10 +11,10 @@ const desktopImages = [
   "/placements/carousel/Desktop/capgemini 157.png",
   "/placements/carousel/Desktop/cognizant 86.png",
   "/placements/carousel/Desktop/hexawarw 36.png",
+  "/placements/carousel/Desktop/Microsoft.png",
 ];
 
 const mobileImages = [
-  "/placements/carousel/Mobile/Cognizant.png", // Corresponds to Microsoft.png
   "/placements/carousel/Mobile/HCL.png",
   "/placements/carousel/Mobile/Cognizant 88.png", // Assuming correspondence
   "/placements/carousel/Mobile/Reliance 109.png",
@@ -23,6 +22,7 @@ const mobileImages = [
   "/placements/carousel/Mobile/Capegeminni 157.png",
   "/placements/carousel/Mobile/Cognizant 87.png",
   "/placements/carousel/Mobile/hexaware.png",
+  "/placements/carousel/Mobile/Cognizant.png", // Corresponds to Microsoft.png
 ];
 
 export function PlacementsHero() {

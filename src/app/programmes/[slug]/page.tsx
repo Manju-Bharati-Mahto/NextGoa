@@ -14,6 +14,7 @@ import RecruitersAndDestinations from "@/components/programmes/RecruitersAndDest
 import ProgrammePicker from "@/components/programmes/ProgrammePicker";
 import PharmacyProgrammePicker from "@/components/programmes/PharmacyProgrammePicker";
 import ManagementProgrammePicker from "@/components/programmes/ManagementProgrammePicker";
+import AppliedSciencesProgrammePicker from "@/components/programmes/AppliedSciencesProgrammePicker";
 import HotelManagementProgrammePicker from "@/components/programmes/HotelManagementProgrammePicker";
 import NursingProgrammePicker from "@/components/programmes/NursingProgrammePicker";
 import PhysiotherapyProgrammePicker from "@/components/programmes/PhysiotherapyProgrammePicker";
@@ -91,6 +92,8 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
         <AlliedHealthProgrammePicker />
       ) : data.slug === "hotel-management" ? (
         <HotelManagementProgrammePicker />
+      ) : data.slug === "applied-sciences" ? (
+        <AppliedSciencesProgrammePicker />
       ) : data.slug === "phd" ? (
         <>
           <PhdResearchAreas />
@@ -158,7 +161,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
         <DynamicWhyPUGoa 
           data={data.why} 
           themeColor={data.themeColor} 
-          useThickWave={data.slug === "allied-health"}
+          useThickWave={data.slug === "allied-health" || data.slug === "applied-sciences"}
         />
       )}
 
@@ -194,8 +197,8 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
         description={data.slug === "phd" ? "PU Goa entrance and PhD admissions are open for the 2026-27 cycle." : "Admissions are open for the 2026-27 academic year."}
         actions={[
           { label: "Apply Now", href: "/apply", variant: "primary" },
-          { label: "Brochure", href: "#", variant: "dark" },
-          { label: "Chat on WhatsApp", href: "#", variant: "dark" },
+          { label: "Talk to Counsellor", href: "#", variant: "dark" },
+          { label: "Chat on WhatsApp", href: "https://wa.me/919558210145", variant: "dark" },
           { label: "1800 890 9090", href: "tel:18008909090", variant: "dark", icon: "phone" }
         ]}
       />

@@ -35,7 +35,7 @@ export default function ItComputerSciencePicker() {
       eligibility: bcaEligibility,
       intake: "120",
       mode: "Full-time",
-      tuitionFee: "₹65,000"
+      tuitionFee: "₹85,000"
     },
     ...specialisationsList.map(spec => ({
       title: `Bachelor of Computer Application (BCA)\nwith ${spec}`,
@@ -44,7 +44,7 @@ export default function ItComputerSciencePicker() {
       eligibility: bcaEligibility,
       intake: "120",
       mode: "Full-time",
-      tuitionFee: "₹65,000"
+      tuitionFee: "₹85,000"
     })),
     {
       title: "Bachelor of Computer Application - Honors (BCA Hons.)\nGeneral (NEP 2020)",
@@ -52,7 +52,7 @@ export default function ItComputerSciencePicker() {
       eligibility: bcaEligibility,
       intake: "120",
       mode: "Full-time",
-      tuitionFee: "₹65,000"
+      tuitionFee: "₹85,000"
     },
     ...specialisationsList.map(spec => ({
       title: `Bachelor of Computer Application - Honors (BCA Hons.)\nwith ${spec} (NEP 2020)`,
@@ -61,7 +61,7 @@ export default function ItComputerSciencePicker() {
       eligibility: bcaEligibility,
       intake: "120",
       mode: "Full-time",
-      tuitionFee: "₹95,000"
+      tuitionFee: "₹85,000"
     }))
   ];
 
@@ -72,7 +72,7 @@ export default function ItComputerSciencePicker() {
       eligibility: mcaEligibility,
       intake: "120",
       mode: "Full-time",
-      tuitionFee: "₹105,000"
+      tuitionFee: "₹1,25,000"
     },
     ...specialisationsList.map(spec => ({
       title: `Master of Computer Application (MCA)\nwith ${spec}`,
@@ -81,7 +81,7 @@ export default function ItComputerSciencePicker() {
       eligibility: mcaEligibility,
       intake: "120",
       mode: "Full-time",
-      tuitionFee: "₹105,000"
+      tuitionFee: "₹1,25,000"
     }))
   ];
 

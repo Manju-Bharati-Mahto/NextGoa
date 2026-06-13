@@ -282,19 +282,30 @@ export function CampusVisitModal() {
 
                   {/* Number of Visitors */}
                   <div>
-                    <label htmlFor="visitors" className="mb-2 block text-[15px] font-medium text-ink">
+                    <label className="mb-2 block text-[15px] font-medium text-ink">
                       Number of Visitors
                     </label>
-                    <select
-                      id="visitors"
-                      value={visitData.visitors}
-                      onChange={handleChange}
-                      className="w-full appearance-none rounded-md border border-gray-200 bg-[#FAFAFA] px-4 py-2.5 outline-none focus:ring-1 focus:border-[#fedb2f] focus:ring-[#fedb2f] transition-all"
-                    >
-                      {[1, 2, 3, 4, 5].map(n => (
-                        <option key={n} value={String(n)}>{n} {n === 1 ? 'person' : 'people'}</option>
-                      ))}
-                    </select>
+                    <div className="flex items-center justify-between w-full rounded-md border border-gray-200 bg-[#FAFAFA] px-3 py-1.5 outline-none transition-all focus-within:border-[#fedb2f] focus-within:ring-1 focus-within:ring-[#fedb2f]">
+                      <button 
+                        type="button" 
+                        onClick={() => setVisitData(prev => ({ ...prev, visitors: String(Math.max(1, parseInt(prev.visitors) - 1)) }))}
+                        className="w-8 h-8 flex items-center justify-center rounded bg-white border border-gray-200 hover:bg-gray-50 transition-colors text-ink font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+                        disabled={parseInt(visitData.visitors) <= 1}
+                      >
+                        -
+                      </button>
+                      <span className="text-ink font-medium select-none text-[15px]">
+                        {visitData.visitors} {parseInt(visitData.visitors) === 1 ? 'person' : 'people'}
+                      </span>
+                      <button 
+                        type="button" 
+                        onClick={() => setVisitData(prev => ({ ...prev, visitors: String(Math.min(10, parseInt(prev.visitors) + 1)) }))}
+                        className="w-8 h-8 flex items-center justify-center rounded bg-white border border-gray-200 hover:bg-gray-50 transition-colors text-ink font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+                        disabled={parseInt(visitData.visitors) >= 10}
+                      >
+                        +
+                      </button>
+                    </div>
                   </div>
 
                   <button

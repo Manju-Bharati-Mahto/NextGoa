@@ -15,7 +15,7 @@ export default function ManagementProgrammePicker() {
         eligibility: "10+2 in any stream with English from a recognized board.", 
         intake: "120", 
         mode: "Full-time",
-        tuitionFee: "₹70,000",
+        tuitionFee: "₹90,000",
         specialisations: []
       },
       ...["General", "Data Analytics", "Financial Management", "Human Resource", "Marketing", "Logistics and Supply Chain Management"].map(spec => ({
@@ -24,7 +24,7 @@ export default function ManagementProgrammePicker() {
         eligibility: "10+2 in any stream with English from a recognized board.", 
         intake: "60", 
         mode: "Full-time",
-        tuitionFee: "₹70,000",
+        tuitionFee: "₹90,000",
         specialisations: []
       }))
     ],
@@ -35,7 +35,7 @@ export default function ManagementProgrammePicker() {
         eligibility: "Graduation with 50% (45% for Reserved category) from a recognized university.", 
         intake: "60", 
         mode: "Full-time",
-        tuitionFee: "₹125,000",
+        tuitionFee: "₹1,45,000",
         specialisations: []
       }))
     ]

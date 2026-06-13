@@ -6,9 +6,6 @@ import { usePathname } from "next/navigation";
 const allProgrammes = [
   // Engineering - Diploma
   { value: "diploma-computer-engineering", label: "Diploma in Computer Engineering", faculty: "Engineering" },
-  { value: "diploma-mechanical-engineering", label: "Diploma in Mechanical Engineering", faculty: "Engineering" },
-  { value: "diploma-civil-engineering", label: "Diploma in Civil Engineering", faculty: "Engineering" },
-  { value: "diploma-electrical-engineering", label: "Diploma in Electrical Engineering", faculty: "Engineering" },
   // Engineering - B.Tech
   { value: "btech-cse", label: "B.Tech. Computer Science & Engineering", faculty: "Engineering" },
   { value: "btech-cse-ai", label: "B.Tech. CSE with Artificial Intelligence", faculty: "Engineering" },
@@ -16,15 +13,10 @@ const allProgrammes = [
   { value: "btech-cse-aids", label: "B.Tech. CSE with AI & Data Science", faculty: "Engineering" },
   { value: "btech-cse-aiml", label: "B.Tech. CSE with AI & Machine Learning", faculty: "Engineering" },
   { value: "btech-cse-quantum", label: "B.Tech. CSE with Quantum Computing", faculty: "Engineering" },
-  { value: "btech-aids", label: "B.Tech. Artificial Intelligence & Data Science", faculty: "Engineering" },
-  { value: "btech-it", label: "B.Tech. Information Technology", faculty: "Engineering" },
-  { value: "btech-aerospace", label: "B.Tech. Aerospace Engineering", faculty: "Engineering" },
   { value: "btech-lateral", label: "B.Tech. Lateral Entry - Computer Science and Engineering", faculty: "Engineering" },
-  // Engineering - M.Tech
-  { value: "mtech-computer", label: "M.Tech. Computer Engineering", faculty: "Engineering" },
-  { value: "mtech-structural", label: "M.Tech. Structural Engineering", faculty: "Engineering" },
-  { value: "mtech-automation", label: "M.Tech. Automation and Robotics", faculty: "Engineering" },
-  { value: "mtech-thermal", label: "M.Tech. Thermal Engineering", faculty: "Engineering" },
+  // Computer Applications
+  { value: "bca", label: "Bachelor of Computer Applications (BCA)", faculty: "Computer Applications" },
+  { value: "mca", label: "Master of Computer Applications (MCA)", faculty: "Computer Applications" },
   // Management
   { value: "bba", label: "Bachelor of Business Administration (BBA)", faculty: "Management" },
   { value: "bba-hons", label: "BBA Honours (NEP 2020)", faculty: "Management" },
@@ -45,6 +37,13 @@ const allProgrammes = [
   // Allied and Healthcare Sciences
   { value: "baott", label: "Bachelor of Anaesthesia & Operation Theatre Technology (B.AOTT)", faculty: "Allied Health" },
   { value: "bmls", label: "Bachelor of Medical Laboratory Science (BMLS)", faculty: "Allied Health" },
+  // Applied Sciences
+  { value: "bsc-biotech", label: "B.Sc. Biotechnology", faculty: "Applied Sciences" },
+  { value: "bsc-microbio", label: "B.Sc. Microbiology", faculty: "Applied Sciences" },
+  { value: "bsc-hons-biotech", label: "B.Sc. Hons. Biotechnology", faculty: "Applied Sciences" },
+  { value: "bsc-hons-microbio", label: "B.Sc. Hons. Microbiology", faculty: "Applied Sciences" },
+  { value: "msc-biotech", label: "M.Sc. Biotechnology", faculty: "Applied Sciences" },
+  { value: "msc-microbio", label: "M.Sc. Microbiology", faculty: "Applied Sciences" },
 ];
 
 export function EnquiryModal() {
@@ -62,7 +61,7 @@ export function EnquiryModal() {
     mobile: "",
     email: "",
     programme: "",
-    marks: "",
+    qualification: "",
     city: "",
     help: ""
   });
@@ -191,7 +190,7 @@ export function EnquiryModal() {
     // Reset state after closing animation finishes
     setTimeout(() => {
       setSubmitState('idle');
-      setFormData({ name: "", mobile: "", email: "", programme: "", marks: "", city: "", help: "" });
+      setFormData({ name: "", mobile: "", email: "", programme: "", qualification: "", city: "", help: "" });
       setTouched({});
       setProgrammeSearch("");
       setProgrammeDropdownOpen(false);
@@ -504,7 +503,7 @@ export function EnquiryModal() {
                 </div>
 
                 <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                  {renderField({ id: "marks", label: "Class 12 / Last %" })}
+                  {renderField({ id: "qualification", label: "Highest Qualification", isSelect: true, options: [{value: '10th', label: '10th'}, {value: '12th', label: '12th'}, {value: 'bachelors', label: 'Bachelors'}, {value: 'masters', label: 'Masters'}], placeholder: "Select Qualification" })}
                   {renderField({ id: "city", label: "Your City ", required: true })}
                 </div>
 
@@ -538,7 +537,7 @@ export function EnquiryModal() {
                         Submitting...
                       </span>
                     ) : (
-                      "Request a Callback"
+                      "Submit"
                     )}
                   </button>
                 </div>

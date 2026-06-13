@@ -42,6 +42,7 @@ export function FacultyDeans() {
       name: "Dr. Prashant Sharma",
       faculty: "Faculty of Hotel Management",
       stats: "Extensive Experience in Hospitality and Culinary Arts",
+      image: "/leaders/9911.jpg",
     },
   ];
 

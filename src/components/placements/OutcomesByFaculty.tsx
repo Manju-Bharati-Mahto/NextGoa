@@ -132,7 +132,7 @@ export function OutcomesByFaculty() {
 
   return (
     <section className="bg-[#F0F2F5] py-24 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[1440px] mx-auto">
 
         {/* Header */}
         <div className="text-center mb-12">
@@ -178,7 +178,7 @@ export function OutcomesByFaculty() {
           />
 
           {/* Content Wrapper */}
-          <div className="relative z-10">
+          <div className="relative z-10 max-w-5xl mx-auto">
             {/* Card Title */}
             <h3 className="text-center text-[#E73649] font-sans font-bold text-[32px] sm:text-[44px] lg:text-[56px] tracking-tight mb-10">
               Placement Record 2025-26

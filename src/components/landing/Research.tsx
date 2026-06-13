@@ -17,7 +17,7 @@ const cards = [
       { value: "APC", label: "Publishing support" },
     ],
     cta: "Explore research →",
-    link: "/stories",
+    link: "/stories?tag=Research#stories-grid",
   },
   {
     badge: "Entrepreneurship",
