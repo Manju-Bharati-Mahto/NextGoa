@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Poppins } from "next/font/google";
+import CountryCallbackModal from "./CountryCallbackModal";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -238,6 +239,8 @@ function CountryCard({
   facultiesServed: string;
   partners: { name: string; src: string; bg: string }[];
 }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="flex flex-col md:flex-row bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200">
       {/* Left Info Column */}
@@ -267,7 +270,10 @@ function CountryCard({
         </div>
 
         <div>
-          <button className="bg-[#f0424e] hover:bg-[#d63a44] text-white font-bold rounded-full py-2.5 px-6 transition-colors text-sm shadow-sm">
+          <button 
+            onClick={() => setIsModalOpen(true)}
+            className="bg-[#f0424e] hover:bg-[#d63a44] text-white font-bold rounded-full py-2.5 px-6 transition-colors text-sm shadow-sm"
+          >
             Enquire Now
           </button>
         </div>
@@ -291,6 +297,12 @@ function CountryCard({
           </div>
         ))}
       </div>
+
+      <CountryCallbackModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        country={country}
+      />
     </div>
   );
 }
