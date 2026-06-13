@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 import { Poppins } from "next/font/google";
 
 const poppins = Poppins({
@@ -7,6 +10,85 @@ const poppins = Poppins({
 });
 
 export default function StudyAbroadPartners() {
+  const [showAll, setShowAll] = useState(false);
+
+  const countriesData = [
+    {
+      country: "New Zealand",
+      flagSrc: "/abroad/new-zealand-flag.png",
+      partnersCount: "3",
+      facultiesServed: "Design • Engineering • IT/CS • Management",
+      partners: [
+        { name: "Rowan University", src: "/abroad/Rowan University.png", bg: "#3e1610" },
+        { name: "LSUS Shreveport", src: "/abroad/LSUS Shreveport.png", bg: "#3b1d7d" },
+        { name: "Marywood University", src: "/abroad/Marywood University.png", bg: "#1f5938" },
+        { name: "Saint Peter's University", src: "/abroad/Saint Peter's University.png", bg: "white" }
+      ]
+    },
+    {
+      country: "France",
+      flagSrc: "/abroad/france-flag.png",
+      partnersCount: "2",
+      facultiesServed: "Design • Engineering • Management",
+      partners: [
+        { name: "Rowan University", src: "/abroad/Rowan University.png", bg: "#3e1610" },
+        { name: "LSUS Shreveport", src: "/abroad/LSUS Shreveport.png", bg: "#3b1d7d" },
+        { name: "Marywood University", src: "/abroad/Marywood University.png", bg: "#1f5938" },
+        { name: "Saint Peter's University", src: "/abroad/Saint Peter's University.png", bg: "white" }
+      ]
+    },
+    {
+      country: "Canada",
+      flagSrc: "/abroad/canada-flag.png",
+      partnersCount: "1",
+      facultiesServed: "Management",
+      partners: [
+        { name: "Rowan University", src: "/abroad/Rowan University.png", bg: "#3e1610" },
+        { name: "LSUS Shreveport", src: "/abroad/LSUS Shreveport.png", bg: "#3b1d7d" },
+        { name: "Marywood University", src: "/abroad/Marywood University.png", bg: "#1f5938" },
+        { name: "Saint Peter's University", src: "/abroad/Saint Peter's University.png", bg: "white" }
+      ]
+    },
+    {
+      country: "USA",
+      flagSrc: "/abroad/usa-flag.png",
+      partnersCount: "4",
+      facultiesServed: "Engineering • Management",
+      partners: [
+        { name: "Rowan University", src: "/abroad/Rowan University.png", bg: "#3e1610" },
+        { name: "LSUS Shreveport", src: "/abroad/LSUS Shreveport.png", bg: "#3b1d7d" },
+        { name: "Marywood University", src: "/abroad/Marywood University.png", bg: "#1f5938" },
+        { name: "Saint Peter's University", src: "/abroad/Saint Peter's University.png", bg: "white" }
+      ]
+    },
+    {
+      country: "UK",
+      flagSrc: "/abroad/United Kingdom Flag.png",
+      partnersCount: "4",
+      facultiesServed: "Design • Media & VFX Animation • Architecture • Engineering • IT/CS • Management",
+      partners: [
+        { name: "Rowan University", src: "/abroad/Rowan University.png", bg: "#3e1610" },
+        { name: "LSUS Shreveport", src: "/abroad/LSUS Shreveport.png", bg: "#3b1d7d" },
+        { name: "Marywood University", src: "/abroad/Marywood University.png", bg: "#1f5938" },
+        { name: "Saint Peter's University", src: "/abroad/Saint Peter's University.png", bg: "white" }
+      ]
+    },
+    {
+      country: "Australia",
+      flagSrc: "/abroad/australia-flag.png",
+      partnersCount: "2",
+      facultiesServed: "Agricultre • Engineering • IT/CS",
+      partners: [
+        { name: "Rowan University", src: "/abroad/Rowan University.png", bg: "#3e1610" },
+        { name: "LSUS Shreveport", src: "/abroad/LSUS Shreveport.png", bg: "#3b1d7d" },
+        { name: "Marywood University", src: "/abroad/Marywood University.png", bg: "#1f5938" },
+        { name: "Saint Peter's University", src: "/abroad/Saint Peter's University.png", bg: "white" }
+      ]
+    }
+  ];
+
+  const displayedCountries = showAll ? countriesData : countriesData.slice(0, 2);
+
   return (
     <section className={`bg-[#f9f9f9] py-25 px-4 md:px-8 ${poppins.className}`}>
       <div className="max-w-7xl mx-auto flex flex-col items-center">
@@ -104,24 +186,27 @@ export default function StudyAbroadPartners() {
 
         {/* Cards */}
         <div className="flex flex-col gap-8 w-full max-w-4xl">
-          <CountryCard
-            country="USA"
-            flagSrc="/abroad/United States Flag.png"
-            partnersCount="4"
-          />
-          <CountryCard
-            country="UK"
-            flagSrc="/abroad/United Kingdom Flag.png"
-            partnersCount="4"
-          />
+          {displayedCountries.map((data, index) => (
+            <CountryCard
+              key={index}
+              country={data.country}
+              flagSrc={data.flagSrc}
+              partnersCount={data.partnersCount}
+              facultiesServed={data.facultiesServed}
+              partners={data.partners}
+            />
+          ))}
         </div>
 
         {/* View All */}
         <div className="mt-12">
-          <button className="bg-[#f0424e] hover:bg-[#d63a44] text-white font-medium rounded-full py-2.5 px-8 flex items-center justify-center transition-colors shadow-md">
-            View all
+          <button 
+            onClick={() => setShowAll(!showAll)}
+            className="bg-[#f0424e] hover:bg-[#d63a44] text-white font-medium rounded-full py-2.5 px-8 flex items-center justify-center transition-colors shadow-md"
+          >
+            {showAll ? "View less" : "View all"}
             <svg
-              className="h-4 w-4 ml-2"
+              className={`h-4 w-4 ml-2 transition-transform ${showAll ? 'rotate-180' : ''}`}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -144,10 +229,14 @@ function CountryCard({
   country,
   flagSrc,
   partnersCount,
+  facultiesServed,
+  partners,
 }: {
   country: string;
   flagSrc: string;
   partnersCount: string;
+  facultiesServed: string;
+  partners: { name: string; src: string; bg: string }[];
 }) {
   return (
     <div className="flex flex-col md:flex-row bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200">
@@ -173,55 +262,34 @@ function CountryCard({
             FACULTIES SERVED
           </p>
           <p className="text-gray-800 text-[15px] mb-8 font-medium">
-            Engineering • IT/CS • Management
+            {facultiesServed}
           </p>
         </div>
 
         <div>
           <button className="bg-[#f0424e] hover:bg-[#d63a44] text-white font-bold rounded-full py-2.5 px-6 transition-colors text-sm shadow-sm">
-            Explore More
+            Enquire Now
           </button>
         </div>
       </div>
 
       {/* Right Grid Column */}
       <div className="md:w-[55%] grid grid-cols-2">
-        <div className="bg-[#3e1610] h-40 md:h-auto flex items-center justify-center p-6 border-r border-b border-[#3e1610]">
-          <Image
-            src="/abroad/Rowan University.png"
-            alt="Rowan University"
-            width={160}
-            height={100}
-            className="object-contain"
-          />
-        </div>
-        <div className="bg-[#3b1d7d] h-40 md:h-auto flex items-center justify-center p-6 border-b border-[#3b1d7d]">
-          <Image
-            src="/abroad/LSUS Shreveport.png"
-            alt="LSUS Shreveport"
-            width={160}
-            height={100}
-            className="object-contain"
-          />
-        </div>
-        <div className="bg-[#1f5938] h-40 md:h-auto flex items-center justify-center p-6 border-r border-[#1f5938]">
-          <Image
-            src="/abroad/Marywood University.png"
-            alt="Marywood University"
-            width={160}
-            height={100}
-            className="object-contain"
-          />
-        </div>
-        <div className="bg-white h-40 md:h-auto flex items-center justify-center p-6">
-          <Image
-            src="/abroad/Saint Peter's University.png"
-            alt="Saint Peter&apos;s University"
-            width={160}
-            height={100}
-            className="object-contain"
-          />
-        </div>
+        {partners.map((partner, index) => (
+          <div
+            key={index}
+            className="h-40 md:h-auto flex items-center justify-center p-6 border-r border-b"
+            style={{ backgroundColor: partner.bg, borderColor: partner.bg === "white" ? "#e5e7eb" : partner.bg }}
+          >
+            <Image
+              src={partner.src}
+              alt={partner.name}
+              width={160}
+              height={100}
+              className="object-contain"
+            />
+          </div>
+        ))}
       </div>
     </div>
   );

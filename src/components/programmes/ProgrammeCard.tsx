@@ -1,4 +1,7 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
+import BrochureModal from './BrochureModal';
 
 type ProgrammeCardProps = {
   title: string;
@@ -12,6 +15,8 @@ type ProgrammeCardProps = {
 };
 
 export default function ProgrammeCard({ title, duration, eligibility, intake, mode, isNew = true, level, tuitionFee }: ProgrammeCardProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   let themeColor = "#0CAADD"; // Default Blue for Bachelor's
   
   const t = title.toLowerCase();
@@ -88,10 +93,22 @@ export default function ProgrammeCard({ title, duration, eligibility, intake, mo
             className="text-white rounded-full px-6 py-2.5 font-bold text-[14px] sm:text-[15px] transition-transform hover:scale-105 shadow-sm"
             style={{ backgroundColor: themeColor }}
           >
+            View Details
+          </button>
+          <button 
+            onClick={() => setIsModalOpen(true)}
+            className="border border-ink text-ink hover:bg-gray-50 rounded-full px-6 py-2.5 font-bold text-[14px] sm:text-[15px] transition-transform hover:scale-105"
+          >
             Brochure
           </button>
         </div>
       </div>
+
+      <BrochureModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        programmeTitle={title} 
+      />
     </div>
   );
 }
