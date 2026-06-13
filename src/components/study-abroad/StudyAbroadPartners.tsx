@@ -61,7 +61,7 @@ export default function StudyAbroadPartners() {
       partnersCount: "4",
       facultiesServed: "Design • Media & VFX Animation • Architecture • Engineering • IT/CS • Management • Liberal Arts",
       partners: [
-        { name: "Nottingham Trent University", src: "/abroad/Nottingham Trent University.png", bg: "white" },
+        { name: "Nottingham Trent University", src: "/abroad/partners/UK/notti1.png", bg: "white" },
         { name: "University of Bradford", src: "/abroad/partners/UK/BRADFORD.png", bg: "white" },
         { name: "University of Surrey", src: "/abroad/partners/UK/SURREY.png", bg: "white" },
         { name: "Birmingham City University", src: "/abroad/partners/UK/bcu_logo.png", bg: "white" }
