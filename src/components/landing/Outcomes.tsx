@@ -44,7 +44,7 @@ export function Outcomes() {
           Where graduates go by sector, <span className="whitespace-nowrap">not by accident.</span>
         </h2>
         <p className="mx-auto mt-3 max-w-2xl text-center section-body text-ink">
-          Recruiters return year after year because graduates arrive job-ready. Leading
+          Recruiters return year after year because graduates arrive job ready. Leading
           recruiters across the Parul University ecosystem.
         </p>
       </div>
@@ -97,7 +97,9 @@ export function Outcomes() {
       <div className="mx-auto max-w-5xl px-6 pb-20 pt-10">
         <p className="text-center">
           <a
-            href="#admissions"
+            href="/documents/placement_brochure_2025_2026.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-sm font-bold text-brand hover:text-brand-dark"
           >
             Full placements report →

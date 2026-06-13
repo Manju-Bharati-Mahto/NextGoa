@@ -24,16 +24,22 @@ const allCourses = [
   { id: 14, title: "B.Sc Hons. - Hotel Management", description: "4-year honors program.", level: "Bachelor's", field: "Hotel Management", mode: "Full-Time", entranceTest: "PU Goa Enterance", image: "/programmes/cards/bsc_hm_hons.png", href: "/programmes/hotel-management" },
   { id: 15, title: "Bachelor of Anaesthesia & Operation Theatre Technology", description: "Allied healthcare bachelor's degree.", level: "Bachelor's", field: "Allied and Healthcare Sciences", mode: "Full-Time", entranceTest: "PU Goa Enterance", image: "/programmes/cards/baott.png", href: "/programmes/allied-health" },
   { id: 16, title: "Bachelor of Medical Laboratory Science (BMLS)", description: "Allied healthcare bachelor's degree.", level: "Bachelor's", field: "Allied and Healthcare Sciences", mode: "Full-Time", entranceTest: "PU Goa Enterance", image: "/programmes/cards/bmls.png", href: "/programmes/allied-health" },
+  { id: 23, title: "Bachelor of Computer Applications (BCA)", description: "3-year undergraduate IT program.", level: "Bachelor's", field: "Engineering", mode: "Full-Time", entranceTest: "PU Goa Enterance", image: "/programmes/cards/bca_students.png", href: "/programmes/engineering" },
+  { id: 24, title: "BCA Honours (NEP 2020)", description: "4-year honors program with specializations.", level: "Bachelor's", field: "Engineering", mode: "Full-Time", entranceTest: "PU Goa Enterance", image: "/programmes/cards/bca_students.png", href: "/programmes/engineering" },
+  { id: 26, title: "Bachelor of Science (B.Sc.)", description: "3-year science degree in Biotech & Microbiology.", level: "Bachelor's", field: "Applied Sciences", mode: "Full-Time", entranceTest: "PU Goa Enterance", image: "/programmes/cards/bsc_applied_science.png", href: "/programmes/applied-sciences" },
+  { id: 27, title: "Bachelor of Science - Honors (B.Sc. Hons.) (NEP 2020)", description: "4-year honors program in Biotech & Microbiology.", level: "Bachelor's", field: "Applied Sciences", mode: "Full-Time", entranceTest: "PU Goa Enterance", image: "/programmes/cards/bsc_hons_applied_science.png", href: "/programmes/applied-sciences" },
   
   // MASTER'S
   { id: 17, title: "Master of Business Administration (MBA)", description: "Postgraduate management degree.", level: "Master's", field: "Management", mode: "Full-Time", entranceTest: "CAT", image: "/programmes/cards/mba.png", href: "/programmes/management-studies" },
+  { id: 25, title: "Master of Computer Applications (MCA)", description: "Postgraduate IT and software program.", level: "Master's", field: "Engineering", mode: "Full-Time", entranceTest: "PU Goa Enterance", image: "/programmes/cards/mca_students.png", href: "/programmes/engineering" },
+  { id: 28, title: "Master of Science (M.Sc.)", description: "2-year master's in Biotech & Microbiology.", level: "Master's", field: "Applied Sciences", mode: "Full-Time", entranceTest: "PU Goa Enterance", image: "/programmes/cards/msc_applied_science.png", href: "/programmes/applied-sciences" },
   
   // DOCTRAL
-  { id: 18, title: "Ph.D in Engineering", description: "Doctoral research program.", level: "Doctral", field: "Engineering", mode: "Full-Time", entranceTest: "PU Goa Enterance", image: "/programmes/ARVR Innovation Lab.png", href: "/programmes/phd" },
-  { id: 19, title: "Ph.D in Management", description: "Doctoral research program.", level: "Doctral", field: "Management", mode: "Full-Time", entranceTest: "PU Goa Enterance", image: "/programmes/Interactive Classroom Session.png", href: "/programmes/phd" },
-  { id: 20, title: "Ph.D in Pharmacy", description: "Doctoral research program.", level: "Doctral", field: "Pharmacy", mode: "Full-Time", entranceTest: "PU Goa Enterance", image: "/programmes/Pharmaceutical Lab Practice.png", href: "/programmes/phd" },
-  { id: 21, title: "Ph.D in Nursing", description: "Doctoral research program.", level: "Doctral", field: "Nursing", mode: "Full-Time", entranceTest: "PU Goa Enterance", image: "/programmes/Clinical Simulation Learning.png", href: "/programmes/phd" },
-  { id: 22, title: "Ph.D in Allied and Healthcare Sciences", description: "Doctoral research program.", level: "Doctral", field: "Allied and Healthcare Sciences", mode: "Full-Time", entranceTest: "PU Goa Enterance", image: "/programmes/Advanced Science Research.png", href: "/programmes/phd" }
+  { id: 18, title: "Ph.D in Engineering", description: "Doctoral research program.", level: "Doctral", field: "Engineering", mode: "Full-Time", entranceTest: "PU Goa Enterance", image: "/programmes/cards/phd_engineering.png", href: "/programmes/phd" },
+  { id: 19, title: "Ph.D in Management", description: "Doctoral research program.", level: "Doctral", field: "Management", mode: "Full-Time", entranceTest: "PU Goa Enterance", image: "/programmes/cards/phd_management.png", href: "/programmes/phd" },
+  { id: 20, title: "Ph.D in Pharmacy", description: "Doctoral research program.", level: "Doctral", field: "Pharmacy", mode: "Full-Time", entranceTest: "PU Goa Enterance", image: "/programmes/cards/phd_pharmacy.png", href: "/programmes/phd" },
+  { id: 21, title: "Ph.D in Nursing", description: "Doctoral research program.", level: "Doctral", field: "Nursing", mode: "Full-Time", entranceTest: "PU Goa Enterance", image: "/programmes/cards/phd_nursing.png", href: "/programmes/phd" },
+  { id: 22, title: "Ph.D in Allied and Healthcare Sciences", description: "Doctoral research program.", level: "Doctral", field: "Allied and Healthcare Sciences", mode: "Full-Time", entranceTest: "PU Goa Enterance", image: "/programmes/cards/phd_allied_health.png", href: "/programmes/phd" }
 ];
 
 const filterOptions = {
@@ -47,6 +53,7 @@ const filterOptions = {
     "Physiotherapy",
     "Allied and Healthcare Sciences",
     "Hotel Management",
+    "Applied Sciences",
     "Research",
   ],
   Mode: ["All", "Full-Time", "Lateral entry"],

@@ -43,8 +43,8 @@ export default function About() {
             title="Want to see it for yourself?"
             description="Book a campus visit and meet our team in person."
             actions={[
-              { label: "Apply Now", href: "#enquiry", variant: "primary" },
-              { label: "Chat on WhatsApp", href: "#" },
+              { label: "Talk to Counsellor", href: "#", variant: "primary" },
+              { label: "Chat on WhatsApp", href: "https://wa.me/919558210145" },
               { label: "1800 890 9090", href: "tel:18008909090", icon: "phone" },
             ]}
           />

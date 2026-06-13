@@ -38,6 +38,8 @@ const trendingCourses = [
 
 export default function TrendingSection() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -45,6 +47,27 @@ export default function TrendingSection() {
     }, 4000); // Change every 4 seconds
     return () => clearInterval(timer);
   }, []);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const minSwipeDistance = 50;
+
+    if (distance > minSwipeDistance) {
+      setActiveIndex((prev) => (prev === trendingCourses.length - 1 ? 0 : prev + 1));
+    } else if (distance < -minSwipeDistance) {
+      setActiveIndex((prev) => (prev === 0 ? trendingCourses.length - 1 : prev - 1));
+    }
+  };
 
   const activeCourse = trendingCourses[activeIndex];
 
@@ -114,7 +137,12 @@ export default function TrendingSection() {
                 </a>
               </div>
               
-              <div className="bg-white rounded-[24px] p-6 sm:px-10 sm:py-8 text-ink shadow-2xl relative overflow-hidden min-h-[240px] flex flex-col justify-center">
+              <div 
+                className="bg-white rounded-[24px] p-6 sm:px-10 sm:py-8 text-ink shadow-2xl relative overflow-hidden min-h-[240px] flex flex-col justify-center select-none"
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+              >
                 {/* Dynamic SVG watermark */}
                 <div key={`icon-${activeIndex}`} className="absolute -right-4 -top-4 sm:-right-4 sm:-top-4 pointer-events-none transition-all duration-500 w-[140px] h-[140px] sm:w-[240px] sm:h-[240px] opacity-[0.4] flex items-center justify-end animate-fade-in">
                   <activeCourse.icon 

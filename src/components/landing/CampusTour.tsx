@@ -107,30 +107,8 @@ export function CampusTour() {
           green campus that opens out to the Goan coast.
         </p>
 
-        {/* Mobile: Link to YouTube */}
-        <a
-          href="https://youtu.be/epXIhN_Pt7I"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Watch the 3D campus tour"
-          className="group mt-10 block sm:hidden overflow-hidden rounded-3xl shadow-2xl ring-1 ring-black/10 w-full mx-auto"
-        >
-          <div
-            className="relative flex aspect-video items-center justify-center bg-cover bg-center"
-            style={{ backgroundImage: "url('/campus-tour-thumbnail.webp')" }}
-          >
-            {/* Dark overlay for readability */}
-            <div className="absolute inset-0 bg-black/35 transition-opacity group-hover:bg-black/45" />
-            <div className="relative flex flex-col items-center z-10">
-              <PlayButton />
-              <p className="mt-4 text-lg font-bold text-white tracking-tight">Watch 3D Campus Tour</p>
-              <p className="text-sm text-white/80 font-[family-name:var(--font-poppins)]">Near ONGC Betul, South Goa</p>
-            </div>
-          </div>
-        </a>
-
-        {/* Desktop: Inline Video Player */}
-        <div className="mt-10 hidden sm:block overflow-hidden rounded-3xl shadow-2xl ring-1 ring-black/10 w-full mx-auto relative aspect-video border-[5px] border-white">
+        {/* Inline Video Player (Mobile & Desktop) */}
+        <div className="mt-10 overflow-hidden rounded-3xl shadow-2xl ring-1 ring-black/10 w-full mx-auto relative aspect-video border-[5px] border-white">
           {!isPlaying ? (
             <button
               onClick={() => setIsPlaying(true)}

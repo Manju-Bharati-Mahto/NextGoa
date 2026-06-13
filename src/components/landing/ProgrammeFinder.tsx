@@ -11,7 +11,8 @@ import {
   HotelIcon,
   PhysiotherapyIcon,
   AlliedHealthIcon,
-  DoctoralIcon
+  DoctoralIcon,
+  AppliedSciencesIcon
 } from "./FacultyIcons";
 
 /**
@@ -25,76 +26,86 @@ import {
 const levels = ["Undergraduate", "Postgraduate", "Diploma", "Doctoral (PhD)"];
 
 const fields = [
-  "Engineering & Technology",
-  "Management & Commerce",
-  "Medicine & Health Sciences",
-  "Design & Architecture",
-  "Arts, Humanities & Law",
-  "Science & Computing",
+  "Engineering, IT & CS",
+  "Management Studies",
+  "Pharmacy",
+  "Nursing",
+  "Hotel Management",
+  "Physiotherapy",
+  "Allied and Healthcare Sciences",
+  "Applied Sciences",
 ];
 
 const faculties = [
   {
     name: "Engineering, IT & CS",
-    tags: ["Diploma", "B.Tech", "BCA", "MCA"],
+    tags: ["Diploma", "B.Tech", "BCA", "MCA", "B.Tech LE"],
     levels: ["Diploma", "Undergraduate", "Postgraduate"],
-    fields: ["Engineering & Technology", "Science & Computing"],
+    fields: ["Engineering, IT & CS"],
     slug: "engineering",
     icon: EngineeringIcon,
   },
   {
     name: "Management Studies",
-    tags: ["BBA", "MBA", "BCom"],
+    tags: ["BBA", "MBA"],
     levels: ["Undergraduate", "Postgraduate"],
-    fields: ["Management & Commerce"],
+    fields: ["Management Studies"],
     slug: "management-studies",
     icon: ManagementIcon,
   },
   {
     name: "Pharmacy",
-    tags: ["B.Pharm", "M.Pharm", "D.Pharm"],
+    tags: ["B.Pharm", "B.Pharm LE"],
     levels: ["Undergraduate", "Postgraduate", "Diploma"],
-    fields: ["Medicine & Health Sciences"],
+    fields: ["Pharmacy"],
     slug: "pharmacy",
     icon: PharmacyIcon,
   },
   {
     name: "Nursing",
-    tags: ["B.Sc", "GNM", "Post Basic"],
+    tags: ["GNM", "B.Sc", "PB-B.Sc"],
     levels: ["Undergraduate", "Diploma", "Postgraduate"],
-    fields: ["Medicine & Health Sciences"],
+    fields: ["Nursing"],
     slug: "nursing",
     icon: NursingIcon,
   },
   {
     name: "Hotel Management",
-    tags: ["BHMCT", "Diploma"],
+    tags: ["BHMCT", "B.Sc", "B.Sc Hons"],
     levels: ["Undergraduate", "Diploma"],
-    fields: ["Management & Commerce"],
+    fields: ["Hotel Management"],
     slug: "hotel-management",
     icon: HotelIcon,
   },
   {
     name: "Physiotherapy",
-    tags: ["BPT", "MPT"],
+    tags: ["BPT"],
     levels: ["Undergraduate", "Postgraduate"],
-    fields: ["Medicine & Health Sciences"],
+    fields: ["Physiotherapy"],
     slug: "physiotherapy",
     icon: PhysiotherapyIcon,
   },
   {
     name: "Allied and Healthcare Sciences",
-    tags: ["B.Sc", "Diploma"],
+    tags: ["B.AOTT", "BMLS"],
     levels: ["Undergraduate", "Diploma"],
-    fields: ["Medicine & Health Sciences"],
-    slug: "allied-and-health-sciences",
+    fields: ["Allied and Healthcare Sciences"],
+    slug: "allied-health",
     icon: AlliedHealthIcon,
+  },
+  {
+    name: "Applied Sciences",
+    tags: ["B.Sc", "B.Sc Hons", "M.Sc"],
+    levels: ["Undergraduate", "Postgraduate"],
+    fields: ["Applied Sciences"],
+    slug: "applied-sciences",
+    icon: AppliedSciencesIcon,
   },
   {
     name: "Doctoral Research",
     tags: ["PhD"],
     levels: ["Doctoral (PhD)"],
-    fields: ["Engineering & Technology", "Management & Commerce", "Science & Computing"],
+    fields: ["Engineering, IT & CS", "Management Studies", "Pharmacy", "Nursing", "Allied and Healthcare Sciences", "Applied Sciences"],
     slug: "phd",
     icon: DoctoralIcon,
   }
@@ -166,8 +177,14 @@ function CourseCard({ color, title, tags, href, icon: IconComponent }: CourseCar
       {/* Content wrapper */}
       <div className="flex flex-col h-full justify-end z-10 relative">
         {/* Title */}
-        <h3 className="font-poppins font-semibold text-[18px] sm:text-[32px] leading-tight tracking-tight sm:pr-12 mb-2 sm:mb-3.5">
-          {title}
+        <h3 className={`font-poppins font-semibold leading-tight tracking-tight mb-2 sm:mb-3.5 ${
+          title === "Allied and Healthcare Sciences" ? "text-[16px] sm:text-[25px] sm:pr-8" : "text-[18px] sm:text-[32px] sm:pr-12"
+        }`}>
+          {title === "Allied and Healthcare Sciences" ? (
+            <>Allied and Healthcare<br/>Sciences</>
+          ) : (
+            title
+          )}
         </h3>
 
         {/* Tags */}
@@ -298,15 +315,6 @@ export function ProgrammeFinder() {
           </button>
         </form>
 
-        {submitted && (
-          <p
-            role="status"
-            className="mx-auto mt-5 max-w-3xl rounded-2xl bg-sunshine/30 px-4 py-3 text-center text-sm font-medium text-ink"
-          >
-            Showing <strong>{level}</strong> programmes in <strong>{field}</strong> - the full
-            catalogue is coming soon.
-          </p>
-        )}
 
         {/* Faculty cards grid */}
         {displayedFaculties.length === 0 ? (
@@ -381,12 +389,12 @@ export function ProgrammeFinder() {
             <span className="font-bold">Don&apos;t know what to choose?</span>{" "}
             Talk to a counsellor we&apos;ll match you to the right program.
           </p>
-          <Link
-            href="/programmes"
+          <button
+            data-enquiry-trigger="true"
             className="whitespace-nowrap rounded-full bg-sunshine px-6 py-3 text-sm font-bold text-ink transition-transform hover:scale-[1.03]"
           >
-            All Programs
-          </Link>
+            Talk to Counsellor
+          </button>
         </div>
       </div>
     </section>

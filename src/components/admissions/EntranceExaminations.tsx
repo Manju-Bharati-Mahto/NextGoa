@@ -54,8 +54,7 @@ export function EntranceExaminations() {
                   Apply for PU Goa&apos;s<br />Entrance Test
                 </h3>
                 <p className="mt-4 max-w-md font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] leading-[1.65] text-ink/80">
-                  The Goa Entrance Exam is designed to assess your readiness for B.Tech Programs in
-                  Computer Science &amp; AI.
+                  The Goa Entrance Exam is designed to assess your readiness for Medical and Doctorate courses.
                 </p>
                 <div className="mt-6 flex items-center gap-3">
                   <img
@@ -83,7 +82,7 @@ export function EntranceExaminations() {
                     Application deadline
                   </span>
                 </div>
-                <p className="mt-4 font-sans font-medium text-[26px] sm:text-[32px] leading-tight">30 June 2026</p>
+                <p className="mt-4 font-sans font-medium text-[26px] sm:text-[32px] leading-tight">20 June 2026</p>
                 <div className="w-full h-px bg-white/20 my-4" />
                 <p className="font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] text-white/90">
                   All Diploma, UG, and PG Programs for 2026 Intake.

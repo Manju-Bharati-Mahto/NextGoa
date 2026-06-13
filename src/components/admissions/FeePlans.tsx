@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import { DynamicCourseCardBg } from "./DynamicCourseCardBg";
 
 interface Course {
@@ -10,48 +11,223 @@ interface Course {
   color: string;
   textColor?: string;
   type: string;
+  href: string;
 }
 
 const COURSES: Course[] = [
+  // Diploma
   {
-    name: "B.Tech (CSE & specialisations)",
-    price: "₹1,25,000 - ₹1,45,000",
-    tags: ["AI", "ML", "DATA SCIENCE", "CYBER SECURITY", "QUANTUM AI"],
+    name: "Diploma in Engineering",
+    price: "₹50,000",
+    tags: ["POLYTECHNIC", "ENGINEERING", "3 YEARS"],
     color: "#ee364f",
     textColor: "text-white",
     type: "tech",
+    href: "/programmes/engineering",
   },
   {
-    name: "BBA (All specialisations)",
-    price: "approx ₹95,000",
+    name: "General Nursing and Midwifery (G.N.M)",
+    price: "₹75,000",
+    tags: ["NURSING", "DIPLOMA", "CLINICAL"],
+    color: "#ee364f",
+    textColor: "text-white",
+    type: "medical",
+    href: "/programmes/nursing",
+  },
+
+  // Bachelors
+  {
+    name: "B.Tech Computer Science & Engineering",
+    price: "₹1,45,000",
+    tags: ["AI", "ML", "DATA SCIENCE", "CYBER SECURITY"],
+    color: "#ee364f",
+    textColor: "text-white",
+    type: "tech",
+    href: "/programmes/engineering",
+  },
+  {
+    name: "B.Tech - Lateral Entry",
+    price: "₹1,25,000",
+    tags: ["DIRECT 2ND YEAR", "ENGINEERING"],
+    color: "#ee364f",
+    textColor: "text-white",
+    type: "tech",
+    href: "/programmes/engineering",
+  },
+  {
+    name: "Bachelor of Computer Applications (BCA)",
+    price: "₹80,000",
+    tags: ["IT", "SOFTWARE", "COMPUTER SCIENCE"],
+    color: "#ee364f",
+    textColor: "text-white",
+    type: "tech",
+    href: "/programmes/engineering",
+  },
+  {
+    name: "BCA Honours (NEP 2020)",
+    price: "₹85,000",
+    tags: ["IT", "HONOURS", "4 YEARS"],
+    color: "#ee364f",
+    textColor: "text-white",
+    type: "tech",
+    href: "/programmes/engineering",
+  },
+  {
+    name: "Bachelor of Business Administration (BBA)",
+    price: "₹95,000",
     tags: ["FINANCE", "HR", "MARKETING", "BUSINESS ANALYTICS"],
     color: "#0caadd",
     textColor: "text-white",
     type: "business",
+    href: "/programmes/management-studies",
   },
   {
-    name: "MBA (All specialisations)",
-    price: "₹1,50,000 - ₹1,80,000",
-    tags: ["FINANCE", "HR", "MARKETING", "OPERATIONS"],
-    color: "#fedb2f",
-    textColor: "text-ink",
+    name: "BBA Honours (NEP 2020)",
+    price: "₹1,05,000",
+    tags: ["4 YEARS", "MANAGEMENT", "HONOURS"],
+    color: "#0caadd",
+    textColor: "text-white",
     type: "business",
+    href: "/programmes/management-studies",
   },
   {
-    name: "B.Sc. Nursing & BPT",
-    price: "approx ₹1,10,000",
-    tags: ["NURSING", "PHYSIOTHERAPY", "CLINICAL"],
+    name: "Bachelor of Science in Nursing",
+    price: "₹1,10,000",
+    tags: ["NURSING", "CLINICAL"],
     color: "#ee364f",
     textColor: "text-white",
     type: "medical",
+    href: "/programmes/nursing",
   },
   {
-    name: "B.Pharm & B.Pharm (LE)",
-    price: "approx ₹1,05,000",
+    name: "Bachelor of Physiotherapy (BPT)",
+    price: "₹1,10,000",
+    tags: ["PHYSIOTHERAPY", "CLINICAL"],
+    color: "#ee364f",
+    textColor: "text-white",
+    type: "medical",
+    href: "/programmes/physiotherapy",
+  },
+  {
+    name: "Post Basic B.Sc Nursing (PB-B.Sc.)",
+    price: "₹90,000",
+    tags: ["NURSING", "POST BASIC", "CLINICAL"],
+    color: "#ee364f",
+    textColor: "text-white",
+    type: "medical",
+    href: "/programmes/nursing",
+  },
+  {
+    name: "Bachelor of Pharmacy (B.Pharm.)",
+    price: "₹1,05,000",
+    tags: ["PHARMACY"],
+    color: "#0caadd",
+    textColor: "text-white",
+    type: "pharmacy",
+    href: "/programmes/pharmacy",
+  },
+  {
+    name: "B.Pharm. - Lateral Entry",
+    price: "₹1,05,000",
     tags: ["PHARMACY", "LATERAL ENTRY"],
     color: "#0caadd",
     textColor: "text-white",
     type: "pharmacy",
+    href: "/programmes/pharmacy",
+  },
+  {
+    name: "Bachelor of Medical Laboratory Science (BMLS)",
+    price: "₹85,000",
+    tags: ["ALLIED HEALTH", "LABORATORY"],
+    color: "#0caadd",
+    textColor: "text-white",
+    type: "pharmacy",
+    href: "/programmes/allied-health",
+  },
+  {
+    name: "Bachelor of Anaesthesia & Operation Theatre Technology",
+    price: "₹95,000",
+    tags: ["ALLIED HEALTH", "ANAESTHESIA", "OT"],
+    color: "#0caadd",
+    textColor: "text-white",
+    type: "pharmacy",
+    href: "/programmes/allied-health",
+  },
+  {
+    name: "BHMCT",
+    price: "₹90,000",
+    tags: ["HOTEL MANAGEMENT", "CATERING", "HOSPITALITY"],
+    color: "#fedb2f",
+    textColor: "text-ink",
+    type: "business",
+    href: "/programmes/hotel-management",
+  },
+  {
+    name: "Bachelor of Science - Hotel Management",
+    price: "₹80,000",
+    tags: ["HOSPITALITY", "HOTEL MANAGEMENT"],
+    color: "#fedb2f",
+    textColor: "text-ink",
+    type: "business",
+    href: "/programmes/hotel-management",
+  },
+  {
+    name: "B.Sc Hons. - Hotel Management",
+    price: "₹85,000",
+    tags: ["HOSPITALITY", "HONOURS", "HOTEL MANAGEMENT"],
+    color: "#fedb2f",
+    textColor: "text-ink",
+    type: "business",
+    href: "/programmes/hotel-management",
+  },
+
+  // Masters
+  {
+    name: "Master of Computer Applications (MCA)",
+    price: "₹1,10,000",
+    tags: ["POSTGRADUATE", "IT", "SOFTWARE DEVELOPMENT"],
+    color: "#ee364f",
+    textColor: "text-white",
+    type: "tech",
+    href: "/programmes/engineering",
+  },
+  {
+    name: "Master of Business Administration (MBA)",
+    price: "₹1,80,000",
+    tags: ["FINANCE", "HR", "MARKETING", "OPERATIONS"],
+    color: "#fedb2f",
+    textColor: "text-ink",
+    type: "business",
+    href: "/programmes/management-studies",
+  },
+
+  // Ph.D
+  {
+    name: "Ph.D in Engineering",
+    price: "₹1,50,000",
+    tags: ["DOCTORAL", "RESEARCH", "ENGINEERING"],
+    color: "#0caadd",
+    textColor: "text-white",
+    type: "tech",
+    href: "/programmes/phd",
+  },
+  {
+    name: "Ph.D in Management",
+    price: "₹1,50,000",
+    tags: ["DOCTORAL", "RESEARCH", "MANAGEMENT"],
+    color: "#0caadd",
+    textColor: "text-white",
+    type: "tech",
+    href: "/programmes/phd",
+  },
+  {
+    name: "Ph.D in Pharmacy",
+    price: "₹1,50,000",
+    tags: ["DOCTORAL", "RESEARCH", "PHARMACY"],
+    color: "#0caadd",
+    textColor: "text-white",
+    type: "tech",
+    href: "/programmes/phd",
   },
 ];
 
@@ -59,6 +235,17 @@ export function FeePlans() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCourse, setSelectedCourse] = useState<Course>(COURSES[0]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const filteredCourses = COURSES.filter((course) => {
     // Remove all non-alphanumeric characters for robust comparison (so "btech" matches "B.Tech")
@@ -93,7 +280,7 @@ export function FeePlans() {
               Search your course to know
             </h4>
             
-            <div className="relative mb-6">
+            <div ref={dropdownRef} className="relative mb-6">
               <div className="relative">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -133,8 +320,8 @@ export function FeePlans() {
               </div>
 
               {/* Dropdown Results */}
-              {isDropdownOpen && searchQuery && (
-                <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-100 rounded-xl shadow-lg overflow-hidden z-20">
+              {isDropdownOpen && (
+                <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-100 rounded-xl shadow-lg overflow-hidden z-20 max-h-64 overflow-y-auto">
                   {filteredCourses.length > 0 ? (
                     filteredCourses.map((course, idx) => (
                       <button
@@ -167,8 +354,9 @@ export function FeePlans() {
 
           {/* Right Column (Dynamic Card) */}
           <div className="w-full md:w-1/2">
-            <div 
-              className="relative w-full aspect-[483/277] min-h-[280px] rounded-[24px] overflow-hidden shadow-md flex flex-col justify-center p-6 sm:p-8"
+            <Link
+              href={selectedCourse.href} 
+              className="relative w-full aspect-[483/277] min-h-[280px] rounded-[24px] overflow-hidden shadow-md flex flex-col justify-center p-6 sm:p-8 hover:scale-[1.02] transition-transform duration-300 block"
               style={{ backgroundColor: selectedCourse.color }}
             >
               {/* Custom SVG Icon as Background Decor */}
@@ -188,7 +376,7 @@ export function FeePlans() {
                       {selectedCourse.price}
                     </span>
                     <span className="text-xs sm:text-sm opacity-90 font-medium whitespace-nowrap">
-                      {selectedCourse.price.includes('approx') ? 'estimated per year' : '/ year'}
+                      / year
                     </span>
                   </div>
                 </div>
@@ -204,7 +392,7 @@ export function FeePlans() {
                   ))}
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
 
         </div>

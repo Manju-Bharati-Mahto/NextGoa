@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function HowToApply() {
   return (
@@ -28,9 +29,9 @@ export function HowToApply() {
                   <p className="text-ink/80 text-base leading-relaxed mb-4 pr-2 font-poppins">
                     Drop your details below - a counsellor will call you within 24 hours.
                   </p>
-                  <button className="bg-[#00aee8] hover:bg-[#0095c7] text-white text-base font-semibold py-2 px-5 rounded-full transition-colors font-poppins">
+                  <Link href="#enquiry" className="inline-block bg-[#00aee8] hover:bg-[#0095c7] text-white text-base font-semibold py-2 px-5 rounded-full transition-colors font-poppins">
                     Request a Callback
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -48,9 +49,9 @@ export function HowToApply() {
                   <p className="text-white/90 text-lg leading-relaxed mb-5 pr-4 font-poppins">
                     Apply through the official PU Goa admissions portal and upload documents digitally.
                   </p>
-                  <button data-enquiry-trigger="true" className="bg-[#ee364f] hover:bg-[#d42d41] text-white text-base font-semibold py-2.5 px-6 rounded-full transition-colors font-poppins">
+                  <a href="http://admissions.paruluniversity.ac.in/" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#ee364f] hover:bg-[#d42d41] text-white text-base font-semibold py-2.5 px-6 rounded-full transition-colors font-poppins">
                     Apply Now
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -71,9 +72,9 @@ export function HowToApply() {
                   <p className="text-white/90 text-lg leading-relaxed mb-5 font-poppins">
                     Ask quick questions on programmes, fees or eligibility - instant answers.
                   </p>
-                  <button className="bg-[#00b368] hover:bg-[#009657] text-white text-base font-semibold py-2.5 px-6 rounded-full transition-colors font-poppins">
+                  <a href="https://wa.me/919558210145" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#00b368] hover:bg-[#009657] text-white text-base font-semibold py-2.5 px-6 rounded-full transition-colors font-poppins">
                     Chat on WhatsApp
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -114,9 +115,9 @@ export function HowToApply() {
               <p className="text-ink/80 text-xs xs:text-sm leading-snug mb-2 pr-1 font-poppins">
                 Drop your details below - a counsellor will call you within 24 hours.
               </p>
-              <button className="bg-[#00aee8] hover:bg-[#0095c7] text-white text-[10px] xs:text-xs font-semibold py-1.5 px-3 sm:py-2 sm:px-4 rounded-full transition-colors font-poppins">
+              <Link href="#enquiry" className="inline-block bg-[#00aee8] hover:bg-[#0095c7] text-white text-[10px] xs:text-xs font-semibold py-1.5 px-3 sm:py-2 sm:px-4 rounded-full transition-colors font-poppins w-max">
                 Request a Callback
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -132,9 +133,9 @@ export function HowToApply() {
               <p className="text-white/95 text-lg sm:text-xl leading-relaxed mb-6 max-w-[95%] font-medium font-poppins">
                 Apply through the official PU Goa admissions portal and upload documents digitally.
               </p>
-              <button data-enquiry-trigger="true" className="bg-[#ee364f] hover:bg-[#d42d41] text-white text-base sm:text-lg font-bold py-3 px-8 rounded-full transition-colors font-poppins">
+              <a href="http://admissions.paruluniversity.ac.in/" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#ee364f] hover:bg-[#d42d41] text-white text-base sm:text-lg font-bold py-3 px-8 rounded-full transition-colors font-poppins w-max">
                 Apply Now
-              </button>
+              </a>
             </div>
             {/* Transparent spacer to prevent text overlap with the bottom illustration */}
             <div className="h-[30%]"></div>
@@ -152,9 +153,9 @@ export function HowToApply() {
               <p className="text-white/95 text-lg sm:text-xl leading-relaxed mb-6 max-w-[95%] font-medium font-poppins">
                 Ask quick questions on programmes, fees or eligibility - instant answers.
               </p>
-              <button className="bg-[#00b368] hover:bg-[#009657] text-white text-base sm:text-lg font-bold py-3 px-8 rounded-full transition-colors font-poppins">
+              <a href="https://wa.me/919558210145" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#00b368] hover:bg-[#009657] text-white text-base sm:text-lg font-bold py-3 px-8 rounded-full transition-colors font-poppins w-max">
                 Chat on WhatsApp
-              </button>
+              </a>
             </div>
             {/* Transparent spacer to prevent text overlap with the bottom illustration */}
             <div className="h-[30%]"></div>

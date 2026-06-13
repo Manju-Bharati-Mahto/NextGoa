@@ -104,10 +104,11 @@ export function SiteHeader() {
 
       {/* Mobile Nav Sidebar */}
       <div
-        className={`fixed inset-0 z-50 bg-brand-blue transition-transform duration-300 ease-in-out lg:hidden ${open ? "translate-x-0" : "-translate-x-full"
-          }`}
+        className={`fixed inset-0 z-50 bg-brand-blue transition-transform duration-300 ease-in-out lg:hidden flex flex-col ${
+          open ? "translate-x-0" : "-translate-x-full"
+        }`}
       >
-        <div className="flex items-center justify-between p-6">
+        <div className="flex items-center justify-between p-6 shrink-0">
           <Logo />
           <button
             type="button"
@@ -120,17 +121,19 @@ export function SiteHeader() {
             </svg>
           </button>
         </div>
+        
         <nav
           id="mobile-nav"
           aria-label="Mobile"
-          className="flex flex-col px-3 pt-15"
+          className="flex-1 overflow-y-auto px-6 py-4"
         >
-          <ul className="flex flex-col gap-8">
+          <ul className="flex flex-col gap-8 pb-4">
             {navItems.map((item, idx) => (
               <li
                 key={item.label}
-                className={`transform transition-all duration-500 ease-out ${open ? "translate-x-0 opacity-100" : "-translate-x-8 opacity-0"
-                  }`}
+                className={`transform transition-all duration-500 ease-out ${
+                  open ? "translate-x-0 opacity-100" : "-translate-x-8 opacity-0"
+                }`}
                 style={{ transitionDelay: open ? `${150 + idx * 75}ms` : "0ms" }}
               >
                 <Link
@@ -161,7 +164,7 @@ export function SiteHeader() {
         </nav>
 
         {/* Bottom CTA */}
-        <div className="absolute bottom-8 left-6 right-6 flex flex-col gap-3">
+        <div className="p-6 pb-8 shrink-0 flex flex-col gap-3 mt-auto bg-brand-blue border-t border-white/10">
           <Link
             href="/contact"
             onClick={() => setOpen(false)}

@@ -18,8 +18,11 @@ export function ExamDatesTicket() {
       <div className="absolute left-[13.5cqw] right-[13.5cqw] top-[22.5cqw] bottom-[21.5cqw] flex flex-col justify-between text-left font-[family-name:var(--font-poppins)]">
         {/* Top part */}
         <div className="flex flex-col">
+          <span className="text-gray-500 font-medium text-[2.2cqw] mb-[0.2cqw] uppercase tracking-wider">
+            Examination Date
+          </span>
           <h4 className="font-poppins font-semibold text-[#333333] text-[5.8cqw] leading-[1.1] tracking-tight">
-            May-July 2026
+            12 July 2026
           </h4>
         </div>
 

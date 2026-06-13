@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 
 interface Story {
   tag: string;
@@ -100,9 +101,18 @@ const categories = [
   { name: "Admissions Tips", icon: "assignment" }
 ];
 
-export function StoriesGrid() {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+function StoriesGridInner() {
+  const searchParams = useSearchParams();
+  const tagParam = searchParams.get("tag");
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(tagParam);
   const [showAll, setShowAll] = useState(false);
+
+  useEffect(() => {
+    if (tagParam) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setSelectedCategory(tagParam);
+    }
+  }, [tagParam]);
 
   const handleCategorySelect = (categoryName: string) => {
     // If clicked category is already selected, clear the filter to show all
@@ -122,7 +132,7 @@ export function StoriesGrid() {
   const visibleStories = showAll ? filteredStories : filteredStories.slice(0, 4);
 
   return (
-    <div className="w-full">
+    <div id="stories-grid" className="w-full">
       {/* Moss Green Categories Section */}
       <section className="bg-[#5B6933] text-white">
         {/* Title */}
@@ -219,5 +229,13 @@ export function StoriesGrid() {
         </div>
       </section>
     </div>
+  );
+}
+
+export function StoriesGrid() {
+  return (
+    <Suspense fallback={<div className="h-96 w-full flex items-center justify-center bg-brand-white">Loading stories...</div>}>
+      <StoriesGridInner />
+    </Suspense>
   );
 }

@@ -65,6 +65,7 @@ export function Leadership() {
                   <a href="#" className="inline-block transition-transform hover:scale-110" aria-label="Instagram">
                     <img src="/instagram-icon.svg" alt="Instagram" className="h-12 w-12 rounded-[16px] shadow-sm" />
                   </a>
+
                 </div>
               </div>
               
