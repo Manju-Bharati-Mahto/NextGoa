@@ -61,10 +61,10 @@ export default function StudyAbroadPartners() {
       partnersCount: "4",
       facultiesServed: "Design • Media & VFX Animation • Architecture • Engineering • IT/CS • Management • Liberal Arts",
       partners: [
-        { name: "Nottingham Trent University", src: "/abroad/partners/UK/notti1.png", bg: "white", scale: "scale-[1.8]" },
+        { name: "Nottingham Trent University", src: "/abroad/partners/UK/notti1.png", bg: "white", scale: "scale-[1.15]" },
         { name: "University of Bradford", src: "/abroad/partners/UK/BRADFORD.png", bg: "white", scale: "scale-100" },
         { name: "University of Surrey", src: "/abroad/partners/UK/SURREY.png", bg: "white", scale: "scale-100" },
-        { name: "Birmingham City University", src: "/abroad/partners/UK/bcu_logo.png", bg: "white", scale: "scale-[1.8]" }
+        { name: "Birmingham City University", src: "/abroad/partners/UK/bcu_logo.png", bg: "white", scale: "scale-[1.15]" }
       ]
     },
     {
@@ -299,7 +299,7 @@ function PartnerLogoCard({ partner, className = "" }: { partner: { name: string;
 
   return (
     <div
-      className={`flex items-center justify-center p-4 sm:p-8 border-r border-b min-h-[140px] md:min-h-0 relative ${className}`}
+      className={`flex items-center justify-center p-4 sm:p-5 border-r border-b min-h-[140px] md:min-h-0 relative ${className}`}
       style={{ backgroundColor: partner.bg, borderColor: partner.bg === "white" ? "#e5e7eb" : partner.bg }}
     >
       {!imgError ? (
