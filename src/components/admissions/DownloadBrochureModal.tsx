@@ -31,6 +31,15 @@ export function DownloadBrochureModal({ isOpen, onClose }: DownloadBrochureModal
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Simulate successful download/submit
+    
+    // Trigger brochure download
+    const link = document.createElement('a');
+    link.href = '/documents/Prospectus_AY_2026_27.pdf';
+    link.download = 'Prospectus A.Y. 2026-27.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
     alert("Thank you! Your brochure is downloading.");
     onClose();
   };

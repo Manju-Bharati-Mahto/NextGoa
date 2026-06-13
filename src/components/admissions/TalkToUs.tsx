@@ -176,6 +176,15 @@ export function TalkToUs() {
     setSubmitState('submitting');
     setTimeout(() => {
       setSubmitState('success');
+      
+      // Trigger brochure download
+      const link = document.createElement('a');
+      link.href = '/documents/Prospectus_AY_2026_27.pdf';
+      link.download = 'Prospectus A.Y. 2026-27.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
       setTimeout(() => setSubmitState('idle'), 4000);
     }, 1200);
   };
@@ -454,7 +463,7 @@ export function TalkToUs() {
                 </div>
 
                 <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                  {renderField({ id: "qualification", label: "Highest Qualification", isSelect: true, options: [{value: '10th', label: '10th'}, {value: '12th', label: '12th'}, {value: 'bachelors', label: 'Bachelors'}, {value: 'masters', label: 'Masters'}], placeholder: "Select Qualification" })}
+                  {renderField({ id: "qualification", label: "Highest Qualification", isSelect: true, options: [{value: '10th', label: '10th'}, {value: '12th', label: '12th'}, {value: 'diploma', label: 'Diploma'}, {value: 'bachelors', label: 'Bachelors'}, {value: 'masters', label: 'Masters'}], placeholder: "Select Qualification" })}
                   {renderField({ id: "city", label: "Your City ", required: true })}
                 </div>
 
