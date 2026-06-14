@@ -8,7 +8,7 @@ export const pharmacyData: ProgrammeData = {
     title: "From molecule to medicine.",
     highlight: "Pharmacy that transforms lives.",
     subtitle: "Pioneering pharmaceutical sciences, clinical practice, and advanced research.",
-    backgroundImage: "/programmes/hero-pharmacy.png",
+    backgroundImage: "/programmes/pharmacy.jpg",
   },
   snapshotRow: [
     { title: "Duration", value: "4 yrs", subtext: "Lateral: 3 yrs" },

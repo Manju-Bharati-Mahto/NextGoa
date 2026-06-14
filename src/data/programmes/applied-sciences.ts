@@ -8,7 +8,7 @@ export const appliedSciencesData: ProgrammeData = {
     title: "Discover the Science of Life.",
     highlight: "Advance healthcare and biotechnology.",
     subtitle: "Hands-on laboratory experience, cutting-edge research, and real-world applications in Goa.",
-    backgroundImage: "/programmes/hero-applied-science.png", // Using generic placeholder for now
+    backgroundImage: "/programmes/applied_sciences.jpg",
   },
   snapshotRow: [
     { title: "Tracks", value: "B.Sc. · M.Sc.", subtext: "UG + PG under one roof" },

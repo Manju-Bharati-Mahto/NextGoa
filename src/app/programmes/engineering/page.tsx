@@ -25,7 +25,7 @@ export default function EngineeringPage() {
       <section className="relative w-full min-h-[600px] lg:min-h-[700px] bg-white flex items-center overflow-hidden pt-[120px] lg:pt-[160px]">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/programmes/engineering_hero_bg.png" 
+            src="/programmes/engineering.jpg" 
             alt="Engineering Hero" 
             fill 
             className="object-cover object-right lg:object-center" 

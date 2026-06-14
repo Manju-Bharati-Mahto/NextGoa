@@ -9,13 +9,19 @@ import { FinalCta } from "@/components/landing/FinalCta";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbSchema } from "@/lib/structured-data";
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: "Stories | Parul University Goa",
   description: "Explore the latest news, academics, placements, research, and student life stories from Parul University Goa.",
   alternates: { canonical: "/stories" },
 };
 
-export default function StoriesPage() {
+import { fetchAllBlogs } from "@/lib/fetchBlogs";
+
+export default async function StoriesPage() {
+  const stories = await fetchAllBlogs();
+
   return (
     <main className="flex min-h-screen flex-col w-full overflow-x-hidden bg-brand-white">
       <JsonLd
@@ -26,11 +32,11 @@ export default function StoriesPage() {
       />
 
       <StoriesHeader />
-      <StoriesGrid />
-      <LatestStories />
-      <UpcomingEvents />
+      <StoriesGrid initialStories={stories} />
+      <LatestStories stories={stories} />
+      <UpcomingEvents stories={stories} />
       <FreeGuides />
-      <EventDigest />
+      <EventDigest stories={stories} />
       <FinalCta
         eyebrow="Admissions Open 2026"
         title="Want to be part of the next story?"

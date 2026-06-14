@@ -11,7 +11,7 @@ export function DynamicHero({ data }: { data: HeroData }) {
           src={data.backgroundImage} 
           alt={data.title} 
           fill 
-          className="object-cover object-right lg:object-center" 
+          className={`object-cover ${data.imagePosition || 'object-right lg:object-center'}`}  
           priority 
         />
         {/* Gradients to blend image seamlessly */}

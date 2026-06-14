@@ -8,7 +8,7 @@ export const physiotherapyData: ProgrammeData = {
     title: "Where movement",
     highlight: "meets recovery.",
     subtitle: "Master the science of biomechanics, rehabilitation, and sports medicine.",
-    backgroundImage: "/programmes/hero-physiotherapy.png",
+    backgroundImage: "/programmes/physiotherapy.jpg",
   },
   snapshotRow: [
     { title: "Duration", value: "4.5 yrs", subtext: "Incl. internship" },

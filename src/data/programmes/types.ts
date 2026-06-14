@@ -4,6 +4,7 @@ export interface HeroData {
   highlight: string;
   subtitle: string;
   backgroundImage: string;
+  imagePosition?: string;
 }
 
 export interface SnapshotRowCard {

@@ -8,7 +8,7 @@ export const hotelManagementData: ProgrammeData = {
     title: "Where hospitality",
     highlight: "meets excellence.",
     subtitle: "Master the art of luxury hospitality, culinary arts, and global tourism management in India's tourism capital.",
-    backgroundImage: "/programmes/hero-hotel-management.png",
+    backgroundImage: "/programmes/hotel_management.jpg",
   },
   snapshotRow: [
     { title: "Duration", value: "3 / 4 yrs", subtext: "B.Sc · BHMCT · Honours" },

@@ -8,7 +8,7 @@ export const managementData: ProgrammeData = {
     title: "Shape Tomorrow's Business Landscape.",
     highlight: "Develop leadership skills and strategic vision.",
     subtitle: "Hands-on business cases, industry corridors, and global degrees in Goa.",
-    backgroundImage: "/programmes/hero-management.png", // Placeholder
+    backgroundImage: "/programmes/mba.jpg",
   },
   snapshotRow: [
     { title: "Tracks", value: "BBA · MBA", subtext: "UG + PG under one roof" },

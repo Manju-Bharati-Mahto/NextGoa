@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface CarouselCard {
   tag: string;
@@ -11,48 +12,22 @@ interface CarouselCard {
   image: string;
 }
 
-const carouselCards: CarouselCard[] = [
-  {
-    tag: "Events",
-    tagClass: "bg-brand text-white",
-    title: "Awareness Session on HIV/AIDS",
-    body: "An expert session emphasised awareness, dignity and innovation in building a healthier future.",
-    image: "/latest-hiv-aids.webp",
-  },
-  {
-    tag: "Innovation",
-    tagClass: "bg-violet-600 text-white",
-    title: "State Private University Status Granted",
-    body: "Parul University Goa officially receives private state university status, introducing state-of-the-art labs and academic courses.",
-    image: "/latest-campus-status.webp",
-  },
-  {
-    tag: "Placements",
-    tagClass: "bg-ocean text-white",
-    title: "Placement Drive 2026 Commences",
-    body: "Top recruiters including tier-1 tech firms and hotel chains visit the South Goa campus for placement drives.",
-    image: "/latest-placements-start.webp",
-  },
-  {
-    tag: "Research",
-    tagClass: "bg-teal-600 text-white",
-    title: "Marine Life Preservation Research",
-    body: "Lighthouse research cell launches a study on preservation of coastal marine ecosystems in collaboration with international bodies.",
-    image: "/latest-marine-research.webp",
-  },
-];
+import { Story } from "./StoriesGrid";
 
-export function LatestStories() {
+export function LatestStories({ stories = [] }: { stories?: Story[] }) {
+  // Use first 5 stories for carousel, fallback to empty array if none
+  const carouselCards = stories.slice(0, 5);
+  
   const [currentIndex, setCurrentIndex] = useState(1); // Real Card 0 starts at index 1
   const [isTransitioning, setIsTransitioning] = useState(true);
   const [slideLock, setSlideLock] = useState(false);
 
   // Prepend last card at index 0, and append first card at end
-  const extendedCards = [
+  const extendedCards = carouselCards.length > 0 ? [
     carouselCards[carouselCards.length - 1],
     ...carouselCards,
     carouselCards[0],
-  ];
+  ] : [];
 
   const handlePrev = () => {
     if (slideLock) return;
@@ -178,16 +153,20 @@ export function LatestStories() {
                       : "scale-[0.98] opacity-60 lg:opacity-100 z-0"
                   }`}
                 >
-                  <div className="rounded-[28px] bg-white shadow-md border border-black/5 overflow-hidden flex flex-col h-full min-h-[460px] group transition-all hover:shadow-lg">
+                  <Link href={card.link || '#'} target="_blank" className="rounded-[28px] bg-white shadow-md border border-black/5 overflow-hidden flex flex-col h-full min-h-[460px] group transition-all hover:shadow-lg">
                     {/* Top: Image */}
                     <div className="relative w-full aspect-[16/11] bg-slate-100 overflow-hidden">
-                      <Image
-                        src={card.image}
-                        alt={card.title}
-                        fill
-                        className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
-                        priority={idx === 0 || idx === 1}
-                      />
+                      {card.image ? (
+                        <Image
+                          src={card.image}
+                          alt={card.title}
+                          fill
+                          className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                          priority={idx === 0 || idx === 1}
+                        />
+                      ) : (
+                        <div className="absolute inset-0 bg-gradient-to-br from-brand via-brand-bright to-ocean opacity-25 [background:radial-gradient(circle_at_25%_70%,#ffffff_0,transparent_45%)]" />
+                      )}
                     </div>
 
                     {/* Bottom: Text details */}
@@ -206,7 +185,7 @@ export function LatestStories() {
                         </p>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 </div>
               );
             })}

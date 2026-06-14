@@ -8,7 +8,8 @@ export const nursingData: ProgrammeData = {
     title: "Where dedication",
     highlight: "becomes healing.",
     subtitle: "Empowering the next generation of compassionate healthcare professionals.",
-    backgroundImage: "/programmes/hero-nursing.png",
+    backgroundImage: "/programmes/nursing.jpg",
+    imagePosition: "object-center lg:object-left",
   },
   snapshotRow: [
     { title: "Duration", value: "3.5 / 4 yrs", subtext: "GNM · B.Sc. Nursing" },
