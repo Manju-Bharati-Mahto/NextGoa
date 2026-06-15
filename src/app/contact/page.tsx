@@ -45,7 +45,12 @@ export default function ContactUs() {
           <div className="flex flex-col lg:flex-row gap-6">
             
             {/* Left Card - Address */}
-            <div className="w-full lg:w-2/5 bg-[#E74C5E] rounded-[24px] p-8 text-white flex flex-col justify-center shadow-sm">
+            <a 
+              href="https://www.google.com/maps/place/Parul+University+Goa/@15.1288025,73.946826,502m/data=!3m1!1e3!4m6!3m5!1s0x3bbe4d7ef23d2303:0xaebb37dd7e075d01!8m2!3d15.1287554!4d73.9477978!16s%2Fg%2F11xw2ktbks?entry=ttu&g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full lg:w-2/5 bg-[#E74C5E] rounded-[24px] p-8 text-white flex flex-col justify-center shadow-sm hover:shadow-lg transition-all cursor-pointer block"
+            >
               <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-6">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#E74C5E" className="w-6 h-6 transform -translate-y-[1px]">
                   <path d="M12 2L21 21L12 17L3 21L12 2Z" />
@@ -60,13 +65,18 @@ export default function ContactUs() {
                 Taluka - Quepem, Dist - Kushavati<br />
                 Goa - 403723
               </p>
-            </div>
+            </a>
 
             {/* Right Column */}
             <div className="w-full lg:w-3/5 flex flex-col gap-6">
               
               {/* Top Card - Email */}
-              <div className="bg-[#FCE34B] rounded-[24px] p-6 sm:p-8 flex items-center gap-6 shadow-sm">
+              <a 
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=admissions@goa.paruluniversity.ac.in" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-[#FCE34B] rounded-[24px] p-6 sm:p-8 flex items-center gap-6 shadow-sm hover:shadow-lg transition-all cursor-pointer"
+              >
                 <div className="w-[52px] h-[40px] bg-[#222222] rounded-[8px] flex items-center justify-center flex-shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FCE34B" className="w-6 h-6">
                     <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" />
@@ -75,13 +85,16 @@ export default function ContactUs() {
                 <p className="text-[#111111] font-bold text-[18px] sm:text-[22px] break-all sm:break-normal font-poppins">
                   admissions@goa.paruluniversity.ac.in
                 </p>
-              </div>
+              </a>
 
               {/* Bottom Row */}
               <div className="flex flex-col sm:flex-row gap-6 h-full">
                 
                 {/* Phone Card */}
-                <div className="bg-[#222222] rounded-[24px] p-6 sm:p-8 flex-1 flex items-center gap-6 shadow-sm">
+                <a 
+                  href="tel:18008909090"
+                  className="bg-[#222222] rounded-[24px] p-6 sm:p-8 flex-1 flex items-center gap-6 shadow-sm hover:shadow-lg transition-all cursor-pointer"
+                >
                   <div className="flex-shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="w-8 h-8">
                       <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
@@ -90,7 +103,7 @@ export default function ContactUs() {
                   <p className="text-white font-bold text-[20px] sm:text-[24px] font-poppins">
                     18008909090
                   </p>
-                </div>
+                </a>
 
                 {/* Decorative Cyan Card */}
                 <div className="flex-1 min-h-[144px]">
@@ -171,7 +184,14 @@ export default function ContactUs() {
                 </div>
                 <div className="flex items-center gap-3 text-[14px]">
                   <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                  <a href="mailto:rohan.nanodkar19784@paruluniversity.ac.in" className="hover:underline">rohan.nanodkar19784@paruluniversity.ac.in</a>
+                  <a 
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=rohan.nanodkar19784@paruluniversity.ac.in" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="hover:underline"
+                  >
+                    rohan.nanodkar19784@paruluniversity.ac.in
+                  </a>
                 </div>
                 <div className="flex items-center gap-3 text-[14px]">
                   <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
@@ -193,7 +213,14 @@ export default function ContactUs() {
                 </div>
                 <div className="flex items-center gap-3 text-[14px]">
                   <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                  <a href="mailto:prathamesh.ghatkar39870@paruluniversity.ac.in" className="hover:underline">prathamesh.ghatkar39870@paruluniversity.ac.in</a>
+                  <a 
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=prathamesh.ghatkar39870@paruluniversity.ac.in" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="hover:underline"
+                  >
+                    prathamesh.ghatkar39870@paruluniversity.ac.in
+                  </a>
                 </div>
                 <div className="flex items-center gap-3 text-[14px]">
                   <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
@@ -215,7 +242,14 @@ export default function ContactUs() {
                 </div>
                 <div className="flex items-center gap-3 text-[14px]">
                   <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                  <a href="mailto:suraj.koushik38877@paruluniversity.ac.in" className="hover:underline">suraj.koushik38877@paruluniversity.ac.in</a>
+                  <a 
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=suraj.koushik38877@paruluniversity.ac.in" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="hover:underline"
+                  >
+                    suraj.koushik38877@paruluniversity.ac.in
+                  </a>
                 </div>
                 <div className="flex items-center gap-3 text-[14px]">
                   <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
@@ -237,7 +271,14 @@ export default function ContactUs() {
                 </div>
                 <div className="flex items-center gap-3 text-[14px]">
                   <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                  <a href="mailto:pavan.manurkar38928@paruluniversity.ac.in" className="hover:underline">pavan.manurkar38928@paruluniversity.ac.in</a>
+                  <a 
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=pavan.manurkar38928@paruluniversity.ac.in" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="hover:underline"
+                  >
+                    pavan.manurkar38928@paruluniversity.ac.in
+                  </a>
                 </div>
                 <div className="flex items-center gap-3 text-[14px]">
                   <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>

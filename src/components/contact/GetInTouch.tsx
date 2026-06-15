@@ -136,7 +136,7 @@ export default function GetInTouch() {
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
-              className="w-full h-full"
+              className="w-full h-[calc(100%+50px)]"
             />
           </div>
         </div>

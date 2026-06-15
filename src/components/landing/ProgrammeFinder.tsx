@@ -374,7 +374,7 @@ export function ProgrammeFinder() {
               <div className="mt-8 flex justify-center">
                 <button
                   onClick={() => setShowAll(true)}
-                  className="inline-flex items-center justify-center rounded-full border-2 border-zinc-200 bg-white px-8 py-3 text-sm font-semibold text-ink transition-colors hover:border-zinc-300 hover:bg-zinc-50"
+                  className="inline-flex items-center justify-center rounded-full border-2 border-zinc-200 bg-white px-8 py-3 text-md font-poppins font-semibold text-ink transition-colors hover:border-zinc-300 hover:bg-zinc-50"
                 >
                   View all faculties
                 </button>

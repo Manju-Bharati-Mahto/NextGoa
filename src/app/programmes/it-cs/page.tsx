@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import CareerOutcomes from "@/components/programmes/CareerOutcomes";
 import RecruitersAndDestinations from "@/components/programmes/RecruitersAndDestinations";
-import ProgrammePicker from "@/components/programmes/ProgrammePicker";
+import ItComputerSciencePicker from "@/components/programmes/ItComputerSciencePicker";
 import Specialisations from "@/components/programmes/Specialisations";
 import WhyPUGoa from "@/components/programmes/WhyPUGoa";
 import LabsAndLearning from "@/components/programmes/LabsAndLearning";
@@ -12,11 +12,11 @@ import EngineeringFaq from "@/components/programmes/EngineeringFaq";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Engineering | Parul University Goa",
-  description: "Explore our engineering programmes.",
+  title: "IT & Computer Science | Parul University Goa",
+  description: "Explore our IT and Computer Science programmes.",
 };
 
-export default function EngineeringPage() {
+export default function ItCsPage() {
   return (
     <main className="flex min-h-screen flex-col w-full bg-white font-[family-name:var(--font-poppins)]">
       
@@ -25,7 +25,7 @@ export default function EngineeringPage() {
         <div className="absolute inset-0 z-0">
           <Image 
             src="/programmes/engineering.jpg" 
-            alt="Engineering Hero" 
+            alt="IT Hero" 
             fill 
             className="object-cover object-right lg:object-center" 
             priority 
@@ -40,18 +40,18 @@ export default function EngineeringPage() {
           <div className="max-w-[800px] flex flex-col items-start text-left">
             {/* Yellow Badge */}
             <span className="inline-block bg-[#FCE34B] text-ink text-[12px] sm:text-[14px] font-medium px-5 py-1.5 rounded-full mb-6">
-              Faculty of Engineering &amp; Technology
+              Faculty of IT &amp; Computer Science
             </span>
 
             {/* Main Heading */}
             <h1 className="font-poppins font-bold text-[40px] sm:text-[56px] lg:text-[64px] leading-[1.05] tracking-tight text-ink">
-              Learn through industry visits <br className="hidden sm:block" />
-              <span className="text-[#E73649]">and global degrees in Goa.</span>
+              Shaping the digital future <br className="hidden sm:block" />
+              <span className="text-[#E73649]">with advanced computing.</span>
             </h1>
 
             {/* Sub-heading */}
             <p className="mt-6 text-[16px] sm:text-[18px] text-ink/80 font-medium">
-              Hands-on engineering, industry corridors, and global degrees in Goa.
+              Cutting-edge IT, advanced programming, and global opportunities in Goa.
             </p>
           </div>
         </div>
@@ -65,14 +65,14 @@ export default function EngineeringPage() {
             {/* Card 1 */}
             <div className="flex flex-col items-start bg-white rounded-[16px] shadow-sm border border-gray-100 p-6 w-[230px] flex-grow sm:flex-grow-0">
               <span className="text-[14px] text-gray-600 font-medium">Duration</span>
-              <span className="text-[24px] sm:text-[26px] font-bold text-ink mt-1 mb-1">3-4 Years</span>
-              <span className="text-[14px] text-gray-600">UG / PG / Diploma</span>
+              <span className="text-[24px] sm:text-[26px] font-bold text-ink mt-1 mb-1">2-4 Years</span>
+              <span className="text-[14px] text-gray-600">UG / PG</span>
             </div>
 
             {/* Card 2 */}
             <div className="flex flex-col items-start bg-white rounded-[16px] shadow-sm border border-gray-100 p-6 w-[230px] flex-grow sm:flex-grow-0">
               <span className="text-[14px] text-gray-600 font-medium">Eligibility</span>
-              <span className="text-[24px] sm:text-[26px] font-bold text-ink mt-1 mb-1">10+2 PCM</span>
+              <span className="text-[24px] sm:text-[26px] font-bold text-ink mt-1 mb-1">10+2 / Grad</span>
               <span className="text-[14px] text-gray-600">or equivalent</span>
             </div>
 
@@ -107,8 +107,8 @@ export default function EngineeringPage() {
       {/* Recruiters & Destinations Section */}
       <RecruitersAndDestinations />
 
-      {/* Programme Picker Section */}
-      <ProgrammePicker />
+      {/* IT & Computer Science Programme Picker Section */}
+      <ItComputerSciencePicker />
 
       {/* Specialisations Section */}
       <Specialisations />

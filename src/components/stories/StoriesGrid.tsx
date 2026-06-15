@@ -76,6 +76,7 @@ function StoriesGridInner({ initialStories = [] }: { initialStories?: Story[] })
                 return (
                   <button
                     key={cat.name}
+                    suppressHydrationWarning
                     onClick={() => handleCategorySelect(cat.name)}
                     className={`rounded-full px-5 py-2.5 text-[15px] font-medium tracking-wide inline-flex items-center gap-2 border transition-all whitespace-nowrap cursor-pointer select-none ${
                       isActive
@@ -98,7 +99,7 @@ function StoriesGridInner({ initialStories = [] }: { initialStories?: Story[] })
         <div className="mx-auto max-w-[1680px] px-6 sm:px-10">
           {filteredStories.length > 0 ? (
             <>
-              <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 transition-all duration-300">
+              <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8 transition-all duration-300">
                 {visibleStories.map((s, index) => (
                   <li
                     key={s.title + index}
@@ -144,6 +145,7 @@ function StoriesGridInner({ initialStories = [] }: { initialStories?: Story[] })
               {filteredStories.length > 4 && (
                 <div className="mt-12 text-center">
                   <button
+                    suppressHydrationWarning
                     onClick={() => setShowAll(!showAll)}
                     className="inline-flex whitespace-nowrap rounded-full bg-brand px-8 py-3 text-[15px] font-semibold text-white shadow-md transition-all hover:bg-brand-bright hover:shadow-lg cursor-pointer"
                   >
