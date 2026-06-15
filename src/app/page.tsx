@@ -15,6 +15,7 @@ import { International } from "@/components/landing/International";
 import { News } from "@/components/landing/News";
 import { Faq } from "@/components/landing/Faq";
 import { FinalCta } from "@/components/landing/FinalCta";
+import { fetchAllBlogs } from "@/lib/fetchBlogs";
 
 /**
  * Landing page - composes the sections in the order of the Figma "Landing page"
@@ -23,11 +24,16 @@ import { FinalCta } from "@/components/landing/FinalCta";
  * All sections are static (SSG); StickyApplyBar is the lone client island
  * (alongside the interactive header + programme finder).
  */
+
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-export default function Home() {
+export default async function Home() {
+  const stories = await fetchAllBlogs();
+
   return (
     <>
       <main className="flex-1 overflow-x-hidden">
@@ -44,7 +50,7 @@ export default function Home() {
         <CampusLife />
         <WhyGoa />
         <International />
-        <News />
+        <News stories={stories} />
         <FinalCta />
         <Faq />
       </main>
