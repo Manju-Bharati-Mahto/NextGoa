@@ -7,11 +7,13 @@ import { siteConfig } from "@/lib/site-config";
  * NAP contact column, and three link columns. The NAP is real, crawlable text -
  * a local-SEO trust signal that must match the JSON-LD and external listings.
  */
-const columns: { heading: string; links: { label: string; href: string }[] }[] = [
+type LinkItem = { label: string; href: string };
+const columns: { heading: string; links?: LinkItem[]; subSections?: { heading: string; links: LinkItem[] }[] }[] = [
   {
     heading: "Quick Links",
     links: [
       { label: "About Us", href: "/about" },
+      { label: "Career", href: "/career" },
       { label: "Admissions", href: "/admissions" },
       { label: "Campus Life", href: "/campus-life" },
       { label: "Placements", href: "/placements" },
@@ -33,13 +35,19 @@ const columns: { heading: string; links: { label: string; href: string }[] }[] =
     ],
   },
   {
-    heading: "Explore",
+    heading: "Regulatory",
     links: [
-      { label: "Career", href: "/career" },
       { label: "Redressal of Grievances of Staff", href: "/grievances/staff" },
       { label: "Redressal of Grievances of Students", href: "/grievances/students" },
-      { label: "Privacy Policy", href: "/privacy-policy" },
-      { label: "Terms of use", href: "/terms-of-use" },
+    ],
+    subSections: [
+      {
+        heading: "Legal",
+        links: [
+          { label: "Privacy Policy", href: "/privacy-policy" },
+          { label: "Terms of use", href: "/terms-of-use" },
+        ],
+      },
     ],
   },
 ];
@@ -118,31 +126,42 @@ export function SiteFooter() {
           {/* Brand + NAP */}
           <div className="max-w-[34rem]">
             <Logo />
+            <p className="mt-6 text-sm leading-6 text-white sm:text-base">
+              Parul University Goa is a not-for-profit, world-class institution, nestled in the heart of Goa, established in 2025 by the Parul Education Foundation.
+            </p>
             {/* University Contact Information & Physical Address */}
             <address className="mt-6 space-y-4 text-sm not-italic leading-6 text-white sm:text-base">
-              <p className="flex items-start gap-2">
-                <span className="mt-1 text-white/80">
+              <div className="flex items-start gap-3">
+                <span className="mt-1 text-white/80 shrink-0">
                   <PinIcon />
                 </span>
-                {fullAddress}
-              </p>
-              <p className="flex items-center gap-2">
-                <span className="text-white/80">
+                <p className="flex flex-col">
+                  <span className="font-semibold">Parul University,</span>
+                  <span>Goa Near ONGC, Betul, Taluka - Quepem</span>
+                  <span>Dist - Kushavati Goa - 403723</span>
+                </p>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-white/80 shrink-0">
                   <PhoneIcon />
                 </span>
-                <a href={`tel:${contact.phone.replace(/\s/g, "")}`} className="hover:text-white">
-                  {contact.phone}
-                </a>{" "}
-                <span className="text-white/70">(Toll Free)</span>
-              </p>
-              <p className="flex items-center gap-2">
-                <span className="text-white/80">
+                <a href="tel:18008909090" className="hover:text-white">
+                  18008909090
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-white/80 shrink-0">
                   <MailIcon />
                 </span>
-                <a href={`mailto:${contact.email}`} className="break-all hover:text-white">
+                <a 
+                  href={`https://mail.google.com/mail/?view=cm&fs=1&to=${contact.email}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="break-all hover:text-white"
+                >
                   {contact.email}
                 </a>
-              </p>
+              </div>
             </address>
           </div>
 
@@ -156,15 +175,33 @@ export function SiteFooter() {
               <h2 className="text-sm sm:text-base font-bold uppercase tracking-[0.08em] text-sunshine font-poppins">
                 {col.heading}
               </h2>
-              <ul className="mt-6 space-y-3 text-sm text-white sm:text-base">
-                {col.links.map((l) => (
-                  <li key={l.label}>
-                    <Link href={l.href} className="transition-colors hover:text-white">
-                      {l.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              {col.links && (
+                <ul className="mt-6 space-y-3 text-sm text-white sm:text-base">
+                  {col.links.map((l) => (
+                    <li key={l.label}>
+                      <Link href={l.href} className="transition-colors hover:text-white">
+                        {l.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {col.subSections?.map((sub) => (
+                <div key={sub.heading} className="mt-8">
+                  <h2 className="text-sm sm:text-base font-bold uppercase tracking-[0.08em] text-sunshine font-poppins">
+                    {sub.heading}
+                  </h2>
+                  <ul className="mt-6 space-y-3 text-sm text-white sm:text-base">
+                    {sub.links.map((l) => (
+                      <li key={l.label}>
+                        <Link href={l.href} className="transition-colors hover:text-white">
+                          {l.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </nav>
           ))}
         </div>

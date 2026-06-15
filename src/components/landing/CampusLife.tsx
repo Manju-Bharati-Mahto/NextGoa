@@ -9,10 +9,10 @@ const cards = [
     icon: <Icon icon="ion:fast-food" className="w-full h-full" />,
   },
   {
-    title: "Medical",
-    body: "On-campus clinic with resident doctor + tie-ups with nearby multi-specialty hospitals.",
+    title: "24x7 Security & Surveillance",
+    body: "Comprehensive CCTV coverage, strictly monitored access points, and dedicated security personnel for a safe environment.",
     cls: "bg-brand text-white",
-    icon: <Icon icon="fluent:stethoscope-24-filled" className="w-full h-full" />,
+    icon: <Icon icon="fluent:camera-dome-24-filled" className="w-full h-full" />,
   },
   {
     title: "Hostels",

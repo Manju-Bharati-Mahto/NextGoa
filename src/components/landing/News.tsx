@@ -115,11 +115,14 @@ export function News() {
           ))}
         </ul>
 
-        <p className="mt-10 text-center">
-          <Link href="/stories" className="font-poppins text-lg font-bold text-brand hover:text-brand-dark">
+        <div className="mt-10 flex justify-center">
+          <Link 
+            href="/stories" 
+            className="inline-flex items-center justify-center rounded-full bg-brand px-8 py-3 text-[15px] font-poppins font-semibold text-white shadow-sm transition-all hover:bg-brand/90 hover:shadow-md"
+          >
             All news →
           </Link>
-        </p>
+        </div>
       </div>
     </section>
   );

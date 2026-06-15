@@ -147,7 +147,7 @@ export function LatestStories({ stories = [] }: { stories?: Story[] }) {
               return (
                 <div
                   key={idx}
-                  className={`w-[85%] md:w-[45%] lg:w-[23.5%] flex-shrink-0 px-2 md:px-3 transition-all duration-700 ease-in-out ${
+                  className={`w-[85%] md:w-[45%] lg:w-[28%] flex-shrink-0 px-2 md:px-3 transition-all duration-700 ease-in-out ${
                     isActive 
                       ? "scale-100 opacity-100 z-10" 
                       : "scale-[0.98] opacity-60 lg:opacity-100 z-0"

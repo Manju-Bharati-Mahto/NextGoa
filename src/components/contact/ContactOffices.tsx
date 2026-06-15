@@ -123,7 +123,14 @@ export default function ContactOffices() {
                       </td>
                       <td className="py-6 px-6 align-top whitespace-nowrap">
                         {contact.email ? (
-                          <a href={`mailto:${contact.email.trim()}`} className="hover:text-[#0CAADD] hover:underline transition-colors">{contact.email}</a>
+                          <a 
+                            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${contact.email.trim()}`} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="hover:text-[#0CAADD] hover:underline transition-colors"
+                          >
+                            {contact.email}
+                          </a>
                         ) : null}
                       </td>
                     </tr>
