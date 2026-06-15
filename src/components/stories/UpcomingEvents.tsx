@@ -54,6 +54,7 @@ export function UpcomingEvents({ stories = [] }: { stories?: Story[] }) {
                     src={event.image} 
                     alt={event.title} 
                     fill 
+                    sizes="(max-width: 768px) 100vw, 128px"
                     className="object-cover group-hover:scale-105 transition-transform duration-500" 
                   />
                 ) : (

@@ -84,6 +84,7 @@ export function EventDigest({ stories = [] }: { stories?: Story[] }) {
                       src={featuredEvent.image}
                       alt={featuredEvent.title}
                       fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
                       className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
                     />
                   ) : (

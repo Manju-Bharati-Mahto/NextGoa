@@ -108,7 +108,7 @@ function StoriesGridInner({ initialStories = [] }: { initialStories?: Story[] })
                       <div>
                         <div className={`relative aspect-[16/12] bg-gradient-to-br from-brand via-brand-bright to-ocean overflow-hidden`}>
                           {s.image ? (
-                            <Image src={s.image} alt={s.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                            <Image src={s.image} alt={s.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
                           ) : (
                             <div className="absolute inset-0 opacity-25 [background:radial-gradient(circle_at_25%_70%,#ffffff_0,transparent_45%)]" />
                           )}
