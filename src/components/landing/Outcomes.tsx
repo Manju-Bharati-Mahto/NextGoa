@@ -94,17 +94,15 @@ export function Outcomes() {
       </div>
 
       {/* Constrained Footer Container */}
-      <div className="mx-auto max-w-5xl px-6 pb-20 pt-10">
-        <p className="text-center">
-          <a
-            href="/documents/placement_brochure_2025_2026.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-bold text-brand hover:text-brand-dark"
-          >
-            Full placements report →
-          </a>
-        </p>
+      <div className="mx-auto max-w-5xl px-6 pb-20 pt-10 flex justify-center">
+        <a
+          href="/documents/placement_brochure_2025_2026.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center bg-[#FEDB2F] hover:bg-[#e5c52a] text-black font-bold text-[15px] sm:text-[16px] px-8 py-3.5 rounded-full transition-colors shadow-sm"
+        >
+          Full placements report →
+        </a>
       </div>
     </section>
   );

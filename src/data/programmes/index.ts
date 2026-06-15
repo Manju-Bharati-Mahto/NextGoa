@@ -17,7 +17,7 @@ const allProgrammes: Record<string, ProgrammeData> = {
   "allied-health": alliedHealthData,
   "hotel-management": hotelManagementData,
   "applied-sciences": appliedSciencesData,
-  "phd": phdData,
+  "doctorate-programs": phdData,
 };
 
 export function getProgrammeData(slug: string): ProgrammeData | undefined {

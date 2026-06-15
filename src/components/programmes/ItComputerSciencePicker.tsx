@@ -21,11 +21,11 @@ export default function ItComputerSciencePicker() {
   const mcaEligibility = "Passed Graduation with minimum 50% for Open Category and 45% for Reserved Category from a recognized university.";
 
   const specialisationsList = [
-    "Artificial Intelligence",
+    "AI",
     "Cyber Security",
-    "Artificial Intelligence and Data Science",
-    "Artificial Intelligence and Machine Learning",
-    "Quantum Computing in Artificial Intelligence"
+    "AI and Data Science",
+    "AI and Machine Learning",
+    "Quantum Computing in AI"
   ];
 
   const bcaProgrammes: Programme[] = [
@@ -147,7 +147,7 @@ export default function ItComputerSciencePicker() {
           <div className="text-center mt-12">
             <button 
               onClick={() => setShowAll(!showAll)}
-              className="font-bold text-[#E73649] hover:underline text-[15px] cursor-pointer"
+              className="border-2 border-[#E73649] text-[#E73649] hover:bg-[#E73649] hover:text-white rounded-full px-12 py-3 font-bold text-[17px] transition-all inline-flex items-center justify-center gap-2"
             >
               {showAll ? "View less \u2190" : "View all \u2192"}
             </button>

@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useRef } from "react";
 
 const clubs = [
   {
@@ -24,29 +27,79 @@ const clubs = [
 ];
 
 export function CampusStudentLife() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const scrollAmount = window.innerWidth > 1024 ? 574 : window.innerWidth > 640 ? 474 : window.innerWidth * 0.85;
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const isDown = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    isDown.current = true;
+    if (scrollRef.current) {
+      startX.current = e.pageX - scrollRef.current.offsetLeft;
+      scrollLeft.current = scrollRef.current.scrollLeft;
+      scrollRef.current.style.cursor = 'grabbing';
+      scrollRef.current.style.scrollSnapType = 'none';
+    }
+  };
+
+  const handleMouseLeave = () => {
+    isDown.current = false;
+    if (scrollRef.current) {
+      scrollRef.current.style.cursor = 'grab';
+    }
+  };
+
+  const handleMouseUp = () => {
+    isDown.current = false;
+    if (scrollRef.current) {
+      scrollRef.current.style.cursor = 'grab';
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDown.current) return;
+    e.preventDefault();
+    if (scrollRef.current) {
+      const x = e.pageX - scrollRef.current.offsetLeft;
+      const walk = (x - startX.current) * 2;
+      scrollRef.current.scrollLeft = scrollLeft.current - walk;
+    }
+  };
+
   return (
-    <section 
+    <section
       className="relative w-full overflow-hidden flex flex-col justify-center min-h-[400px] lg:min-h-[800px]"
-      style={{ 
-        paddingTop: "clamp(5rem, 12.2vw, 600px)", 
-        paddingBottom: "clamp(5rem, 13.3vw, 600px)" 
+      style={{
+        paddingTop: "clamp(5rem, 12.2vw, 600px)",
+        paddingBottom: "clamp(5rem, 13.3vw, 600px)"
       }}
     >
-            <div className="absolute inset-0 z-0 pointer-events-none">
+      <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Middle Solid Blue Background */}
-        <div 
-          className="absolute inset-x-0 bg-[#0CAADD]" 
-          style={{ 
-            top: "calc(clamp(50px, 8vw, 500px) - 1.5px)", 
-            bottom: "calc(clamp(50px, 8vw, 500px) - 1.5px)" 
-          }} 
+        <div
+          className="absolute inset-x-0 bg-[#0CAADD]"
+          style={{
+            top: "calc(clamp(50px, 8vw, 500px) - 1.5px)",
+            bottom: "calc(clamp(50px, 8vw, 500px) - 1.5px)"
+          }}
         />
         {/* Top Wave */}
-        <div 
+        <div
           className="absolute top-0 left-0 right-0 overflow-hidden"
           style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
-          <div 
+          <div
             className="absolute top-0 left-0 w-[400%] h-full animate-wave-flow"
             style={{
               backgroundImage: "url('/88-double.svg?v=3')",
@@ -57,11 +110,11 @@ export function CampusStudentLife() {
           />
         </div>
         {/* Bottom Wave */}
-        <div 
+        <div
           className="absolute bottom-0 left-0 right-0 overflow-hidden"
           style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
-          <div 
+          <div
             className="absolute bottom-0 left-0 w-[400%] h-full animate-wave-flow"
             style={{
               backgroundImage: "url('/88-double.svg?v=3')",
@@ -86,17 +139,25 @@ export function CampusStudentLife() {
       </div>
 
       {/* Carousel Container */}
-      <div className="relative z-10 w-full mb-6 lg:mb-12">
-        <div className="flex overflow-x-auto gap-4 sm:gap-6 px-4 sm:px-6 lg:px-12 scroll-pl-4 sm:scroll-pl-6 lg:scroll-pl-12 snap-x snap-mandatory hide-scrollbar pb-2 lg:pb-8">
+      <div className="relative z-10 w-full mb-6 lg:mb-8">
+        <div
+          ref={scrollRef}
+          onMouseDown={handleMouseDown}
+          onMouseLeave={handleMouseLeave}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
+          className="flex overflow-x-auto gap-4 sm:gap-6 px-4 sm:px-6 lg:px-12 scroll-pl-4 sm:scroll-pl-6 lg:scroll-pl-12 snap-x snap-mandatory hide-scrollbar pb-2 lg:pb-8"
+          style={{ cursor: 'grab' }}
+        >
           {clubs.map((club, idx) => (
-            <div 
-              key={idx} 
+            <div
+              key={idx}
               className="group relative flex-shrink-0 w-[85vw] sm:w-[450px] md:w-[500px] lg:w-[550px] snap-start rounded-[24px] sm:rounded-[32px] overflow-hidden bg-black/20 aspect-[16/9] shadow-lg border border-white/10"
             >
               {/* Placeholder for Image */}
               <div className="absolute inset-0 w-full h-full">
-                <Image 
-                  src={club.image} 
+                <Image
+                  src={club.image}
                   alt={club.title}
                   fill
                   className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
@@ -111,12 +172,12 @@ export function CampusStudentLife() {
                 <h3 className="font-poppins font-semibold text-[28px] sm:text-[32px] text-white leading-tight mb-3">
                   {club.title}
                 </h3>
-                
+
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2">
                   {club.tags.map((tag, tagIdx) => (
-                    <span 
-                      key={tagIdx} 
+                    <span
+                      key={tagIdx}
                       className="px-3 py-1 bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/20 text-white font-[family-name:var(--font-poppins)] text-[12px] sm:text-[13px] font-medium rounded-full transition-colors tracking-wide"
                     >
                       {tag}
@@ -129,8 +190,32 @@ export function CampusStudentLife() {
         </div>
       </div>
 
+      {/* Navigation Buttons */}
+      <div className="flex justify-center items-center gap-4 mt-4 relative z-30">
+        <button 
+          onClick={() => scroll('left')}
+          className="w-12 h-12 rounded-full border border-black/10 bg-white text-ink flex items-center justify-center hover:bg-[#E73649] hover:text-white hover:border-[#E73649] shadow-sm transition-all duration-300 ease-in-out cursor-pointer focus:outline-none"
+          aria-label="Scroll left"
+        >
+          <svg className="pointer-events-none w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        <button 
+          onClick={() => scroll('right')}
+          className="w-12 h-12 rounded-full border border-black/10 bg-white text-ink flex items-center justify-center hover:bg-[#E73649] hover:text-white hover:border-[#E73649] shadow-sm transition-all duration-300 ease-in-out cursor-pointer focus:outline-none"
+          aria-label="Scroll right"
+        >
+          <svg className="pointer-events-none w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+
       {/* CSS to hide scrollbar but keep functionality */}
-      <style dangerouslySetInnerHTML={{__html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .hide-scrollbar::-webkit-scrollbar {
           display: none;
         }

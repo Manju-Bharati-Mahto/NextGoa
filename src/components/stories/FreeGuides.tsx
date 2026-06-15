@@ -15,14 +15,14 @@ interface Guide {
 
 const guides: Guide[] = [
   {
-    title: "B.Tech Specialisation Chooser",
-    description: "AI vs Cyber Security vs Quantum vs Data Science vs ML - pick the right track.",
+    title: "PU Goa 2026 Prospectus",
+    description: "Campus Overview, Campus Living, Advanced Laboratories, Campus Facilites & Events and Extra Curricular Life.",
     topBg: "bg-ocean",
     titleColor: "text-white",
     iconColor: "text-white",
     buttonBg: "bg-ocean text-white",
     buttonHoverBg: "hover:bg-ocean-deep",
-    buttonText: "Download PDF &rarr;",
+    buttonText: "Download Prospectus &rarr;",
   },
   {
     title: "PU Goa 2026 Admissions Handbook",
@@ -32,7 +32,7 @@ const guides: Guide[] = [
     iconColor: "text-ink",
     buttonBg: "bg-sunshine text-ink",
     buttonHoverBg: "hover:bg-sunshine-deep",
-    buttonText: "Download PDF &rarr;",
+    buttonText: "Download Handbook &rarr;",
   },
   {
     title: "Study Abroad Pathways Guide",
@@ -42,7 +42,7 @@ const guides: Guide[] = [
     iconColor: "text-white",
     buttonBg: "bg-brand text-white",
     buttonHoverBg: "hover:bg-brand-dark",
-    buttonText: "Download PDF &rarr;",
+    buttonText: "Download Guide &rarr;",
   },
 ];
 
@@ -64,10 +64,6 @@ function FileIcon({ className = "w-6 h-6" }: { className?: string }) {
 }
 
 export function FreeGuides() {
-  const handleDownloadClick = (title: string) => {
-    alert(`Thank you for requesting the "${title}". Check your inbox shortly for your PDF copy.`);
-  };
-
   return (
     <section className="bg-brand-white py-20 md:py-24 border-t border-black/5">
       <div className="mx-auto max-w-[1680px] px-6 sm:px-10 flex flex-col items-center">
@@ -108,12 +104,13 @@ export function FreeGuides() {
                   {guide.description}
                 </p>
                 <div className="mt-8">
-                  <button
-                    onClick={() => handleDownloadClick(guide.title)}
-                    className={`inline-flex items-center gap-2 rounded-full px-6 py-2.5 text-sm font-semibold tracking-wide shadow-sm transition-all hover:scale-[1.02] cursor-pointer ${guide.buttonBg} ${guide.buttonHoverBg}`}
+                  <a
+                    href="/documents/Prospectus_AY_2026_27.pdf"
+                    download="Prospectus A.Y. 2026-27.pdf"
+                    className={`inline-flex items-center gap-2 rounded-full px-7 py-3 text-[16px] font-bold tracking-wide shadow-sm transition-all hover:scale-[1.02] cursor-pointer ${guide.buttonBg} ${guide.buttonHoverBg}`}
                   >
                     <span dangerouslySetInnerHTML={{ __html: guide.buttonText }} />
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>

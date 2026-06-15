@@ -17,40 +17,40 @@ import {
 
 const allCourses = [
   // DIPLOMA
-  { id: 1, title: "Diploma in Engineering", description: "3-year polytechnic diploma program.", level: "Diploma", field: "B.Tech", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/diploma_eng.png", href: "/programmes/engineering" },
-  { id: 2, title: "General Nursing and Midwifery (G.N.M)", description: "3-year diploma in nursing.", level: "Diploma", field: "B.Sc. Nursing", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/gnm_nursing.png", href: "/programmes/nursing" },
+  { id: 1, title: "Diploma in Engineering", description: "3-year polytechnic diploma program.", level: "Diploma", field: "B.Tech", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/diploma_eng.png", href: "/programs/engineering" },
+  { id: 2, title: "General Nursing and Midwifery (G.N.M)", description: "3-year diploma in nursing.", level: "Diploma", field: "B.Sc. Nursing", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/gnm_nursing.png", href: "/programs/nursing" },
 
   // BACHELOR'S
-  { id: 3, title: "B.Tech Computer Science & Engineering", description: "Bachelor of Technology with various specializations.", level: "Bachelor's", field: "B.Tech", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/btech_cs.png", href: "/programmes/engineering" },
-  { id: 4, title: "B.Tech - Lateral Entry", description: "Direct second-year admission.", level: "Bachelor's", field: "B.Tech", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/btech_lateral.png", href: "/programmes/engineering" },
-  { id: 5, title: "Bachelor of Business Administration (BBA)", description: "Undergraduate degree in business administration.", level: "Bachelor's", field: "MBA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bba_student.png", href: "/programmes/management-studies" },
-  { id: 6, title: "BBA Honours (NEP 2020)", description: "4-year honors program with specializations.", level: "Bachelor's", field: "MBA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bba_hons.png", href: "/programmes/management-studies" },
-  { id: 7, title: "Bachelor of Pharmacy (B.Pharm.)", description: "Undergraduate pharmacy program.", level: "Bachelor's", field: "B.Pharm", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bpharm.png", href: "/programmes/pharmacy" },
-  { id: 8, title: "B.Pharm. - Lateral Entry", description: "Direct second-year admission to pharmacy.", level: "Bachelor's", field: "B.Pharm", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bpharm_lateral.png", href: "/programmes/pharmacy" },
-  { id: 9, title: "Bachelor of Science in Nursing", description: "Professional nursing degree.", level: "Bachelor's", field: "B.Sc. Nursing", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bsc_nursing.png", href: "/programmes/nursing" },
-  { id: 10, title: "Post Basic B.Sc Nursing (PB-B.Sc.)", description: "Post basic nursing program.", level: "Bachelor's", field: "B.Sc. Nursing", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/pb_bsc_nursing.png", href: "/programmes/nursing" },
-  { id: 11, title: "Bachelor of Physiotherapy (BPT)", description: "Comprehensive physiotherapy program.", level: "Bachelor's", field: "BPT", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bpt_physio.png", href: "/programmes/physiotherapy" },
-  { id: 12, title: "BHMCT", description: "Bachelor of Hotel Management and Catering Technology.", level: "Bachelor's", field: "BHMCT", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bhmct.png", href: "/programmes/hotel-management" },
-  { id: 13, title: "Bachelor of Science - Hotel Management", description: "B.Sc degree in hospitality.", level: "Bachelor's", field: "BHMCT", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bsc_hm.png", href: "/programmes/hotel-management" },
-  { id: 14, title: "B.Sc Hons. - Hotel Management", description: "4-year honors program.", level: "Bachelor's", field: "BHMCT", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bsc_hm_hons.png", href: "/programmes/hotel-management" },
-  { id: 15, title: "Bachelor of Anaesthesia & Operation Theatre Technology", description: "Allied healthcare bachelor's degree.", level: "Bachelor's", field: "B.AOTT", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/baott.png", href: "/programmes/allied-health" },
-  { id: 16, title: "Bachelor of Medical Laboratory Science (BMLS)", description: "Allied healthcare bachelor's degree.", level: "Bachelor's", field: "B.AOTT", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bmls.png", href: "/programmes/allied-health" },
-  { id: 23, title: "Bachelor of Computer Applications (BCA)", description: "3-year undergraduate IT program.", level: "Bachelor's", field: "BCA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bca_students.png", href: "/programmes/it-cs" },
-  { id: 24, title: "BCA Honours (NEP 2020)", description: "4-year honors program with specializations.", level: "Bachelor's", field: "BCA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bca_students.png", href: "/programmes/it-cs" },
-  { id: 26, title: "Bachelor of Science (B.Sc.)", description: "3-year science degree in Biotech & Microbiology.", level: "Bachelor's", field: "B.Sc", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bsc_applied_science.png", href: "/programmes/applied-sciences" },
-  { id: 27, title: "Bachelor of Science - Honors (B.Sc. Hons.) (NEP 2020)", description: "4-year honors program in Biotech & Microbiology.", level: "Bachelor's", field: "B.Sc", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bsc_hons_applied_science.png", href: "/programmes/applied-sciences" },
+  { id: 3, title: "B.Tech Computer Science & Engineering", description: "Bachelor of Technology with various specializations.", level: "Bachelor's", field: "B.Tech", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/btech_cs.png", href: "/programs/engineering" },
+  { id: 4, title: "B.Tech - Lateral Entry", description: "Direct second-year admission.", level: "Bachelor's", field: "B.Tech", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/btech_lateral.png", href: "/programs/engineering" },
+  { id: 5, title: "Bachelor of Business Administration (BBA)", description: "Undergraduate degree in business administration.", level: "Bachelor's", field: "MBA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bba_student.png", href: "/programs/management-studies" },
+  { id: 6, title: "BBA Honours (NEP 2020)", description: "4-year honors program with specializations.", level: "Bachelor's", field: "MBA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bba_hons.png", href: "/programs/management-studies" },
+  { id: 7, title: "Bachelor of Pharmacy (B.Pharm.)", description: "Undergraduate pharmacy program.", level: "Bachelor's", field: "B.Pharm", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bpharm.png", href: "/programs/pharmacy" },
+  { id: 8, title: "B.Pharm. - Lateral Entry", description: "Direct second-year admission to pharmacy.", level: "Bachelor's", field: "B.Pharm", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bpharm_lateral.png", href: "/programs/pharmacy" },
+  { id: 9, title: "Bachelor of Science in Nursing", description: "Professional nursing degree.", level: "Bachelor's", field: "B.Sc. Nursing", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bsc_nursing.png", href: "/programs/nursing" },
+  { id: 10, title: "Post Basic B.Sc Nursing (PB-B.Sc.)", description: "Post basic nursing program.", level: "Bachelor's", field: "B.Sc. Nursing", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/pb_bsc_nursing.png", href: "/programs/nursing" },
+  { id: 11, title: "Bachelor of Physiotherapy (BPT)", description: "Comprehensive physiotherapy program.", level: "Bachelor's", field: "BPT", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bpt_physio.png", href: "/programs/physiotherapy" },
+  { id: 12, title: "BHMCT", description: "Bachelor of Hotel Management and Catering Technology.", level: "Bachelor's", field: "BHMCT", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bhmct.png", href: "/programs/hotel-management" },
+  { id: 13, title: "Bachelor of Science - Hotel Management", description: "B.Sc degree in hospitality.", level: "Bachelor's", field: "BHMCT", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bsc_hm.png", href: "/programs/hotel-management" },
+  { id: 14, title: "B.Sc Hons. - Hotel Management", description: "4-year honors program.", level: "Bachelor's", field: "BHMCT", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bsc_hm_hons.png", href: "/programs/hotel-management" },
+  { id: 15, title: "Bachelor of Anaesthesia & Operation Theatre Technology", description: "Allied healthcare bachelor's degree.", level: "Bachelor's", field: "B.AOTT", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/baott.png", href: "/programs/allied-health" },
+  { id: 16, title: "Bachelor of Medical Laboratory Science (BMLS)", description: "Allied healthcare bachelor's degree.", level: "Bachelor's", field: "B.AOTT", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bmls.png", href: "/programs/allied-health" },
+  { id: 23, title: "Bachelor of Computer Applications (BCA)", description: "3-year undergraduate IT program.", level: "Bachelor's", field: "BCA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bca_students.png", href: "/programs/it-cs" },
+  { id: 24, title: "BCA Honours (NEP 2020)", description: "4-year honors program with specializations.", level: "Bachelor's", field: "BCA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bca_students.png", href: "/programs/it-cs" },
+  { id: 26, title: "Bachelor of Science (B.Sc.)", description: "3-year science degree in Biotech & Microbiology.", level: "Bachelor's", field: "B.Sc", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bsc_applied_science.png", href: "/programs/applied-sciences" },
+  { id: 27, title: "Bachelor of Science - Honors (B.Sc. Hons.) (NEP 2020)", description: "4-year honors program in Biotech & Microbiology.", level: "Bachelor's", field: "B.Sc", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bsc_hons_applied_science.png", href: "/programs/applied-sciences" },
 
   // MASTER'S
-  { id: 17, title: "Master of Business Administration (MBA)", description: "Postgraduate management degree.", level: "Master's", field: "MBA", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/mba.png", href: "/programmes/management-studies" },
-  { id: 25, title: "Master of Computer Applications (MCA)", description: "Postgraduate IT and software program.", level: "Master's", field: "MCA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/mca_students.png", href: "/programmes/it-cs" },
-  { id: 28, title: "Master of Science (M.Sc.)", description: "2-year master's in Biotech & Microbiology.", level: "Master's", field: "B.Sc", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/msc_applied_science.png", href: "/programmes/applied-sciences" },
+  { id: 17, title: "Master of Business Administration (MBA)", description: "Postgraduate management degree.", level: "Master's", field: "MBA", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/mba.png", href: "/programs/management-studies" },
+  { id: 25, title: "Master of Computer Applications (MCA)", description: "Postgraduate IT and software program.", level: "Master's", field: "MCA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/mca_students.png", href: "/programs/it-cs" },
+  { id: 28, title: "Master of Science (M.Sc.)", description: "2-year master's in Biotech & Microbiology.", level: "Master's", field: "B.Sc", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/msc_applied_science.png", href: "/programs/applied-sciences" },
 
   // DOCTRAL
-  { id: 18, title: "Ph.D in Engineering", description: "Doctoral research program.", level: "Doctral", field: "Ph.D", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_engineering.png", href: "/programmes/phd" },
-  { id: 19, title: "Ph.D in Management", description: "Doctoral research program.", level: "Doctral", field: "Ph.D", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_management.png", href: "/programmes/phd" },
-  { id: 20, title: "Ph.D in Pharmacy", description: "Doctoral research program.", level: "Doctral", field: "Ph.D", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_pharmacy.png", href: "/programmes/phd" },
-  { id: 21, title: "Ph.D in Nursing", description: "Doctoral research program.", level: "Doctral", field: "Ph.D", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_nursing.png", href: "/programmes/phd" },
-  { id: 22, title: "Ph.D in Allied and Healthcare Sciences", description: "Doctoral research program.", level: "Doctral", field: "Ph.D", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_allied_health.png", href: "/programmes/phd" }
+  { id: 18, title: "Ph.D in Engineering", description: "Doctoral research program.", level: "Doctral", field: "Ph.D", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_engineering.png", href: "/programs/doctorate-programs" },
+  { id: 19, title: "Ph.D in Management", description: "Doctoral research program.", level: "Doctral", field: "Ph.D", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_management.png", href: "/programs/doctorate-programs" },
+  { id: 20, title: "Ph.D in Pharmacy", description: "Doctoral research program.", level: "Doctral", field: "Ph.D", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_pharmacy.png", href: "/programs/doctorate-programs" },
+  { id: 21, title: "Ph.D in Nursing", description: "Doctoral research program.", level: "Doctral", field: "Ph.D", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_nursing.png", href: "/programs/doctorate-programs" },
+  { id: 22, title: "Ph.D in Allied and Healthcare Sciences", description: "Doctoral research program.", level: "Doctral", field: "Ph.D", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_allied_health.png", href: "/programs/doctorate-programs" }
 ];
 
 const filterOptions = {
@@ -76,16 +76,16 @@ const filterOptions = {
 };
 
 const FACULTY_INFO: Record<string, { name: string; desc: string; icon: React.ComponentType<any> }> = {
-  "/programmes/engineering": { name: "Engineering & Technology", desc: "The finest technical exposure in the field of technology.", icon: EngineeringIcon },
-  "/programmes/it-cs": { name: "Information Technology & Computer Science", desc: "Shaping the digital future with advanced computing.", icon: EngineeringIcon },
-  "/programmes/management-studies": { name: "Management Studies", desc: "Where tomorrow's industry leaders are shaped.", icon: ManagementIcon },
-  "/programmes/hotel-management": { name: "Hotel Management", desc: "Where Goa's world becomes your classroom.", icon: HotelIcon },
-  "/programmes/applied-sciences": { name: "Applied Sciences", desc: "Where science serves humanity.", icon: AppliedSciencesIcon },
-  "/programmes/nursing": { name: "Nursing", desc: "Where dedication becomes healing.", icon: NursingIcon },
-  "/programmes/pharmacy": { name: "Pharmacy", desc: "From molecule to medicine — pharmacy that transforms lives.", icon: PharmacyIcon },
-  "/programmes/physiotherapy": { name: "Physiotherapy", desc: "Where movement meets recovery.", icon: PhysiotherapyIcon },
-  "/programmes/allied-health": { name: "Allied and Health Sciences", desc: "Where science serves humanity.", icon: AlliedHealthIcon },
-  "/programmes/phd": { name: "PhD", desc: "For those who push the boundaries of what is known.", icon: DoctoralIcon }
+  "/programs/engineering": { name: "Engineering & Technology", desc: "The finest technical exposure in the field of technology.", icon: EngineeringIcon },
+  "/programs/it-cs": { name: "Information Technology & Computer Science", desc: "Shaping the digital future with advanced computing.", icon: EngineeringIcon },
+  "/programs/management-studies": { name: "Management Studies", desc: "Where tomorrow's industry leaders are shaped.", icon: ManagementIcon },
+  "/programs/hotel-management": { name: "Hotel Management", desc: "Where Goa's world becomes your classroom.", icon: HotelIcon },
+  "/programs/applied-sciences": { name: "Applied Sciences", desc: "Where science serves humanity.", icon: AppliedSciencesIcon },
+  "/programs/nursing": { name: "Nursing", desc: "Where dedication becomes healing.", icon: NursingIcon },
+  "/programs/pharmacy": { name: "Pharmacy", desc: "From molecule to medicine — pharmacy that transforms lives.", icon: PharmacyIcon },
+  "/programs/physiotherapy": { name: "Physiotherapy", desc: "Where movement meets recovery.", icon: PhysiotherapyIcon },
+  "/programs/allied-health": { name: "Allied and Health Sciences", desc: "Where science serves humanity.", icon: AlliedHealthIcon },
+  "/programs/doctorate-programs": { name: "Doctorate Programs", desc: "For those who push the boundaries of what is known.", icon: DoctoralIcon }
 };
 
 export default function ProgramFilter() {
@@ -150,18 +150,24 @@ export default function ProgramFilter() {
           </p>
         </div>
 
+        <div className="max-w-6xl mx-auto mb-8 w-full">
+          {/* Summary Card - Full Row */}
+          <div className="bg-[#0EB1E1] text-white rounded-[24px] p-6 md:p-8 shadow-md flex flex-col md:flex-row items-center justify-between gap-6">
+            <h4 className="text-[24px] sm:text-3xl font-semibold leading-[1.2] font-poppins text-center md:text-left m-0">
+              {groupedFaculties.length === 10 ? 9 : groupedFaculties.length} faculties, {filteredCourses.length} programmes match
+            </h4>
+            <button data-enquiry-trigger="true" className="flex items-center justify-center gap-2 bg-sunshine text-ink text-[15px] sm:text-[16px] font-bold py-3.5 px-8 rounded-full hover:bg-yellow-400 transition-colors shadow-sm w-full md:w-auto shrink-0 whitespace-nowrap">
+              Help me choose
+              <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 11.5L11.5 4.5M11.5 4.5H6.5M11.5 4.5V9.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
         <div className="flex flex-col lg:flex-row gap-8 items-start justify-center max-w-6xl mx-auto">
           {/* Sidebar */}
           <div className="w-full lg:w-[320px] shrink-0 space-y-6 lg:sticky lg:top-24">
-            {/* Summary Card */}
-            <div className="bg-[#0EB1E1] text-white rounded-[24px] p-8 text-center shadow-md">
-              <h4 className="text-[26px] sm:text-3xl font-semibold mb-6 leading-[1.2] font-poppins">
-                {groupedFaculties.length} faculties<br />{filteredCourses.length} programmes<br />match
-              </h4>
-              <button data-enquiry-trigger="true" className="bg-sunshine text-ink text-[15px] font-bold py-3.5 px-6 rounded-full w-full hover:bg-yellow-400 transition-colors shadow-sm">
-                Help me choose
-              </button>
-            </div>
 
             {/* Filter Panel */}
             <div className="bg-white rounded-[28px] p-8 shadow-sm ring-1 ring-black/5">
@@ -186,7 +192,7 @@ export default function ProgramFilter() {
                           <button
                             key={option}
                             onClick={() => handleFilterChange(category, option)}
-                            className={`rounded-full px-5 py-2.5 sm:px-6 sm:py-3 text-[15px] sm:text-[16px] font-medium transition-all ${isActive
+                            className={`rounded-full px-5 py-2.5 sm:px-6 text-[15px] sm:text-[16px] font-medium transition-all ${isActive
                                 ? "bg-[#1A1A1A] text-white border border-[#1A1A1A] shadow-sm"
                                 : "bg-white text-ink/70 border border-zinc-200 hover:border-zinc-300 hover:bg-zinc-50"
                               }`}
@@ -216,7 +222,7 @@ export default function ProgramFilter() {
                     >
                       <div className="flex items-start gap-4 sm:gap-5">
                         <div className={`flex h-12 w-12 sm:h-16 sm:w-16 shrink-0 items-center justify-center rounded-2xl transition-colors group-hover:bg-[#0EB1E1] group-hover:text-white ${
-                          href === "/programmes/it-cs" 
+                          href === "/programs/it-cs" 
                             ? "bg-[#0EB1E1] text-white" 
                             : "bg-[#0EB1E1]/5 text-[#0EB1E1]"
                         }`}>

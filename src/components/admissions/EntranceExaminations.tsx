@@ -27,7 +27,7 @@ export function EntranceExaminations() {
           <div className="inline-flex items-center rounded-full border border-gray-200 bg-white p-1 shadow-sm">
             <button
               onClick={() => setActiveTab("pu-goa")}
-              className={`rounded-full px-6 py-2 text-sm font-semibold transition-colors ${
+              className={`rounded-full px-8 py-3.5 text-[17px] font-bold transition-colors ${
                 activeTab === "pu-goa" ? "bg-[#ee364f] text-white" : "text-ink hover:bg-gray-50"
               }`}
             >
@@ -35,7 +35,7 @@ export function EntranceExaminations() {
             </button>
             <button
               onClick={() => setActiveTab("other")}
-              className={`rounded-full px-6 py-2 text-sm font-semibold transition-colors ${
+              className={`rounded-full px-8 py-3.5 text-[17px] font-bold transition-colors ${
                 activeTab === "other" ? "bg-[#ee364f] text-white" : "text-ink hover:bg-gray-50"
               }`}
             >

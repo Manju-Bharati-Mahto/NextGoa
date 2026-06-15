@@ -3,13 +3,19 @@ import React from "react";
 export default function StudyAbroadHero() {
   return (
     <section
-      className="relative w-full min-h-[900px] lg:min-h-[1100px] font-[family-name:var(--font-poppins)] pt-32 lg:pt-48 pb-0 flex flex-col items-center bg-[length:250%] md:bg-[length:100%] bg-bottom bg-no-repeat"
+      className="hero-bg-custom relative w-full min-h-[900px] lg:min-h-[1100px] min-[1600px]:min-h-[1400px] font-[family-name:var(--font-poppins)] pt-32 lg:pt-48 pb-0 flex flex-col items-center bg-[length:250%] md:bg-[length:100%] bg-bottom bg-no-repeat"
       style={{
         backgroundImage: "linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0.95) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,0) 85%, rgba(255,255,255,1) 100%), url('/abroad/Global Learning Experience.png')",
         backgroundColor: "#ffffff"
       }}
     >
-      {/* Text Content */}
+      <style>{`
+        @media (min-width: 1600px) {
+          .hero-bg-custom {
+            background-position: center top, center calc(100% + 250px) !important;
+          }
+        }
+      `}</style>
       <div className="relative z-20 w-full max-w-[1000px] px-4 text-center flex flex-col items-center">
         <span className="inline-block rounded-full bg-[#FFD523] px-5 py-1 text-[13px] font-semibold text-ink shadow-sm mb-6">
           Global Pathways

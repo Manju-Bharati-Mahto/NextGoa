@@ -6,11 +6,11 @@ const specialisationsData = [
     faculty: "Engineering & CS",
     theme: "yellow",
     tags: [
-      "Artificial Intelligence",
+      "AI",
       "Cyber Security",
-      "Artificial Intelligence and Data Science",
-      "Artificial Intelligence and Machine Learning",
-      "Quantum Computing in Artificial Intelligence",
+      "AI and Data Science",
+      "AI and Machine Learning",
+      "Quantum Computing in AI",
     ],
   },
   {

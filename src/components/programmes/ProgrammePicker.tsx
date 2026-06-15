@@ -21,7 +21,7 @@ const programmeData: Record<string, Programme[]> = {
   ],
   "Bachelor's": [
     { title: "B.Tech. Computer Science & Engineering", duration: "4 yrs", eligibility: "10+2 PCM", intake: "120", mode: "Full-time", specialisations: ["AI", "CYBER SECURITY", "AI & DS", "AI & ML", "QUANTUM"] },
-    { title: "B.Tech. Artificial Intelligence & Data Science", duration: "4 yrs", eligibility: "10+2 PCM", intake: "120", mode: "Full-time", specialisations: ["MACHINE LEARNING", "BIG DATA"] },
+    { title: "B.Tech. AI & Data Science", duration: "4 yrs", eligibility: "10+2 PCM", intake: "120", mode: "Full-time", specialisations: ["MACHINE LEARNING", "BIG DATA"] },
     { title: "B.Tech. Information Technology", duration: "4 yrs", eligibility: "10+2 PCM", intake: "120", mode: "Full-time", specialisations: ["CLOUD", "NETWORKING"] },
     { title: "B.Tech. Aerospace Engineering", duration: "4 yrs", eligibility: "10+2 PCM", intake: "120", mode: "Full-time", specialisations: ["AERODYNAMICS", "SPACE"] },
   ],
@@ -62,9 +62,9 @@ export default function ProgrammePicker() {
         specialisations: [] 
       },
       ...[
-        "Artificial Intelligence and Machine Learning",
-        "Artificial Intelligence and Data Science",
-        "Artificial Intelligence",
+        "AI and Machine Learning",
+        "AI and Data Science",
+        "AI",
         "Cyber Security",
         "Quantum Computing in AI"
       ].map(spec => ({
@@ -148,7 +148,7 @@ export default function ProgrammePicker() {
           <div className="text-center mt-12">
             <button 
               onClick={() => setShowAll(true)}
-              className="font-bold text-[#E73649] hover:underline text-[15px] cursor-pointer"
+              className="border-2 border-[#E73649] text-[#E73649] hover:bg-[#E73649] hover:text-white rounded-full px-12 py-3 font-bold text-[17px] transition-all inline-flex items-center justify-center gap-2"
             >
               View all &rarr;
             </button>

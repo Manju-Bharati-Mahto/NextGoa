@@ -130,9 +130,9 @@ function StoriesGridInner({ initialStories = [] }: { initialStories?: Story[] })
                       </div>
                       {/* Visual footer on card to align nicely */}
                       <div className="px-7 pb-7 pt-0">
-                        <span className="text-xs font-semibold text-brand/80 group-hover:text-brand flex items-center gap-1 transition-colors">
+                        <span className="text-[15px] font-semibold text-brand/80 group-hover:text-brand flex items-center gap-1 transition-colors">
                           Read Story 
-                          <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                          <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                           </svg>
                         </span>

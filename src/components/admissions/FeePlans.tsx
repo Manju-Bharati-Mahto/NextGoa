@@ -23,7 +23,7 @@ const COURSES: Course[] = [
     color: "#ee364f",
     textColor: "text-white",
     type: "tech",
-    href: "/programmes/engineering",
+    href: "/programs/engineering",
   },
   {
     name: "General Nursing and Midwifery (G.N.M)",
@@ -32,7 +32,7 @@ const COURSES: Course[] = [
     color: "#ee364f",
     textColor: "text-white",
     type: "medical",
-    href: "/programmes/nursing",
+    href: "/programs/nursing",
   },
 
   // Bachelors
@@ -43,7 +43,7 @@ const COURSES: Course[] = [
     color: "#ee364f",
     textColor: "text-white",
     type: "tech",
-    href: "/programmes/engineering",
+    href: "/programs/engineering",
   },
   {
     name: "B.Tech - Lateral Entry",
@@ -52,7 +52,7 @@ const COURSES: Course[] = [
     color: "#ee364f",
     textColor: "text-white",
     type: "tech",
-    href: "/programmes/engineering",
+    href: "/programs/engineering",
   },
   {
     name: "Bachelor of Computer Applications (BCA)",
@@ -61,7 +61,7 @@ const COURSES: Course[] = [
     color: "#ee364f",
     textColor: "text-white",
     type: "tech",
-    href: "/programmes/engineering",
+    href: "/programs/engineering",
   },
   {
     name: "BCA Honours (NEP 2020)",
@@ -70,7 +70,7 @@ const COURSES: Course[] = [
     color: "#ee364f",
     textColor: "text-white",
     type: "tech",
-    href: "/programmes/engineering",
+    href: "/programs/engineering",
   },
   {
     name: "Bachelor of Business Administration (BBA)",
@@ -79,7 +79,7 @@ const COURSES: Course[] = [
     color: "#0caadd",
     textColor: "text-white",
     type: "business",
-    href: "/programmes/management-studies",
+    href: "/programs/management-studies",
   },
   {
     name: "BBA Honours (NEP 2020)",
@@ -88,7 +88,7 @@ const COURSES: Course[] = [
     color: "#0caadd",
     textColor: "text-white",
     type: "business",
-    href: "/programmes/management-studies",
+    href: "/programs/management-studies",
   },
   {
     name: "Bachelor of Science in Nursing",
@@ -97,7 +97,7 @@ const COURSES: Course[] = [
     color: "#ee364f",
     textColor: "text-white",
     type: "medical",
-    href: "/programmes/nursing",
+    href: "/programs/nursing",
   },
   {
     name: "Bachelor of Physiotherapy (BPT)",
@@ -106,7 +106,7 @@ const COURSES: Course[] = [
     color: "#ee364f",
     textColor: "text-white",
     type: "medical",
-    href: "/programmes/physiotherapy",
+    href: "/programs/physiotherapy",
   },
   {
     name: "Post Basic B.Sc Nursing (PB-B.Sc.)",
@@ -115,7 +115,7 @@ const COURSES: Course[] = [
     color: "#ee364f",
     textColor: "text-white",
     type: "medical",
-    href: "/programmes/nursing",
+    href: "/programs/nursing",
   },
   {
     name: "Bachelor of Pharmacy (B.Pharm.)",
@@ -124,7 +124,7 @@ const COURSES: Course[] = [
     color: "#0caadd",
     textColor: "text-white",
     type: "pharmacy",
-    href: "/programmes/pharmacy",
+    href: "/programs/pharmacy",
   },
   {
     name: "B.Pharm. - Lateral Entry",
@@ -133,7 +133,7 @@ const COURSES: Course[] = [
     color: "#0caadd",
     textColor: "text-white",
     type: "pharmacy",
-    href: "/programmes/pharmacy",
+    href: "/programs/pharmacy",
   },
   {
     name: "Bachelor of Medical Laboratory Science (BMLS)",
@@ -142,7 +142,7 @@ const COURSES: Course[] = [
     color: "#0caadd",
     textColor: "text-white",
     type: "pharmacy",
-    href: "/programmes/allied-health",
+    href: "/programs/allied-health",
   },
   {
     name: "Bachelor of Anaesthesia & Operation Theatre Technology",
@@ -151,7 +151,7 @@ const COURSES: Course[] = [
     color: "#0caadd",
     textColor: "text-white",
     type: "pharmacy",
-    href: "/programmes/allied-health",
+    href: "/programs/allied-health",
   },
   {
     name: "BHMCT",
@@ -160,7 +160,7 @@ const COURSES: Course[] = [
     color: "#fedb2f",
     textColor: "text-ink",
     type: "business",
-    href: "/programmes/hotel-management",
+    href: "/programs/hotel-management",
   },
   {
     name: "Bachelor of Science - Hotel Management",
@@ -169,7 +169,7 @@ const COURSES: Course[] = [
     color: "#fedb2f",
     textColor: "text-ink",
     type: "business",
-    href: "/programmes/hotel-management",
+    href: "/programs/hotel-management",
   },
   {
     name: "B.Sc Hons. - Hotel Management",
@@ -178,7 +178,7 @@ const COURSES: Course[] = [
     color: "#fedb2f",
     textColor: "text-ink",
     type: "business",
-    href: "/programmes/hotel-management",
+    href: "/programs/hotel-management",
   },
 
   // Masters
@@ -189,7 +189,7 @@ const COURSES: Course[] = [
     color: "#ee364f",
     textColor: "text-white",
     type: "tech",
-    href: "/programmes/engineering",
+    href: "/programs/engineering",
   },
   {
     name: "Master of Business Administration (MBA)",
@@ -198,7 +198,7 @@ const COURSES: Course[] = [
     color: "#fedb2f",
     textColor: "text-ink",
     type: "business",
-    href: "/programmes/management-studies",
+    href: "/programs/management-studies",
   },
 
   // Ph.D
@@ -209,7 +209,7 @@ const COURSES: Course[] = [
     color: "#0caadd",
     textColor: "text-white",
     type: "tech",
-    href: "/programmes/phd",
+    href: "/programs/doctorate-programs",
   },
   {
     name: "Ph.D in Management",
@@ -218,7 +218,7 @@ const COURSES: Course[] = [
     color: "#0caadd",
     textColor: "text-white",
     type: "tech",
-    href: "/programmes/phd",
+    href: "/programs/doctorate-programs",
   },
   {
     name: "Ph.D in Pharmacy",
@@ -227,7 +227,7 @@ const COURSES: Course[] = [
     color: "#0caadd",
     textColor: "text-white",
     type: "tech",
-    href: "/programmes/phd",
+    href: "/programs/doctorate-programs",
   },
 ];
 
@@ -356,7 +356,7 @@ export function FeePlans() {
           <div className="w-full md:w-1/2">
             <Link
               href={selectedCourse.href} 
-              className="relative w-full aspect-[483/277] min-h-[280px] rounded-[24px] overflow-hidden shadow-md flex flex-col justify-center p-6 sm:p-8 hover:scale-[1.02] transition-transform duration-300 block"
+              className="relative w-full h-full min-h-[280px] rounded-[24px] overflow-hidden shadow-md flex flex-col justify-center p-6 sm:p-8 hover:scale-[1.02] transition-transform duration-300 block"
               style={{ backgroundColor: selectedCourse.color }}
             >
               {/* Custom SVG Icon as Background Decor */}
@@ -365,17 +365,17 @@ export function FeePlans() {
               {/* Text Content */}
               <div className={`relative z-10 ${selectedCourse.textColor} h-full flex flex-col justify-between`}>
                 <div>
-                  <h4 className="text-xl sm:text-2xl font-semibold mb-3 pr-12 leading-tight font-poppins drop-shadow-sm">
+                  <h4 className="text-2xl sm:text-[30px] font-semibold mb-4 pr-12 leading-tight font-poppins drop-shadow-sm">
                     {selectedCourse.name}
                   </h4>
                   
-                  <div className="h-px w-full bg-current opacity-20 mb-3" />
+                  <div className="h-px w-full bg-current opacity-20 mb-4" />
                   
-                  <div className="flex items-baseline gap-1.5 flex-wrap mb-4">
-                    <span className="text-2xl sm:text-[32px] font-bold tracking-tight leading-tight drop-shadow-sm">
+                  <div className="flex items-baseline gap-1.5 flex-wrap mb-6">
+                    <span className="text-[32px] sm:text-[42px] font-bold tracking-tight leading-tight drop-shadow-sm">
                       {selectedCourse.price}
                     </span>
-                    <span className="text-xs sm:text-sm opacity-90 font-medium whitespace-nowrap">
+                    <span className="text-sm sm:text-base opacity-90 font-medium whitespace-nowrap">
                       / year
                     </span>
                   </div>
@@ -385,7 +385,7 @@ export function FeePlans() {
                   {selectedCourse.tags.map((tag, idx) => (
                     <span 
                       key={idx}
-                      className="bg-white text-ink text-[11px] sm:text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap shadow-sm"
+                      className="bg-white text-ink text-xs sm:text-[14px] font-bold px-4 py-2 rounded-full whitespace-nowrap shadow-sm"
                     >
                       {tag}
                     </span>

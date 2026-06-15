@@ -68,27 +68,27 @@ export function CampusLifeHero() {
       `}</style>
 
       {/* Cursor Interactive Brand Background with Smooth Wavy Blobs */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.65] mix-blend-multiply overflow-hidden">
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.35] mix-blend-multiply overflow-hidden">
         {/* Container follows the cursor smoothly */}
         <div 
           className="absolute top-0 left-0 w-full h-full will-change-transform"
           style={{ transform: 'translate(calc(var(--x, 50vw) - 50vw), calc(var(--y, 50vh) - 50vh))' }}
         >
           {/* Blur layer */}
-          <div className="absolute inset-0 blur-[80px] sm:blur-[120px] flex items-center justify-center">
+          <div className="absolute inset-0 blur-[120px] sm:blur-[200px] flex items-center justify-center">
             {/* Blue Blob */}
             <div 
-              className="absolute w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-[#0CAADD]"
+              className="absolute w-[100vw] h-[70vw] max-w-[1400px] max-h-[1000px] bg-[#0CAADD]"
               style={{ animation: 'wavyBlob 20s infinite linear, float1 10s infinite ease-in-out' }}
             />
             {/* Red Blob */}
             <div 
-              className="absolute w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] bg-[#E73649] ml-[20vw] mt-[-10vh]"
+              className="absolute w-[90vw] h-[60vw] max-w-[1200px] max-h-[800px] bg-[#E73649] ml-[20vw] mt-[-10vh]"
               style={{ animation: 'wavyBlob 15s infinite linear reverse, float2 12s infinite ease-in-out' }}
             />
             {/* Yellow Blob */}
             <div 
-              className="absolute w-[70vw] h-[70vw] max-w-[900px] max-h-[900px] bg-[#FCE34B] mr-[20vw] mb-[-20vh]"
+              className="absolute w-[120vw] h-[80vw] max-w-[1600px] max-h-[1200px] bg-[#FCE34B] mr-[20vw] mb-[-20vh]"
               style={{ animation: 'wavyBlob 25s infinite linear, float3 14s infinite ease-in-out' }}
             />
           </div>

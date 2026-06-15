@@ -7,6 +7,7 @@ import { organizationSchema, websiteSchema } from "@/lib/structured-data";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { EnquiryModal } from "@/components/layout/EnquiryModal";
+import { DownloadBrochureModal } from "@/components/admissions/DownloadBrochureModal";
 import { CampusVisitModal } from "@/components/layout/CampusVisitModal";
 import FloatingCta from "@/components/layout/FloatingCta";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
@@ -75,6 +76,7 @@ export default function RootLayout({
         {children}
         <SiteFooter />
         <EnquiryModal />
+        <DownloadBrochureModal />
         <CampusVisitModal />
         <FloatingCta />
         <ScrollToTop />

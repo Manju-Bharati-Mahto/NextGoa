@@ -19,7 +19,7 @@ export default function StudyAbroadEligibility() {
 
         {/* Cards Container */}
         <div className="w-full flex flex-col md:flex-row gap-6 mb-10">
-          
+
           {/* Eligibility Card */}
           <div className="w-full md:w-[45%] flex flex-col bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden border border-[#1f2022]">
             {/* Header */}
@@ -34,7 +34,7 @@ export default function StudyAbroadEligibility() {
               <ul className="space-y-6">
                 <li className="flex items-start gap-4">
                   <div className="w-2 h-2 rounded-full bg-[#24c75c] mt-2.5 shrink-0"></div>
-                  <span className="text-gray-800 text-[16px] sm:text-[15px] leading-snug font-medium">Minimum 7.00 CGPA on a 10-point scale<br/>(≈ 70%) at the time of application</span>
+                  <span className="text-gray-800 text-[16px] sm:text-[15px] leading-snug font-medium">Minimum 7.00 CGPA on a 10-point scale<br />(≈ 70%) at the time of application</span>
                 </li>
                 <li className="flex items-start gap-4">
                   <div className="w-2 h-2 rounded-full bg-[#24c75c] mt-2 shrink-0"></div>
@@ -58,8 +58,8 @@ export default function StudyAbroadEligibility() {
 
           {/* English Requirements Card */}
           <div className="w-full md:w-[55%] flex flex-col bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden border border-[#eb3b47]">
-             {/* Header */}
-             <div className="bg-[#eb3b47] p-6 flex items-center gap-4">
+            {/* Header */}
+            <div className="bg-[#eb3b47] p-6 flex items-center gap-4">
               <div className="w-8 h-8 rounded-full bg-[#24c75c] flex items-center justify-center shrink-0 shadow-md">
                 <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3.5" d="M5 13l4 4L19 7"></path></svg>
               </div>

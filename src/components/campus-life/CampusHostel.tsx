@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { Icon } from '@iconify/react';
-import { DownloadBrochureModal } from '../admissions/DownloadBrochureModal';
 
 const hostelImages = [
   "/hostel-images/1.jpeg",
@@ -12,7 +11,6 @@ const hostelImages = [
 
 export function CampusHostel() {
   const [currentImageIdx, setCurrentImageIdx] = useState(0);
-  const [isBrochureModalOpen, setIsBrochureModalOpen] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -196,7 +194,7 @@ export function CampusHostel() {
           {/* Right: Actions */}
           <div className="md:w-[40%] bg-[#0CAADD] px-8 py-8 sm:px-16 sm:py-12 flex flex-col items-center justify-center gap-5">
             <button 
-              onClick={() => setIsBrochureModalOpen(true)}
+              data-brochure-trigger="true"
               className="w-full max-w-[320px] bg-[#FEDB2F] hover:bg-white text-[#1F1F1F] font-[family-name:var(--font-poppins)] font-semibold text-[16px] sm:text-[18px] px-8 py-5 rounded-full transition-colors flex items-center justify-center gap-3 shadow-lg"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -211,11 +209,6 @@ export function CampusHostel() {
         </div>
 
       </div>
-      
-      <DownloadBrochureModal 
-        isOpen={isBrochureModalOpen} 
-        onClose={() => setIsBrochureModalOpen(false)} 
-      />
     </section>
   );
 }

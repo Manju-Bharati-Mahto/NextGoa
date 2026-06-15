@@ -183,7 +183,7 @@ export default function StudyAbroadPathways() {
                 src={activeData.images.top}
                 alt="Pathway Top Image"
                 fill
-                className="object-cover transition-all duration-500"
+                className={`object-cover transition-all duration-500 ${activeData.id === 'Bachelors' ? 'object-[center_75%]' : 'object-center'}`}
               />
             </div>
 
