@@ -1,8 +1,35 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useState } from "react";
 
 export function TransportAndHostel() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!scrollRef.current) return;
+    setIsDragging(true);
+    setStartX(e.pageX - scrollRef.current.offsetLeft);
+    setScrollLeft(scrollRef.current.scrollLeft);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !scrollRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX) * 2;
+    scrollRef.current.scrollLeft = scrollLeft - walk;
+  };
   return (
     <section className="w-full bg-[#fedb2f] py-20 px-4 sm:px-8 xl:px-16">
       <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
@@ -27,17 +54,24 @@ export function TransportAndHostel() {
             Margao, Vasco, Mapusa, Ponda, Pernem, Bicholim, Canacona and more.
           </p>
           
-          <div className="w-full overflow-x-auto scrollbar-hide -mx-4 px-4 sm:-mx-8 sm:px-8 lg:mx-0 lg:px-0 py-1.5">
+          <div 
+            ref={scrollRef}
+            onMouseDown={handleMouseDown}
+            onMouseLeave={handleMouseLeave}
+            onMouseUp={handleMouseUp}
+            onMouseMove={handleMouseMove}
+            className={`w-full overflow-x-auto scrollbar-hide -mx-4 px-4 sm:-mx-8 sm:px-8 lg:mx-0 lg:px-0 py-1.5 select-none ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
+          >
             <div className="flex flex-nowrap gap-3 min-w-max">
               {["Pernem", "Mapusa", "Panjim", "Ponda", "Margao", "Vasco", "Bicholim", "Canacona", "Quepem"].map((city) => (
                 <span 
                   key={city}
-                  className="bg-white text-ink font-bold text-[13px] px-4 py-2 rounded-full shadow-sm shrink-0 whitespace-nowrap"
+                  className="bg-white text-ink font-bold text-[16px] px-6 py-3 rounded-full shadow-sm shrink-0 whitespace-nowrap"
                 >
                   {city}
                 </span>
               ))}
-              <span className="bg-ink text-white font-bold text-[13px] px-4 py-2 rounded-full shadow-sm shrink-0 whitespace-nowrap">
+              <span className="bg-ink text-white font-bold text-[16px] px-6 py-3 rounded-full shadow-sm shrink-0 whitespace-nowrap">
                 + many more
               </span>
             </div>

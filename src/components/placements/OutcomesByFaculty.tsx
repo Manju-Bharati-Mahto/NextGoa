@@ -150,7 +150,7 @@ export function OutcomesByFaculty() {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-5 py-2.5 rounded-full font-sans text-[15px] transition-colors shrink-0 whitespace-nowrap ${
+                className={`px-6 py-3 rounded-full font-sans text-[17px] sm:text-[18px] transition-colors shrink-0 whitespace-nowrap ${
                   activeTab === tab
                     ? 'bg-[#0CAADD] text-white shadow-sm'
                     : 'bg-white text-gray-700 border border-gray-200 hover:border-[#0CAADD] hover:text-[#0CAADD]'

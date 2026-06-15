@@ -260,11 +260,12 @@ export function TalkToUs() {
 
   return (
     <section className="w-full bg-[#f9f9f9] py-20 px-4 sm:px-8 xl:px-16">
-      <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-16">
+      <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row items-center lg:items-stretch gap-12 lg:gap-16">
         
         {/* Left Side: Copy & Info */}
-        <div className="w-full lg:w-[45%] xl:w-1/2 flex flex-col pt-4">
-          <h3 className="text-ink mb-2 !text-left section-subheading">
+        <div className="w-full lg:w-[45%] xl:w-1/2 flex flex-col justify-between pt-4">
+          <div>
+            <h3 className="text-ink mb-2 !text-left section-subheading">
             Talk to Us
           </h3>
           <h2 className="text-[#ee364f] !text-left mb-6 section-heading">
@@ -300,6 +301,23 @@ export function TalkToUs() {
                 Programme fit advice, even if you're undecided
               </span>
             </div>
+            <div className="flex items-start gap-3">
+              <span className="material-symbols-rounded text-[#1fc76a] text-[28px] shrink-0 mt-[-2px]">
+                check_circle
+              </span>
+              <span className="font-[family-name:var(--font-poppins)] text-ink text-[16px] font-medium">
+                End-to-end guidance from application to admission
+              </span>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="material-symbols-rounded text-[#1fc76a] text-[28px] shrink-0 mt-[-2px]">
+                check_circle
+              </span>
+              <span className="font-[family-name:var(--font-poppins)] text-ink text-[16px] font-medium">
+                Assistance with education loans and financing
+              </span>
+            </div>
+          </div>
           </div>
           
           {/* Action Box */}
@@ -328,7 +346,7 @@ export function TalkToUs() {
 
         {/* Right Side: Form Card */}
         <div className="w-full lg:w-[55%] xl:w-1/2">
-          <div className="bg-white rounded-[24px] p-8 sm:p-10 shadow-[0_10px_40px_rgba(0,0,0,0.06)] border border-gray-100">
+          <div className="bg-white rounded-[24px] p-8 sm:p-10 shadow-[0_10px_40px_rgba(0,0,0,0.06)] border border-gray-100 h-full flex flex-col justify-center">
             <h3 className="font-poppins font-semibold text-[28px] sm:text-[32px] text-ink text-center mb-8">
               Request a callback
             </h3>

@@ -24,14 +24,14 @@ const columns: { heading: string; links?: LinkItem[]; subSections?: { heading: s
   {
     heading: "Programmes",
     links: [
-      { label: "Engineering, IT & CS", href: "/programmes/engineering" },
-      { label: "Management Studies", href: "/programmes/management-studies" },
-      { label: "Pharmacy", href: "/programmes/pharmacy" },
-      { label: "Nursing", href: "/programmes/nursing" },
-      { label: "Hotel Management", href: "/programmes/hotel-management" },
-      { label: "Physiotherapy", href: "/programmes/physiotherapy" },
-      { label: "Allied and Healthcare Sciences", href: "/programmes/allied-health" },
-      { label: "Applied Sciences", href: "/programmes/applied-sciences" },
+      { label: "Engineering, IT & CS", href: "/programs/engineering" },
+      { label: "Management Studies", href: "/programs/management-studies" },
+      { label: "Pharmacy", href: "/programs/pharmacy" },
+      { label: "Nursing", href: "/programs/nursing" },
+      { label: "Hotel Management", href: "/programs/hotel-management" },
+      { label: "Physiotherapy", href: "/programs/physiotherapy" },
+      { label: "Allied and Healthcare Sciences", href: "/programs/allied-health" },
+      { label: "Applied Sciences", href: "/programs/applied-sciences" },
     ],
   },
   {
@@ -112,12 +112,12 @@ export function SiteFooter() {
   return (
     <footer id="contact" className="relative mt-auto overflow-hidden bg-transparent text-white -mt-16">
       <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
-        <Image
-          src="/footer.svg"
-          alt=""
-          fill
-          className="object-cover object-top"
-          priority={false}
+        {/* Solid background covering the rest of the footer below the wave */}
+        <div className="absolute top-[18vw] sm:top-[10vw] bottom-0 left-0 right-0 bg-[#0caadd]" />
+        {/* The wave SVG scaling naturally with width */}
+        <div 
+          className="absolute top-0 left-0 right-0 bottom-0 bg-no-repeat bg-top bg-[length:300%_auto] sm:bg-[length:100%_auto]" 
+          style={{ backgroundImage: "url('/footer.svg')" }}
         />
       </div>
 
@@ -126,11 +126,11 @@ export function SiteFooter() {
           {/* Brand + NAP */}
           <div className="max-w-[34rem]">
             <Logo />
-            <p className="mt-6 text-sm leading-6 text-white sm:text-base">
+            <p className="mt-6 text-base leading-6 text-white sm:text-[17px]">
               Parul University Goa is a not-for-profit, world-class institution, nestled in the heart of Goa, established in 2025 by the Parul Education Foundation.
             </p>
             {/* University Contact Information & Physical Address */}
-            <address className="mt-6 space-y-4 text-sm not-italic leading-6 text-white sm:text-base">
+            <address className="mt-6 space-y-4 text-base not-italic leading-6 text-white sm:text-[17px]">
               <div className="flex items-start gap-3">
                 <span className="mt-1 text-white/80 shrink-0">
                   <PinIcon />
@@ -172,11 +172,11 @@ export function SiteFooter() {
               aria-label={col.heading}
               className={index > 0 ? "lg:border-l lg:border-white/18 lg:pl-10" : ""}
             >
-              <h2 className="text-sm sm:text-base font-bold uppercase tracking-[0.08em] text-sunshine font-poppins">
+              <h2 className="text-base sm:text-[17px] font-bold uppercase tracking-[0.08em] text-sunshine font-poppins">
                 {col.heading}
               </h2>
               {col.links && (
-                <ul className="mt-6 space-y-3 text-sm text-white sm:text-base">
+                <ul className="mt-6 space-y-3 text-base text-white sm:text-[17px]">
                   {col.links.map((l) => (
                     <li key={l.label}>
                       <Link href={l.href} className="transition-colors hover:text-white">
@@ -188,10 +188,10 @@ export function SiteFooter() {
               )}
               {col.subSections?.map((sub) => (
                 <div key={sub.heading} className="mt-8">
-                  <h2 className="text-sm sm:text-base font-bold uppercase tracking-[0.08em] text-sunshine font-poppins">
+                  <h2 className="text-base sm:text-[17px] font-bold uppercase tracking-[0.08em] text-sunshine font-poppins">
                     {sub.heading}
                   </h2>
-                  <ul className="mt-6 space-y-3 text-sm text-white sm:text-base">
+                  <ul className="mt-6 space-y-3 text-base text-white sm:text-[17px]">
                     {sub.links.map((l) => (
                       <li key={l.label}>
                         <Link href={l.href} className="transition-colors hover:text-white">

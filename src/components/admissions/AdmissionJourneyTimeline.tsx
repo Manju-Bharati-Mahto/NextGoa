@@ -120,42 +120,42 @@ export function AdmissionJourneyTimeline() {
         </div>
 
         {/* Selection Box */}
-        <div className="bg-white rounded-3xl border border-gray-200 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between md:items-start gap-6 md:gap-12 mb-16 shadow-sm w-full mx-auto max-w-[1000px]">
+        <div className="bg-white rounded-3xl border border-gray-200 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between md:items-start gap-6 md:gap-12 mb-16 shadow-sm w-full mx-auto max-w-[1200px]">
           <div className="md:w-1/3 text-center md:text-left">
-            <h4 className="font-semibold text-xl text-ink mb-2 font-poppins font-bold">Where are you right now?</h4>
-            <p className="text-gray-500 text-sm leading-relaxed">Select your current status to see the timeline, process, and next action.</p>
+            <h4 className="font-semibold text-2xl text-ink mb-2 font-poppins font-bold">Where are you right now?</h4>
+            <p className="text-gray-500 text-base leading-relaxed">Select your current status to see the timeline, process, and next action.</p>
           </div>
-          
-          <div className="md:w-px md:h-20 bg-gray-200 hidden md:block"></div>
 
-          <div className="w-full md:w-2/3 flex overflow-x-auto md:overflow-x-visible pb-2 md:pb-0 gap-2.5 justify-start md:flex-wrap md:justify-start scrollbar-none [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-            <button 
+          <div className="md:w-px md:self-stretch bg-gray-200 hidden md:block"></div>
+
+          <div className="w-full md:w-2/3 flex overflow-x-auto md:overflow-x-visible pb-2 md:pb-0 gap-3 justify-start md:flex-wrap md:justify-start scrollbar-none [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+            <button
               onClick={() => handleStepSelect(0)}
-              className={`shrink-0 px-5 py-2 rounded-full text-xs font-semibold transition-colors ${activeStep === 0 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
+              className={`shrink-0 px-6 py-2.5 rounded-full text-sm font-semibold transition-colors ${activeStep === 0 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
             >
               I AM A BEGINNER
             </button>
-            <button 
+            <button
               onClick={() => handleStepSelect(1)}
-              className={`shrink-0 px-5 py-2 rounded-full text-xs font-semibold transition-colors ${activeStep === 1 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
+              className={`shrink-0 px-6 py-2.5 rounded-full text-sm font-semibold transition-colors ${activeStep === 1 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
             >
               SUBMITTED APPLICATION
             </button>
-            <button 
+            <button
               onClick={() => handleStepSelect(3)}
-              className={`shrink-0 px-5 py-2 rounded-full text-xs font-semibold transition-colors ${activeStep === 3 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
+              className={`shrink-0 px-6 py-2.5 rounded-full text-sm font-semibold transition-colors ${activeStep === 3 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
             >
               DONE WITH ENTRANCE TEST
             </button>
-            <button 
+            <button
               onClick={() => handleStepSelect(4)}
-              className={`shrink-0 px-5 py-2 rounded-full text-xs font-semibold transition-colors ${activeStep === 4 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
+              className={`shrink-0 px-6 py-2.5 rounded-full text-sm font-semibold transition-colors ${activeStep === 4 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
             >
               AWAITING MERIT LIST
             </button>
-            <button 
+            <button
               onClick={() => handleStepSelect(5)}
-              className={`shrink-0 px-5 py-2 rounded-full text-xs font-semibold transition-colors ${activeStep === 5 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
+              className={`shrink-0 px-6 py-2.5 rounded-full text-sm font-semibold transition-colors ${activeStep === 5 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
             >
               COMPLETED COUNSELLING
             </button>
@@ -170,9 +170,9 @@ export function AdmissionJourneyTimeline() {
           <div className="relative mb-16 w-full mx-auto max-w-[1200px] px-8">
             {/* Progress Bar Background */}
             <div className="absolute top-[26px] left-[8%] right-[8%] h-[3px] bg-gray-200 rounded-full z-0"></div>
-            
+
             {/* Active Progress Bar */}
-            <div 
+            <div
               className="absolute top-[26px] left-[8%] h-[3px] bg-[#00aee8] rounded-full transition-all duration-500 z-0"
               style={{ width: `${(activeStep / (steps.length - 1)) * 84}%` }}
             ></div>
@@ -181,33 +181,32 @@ export function AdmissionJourneyTimeline() {
               {steps.map((step, index) => {
                 const isActive = index === activeStep;
                 const isPast = index < activeStep;
-                
+
                 return (
-                  <div 
-                    key={step.id} 
+                  <div
+                    key={step.id}
                     className="flex flex-col items-center cursor-pointer group"
                     onClick={() => handleStepSelect(index)}
                   >
                     {/* Circle Node (Image 1 style) */}
-                    <div 
-                      className={`w-14 h-14 rounded-full flex items-center justify-center shadow-sm transition-all duration-300 mb-4 ${
-                        isActive 
-                          ? 'bg-brand text-white scale-110 shadow-[0_0_0_8px_rgba(238,54,79,0.15)] z-20' 
+                    <div
+                      className={`w-14 h-14 rounded-full flex items-center justify-center shadow-sm transition-all duration-300 mb-4 ${isActive
+                          ? 'bg-brand text-white scale-110 shadow-[0_0_0_8px_rgba(238,54,79,0.15)] z-20'
                           : isPast
                             ? 'bg-white text-[#00aee8] border-2 border-[#00aee8] z-10'
                             : 'bg-white text-gray-400 border-2 border-gray-100 group-hover:border-gray-300 group-hover:text-ink z-10'
-                      }`}
+                        }`}
                     >
                       <span className="material-symbols-rounded" style={{ fontSize: isActive ? '28px' : '22px' }}>
                         {step.icon}
                       </span>
                     </div>
-                    
-                    <div className="text-center w-28">
-                      <p className={`text-[11px] font-bold mb-0.5 tracking-wide uppercase ${isActive || isPast ? 'text-brand' : 'text-gray-400'}`}>
+
+                    <div className="text-center w-32">
+                      <p className={`text-[13px] font-bold mb-0.5 tracking-wide uppercase ${isActive || isPast ? 'text-brand' : 'text-gray-400'}`}>
                         Step {index + 1}
                       </p>
-                      <p className={`text-[12px] font-semibold leading-tight ${isActive ? 'text-ink font-bold' : 'text-gray-500'}`}>
+                      <p className={`text-sm font-semibold leading-tight ${isActive ? 'text-ink font-bold' : 'text-gray-500'}`}>
                         {step.title}
                       </p>
                     </div>
@@ -223,9 +222,9 @@ export function AdmissionJourneyTimeline() {
             <div className="bg-[#ee364f] rounded-[24px] p-8 sm:p-10 text-white min-h-[225px] flex flex-col justify-between shadow-md transition-all duration-300">
               <div key={activeStep} className="animate-fade-in h-full flex flex-col justify-between">
                 <div>
-                  <p className="text-brand-yellow font-bold text-xs uppercase tracking-widest mb-2">Step {activeStep + 1} of 7</p>
-                  <h4 className="text-2xl sm:text-3xl font-bold mb-3 font-poppins">{currentStepData.redCardTitle}</h4>
-                  <p className="text-white/90 text-[15px] leading-relaxed max-w-md">
+                  <p className="text-brand-yellow font-bold text-sm uppercase tracking-widest mb-2">Step {activeStep + 1} of 7</p>
+                  <h4 className="text-3xl sm:text-4xl font-bold mb-3 font-poppins">{currentStepData.redCardTitle}</h4>
+                  <p className="text-white/90 text-[17px] leading-relaxed max-w-md">
                     {currentStepData.redCardDescription}
                   </p>
                 </div>
@@ -236,15 +235,15 @@ export function AdmissionJourneyTimeline() {
             <div className="bg-white rounded-[24px] border border-gray-200 p-8 sm:p-10 min-h-[225px] flex flex-col justify-between shadow-sm transition-all duration-300">
               <div key={activeStep} className="animate-fade-in h-full flex flex-col justify-between">
                 <div>
-                  <p className="text-brand font-bold text-xs uppercase tracking-widest mb-2">{currentStepData.whiteCardTitle}</p>
-                  <p className="text-ink text-lg font-medium mb-6 leading-relaxed">
+                  <p className="text-brand font-bold text-sm uppercase tracking-widest mb-2">{currentStepData.whiteCardTitle}</p>
+                  <p className="text-ink text-xl font-medium mb-6 leading-relaxed">
                     {currentStepData.whiteCardDescription}
                   </p>
                 </div>
                 <div>
-                  <button 
+                  <button
                     onClick={handleNextPhaseClick}
-                    className="bg-[#00aee8] hover:bg-[#0095c7] text-white font-semibold rounded-full px-6 py-2.5 transition-colors inline-block text-xs"
+                    className="bg-[#00aee8] hover:bg-[#0095c7] text-white font-semibold rounded-full px-7 py-3 transition-colors inline-block text-sm"
                   >
                     {currentStepData.nextButtonLabel}
                   </button>
@@ -281,13 +280,12 @@ export function AdmissionJourneyTimeline() {
                     </div>
 
                     {/* Timeline Card */}
-                    <div 
+                    <div
                       onClick={() => handleStepSelect(index)}
-                      className={`w-full rounded-2xl p-5 text-left cursor-pointer transition-all duration-300 shadow-sm ${
-                        isActive 
-                          ? 'bg-[#ee364f] text-white shadow-md scale-[1.01]' 
+                      className={`w-full rounded-2xl p-5 text-left cursor-pointer transition-all duration-300 shadow-sm ${isActive
+                          ? 'bg-[#ee364f] text-white shadow-md scale-[1.01]'
                           : 'bg-white hover:bg-gray-50 border border-gray-100 text-ink'
-                      }`}
+                        }`}
                     >
                       <div className="flex items-center justify-between">
                         <div>
@@ -313,7 +311,7 @@ export function AdmissionJourneyTimeline() {
                             <p className="text-white/90 text-sm leading-relaxed mb-4">
                               {step.redCardDescription}
                             </p>
-                            
+
                             <div className="bg-white/10 rounded-xl p-3.5 mb-4">
                               <span className="block text-[10px] font-bold uppercase tracking-wider text-brand-yellow mb-1">
                                 {step.whiteCardTitle}
@@ -323,7 +321,7 @@ export function AdmissionJourneyTimeline() {
                               </p>
                             </div>
 
-                            <button 
+                            <button
                               onClick={(e) => {
                                 e.stopPropagation(); // Prevent re-triggering card click
                                 handleNextPhaseClick();

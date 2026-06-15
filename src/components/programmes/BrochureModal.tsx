@@ -81,12 +81,19 @@ export default function BrochureModal({ isOpen, onClose, programmeTitle }: Broch
     setSubmitState('submitting');
     setTimeout(() => {
       setSubmitState('success');
+      
+      const link = document.createElement('a');
+      link.href = '/documents/Prospectus_AY_2026_27.pdf';
+      link.download = 'Prospectus A.Y. 2026-27.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
       setTimeout(() => {
         onClose();
         setSubmitState('idle');
-        router.push('/download');
-      }, 1500);
-    }, 1000);
+      }, 3000);
+    }, 1200);
   };
 
   const renderField = ({ id, label, type = "text", required = false }: any) => {
@@ -149,14 +156,20 @@ export default function BrochureModal({ isOpen, onClose, programmeTitle }: Broch
 
         <div className="p-6">
           {submitState === 'success' ? (
-            <div className="flex flex-col items-center py-10 space-y-4">
-              <div className="rounded-full bg-[#10B981] p-4 text-white">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
+            <div className="flex flex-col items-center justify-center py-12 px-8 space-y-6 text-center animate-in zoom-in-50 fade-in duration-500">
+              <div className="rounded-full bg-[#10B981]/10 p-5">
+                <div className="rounded-full bg-[#10B981] p-4 text-white shadow-[0_0_20px_rgba(16,185,129,0.4)]">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-[#1C1C1D]">Redirecting...</h3>
-              <p className="text-gray-500">Preparing your download...</p>
+              <div className="space-y-2">
+                <h3 className="text-3xl font-bold text-[#1C1C1D]">Thank You!</h3>
+                <p className="text-[15px] text-gray-500 leading-relaxed">
+                  Your brochure is downloading automatically. We hope you find it helpful!
+                </p>
+              </div>
             </div>
           ) : (
             <form className="space-y-5" onSubmit={handleSubmit}>

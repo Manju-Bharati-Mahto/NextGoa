@@ -14,7 +14,7 @@ type SpecialisationData = {
 const specialisations: SpecialisationData[] = [
   {
     id: "ai",
-    name: "Artificial Intelligence",
+    name: "AI",
     learn: "Core AI concepts, neural networks, natural language processing, and advanced machine learning algorithms to build intelligent systems.",
     skills: ["Deep learning", "Model deployment", "Prompt engineering", "MLOps"],
     tools: ["PyTorch", "TensorFlow", "Hugging Face", "LangChain"],

@@ -65,8 +65,8 @@ export default function ProgrammeCard({ title, duration, eligibility, intake, mo
 
         {/* Eligibility */}
         <div className="text-ink">
-          <p className="text-[14px] sm:text-[15px] mb-1.5 opacity-90">Eligibility</p>
-          <p className="font-bold text-[14px] sm:text-[15px] leading-snug whitespace-pre-wrap">{eligibility}</p>
+          <p className="font-bold text-[14px] sm:text-[15px] mb-1.5 opacity-90">Eligibility</p>
+          <p className="text-[14px] sm:text-[15px] leading-snug whitespace-pre-wrap">{eligibility}</p>
         </div>
 
         <div className="flex-grow"></div>

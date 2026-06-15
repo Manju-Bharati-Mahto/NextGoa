@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Icon } from "@iconify/react";
 
 const companies = [
@@ -121,18 +122,28 @@ export default function RecruitersAndDestinations({ slug }: { slug?: string }) {
       </div>
 
       {/* Destinations Section */}
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-[24px] sm:rounded-[32px] p-8 sm:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex flex-col md:flex-row items-center justify-between gap-10">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="bg-white rounded-[24px] sm:rounded-[32px] p-8 sm:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex flex-col gap-10">
           
-          <h3 className="text-[32px] sm:text-[40px] font-bold text-ink leading-tight text-center md:text-left max-w-[300px]">
-            Higher-studies destinations
-          </h3>
+          {/* Top Row */}
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <h3 className="text-[32px] sm:text-[40px] font-bold text-ink leading-tight text-center md:text-left max-w-[400px]">
+              Higher-studies destinations
+            </h3>
+            <Link 
+              href="/study-abroad"
+              className="bg-[#E73649] text-white font-bold text-[16px] px-8 py-4 rounded-full hover:bg-[#D62B3D] transition-colors whitespace-nowrap shadow-sm hover:shadow-md"
+            >
+              Explore Study Abroad &rarr;
+            </Link>
+          </div>
 
-          <div className="flex flex-wrap justify-center md:justify-end gap-3 sm:gap-4 max-w-[500px]">
+          {/* Bottom Row - Flags */}
+          <div className="flex flex-wrap justify-start gap-4 sm:gap-6 w-full pt-4 border-t border-gray-50">
             {destinations.map((dest, idx) => (
               <div 
                 key={idx} 
-                className="flex items-center gap-2.5 bg-white border border-gray-200 rounded-full px-5 py-2.5 sm:px-6 sm:py-3 shadow-sm"
+                className="flex items-center gap-2.5 bg-[#FAFAFA] border border-gray-200 rounded-full px-5 py-2.5 sm:px-6 sm:py-3 shadow-sm hover:border-gray-300 transition-colors"
               >
                 <Icon icon={dest.icon} className="text-xl sm:text-2xl rounded-sm overflow-hidden" />
                 <span className="font-bold text-ink text-sm sm:text-base whitespace-nowrap">

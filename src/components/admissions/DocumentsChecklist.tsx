@@ -112,7 +112,7 @@ export function DocumentsChecklist() {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`rounded-full px-6 py-2 text-[14px] font-semibold transition-colors shrink-0 whitespace-nowrap ${
+                className={`rounded-full px-8 py-3.5 text-[17px] font-bold transition-colors shrink-0 whitespace-nowrap ${
                   activeTab === tab ? "bg-[#e73649] text-white" : "text-ink hover:bg-gray-50"
                 }`}
               >
@@ -222,12 +222,16 @@ export function DocumentsChecklist() {
           {/* Right Box */}
           <div className="bg-[#e73649] rounded-b-[24px] md:rounded-bl-none md:rounded-r-[24px] p-6 lg:p-8 flex flex-col items-center justify-center text-center shadow-sm md:w-[40%]">
             <h4 className="font-poppins font-semibold text-[24px] sm:text-[28px] text-white mb-4">Quick reference</h4>
-            <button className="bg-[#FEDB2F] hover:bg-[#e5c52a] text-ink font-bold text-[15px] sm:text-[16px] px-6 py-3 rounded-full flex items-center gap-3 transition-colors shadow-sm w-full sm:w-auto justify-center">
+            <a 
+              href="/prospectus/PU_Goa_Document_Checklist.pdf"
+              download
+              className="bg-[#FEDB2F] hover:bg-[#e5c52a] text-ink font-bold text-[15px] sm:text-[16px] px-6 py-3 rounded-full flex items-center gap-3 transition-colors shadow-sm w-full sm:w-auto justify-center"
+            >
               <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20" fill="currentColor">
                 <path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/>
               </svg>
               Download printable checklist (PDF)
-            </button>
+            </a>
           </div>
         </div>
       </div>

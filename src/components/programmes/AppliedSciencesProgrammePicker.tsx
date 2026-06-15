@@ -97,9 +97,9 @@ export default function AppliedSciencesProgrammePicker() {
           <div className="text-center mt-12">
             <button 
               onClick={() => setShowAll(true)}
-              className="font-bold text-[#E73649] hover:underline text-[15px] cursor-pointer"
+              className="border-2 border-[#E73649] text-[#E73649] hover:bg-[#E73649] hover:text-white rounded-full px-12 py-3 font-bold text-[17px] transition-all inline-flex items-center justify-center gap-2"
             >
-              View all programmes →
+              View all programmes &rarr;
             </button>
           </div>
         )}

@@ -112,19 +112,19 @@ export function EligibilitySection() {
         </div>
 
         {/* Filters */}
-        <div className="flex overflow-x-auto gap-3 justify-start md:justify-center scrollbar-hide mb-12 -mx-4 px-4 sm:-mx-8 sm:px-8 md:mx-0 md:px-0 py-1.5">
+        <div className="flex overflow-x-auto gap-4 justify-start md:justify-center scrollbar-hide mb-12 -mx-4 px-4 sm:-mx-8 sm:px-8 md:mx-0 md:px-0 py-1.5">
           {filters.map((f) => (
             <button
+              suppressHydrationWarning
               key={f.label}
               onClick={() => {
                 setActiveFilter(f.label);
                 setShowAll(false);
               }}
-              className={`px-5 py-2 rounded-full text-sm font-semibold border transition-all hover:scale-105 shrink-0 whitespace-nowrap ${
-                activeFilter === f.label || (activeFilter === "All levels" && f.label === "All levels")
+              className={`px-8 py-3.5 rounded-full text-[17px] font-bold border transition-all hover:scale-105 shrink-0 whitespace-nowrap ${activeFilter === f.label || (activeFilter === "All levels" && f.label === "All levels")
                   ? f.color
                   : "bg-white text-ink border-gray-200 hover:border-gray-300 opacity-60"
-              } ${activeFilter === f.label ? "opacity-100 shadow-md" : ""}`}
+                } ${activeFilter === f.label ? "opacity-100 shadow-md" : ""}`}
             >
               {f.label}
             </button>
@@ -197,6 +197,7 @@ export function EligibilitySection() {
         {filteredCards.length > 3 && (
           <div className="flex justify-center mb-12">
             <button
+              suppressHydrationWarning
               onClick={() => setShowAll(!showAll)}
               className="border border-gray-300 hover:border-gray-400 text-ink font-semibold px-6 py-2.5 rounded-full transition-colors bg-white shadow-sm"
             >
@@ -206,13 +207,13 @@ export function EligibilitySection() {
         )}
 
         {/* Footer Note */}
-        <div className="bg-[#1f1f1f] rounded-[24px] sm:rounded-full p-3 sm:p-2 flex flex-col sm:flex-row gap-4 sm:gap-0 items-center justify-between shadow-lg">
-          <p className="text-white text-sm font-semibold px-6 py-2 sm:py-0 text-center sm:text-left font-poppins">
+        <div className="bg-[#1f1f1f] rounded-[24px] sm:rounded-full p-3 flex flex-col sm:flex-row gap-4 sm:gap-0 items-center justify-between shadow-lg">
+          <p className="text-white text-base sm:text-[17px] font-semibold px-8 py-2 sm:py-0 text-center sm:text-left font-poppins">
             Final eligibility is subject to applicable statutory council requirements.
           </p>
           <Link
             href="#enquiry"
-            className="bg-[#fedb2f] hover:bg-[#e5c52a] text-ink text-sm font-bold px-6 py-3 rounded-[20px] sm:rounded-full transition-colors whitespace-nowrap w-full sm:w-auto text-center font-poppins"
+            className="bg-[#fedb2f] hover:bg-[#e5c52a] text-ink text-[15px] sm:text-[16px] font-bold px-8 py-4 rounded-[20px] sm:rounded-full transition-colors whitespace-nowrap w-full sm:w-auto text-center font-poppins"
           >
             Not sure? Talk to a counsellor &rarr;
           </Link>
