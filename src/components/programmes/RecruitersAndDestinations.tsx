@@ -128,7 +128,7 @@ export default function RecruitersAndDestinations({ slug }: { slug?: string }) {
           {/* Top Row */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <h3 className="text-[32px] sm:text-[40px] font-bold text-ink leading-tight text-center md:text-left max-w-[400px]">
-              Higher-studies destinations
+              Higher Studies Destinations
             </h3>
             <Link 
               href="/study-abroad"

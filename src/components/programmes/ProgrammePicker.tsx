@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ProgrammeCard from "./ProgrammeCard";
 
 type Programme = {
@@ -36,6 +36,16 @@ const programmeData: Record<string, Programme[]> = {
 export default function ProgrammePicker() {
   const [activeLevel, setActiveLevel] = useState<string>("Bachelor's");
   const [showAll, setShowAll] = useState<boolean>(false);
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    let levelParam = urlParams.get('level');
+    if (levelParam === 'Bachelors') levelParam = "Bachelor's";
+    if (levelParam === 'Masters') levelParam = "Master's";
+    if (levelParam) {
+      setActiveLevel(levelParam);
+    }
+  }, []);
 
   const btechEligibility = "10+2 Science (Physics & Maths compulsory) with Chem/CS/IT + 45% (40% Reserved).";
 
@@ -139,7 +149,7 @@ export default function ProgrammePicker() {
               tuitionFee={prog.tuitionFee}
               intake={prog.intake}
               mode={prog.mode}
-              isNew={prog.isNew ?? true}
+              isNew={prog.isNew}
             />
           ))}
         </div>

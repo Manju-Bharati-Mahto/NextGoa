@@ -1,11 +1,20 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ProgrammeCard from "./ProgrammeCard";
 
 export default function ManagementProgrammePicker() {
   const [activeLevel, setActiveLevel] = useState<string>("Bachelor's");
   const [showAll, setShowAll] = useState<boolean>(false);
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    let levelParam = urlParams.get('level');
+    if (levelParam === 'Bachelors') levelParam = "Bachelor's";
+    if (levelParam === 'Masters') levelParam = "Master's";
+    if (levelParam) {
+      setActiveLevel(levelParam);
+    }
+  }, []);
 
   const programmes: Record<string, any[]> = {
     "Bachelor's": [

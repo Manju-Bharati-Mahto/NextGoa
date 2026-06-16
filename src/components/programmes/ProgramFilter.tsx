@@ -45,16 +45,16 @@ const allCourses = [
   { id: 25, title: "Master of Computer Applications (MCA)", description: "Postgraduate IT and software program.", level: "Master's", field: "MCA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/mca_students.png", href: "/programs/it-cs" },
   { id: 28, title: "Master of Science (M.Sc.)", description: "2-year master's in Biotech & Microbiology.", level: "Master's", field: "B.Sc", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/msc_applied_science.png", href: "/programs/applied-sciences" },
 
-  // DOCTRAL
-  { id: 18, title: "Ph.D in Engineering", description: "Doctoral research program.", level: "Doctral", field: "Ph.D", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_engineering.png", href: "/programs/doctorate-programs" },
-  { id: 19, title: "Ph.D in Management", description: "Doctoral research program.", level: "Doctral", field: "Ph.D", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_management.png", href: "/programs/doctorate-programs" },
-  { id: 20, title: "Ph.D in Pharmacy", description: "Doctoral research program.", level: "Doctral", field: "Ph.D", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_pharmacy.png", href: "/programs/doctorate-programs" },
-  { id: 21, title: "Ph.D in Nursing", description: "Doctoral research program.", level: "Doctral", field: "Ph.D", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_nursing.png", href: "/programs/doctorate-programs" },
-  { id: 22, title: "Ph.D in Allied and Healthcare Sciences", description: "Doctoral research program.", level: "Doctral", field: "Ph.D", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_allied_health.png", href: "/programs/doctorate-programs" }
+  // DOCTORAL
+  { id: 18, title: "Ph.D in Engineering", description: "Doctoral research program.", level: "Doctoral", field: "Ph.D", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_engineering.png", href: "/programs/doctorate-programs" },
+  { id: 19, title: "Ph.D in Management", description: "Doctoral research program.", level: "Doctoral", field: "Ph.D", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_management.png", href: "/programs/doctorate-programs" },
+  { id: 20, title: "Ph.D in Pharmacy", description: "Doctoral research program.", level: "Doctoral", field: "Ph.D", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_pharmacy.png", href: "/programs/doctorate-programs" },
+  { id: 21, title: "Ph.D in Nursing", description: "Doctoral research program.", level: "Doctoral", field: "Ph.D", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_nursing.png", href: "/programs/doctorate-programs" },
+  { id: 22, title: "Ph.D in Allied and Healthcare Sciences", description: "Doctoral research program.", level: "Doctoral", field: "Ph.D", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_allied_health.png", href: "/programs/doctorate-programs" }
 ];
 
 const filterOptions = {
-  Level: ["All", "Diploma", "Bachelor's", "Master's", "Doctral"],
+  Level: ["All", "Diploma", "Bachelor's", "Master's", "Doctoral"],
   Field: [
     "All",
     "B.Tech",
@@ -214,12 +214,29 @@ export default function ProgramFilter() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
                 {groupedFaculties.map(({ href, courses, info }) => {
                   const Icon = info.icon;
-                  return (
-                    <Link
-                      key={href}
-                      href={href}
-                      className="group relative flex flex-col justify-between rounded-[20px] bg-white p-5 sm:p-6 shadow-[0_2px_8px_rgba(0,0,0,0.02)] border border-zinc-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-md h-full"
-                    >
+                    const queryParams = new URLSearchParams();
+                    if (activeFilters.Level !== "All") {
+                      const cleanLevel = activeFilters.Level.replace(/'/g, "");
+                      queryParams.append("level", cleanLevel);
+                    }
+                    if (activeFilters.Field !== "All") queryParams.append("field", activeFilters.Field);
+                    if (activeFilters.Mode !== "All") {
+                      queryParams.append("mode", activeFilters.Mode);
+                      if (activeFilters.Mode === "Lateral entry" && activeFilters.Level === "All") {
+                        queryParams.append("level", "Lateral Entry");
+                      }
+                    }
+                    if (activeFilters["Entrance Test"] !== "All") queryParams.append("entrance", activeFilters["Entrance Test"]);
+                    
+                    const queryString = queryParams.toString();
+                    const finalHref = queryString ? `${href}?${queryString}` : href;
+
+                    return (
+                      <Link
+                        key={href}
+                        href={finalHref}
+                        className="group relative flex flex-col justify-between rounded-[20px] bg-white p-5 sm:p-6 shadow-[0_2px_8px_rgba(0,0,0,0.02)] border border-zinc-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-md h-full"
+                      >
                       <div className="flex items-start gap-4 sm:gap-5">
                         <div className={`flex h-12 w-12 sm:h-16 sm:w-16 shrink-0 items-center justify-center rounded-2xl transition-colors group-hover:bg-[#0EB1E1] group-hover:text-white ${
                           href === "/programs/it-cs" 
