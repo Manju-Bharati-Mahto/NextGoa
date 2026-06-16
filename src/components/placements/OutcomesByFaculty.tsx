@@ -36,8 +36,8 @@ const facultyData: Record<FacultyName, FacultyData> = {
       { src: '/dept-companies/engineering/Simform.png',                   alt: 'Simform' },
       { src: '/dept-companies/engineering/Sophos.png',                    alt: 'Sophos' },
     ],
-    highestPackage: '43 LPA',
-    avgPackage: '6 LPA',
+    highestPackage: '60 LPA',
+    avgPackage: '8-9 LPA',
     recruiters: '350+',
   },
   'Management': {
@@ -131,7 +131,7 @@ export function OutcomesByFaculty() {
   const data = facultyData[activeTab];
 
   return (
-    <section className="bg-[#F0F2F5] py-24 px-4 sm:px-6 lg:px-8">
+    <section className="bg-[#F0F2F5] sm:py-24 sm:pb-0 py-15 px-4 sm:px-6 lg:px-8">
       <div className="max-w-[1440px] mx-auto">
 
         {/* Header */}
@@ -163,7 +163,7 @@ export function OutcomesByFaculty() {
         </div>
 
         {/* Main Card */}
-        <div className="relative mb-16 w-full mx-auto pt-8 lg:pt-12 px-8 lg:px-12 pb-4">
+        <div className="relative sm:mb-16 w-full mx-auto pt-8 lg:pt-12 px-8 lg:px-12 pb-4">
           {/* Faded Background Layer */}
           <div
             className="absolute inset-0 rounded-[24px] pointer-events-none"
@@ -185,11 +185,11 @@ export function OutcomesByFaculty() {
             </h3>
 
             {/* Company Logos Grid */}
-            <div className="grid grid-cols-4 sm:grid-cols-5 lg:grid-cols-7 gap-x-8 gap-y-8 items-center justify-items-center mt-12 sm:mt-16">
+            <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-7 gap-x-8 gap-y-8 items-center justify-items-center mt-12 sm:mt-16">
               {data.companies.map((company) => (
                 <div
                   key={company.alt}
-                  className="relative w-full h-10 sm:h-12"
+                  className="relative w-full h-16 sm:h-20"
                 >
                   <Image
                     src={company.src}
@@ -209,38 +209,37 @@ export function OutcomesByFaculty() {
 
             {/* Stats Row */}
             <div
-              className="grid grid-cols-3 rounded-2xl overflow-hidden bg-white relative z-20"
+              className="grid grid-cols-1 sm:grid-cols-3 rounded-2xl overflow-hidden bg-white relative z-20"
               style={{ border: '1.5px solid #E5E7EB', boxShadow: '0 8px 30px rgba(0,0,0,0.06)' }}
             >
               {/* Highest Package */}
               <div className="flex flex-col items-center justify-center py-10 px-6 sm:py-14 sm:px-8">
-                <span className="text-[#444444] font-sans text-lg sm:text-xl font-semibold mb-3 text-center">
+                <span className="text-[#444444] font-sans text-xl sm:text-2xl font-semibold mb-3 text-center">
                   Highest Package
                 </span>
-                <span className="text-[#0CAADD] font-poppins font-bold text-4xl sm:text-6xl xl:text-[72px] leading-none tracking-tight">
+                <span className="text-[#0CAADD] font-poppins font-bold text-[52px] sm:text-6xl xl:text-[72px] leading-none tracking-tight">
                   {data.highestPackage}
                 </span>
               </div>
 
               {/* Average Package */}
               <div
-                className="flex flex-col items-center justify-center py-10 px-6 sm:py-14 sm:px-8"
-                style={{ borderLeft: '1.5px solid #E5E7EB', borderRight: '1.5px solid #E5E7EB' }}
+                className="flex flex-col items-center justify-center py-10 px-6 sm:py-14 sm:px-8 border-y-[1.5px] sm:border-y-0 sm:border-x-[1.5px] border-[#E5E7EB]"
               >
-                <span className="text-[#444444] font-sans text-lg sm:text-xl font-semibold mb-3 text-center">
+                <span className="text-[#444444] font-sans text-xl sm:text-2xl font-semibold mb-3 text-center">
                   Average Package
                 </span>
-                <span className="text-[#0CAADD] font-poppins font-bold text-4xl sm:text-6xl xl:text-[72px] leading-none tracking-tight">
+                <span className="text-[#0CAADD] font-poppins font-bold text-[52px] sm:text-6xl xl:text-[72px] leading-none tracking-tight">
                   {data.avgPackage}
                 </span>
               </div>
 
               {/* Recruiters */}
               <div className="flex flex-col items-center justify-center py-10 px-6 sm:py-14 sm:px-8">
-                <span className="text-[#444444] font-sans text-lg sm:text-xl font-semibold mb-3 text-center">
+                <span className="text-[#444444] font-sans text-xl sm:text-2xl font-semibold mb-3 text-center">
                   Recruiters
                 </span>
-                <span className="text-[#0CAADD] font-poppins font-bold text-4xl sm:text-6xl xl:text-[72px] leading-none tracking-tight">
+                <span className="text-[#0CAADD] font-poppins font-bold text-[52px] sm:text-6xl xl:text-[72px] leading-none tracking-tight">
                   {data.recruiters}
                 </span>
               </div>

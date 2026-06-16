@@ -134,3 +134,17 @@ export const AppliedSciencesIcon = (props: FacultyIconProps) => (
     <path d="M45 25h10M45 30h10" stroke="currentColor" strokeWidth="2" opacity="0.5"/>
   </svg>
 );
+
+export const ITIcon = (props: FacultyIconProps) => (
+  <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    {/* Monitor */}
+    <rect x="15" y="25" width="70" height="45" rx="4" stroke="currentColor" strokeWidth="6" fill="none" className="stroke-[var(--svg-stroke,currentColor)]" opacity="0.9"/>
+    {/* Base */}
+    <path d="M40 70v10h20V70" stroke="currentColor" strokeWidth="6" fill="none" opacity="0.8"/>
+    <path d="M30 80h40" stroke="currentColor" strokeWidth="6" strokeLinecap="round" opacity="0.9"/>
+    {/* Code Brackets */}
+    <path d="M35 40l-10 10 10 10M65 40l10 10-10 10" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" opacity="0.8"/>
+    {/* Code Slash */}
+    <path d="M55 35l-10 30" stroke="currentColor" strokeWidth="5" strokeLinecap="round" opacity="0.7"/>
+  </svg>
+);

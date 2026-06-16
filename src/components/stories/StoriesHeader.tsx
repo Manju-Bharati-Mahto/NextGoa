@@ -23,7 +23,7 @@ export function StoriesHeader() {
 
         {/* Sub-heading description */}
         <p className="mx-auto mt-6 max-w-[1100px] text-ink/90 section-body">
-          Everything happening at Parul University Goa, told in real time. Industry visits, placement wins, research breakthroughs, student life and admissions guides — across every faculty.
+          Everything happening at Parul University Goa, told in real time. Industry visits, placement wins, research breakthroughs, student life and admissions guides across every faculty.
         </p>
       </div>
 

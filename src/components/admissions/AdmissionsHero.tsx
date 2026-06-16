@@ -14,12 +14,12 @@ export function AdmissionsHero() {
           Admissions Open for 2026-27 Academic Year
         </span>
 
-        <h1 className="font-poppins mx-auto w-full max-w-none text-[42px] sm:text-[68px] font-bold leading-[1.1] tracking-tight text-brand">
-          From Goa To Global Degree!
+        <h1 className="font-poppins mx-auto w-full max-w-[1200px] text-[36px] sm:text-[48px] md:text-[56px] font-bold leading-[1.1] tracking-tight text-brand">
+          From Goa’s vibrant shores to global opportunities, your journey starts here.
         </h1>
 
-        <p className="mx-auto mt-6 max-w-[1100px] text-[18px] sm:text-[22px] font-[family-name:var(--font-poppins)] font-normal leading-relaxed text-ink">
-          Stay in touch with your <strong className="font-bold text-ink">GOA</strong>ls as admissions in Parul University Goa are open for the 2026-27 academic year. Whether you are a student, fresh out of Class 12, a diploma holder seeking lateral entry, a graduate ready for postgraduate studies, or a working professional, there is a pathway here for you!
+        <p className="mx-auto mt-6 max-w-[1100px] text-[18px] sm:text-[22px] font-[family-name:var(--font-poppins)] font-normal leading-relaxed text-ink ">
+         Admissions for 2026–27 are now open at Parul University Goa. Whether you’re a school graduate, diploma entrant, postgraduate aspirant, or a working professional balancing studies and a career, your next big move starts here, with an education that opens doors across the world.
         </p>
       </div>
 

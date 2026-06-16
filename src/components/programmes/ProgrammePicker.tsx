@@ -105,7 +105,7 @@ export default function ProgrammePicker() {
   const visibleProgrammes = showAll ? currentProgrammes : currentProgrammes.slice(0, 3);
 
   return (
-    <section className="w-full bg-[#FAFAFA] py-24 sm:py-32">
+    <section className="w-full bg-[#FAFAFA] py-10 sm:py-16">
       <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-8 lg:px-12">
         
         {/* Header Section */}
@@ -126,7 +126,7 @@ export default function ProgrammePicker() {
                   setActiveLevel(level);
                   setShowAll(false);
                 }}
-                className={`rounded-full px-8 py-2.5 font-bold text-sm sm:text-base transition-all duration-200 border ${
+                className={`rounded-full px-8 sm:px-10 py-3.5 sm:py-4 font-bold text-[16px] sm:text-[18px] transition-all duration-200 border ${
                   activeLevel === level
                     ? "bg-[#0CAADD] text-white border-[#0CAADD] shadow-md shadow-[#0CAADD]/20"
                     : "bg-transparent text-ink border-gray-200 hover:border-gray-300 hover:bg-gray-50"

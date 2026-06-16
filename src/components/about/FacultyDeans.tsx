@@ -47,7 +47,7 @@ export function FacultyDeans() {
   ];
 
   return (
-    <section className="bg-[#F8F8F8] py-20 px-6">
+    <section className="bg-[#F8F8F8] py-20 px-6 sm:pt-10">
       <div className="mx-auto max-w-6xl">
         <div className="text-center mb-12">
           <h2 className="text-ink section-heading">

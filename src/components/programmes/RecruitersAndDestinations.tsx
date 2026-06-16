@@ -73,7 +73,7 @@ export default function RecruitersAndDestinations({ slug }: { slug?: string }) {
   };
 
   return (
-    <section className="w-full bg-[#FAFAFA] py-20 overflow-hidden border-t border-gray-100">
+    <section className="w-full bg-[#FAFAFA] py-20 pb-10 overflow-hidden border-t border-gray-100">
       <style>{`
         @keyframes marquee {
           0% { transform: translateX(0%); }
@@ -139,14 +139,14 @@ export default function RecruitersAndDestinations({ slug }: { slug?: string }) {
           </div>
 
           {/* Bottom Row - Flags */}
-          <div className="flex flex-wrap justify-start gap-4 sm:gap-6 w-full pt-4 border-t border-gray-50">
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap sm:justify-start gap-3 sm:gap-6 w-full pt-4 border-t border-gray-50">
             {destinations.map((dest, idx) => (
               <div 
                 key={idx} 
-                className="flex items-center gap-2.5 bg-[#FAFAFA] border border-gray-200 rounded-full px-5 py-2.5 sm:px-6 sm:py-3 shadow-sm hover:border-gray-300 transition-colors"
+                className="flex items-center justify-center sm:justify-start gap-2 sm:gap-2.5 bg-[#FAFAFA] border border-gray-200 rounded-full px-2 sm:px-6 py-2.5 sm:py-3 shadow-sm hover:border-gray-300 transition-colors"
               >
-                <Icon icon={dest.icon} className="text-xl sm:text-2xl rounded-sm overflow-hidden" />
-                <span className="font-bold text-ink text-sm sm:text-base whitespace-nowrap">
+                <Icon icon={dest.icon} className="text-xl sm:text-2xl rounded-sm overflow-hidden shrink-0" />
+                <span className="font-bold text-ink text-[13px] sm:text-base whitespace-nowrap">
                   {dest.name}
                 </span>
               </div>

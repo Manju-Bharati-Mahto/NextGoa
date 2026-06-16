@@ -82,7 +82,7 @@ export default function StudyAbroadPartners() {
   const displayedCountries = showAll ? countriesData : countriesData.slice(0, 2);
 
   return (
-    <section className={`bg-[#f9f9f9] py-25 px-4 md:px-8 ${poppins.className}`}>
+    <section className={`bg-[#f9f9f9] sm:py-25 pt-15 pb-0 px-4 md:px-8 ${poppins.className}`}>
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         {/* Header */}
         <h3 className="text-gray-900 mb-2 text-center section-subheading">
@@ -90,7 +90,7 @@ export default function StudyAbroadPartners() {
         </h3>
         <h2 className="text-[#f0424e] mb-4 text-center section-heading">
           A global degree, one connected path.
-        </h2>
+        </h2>           
         <p className="text-gray-800 text-center mb-20 max-w-2xl section-body">
           Browse partner universities, faculties served, and the pathways available
           in each country

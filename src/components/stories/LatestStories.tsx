@@ -133,7 +133,7 @@ export function LatestStories({ stories = [] }: { stories?: Story[] }) {
             }
             @media (min-width: 1024px) {
               .carousel-track-container {
-                transform: translateX(calc(-${(currentIndex - 1) * 24.2}% + 1.5%));
+                transform: translateX(calc(-${currentIndex * 30}% + 35%));
               }
             }
           `}} />
@@ -147,13 +147,13 @@ export function LatestStories({ stories = [] }: { stories?: Story[] }) {
               return (
                 <div
                   key={idx}
-                  className={`w-[85%] md:w-[45%] lg:w-[28%] flex-shrink-0 px-2 md:px-3 transition-all duration-700 ease-in-out ${
+                  className={`w-[85%] md:w-[45%] lg:w-[30%] flex-shrink-0 px-2 md:px-3 transition-all duration-700 ease-in-out ${
                     isActive 
                       ? "scale-100 opacity-100 z-10" 
                       : "scale-[0.98] opacity-60 lg:opacity-100 z-0"
                   }`}
                 >
-                  <Link href={card.link || '#'} target="_blank" className="rounded-[28px] bg-white shadow-md border border-black/5 overflow-hidden flex flex-col h-full min-h-[460px] group transition-all hover:shadow-lg">
+                  <Link href={card.link || '#'} target="_blank" className="rounded-[28px] bg-white shadow-md border border-black/5 overflow-hidden flex flex-col h-full group transition-all hover:shadow-lg">
                     {/* Top: Image */}
                     <div className="relative w-full aspect-[16/11] bg-slate-100 overflow-hidden">
                       {card.image ? (
@@ -178,7 +178,7 @@ export function LatestStories({ stories = [] }: { stories?: Story[] }) {
                         >
                           {card.tag}
                         </span>
-                        <h3 className="mt-4 font-poppins text-lg font-bold leading-snug tracking-tight text-ink group-hover:text-brand transition-colors">
+                        <h3 className="mt-4 font-poppins text-lg font-bold leading-snug tracking-tight text-ink group-hover:text-brand transition-colors line-clamp-3">
                           {card.title}
                         </h3>
                         <p className="mt-2.5 font-[family-name:var(--font-poppins)] text-sm leading-relaxed text-ink/70 line-clamp-3">

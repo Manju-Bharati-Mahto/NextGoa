@@ -105,11 +105,7 @@ export function CampusCarousel() {
       </div>
 
       <div
-        className="relative z-10 mx-auto w-full flex flex-col items-center"
-        style={{
-          paddingTop: "clamp(5rem, 12.2vw, 600px)",
-          paddingBottom: "clamp(5rem, 13.3vw, 600px)"
-        }}
+        className="relative z-10 mx-auto w-full flex flex-col items-center pt-[calc(clamp(30px,6vw,120px)+2rem)] pb-[calc(clamp(30px,6vw,120px)+2rem)] sm:pt-[calc(clamp(30px,6vw,120px)+4rem)] sm:pb-[calc(clamp(30px,6vw,120px)+4rem)]"
       >
         {/* Header content */}
         <div className="text-center px-6 max-w-3xl mb-12">

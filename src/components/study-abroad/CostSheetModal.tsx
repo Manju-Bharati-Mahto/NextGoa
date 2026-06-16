@@ -57,7 +57,7 @@ export default function CostSheetModal({ isOpen, onClose }: CostSheetModalProps)
 
   const PATHWAYS = ["Bachelor's 2+2", "Master's 1+1", "Progression 3+1+1", "Bachelor's (Transfer)"];
   const COUNTRIES = ["USA", "UK", "Canada", "Australia", "New Zealand", "France", "Germany"];
-  const YEARS = ["2025", "2026", "2027", "2028 or later"];
+  const YEARS = ["2026", "2027", "2028 or later"];
 
   return (
     <div className={`fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 ${poppins.className}`}>

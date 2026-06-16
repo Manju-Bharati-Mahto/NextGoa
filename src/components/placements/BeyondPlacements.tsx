@@ -56,7 +56,7 @@ export function BeyondPlacements() {
   }, []);
 
   return (
-    <section className="w-full bg-[#FAFAFA] py-24 sm:py-32 xl:py-40 overflow-hidden">
+    <section className="w-full bg-[#FAFAFA] py-24 sm:py-32 overflow-hidden">
       <div className="max-w-[1600px] mx-auto px-6 sm:px-10 lg:px-12 2xl:px-16">
         {/* Desktop Layout (xl and up) */}
         <div className="hidden xl:grid xl:grid-cols-[4fr_6fr] gap-16 lg:gap-20 items-center">

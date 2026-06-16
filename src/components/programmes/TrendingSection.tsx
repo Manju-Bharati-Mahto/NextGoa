@@ -75,8 +75,8 @@ export default function TrendingSection() {
     <section 
       className="relative z-20 w-full lg:min-h-[600px] flex items-center bg-transparent -mt-12 sm:-mt-24 lg:-mt-5 pb-16 lg:pb-0"
       style={{ 
-        paddingTop: "clamp(5rem, 12.2vw, 600px)", 
-        paddingBottom: "clamp(3rem, 13.3vw, 600px)" 
+        paddingTop: "clamp(3rem, 8vw, 120px)", 
+        paddingBottom: "clamp(2.5rem, 7vw, 110px)" 
       }}
     >
       {/* Background Red Wavy Image */}

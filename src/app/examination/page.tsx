@@ -33,7 +33,7 @@ export default function ExaminationPage() {
       </section>
 
       {/* Schedules Section */}
-      <section className="relative z-20 bg-gray-50 pb-16">
+      <section className="relative z-20 bg-gray-50 sm:pb-10 pb-5">
         <ExaminationSchedules />
       </section>
     </main>
