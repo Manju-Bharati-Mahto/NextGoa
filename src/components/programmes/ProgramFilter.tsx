@@ -257,7 +257,8 @@ export default function ProgramFilter() {
                       </div>
                       <div className="mt-8 sm:mt-10 flex items-center justify-between border-t border-zinc-100 pt-5">
                         <span className="font-poppins text-[13px] sm:text-[14px] font-bold uppercase tracking-wide text-[#E74C5E]">
-                          {courses.length} PROGRAMME{courses.length !== 1 && 'S'}
+                          {/* {courses.length} PROGRAMME{courses.length !== 1 && 'S'} */}
+                          View More
                         </span>
                         <svg className="w-[20px] h-[20px] sm:w-[22px] sm:h-[22px] text-zinc-400 group-hover:text-ink/60 transition-colors" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />

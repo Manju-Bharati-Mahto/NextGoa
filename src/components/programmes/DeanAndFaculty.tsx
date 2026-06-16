@@ -6,28 +6,28 @@ import Image from "next/image";
 const facultyList = [
   {
     role: "ASSOCIATE PROFESSOR",
-    name: "Faculty Member",
+    name: "Dr. K. Vasudevan",
     degree: "Ph.D., AI/ML",
     specialities: "Artificial Intelligence, Deep Learning",
     image: "/faculties/Engineering/Faculty.jpg",
   },
   {
     role: "ASSOCIATE PROFESSOR",
-    name: "Faculty Member",
+    name: "Dr. Ashok Baldev Tejwani",
     degree: "Ph.D., AI/ML",
     specialities: "Artificial Intelligence, Deep Learning",
     image: "/faculties/Engineering/Faculty2.jpg",
   },
   {
     role: "ASSOCIATE PROFESSOR",
-    name: "Faculty Member",
+    name: "Dr. Radhika Sharma",
     degree: "Ph.D., AI/ML",
     specialities: "Artificial Intelligence, Deep Learning",
     image: "/faculties/Engineering/Faculty3.jpg",
   },
   {
     role: "ASSOCIATE PROFESSOR",
-    name: "Faculty Member",
+    name: "Ms. Harsha Dessai",
     degree: "Ph.D., AI/ML",
     specialities: "Artificial Intelligence, Deep Learning",
     image: "/faculties/Engineering/Faculty4.jpg",
