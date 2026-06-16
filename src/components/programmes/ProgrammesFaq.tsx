@@ -66,7 +66,7 @@ export default function ProgrammesFaq() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="bg-[#F9F9F9] pb-24 pt-20 font-[family-name:var(--font-poppins)]">
+    <section id="faq" className="bg-[#F9F9F9] sm:pb-18 pb-20 sm:pt-5 pt-5 font-[family-name:var(--font-poppins)]">
       <JsonLd data={faqSchema(faqs)} />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">

@@ -12,7 +12,8 @@ import {
   PhysiotherapyIcon,
   AlliedHealthIcon,
   DoctoralIcon,
-  AppliedSciencesIcon
+  AppliedSciencesIcon,
+  ITIcon
 } from "../landing/FacultyIcons";
 
 const allCourses = [
@@ -77,7 +78,7 @@ const filterOptions = {
 
 const FACULTY_INFO: Record<string, { name: string; desc: string; icon: React.ComponentType<any> }> = {
   "/programs/engineering": { name: "Engineering & Technology", desc: "The finest technical exposure in the field of technology.", icon: EngineeringIcon },
-  "/programs/it-cs": { name: "Information Technology & Computer Science", desc: "Shaping the digital future with advanced computing.", icon: EngineeringIcon },
+  "/programs/it-cs": { name: "Information Technology & Computer Science", desc: "Shaping the digital future with advanced computing.", icon: ITIcon },
   "/programs/management-studies": { name: "Management Studies", desc: "Where tomorrow's industry leaders are shaped.", icon: ManagementIcon },
   "/programs/hotel-management": { name: "Hotel Management", desc: "Where Goa's world becomes your classroom.", icon: HotelIcon },
   "/programs/applied-sciences": { name: "Applied Sciences", desc: "Where science serves humanity.", icon: AppliedSciencesIcon },
@@ -138,7 +139,7 @@ export default function ProgramFilter() {
   }, [filteredCourses]);
 
   return (
-    <section className="py-20 lg:py-28 bg-[#FAFAFA] font-sans">
+    <section className="py-20 lg:py-20 bg-[#FAFAFA] font-sans">
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center mb-16">
           <h3 className="text-4xl md:text-5xl font-bold text-ink mb-6 font-poppins leading-tight">

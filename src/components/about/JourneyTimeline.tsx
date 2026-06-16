@@ -67,7 +67,7 @@ export function JourneyTimeline() {
   };
 
   return (
-    <section className="overflow-hidden bg-brand-white px-0 py-24 sm:py-32">
+    <section className="overflow-hidden bg-brand-white px-0 py-15 sm:pt-25 sm:pb-15">
       <div className="mx-auto max-w-5xl px-6 text-center">
         <p className="text-ink section-subheading">
           Journey
@@ -83,7 +83,7 @@ export function JourneyTimeline() {
         </p>
       </div>
 
-      <div className="relative mt-20 w-full sm:mt-24 group">
+      <div className="relative mt-10 w-full sm:mt-17 group">
         {/* Fading edges for smooth scroll appearance */}
         <div className="pointer-events-none absolute inset-y-0 left-0 z-20 w-24 bg-gradient-to-r from-brand-white to-transparent sm:w-40" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-20 w-24 bg-gradient-to-l from-brand-white to-transparent sm:w-40" />

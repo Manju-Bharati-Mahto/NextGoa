@@ -20,11 +20,7 @@ export default function StudyAbroadComparison() {
 
   return (
     <section
-      className="relative w-full font-[family-name:var(--font-poppins)] bg-transparent overflow-hidden"
-      style={{
-        paddingTop: "calc(clamp(50px, 8vw, 500px) + 4rem)",
-        paddingBottom: "calc(clamp(50px, 8vw, 500px) + 4rem)"
-      }}
+      className="relative w-full font-[family-name:var(--font-poppins)] bg-transparent overflow-hidden pt-[calc(clamp(30px,6vw,120px)+2rem)] pb-[calc(clamp(30px,6vw,120px)+2rem)] sm:pt-[calc(clamp(30px,6vw,120px)+4rem)] sm:pb-[calc(clamp(30px,6vw,120px)+4rem)]"
     >
       {/* Background Red Wavy Image */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -36,14 +32,14 @@ export default function StudyAbroadComparison() {
             bottom: "calc(clamp(50px, 8vw, 500px) - 1.5px)"
           }}
         />
-        
-        
+
+
         {/* Top Wave */}
         <div
           className="absolute top-0 left-0 right-0 overflow-hidden bg-[#f9f9f9]"
           style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
-          <div 
+          <div
             className="absolute top-0 left-0 w-[400%] h-full animate-wave-flow"
             style={{
               backgroundImage: "url('/89-double.svg?v=3')",
@@ -58,7 +54,7 @@ export default function StudyAbroadComparison() {
           className="absolute bottom-0 left-0 right-0 overflow-hidden bg-[#f9f9f9]"
           style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
-          <div 
+          <div
             className="absolute bottom-0 left-0 w-[400%] h-full animate-wave-flow"
             style={{
               backgroundImage: "url('/89-double.svg?v=3')",
@@ -69,7 +65,7 @@ export default function StudyAbroadComparison() {
           />
         </div>
       </div>
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10 py-8 sm:py-16">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10 py-8 sm:py-0">
 
         {/* Header Section */}
         <div className="text-center mb-8 sm:mb-12 pt-2 sm:pt-6">

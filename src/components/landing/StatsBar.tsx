@@ -72,14 +72,14 @@ function AnimatedNumber({ value }: { value: string }) {
 export function StatsBar() {
   return (
     <section id="stats" className="bg-ink-warm">
-      <div className="mx-auto max-w-7xl px-6 py-10 sm:py-16">
-        <dl className="grid grid-cols-1 gap-6 sm:grid-cols-3 sm:divide-x sm:divide-white/10">
+      <div className="mx-auto max-w-7xl px-6 py-15 sm:py-25">
+        <dl className="grid grid-cols-1 gap-14 sm:gap-6 sm:grid-cols-3 sm:divide-x sm:divide-white/10">
           {stats.map((s) => (
             <div key={s.label} className="text-center">
-              <dt className="font-[family-name:var(--font-gotham)] text-4xl sm:text-6xl font-bold tracking-tight text-brand-bright">
+              <dt className="font-[family-name:var(--font-gotham)] text-6xl sm:text-[80px] sm:leading-none font-bold tracking-tight text-brand-bright">
                 <AnimatedNumber value={s.value} />
               </dt>
-              <dd className="mt-2 text-base font-medium text-white/70">{s.label}</dd>
+              <dd className="mt-2 text-lg sm:text-xl font-medium text-white/70">{s.label}</dd>
             </div>
           ))}
         </dl>

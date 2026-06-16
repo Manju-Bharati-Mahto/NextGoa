@@ -34,7 +34,7 @@ const stories = [
     quote: "Today, I’m happy to share that I’m stepping into the fintech world, and I couldn’t have asked for a better place to begin this journey than Bank of America. Grateful for the learnings, the setbacks, and everything that led me here.",
     company: "Bank Of America",
     package: "",
-    image: "/placements/hero3.png"
+    image: "/placements/hero3.jpg"
   },
   {
     names: "Yuvraj Ranjan Singh",
@@ -74,11 +74,7 @@ export function AlumniStories() {
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-white"
-      style={{
-        paddingTop: "clamp(5rem, 12.2vw, 600px)",
-        paddingBottom: "clamp(5rem, 13.3vw, 600px)"
-      }}
+      className="relative w-full overflow-hidden bg-white pt-[calc(clamp(50px,8vw,120px)+4rem)] pb-[calc(clamp(50px,8vw,120px)+4rem)]"
     >
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Middle Solid Red Background */}
@@ -123,7 +119,7 @@ export function AlumniStories() {
       
       <div className="relative z-10 max-w-6xl mx-auto px-6 mt-4 sm:mt-6 mb-4 sm:mb-6">
         {/* Title Section */}
-        <div className="text-center mb-16 sm:mb-20">
+        <div className="text-center mb-16 sm:mb-20 mb-10">
           <h3 className="text-white mb-3 section-subheading">
             Alumni stories
           </h3>
@@ -169,7 +165,7 @@ export function AlumniStories() {
           </div>
 
           {/* Right Card - Quote */}
-          <div className="relative z-10 w-full h-full lg:h-auto">
+          <div className="relative z-10 w-full h-full lg:h-auto mt-12 lg:mt-0">
             <div className="bg-[#1C1C1C] rounded-[32px] p-2 sm:p-2.5 border-[3px] border-white shadow-2xl h-full">
               <div className="relative rounded-[24px] p-8 sm:p-10 flex flex-col h-full bg-[#1C1C1C] min-h-[480px]">
                 

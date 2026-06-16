@@ -39,9 +39,9 @@ export default function StudyAbroadInvestment() {
               </p>
             </div>
             <div>
-              <Link href="/admissions" className="inline-block bg-[#eb3b47] hover:bg-[#d6323c] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-colors w-max shadow-md">
-                View admissions
-              </Link>
+              <a href="/documents/Prospectus_AY_2026_27.pdf" download="Prospectus A.Y. 2026-27.pdf" className="inline-block bg-[#eb3b47] hover:bg-[#d6323c] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-colors w-max shadow-md">
+                Download Prospectus
+              </a>
             </div>
           </div>
 

@@ -31,12 +31,8 @@ const SupportPill = ({ text }: { text: string }) => (
 export default function StudyAbroadAssistance() {
   return (
     <section
-      className={`relative w-full bg-transparent px-4 md:px-8 overflow-hidden ${poppins.className}`}
-      style={{
-        ...poppins.style,
-        paddingTop: "calc(clamp(50px, 8vw, 500px) + 4rem)",
-        paddingBottom: "calc(clamp(50px, 8vw, 500px) + 4rem)"
-      }}
+      className={`relative w-full bg-transparent px-4 md:px-8 overflow-hidden pt-[calc(clamp(30px,6vw,120px)+3rem)] pb-[calc(clamp(30px,6vw,120px)+3rem)] sm:pt-[calc(clamp(30px,6vw,120px)+4rem)] sm:pb-[calc(clamp(30px,6vw,120px)+4rem)] ${poppins.className}`}
+      style={poppins.style}
     >
       {/* Background Red Wavy Image */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -53,7 +49,7 @@ export default function StudyAbroadAssistance() {
           className="absolute top-0 left-0 right-0 overflow-hidden"
           style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
-          <div 
+          <div
             className="absolute top-0 left-0 w-[400%] h-full animate-wave-flow"
             style={{
               backgroundImage: "url('/89-double.svg?v=3')",
@@ -68,7 +64,7 @@ export default function StudyAbroadAssistance() {
           className="absolute bottom-0 left-0 right-0 overflow-hidden"
           style={{ height: "clamp(50px, 8vw, 500px)" }}
         >
-          <div 
+          <div
             className="absolute bottom-0 left-0 w-[400%] h-full animate-wave-flow"
             style={{
               backgroundImage: "url('/89-double.svg?v=3')",

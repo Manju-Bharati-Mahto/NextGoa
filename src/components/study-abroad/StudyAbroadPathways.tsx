@@ -108,7 +108,7 @@ export default function StudyAbroadPathways() {
     pathwaysData.find((tab) => tab.id === activeTabId) || pathwaysData[0];
 
   return (
-    <section className={`bg-[#f8f8f8] py-20 px-4 md:px-8 ${poppins.className}`}>
+    <section className={`bg-[#f8f8f8] sm:pt-0 sm:pb-20 py-20 px-4 md:px-8 ${poppins.className}`}>
       <div className="max-w-6xl mx-auto flex flex-col items-center">
         {/* Header */}
         <h3 className="text-gray-900 mb-2 text-center section-subheading">
@@ -130,8 +130,8 @@ export default function StudyAbroadPathways() {
               onClick={() => setActiveTabId(tab.id)}
               className={
                 activeTabId === tab.id
-                  ? "bg-[#12a6e6] text-white w-[150px] sm:w-[170px] md:w-auto px-2 sm:px-8 py-3 rounded-full font-bold shadow-sm transition-transform hover:scale-105"
-                  : "bg-white border border-gray-300 text-gray-900 w-[150px] sm:w-[170px] md:w-auto px-2 sm:px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors"
+                  ? "bg-[#12a6e6] text-white text-[17px] w-[150px] sm:w-[170px] md:w-auto px-2 sm:px-8 py-3 rounded-full font-bold shadow-sm transition-transform hover:scale-105"
+                  : "bg-white border border-gray-300 text-gray-900 text-[17px] w-[150px] sm:w-[170px] md:w-auto px-2 sm:px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors"
               }
             >
               {tab.tabLabel}

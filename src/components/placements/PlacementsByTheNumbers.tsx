@@ -64,7 +64,7 @@ export function PlacementsByTheNumbers() {
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > minSwipeDistance;
     const isRightSwipe = distance < -minSwipeDistance;
-    
+
     if (isLeftSwipe) {
       setActiveSlide((prev) => (prev === 0 ? 1 : 0));
     }
@@ -78,7 +78,7 @@ export function PlacementsByTheNumbers() {
 
   const cx = 450;
   const cy = 300;
-  const R = 240; 
+  const R = 240;
   const dotR = R * 0.75;
   const elbowR = R * 1.15; // Extend the bend further outside the chart
   const lineLength = 55;   // Make the horizontal line longer
@@ -90,8 +90,8 @@ export function PlacementsByTheNumbers() {
   const wipeValues = [maskCircumference];
   const keyTimes = [0];
   let currentKeyTime = 0;
-  
-  const numPauses = Math.max(1, sortedData.length - 1); 
+
+  const numPauses = Math.max(1, sortedData.length - 1);
   const totalPauseTime = 0.30; // 30% of the total animation duration is spent pausing
   const pauseDuration = totalPauseTime / numPauses;
   const totalMoveTime = 1 - totalPauseTime;
@@ -101,14 +101,14 @@ export function PlacementsByTheNumbers() {
     const moveDuration = (slice.value / 100) * totalMoveTime;
     const midMoveKeyTime = currentKeyTime + moveDuration / 2;
     const animDelay = (midMoveKeyTime * totalAnimDur).toFixed(2);
-    
+
     currentKeyTime += moveDuration;
     currentPercentForAnim += slice.value;
     const currentOffset = maskCircumference * (1 - currentPercentForAnim / 100);
-    
+
     wipeValues.push(currentOffset);
     keyTimes.push(Math.min(currentKeyTime, 1));
-    
+
     if (index < numPauses) {
       currentKeyTime += pauseDuration;
       wipeValues.push(currentOffset);
@@ -188,24 +188,24 @@ export function PlacementsByTheNumbers() {
           {activeSlide === 0 ? "Where graduates go and what they earn." : "% of placed students per band"}
         </h2>
         <p className="text-gray-800 text-center mb-16 transition-all duration-300 section-body">
-          {activeSlide === 0 
+          {activeSlide === 0
             ? "Two views of one cohort - package bands on the left, sector destinations on the right."
             : "Highest: ₹60 LPA · Median confirmed in official placement report."}
         </p>
 
-        <div 
-          className="relative w-full max-w-5xl mx-auto mb-10 animate-fade-in" 
+        <div
+          className="relative w-full max-w-5xl mx-auto mb-10 animate-fade-in"
           key={`slide-${activeSlide}`}
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
         >
           <svg viewBox="0 0 900 600" className="w-full h-auto overflow-visible">
-            
+
             {inView && (
               <>
                 <style>
-              {`
+                  {`
                 @keyframes fadeIn {
                   from { opacity: 0; transform: scale(0.98); }
                   to { opacity: 1; transform: scale(1); }
@@ -233,156 +233,156 @@ export function PlacementsByTheNumbers() {
                   animation: popOutCenter 0.6s ease-in-out ${totalAnimDur}s forwards;
                 }
               `}
-            </style>
+                </style>
 
-            <defs>
-              <mask id="pie-wipe-mask">
-                <circle
-                  cx={cx}
-                  cy={cy}
-                  r={maskR}
-                  fill="none"
-                  stroke="white"
-                  strokeWidth={R + 10}
-                  strokeDasharray={maskCircumference}
-                  strokeDashoffset={maskCircumference}
-                  transform={`rotate(-90 ${cx} ${cy})`}
-                >
-                  <animate
-                    attributeName="stroke-dashoffset"
-                    values={animValuesString}
-                    dur={`${totalAnimDur}s`}
-                    fill="freeze"
-                    calcMode="linear"
-                    keyTimes={animKeyTimesString}
-                  />
-                </circle>
-              </mask>
-            </defs>
+                <defs>
+                  <mask id="pie-wipe-mask">
+                    <circle
+                      cx={cx}
+                      cy={cy}
+                      r={maskR}
+                      fill="none"
+                      stroke="white"
+                      strokeWidth={R + 10}
+                      strokeDasharray={maskCircumference}
+                      strokeDashoffset={maskCircumference}
+                      transform={`rotate(-90 ${cx} ${cy})`}
+                    >
+                      <animate
+                        attributeName="stroke-dashoffset"
+                        values={animValuesString}
+                        dur={`${totalAnimDur}s`}
+                        fill="freeze"
+                        calcMode="linear"
+                        keyTimes={animKeyTimesString}
+                      />
+                    </circle>
+                  </mask>
+                </defs>
 
-            {/* Outer soft shadow circle/glow */}
-            <circle cx={cx} cy={cy} r={R + 12} fill="white" filter="drop-shadow(0 4px 20px rgba(0,0,0,0.06))" />
-            <circle cx={cx} cy={cy} r={R + 1} fill="none" stroke="#F1F5F9" strokeWidth="2" />
+                {/* Outer soft shadow circle/glow */}
+                <circle cx={cx} cy={cy} r={R + 12} fill="white" filter="drop-shadow(0 4px 20px rgba(0,0,0,0.06))" />
+                <circle cx={cx} cy={cy} r={R + 1} fill="none" stroke="#F1F5F9" strokeWidth="2" />
 
-            {/* Masked group for pie slices and gaps so they visually 'fill up' */}
-            <g mask="url(#pie-wipe-mask)">
-              {/* Pie Slices */}
-              <g transform={`rotate(-90 ${cx} ${cy})`}>
-                {pieSlices}
-              </g>
+                {/* Masked group for pie slices and gaps so they visually 'fill up' */}
+                <g mask="url(#pie-wipe-mask)">
+                  {/* Pie Slices */}
+                  <g transform={`rotate(-90 ${cx} ${cy})`}>
+                    {pieSlices}
+                  </g>
 
-              {/* Gaps (White lines radiating from center) */}
-              <g transform={`rotate(-90 ${cx} ${cy})`}>
-                {pieGaps}
-              </g>
-            </g>
-
-            {/* Center Circle Overlay */}
-            <g className="animate-pop-center">
-              <circle cx={cx} cy={cy} r={R * 0.45} fill="white" stroke="#F8FAFC" strokeWidth="12" />
-              
-              {/* Center Company Logos Image */}
-              <image
-                href="/placements/comp.png"
-                x={cx - (R * 0.43)}
-                y={cy - (R * 0.43)}
-                width={R * 0.86}
-                height={R * 0.86}
-                preserveAspectRatio="xMidYMid meet"
-              />
-            </g>
-
-            {/* Labels and connecting lines */}
-            {animatedData.map((slice, i) => {
-              const startPercent = cumulativeForLabels / 100;
-              cumulativeForLabels += slice.value;
-              const endPercent = cumulativeForLabels / 100;
-              const midPercent = (startPercent + endPercent) / 2;
-
-              const midAngle = midPercent * 360;
-              const rad = (midAngle - 90) * (Math.PI / 180);
-
-              const dotX = Number((cx + dotR * Math.cos(rad)).toFixed(4));
-              const dotY = Number((cy + dotR * Math.sin(rad)).toFixed(4));
-
-              const elbowX = Number((cx + elbowR * Math.cos(rad)).toFixed(4));
-              const elbowY = Number((cy + elbowR * Math.sin(rad)).toFixed(4));
-
-              const isRight = midAngle >= 0 && midAngle < 180;
-              const endX = isRight ? elbowX + lineLength : elbowX - lineLength;
-              const endY = elbowY;
-
-              const animDelay = slice.animDelay;
-
-              return (
-                <g key={`label-${i}`} opacity="0">
-                  <animate
-                    attributeName="opacity"
-                    from="0"
-                    to="1"
-                    dur="0.6s"
-                    begin={`${animDelay}s`}
-                    fill="freeze"
-                  />
-                  {/* Polyline from dot to elbow to horizontal end */}
-                  <polyline
-                    points={`${dotX},${dotY} ${elbowX},${elbowY} ${endX},${endY}`}
-                    fill="none"
-                    stroke="#9CA3AF"
-                    strokeWidth="2"
-                    strokeLinejoin="round"
-                  />
-                  {/* Dot inside slice */}
-                  <circle 
-                    cx={dotX} 
-                    cy={dotY} 
-                    r="3.5" 
-                    fill="white" 
-                    stroke="#9CA3AF" 
-                    strokeWidth="2" 
-                  />
-                  {/* Label Text (Above line) */}
-                  <text
-                    x={isRight ? endX + 10 : endX - 10}
-                    y={endY - 8}
-                    textAnchor={isRight ? "start" : "end"}
-                    fill="#1F1F1F"
-                    fontSize="15"
-                    fontFamily="sans-serif"
-                    fontWeight="600"
-                  >
-                    {slice.label}
-                  </text>
-                  {/* Percentage Text (Below line) */}
-                  <text
-                    x={isRight ? endX + 10 : endX - 10}
-                    y={endY + 28}
-                    textAnchor={isRight ? "start" : "end"}
-                    fill="#E73649"
-                    fontSize="32"
-                    fontWeight="800"
-                    fontStyle="italic"
-                    fontFamily="sans-serif"
-                  >
-                    {slice.value}%
-                  </text>
+                  {/* Gaps (White lines radiating from center) */}
+                  <g transform={`rotate(-90 ${cx} ${cy})`}>
+                    {pieGaps}
+                  </g>
                 </g>
-              );
-            })}
+
+                {/* Center Circle Overlay */}
+                <g className="animate-pop-center">
+                  <circle cx={cx} cy={cy} r={R * 0.45} fill="white" stroke="#F8FAFC" strokeWidth="12" />
+
+                  {/* Center Company Logos Image */}
+                  <image
+                    href="/placements/comp.png"
+                    x={cx - (R * 0.43)}
+                    y={cy - (R * 0.43)}
+                    width={R * 0.86}
+                    height={R * 0.86}
+                    preserveAspectRatio="xMidYMid meet"
+                  />
+                </g>
+
+                {/* Labels and connecting lines */}
+                {animatedData.map((slice, i) => {
+                  const startPercent = cumulativeForLabels / 100;
+                  cumulativeForLabels += slice.value;
+                  const endPercent = cumulativeForLabels / 100;
+                  const midPercent = (startPercent + endPercent) / 2;
+
+                  const midAngle = midPercent * 360;
+                  const rad = (midAngle - 90) * (Math.PI / 180);
+
+                  const dotX = Number((cx + dotR * Math.cos(rad)).toFixed(4));
+                  const dotY = Number((cy + dotR * Math.sin(rad)).toFixed(4));
+
+                  const elbowX = Number((cx + elbowR * Math.cos(rad)).toFixed(4));
+                  const elbowY = Number((cy + elbowR * Math.sin(rad)).toFixed(4));
+
+                  const isRight = midAngle >= 0 && midAngle < 180;
+                  const endX = isRight ? elbowX + lineLength : elbowX - lineLength;
+                  const endY = elbowY;
+
+                  const animDelay = slice.animDelay;
+
+                  return (
+                    <g key={`label-${i}`} opacity="0">
+                      <animate
+                        attributeName="opacity"
+                        from="0"
+                        to="1"
+                        dur="0.6s"
+                        begin={`${animDelay}s`}
+                        fill="freeze"
+                      />
+                      {/* Polyline from dot to elbow to horizontal end */}
+                      <polyline
+                        points={`${dotX},${dotY} ${elbowX},${elbowY} ${endX},${endY}`}
+                        fill="none"
+                        stroke="#9CA3AF"
+                        strokeWidth="2"
+                        strokeLinejoin="round"
+                      />
+                      {/* Dot inside slice */}
+                      <circle
+                        cx={dotX}
+                        cy={dotY}
+                        r="3.5"
+                        fill="white"
+                        stroke="#9CA3AF"
+                        strokeWidth="2"
+                      />
+                      {/* Label Text (Above line) */}
+                      <text
+                        x={isRight ? endX + 10 : endX - 10}
+                        y={endY - 8}
+                        textAnchor={isRight ? "start" : "end"}
+                        fill="#1F1F1F"
+                        fontSize="15"
+                        fontFamily="sans-serif"
+                        fontWeight="600"
+                      >
+                        {slice.label}
+                      </text>
+                      {/* Percentage Text (Below line) */}
+                      <text
+                        x={isRight ? endX + 10 : endX - 10}
+                        y={endY + 28}
+                        textAnchor={isRight ? "start" : "end"}
+                        fill="#E73649"
+                        fontSize="32"
+                        fontWeight="800"
+                        fontStyle="italic"
+                        fontFamily="sans-serif"
+                      >
+                        {slice.value}%
+                      </text>
+                    </g>
+                  );
+                })}
               </>
             )}
           </svg>
 
           {/* Dots below chart */}
           <div className="flex justify-center items-center gap-3 mt-6">
-            <button 
+            <button
               onClick={() => setActiveSlide(0)}
-              className={`w-3 h-3 rounded-full transition-colors ${activeSlide === 0 ? 'bg-[#E73649]' : 'border border-gray-300 bg-white hover:bg-gray-100'}`} 
+              className={`w-3 h-3 rounded-full transition-colors ${activeSlide === 0 ? 'bg-[#E73649]' : 'border border-gray-300 bg-white hover:bg-gray-100'}`}
               aria-label="View Sector Destinations"
             />
-            <button 
+            <button
               onClick={() => setActiveSlide(1)}
-              className={`w-3 h-3 rounded-full transition-colors ${activeSlide === 1 ? 'bg-[#E73649]' : 'border border-gray-300 bg-white hover:bg-gray-100'}`} 
+              className={`w-3 h-3 rounded-full transition-colors ${activeSlide === 1 ? 'bg-[#E73649]' : 'border border-gray-300 bg-white hover:bg-gray-100'}`}
               aria-label="View Package Distribution"
             />
           </div>
@@ -401,13 +401,13 @@ export function PlacementsByTheNumbers() {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
-            <button className="bg-[#EE384E] hover:bg-[#D32F2F] text-white px-8 py-3 rounded-full font-sans font-medium text-[15px] transition-colors text-center whitespace-nowrap">
+            <button data-enquiry-trigger="true" className="bg-gradient-to-r from-[#EE384E] to-[#D32F2F] hover:from-[#D32F2F] hover:to-[#B71C1C] text-white px-6 py-3 rounded-full font-sans font-bold text-[14px] sm:text-[15px] transition-all text-center whitespace-nowrap shadow-sm">
               Apply Now
             </button>
-            <a href="https://wa.me/919558210145" target="_blank" rel="noopener noreferrer" className="inline-block bg-gradient-to-br from-white/10 to-white/0 hover:from-white/15 hover:to-white/5 backdrop-blur-md text-white px-6 py-3 rounded-full font-sans font-medium text-[15px] transition-all text-center border border-white/5 border-t-white/20 border-l-white/20 shadow-[0_4px_14px_rgba(0,0,0,0.5)] whitespace-nowrap">
+            <a href="https://wa.me/919558210145" target="_blank" rel="noopener noreferrer" className="inline-block bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#20bd5a] hover:to-[#0f7568] text-white px-6 py-3 rounded-full font-sans font-bold text-[14px] sm:text-[15px] transition-all text-center whitespace-nowrap shadow-sm">
               Chat on WhatsApp
             </a>
-            <button className="bg-gradient-to-br from-white/10 to-white/0 hover:from-white/15 hover:to-white/5 backdrop-blur-md text-white px-6 py-3 rounded-full font-sans font-medium text-[15px] transition-all flex items-center justify-center gap-2.5 border border-white/5 border-t-white/20 border-l-white/20 shadow-[0_4px_14px_rgba(0,0,0,0.5)] whitespace-nowrap">
+            <button className="bg-gradient-to-r from-[#12B2E6] to-[#0A8CB8] hover:from-[#0fa0cf] hover:to-[#08789e] text-white px-6 py-3 rounded-full font-sans font-bold text-[14px] sm:text-[15px] transition-all flex items-center justify-center gap-2.5 whitespace-nowrap shadow-sm">
               <svg className="w-[18px] h-[18px] text-white shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
               1800 890 9090
             </button>

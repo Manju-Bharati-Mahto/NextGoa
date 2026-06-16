@@ -252,7 +252,7 @@ export function ProgrammeFinder() {
 
   return (
     <section id="programmes" className="bg-brand-white">
-      <div className="mx-auto max-w-6xl px-6 py-20">
+      <div className="mx-auto max-w-6xl px-6 py-15">
         <Eyebrow className="text-ink">Find Your Program</Eyebrow>
         <h2 className="mt-2 text-center section-heading text-brand">
           Tell us where you&apos;re headed.

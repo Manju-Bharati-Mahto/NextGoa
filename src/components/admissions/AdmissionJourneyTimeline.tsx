@@ -110,7 +110,7 @@ export function AdmissionJourneyTimeline() {
   const currentStepData = steps[activeStep];
 
   return (
-    <section className="w-full bg-[#faf9f6] py-20 px-4 sm:px-8 xl:px-16">
+    <section className="w-full bg-[#faf9f6] py-10 px-4 sm:px-8 xl:px-16">
       <div className="max-w-[1400px] mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -122,8 +122,8 @@ export function AdmissionJourneyTimeline() {
         {/* Selection Box */}
         <div className="bg-white rounded-3xl border border-gray-200 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between md:items-start gap-6 md:gap-12 mb-16 shadow-sm w-full mx-auto max-w-[1200px]">
           <div className="md:w-1/3 text-center md:text-left">
-            <h4 className="font-semibold text-2xl text-ink mb-2 font-poppins font-bold">Where are you right now?</h4>
-            <p className="text-gray-500 text-base leading-relaxed">Select your current status to see the timeline, process, and next action.</p>
+            <h4 className="font-semibold text-3xl sm:text-2xl text-ink mb-2 font-poppins font-bold">Where are you right now?</h4>
+            <p className="text-gray-500 text-lg sm:text-base leading-relaxed">Select your current status to see the timeline, process, and next action.</p>
           </div>
 
           <div className="md:w-px md:self-stretch bg-gray-200 hidden md:block"></div>
@@ -289,10 +289,10 @@ export function AdmissionJourneyTimeline() {
                     >
                       <div className="flex items-center justify-between">
                         <div>
-                          <span className={`text-[10px] font-bold uppercase tracking-wider ${isActive ? 'text-brand-yellow' : 'text-brand'}`}>
+                          <span className={`text-[12px] font-bold uppercase tracking-wider ${isActive ? 'text-brand-yellow' : 'text-brand'}`}>
                             Step {index + 1}
                           </span>
-                          <h4 className={`text-base font-bold font-poppins ${isActive ? 'text-white' : 'text-ink'}`}>
+                          <h4 className={`text-xl sm:text-base font-bold font-poppins ${isActive ? 'text-white' : 'text-ink'}`}>
                             {step.title}
                           </h4>
                         </div>
@@ -308,15 +308,15 @@ export function AdmissionJourneyTimeline() {
                       <div className={`grid transition-all duration-300 ease-in-out ${isActive ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0 pointer-events-none'}`}>
                         <div className="overflow-hidden">
                           <div className="mt-4 pt-4 border-t border-white/20 animate-fade-in">
-                            <p className="text-white/90 text-sm leading-relaxed mb-4">
+                            <p className="text-white/90 text-base sm:text-sm leading-relaxed mb-4">
                               {step.redCardDescription}
                             </p>
 
                             <div className="bg-white/10 rounded-xl p-3.5 mb-4">
-                              <span className="block text-[10px] font-bold uppercase tracking-wider text-brand-yellow mb-1">
+                              <span className="block text-[12px] font-bold uppercase tracking-wider text-brand-yellow mb-1">
                                 {step.whiteCardTitle}
                               </span>
-                              <p className="text-white text-[13px] leading-relaxed">
+                              <p className="text-white text-[15px] leading-relaxed">
                                 {step.whiteCardDescription}
                               </p>
                             </div>
@@ -326,7 +326,7 @@ export function AdmissionJourneyTimeline() {
                                 e.stopPropagation(); // Prevent re-triggering card click
                                 handleNextPhaseClick();
                               }}
-                              className="w-full bg-white hover:bg-gray-100 text-ink font-semibold text-xs rounded-full py-2.5 transition-colors shadow-sm"
+                              className="w-full bg-white hover:bg-gray-100 text-ink font-semibold text-sm sm:text-xs rounded-full py-3 transition-colors shadow-sm"
                             >
                               {step.nextButtonLabel}
                             </button>

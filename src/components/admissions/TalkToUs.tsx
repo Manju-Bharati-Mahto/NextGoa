@@ -259,7 +259,7 @@ export function TalkToUs() {
   };
 
   return (
-    <section className="w-full bg-[#f9f9f9] py-20 px-4 sm:px-8 xl:px-16">
+    <section className="w-full bg-[#f9f9f9] sm:pt-20 sm:pb-15 py-10 px-4 sm:px-8 xl:px-16">
       <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row items-center lg:items-stretch gap-12 lg:gap-16">
         
         {/* Left Side: Copy & Info */}

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function GatewaySection() {
   return (
-    <section className="pb-24 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto font-[family-name:var(--font-poppins)]">
+    <section className="sm:pb-20 pb-15 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto font-[family-name:var(--font-poppins)]">
       <div 
         className="relative w-full rounded-[24px] sm:rounded-[32px] overflow-hidden bg-cover bg-center py-20 sm:py-28 px-6 sm:px-12 text-center"
         style={{ backgroundImage: "url('/programmes/Gateway to Excellence.png')" }}

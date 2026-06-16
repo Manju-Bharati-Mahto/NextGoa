@@ -75,7 +75,7 @@ export default function ManagementProgrammePicker() {
                   setActiveLevel(level);
                   setShowAll(false);
                 }}
-                className={`rounded-full px-8 py-2.5 font-bold text-sm sm:text-base transition-all duration-200 border ${
+                className={`rounded-full px-8 sm:px-10 py-3.5 sm:py-4 font-bold text-[16px] sm:text-[18px] transition-all duration-200 border ${
                   activeLevel === level
                     ? "bg-[#0CAADD] text-white border-[#0CAADD] shadow-md shadow-[#0CAADD]/20"
                     : "bg-transparent text-ink border-gray-200 hover:border-gray-300 hover:bg-gray-50"

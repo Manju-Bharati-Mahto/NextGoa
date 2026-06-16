@@ -258,7 +258,7 @@ export function FeePlans() {
   });
 
   return (
-    <section className="w-full bg-[#faf9f6] py-20 px-4 sm:px-8 xl:px-16">
+    <section className="w-full bg-[#faf9f6] sm:py-20 py-10 px-4 sm:px-8 xl:px-16">
       <div className="max-w-[1100px] mx-auto">
         {/* Header */}
         <div className="text-center mb-12">

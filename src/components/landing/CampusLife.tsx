@@ -31,11 +31,11 @@ const cards = [
 function CardItem({ card }: { card: (typeof cards)[number] }) {
   const { title, body, cls, icon } = card;
   return (
-    <li className={`relative overflow-hidden rounded-[16px] sm:rounded-[20px] p-4 sm:p-10 min-h-[160px] sm:min-h-[320px] flex flex-col justify-between ${cls}`}>
+    <li className={`relative overflow-hidden rounded-[16px] sm:rounded-[20px] p-6 sm:p-10 min-h-[180px] sm:min-h-[320px] flex flex-col justify-between ${cls}`}>
       {/* Text */}
       <div className="relative z-10">
-        <h3 className="font-poppins font-semibold text-[18px] sm:text-[32px] leading-tight tracking-tight">{title}</h3>
-        <p className="mt-1 sm:mt-3 text-[12px] sm:text-base leading-[1.4] opacity-90">{body}</p>
+        <h3 className="font-poppins font-semibold text-[24px] sm:text-[32px] leading-tight tracking-tight">{title}</h3>
+        <p className="mt-2 sm:mt-3 text-[15px] sm:text-base leading-[1.4] opacity-90">{body}</p>
       </div>
       {/* Icon — bottom-right */}
       <div className="self-end mt-1 sm:mt-0 sm:absolute sm:bottom-4 sm:right-4 w-24 h-24 sm:w-48 sm:h-48 opacity-20">
@@ -61,8 +61,8 @@ export function CampusLife() {
 
         {/* Mobile: 2×2 grid | Desktop: asymmetric rows */}
         <div className="mt-12">
-          {/* Mobile 2×2 grid */}
-          <ul className="grid grid-cols-2 gap-3 sm:hidden">
+          {/* Mobile 1-column layout */}
+          <ul className="grid grid-cols-1 gap-4 sm:hidden">
             {cards.map((card) => (
               <CardItem key={card.title} card={card} />
             ))}

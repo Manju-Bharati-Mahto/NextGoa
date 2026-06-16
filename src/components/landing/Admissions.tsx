@@ -18,7 +18,7 @@ export function Admissions() {
         </div>
         <Eyebrow className="mt-3 text-ink">
           <span className="inline-flex items-center gap-2">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-brand" />
+            <span className="hidden sm:block h-2 w-2 animate-pulse rounded-full bg-brand" />
             Admissions for A.Y. 2026-27 are Live!
           </span>
         </Eyebrow>

@@ -26,7 +26,7 @@ export function InteractiveLabsLayout({
   const imagesToShow = labs.filter(lab => lab.image).slice(0, 4);
 
   return (
-    <section className={`hidden md:block w-full ${bgClass} py-24 sm:py-32 overflow-hidden`}>
+    <section className={`hidden md:block w-full ${bgClass} py-10 sm:py-16 overflow-hidden`}>
       <div className="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-12">
         
         {/* Header Section */}

@@ -1,6 +1,6 @@
 export function Accreditations() {
   return (
-    <section className="bg-brand-white py-5 sm:py-20 px-6">
+    <section className="bg-brand-white py-5 sm:py-5 px-6">
       <div className="mx-auto max-w-7xl text-center">
         <h2 className="text-ink section-subheading">
           Legacy of

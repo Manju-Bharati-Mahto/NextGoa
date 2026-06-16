@@ -63,7 +63,7 @@ export function International() {
           {countries.map((c) => (
             <li
               key={c.name}
-              className="rounded-full border border-ink/15 bg-white/70 px-3 py-1.5 sm:px-5 sm:py-2 text-[10px] sm:text-xs font-bold uppercase tracking-normal sm:tracking-wide text-ink/70"
+              className="rounded-full border border-ink/15 bg-white/70 px-4 py-2 sm:px-6 sm:py-2.5 text-sm sm:text-base font-bold uppercase tracking-normal sm:tracking-wide text-ink/70"
             >
               {c.name}
             </li>
