@@ -177,6 +177,7 @@ export function EnquiryModal() {
   }, []);
 
   const [submitState, setSubmitState] = useState<'idle' | 'submitting' | 'success'>('idle');
+  const [countdown, setCountdown] = useState(5);
 
   const close = () => {
     setIsOpen(false);
@@ -190,6 +191,7 @@ export function EnquiryModal() {
     // Reset state after closing animation finishes
     setTimeout(() => {
       setSubmitState('idle');
+      setCountdown(5);
       setFormData({ name: "", mobile: "", email: "", programme: "", qualification: "", city: "", help: "" });
       setTouched({});
       setProgrammeSearch("");
@@ -272,10 +274,17 @@ export function EnquiryModal() {
       link.click();
       document.body.removeChild(link);
 
-      // Auto close after 3 seconds
-      setTimeout(() => {
-        close();
-      }, 3000);
+      // Redirect to admissions portal after 5 seconds
+      let timeLeft = 5;
+      setCountdown(timeLeft);
+      const interval = setInterval(() => {
+        timeLeft -= 1;
+        setCountdown(timeLeft);
+        if (timeLeft <= 0) {
+          clearInterval(interval);
+          window.location.href = "https://admissions.paruluniversity.ac.in/goa";
+        }
+      }, 1000);
     }, 1200);
   };
 
@@ -373,9 +382,12 @@ export function EnquiryModal() {
         {/* Header Area (Does not scroll, prevents overlap) */}
         {submitState !== 'success' && (
           <div className="px-6 pt-6 pb-2 sm:px-10 sm:pt-10 sm:pb-6 shrink-0 z-10">
-            <h2 className="text-left font-poppins text-2xl sm:text-4xl font-bold tracking-tight text-ink pr-8 sm:pr-0 pb-3">
-              Request a callback
+            <h2 className="text-left font-poppins text-2xl sm:text-4xl font-bold tracking-tight text-ink pr-8 sm:pr-0 pb-2">
+              Start Your Application
             </h2>
+            <p className="text-left text-gray-500 text-sm sm:text-base">
+              Takes under 30sec. A counsellor will reach out to guide you through the next steps.
+            </p>
           </div>
         )}
 
@@ -394,6 +406,9 @@ export function EnquiryModal() {
                 <h3 className="text-3xl sm:text-4xl font-bold text-ink">Thank You!</h3>
                 <p className="text-lg text-gray-500 max-w-sm mx-auto">
                   Your request has been successfully received. Our team will reach out to you shortly.
+                </p>
+                <p className="text-sm font-medium text-[#EE384E] mt-4">
+                  Redirecting to Application Portal in {countdown}s...
                 </p>
               </div>
             </div>
