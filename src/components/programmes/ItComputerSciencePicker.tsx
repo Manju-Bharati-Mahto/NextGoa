@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ProgrammeCard from "./ProgrammeCard";
 
 type Programme = {
@@ -16,6 +16,16 @@ type Programme = {
 export default function ItComputerSciencePicker() {
   const [activeLevel, setActiveLevel] = useState<string>("Bachelor's");
   const [showAll, setShowAll] = useState<boolean>(false);
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    let levelParam = urlParams.get('level');
+    if (levelParam === 'Bachelors') levelParam = "Bachelor's";
+    if (levelParam === 'Masters') levelParam = "Master's";
+    if (levelParam) {
+      setActiveLevel(levelParam);
+    }
+  }, []);
 
   const bcaEligibility = "Passed 12th in any stream (Science/Commerce/Arts) with English and Maths or Statistics. If not in 12th, checked in 10th.";
   const mcaEligibility = "Passed Graduation with minimum 50% for Open Category and 45% for Reserved Category from a recognized university.";

@@ -16,7 +16,7 @@ const SLIDES = [
     logoDesc: "Young Entrepreneurship\nExchange Project",
     title: "YEEP, Young Entrepreneurship\nExchange Project",
     description: "In collaboration with BFH (Bern University of Applied Sciences) from Switzerland, YEEP brings Swiss students to PU campuses and takes PU students to Switzerland for a two-week immersion in the entrepreneurial ecosystem, exploring markets, exchanging perspectives and co-creating business ideas. Students from both countries get to experience something they've never imagined!",
-    image: "/abroad/YEEP Entrepreneurship Program.png",
+    image: "/abroad/YEEP Entrepreneurship Program.jpg",
   },
   {
     id: 1,
@@ -40,7 +40,7 @@ const SLIDES = [
     logoDesc: "Cultural Immersion\nExperience",
     title: "Cultural Immersion\nExperience",
     description: "Beyond academics, we believe in shaping global citizens. Our cultural immersion programs are designed to expose students to diverse traditions, languages, and lifestyles, building empathy, adaptability, and cross-cultural communication skills essential for the modern world.",
-    image: "/abroad/Cultural Immersion Experience.png",
+    image: "/abroad/Cultural Immersion Experience.jpg",
   },
   {
     id: 4,
@@ -91,12 +91,12 @@ export default function StudyAbroadOpportunities() {
   };
 
   // Auto-play slider
-  // useEffect(() => {
-  //   const timer = setInterval(() => {
-  //     setCurrentSlide((prev) => (prev + 1) % SLIDES.length);
-  //   }, 5000);
-  //   return () => clearInterval(timer);
-  // }, []);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % SLIDES.length);
+    }, 2000);
+    return () => clearInterval(timer);
+  }, []);
 
   const activeSlide = SLIDES[currentSlide];
 

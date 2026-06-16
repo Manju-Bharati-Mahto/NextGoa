@@ -14,7 +14,7 @@ type ProgrammeCardProps = {
   tuitionFee?: string;
 };
 
-export default function ProgrammeCard({ title, duration, eligibility, intake, mode, isNew = true, level, tuitionFee }: ProgrammeCardProps) {
+export default function ProgrammeCard({ title, duration, eligibility, intake, mode, isNew, level, tuitionFee }: ProgrammeCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   let themeColor = "#0CAADD"; // Default Blue for Bachelor's
@@ -29,10 +29,15 @@ export default function ProgrammeCard({ title, duration, eligibility, intake, mo
   else if (level === "Lateral Entry" || isLateral) themeColor = "#E73649"; // Red
   else if (level === "Bachelor's") themeColor = "#0CAADD"; // Blue
 
+  // Only show "New and In-demand" if explicitly true, or automatically if it's a B.Tech specialization (contains "with" and "b.tech")
+  const isSpecialization = t.includes("with");
+  const isBtech = t.includes("b.tech") || t.includes("btech");
+  const displayNew = isNew ?? (isSpecialization && isBtech);
+
   return (
     <div className="w-full flex-grow flex-shrink basis-[380px] min-w-[320px] max-w-[480px] relative mt-10 flex flex-col group">
       {/* Tab */}
-      {isNew && (
+      {displayNew && (
         <div 
           className="absolute -top-[38px] sm:-top-[42px] left-0 text-white font-bold px-8 pt-3 pb-12 rounded-tl-[24px] sm:rounded-tl-[32px] rounded-tr-[20px] text-[16px] sm:text-[18px] z-0 tracking-wide"
           style={{ backgroundColor: themeColor }}

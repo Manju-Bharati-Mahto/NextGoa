@@ -59,7 +59,7 @@ export default function StudyAbroadInvestment() {
                 onClick={() => setIsModalOpen(true)}
                 className="bg-[#0ca7dd] hover:bg-[#0b92c2] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-colors w-max shadow-md"
               >
-                Request cost sheet
+                Connect with Counsellor
               </button>
             </div>
           </div>
