@@ -10,7 +10,7 @@ const stories = [
     quote: "Honored to be selected for this opportunity! A huge thank you to the placements at Parul University for their incredible support in making this happen. Excited for the journey ahead at Microsoft!",
     company: "Microsoft",
     package: "₹60 LPA",
-    image: "/placements/im1.png"
+    image: "/placements/Tanish Patel.jpg"
   },
   {
     names: "Suraj Jagtap",
@@ -18,7 +18,7 @@ const stories = [
     quote: "Grateful for this huge milestone! Thanks to placements at Parul University for always pushing me forward and believing in my journey. Excited to dive in and make the most of this opportunity!",
     company: "Microsoft",
     package: "₹60 LPA",
-    image: "/placements/hero2.png"
+    image: "/placements/suraj-jagtap.png"
   },
   {
     names: "Suhani Shah",
@@ -26,7 +26,7 @@ const stories = [
     quote: "I want to be a tech leader who blends creativity with code. This is just the beginning.",
     company: "Goldman Sachs",
     package: "",
-    image: "/placements/suhani.svg"
+    image: "/placements/Suhani Shah.jpg"
   },
   {
     names: "Ayush Bhuyar",
@@ -42,7 +42,7 @@ const stories = [
     quote: "Commissioned as an officer in the Indian Navy - proof that PU outcomes go well beyond corporate placements.",
     company: "Indian Navy",
     package: "",
-    image: "/placements/solance.png"
+    image: "/placements/Yuvraj Ranjan Singh.jpg"
   },
   {
     names: "Pratham Pandya",
@@ -50,7 +50,7 @@ const stories = [
     quote: "I’m happy to share that I’m starting a new position as Guest Service Agent at Downtown Indianapolis - Union Station Crowne Plaza!",
     company: "Crowne Plaza",
     package: "₹45 LPA",
-    image: "/placements/comp.png"
+    image: "/placements/Pratham-Pandya.png"
   }
 ];
 
@@ -158,7 +158,7 @@ export function AlumniStories() {
                   src={currentStory.image} 
                   alt={currentStory.names}
                   fill
-                  className="object-cover rounded-[20px] sm:rounded-[24px] border-[4px] sm:border-[8px] border-white drop-shadow-2xl bg-[#f0f0f0]"
+                  className="object-cover object-top rounded-[20px] sm:rounded-[24px] border-[4px] sm:border-[8px] border-white drop-shadow-2xl bg-[#f0f0f0]"
                 />
               </div>
             </div>

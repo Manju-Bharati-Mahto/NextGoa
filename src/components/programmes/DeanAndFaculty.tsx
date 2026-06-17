@@ -98,7 +98,7 @@ export default function DeanAndFaculty() {
         {/* Mid Heading */}
         <div className="text-center mb-12">
           <h2 className="text-ink section-subheading">
-            Research areas
+            Teaching Faculties
           </h2>
         </div>
 

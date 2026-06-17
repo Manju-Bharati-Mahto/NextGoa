@@ -236,35 +236,42 @@ export default function ProgramFilter() {
                       <Link
                         key={href}
                         href={finalHref}
-                        className="group relative flex flex-col justify-between rounded-[20px] bg-white p-5 sm:p-6 shadow-[0_2px_8px_rgba(0,0,0,0.02)] border border-zinc-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-md h-full"
+                        className="group relative flex flex-col justify-end rounded-[24px] overflow-hidden p-6 sm:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] h-[280px] sm:h-[320px]"
                       >
-                      <div className="flex items-start gap-4 sm:gap-5">
-                        <div className={`flex h-12 w-12 sm:h-16 sm:w-16 shrink-0 items-center justify-center rounded-2xl transition-colors group-hover:bg-[#0EB1E1] group-hover:text-white ${
-                          href === "/programs/it-cs" 
-                            ? "bg-[#0EB1E1] text-white" 
-                            : "bg-[#0EB1E1]/5 text-[#0EB1E1]"
-                        }`}>
-                          <Icon className="w-6 h-6 sm:w-8 sm:h-8" />
+                        {/* Background Image & Overlay */}
+                        <Image 
+                          src={courses[0]?.image || "/programmes/cards/btech_cs.png"} 
+                          alt={info.name} 
+                          fill 
+                          className="object-cover z-0 transition-transform duration-700 group-hover:scale-110" 
+                        />
+                        {/* Darker Gradient Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/70 to-[#0A0A0A]/20 z-0 group-hover:via-[#0A0A0A]/80 transition-all duration-500"></div>
+
+                        {/* Content */}
+                        <div className="relative z-10 flex flex-col h-full w-full">
+                          <div className={`flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-xl bg-white/20 backdrop-blur-md text-white mb-auto transition-transform duration-500 group-hover:-translate-y-1`}>
+                            <Icon className="w-6 h-6 sm:w-7 sm:h-7" />
+                          </div>
+                          
+                          <div className="mt-auto relative transform transition-transform duration-500 group-hover:-translate-y-6">
+                            <h4 className="font-poppins text-[20px] sm:text-[24px] font-bold text-white leading-tight mb-2 drop-shadow-md">
+                              {info.name}
+                            </h4>
+                            <p className="text-[14px] sm:text-[15px] font-medium text-white/80 leading-relaxed line-clamp-2 drop-shadow-md">
+                              {info.desc}
+                            </p>
+                            
+                            {/* View More (Absolute positioned to slide in below) */}
+                            <div className="absolute left-0 -bottom-8 flex items-center gap-2 text-[#FCE34B] font-bold text-[13px] sm:text-[14px] tracking-wide uppercase font-poppins opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                              View More
+                              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="3" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                              </svg>
+                            </div>
+                          </div>
                         </div>
-                        <div className="flex-1 mt-0.5 sm:mt-1.5">
-                          <h4 className="font-poppins text-[19px] sm:text-[22px] font-bold text-ink leading-tight mb-2 transition-colors">
-                            {info.name}
-                          </h4>
-                          <p className="text-[14px] sm:text-[15px] font-medium text-ink/70 leading-relaxed">
-                            {info.desc}
-                          </p>
-                        </div>
-                      </div>
-                      <div className="mt-8 sm:mt-10 flex items-center justify-between border-t border-zinc-100 pt-5">
-                        <span className="font-poppins text-[13px] sm:text-[14px] font-bold uppercase tracking-wide text-[#E74C5E]">
-                          {/* {courses.length} PROGRAMME{courses.length !== 1 && 'S'} */}
-                          View More
-                        </span>
-                        <svg className="w-[20px] h-[20px] sm:w-[22px] sm:h-[22px] text-zinc-400 group-hover:text-ink/60 transition-colors" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                        </svg>
-                      </div>
-                    </Link>
+                      </Link>
                   );
                 })}
               </div>
