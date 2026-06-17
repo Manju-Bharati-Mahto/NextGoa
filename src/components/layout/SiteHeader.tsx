@@ -75,7 +75,7 @@ export function SiteHeader() {
                   <div key={item.label} className="relative group py-4 -my-4 flex items-center">
                     <Link
                       href={item.href}
-                      className="flex items-center gap-1.5 whitespace-nowrap text-sm font-medium text-white transition-colors hover:text-white/80"
+                      className="flex items-center gap-1.5 whitespace-nowrap font-[family-name:var(--font-poppins)] text-[15px] font-semibold text-white transition-colors hover:text-white/80"
                     >
                       {item.label}
                       <svg
@@ -96,7 +96,7 @@ export function SiteHeader() {
                             <Link
                               key={sub.href}
                               href={sub.href}
-                              className="group/link flex items-center justify-between px-4 py-3 text-[14px] font-semibold text-slate-700 hover:text-[#ED383F] hover:bg-[#ED383F]/5 rounded-xl transition-all"
+                              className="group/link flex items-center justify-between px-4 py-3 text-[14px] font-[family-name:var(--font-poppins)] font-semibold text-slate-700 hover:text-[#ED383F] hover:bg-[#ED383F]/5 rounded-xl transition-all"
                             >
                               <span>{sub.label}</span>
                               <svg className="w-4 h-4 opacity-0 -translate-x-2 transition-all duration-300 group-hover/link:opacity-100 group-hover/link:translate-x-0 text-[#ED383F]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
@@ -114,7 +114,7 @@ export function SiteHeader() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="whitespace-nowrap text-sm font-medium text-white transition-colors hover:text-white/80 py-2"
+                  className="whitespace-nowrap font-[family-name:var(--font-poppins)] text-[15px] font-semibold text-white transition-colors hover:text-white/80 py-2"
                 >
                   {item.label}
                 </Link>
@@ -197,7 +197,7 @@ export function SiteHeader() {
                     <div className="flex flex-col">
                       <button
                         onClick={() => setMobileProgramsOpen(!mobileProgramsOpen)}
-                        className="group inline-flex items-center justify-between font-[family-name:var(--font-poppins)] text-xl font-medium text-white transition-colors w-full text-left py-1 animate-pulse-subtle"
+                        className="group inline-flex items-center justify-start font-[family-name:var(--font-poppins)] text-xl font-medium text-white transition-colors w-full text-left py-1 animate-pulse-subtle"
                       >
                         <div className="flex items-center gap-3">
                           <svg
@@ -214,21 +214,21 @@ export function SiteHeader() {
                             <path d="M7 17L17 7" />
                             <path d="M7 7h10v10" />
                           </svg>
-                          <span className="transition-transform duration-300 group-hover:translate-x-1">
+                          <span className="transition-transform duration-300 group-hover:translate-x-1 flex items-center gap-1.5">
                             {item.label}
+                            <svg
+                              className={`w-5 h-5 transition-transform duration-300 text-white/80 ${
+                                mobileProgramsOpen ? "rotate-180" : ""
+                              }`}
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2.5"
+                              viewBox="0 0 24 24"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                            </svg>
                           </span>
                         </div>
-                        <svg
-                          className={`w-5 h-5 transition-transform duration-300 text-white/80 ${
-                            mobileProgramsOpen ? "rotate-180" : ""
-                          }`}
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2.5"
-                          viewBox="0 0 24 24"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                        </svg>
                       </button>
 
                       {/* Expandable sub-list */}
@@ -237,12 +237,12 @@ export function SiteHeader() {
                           mobileProgramsOpen ? "max-h-[500px] opacity-100 mt-2 pl-8" : "max-h-0 opacity-0 pointer-events-none"
                         }`}
                       >
-                        <ul className="flex flex-col gap-3.5 border-l-2 border-white/20 pl-4 py-2">
+                        <ul className="flex flex-col gap-4 border-l-2 border-white/20 pl-4 py-2">
                           <li>
                             <Link
                               href="/programs"
                               onClick={() => setOpen(false)}
-                              className="block text-[15px] font-semibold text-white/90 hover:text-white transition-colors"
+                              className="block text-[17px] font-semibold text-white/90 hover:text-white transition-colors"
                             >
                               All Programs &rarr;
                             </Link>
@@ -252,7 +252,7 @@ export function SiteHeader() {
                               <Link
                                 href={sub.href}
                                 onClick={() => setOpen(false)}
-                                className="block text-[15px] font-semibold text-white/70 hover:text-white transition-colors"
+                                className="block text-[17px] font-semibold text-white/70 hover:text-white transition-colors"
                               >
                                 {sub.label}
                               </Link>
