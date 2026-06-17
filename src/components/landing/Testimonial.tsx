@@ -5,25 +5,34 @@ import Image from "next/image";
 
 const testimonials = [
   {
-    quote: "Hackathons here weren't optional. By placement season, I had three real projects to walk in with.",
-    name: "Riya S.",
-    role: "Software Engineer - TCS",
-    course: "B.Tech CSE - Batch 2025",
-    image: "/students/riya.webp",
+    quote: "Parul University Goa is a work in progress, but it's already making waves! Despite being under construction, the academic blocks are fully functional, and the staff is super supportive. Students are getting all the resources they need to thrive. The construction is fast-paced and luxurious, with a sleek design that's gonna make this place a masterpiece in the coming years! Can't wait to see it in full swing.",
+    name: "Somesh Sawant",
+    image: "/students/student1-modified.png",
+    link: "https://maps.app.goo.gl/G1B1VUf1e1gg8AVS9"
   },
   {
-    quote: "The semester abroad in Germany changed how I think about engineering. Having the university support my visa and credits made it seamless.",
-    name: "Karan M.",
-    role: "Graduate Student - Technical University of Munich",
-    course: "B.Tech Mechanical - Batch 2024",
-    image: "/students/karan.webp",
+    quote: "Parul University Goa stands out with its dedicated faculty and state-of-the-art facilities. The campus fosters a nurturing environment that encourages both academic excellence and personal growth. Students benefit from excellent placement support and a vibrant campus life, making it an ideal place to build a strong foundation for the future.",
+    name: "Rachana Dessai",
+    image: "/students/student2-modified.png",
+    link: "https://maps.app.goo.gl/AGoP4BW8jizQZ8Jw9"
   },
   {
-    quote: "Working on the solar car project with students from electrical and design courses taught me more about teamwork than any textbook ever could.",
-    name: "Anjali D.",
-    role: "EV Research Engineer - Ather Energy",
-    course: "B.Tech Electrical - Batch 2025",
-    image: "/students/anjali.webp",
+    quote: "Parul University Goa offers a vibrant learning atmosphere with good infrastructure and student-friendly facilities. From a faculty perspective, the university provides a supportive environment, encouraging innovation in teaching and active participation in student development. A great place for both students and staff to grow together.",
+    name: "Hencia Gomes",
+    image: "/students/student3-modified.png",
+    link: "https://maps.app.goo.gl/L22TxXy1iYMdK5vU6"
+  },
+  {
+    quote: "The campus life is vibrant, and there are plenty of opportunities for innovation, skill-building, and career growth. Transport facilities are convenient, and the university keeps evolving to meet industry standards. A very good place for students to shape their academic journey and future career. Highly recommended!",
+    name: "Sanjeeta",
+    image: "/students/student4-modified.png",
+    link: "https://maps.app.goo.gl/L22TxXy1iYMdK5vU6"
+  },
+  {
+    quote: "Parul university Goa offers a diverse range of programs tailored to meet industry demand. The curriculum is designed to provide both theoretical knowledge and practical skills, ensuring students are well prepared for their careers.",
+    name: "Amar Jamnekar",
+    image: "/students/student5-modified.png",
+    link: "https://maps.app.goo.gl/L22TxXy1iYMdK5vU6"
   },
 ];
 
@@ -54,7 +63,7 @@ export function Testimonial() {
 
   return (
     <section className="bg-gradient-to-t from-[#CBEFFD] to-brand-white sm:pb-24 py-15 sm:pt-0">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 md:grid-cols-[1.4fr_1fr]">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 md:grid-cols-[1.8fr_1fr]">
         <div className="relative">
           {/* Animated text */}
           <figure
@@ -68,28 +77,32 @@ export function Testimonial() {
                        :                        "translateX(-60px)",
             }}
           >
-            <blockquote className="font-sans text-2xl sm:text-3xl md:text-[34px] font-bold leading-[1.25] tracking-tight text-ink">
+            <blockquote className="font-sans text-lg sm:text-xl md:text-2xl font-bold leading-[1.4] tracking-tight text-ink">
               &quot;{t.quote}&quot;
             </blockquote>
             <hr className="my-4 sm:my-8 w-full border-t border-ink/20" />
 
             {/* Figcaption — avatar + name side by side on mobile, name-only on desktop */}
-            <figcaption className="font-sans flex items-center gap-3 md:block">
+            <figcaption className="font-sans flex items-center gap-4 md:block">
               {/* Small avatar — mobile only */}
-              <div className="relative h-[54px] w-[54px] flex-shrink-0 overflow-hidden rounded-full md:hidden">
+              <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-full md:hidden">
                 {testimonials.map((item, idx) => {
                   const isActive = idx === currentIndex;
                   return (
                     <div
-                      key={idx}
-                      className={`absolute inset-0 transition-opacity duration-500 ${isActive ? "opacity-100" : "opacity-0"}`}
+                      key={item.name}
+                      className="absolute inset-0 transition-opacity duration-500"
+                      style={{
+                        opacity: isActive ? 1 : 0,
+                        pointerEvents: isActive ? "auto" : "none",
+                      }}
                     >
                       <Image
                         src={item.image}
                         alt={item.name}
                         fill
                         className="object-cover"
-                        sizes="40px"
+                        sizes="80px"
                         priority={idx === 0}
                       />
                     </div>
@@ -99,11 +112,39 @@ export function Testimonial() {
 
               {/* Name / role / course */}
               <div>
-                <span className="block text-sm font-bold text-ink md:text-2xl">{t.name}</span>
-                <span className="block text-xs text-ink/80 mt-0.5 md:text-base md:mt-1">{t.role}</span>
-                <span className="block text-[11px] text-ink/50 mt-0.5 md:text-sm md:mt-1">{t.course}</span>
+                {t.link ? (
+                  <a href={t.link} target="_blank" rel="noopener noreferrer" className="inline-block text-2xl font-bold text-[#1967D2] hover:underline md:text-2xl">
+                    {t.name}
+                  </a>
+                ) : (
+                  <span className="inline-block text-2xl font-bold text-ink md:text-2xl">{t.name}</span>
+                )}
               </div>
             </figcaption>
+
+            {/* Google Reviews Badge */}
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 inline-flex mt-8 md:mt-4">
+              <div className="flex items-center">
+                <Image src="/placements/google reviews - Copy.png" alt="Google Reviews" width={350} height={85} className="object-contain" />
+              </div>
+              <div className="w-px h-14 bg-[#1f2020] hidden sm:block"></div>
+              <div>
+                <div className="flex items-center gap-1.5 mb-1.5">
+                  <span className="font-bold text-[#0F172A] text-2xl mr-2">5.0</span>
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-[#FBBC05]" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <div className="flex items-center gap-1.5 text-[#1967D2] text-base font-medium">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  Verified Review
+                </div>
+              </div>
+            </div>
           </figure>
 
           {/* Dots Indicator */}

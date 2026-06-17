@@ -99,7 +99,7 @@ export default function ProgrammeCard({ title, duration, eligibility, intake, mo
             className="text-white rounded-full px-6 py-2.5 font-bold text-[14px] sm:text-[15px] transition-transform hover:scale-105 shadow-sm"
             style={{ backgroundColor: themeColor }}
           >
-            View Details
+            Apply Now
           </Link>
           <button 
             onClick={() => setIsModalOpen(true)}
