@@ -89,17 +89,22 @@ export function SiteHeader() {
                       </svg>
                     </Link>
                     {/* Dropdown Panel */}
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-64 bg-[#ED383F] rounded-b-2xl rounded-t-none shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 p-2 border border-[#ED383F]/20 border-t-0">
-                      <div className="grid grid-cols-1 gap-1">
-                        {subPrograms.map((sub) => (
-                          <Link
-                            key={sub.href}
-                            href={sub.href}
-                            className="block px-4 py-2.5 text-xs font-bold text-white hover:text-[#ED383F] hover:bg-white rounded-xl transition-all"
-                          >
-                            {sub.label}
-                          </Link>
-                        ))}
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+                      <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.2)] border border-white/60 p-2 overflow-hidden ring-1 ring-black/5">
+                        <div className="grid grid-cols-1 gap-0.5">
+                          {subPrograms.map((sub) => (
+                            <Link
+                              key={sub.href}
+                              href={sub.href}
+                              className="group/link flex items-center justify-between px-4 py-3 text-[14px] font-semibold text-slate-700 hover:text-[#ED383F] hover:bg-[#ED383F]/5 rounded-xl transition-all"
+                            >
+                              <span>{sub.label}</span>
+                              <svg className="w-4 h-4 opacity-0 -translate-x-2 transition-all duration-300 group-hover/link:opacity-100 group-hover/link:translate-x-0 text-[#ED383F]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                              </svg>
+                            </Link>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>

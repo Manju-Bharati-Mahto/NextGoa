@@ -56,7 +56,7 @@ export function Testimonial() {
       goTo((currentIndex + 1) % testimonials.length);
     }, 6000);
     return () => clearInterval(timer);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentIndex]);
 
   const t = testimonials[currentIndex];
@@ -71,10 +71,10 @@ export function Testimonial() {
               transition: phase === "entering"
                 ? "none"
                 : "opacity 500ms cubic-bezier(0.4,0,0.2,1), transform 500ms cubic-bezier(0.4,0,0.2,1)",
-              opacity:   phase === "visible" ? 1 : 0,
-              transform: phase === "visible"  ? "translateX(0)"
-                       : phase === "exiting"  ? "translateX(60px)"
-                       :                        "translateX(-60px)",
+              opacity: phase === "visible" ? 1 : 0,
+              transform: phase === "visible" ? "translateX(0)"
+                : phase === "exiting" ? "translateX(60px)"
+                  : "translateX(-60px)",
             }}
           >
             <blockquote className="font-sans text-lg sm:text-xl md:text-2xl font-bold leading-[1.4] tracking-tight text-ink">
@@ -153,9 +153,8 @@ export function Testimonial() {
               <button
                 key={idx}
                 onClick={() => goTo(idx)}
-                className={`h-2.5 rounded-full transition-all duration-300 ${
-                  idx === currentIndex ? "w-8 bg-brand" : "w-2.5 bg-ink/20 hover:bg-ink/40"
-                }`}
+                className={`h-2.5 rounded-full transition-all duration-300 ${idx === currentIndex ? "w-8 bg-brand" : "w-2.5 bg-ink/20 hover:bg-ink/40"
+                  }`}
                 aria-label={`Go to testimonial ${idx + 1}`}
               />
             ))}
@@ -172,11 +171,10 @@ export function Testimonial() {
               return (
                 <div
                   key={idx}
-                  className={`absolute inset-0 overflow-hidden rounded-full shadow-lg transition-all duration-1000 ease-in-out ${
-                    isActive
-                      ? "opacity-100 scale-100 blur-0 pointer-events-auto z-10"
-                      : "opacity-0 scale-95 blur-[4px] pointer-events-none z-0"
-                  }`}
+                  className={`absolute inset-0 overflow-hidden rounded-full shadow-lg transition-all duration-1000 ease-in-out ${isActive
+                    ? "opacity-100 scale-100 blur-0 pointer-events-auto z-10"
+                    : "opacity-0 scale-95 blur-[4px] pointer-events-none z-0"
+                    }`}
                 >
                   <Image
                     src={item.image}
