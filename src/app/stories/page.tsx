@@ -20,7 +20,8 @@ export const metadata: Metadata = {
 import { fetchAllBlogs } from "@/lib/fetchBlogs";
 
 export default async function StoriesPage() {
-  const stories = await fetchAllBlogs();
+  const { goaStories, mainStories } = await fetchAllBlogs();
+  const allStories = [...goaStories, ...mainStories];
 
   return (
     <main className="flex min-h-screen flex-col w-full overflow-x-hidden bg-brand-white">
@@ -32,11 +33,11 @@ export default async function StoriesPage() {
       />
 
       <StoriesHeader />
-      <StoriesGrid initialStories={stories} />
-      <LatestStories stories={stories} />
-      <UpcomingEvents stories={stories} />
+      <StoriesGrid goaStories={goaStories} mainStories={mainStories} />
+      <LatestStories stories={allStories} />
+      <UpcomingEvents stories={allStories} />
       <FreeGuides />
-      <EventDigest stories={stories} />
+      <EventDigest stories={allStories} />
       <FinalCta
         eyebrow="Admissions Open 2026"
         title="Want to be part of the next story?"

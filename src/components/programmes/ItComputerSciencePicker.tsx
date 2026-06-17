@@ -113,7 +113,7 @@ export default function ItComputerSciencePicker() {
             IT &amp; Computer Science
           </h2>
           <h3 className="text-[#0CAADD] mb-10 section-heading">
-            Faculty of IT &amp; Computer Science
+            Pick your Computing Programme.
           </h3>
           
           {/* Toggles */}

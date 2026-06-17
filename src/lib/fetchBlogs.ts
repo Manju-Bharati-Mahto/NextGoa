@@ -42,8 +42,9 @@ function parseDate(dateStr: string): number {
   return isNaN(parsed) ? 0 : parsed;
 }
 
-export async function fetchAllBlogs(): Promise<BlogStory[]> {
-  const stories: BlogStory[] = [];
+export async function fetchAllBlogs(): Promise<{ goaStories: BlogStory[]; mainStories: BlogStory[] }> {
+  const goaStories: BlogStory[] = [];
+  const mainStories: BlogStory[] = [];
 
   try {
     const goaRes = await fetch('https://goa.paruluniversity.ac.in/blog/', { cache: 'no-store' });
@@ -64,7 +65,7 @@ export async function fetchAllBlogs(): Promise<BlogStory[]> {
         const tag = determineCategory(title, tags);
         
         if (title) {
-          stories.push({
+          goaStories.push({
             tag,
             tagClass: CATEGORY_COLORS[tag] || CATEGORY_COLORS['Default'],
             title,
@@ -97,7 +98,7 @@ export async function fetchAllBlogs(): Promise<BlogStory[]> {
         const tag = determineCategory(title, []);
         
         if (title) {
-          stories.push({
+          mainStories.push({
             tag,
             tagClass: CATEGORY_COLORS[tag] || CATEGORY_COLORS['Default'],
             title,
@@ -120,7 +121,7 @@ export async function fetchAllBlogs(): Promise<BlogStory[]> {
         const tag = determineCategory(title, []);
         
         if (title) {
-          stories.push({
+          mainStories.push({
             tag,
             tagClass: CATEGORY_COLORS[tag] || CATEGORY_COLORS['Default'],
             title,
@@ -137,7 +138,11 @@ export async function fetchAllBlogs(): Promise<BlogStory[]> {
     console.error('Error fetching main blog:', err);
   }
 
-  stories.sort((a, b) => b.timestamp - a.timestamp);
-  const uniqueStories = Array.from(new Map(stories.map(s => [s.link, s])).values());
-  return uniqueStories;
+  goaStories.sort((a, b) => b.timestamp - a.timestamp);
+  const uniqueGoa = Array.from(new Map(goaStories.map(s => [s.link, s])).values());
+
+  mainStories.sort((a, b) => b.timestamp - a.timestamp);
+  const uniqueMain = Array.from(new Map(mainStories.map(s => [s.link, s])).values());
+
+  return { goaStories: uniqueGoa, mainStories: uniqueMain };
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -39,6 +39,88 @@ export function LatestStories({ stories = [] }: { stories?: Story[] }) {
     if (slideLock) return;
     setSlideLock(true);
     setCurrentIndex((prev) => prev + 1);
+  };
+
+  const isSwiping = useRef(false);
+  const touchStartRef = useRef<number | null>(null);
+  const dragStartRef = useRef<number | null>(null);
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    isSwiping.current = false;
+    touchStartRef.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    if (touchStartRef.current === null) return;
+    const currentX = e.targetTouches[0].clientX;
+    const diff = Math.abs(touchStartRef.current - currentX);
+    if (diff > 10) {
+      isSwiping.current = true;
+    }
+  };
+
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartRef.current === null) return;
+    const endX = e.changedTouches[0].clientX;
+    const distance = touchStartRef.current - endX;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      handleNext();
+    } else if (isRightSwipe) {
+      handlePrev();
+    }
+
+    touchStartRef.current = null;
+    if (isSwiping.current) {
+      setTimeout(() => {
+        isSwiping.current = false;
+      }, 50);
+    }
+  };
+
+  const onMouseDown = (e: React.MouseEvent) => {
+    if (e.button !== 0) return;
+    isSwiping.current = false;
+    dragStartRef.current = e.clientX;
+  };
+
+  const onMouseMove = (e: React.MouseEvent) => {
+    if (dragStartRef.current === null) return;
+    const diff = Math.abs(dragStartRef.current - e.clientX);
+    if (diff > 10) {
+      isSwiping.current = true;
+    }
+  };
+
+  const onMouseUp = (e: React.MouseEvent) => {
+    if (dragStartRef.current === null) return;
+    const distance = dragStartRef.current - e.clientX;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      handleNext();
+    } else if (isRightSwipe) {
+      handlePrev();
+    }
+
+    dragStartRef.current = null;
+    if (isSwiping.current) {
+      setTimeout(() => {
+        isSwiping.current = false;
+      }, 50);
+    }
+  };
+
+  const onMouseLeave = () => {
+    if (dragStartRef.current !== null) {
+      dragStartRef.current = null;
+      setTimeout(() => {
+        isSwiping.current = false;
+      }, 50);
+    }
   };
 
   const handleTransitionEnd = () => {
@@ -115,7 +197,16 @@ export function LatestStories({ stories = [] }: { stories?: Story[] }) {
         </div>
 
         {/* Carousel Wrapper */}
-        <div className="relative mx-auto w-full max-w-[1680px] overflow-hidden px-4 md:px-0">
+        <div 
+          className="relative mx-auto w-full max-w-[1680px] overflow-hidden px-4 md:px-0 select-none"
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+          onMouseDown={onMouseDown}
+          onMouseMove={onMouseMove}
+          onMouseUp={onMouseUp}
+          onMouseLeave={onMouseLeave}
+        >
           <style dangerouslySetInnerHTML={{__html: `
             .carousel-track-container {
               display: flex;
@@ -153,7 +244,13 @@ export function LatestStories({ stories = [] }: { stories?: Story[] }) {
                       : "scale-[0.98] opacity-60 lg:opacity-100 z-0"
                   }`}
                 >
-                  <Link href={card.link || '#'} target="_blank" className="rounded-[28px] bg-white shadow-md border border-black/5 overflow-hidden flex flex-col h-full group transition-all hover:shadow-lg">
+                  <Link 
+                    href={card.link || '#'} 
+                    target="_blank" 
+                    onClick={(e) => { if (isSwiping.current) e.preventDefault(); }}
+                    onDragStart={(e) => e.preventDefault()}
+                    className="rounded-[28px] bg-white shadow-md border border-black/5 overflow-hidden flex flex-col h-full group transition-all hover:shadow-lg"
+                  >
                     {/* Top: Image */}
                     <div className="relative w-full aspect-[16/11] bg-slate-100 overflow-hidden">
                       {card.image ? (

@@ -60,10 +60,10 @@ export default function AppliedSciencesProgrammePicker() {
         {/* Header Section */}
         <div className="text-center mb-12">
           <h2 className="text-ink mb-2 section-subheading">
-            Programme Picker
+            Applied Sciences
           </h2>
           <h3 className="text-[#E73649] mb-10 section-heading">
-            Pick your degree level.
+            Pick your Science Programme.
           </h3>
           
           {/* Toggles */}

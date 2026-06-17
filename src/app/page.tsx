@@ -32,7 +32,8 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const stories = await fetchAllBlogs();
+  const { goaStories, mainStories } = await fetchAllBlogs();
+  const allStories = [...goaStories, ...mainStories].sort((a, b) => b.timestamp - a.timestamp);
 
   return (
     <>
@@ -50,7 +51,7 @@ export default async function Home() {
         <CampusLife />
         <WhyGoa />
         <International />
-        <News stories={stories} />
+        <News stories={allStories} />
         <FinalCta />
         <Faq />
       </main>

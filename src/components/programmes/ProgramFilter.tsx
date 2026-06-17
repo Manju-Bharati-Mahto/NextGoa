@@ -23,11 +23,11 @@ const allCourses = [
 
   // BACHELOR'S
   { id: 3, title: "B.Tech Computer Science & Engineering", description: "Bachelor of Technology with various specializations.", level: "Bachelor's", field: "B.Tech", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/btech_cs.png", href: "/programs/engineering" },
-  { id: 4, title: "B.Tech - Lateral Entry", description: "Direct second-year admission.", level: "Bachelor's", field: "B.Tech", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/btech_lateral.png", href: "/programs/engineering" },
+  { id: 4, title: "B.Tech - Lateral Entry", description: "Direct second-year admission.", level: "Bachelor's", field: "B.Tech", mode: "Lateral entry", entranceTest: "PU Goa Entrance", image: "/programmes/cards/btech_lateral.png", href: "/programs/engineering" },
   { id: 5, title: "Bachelor of Business Administration (BBA)", description: "Undergraduate degree in business administration.", level: "Bachelor's", field: "MBA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bba_student.png", href: "/programs/management-studies" },
   { id: 6, title: "BBA Honours (NEP 2020)", description: "4-year honors program with specializations.", level: "Bachelor's", field: "MBA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bba_hons.png", href: "/programs/management-studies" },
   { id: 7, title: "Bachelor of Pharmacy (B.Pharm.)", description: "Undergraduate pharmacy program.", level: "Bachelor's", field: "B.Pharm", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bpharm.png", href: "/programs/pharmacy" },
-  { id: 8, title: "B.Pharm. - Lateral Entry", description: "Direct second-year admission to pharmacy.", level: "Bachelor's", field: "B.Pharm", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bpharm_lateral.png", href: "/programs/pharmacy" },
+  { id: 8, title: "B.Pharm. - Lateral Entry", description: "Direct second-year admission to pharmacy.", level: "Bachelor's", field: "B.Pharm", mode: "Lateral entry", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bpharm_lateral.png", href: "/programs/pharmacy" },
   { id: 9, title: "Bachelor of Science in Nursing", description: "Professional nursing degree.", level: "Bachelor's", field: "B.Sc. Nursing", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bsc_nursing.png", href: "/programs/nursing" },
   { id: 10, title: "Post Basic B.Sc Nursing (PB-B.Sc.)", description: "Post basic nursing program.", level: "Bachelor's", field: "B.Sc. Nursing", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/pb_bsc_nursing.png", href: "/programs/nursing" },
   { id: 11, title: "Bachelor of Physiotherapy (BPT)", description: "Comprehensive physiotherapy program.", level: "Bachelor's", field: "BPT", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bpt_physio.png", href: "/programs/physiotherapy" },
@@ -45,6 +45,7 @@ const allCourses = [
   { id: 17, title: "Master of Business Administration (MBA)", description: "Postgraduate management degree.", level: "Master's", field: "MBA", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/mba.png", href: "/programs/management-studies" },
   { id: 25, title: "Master of Computer Applications (MCA)", description: "Postgraduate IT and software program.", level: "Master's", field: "MCA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/mca_students.png", href: "/programs/it-cs" },
   { id: 28, title: "Master of Science (M.Sc.)", description: "2-year master's in Biotech & Microbiology.", level: "Master's", field: "B.Sc", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/msc_applied_science.png", href: "/programs/applied-sciences" },
+  { id: 29, title: "M.Tech in Computer Engineering", description: "Master of Technology program.", level: "Master's", field: "B.Tech", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/phd_engineering.png", href: "/programs/engineering" },
 
   // DOCTORAL
   { id: 18, title: "Ph.D in Engineering", description: "Doctoral research program.", level: "Doctoral", field: "Ph.D", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_engineering.png", href: "/programs/doctorate-programs" },
@@ -68,25 +69,77 @@ const filterOptions = {
     "B.AOTT",
     "BHMCT",
     "B.Sc",
-    "Ph.D",
+    "Ph.D"
   ],
   Mode: ["All", "Full-Time", "Lateral entry"],
   "Entrance Test": [
+    "All",
     "PUCET",
+    "PU Goa Entrance"
   ],
 };
 
-const FACULTY_INFO: Record<string, { name: string; desc: string; icon: React.ComponentType<any> }> = {
-  "/programs/engineering": { name: "Engineering & Technology", desc: "The finest technical exposure in the field of technology.", icon: EngineeringIcon },
-  "/programs/it-cs": { name: "Information Technology & Computer Science", desc: "Shaping the digital future with advanced computing.", icon: ITIcon },
-  "/programs/management-studies": { name: "Management Studies", desc: "Where tomorrow's industry leaders are shaped.", icon: ManagementIcon },
-  "/programs/hotel-management": { name: "Hotel Management", desc: "Where Goa's world becomes your classroom.", icon: HotelIcon },
-  "/programs/applied-sciences": { name: "Applied Sciences", desc: "Where science serves humanity.", icon: AppliedSciencesIcon },
-  "/programs/nursing": { name: "Nursing", desc: "Where dedication becomes healing.", icon: NursingIcon },
-  "/programs/pharmacy": { name: "Pharmacy", desc: "From molecule to medicine — pharmacy that transforms lives.", icon: PharmacyIcon },
-  "/programs/physiotherapy": { name: "Physiotherapy", desc: "Where movement meets recovery.", icon: PhysiotherapyIcon },
-  "/programs/allied-health": { name: "Allied and Health Sciences", desc: "Where science serves humanity.", icon: AlliedHealthIcon },
-  "/programs/doctorate-programs": { name: "Doctorate Programs", desc: "For those who push the boundaries of what is known.", icon: DoctoralIcon }
+const FACULTY_INFO: Record<string, { name: string; desc: string; icon: React.ComponentType<any>; image: string }> = {
+  "/programs/engineering": { 
+    name: "Engineering & Technology", 
+    desc: "The finest technical exposure in the field of technology.", 
+    icon: EngineeringIcon, 
+    image: "/programmes/ARVR Innovation Lab.png"
+  },
+  "/programs/it-cs": { 
+    name: "Information Technology & Computer Science", 
+    desc: "Shaping the digital future with advanced computing.", 
+    icon: ITIcon, 
+    image: "/programmes/Digital Classroom Excellence.png"
+  },
+  "/programs/management-studies": { 
+    name: "Management Studies", 
+    desc: "Where tomorrow's industry leaders are shaped.", 
+    icon: ManagementIcon, 
+    image: "/programmes/Interactive Classroom Session.png"
+  },
+  "/programs/hotel-management": { 
+    name: "Hotel Management", 
+    desc: "Where Goa's world becomes your classroom.", 
+    icon: HotelIcon, 
+    image: "/programmes/hotel_management.jpg"
+  },
+  "/programs/applied-sciences": { 
+    name: "Applied Sciences", 
+    desc: "Where science serves humanity.", 
+    icon: AppliedSciencesIcon, 
+    image: "/programmes/applied_sciences.jpg"
+  },
+  "/programs/nursing": { 
+    name: "Nursing", 
+    desc: "Where dedication becomes healing.", 
+    icon: NursingIcon, 
+    image: "/programmes/Clinical Simulation Learning.png"
+  },
+  "/programs/pharmacy": { 
+    name: "Pharmacy", 
+    desc: "From molecule to medicine — pharmacy that transforms lives.", 
+    icon: PharmacyIcon, 
+    image: "/programmes/Pharmaceutical Lab Practice.png"
+  },
+  "/programs/physiotherapy": { 
+    name: "Physiotherapy", 
+    desc: "Where movement meets recovery.", 
+    icon: PhysiotherapyIcon, 
+    image: "/programmes/Physiotherapy Training.png"
+  },
+  "/programs/allied-health": { 
+    name: "Allied and Health Sciences", 
+    desc: "Where science serves humanity.", 
+    icon: AlliedHealthIcon, 
+    image: "/programmes/Advanced Science Research.png"
+  },
+  "/programs/doctorate-programs": { 
+    name: "Doctorate Programs", 
+    desc: "For those who push the boundaries of what is known.", 
+    icon: DoctoralIcon, 
+    image: "/programmes/Library Learning Experience.png"
+  }
 };
 
 export default function ProgramFilter() {
@@ -107,9 +160,24 @@ export default function ProgramFilter() {
   const filteredCourses = useMemo(() => {
     return allCourses.filter((course) => {
       const matchLevel = activeFilters.Level === "All" || course.level === activeFilters.Level;
-      const matchField = activeFilters.Field === "All" || course.field === activeFilters.Field;
+      
+      const matchField = activeFilters.Field === "All" || (() => {
+        const option = activeFilters.Field;
+        if (course.field === option) return true;
+        
+        const titleLower = course.title.toLowerCase();
+        const optionLower = option.toLowerCase();
+        
+        if (option === "B.Sc") {
+          return titleLower.includes("b.sc") && !titleLower.includes("nursing");
+        }
+        
+        return titleLower.includes(optionLower);
+      })();
+      
       const matchMode = activeFilters.Mode === "All" || course.mode === activeFilters.Mode;
       const matchEntrance = activeFilters["Entrance Test"] === "All" || course.entranceTest === activeFilters["Entrance Test"];
+      
       return matchLevel && matchField && matchMode && matchEntrance;
     });
   }, [activeFilters]);
@@ -139,11 +207,11 @@ export default function ProgramFilter() {
   }, [filteredCourses]);
 
   return (
-    <section className="py-20 lg:py-20 bg-[#FAFAFA] font-sans">
+    <section className="py-20 lg:py-20 bg-[#F9F9F9] font-sans">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="text-center mb-16">
-          <h3 className="text-4xl md:text-5xl font-bold text-ink mb-6 font-poppins leading-tight">
-            Find the right <span className="text-[#0EB1E1]">fit for you.</span>
+        <div className="text-center mb-12">
+          <h3 className="text-4xl md:text-5xl font-bold text-[#ED383F] mb-6 font-poppins leading-tight">
+            Build your shortlist in seconds.
           </h3>
           <p className="text-ink/80 max-w-lg mx-auto leading-relaxed section-body">
             Pick a level, a field, or the entrance test you've taken,
@@ -151,55 +219,61 @@ export default function ProgramFilter() {
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto mb-8 w-full">
-          {/* Summary Card - Full Row */}
-          <div className="bg-[#0EB1E1] text-white rounded-[24px] p-6 md:p-8 shadow-md flex flex-col md:flex-row items-center justify-between gap-6">
-            <h4 className="text-[24px] sm:text-3xl font-semibold leading-[1.2] font-poppins text-center md:text-left m-0">
-              {groupedFaculties.length === 10 ? 9 : groupedFaculties.length} faculties, {filteredCourses.length} programmes match
-            </h4>
-            <button data-enquiry-trigger="true" className="flex items-center justify-center gap-2 bg-sunshine text-ink text-[15px] sm:text-[16px] font-bold py-3.5 px-8 rounded-full hover:bg-yellow-400 transition-colors shadow-sm w-full md:w-auto shrink-0 whitespace-nowrap">
-              Help me choose
-              <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4.5 11.5L11.5 4.5M11.5 4.5H6.5M11.5 4.5V9.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-          </div>
-        </div>
-
         <div className="flex flex-col lg:flex-row gap-8 items-start justify-center max-w-6xl mx-auto">
           {/* Sidebar */}
           <div className="w-full lg:w-[320px] shrink-0 space-y-6 lg:sticky lg:top-24">
+            {/* Summary Card */}
+            <div className="bg-[#0EB1E1] text-white rounded-[24px] p-8 text-center shadow-md">
+              <h4 className="text-[26px] sm:text-3xl font-semibold mb-6 leading-[1.2] font-poppins">
+                {groupedFaculties.length === 10 ? 9 : groupedFaculties.length} faculties<br />{filteredCourses.length} programmes<br />match
+              </h4>
+              <button data-enquiry-trigger="true" className="bg-[#FCE34B] text-ink text-[15px] font-bold py-3.5 px-6 rounded-full w-full hover:bg-yellow-400 transition-colors shadow-sm">
+                Help me choose
+              </button>
+            </div>
 
             {/* Filter Panel */}
-            <div className="bg-white rounded-[28px] p-8 shadow-sm ring-1 ring-black/5">
+            <div className="bg-[#F5F5F5] rounded-[24px] p-8 border-[1.7px] border-gray-300">
               <div className="flex items-center justify-between mb-8">
-                <h3 className="text-[24px] sm:text-[28px] font-bold text-ink font-poppins">Filters</h3>
+                <div className="flex items-center gap-3">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#ED383F]">
+                    <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                  </svg>
+                  <h3 className="text-2xl font-semibold text-ink font-poppins">Filters</h3>
+                </div>
                 <button
                   onClick={() => setActiveFilters({ Level: "All", Field: "All", Mode: "All", "Entrance Test": "All" })}
-                  className="text-[13px] sm:text-[14px] font-bold text-ink/50 hover:text-ink transition-colors tracking-widest uppercase"
+                  className="text-sm font-semibold text-ink/60 hover:text-[#ED383F] transition-colors underline underline-offset-4"
                 >
-                  RESET
+                  Reset
                 </button>
               </div>
 
-              <div className="space-y-8">
+              <div className="space-y-12 max-h-[350px] overflow-y-auto sm:max-h-none sm:overflow-visible pr-2">
                 {Object.entries(filterOptions).map(([category, options]) => (
                   <div key={category}>
-                    <h4 className="text-[12px] sm:text-[13px] font-bold tracking-[0.15em] text-ink/50 uppercase mb-4 font-poppins">{category}</h4>
-                    <div className="flex flex-wrap gap-2.5 sm:gap-3">
+                    <h4 className="text-xl sm:text-[22px] font-semibold text-ink mb-5 border-b-[1.7px] border-gray-200 pb-4 font-poppins">{category}</h4>
+                    <div className="space-y-4">
                       {options.map((option) => {
                         const isActive = activeFilters[category] === option;
                         return (
-                          <button
-                            key={option}
-                            onClick={() => handleFilterChange(category, option)}
-                            className={`rounded-full px-5 py-2.5 sm:px-6 text-[15px] sm:text-[16px] font-medium transition-all ${isActive
-                                ? "bg-[#1A1A1A] text-white border border-[#1A1A1A] shadow-sm"
-                                : "bg-white text-ink/70 border border-zinc-200 hover:border-zinc-300 hover:bg-zinc-50"
-                              }`}
-                          >
-                            {option}
-                          </button>
+                          <label key={option} className="flex items-center gap-4 cursor-pointer group w-full">
+                            <div className="relative flex items-center justify-center w-[20px] h-[20px] shrink-0">
+                              <input
+                                type="radio"
+                                name={category}
+                                value={option}
+                                checked={isActive}
+                                onChange={() => handleFilterChange(category, option)}
+                                className="peer appearance-none w-[20px] h-[20px] rounded-full border border-gray-300 bg-white checked:border-[#ED383F] checked:bg-white transition-all cursor-pointer"
+                              />
+                              {/* Inner dot for checked state */}
+                              <div className="absolute w-2.5 h-2.5 rounded-full bg-[#ED383F] opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none" />
+                            </div>
+                            <span className={`text-[16px] ${isActive ? 'text-ink font-medium' : 'text-ink/70'} group-hover:text-ink transition-colors`}>
+                              {option}
+                            </span>
+                          </label>
                         );
                       })}
                     </div>
@@ -214,64 +288,53 @@ export default function ProgramFilter() {
             {groupedFaculties.length > 0 ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
                 {groupedFaculties.map(({ href, courses, info }) => {
-                  const Icon = info.icon;
-                    const queryParams = new URLSearchParams();
-                    if (activeFilters.Level !== "All") {
-                      const cleanLevel = activeFilters.Level.replace(/'/g, "");
-                      queryParams.append("level", cleanLevel);
+                  const queryParams = new URLSearchParams();
+                  if (activeFilters.Level !== "All") {
+                    const cleanLevel = activeFilters.Level.replace(/'/g, "");
+                    queryParams.append("level", cleanLevel);
+                  }
+                  if (activeFilters.Field !== "All") queryParams.append("field", activeFilters.Field);
+                  if (activeFilters.Mode !== "All") {
+                    queryParams.append("mode", activeFilters.Mode);
+                    if (activeFilters.Mode === "Lateral entry" && activeFilters.Level === "All") {
+                      queryParams.append("level", "Lateral Entry");
                     }
-                    if (activeFilters.Field !== "All") queryParams.append("field", activeFilters.Field);
-                    if (activeFilters.Mode !== "All") {
-                      queryParams.append("mode", activeFilters.Mode);
-                      if (activeFilters.Mode === "Lateral entry" && activeFilters.Level === "All") {
-                        queryParams.append("level", "Lateral Entry");
-                      }
-                    }
-                    if (activeFilters["Entrance Test"] !== "All") queryParams.append("entrance", activeFilters["Entrance Test"]);
-                    
-                    const queryString = queryParams.toString();
-                    const finalHref = queryString ? `${href}?${queryString}` : href;
+                  }
+                  if (activeFilters["Entrance Test"] !== "All") queryParams.append("entrance", activeFilters["Entrance Test"]);
+                  
+                  const queryString = queryParams.toString();
+                  const finalHref = queryString ? `${href}?${queryString}` : href;
 
-                    return (
-                      <Link
-                        key={href}
-                        href={finalHref}
-                        className="group relative flex flex-col justify-end rounded-[24px] overflow-hidden p-6 sm:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] h-[280px] sm:h-[320px]"
-                      >
-                        {/* Background Image & Overlay */}
-                        <Image 
-                          src={courses[0]?.image || "/programmes/cards/btech_cs.png"} 
-                          alt={info.name} 
-                          fill 
-                          className="object-cover z-0 transition-transform duration-700 group-hover:scale-110" 
+                  return (
+                    <Link
+                      key={href}
+                      href={finalHref}
+                      className="bg-white rounded-[20px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.04)] border-[3px] border-zinc-200 flex flex-col group hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all h-full"
+                    >
+                      <div className="relative h-[220px] sm:h-[240px] w-full overflow-hidden shrink-0">
+                        <Image
+                          src={info.image || courses[0]?.image || "/programmes/cards/btech_cs.png"}
+                          alt={info.name}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          sizes="(max-width: 768px) 100vw, 50vw"
                         />
-                        {/* Darker Gradient Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/70 to-[#0A0A0A]/20 z-0 group-hover:via-[#0A0A0A]/80 transition-all duration-500"></div>
-
-                        {/* Content */}
-                        <div className="relative z-10 flex flex-col h-full w-full">
-                          <div className={`flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-xl bg-white/20 backdrop-blur-md text-white mb-auto transition-transform duration-500 group-hover:-translate-y-1`}>
-                            <Icon className="w-6 h-6 sm:w-7 sm:h-7" />
-                          </div>
-                          
-                          <div className="mt-auto relative transform transition-transform duration-500 group-hover:-translate-y-6">
-                            <h4 className="font-poppins text-[20px] sm:text-[24px] font-bold text-white leading-tight mb-2 drop-shadow-md">
-                              {info.name}
-                            </h4>
-                            <p className="text-[14px] sm:text-[15px] font-medium text-white/80 leading-relaxed line-clamp-2 drop-shadow-md">
-                              {info.desc}
-                            </p>
-                            
-                            {/* View More (Absolute positioned to slide in below) */}
-                            <div className="absolute left-0 -bottom-8 flex items-center gap-2 text-[#FCE34B] font-bold text-[13px] sm:text-[14px] tracking-wide uppercase font-poppins opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-                              View More
-                              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="3" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                              </svg>
-                            </div>
-                          </div>
+                      </div>
+                      <div className="p-6 flex-1 flex flex-col items-start bg-white z-10 relative">
+                        <div className="bg-[#ED383F] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">
+                          {courses.length} PROGRAMME{courses.length !== 1 && 'S'}
                         </div>
-                      </Link>
+                        <h4 className="text-[20px] sm:text-[22px] font-bold text-ink mb-2 font-poppins leading-tight">
+                          {info.name}
+                        </h4>
+                        <p className="text-[14px] text-ink/70 leading-relaxed font-medium mb-6 flex-1">
+                          {info.desc}
+                        </p>
+                        <div className="inline-flex items-center text-[#ED383F] font-bold text-sm group-hover:text-[#c72d33] transition-colors mt-auto">
+                          View details <span className="ml-1">&rarr;</span>
+                        </div>
+                      </div>
+                    </Link>
                   );
                 })}
               </div>

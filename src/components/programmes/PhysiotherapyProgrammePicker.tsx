@@ -36,10 +36,10 @@ export default function PhysiotherapyProgrammePicker() {
         {/* Header Section */}
         <div className="text-center mb-12">
           <h2 className="text-ink mb-2 section-subheading">
-            Programme Picker
+            Physiotherapy
           </h2>
           <h3 className="text-[#0CAADD] mb-10 section-heading">
-            Pick your degree level.
+            Pick your Physiotherapy Programme.
           </h3>
           
           {/* Toggles */}
