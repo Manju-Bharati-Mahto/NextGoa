@@ -15,6 +15,8 @@ import { Governance } from "@/components/about/Governance";
 import { FinalCta } from "@/components/landing/FinalCta";
 import { Faq } from "@/components/landing/Faq";
 
+import { aboutFaqs } from "@/data/page-faqs";
+
 export const metadata: Metadata = {
   title: "About Us",
   alternates: { canonical: "/about" },
@@ -48,7 +50,7 @@ export default function About() {
               { label: "1800 890 9090", href: "tel:18008909090", icon: "phone" },
             ]}
           />
-          <Faq />
+          <Faq faqs={aboutFaqs} title="About Parul University Goa" heading="Everything you need to know." />
         </div>
       </main>
     </>

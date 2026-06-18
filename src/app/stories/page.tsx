@@ -9,19 +9,28 @@ import { FinalCta } from "@/components/landing/FinalCta";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbSchema } from "@/lib/structured-data";
 
-export const dynamic = 'force-dynamic';
-
 export const metadata: Metadata = {
   title: "Stories | Parul University Goa",
   description: "Explore the latest news, academics, placements, research, and student life stories from Parul University Goa.",
   alternates: { canonical: "/stories" },
 };
 
-import { fetchAllBlogs } from "@/lib/fetchBlogs";
+import { stories } from "@/data/stories";
 
-export default async function StoriesPage() {
-  const { goaStories, mainStories } = await fetchAllBlogs();
-  const allStories = [...goaStories, ...mainStories];
+export default function StoriesPage() {
+  const mappedStories = stories.map(s => ({
+    tag: s.category,
+    tagClass: "bg-brand/10 text-brand", // generic tag class
+    title: s.title,
+    body: s.excerpt,
+    image: s.image,
+    link: `/stories/${s.slug}`,
+    date: s.date
+  }));
+
+  const allStories = mappedStories;
+  const goaStories = mappedStories.slice(0, 2);
+  const mainStories = mappedStories.slice(2, 4);
 
   return (
     <main className="flex min-h-screen flex-col w-full overflow-x-hidden bg-brand-white">
@@ -35,7 +44,7 @@ export default async function StoriesPage() {
       <StoriesHeader />
       <StoriesGrid goaStories={goaStories} mainStories={mainStories} />
       <LatestStories stories={allStories} />
-      <UpcomingEvents stories={allStories} />
+      {/* <UpcomingEvents stories={allStories} /> */}
       <FreeGuides />
       <EventDigest stories={allStories} />
       <FinalCta

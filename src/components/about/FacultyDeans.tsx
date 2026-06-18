@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Icon } from "@iconify/react";
 
 export function FacultyDeans() {
   const deans = [
@@ -81,7 +82,7 @@ export function FacultyDeans() {
                 </div>
 
                 {/* Text Body */}
-                <div className="p-6 sm:p-8 flex flex-col flex-1 justify-center">
+                <div className="relative p-6 sm:p-8 flex flex-col flex-1 justify-center">
                   {/* Red Dean Badge */}
                   <div className="mb-3">
                     <span className="inline-block rounded-full bg-[#E73649] px-3 py-1 text-[9px] sm:text-[10px] font-bold uppercase tracking-wide text-white">
@@ -99,10 +100,15 @@ export function FacultyDeans() {
                   {/* Separator */}
                   <div className="w-full h-px bg-zinc-200/80 my-4" />
 
-                  {/* Stats */}
-                  <p className="font-[family-name:var(--font-poppins)] text-[12px] sm:text-[13px] leading-[1.6] text-ink/50">
-                    {dean.stats}
-                  </p>
+                  {/* Stats & LinkedIn */}
+                  <div className="flex flex-row items-center justify-between">
+                    <p className="font-[family-name:var(--font-poppins)] text-[12px] sm:text-[13px] leading-[1.6] text-ink/50 pr-4">
+                      {dean.stats}
+                    </p>
+                    <a href="#" className="flex-shrink-0 text-[#E73649] hover:text-[#c42d3d] transition-colors" aria-label="LinkedIn Profile">
+                      <Icon icon="mdi:linkedin" className="w-7 h-7 rounded-md" />
+                    </a>
+                  </div>
                 </div>
               </div>
             );

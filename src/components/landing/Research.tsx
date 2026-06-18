@@ -54,7 +54,7 @@ export function Research() {
             >
               <div>
                 <span
-                  className={`inline-block rounded-full px-4 py-1 text-xs font-semibold tracking-wide ${c.badgeClass}`}
+                  className={`inline-block rounded-full px-4 py-1 text-base font-semibold tracking-wide ${c.badgeClass}`}
                 >
                   {c.badge}
                 </span>
@@ -96,7 +96,7 @@ export function Research() {
                 <div className="mt-8">
                   <Link
                     href={c.link || "#"}
-                    className="inline-block rounded-full bg-sunshine px-5 py-2.5 font-[family-name:var(--font-poppins)] text-xs sm:text-sm font-bold text-ink transition-transform hover:scale-[1.03]"
+                    className="inline-block rounded-full bg-sunshine px-5 py-2.5 font-[family-name:var(--font-poppins)] text-[18px] font-bold text-ink transition-transform hover:scale-[1.03]"
                   >
                     {c.cta}
                   </Link>

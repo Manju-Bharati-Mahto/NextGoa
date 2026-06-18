@@ -29,7 +29,7 @@ const categories = [
 function StoryCard({ s }: { s: Story }) {
   return (
     <li className="group flex flex-col justify-between overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-black/5 transition-all duration-300 hover:shadow-lg">
-      <Link href={s.link || '#'} target="_blank" className="flex flex-col justify-between h-full">
+      <Link href={s.link || '#'} className="flex flex-col justify-between h-full">
         <div>
           <div className="relative aspect-[16/12] bg-gradient-to-br from-brand via-brand-bright to-ocean overflow-hidden">
             {s.image ? (
@@ -98,6 +98,8 @@ function StoriesGridInner({
       ? mainStories
       : mainStories.filter((s) => s.tag.toLowerCase() === selectedCategory.toLowerCase());
 
+  const allStories = [...filteredGoa, ...filteredMain];
+
   return (
     <div id="stories-grid" className="w-full">
       {/* Moss Green Categories Section */}
@@ -138,53 +140,20 @@ function StoriesGridInner({
 
       {/* Stories Cards Grid (Off-white background starting immediately below the green selector) */}
       <section className="bg-brand-white py-16 sm:py-20">
-        <div className="mx-auto max-w-[1680px] px-6 sm:px-10 space-y-20">
+        <div className="mx-auto max-w-[1680px] px-6 sm:px-10">
           
-          {/* Goa Campus Section */}
-          <div>
-            <div className="flex items-center gap-4 mb-10">
-              <span className="h-px bg-brand/10 flex-1"></span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold font-poppins text-brand text-center whitespace-nowrap tracking-tight">
-                Goa Campus Stories
-              </h2>
-              <span className="h-px bg-brand/10 flex-1"></span>
+          {/* Combined Stories Section */}
+          {allStories.length > 0 ? (
+            <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-8 transition-all duration-300">
+              {allStories.map((s, index) => (
+                <StoryCard key={s.title + index} s={s} />
+              ))}
+            </ul>
+          ) : (
+            <div className="text-center py-16 bg-white rounded-3xl shadow-sm border border-black/5">
+              <p className="font-poppins text-lg text-ink/60">No stories found in this category.</p>
             </div>
-
-            {filteredGoa.length > 0 ? (
-              <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8 transition-all duration-300">
-                {filteredGoa.map((s, index) => (
-                  <StoryCard key={s.title + index} s={s} />
-                ))}
-              </ul>
-            ) : (
-              <div className="text-center py-16 bg-white rounded-3xl shadow-sm border border-black/5">
-                <p className="font-poppins text-lg text-ink/60">No Goa campus stories found in this category.</p>
-              </div>
-            )}
-          </div>
-
-          {/* Main Campus Section */}
-          <div>
-            <div className="flex items-center gap-4 mb-10">
-              <span className="h-px bg-brand/10 flex-1"></span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold font-poppins text-brand text-center whitespace-nowrap tracking-tight">
-                Main Campus Highlights
-              </h2>
-              <span className="h-px bg-brand/10 flex-1"></span>
-            </div>
-
-            {filteredMain.length > 0 ? (
-              <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8 transition-all duration-300">
-                {filteredMain.map((s, index) => (
-                  <StoryCard key={s.title + index} s={s} />
-                ))}
-              </ul>
-            ) : (
-              <div className="text-center py-16 bg-white rounded-3xl shadow-sm border border-black/5">
-                <p className="font-poppins text-lg text-ink/60">No main campus stories found in this category.</p>
-              </div>
-            )}
-          </div>
+          )}
 
         </div>
       </section>

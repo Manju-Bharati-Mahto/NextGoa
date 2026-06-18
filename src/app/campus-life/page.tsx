@@ -9,6 +9,7 @@ import { CampusAcademicSpaces } from "@/components/campus-life/CampusAcademicSpa
 import { CampusStudentLife } from "@/components/campus-life/CampusStudentLife";
 import { CampusLocation } from "@/components/campus-life/CampusLocation";
 import { Faq } from "@/components/landing/Faq";
+import { campusLifeFaqs } from "@/data/page-faqs";
 
 export const metadata: Metadata = {
   title: "Campus Life",
@@ -28,7 +29,7 @@ export default function CampusLifePage() {
       <CampusAcademicSpaces />
       <CampusStudentLife />
       <CampusLocation />
-      <Faq />
+      <Faq faqs={campusLifeFaqs} />
     </main>
   );
 }

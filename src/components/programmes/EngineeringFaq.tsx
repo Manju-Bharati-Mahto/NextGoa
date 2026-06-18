@@ -5,24 +5,24 @@ import Image from "next/image";
 
 const faqs = [
   {
-    question: "Are the Engineering and IT programmes AICTE-approved?",
-    answer: "Yes, the B.Tech, BCA, and MCA programmes at Parul University Goa are strictly approved by the All India Council for Technical Education (AICTE).",
+    question: "B.Tech. CSE vs CSE - Which one is better?",
+    answer: "",
   },
   {
-    question: "What specialisations are available under B.Tech Computer Science?",
-    answer: "We offer cutting-edge B.Tech specialisations aligned with future industry requirements: Artificial Intelligence (AI), Cyber Security, Data Science, and Full Stack Development.",
+    question: "How does the international pathway work?",
+    answer: "",
   },
   {
-    question: "What labs and research infrastructure are available for engineering students?",
-    answer: "Students train in specialized labs equipped with high-performance computing (HPC) clusters, dedicated IoT kits, cloud architecting setups, and open-source software tools.",
+    question: "Are there any scholarships?",
+    answer: "Yes, there are scholarships based on merit. It requires a 10+2 / entrance score, sports and cultural scholarships, and need-based aid. Counsellors help you map every option during admissions - book a call to see what you qualify for.",
   },
   {
-    question: "Can non-science students apply for BCA?",
-    answer: "Yes, students from any stream (Science, Commerce, or Arts) with Mathematics/Business Mathematics or Statistics at 10+2 level are eligible to apply for the BCA programme.",
+    question: "What is the placement record?",
+    answer: "",
   },
   {
-    question: "Are there industry certifications integrated into the curriculum?",
-    answer: "Yes. Our curriculum integrates professional industry certifications from AWS, Microsoft, RedHat, and Cisco to ensure students graduate with globally recognized credentials.",
+    question: "What is the entrance test for engineering courses?",
+    answer: "",
   },
 ];
 

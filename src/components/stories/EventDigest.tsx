@@ -125,7 +125,15 @@ export function EventDigest({ stories = [] }: { stories?: Story[] }) {
                 >
                   {/* Icon Block */}
                   <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-[20px] bg-brand text-white flex-shrink-0 flex items-center justify-center shadow-md">
-                    <Icon icon="material-symbols:event-available-outline" className="w-12 h-12 sm:w-14 sm:h-14 text-white" />
+                    <Icon 
+                      icon={
+                        evt.tag.toLowerCase() === 'news' ? 'material-symbols:article-outline' :
+                        evt.tag.toLowerCase() === 'events' ? 'material-symbols:event-available-outline' :
+                        evt.tag.toLowerCase() === 'academic' ? 'material-symbols:school-outline' :
+                        'material-symbols:feed-outline'
+                      } 
+                      className="w-12 h-12 sm:w-14 sm:h-14 text-white" 
+                    />
                   </div>
 
                   {/* Card Content details */}

@@ -11,8 +11,6 @@ import { Eyebrow } from "./Decor";
 function SunWaveIcon({ className }: { className?: string }) {
   return (
     <svg
-      width="74"
-      height="74"
       viewBox="0 0 74 74"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -88,8 +86,8 @@ export function CampusTour() {
       </div>
 
       {/* Decorative Shell Icons */}
-      <SunWaveIcon className="absolute left-[-20px] top-1/4 h-20 w-auto text-white/20 pointer-events-none select-none z-10 sm:h-24" />
-      <SunWaveIcon className="absolute right-[-20px] bottom-1/4 h-20 w-auto text-white/20 pointer-events-none select-none rotate-[20deg] z-10 sm:h-24" />
+      <SunWaveIcon className="absolute left-[-20px] top-1/4 h-20 w-auto text-white/20 pointer-events-none select-none z-10 sm:h-24 md:h-48 lg:h-[300px]" />
+      <SunWaveIcon className="absolute right-[-20px] bottom-1/4 h-20 w-auto text-white/20 pointer-events-none select-none rotate-[20deg] z-10 sm:h-24 md:h-48 lg:h-[300px]" />
 
       <div 
         className="relative z-10 mx-auto max-w-7xl px-6 text-center"

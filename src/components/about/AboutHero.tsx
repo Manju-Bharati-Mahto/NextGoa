@@ -4,13 +4,13 @@ export function AboutHero() {
   return (
     <section 
       id="hero"
-      className="relative flex min-h-screen flex-col items-center justify-start pt-32 overflow-hidden bg-[url('/hero-campus.webp')] bg-cover bg-bottom bg-no-repeat"
+      className="relative flex min-h-screen flex-col items-center justify-start pt-32 overflow-hidden bg-[url('/about-bg23-trimmed.png')] bg-cover bg-center bg-no-repeat"
     >
       {/* Light gradient overlay to ensure text is readable if sky gets too bright */}
       <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-transparent pointer-events-none" />
 
       {/* Hero content */}
-      <div className="relative z-10 w-full max-w-7xl px-4 pt-16 sm:px-6 sm:pt-24 lg:pt-32 text-center">
+      <div className="relative z-10 w-full max-w-7xl px-4 pt-8 sm:px-6 sm:pt-12 lg:pt-16 text-center">
         <span className="inline-block rounded-full bg-brand-yellow px-4 py-1.5 text-xs font-bold text-ink shadow-sm uppercase tracking-wider mb-6">
           About Us
         </span>
@@ -31,8 +31,8 @@ export function AboutHero() {
 
       <div className="flex-1" />
 
-      {/* Bottom fade to transition smoothly into the next section (white) */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+      {/* Bottom fade to transition smoothly into the next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-brand-white to-transparent pointer-events-none" />
     </section>
   );
 }

@@ -11,33 +11,7 @@ import { Eyebrow } from "./Decor";
  * JSON-LD to ensure perfect SEO alignment.
  */
 
-const faqs: FaqItem[] = [
-  {
-    question: "Do I need to appear for any entrance exam to secure admission at PU Goa?",
-    answer:
-      "No, clearing a competitive exam is not required for admission. However, applicants for B.Sc. Nursing and BPT programs must appear for the PU Goa Entrance Exam as part of the admission process.",
-  },
-  {
-    question: "What are the fees & scholarships?",
-    answer:
-      "Fees vary by programme. Merit scholarships, sports scholarships, and need based assistance are available, the admissions team shares the full fee structure and eligibility on enquiry. Students applying from outside Goa are eligible for merit based scholarships, subject to the percentage secured in their qualifying examination and the applicable scholarship criteria.",
-  },
-  {
-    question: "What are the hostel facilities and safety arrangements for girl students?",
-    answer:
-      "Separate girls' hostel blocks operate with 24×7 security, biometric access, in house wardens, and CCTV Monitored common areas, alongside on-campus medical support.",
-  },
-  {
-    question: "Who is eligible for the international pathway?",
-    answer:
-      "Students in good academic standing can apply for Pathway Programmes, Semester Exchanges, and Global Internships with partnered universities across the USA, UK, Australia, New Zealand, Canada, France, and Germany.",
-  },
-  {
-    question: "What's the difference between PU Goa and Parul University Gujarat?",
-    answer:
-      "PU Goa is Goa's First State Private University, drawing on three decades of teaching, research, and placement experience from Parul University in Gujarat while operating as its own campus on the Goan coast.",
-  },
-];
+import { homeFaqs } from "@/data/page-faqs";
 
 function FaqAccordionItem({ f, isOpen, onToggle }: { f: FaqItem; isOpen: boolean; onToggle: () => void }) {
   return (
@@ -70,16 +44,22 @@ function FaqAccordionItem({ f, isOpen, onToggle }: { f: FaqItem; isOpen: boolean
   );
 }
 
-export function Faq() {
+interface FaqProps {
+  faqs?: FaqItem[];
+  title?: string;
+  heading?: string;
+}
+
+export function Faq({ faqs = homeFaqs, title = "Questions Parents Ask", heading = "Straight answers before you ask." }: FaqProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
     <section id="faq" className="bg-brand-white sm:pb-5 pb-10">
       <JsonLd data={faqSchema(faqs)} />
       <div className="mx-auto max-w-6xl px-6 sm:py-15 sm:pt-10 pt-5 pb-5">
-        <Eyebrow className="text-ink">Questions Parents Ask</Eyebrow>
+        <Eyebrow className="text-ink">{title}</Eyebrow>
         <h2 className="mt-2 text-center section-heading text-brand">
-          Straight answers before you ask.
+          {heading}
         </h2>
 
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-[340px_1fr] md:items-stretch lg:gap-12">

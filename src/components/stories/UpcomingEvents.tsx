@@ -44,7 +44,6 @@ export function UpcomingEvents({ stories = [] }: { stories?: Story[] }) {
             <Link
               key={idx}
               href={event.link || '#'}
-              target="_blank"
               className="flex flex-col sm:flex-row items-center gap-6 p-6 sm:p-7 bg-white rounded-[24px] shadow-lg border border-black/5 text-ink hover:shadow-xl transition-all group"
             >
               {/* Event Image Block (Replacing Icon) */}

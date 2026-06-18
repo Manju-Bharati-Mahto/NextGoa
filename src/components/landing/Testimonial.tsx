@@ -77,7 +77,7 @@ export function Testimonial() {
                   : "translateX(-60px)",
             }}
           >
-            <blockquote className="font-sans text-lg sm:text-xl md:text-2xl font-bold leading-[1.4] tracking-tight text-ink">
+            <blockquote className="font-sans text-lg sm:text-xl md:text-2xl font-medium leading-[1.4] tracking-tight text-ink">
               &quot;{t.quote}&quot;
             </blockquote>
             <hr className="my-4 sm:my-8 w-full border-t border-ink/20" />

@@ -91,11 +91,10 @@ export const nursingData: ProgrammeData = {
     ]
   },
   faqs: [
-    { question: "Is this degree recognized internationally?", answer: "Yes, our B.Sc Nursing is recognized by INC and qualifies you to take international licensure exams like NCLEX." },
-    { question: "Are clinical rotations included in the curriculum?", answer: "Absolutely. Students undergo extensive hands-on training at our affiliated multi-specialty teaching hospital starting from the second year." },
-    { question: "What is the difference between GNM and B.Sc Nursing?", answer: "GNM is a 3-year diploma focusing on general nursing and midwifery, while B.Sc Nursing is a 4-year undergraduate degree that provides a more comprehensive scientific and theoretical foundation." },
-    { question: "Do you provide support for overseas placements?", answer: "Yes, we offer dedicated training for the NCLEX-RN exam and English proficiency tests (OET/IELTS) to help secure nursing roles abroad." },
-    { question: "Are there opportunities for postgraduate studies?", answer: "Yes, after completing B.Sc Nursing, you can pursue M.Sc Nursing in specialized fields like Critical Care, Pediatrics, or Psychiatric Nursing." }
+    { question: "Is the entrance test compulsory?", answer: "Indeed. PU Goa holds its own test, offline, for the B.Sc. Nursing seats. Eligibility criteria: You'll need 10+2 in Science with PCB to sit for it. After that, if your name's on the shortlist, the college reaches out by email and SMS." },
+    { question: "What is the eligibility for B.Sc. Nursing and GNM?", answer: "These two differ a fair bit. B.Sc. Nursing asks for 10+2 with PCB and English, and your aggregate has to touch 45% at least. GNM is easier to get into. Any stream works, provided you've done English. One's a full degree. The other is a diploma, though it still leads somewhere, with decent room to grow afterwards." },
+    { question: "What hostel, safety, and stipend facilities are available?", answer: "Hostels are separate for girls and boys. Security stays on through the day and night, wardens are around, the mess runs, and there's a medical room on campus if anyone falls sick. Final year brings a stipend during the internship. And when students go out for community postings, their travel gets covered too." },
+    { question: "Are the programmes recognised by INC and the state council?", answer: "Indeed. Everything's run to Indian Nursing Council and Goa State Nursing Council norms. The exact approval paperwork gets shared with you once admissions start." }
   ],
   themeColor: {
     waveBand: "#0CAADD",

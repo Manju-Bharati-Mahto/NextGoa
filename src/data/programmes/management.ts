@@ -106,11 +106,9 @@ export const managementData: ProgrammeData = {
     ]
   },
   faqs: [
-    { question: "What is the admission criteria for MBA?", answer: "Admission is based on valid scores in CAT/MAT/CMAT followed by a personal interview." },
-    { question: "Are there opportunities for international exchange?", answer: "Yes, we have tie-ups with universities across 6 countries for student exchange programs." },
-    { question: "Does the university provide placement support?", answer: "We have a dedicated placement cell that guarantees 100% placement assistance and organizes campus drives." },
-    { question: "Can I pursue a specialized MBA?", answer: "Absolutely. We offer 7 major specialisations including Finance, Marketing, HR, and Analytics, allowing you to tailor your degree to your career goals." },
-    { question: "What kind of industry exposure is provided?", answer: "Students solve live business cases from Harvard, interact with corporate leaders through weekly guest lectures, and undergo a mandatory 8-week corporate internship." }
+    { question: "BBA vs BBA Honours: Which One Fits You?", answer: "If you would rather get into the working world sooner, the three-year BBA is the straightforward route. The BBA Honours takes four years instead, and it is built around the NEP 2020 structure, so you get time for proper research and an industry capstone before you finish. That extra year also tends to make things easier later, whether you are looking at a Master's abroad or thinking about an MBA somewhere down the road." },
+    { question: "What Is the MBA Work Experience Requirement?", answer: "A lot of people ask us this, and the short answer is no, you do not need work experience to apply for the MBA at PU Goa. We take in fresh graduates and working professionals together, and experience helps, but it has never been a requirement. What actually matters for admission is your CAT, MAT, CMAT or PU Goa entrance score, and after that you sit for a group discussion and a personal interview. Placements and Recruiter Network: Studying management here puts you inside Parul University's larger placement network, which is not small. They work with over 1,000 recruiters, and they come from across consulting, banking, technology and the consumer space, so the range of roles you can aim for is fairly wide." },
+    { question: "How Do the International 1+1 / 2+2 Pathways Work?", answer: "This depends on which programme you are in. BBA students go the 2+2 route, where you spend part of the degree at one of our international partner universities. MBA students do it differently, with a 1+1 model instead. Either way, you end up studying abroad for a real stretch of time, and the coursework is set up to match what is taught internationally." }
   ],
   themeColor: {
     waveBand: "#0CAADD",

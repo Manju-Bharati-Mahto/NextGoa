@@ -117,11 +117,10 @@ export const phdData: ProgrammeData = {
     ]
   },
   faqs: [
-    { question: "Is a fellowship provided to PhD scholars?", answer: "Yes, meritorious full-time PhD scholars are eligible for the PU Research Fellowship (PURF)." },
-    { question: "Can I pursue a PhD part-time?", answer: "Yes, we offer part-time PhD programs designed for working professionals and academicians." },
-    { question: "Does the university fund research publications?", answer: "Yes, we provide financial support for Article Processing Charges (APC) for publishing research in high-impact Scopus or Web of Science journals." },
-    { question: "What is the admission process for the PhD programme?", answer: "Admissions are based on the PU-PET entrance test, followed by an interview. Candidates who have qualified UGC-NET or GATE may be exempt from the written test." },
-    { question: "Are there opportunities for interdisciplinary research?", answer: "Absolutely. We encourage interdisciplinary research and allow scholars to have co-supervisors from different departments or even international partner universities." }
+    { question: "Full-time or Part-time PhD, what fits you?", answer: "Two synced routes - leading to one destination. Full-time is for those coming in as dedicated doctoral scholars with research as the primary focus. Part-time is for working professionals, people who cannot step away from their jobs and should not have to, as long as they carry an NOC from their employer." },
+    { question: "How are research supervisors assigned?", answer: "Not before admission. After. The Doctoral Research Committee weighs in based on your research domain and what faculty are available at that point. It is not arbitrary, but it is also not something that gets locked in during the application stage. That said, if there is a preferred area or a specific supervisor already in mind, mentioning it during the application is worth doing." },
+    { question: "How are the funding opportunities and research support?", answer: "Scholars working on externally sponsored projects can receive stipends through the funding agency attached to that project. Inside the institution, internal research grants exist, publication assistance is available, and conference funding can be accessed." },
+    { question: "What are the publication requirements before synopsis submission?", answer: "Publications need to happen before synopsis submission; that much is fixed. What exactly is required depends on your discipline and what your research committee prescribes on top of the standard guidelines." }
   ],
   themeColor: {
     waveBand: "#E73649", // Red theme

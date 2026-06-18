@@ -104,7 +104,7 @@ export const pharmacyData: ProgrammeData = {
     { question: "Do students get hospital training?", answer: "Yes, rigorous hospital and clinical training is a mandatory part of the curriculum." },
     { question: "What are the career options after B.Pharm?", answer: "Graduates can work as clinical pharmacists, research scientists, QA/QC executives in pharmaceutical manufacturing, or drug inspectors." },
     { question: "Are there research opportunities for undergraduates?", answer: "Yes, final year B.Pharm students are encouraged to participate in molecular modeling, drug formulation, and clinical research projects under faculty mentorship." },
-    { question: "What are the eligibility criteria for the M.Pharm programme?", answer: "Candidates must have a B.Pharm degree from a PCI-recognized institution with a minimum aggregate of 55% (50% for reserved categories)." }
+    { question: "What is eligibility criteria for B.Pharm?", answer: "Eligibility criteria for B.Pharm is 10+2 with PCB/PCM (physics, chemistry, biology or maths) and other criterias are will be updated on the website or brochure." }
   ],
   themeColor: {
     waveBand: "#0CAADD",

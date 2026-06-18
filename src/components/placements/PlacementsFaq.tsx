@@ -4,24 +4,24 @@ import { useState } from "react";
 
 const placementFaqs = [
   {
-    question: "What is the placement record at Parul University Goa?",
-    answer: "Parul University Goa inherits a legacy of 100% placement assistance, with thousands of students placed in top multinational companies over the past two decades.",
+    question: "What is the highest package at PU?",
+    answer: "The highest reported package across the Parul ecosystem is ₹60 LPA, secured by B.Tech CSE students Tanish Patel and Suraj Jagtap from the 2027 batch at Parul University, Vadodara. Average and median packages vary by faculty and programme - confirmed in the placement report.",
   },
   {
-    question: "Who are the top recruiters at PU Goa?",
-    answer: "Top recruiters include Amazon, TCS, Infosys, Wipro, L&T, and over 2000+ hiring partners across various industries.",
+    question: "Will placements be available for the first PU Goa batch?",
+    answer: "Yes. PU Goa students access the full 2,200+ company recruitment network of the Parul University ecosystem from Year 1. Placement training, mock interviews, profile building, internships, and industry mentorship begin in the first semester.",
   },
   {
-    question: "What is the highest package offered to a PU graduate?",
-    answer: "The highest package offered stands at 30 LPA, with an impressive average package across all technical and management disciplines.",
+    question: "How does PU Goa offer placement support?",
+    answer: "PU Goa offers 100% placement support through guidance, mentorship, and training programmes. Trainings are given to students before actual placement where they are taught the required skills and groomed for interviews.",
   },
   {
-    question: "Are placements available for non-engineering students?",
-    answer: "Yes, dedicated placement drives are conducted for Management, Healthcare, Law, and Design students with industry-specific recruiters.",
+    question: "Can I be an entrepreneur instead of taking a placement?",
+    answer: "Yes. The Parul University E-Cell has incubated 254 startups, raised ₹20 Cr+ in funding and generated ₹40 Cr+ in revenue. PU Goa students inherit the full E-Cell network — alumni founders include Solnce Energy (Shark Tank India winner), Voldebug Innovations (Home Ministry award) and Cligent Aerospace (India's first hydrogen-electric aircraft startup).",
   },
   {
     question: "Are pre-placement offers available through internships?",
-    answer: "Absolutely. Many of our students secure Pre-Placement Offers (PPOs) during their 6-month industry internships in their final year.",
+    answer: "Yes. Internships are embedded in the curriculum from Year 1 across faculties. A significant percentage of internship students convert to pre-placement offers - exact figures are published in the annual placement report by faculty.",
   },
 ];
 

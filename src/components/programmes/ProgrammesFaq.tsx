@@ -7,24 +7,12 @@ import { JsonLd } from "@/components/seo/JsonLd";
 const faqs: FaqItem[] = [
   {
     question: "What degree structures are offered at Parul University Goa?",
-    answer: "We offer a wide range of undergraduate (B.Tech, B.Sc, BCA, BBA, BPT, GNM), postgraduate (MBA, MCA, M.Pharm), and Doctoral (PhD) programmes aligned with the modern needs of industries.",
+    answer: "PU Goa offers 27 programmes across eight faculties for the 2026-27 academic year, ranging from Diploma to Doctoral level. These cover Engineering, IT and Computer Science; Management Studies; Pharmacy; Nursing; Physiotherapy; Allied and Health Sciences; Hotel Management and Catering Technology; and PhD. The popular courses are Cyber Security and Data Science; MBA with specialisations in Analytics and Finance; B.Pharm; B.Sc. Nursing; BPT; and BHMCT in Hotel Management and Catering Technology.",
   },
   {
-    question: "How are the programmes aligned with NEP 2020?",
-    answer: "All our undergraduate programmes are fully aligned with the National Education Policy (NEP) 2020, offering 4-year Honours degree pathways, multiple entry/exit options, and a choice-based credit system.",
-  },
-  {
-    question: "What is the medium of instruction?",
-    answer: "The medium of instruction for all lectures, course materials, and examinations at Parul University Goa is English.",
-  },
-  {
-    question: "Can I choose minor courses from other departments?",
-    answer: "Yes. Under our choice-based credit system (CBCS), students can choose open electives and minor specialisations from other faculties (e.g., an Engineering student can take a minor in Management or Analytics).",
-  },
-  {
-    question: "Are the programmes approved by national regulatory bodies?",
-    answer: "Absolutely. Our programmes are approved by their respective apex bodies including the AICTE (for Engineering and Management), PCI (for Pharmacy), INC (for Nursing), and are fully UGC-recognised.",
-  },
+    question: "What are entrance tests and eligibility requirements?",
+    answer: "PU Goa accepts national entrance exams such as JEE Main, CUET, CAT, MAT, CMAT, GPAT, GATE, and UGC NET for selected programmes. Eligibility criteria vary according to the course you want, which is based on academic qualifications and applicable entrance scores.",
+  }
 ];
 
 function FaqAccordionItem({ f, isOpen, onToggle }: { f: FaqItem; isOpen: boolean; onToggle: () => void }) {

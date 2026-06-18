@@ -14,6 +14,7 @@ import { Faq } from "@/components/landing/Faq";
 import { FinalCta } from "@/components/landing/FinalCta";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbSchema } from "@/lib/structured-data";
+import { admissionsFaqs } from "@/data/page-faqs";
 
 export const metadata: Metadata = {
   title: "Admissions | Parul University Goa",

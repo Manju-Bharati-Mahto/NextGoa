@@ -98,11 +98,10 @@ export const alliedHealthData: ProgrammeData = {
     ]
   },
   faqs: [
-    { question: "What is the scope of Allied Health Sciences?", answer: "Paramedical professionals are the backbone of healthcare. They assist doctors in diagnostics, surgeries, and critical care, with immense demand globally." },
-    { question: "Do these programmes include hospital training?", answer: "Yes, all our allied health degrees include mandatory clinical rotations in diagnostic labs and operation theaters of our partner hospitals." },
-    { question: "What is Medical Laboratory Technology (MLT)?", answer: "MLT focuses on the analysis of bodily fluids, tissues, and cells to diagnose diseases. It covers hematology, biochemistry, and microbiology." },
-    { question: "Are allied health degrees recognized for government jobs?", answer: "Yes, our paramedical degrees are recognized by the State Paramedical Council, making graduates fully eligible for government healthcare roles." },
-    { question: "Can I upgrade from a Diploma to a B.Sc degree?", answer: "Yes, we offer lateral entry programs that allow diploma holders in allied health sciences to directly enter the second year of the respective B.Sc programme." }
+    { question: "What is the core difference between B.AOTT and B.MLS?", answer: "They sit in two very different parts of a hospital. B.AOTT trains you for the operation theatre. Think surgical assistance, handling the anaesthesia equipment, keeping the OT running in order. Subsequently, B.MLS is the lab side instead. You're working in diagnostics here, so pathology, biochemistry, and microbiology testing make up most of it." },
+    { question: "What is the difference between B.Sc. and B.Sc. Honours?", answer: "B.Sc. runs for three years and keeps things broad, giving you a wide spread of learning & expertise. Honours stretches to four years under NEP 2020, and that extra time goes into a specialisation plus a research part at the end. It can count toward eligibility for international Master's programmes and the more advanced academic routes." },
+    { question: "What career opportunities are available after M.Sc. Biotechnology?", answer: "Depends on interest solely. Some graduates head into research and development, others into quality control and assurance. Clinical research and regulatory affairs are common as well. There's also the sales side of biotechnology if that suits you. And if you'd rather stay in academics, doctoral study and research are perfect for building a career." },
+    { question: "Do these programmes include hospital postings and stipends?", answer: "Indeed, both do. B.AOTT and B.MLS bring in clinical exposure and opportunities via partner hospitals. The big part is a one-year paid internship, and before that, the earlier semesters give you supervised practical training to build up to it." }
   ],
   themeColor: {
     waveBand: "#1F1F1F", // Black theme

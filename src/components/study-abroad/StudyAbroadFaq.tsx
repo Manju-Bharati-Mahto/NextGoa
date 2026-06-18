@@ -13,23 +13,23 @@ const poppins = Poppins({
 const faqs: FaqItem[] = [
   {
     question: "Define Global Pathway Programme?",
-    answer: "The Global Pathway Programme is a specialized academic route that allows you to start your degree at Parul University Goa and later transfer to a partner university abroad to complete your studies, earning an international degree.",
+    answer: "Begin your degree at Parul University Goa, complete it at a partner university abroad, and you’ve a degree that’s globally recognised. PU Goa has built four models around this: 2+2, 1+1, 3+1+1, and 3.5+1.5. 7 countries are part of this network right now.",
   },
   {
     question: "Can I study abroad while studying at PU Goa?",
-    answer: "Yes, our pathway programmes are specifically designed to let you complete the initial part of your degree at PU Goa before seamlessly transferring to one of our international partner universities.",
+    answer: "Indeed, and there are more ways to do it than most students realise when they first ask. The pathway programmes are the main route, all four models available. But there are also one-semester exchanges, and PU Goa has over 120 partner universities for that. Summer schools. Global internships. Each of these has its own eligibility conditions, English language requirements, and partner-specific criteria that need checking before anything is confirmed.",
   },
   {
     question: "What is the 2+2 pathway?",
-    answer: "The 2+2 pathway is a popular model where you complete the first 2 years of your undergraduate degree at PU Goa, and then transfer to a partner university abroad for the remaining 2 years to graduate.",
+    answer: "2 years here, 2 years internationally. First half at PU Goa, second half at the partner university in abroad. The degree comes from the partner university at the end, carries their name on it, and is globally recognised. That is genuinely the whole structure.",
   },
   {
     question: "How much does it cost?",
-    answer: "Costs vary depending on the destination country and partner university. However, starting your degree at PU Goa through a pathway programme can save you up to 40-50% on total international tuition and living expenses.",
+    answer: "It totally depends on which country and which partner. The split model tends to cost less overall than applying directly to a foreign university from the beginning, which is one of the reasons students find it worth considering. Semester-wise EMI is available at 8% interest. Besides this, education loan partners and scholarship guidance are available for families who need help working through the financing side.",
   },
   {
     question: "How many English tests are accepted?",
-    answer: "We accept several major English proficiency tests including IELTS, TOEFL, PTE, and Duolingo English Test, though specific requirements depend on the destination country and partner university.",
+    answer: "IELTS, TOEFL iBT, PTE Academic, and Duolingo English Test. Minimum scores differ across partners so there is no single number that applies everywhere. Some partners will drop the test requirement altogether for students from English-medium schools if PU Goa provides a supporting letter. It’s better to get in touch with the admissions team so you can kickstart your journey!",
   },
 ];
 

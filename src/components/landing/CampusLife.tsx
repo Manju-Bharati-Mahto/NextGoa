@@ -9,10 +9,10 @@ const cards = [
     icon: <Icon icon="ion:fast-food" className="w-full h-full" />,
   },
   {
-    title: "24x7 Security & Surveillance",
-    body: "Comprehensive CCTV coverage, strictly monitored access points, and dedicated security personnel for a safe environment.",
+    title: "Transport",
+    body: "Daily shuttle from Margao / Madgaon and key Goa pickup points.",
     cls: "bg-brand text-white",
-    icon: <Icon icon="fluent:camera-dome-24-filled" className="w-full h-full" />,
+    icon: <Icon icon="fluent:vehicle-bus-24-filled" className="w-full h-full" />,
   },
   {
     title: "Hostels",
@@ -21,10 +21,10 @@ const cards = [
     icon: <Icon icon="fluent:bed-24-filled" className="w-full h-full" />,
   },
   {
-    title: "Transport",
-    body: "Daily shuttle from Margao / Madgaon and key Goa pickup points.",
+    title: "24x7 Security & Surveillance",
+    body: "Comprehensive CCTV coverage, strictly monitored access points, and dedicated security personnel for a safe environment.",
     cls: "bg-ocean text-white",
-    icon: <Icon icon="fluent:vehicle-bus-24-filled" className="w-full h-full" />,
+    icon: <Icon icon="fluent:camera-dome-24-filled" className="w-full h-full" />,
   },
 ];
 

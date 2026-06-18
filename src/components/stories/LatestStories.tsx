@@ -246,7 +246,6 @@ export function LatestStories({ stories = [] }: { stories?: Story[] }) {
                 >
                   <Link 
                     href={card.link || '#'} 
-                    target="_blank" 
                     onClick={(e) => { if (isSwiping.current) e.preventDefault(); }}
                     onDragStart={(e) => e.preventDefault()}
                     className="rounded-[28px] bg-white shadow-md border border-black/5 overflow-hidden flex flex-col h-full group transition-all hover:shadow-lg"
