@@ -98,8 +98,8 @@ export function CampusSafety() {
           <span className="font-[family-name:var(--font-poppins)] text-white font-semibold tracking-wide text-[16px] sm:text-[18px] text-center">
             Have a specific safety question?
           </span>
-          <a 
-            href="#enquiry"
+          <button 
+            type="button"
             data-enquiry-trigger="true"
             className="w-full sm:w-auto bg-[#FEDB2F] hover:bg-white text-[#1F1F1F] font-[family-name:var(--font-poppins)] font-bold text-[15px] sm:text-[16px] px-8 py-3 rounded-2xl transition-colors flex items-center justify-center gap-2"
           >
@@ -107,7 +107,7 @@ export function CampusSafety() {
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
-          </a>
+          </button>
         </div>
 
       </div>

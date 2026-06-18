@@ -211,12 +211,13 @@ export function EligibilitySection() {
           <p className="text-white text-base sm:text-[17px] font-semibold px-8 py-2 sm:py-0 text-center sm:text-left font-poppins">
             Final eligibility is subject to applicable statutory council requirements.
           </p>
-          <Link
-            href="#enquiry"
+          <button
+            type="button"
+            data-enquiry-trigger="true"
             className="bg-[#fedb2f] hover:bg-[#e5c52a] text-ink text-[15px] sm:text-[16px] font-bold px-8 py-4 rounded-[20px] sm:rounded-full transition-colors whitespace-nowrap w-full sm:w-auto text-center font-poppins"
           >
             Not sure? Talk to a counsellor &rarr;
-          </Link>
+          </button>
         </div>
       </div>
     </section>

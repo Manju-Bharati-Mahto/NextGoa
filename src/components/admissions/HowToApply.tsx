@@ -29,9 +29,9 @@ export function HowToApply() {
                   <p className="text-ink/80 text-base leading-relaxed mb-4 pr-2 font-poppins">
                     Drop your details below - a counsellor will call you within 24 hours.
                   </p>
-                  <Link href="#enquiry" className="inline-block bg-[#00aee8] hover:bg-[#0095c7] text-white text-base font-semibold py-2 px-5 rounded-full transition-colors font-poppins">
+                  <button type="button" data-enquiry-trigger="true" className="inline-block bg-[#00aee8] hover:bg-[#0095c7] text-white text-base font-semibold py-2 px-5 rounded-full transition-colors font-poppins">
                     Request a Callback
-                  </Link>
+                  </button>
                 </div>
               </div>
             </div>
@@ -115,9 +115,9 @@ export function HowToApply() {
               <p className="text-ink/80 text-xs xs:text-sm leading-snug mb-2 pr-1 font-poppins">
                 Drop your details below - a counsellor will call you within 24 hours.
               </p>
-              <Link href="#enquiry" className="inline-block bg-[#00aee8] hover:bg-[#0095c7] text-white text-[10px] xs:text-xs font-semibold py-1.5 px-3 sm:py-2 sm:px-4 rounded-full transition-colors font-poppins w-max">
+              <button type="button" data-enquiry-trigger="true" className="inline-block bg-[#00aee8] hover:bg-[#0095c7] text-white text-[10px] xs:text-xs font-semibold py-1.5 px-3 sm:py-2 sm:px-4 rounded-full transition-colors font-poppins w-max">
                 Request a Callback
-              </Link>
+              </button>
             </div>
           </div>
 

@@ -27,13 +27,14 @@ export default function StudyAbroadCTA() {
           </h2>
 
           <div className="flex flex-col sm:flex-row items-center justify-center sm:gap-5 gap-3 w-full sm:w-auto">
-            <a
-              href="#enquiry"
+            <button
+              type="button"
+              data-enquiry-trigger="true"
               className="w-full sm:w-auto block sm:inline-block text-center bg-[#eb3b47] text-white px-8 py-3.5 rounded-full font-bold text-[16px] shadow-md hover:bg-[#d6323c] transition-colors whitespace-nowrap"
               style={{ letterSpacing: '0.3px' }}
             >
               Apply Now
-            </a>
+            </button>
             <a
               href="https://wa.me/919558210145"
               target="_blank"

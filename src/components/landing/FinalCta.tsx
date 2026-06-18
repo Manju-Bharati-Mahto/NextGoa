@@ -74,17 +74,30 @@ export function FinalCta({
               <div className="mt-7 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3">
                 {actions.map((action) => {
                   const isPrimary = action.variant === "primary";
+                  const isButton = action.triggerEnquiry || action.href === "#";
+                  
+                  const commonProps = {
+                    key: action.label,
+                    "data-enquiry-trigger": action.triggerEnquiry ? "true" : undefined,
+                    className: `inline-flex min-h-12 w-full max-w-[280px] sm:w-auto sm:max-w-none items-center justify-center gap-2 rounded-full px-6 font-sans text-[16px] font-bold transition ${
+                      isPrimary
+                        ? "bg-brand text-white hover:bg-brand-dark"
+                        : "border border-white/30 bg-white/20 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_10px_30px_rgba(0,0,0,0.18)] backdrop-blur-md hover:bg-white/30"
+                    }`
+                  };
 
-                  return (
+                  return isButton ? (
+                    <button
+                      {...commonProps}
+                      type="button"
+                    >
+                      {action.icon === "phone" ? <PhoneIcon /> : null}
+                      {action.label}
+                    </button>
+                  ) : (
                     <a
-                      key={action.label}
+                      {...commonProps}
                       href={action.href}
-                      data-enquiry-trigger={action.triggerEnquiry ? "true" : undefined}
-                      className={`inline-flex min-h-12 w-full max-w-[280px] sm:w-auto sm:max-w-none items-center justify-center gap-2 rounded-full px-6 font-sans text-[16px] font-bold transition ${
-                        isPrimary
-                          ? "bg-brand text-white hover:bg-brand-dark"
-                          : "border border-white/30 bg-white/20 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_10px_30px_rgba(0,0,0,0.18)] backdrop-blur-md hover:bg-white/30"
-                      }`}
                     >
                       {action.icon === "phone" ? <PhoneIcon /> : null}
                       {action.label}

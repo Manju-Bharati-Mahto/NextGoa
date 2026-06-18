@@ -198,9 +198,9 @@ export function CampusHostel() {
               </svg>
               Admission Brochure
             </button>
-            <a href="#enquiry" data-enquiry-trigger="true" className="font-[family-name:var(--font-poppins)] text-white/90 hover:text-white text-[14px] sm:text-[15px] transition-colors underline underline-offset-4">
+            <button type="button" data-enquiry-trigger="true" className="font-[family-name:var(--font-poppins)] text-white/90 hover:text-white text-[14px] sm:text-[15px] transition-colors underline underline-offset-4">
               Talk to counsellor
-            </a>
+            </button>
           </div>
         </div>
 
