@@ -8,42 +8,49 @@ export function FacultyDeans() {
       faculty: "Faculty of Engineering, IT & CS",
       stats: "Ph.D. Computer Engineering • 21+ yrs • 48 papers",
       image: "/faculties/Engineering/Dean.jpg",
+      linkedin: "https://in.linkedin.com/in/dr-anuradha-pillai-a35539318/",
     },
     {
       name: "Dr. Kshitiz Sharma",
       faculty: "Faculty of Management Studies",
       stats: "PhD. Management • 23+ yrs • 44 papers",
       image: "/faculties/Management/Dean.jpg",
+      linkedin: "https://in.linkedin.com/in/dr-kshitiz-sharma-blr",
     },
     {
       name: "Dr. Anupam Kumar",
       faculty: "Applied & Health Sciences",
       stats: "PhD. Biotechnology • 15+ yrs • 50+ papers",
       image: "/faculties/Applied and Health Sciences/Dean.jpg",
+      linkedin: "https://www.linkedin.com/in/dr-anupam-kumar/",
     },
     {
       name: "Dr. Lalit Lata Jha",
       faculty: "Faculty of Pharmacy",
       stats: "PhD. Pharmacy • 23+ yrs • 41 papers",
       image: "/faculties/Pharmacy/Dean.png",
+      linkedin: "https://www.linkedin.com/in/dr-lalit-lata-jha-2494841a",
     },
     {
       name: "Dr. Aseem Yadav",
       faculty: "Faculty of Physiotherapy",
       stats: "PhD. Physiotherapy • 14+ yrs • 81 papers",
       image: "/faculties/Physiotherapy/Dean.jpg",
+      linkedin: "https://www.linkedin.com/company/parul-university-goa/",
     },
     {
       name: "Dr. Jeyalakshmi K.",
       faculty: "Faculty of Nursing",
       stats: "PhD. Community Health Nursing • 18+ yrs",
       image: "/faculties/Nursing/Dean.png",
+      linkedin: "https://www.linkedin.com/company/parul-university-goa/",
     },
     {
       name: "Dr. Prashant Sharma",
       faculty: "Faculty of Hotel Management",
       stats: "Extensive Experience in Hospitality and Culinary Arts",
       image: "/leaders/9911.jpg",
+      linkedin: "https://www.linkedin.com/company/parul-university-goa/",
     },
   ];
 
@@ -105,7 +112,7 @@ export function FacultyDeans() {
                     <p className="font-[family-name:var(--font-poppins)] text-[12px] sm:text-[13px] leading-[1.6] text-ink/50 pr-4">
                       {dean.stats}
                     </p>
-                    <a href="#" className="flex-shrink-0 text-[#E73649] hover:text-[#c42d3d] transition-colors" aria-label="LinkedIn Profile">
+                    <a href={dean.linkedin || "#"} target="_blank" rel="noopener noreferrer" className="flex-shrink-0 text-[#E73649] hover:text-[#c42d3d] transition-colors" aria-label="LinkedIn Profile">
                       <Icon icon="mdi:linkedin" className="w-7 h-7 rounded-md" />
                     </a>
                   </div>

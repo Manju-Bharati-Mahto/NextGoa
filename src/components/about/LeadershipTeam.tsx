@@ -7,6 +7,7 @@ export function LeadershipTeam() {
       image: "/leadership/Dr. Lalit Lata Jha.png",
       description:
         "Renowned academician and pharmacy expert. Spearheads Parul University as a hub of excellence in health sciences and allied disciplines.",
+      linkedin: "https://www.linkedin.com/in/dr-lalit-lata-jha-2494841a",
     },
     {
       name: "Dr. Dhaval Nimavat",
@@ -15,6 +16,7 @@ export function LeadershipTeam() {
       image: "/leadership/Dr. Dhaval Nimavat.png",
       description:
         "He brings 17+ years of academic and administrative expertise. His major focus is on IoT, cloud security, and mobile technologies with 29+ globally published research papers.",
+      linkedin: "https://www.linkedin.com/in/dhavalnimavat",
     },
     {
       name: "Dr. Ganesh S. Chavan",
@@ -23,6 +25,7 @@ export function LeadershipTeam() {
       image: "/leadership/Dr. Ganesh S. Chavan.png",
       description:
         "An academic strategist with 17+ years in teaching, industry, and consultancy. He has authored 45+ research papers along with books and patents in digital finance.",
+      linkedin: "https://www.linkedin.com/company/parul-university-goa/",
     },
   ];
 
@@ -96,7 +99,7 @@ export function LeadershipTeam() {
 
                 {/* Social Icons */}
                 <div className="mt-6 flex gap-3">
-                  <a href="#" className="inline-block transition-transform hover:scale-110" aria-label="LinkedIn">
+                  <a href={member.linkedin || "#"} target="_blank" rel="noopener noreferrer" className="inline-block transition-transform hover:scale-110" aria-label="LinkedIn">
                     <img src="/linkedin-icon-red.svg" alt="LinkedIn" className="h-10 w-10 rounded-[12px] shadow-sm" />
                   </a>
 
