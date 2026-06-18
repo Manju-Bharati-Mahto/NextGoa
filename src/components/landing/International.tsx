@@ -78,8 +78,8 @@ export function International() {
                 i === 2 ? "col-span-2 sm:col-span-1" : ""
               }`}
             >
-              <p className="font-sans font-bold text-[2rem] sm:text-6xl leading-none tracking-tight">{c.value}</p>
-              <h3 className="mt-2 sm:mt-3 font-poppins font-semibold text-base sm:text-[32px] leading-tight tracking-tight text-white/90">{c.title}</h3>
+              <p className="font-sans font-bold text-3xl sm:text-5xl leading-none tracking-tight">{c.value}</p>
+              <h3 className="mt-2 sm:mt-3 font-poppins font-semibold text-sm sm:text-2xl leading-tight tracking-tight text-white/90">{c.title}</h3>
             </div>
           ))}
         </div>

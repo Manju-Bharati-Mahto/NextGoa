@@ -13,29 +13,24 @@ import { Eyebrow } from "./Decor";
 
 const faqs: FaqItem[] = [
   {
-    question: "Is PU Goa UGC-recognised?",
+    question: "Do I need to appear for any entrance exam to secure admission at PU Goa?",
     answer:
-      "Yes. Parul University Goa is established as a State Private University and is recognised by the UGC. Programmes carry their respective regulatory approvals - AICTE for engineering and management, PCI for pharmacy, INC for nursing, and NCHMCT for hotel management.",
-  },
-  {
-    question: "Which entrance tests are accepted, by programme?",
-    answer:
-      "B.Tech admissions accept JEE and the PU Goa Entrance Test; management accepts CAT and MAT; pharmacy accepts GPAT; and most UG programmes accept CUET. Merit-based seats are also available where applicable.",
+      "No, clearing a competitive exam is not required for admission. However, applicants for B.Sc. Nursing and BPT programs must appear for the PU Goa Entrance Exam as part of the admission process.",
   },
   {
     question: "What are the fees & scholarships?",
     answer:
-      "Fees vary by programme. Merit scholarships, sports scholarships, and need-based assistance are available; the admissions team shares the full fee structure and eligibility on enquiry.",
+      "Fees vary by programme. Merit scholarships, sports scholarships, and need based assistance are available, the admissions team shares the full fee structure and eligibility on enquiry. Students applying from outside Goa are eligible for merit based scholarships, subject to the percentage secured in their qualifying examination and the applicable scholarship criteria.",
   },
   {
     question: "What are the hostel facilities and safety arrangements for girl students?",
     answer:
-      "Separate girls' hostel blocks operate with 24×7 security, biometric access, in-house wardens, and CCTV-monitored common areas, alongside on-campus medical support.",
+      "Separate girls' hostel blocks operate with 24×7 security, biometric access, in house wardens, and CCTV Monitored common areas, alongside on-campus medical support.",
   },
   {
     question: "Who is eligible for the international pathway?",
     answer:
-      "Students in good academic standing can apply for Pathway Programmes, Semester Exchanges, and Global Internships with partner universities across the USA, UK, Australia, New Zealand, Canada, France, and Germany.",
+      "Students in good academic standing can apply for Pathway Programmes, Semester Exchanges, and Global Internships with partnered universities across the USA, UK, Australia, New Zealand, Canada, France, and Germany.",
   },
   {
     question: "What's the difference between PU Goa and Parul University Gujarat?",

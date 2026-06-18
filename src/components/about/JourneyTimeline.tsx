@@ -92,7 +92,7 @@ export function JourneyTimeline() {
           ref={scrollRef}
           className="scrollbar-hide snap-x snap-mandatory overflow-x-auto overflow-y-hidden pb-12 pt-12 -webkit-overflow-scrolling-touch"
         >
-          <div className="relative flex w-max min-w-full items-center px-[50vw] sm:px-[15vw] h-[550px]" style={{ paddingLeft: "calc(50vw - 140px)", paddingRight: "calc(50vw - 140px)" }}>
+          <div className="relative flex w-max min-w-full items-center px-6 sm:px-12 h-[550px]">
             {/* Continuous gradient timeline line */}
             <div className="absolute left-0 right-0 top-1/2 h-[3px] -translate-y-1/2 bg-gradient-to-r from-brand-blue-guideline/10 via-brand-blue-guideline to-brand/10" />
 
