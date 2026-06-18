@@ -5,6 +5,7 @@ type FinalCtaAction = {
   href: string;
   variant?: "primary" | "dark";
   icon?: "phone";
+  triggerEnquiry?: boolean;
 };
 
 type FinalCtaProps = {
@@ -78,6 +79,7 @@ export function FinalCta({
                     <a
                       key={action.label}
                       href={action.href}
+                      data-enquiry-trigger={action.triggerEnquiry ? "true" : undefined}
                       className={`inline-flex min-h-12 w-full max-w-[280px] sm:w-auto sm:max-w-none items-center justify-center gap-2 rounded-full px-6 font-sans text-[16px] font-bold transition ${
                         isPrimary
                           ? "bg-brand text-white hover:bg-brand-dark"
