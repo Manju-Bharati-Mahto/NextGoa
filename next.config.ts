@@ -1,6 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "standalone",
+  turbopack: {},
+  webpack: (config, { dev, isServer }) => {
+    if (dev && !isServer) {
+      config.watchOptions = {
+        poll: 1000, // Check for file changes every second
+        aggregateTimeout: 300, // Delay rebuild slightly for stability
+      };
+    }
+    return config;
+  },
   images: {
     remotePatterns: [
       {
