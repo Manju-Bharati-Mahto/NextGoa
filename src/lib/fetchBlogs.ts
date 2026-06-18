@@ -47,7 +47,7 @@ export async function fetchAllBlogs(): Promise<{ goaStories: BlogStory[]; mainSt
   const mainStories: BlogStory[] = [];
 
   try {
-    const goaRes = await fetch('https://goa.paruluniversity.ac.in/blog/', { cache: 'no-store' });
+    const goaRes = await fetch('https://goa.paruluniversity.ac.in/blog/', { next: { revalidate: 3600 } });
     if (goaRes.ok) {
       const html = await goaRes.text();
       const $ = cheerio.load(html);
@@ -83,7 +83,7 @@ export async function fetchAllBlogs(): Promise<{ goaStories: BlogStory[]; mainSt
   }
 
   try {
-    const mainRes = await fetch('https://www.paruluniversity.ac.in/blog/', { cache: 'no-store' });
+    const mainRes = await fetch('https://www.paruluniversity.ac.in/blog/', { next: { revalidate: 3600 } });
     if (mainRes.ok) {
       const html = await mainRes.text();
       const $ = cheerio.load(html);
