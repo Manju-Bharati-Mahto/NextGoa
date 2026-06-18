@@ -59,10 +59,10 @@ export function Leadership() {
                   behind Parul University's National and Global Expansion.
                 </p>
                 <div className="mt-8 flex gap-4">
-                  <a href="#" className="inline-block transition-transform hover:scale-110" aria-label="LinkedIn">
+                  <a href="https://www.linkedin.com/school/paruluniversity/" target="_blank" rel="noopener noreferrer" className="inline-block transition-transform hover:scale-110" aria-label="LinkedIn">
                     <img src="/linkedin-icon.svg" alt="LinkedIn" className="h-12 w-12 rounded-[16px] shadow-sm" />
                   </a>
-                  <a href="#" className="inline-block transition-transform hover:scale-110" aria-label="Instagram">
+                  <a href="https://www.instagram.com/paruluniversity/?hl=en" target="_blank" rel="noopener noreferrer" className="inline-block transition-transform hover:scale-110" aria-label="Instagram">
                     <img src="/instagram-icon.svg" alt="Instagram" className="h-12 w-12 rounded-[16px] shadow-sm" />
                   </a>
 
@@ -107,10 +107,10 @@ export function Leadership() {
                   inspiration behind the institution's name.
                 </p>
                 <div className="mt-8 flex gap-4">
-                  <a href="#" className="inline-block transition-transform hover:scale-110" aria-label="LinkedIn">
+                  <a href="https://www.linkedin.com/school/paruluniversity/" target="_blank" rel="noopener noreferrer" className="inline-block transition-transform hover:scale-110" aria-label="LinkedIn">
                     <img src="/linkedin-icon.svg" alt="LinkedIn" className="h-12 w-12 rounded-[16px] shadow-sm" />
                   </a>
-                  <a href="#" className="inline-block transition-transform hover:scale-110" aria-label="Instagram">
+                  <a href="https://www.instagram.com/paruluniversity/?hl=en" target="_blank" rel="noopener noreferrer" className="inline-block transition-transform hover:scale-110" aria-label="Instagram">
                     <img src="/instagram-icon.svg" alt="Instagram" className="h-12 w-12 rounded-[16px] shadow-sm" />
                   </a>
                 </div>

@@ -36,7 +36,7 @@ export function FacultyDeans() {
       faculty: "Faculty of Physiotherapy",
       stats: "PhD. Physiotherapy • 14+ yrs • 81 papers",
       image: "/faculties/Physiotherapy/Dean.jpg",
-      linkedin: "https://www.linkedin.com/company/parul-university-goa/",
+      linkedin: "https://www.linkedin.com/in/dr-aseem-yadav-1a84a1317/",
     },
     {
       name: "Dr. Jeyalakshmi K.",
