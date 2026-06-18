@@ -47,6 +47,46 @@ const nextConfig: NextConfig = {
         destination: '/about#accreditations-recognitions',
         permanent: true,
       },
+      {
+        source: '/about/why-parul-university-goa',
+        destination: '/about#who-we-are',
+        permanent: true,
+      },
+      {
+        source: '/about/who-we-are',
+        destination: '/about#who-we-are',
+        permanent: true,
+      },
+      {
+        source: '/international/study-abroad',
+        destination: '/study-abroad',
+        permanent: true,
+      },
+      {
+        source: '/why-goa',
+        destination: '/about#why-goa',
+        permanent: true,
+      },
+      {
+        source: '/about/why-goa',
+        destination: '/about#why-goa',
+        permanent: true,
+      },
+      {
+        source: '/alumni',
+        destination: '/placements#alumni',
+        permanent: true,
+      },
+      {
+        source: '/placements/alumni',
+        destination: '/placements#alumni',
+        permanent: true,
+      },
+      {
+        source: '/blog',
+        destination: '/stories',
+        permanent: true,
+      },
     ];
   },
 };

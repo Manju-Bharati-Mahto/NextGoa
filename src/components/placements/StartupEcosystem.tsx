@@ -77,25 +77,13 @@ export function StartupEcosystem() {
 
             <div className="bg-white border border-gray-100 rounded-[20px] p-6 sm:p-8 flex flex-col items-center sm:items-end justify-center text-center sm:text-right shadow-sm flex-1">
               <div className="text-[#00A8E8] font-black text-5xl sm:text-6xl leading-none flex items-baseline justify-center sm:justify-end tracking-tighter">
-                254
+                300+
               </div>
               <div className="text-black text-[11px] sm:text-xs font-bold uppercase mt-4 tracking-widest">
                 STARTUPS INCUBATED
               </div>
               <p className="text-gray-600 text-sm mt-3 leading-relaxed">
                 Active companies built inside the PU E-Cell.
-              </p>
-            </div>
-
-            <div className="bg-white border border-gray-100 rounded-[20px] p-6 sm:p-8 flex flex-col items-center sm:items-end justify-center text-center sm:text-right shadow-sm flex-1">
-              <div className="text-[#00A8E8] font-black text-5xl sm:text-6xl leading-none flex items-baseline justify-center sm:justify-end tracking-tighter">
-                <span className="text-3xl sm:text-4xl mr-1 font-bold">₹</span>40<span className="text-3xl sm:text-4xl font-bold ml-1">Cr+</span>
-              </div>
-              <div className="text-black text-[11px] sm:text-xs font-bold uppercase mt-4 tracking-widest">
-                ASSOCHAM AWARD
-              </div>
-              <p className="text-gray-600 text-sm mt-3 leading-relaxed">
-                Best University in Placements for 3 Consecutive Years
               </p>
             </div>
 

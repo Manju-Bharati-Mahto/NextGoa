@@ -74,7 +74,8 @@ export function AlumniStories() {
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-white pt-[calc(clamp(50px,8vw,120px)+4rem)] pb-[calc(clamp(50px,8vw,120px)+4rem)]"
+      id="alumni"
+      className="relative w-full overflow-hidden bg-white pt-[calc(clamp(50px,8vw,120px)+4rem)] pb-[calc(clamp(50px,8vw,120px)+4rem)] scroll-mt-24 md:scroll-mt-32"
     >
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Middle Solid Red Background */}

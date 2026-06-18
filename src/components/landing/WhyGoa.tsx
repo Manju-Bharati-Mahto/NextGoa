@@ -11,7 +11,7 @@ export function WhyGoa({ variant = "blue", image = "/why-goa.png" }: { variant?:
   const isRed = variant === "red";
   
   return (
-    <section className={`relative overflow-hidden ${isRed ? "bg-transparent" : "bg-gradient-to-b from-[#F8F8F8] to-[#CBEFFD]"}`}>
+    <section id="why-goa" className={`relative overflow-hidden ${isRed ? "bg-transparent" : "bg-gradient-to-b from-[#F8F8F8] to-[#CBEFFD]"} scroll-mt-24 md:scroll-mt-32`}>
       {/* Background Wavy Image from Figma */}
       {!isRed ? (
         <div className="absolute inset-0 z-0 pointer-events-none">
