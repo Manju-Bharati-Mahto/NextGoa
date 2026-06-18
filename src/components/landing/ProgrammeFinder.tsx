@@ -12,7 +12,8 @@ import {
   PhysiotherapyIcon,
   AlliedHealthIcon,
   DoctoralIcon,
-  AppliedSciencesIcon
+  AppliedSciencesIcon,
+  ITIcon
 } from "./FacultyIcons";
 
 /**
@@ -26,7 +27,8 @@ import {
 const levels = ["Undergraduate", "Postgraduate", "Diploma", "Doctoral (PhD)"];
 
 const fields = [
-  "Engineering, IT & CS",
+  "Engineering & Technology",
+  "IT & Computer Science",
   "Management Studies",
   "Pharmacy",
   "Nursing",
@@ -38,12 +40,20 @@ const fields = [
 
 const faculties = [
   {
-    name: "Engineering, IT & CS",
-    tags: ["Diploma", "B.Tech", "BCA", "MCA", "B.Tech LE"],
+    name: "Engineering & Technology",
+    tags: ["Diploma", "B.Tech", "B.Tech LE"],
     levels: ["Diploma", "Undergraduate", "Postgraduate"],
-    fields: ["Engineering, IT & CS"],
+    fields: ["Engineering & Technology"],
     slug: "engineering",
     icon: EngineeringIcon,
+  },
+  {
+    name: "IT & Computer Science",
+    tags: ["BCA", "MCA"],
+    levels: ["Undergraduate", "Postgraduate"],
+    fields: ["IT & Computer Science"],
+    slug: "it-cs",
+    icon: ITIcon,
   },
   {
     name: "Management Studies",
@@ -105,7 +115,7 @@ const faculties = [
     name: "Doctoral Research",
     tags: ["PhD"],
     levels: ["Doctoral (PhD)"],
-    fields: ["Engineering, IT & CS", "Management Studies", "Pharmacy", "Nursing", "Allied and Healthcare Sciences", "Applied Sciences"],
+    fields: ["Engineering & Technology", "IT & Computer Science", "Management Studies", "Pharmacy", "Nursing", "Allied and Healthcare Sciences", "Applied Sciences"],
     slug: "phd",
     icon: DoctoralIcon,
   }
@@ -165,19 +175,19 @@ function CourseCard({ color, title, tags, href, icon: IconComponent }: CourseCar
   return (
     <Link
       href={href}
-      className={`relative block w-full min-h-[148px] sm:min-h-[290px] rounded-[12px] sm:rounded-[16px] p-3.5 sm:p-8 flex flex-col justify-between overflow-hidden border text-left cursor-pointer ${theme.bg}`}
+      className={`relative block w-full min-h-[136px] sm:min-h-[230px] rounded-[12px] sm:rounded-[16px] p-3 sm:p-6 flex flex-col justify-center overflow-hidden border text-left cursor-pointer ${theme.bg}`}
     >
       {/* Decorative background icon — smaller on mobile */}
-      <div className="absolute -right-2 -top-4 sm:-right-4 sm:-top-8 h-[80%] w-[45%] sm:h-[120%] sm:w-[55%] pointer-events-none opacity-40 flex items-center justify-end overflow-hidden">
+      <div className="absolute -right-2 -top-4 sm:-right-2 sm:-top-6 h-[80%] w-[45%] sm:h-[120%] sm:w-[55%] pointer-events-none opacity-40 flex items-center justify-end overflow-hidden">
         <IconComponent
           className="h-full w-full object-contain"
           style={{ color: theme.svgFill, '--svg-stroke': theme.svgStroke } as React.CSSProperties}
         />
       </div>
       {/* Content wrapper */}
-      <div className="flex flex-col h-full justify-end z-10 relative">
+      <div className="flex flex-col z-10 relative">
         {/* Title */}
-        <h3 className={`font-poppins font-semibold leading-tight tracking-tight mb-2 sm:mb-3.5 ${title === "Allied and Healthcare Sciences" ? "text-[16px] sm:text-[25px] sm:pr-8" : "text-[18px] sm:text-[32px] sm:pr-12"
+        <h3 className={`font-poppins font-semibold leading-tight tracking-tight mb-1.5 sm:mb-2.5 ${title === "Allied and Healthcare Sciences" ? "text-[15px] sm:text-[21px] sm:pr-8" : "text-[17px] sm:text-[25px] sm:pr-12"
           }`}>
           {title === "Allied and Healthcare Sciences" ? (
             <>Allied and Healthcare<br />Sciences</>
@@ -187,24 +197,24 @@ function CourseCard({ color, title, tags, href, icon: IconComponent }: CourseCar
         </h3>
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-1.5 sm:gap-2.5 mb-2 sm:mb-4">
+        <div className="flex flex-wrap gap-1 sm:gap-1.5 mb-1.5 sm:mb-3">
           {tags.slice(0, 2).map((tag) => (
             <span
               key={tag}
-              className={`font-poppins inline-flex items-center justify-center rounded-full px-3 py-1.5 sm:px-4 sm:py-2 text-[12px] sm:text-[14px] font-bold uppercase tracking-wider ${theme.tag}`}
+              className={`font-poppins inline-flex items-center justify-center rounded-full px-2.5 py-1 sm:px-3 sm:py-1 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider ${theme.tag}`}
             >
               {tag}
             </span>
           ))}
           {tags.length > 2 && (
-            <span className={`font-poppins inline-flex items-center justify-center rounded-full px-3 py-1.5 text-[12px] font-bold ${theme.tag} sm:hidden`}>
+            <span className={`font-poppins inline-flex items-center justify-center rounded-full px-2.5 py-1 text-[10px] font-bold ${theme.tag} sm:hidden`}>
               +{tags.length - 2}
             </span>
           )}
           {tags.slice(2).map((tag) => (
             <span
               key={tag}
-              className={`font-poppins hidden sm:inline-flex items-center justify-center rounded-full px-4 py-2 text-[14px] font-bold uppercase tracking-wider ${theme.tag}`}
+              className={`font-poppins hidden sm:inline-flex items-center justify-center rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wider ${theme.tag}`}
             >
               {tag}
             </span>
@@ -214,7 +224,7 @@ function CourseCard({ color, title, tags, href, icon: IconComponent }: CourseCar
         {/* View Program button — hidden on mobile */}
         <div className="hidden sm:block">
           <span
-            className={`inline-flex items-center justify-center rounded-full px-5 py-2.5 text-xs font-bold transition-colors shadow-sm ${theme.btn}`}
+            className={`inline-flex items-center justify-center rounded-full px-4.5 py-2 text-xs font-bold transition-colors shadow-sm ${theme.btn}`}
           >
             View Program
           </span>

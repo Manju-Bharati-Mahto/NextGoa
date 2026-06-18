@@ -19,40 +19,40 @@ import {
 const allCourses = [
   // DIPLOMA
   { id: 1, title: "Diploma in Engineering", description: "3-year polytechnic diploma program.", level: "Diploma", field: "B.Tech", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/diploma_eng.png", href: "/programs/engineering" },
-  { id: 2, title: "General Nursing and Midwifery (G.N.M)", description: "3-year diploma in nursing.", level: "Diploma", field: "B.Sc. Nursing", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/gnm_nursing.png", href: "/programs/nursing" },
+  { id: 2, title: "General Nursing and Midwifery (G.N.M)", description: "3-year diploma in nursing.", level: "Diploma", field: "B.Sc. Nursing", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/gnm_nursing.png", href: "/programs/nursing" },
 
   // BACHELOR'S
-  { id: 3, title: "B.Tech Computer Science & Engineering", description: "Bachelor of Technology with various specializations.", level: "Bachelor's", field: "B.Tech", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/btech_cs.png", href: "/programs/engineering" },
+  { id: 3, title: "B.Tech Computer Science & Engineering", description: "Bachelor of Technology with various specializations.", level: "Bachelor's", field: "B.Tech", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/btech_cs.png", href: "/programs/engineering" },
   { id: 4, title: "B.Tech - Lateral Entry", description: "Direct second-year admission.", level: "Bachelor's", field: "B.Tech", mode: "Lateral entry", entranceTest: "PU Goa Entrance", image: "/programmes/cards/btech_lateral.png", href: "/programs/engineering" },
   { id: 5, title: "Bachelor of Business Administration (BBA)", description: "Undergraduate degree in business administration.", level: "Bachelor's", field: "MBA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bba_student.png", href: "/programs/management-studies" },
   { id: 6, title: "BBA Honours (NEP 2020)", description: "4-year honors program with specializations.", level: "Bachelor's", field: "MBA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bba_hons.png", href: "/programs/management-studies" },
-  { id: 7, title: "Bachelor of Pharmacy (B.Pharm.)", description: "Undergraduate pharmacy program.", level: "Bachelor's", field: "B.Pharm", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bpharm.png", href: "/programs/pharmacy" },
-  { id: 8, title: "B.Pharm. - Lateral Entry", description: "Direct second-year admission to pharmacy.", level: "Bachelor's", field: "B.Pharm", mode: "Lateral entry", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bpharm_lateral.png", href: "/programs/pharmacy" },
-  { id: 9, title: "Bachelor of Science in Nursing", description: "Professional nursing degree.", level: "Bachelor's", field: "B.Sc. Nursing", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bsc_nursing.png", href: "/programs/nursing" },
-  { id: 10, title: "Post Basic B.Sc Nursing (PB-B.Sc.)", description: "Post basic nursing program.", level: "Bachelor's", field: "B.Sc. Nursing", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/pb_bsc_nursing.png", href: "/programs/nursing" },
-  { id: 11, title: "Bachelor of Physiotherapy (BPT)", description: "Comprehensive physiotherapy program.", level: "Bachelor's", field: "BPT", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bpt_physio.png", href: "/programs/physiotherapy" },
+  { id: 7, title: "Bachelor of Pharmacy (B.Pharm.)", description: "Undergraduate pharmacy program.", level: "Bachelor's", field: "B.Pharm", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/bpharm.png", href: "/programs/pharmacy" },
+  { id: 8, title: "B.Pharm. - Lateral Entry", description: "Direct second-year admission to pharmacy.", level: "Bachelor's", field: "B.Pharm", mode: "Lateral entry", entranceTest: "PUCET", image: "/programmes/cards/bpharm_lateral.png", href: "/programs/pharmacy" },
+  { id: 9, title: "Bachelor of Science in Nursing", description: "Professional nursing degree.", level: "Bachelor's", field: "B.Sc. Nursing", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/bsc_nursing.png", href: "/programs/nursing" },
+  { id: 10, title: "Post Basic B.Sc Nursing (PB-B.Sc.)", description: "Post basic nursing program.", level: "Bachelor's", field: "B.Sc. Nursing", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/pb_bsc_nursing.png", href: "/programs/nursing" },
+  { id: 11, title: "Bachelor of Physiotherapy (BPT)", description: "Comprehensive physiotherapy program.", level: "Bachelor's", field: "BPT", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/bpt_physio.png", href: "/programs/physiotherapy" },
   { id: 12, title: "BHMCT", description: "Bachelor of Hotel Management and Catering Technology.", level: "Bachelor's", field: "BHMCT", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bhmct.png", href: "/programs/hotel-management" },
   { id: 13, title: "Bachelor of Science - Hotel Management", description: "B.Sc degree in hospitality.", level: "Bachelor's", field: "BHMCT", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bsc_hm.png", href: "/programs/hotel-management" },
   { id: 14, title: "B.Sc Hons. - Hotel Management", description: "4-year honors program.", level: "Bachelor's", field: "BHMCT", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bsc_hm_hons.png", href: "/programs/hotel-management" },
-  { id: 15, title: "Bachelor of Anaesthesia & Operation Theatre Technology", description: "Allied healthcare bachelor's degree.", level: "Bachelor's", field: "B.AOTT", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/baott.png", href: "/programs/allied-health" },
-  { id: 16, title: "Bachelor of Medical Laboratory Science (BMLS)", description: "Allied healthcare bachelor's degree.", level: "Bachelor's", field: "B.AOTT", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bmls.png", href: "/programs/allied-health" },
+  { id: 15, title: "Bachelor of Anaesthesia & Operation Theatre Technology", description: "Allied healthcare bachelor's degree.", level: "Bachelor's", field: "B.AOTT", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/baott.png", href: "/programs/allied-health" },
+  { id: 16, title: "Bachelor of Medical Laboratory Science (BMLS)", description: "Allied healthcare bachelor's degree.", level: "Bachelor's", field: "B.AOTT", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/bmls.png", href: "/programs/allied-health" },
   { id: 23, title: "Bachelor of Computer Applications (BCA)", description: "3-year undergraduate IT program.", level: "Bachelor's", field: "BCA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bca_students.png", href: "/programs/it-cs" },
   { id: 24, title: "BCA Honours (NEP 2020)", description: "4-year honors program with specializations.", level: "Bachelor's", field: "BCA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bca_students.png", href: "/programs/it-cs" },
-  { id: 26, title: "Bachelor of Science (B.Sc.)", description: "3-year science degree in Biotech & Microbiology.", level: "Bachelor's", field: "B.Sc", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bsc_applied_science.png", href: "/programs/applied-sciences" },
-  { id: 27, title: "Bachelor of Science - Honors (B.Sc. Hons.) (NEP 2020)", description: "4-year honors program in Biotech & Microbiology.", level: "Bachelor's", field: "B.Sc", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bsc_hons_applied_science.png", href: "/programs/applied-sciences" },
+  { id: 26, title: "Bachelor of Science (B.Sc.)", description: "3-year science degree in Biotech & Microbiology.", level: "Bachelor's", field: "B.Sc", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/bsc_applied_science.png", href: "/programs/applied-sciences" },
+  { id: 27, title: "Bachelor of Science - Honors (B.Sc. Hons.) (NEP 2020)", description: "4-year honors program in Biotech & Microbiology.", level: "Bachelor's", field: "B.Sc", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/bsc_hons_applied_science.png", href: "/programs/applied-sciences" },
 
   // MASTER'S
-  { id: 17, title: "Master of Business Administration (MBA)", description: "Postgraduate management degree.", level: "Master's", field: "MBA", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/mba.png", href: "/programs/management-studies" },
+  { id: 17, title: "Master of Business Administration (MBA)", description: "Postgraduate management degree.", level: "Master's", field: "MBA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/mba.png", href: "/programs/management-studies" },
   { id: 25, title: "Master of Computer Applications (MCA)", description: "Postgraduate IT and software program.", level: "Master's", field: "MCA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/mca_students.png", href: "/programs/it-cs" },
-  { id: 28, title: "Master of Science (M.Sc.)", description: "2-year master's in Biotech & Microbiology.", level: "Master's", field: "B.Sc", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/msc_applied_science.png", href: "/programs/applied-sciences" },
-  { id: 29, title: "M.Tech in Computer Engineering", description: "Master of Technology program.", level: "Master's", field: "B.Tech", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/phd_engineering.png", href: "/programs/engineering" },
+  { id: 28, title: "Master of Science (M.Sc.)", description: "2-year master's in Biotech & Microbiology.", level: "Master's", field: "B.Sc", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/msc_applied_science.png", href: "/programs/applied-sciences" },
+  { id: 29, title: "M.Tech in Computer Engineering", description: "Master of Technology program.", level: "Master's", field: "B.Tech", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_engineering.png", href: "/programs/engineering" },
 
   // DOCTORAL
-  { id: 18, title: "Ph.D in Engineering", description: "Doctoral research program.", level: "Doctoral", field: "Ph.D", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_engineering.png", href: "/programs/doctorate-programs" },
-  { id: 19, title: "Ph.D in Management", description: "Doctoral research program.", level: "Doctoral", field: "Ph.D", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_management.png", href: "/programs/doctorate-programs" },
-  { id: 20, title: "Ph.D in Pharmacy", description: "Doctoral research program.", level: "Doctoral", field: "Ph.D", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_pharmacy.png", href: "/programs/doctorate-programs" },
-  { id: 21, title: "Ph.D in Nursing", description: "Doctoral research program.", level: "Doctoral", field: "Ph.D", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_nursing.png", href: "/programs/doctorate-programs" },
-  { id: 22, title: "Ph.D in Allied and Healthcare Sciences", description: "Doctoral research program.", level: "Doctoral", field: "Ph.D", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_allied_health.png", href: "/programs/doctorate-programs" }
+  { id: 18, title: "Ph.D in Engineering", description: "Doctoral research program.", level: "Doctoral", field: "Ph.D", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/phd_engineering.png", href: "/programs/doctorate-programs" },
+  { id: 19, title: "Ph.D in Management", description: "Doctoral research program.", level: "Doctoral", field: "Ph.D", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/phd_management.png", href: "/programs/doctorate-programs" },
+  { id: 20, title: "Ph.D in Pharmacy", description: "Doctoral research program.", level: "Doctoral", field: "Ph.D", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/phd_pharmacy.png", href: "/programs/doctorate-programs" },
+  { id: 21, title: "Ph.D in Nursing", description: "Doctoral research program.", level: "Doctoral", field: "Ph.D", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/phd_nursing.png", href: "/programs/doctorate-programs" },
+  { id: 22, title: "Ph.D in Allied and Healthcare Sciences", description: "Doctoral research program.", level: "Doctoral", field: "Ph.D", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/phd_allied_health.png", href: "/programs/doctorate-programs" }
 ];
 
 const filterOptions = {
@@ -73,9 +73,7 @@ const filterOptions = {
   ],
   Mode: ["All", "Full-Time", "Lateral entry"],
   "Entrance Test": [
-    "All",
-    "PUCET",
-    "PU Goa Entrance"
+    "PUCET"
   ],
 };
 
@@ -141,6 +139,106 @@ const FACULTY_INFO: Record<string, { name: string; desc: string; icon: React.Com
     image: "/programmes/Library Learning Experience.png"
   }
 };
+
+function DropdownFilter({
+  category,
+  options,
+  selectedValue,
+  onChange
+}: {
+  category: string;
+  options: string[];
+  selectedValue: string;
+  onChange: (val: string) => void;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="relative w-full min-w-[150px] lg:w-full shrink-0">
+      <label className="block text-[12px] lg:text-[14px] font-semibold text-ink/70 mb-1.5 lg:mb-2.5 font-poppins uppercase tracking-wider">
+        {category}
+      </label>
+
+      {/* Mobile view: Native select to prevent overflow clipping */}
+      <div className="relative lg:hidden w-full">
+        <select
+          value={selectedValue}
+          onChange={(e) => onChange(e.target.value)}
+          className="w-full appearance-none bg-white border border-gray-300 rounded-[12px] px-3 py-2.5 text-[14px] font-semibold text-ink shadow-sm focus:outline-none focus:border-[#ED383F] bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:1rem_1rem] bg-[position:right_0.8rem_center] bg-no-repeat pr-8 cursor-pointer"
+        >
+          {options.indexOf(selectedValue) === -1 && (
+            <option value={selectedValue}>{selectedValue}</option>
+          )}
+          {options.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {/* Desktop view: Premium custom dropdown */}
+      <div className="hidden lg:block w-full">
+        <button
+          type="button"
+          onClick={() => setIsOpen(!isOpen)}
+          className="w-full flex items-center justify-between bg-white border border-gray-300 rounded-[14px] px-4 py-3.5 text-[15px] font-semibold text-ink shadow-sm hover:border-[#ED383F] focus:outline-none transition-all duration-200"
+        >
+          <span className="truncate pr-2">{selectedValue}</span>
+          <svg
+            className={`w-5 h-5 text-ink/40 transition-transform duration-200 shrink-0 ${isOpen ? "rotate-180" : ""}`}
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        {isOpen && (
+          <>
+            <div className="fixed inset-0 z-30" onClick={() => setIsOpen(false)} />
+            <ul className="absolute left-0 right-0 mt-2 z-40 max-h-60 overflow-y-auto bg-white border border-gray-200 rounded-[14px] shadow-lg py-2 focus:outline-none scrollbar-thin">
+              {options.indexOf(selectedValue) === -1 && (
+                <li key={selectedValue}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      onChange(selectedValue);
+                      setIsOpen(false);
+                    }}
+                    className="w-full text-left px-4 py-2.5 text-[15px] bg-[#ED383F]/10 text-[#ED383F] font-bold"
+                  >
+                    {selectedValue}
+                  </button>
+                </li>
+              )}
+              {options.map((option) => (
+                <li key={option}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      onChange(option);
+                      setIsOpen(false);
+                    }}
+                    className={`w-full text-left px-4 py-2.5 text-[15px] transition-colors ${
+                      selectedValue === option
+                        ? "bg-[#ED383F]/10 text-[#ED383F] font-bold"
+                        : "text-ink/80 hover:bg-gray-100 hover:text-ink"
+                    }`}
+                  >
+                    {option}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
 
 export default function ProgramFilter() {
   const [activeFilters, setActiveFilters] = useState<{ [key: string]: string }>({
@@ -233,13 +331,13 @@ export default function ProgramFilter() {
             </div>
 
             {/* Filter Panel */}
-            <div className="bg-[#F5F5F5] rounded-[24px] p-8 border-[1.7px] border-gray-300">
-              <div className="flex items-center justify-between mb-8">
+            <div className="bg-[#F5F5F5] rounded-[24px] p-4 sm:p-6 lg:p-8 border-[1.7px] border-gray-300 w-full">
+              <div className="flex items-center justify-between mb-4 lg:mb-8">
                 <div className="flex items-center gap-3">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#ED383F]">
                     <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
                   </svg>
-                  <h3 className="text-2xl font-semibold text-ink font-poppins">Filters</h3>
+                  <h3 className="text-xl lg:text-2xl font-semibold text-ink font-poppins">Filters</h3>
                 </div>
                 <button
                   onClick={() => setActiveFilters({ Level: "All", Field: "All", Mode: "All", "Entrance Test": "All" })}
@@ -249,35 +347,15 @@ export default function ProgramFilter() {
                 </button>
               </div>
 
-              <div className="space-y-12 max-h-[350px] overflow-y-auto sm:max-h-none sm:overflow-visible pr-2">
+              <div className="flex flex-row lg:flex-col gap-4 lg:space-y-5 overflow-x-auto lg:overflow-visible pb-3 lg:pb-0 scrollbar-none w-full shrink-0">
                 {Object.entries(filterOptions).map(([category, options]) => (
-                  <div key={category}>
-                    <h4 className="text-xl sm:text-[22px] font-semibold text-ink mb-5 border-b-[1.7px] border-gray-200 pb-4 font-poppins">{category}</h4>
-                    <div className="space-y-4">
-                      {options.map((option) => {
-                        const isActive = activeFilters[category] === option;
-                        return (
-                          <label key={option} className="flex items-center gap-4 cursor-pointer group w-full">
-                            <div className="relative flex items-center justify-center w-[20px] h-[20px] shrink-0">
-                              <input
-                                type="radio"
-                                name={category}
-                                value={option}
-                                checked={isActive}
-                                onChange={() => handleFilterChange(category, option)}
-                                className="peer appearance-none w-[20px] h-[20px] rounded-full border border-gray-300 bg-white checked:border-[#ED383F] checked:bg-white transition-all cursor-pointer"
-                              />
-                              {/* Inner dot for checked state */}
-                              <div className="absolute w-2.5 h-2.5 rounded-full bg-[#ED383F] opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none" />
-                            </div>
-                            <span className={`text-[16px] ${isActive ? 'text-ink font-medium' : 'text-ink/70'} group-hover:text-ink transition-colors`}>
-                              {option}
-                            </span>
-                          </label>
-                        );
-                      })}
-                    </div>
-                  </div>
+                  <DropdownFilter
+                    key={category}
+                    category={category}
+                    options={options}
+                    selectedValue={activeFilters[category]}
+                    onChange={(val) => handleFilterChange(category, val)}
+                  />
                 ))}
               </div>
             </div>

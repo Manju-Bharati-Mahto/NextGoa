@@ -94,7 +94,7 @@ export default function StudyAbroadOpportunities() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % SLIDES.length);
-    }, 2000);
+    }, 6000);
     return () => clearInterval(timer);
   }, []);
 
