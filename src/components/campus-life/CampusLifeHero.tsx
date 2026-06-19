@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 export function CampusLifeHero() {
@@ -114,11 +115,11 @@ export function CampusLifeHero() {
 
         {/* ── Right: Collage ── */}
         <div className="flex-1 flex items-center justify-center relative w-full mt-8 lg:mt-0 min-h-[350px] sm:min-h-[520px] lg:min-h-[600px] xl:translate-x-[50px]">
-          <img
+          <Image
             src="/campus-life/hero-collage.png"
             alt="Campus Life"
             className="w-full h-auto max-w-[100%] sm:max-w-[750px] lg:max-w-[950px] scale-100 lg:scale-110 xl:scale-125 origin-center object-contain relative z-20"
-          />
+          width={1200} height={1200} />
         </div>
       </div>
     </section>

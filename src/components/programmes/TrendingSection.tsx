@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React, { useState, useEffect } from "react";
 
 import {
@@ -184,11 +185,11 @@ export default function TrendingSection() {
           
           {/* Right Column */}
           <div className="hidden lg:flex justify-end relative h-full lg:mt-0 lg:-ml-16 z-0 pointer-events-none">
-              <img 
+              <Image 
                 src="/programmes/trending-right.png" 
                 alt="Trending programmes"
                 className="w-full max-w-[500px] object-contain drop-shadow-2xl"
-              />
+              width={1200} height={1200} />
           </div>
         </div>
       </div>

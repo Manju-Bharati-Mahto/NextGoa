@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Eyebrow } from "@/components/landing/Decor";
 
 export function Leadership() {
@@ -36,11 +37,11 @@ export function Leadership() {
             {/* Image */}
             <div className="w-full md:w-[40%] flex-shrink-0">
               <div className="relative aspect-[4/3] md:aspect-auto md:h-full w-full overflow-hidden rounded-[20px] shadow-lg">
-                <img
+                <Image
                   src="/DEVANSHU.webp"
                   alt="Dr. Devanshu Patel"
                   className="absolute inset-0 h-full w-full object-cover object-top"
-                />
+                width={1200} height={1200} />
               </div>
             </div>
             {/* Card */}
@@ -84,11 +85,11 @@ export function Leadership() {
             {/* Image */}
             <div className="w-full md:w-[40%] flex-shrink-0">
               <div className="relative aspect-[4/3] md:aspect-auto md:h-full w-full overflow-hidden rounded-[20px] shadow-lg">
-                <img
+                <Image
                   src="/PARUL.webp"
                   alt="Dr. Parul Patel"
                   className="absolute inset-0 h-full w-full object-cover object-top"
-                />
+                width={1200} height={1200} />
               </div>
             </div>
             {/* Card */}

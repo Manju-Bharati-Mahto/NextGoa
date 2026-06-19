@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 import { cta } from "@/lib/navigation";
@@ -9,11 +10,11 @@ export function ExamDatesTicket() {
     <div
       className="relative block w-full max-w-full sm:max-w-[585px] aspect-[1170/844] overflow-hidden select-none [container-type:inline-size]"
     >
-      <img
+      <Image
         src="/exam.png"
         alt="Entrance test window"
         className="w-full h-full object-contain"
-      />
+      width={1200} height={1200} />
       {/* Ticket Content Overlay */}
       <div className="absolute left-[13.5cqw] right-[13.5cqw] top-[22.5cqw] bottom-[21.5cqw] flex flex-col justify-between text-left font-[family-name:var(--font-poppins)]">
         {/* Top part */}

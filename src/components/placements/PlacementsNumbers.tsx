@@ -86,12 +86,12 @@ export function PlacementsNumbers() {
             
             {/* Image at bottom */}
             <div className="relative mt-2 z-10 w-full flex-grow flex items-end justify-center pointer-events-none">
-              <img
+              <Image
                 src="/Image-opt.webp"
                 alt="MS Dhoni with Parul University students"
                 className="w-[110%] max-w-none ml-[5%] block"
                 style={{ marginBottom: "-56px" }}
-              />
+              width={1200} height={1200} />
             </div>
           </div>
 
@@ -127,7 +127,7 @@ export function PlacementsNumbers() {
               overflow: "hidden",
             }}
           >
-            <img
+            <Image
               src="/Image-opt.webp"
               alt="MS Dhoni with Parul University students"
               style={{
@@ -137,7 +137,7 @@ export function PlacementsNumbers() {
                 width: "100%",
                 height: "auto",
               }}
-            />
+            width={1200} height={1200} />
           </div>
         </div>
 

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Eyebrow } from "./Decor";
 import { cta } from "@/lib/navigation";
 import { ExamDatesTicket } from "../layout/ExamDatesTicket";
@@ -37,11 +38,11 @@ export function Admissions() {
               Appear for it online, get your results quickly, and lock in your seat.
             </p>
             <div className="mt-6 flex items-center gap-3">
-              <img
+              <Image
                 src="/IMG.png"
                 alt="5,235 registered students"
                 className="h-8 w-auto object-contain"
-              />
+              width={1200} height={1200} />
               <p className="section-body text-ink/70">
                 5,235 students have registered
               </p>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Eyebrow } from "@/components/landing/Decor";
 
 export function WhoWeAre() {
@@ -109,11 +110,11 @@ export function WhoWeAre() {
 
           {/* Event photo */}
           <div className="relative z-10 overflow-hidden rounded-[28px] shadow-2xl ring-1 ring-black/10">
-            <img
+            <Image
               src="/who-we-are.png"
               alt="Parul University Goa Student"
               className="aspect-square w-full object-cover object-right"
-            />
+            width={1200} height={1200} />
           </div>
         </div>
       </div>

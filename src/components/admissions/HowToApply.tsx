@@ -105,11 +105,11 @@ export function HowToApply() {
         <div className="flex md:hidden flex-col gap-6">
           {/* Yellow Card (Callback) */}
           <div className="relative w-full aspect-[630/372] rounded-[20px] overflow-hidden shadow-sm flex items-center p-4 sm:p-6">
-            <img 
+            <Image 
               src="/connect/Group 32874.png" 
               alt="" 
               className="absolute inset-0 w-full h-full object-cover"
-            />
+            width={1200} height={1200} />
             <div className="w-[52%] relative z-10 flex flex-col items-start text-left ml-auto">
               <h4 className="text-2xl xs:text-3xl font-bold text-ink mb-1 leading-tight">Callback</h4>
               <p className="text-ink/80 text-xs xs:text-sm leading-snug mb-2 pr-1 font-poppins">
@@ -123,11 +123,11 @@ export function HowToApply() {
 
           {/* Blue Card (Digital) */}
           <div className="relative w-full aspect-[630/938] rounded-[20px] overflow-hidden shadow-sm flex flex-col justify-between p-8 sm:p-12">
-            <img 
+            <Image 
               src="/connect/Group 32873.png" 
               alt="" 
               className="absolute inset-0 w-full h-full object-cover"
-            />
+            width={1200} height={1200} />
             <div className="relative z-10 text-left">
               <h4 className="text-5xl sm:text-6xl font-bold text-white mb-4 tracking-tight">Digital</h4>
               <p className="text-white/95 text-lg sm:text-xl leading-relaxed mb-6 max-w-[95%] font-medium font-poppins">
@@ -143,11 +143,11 @@ export function HowToApply() {
 
           {/* Red Card (WhatsApp) */}
           <div className="relative w-full aspect-[630/921] rounded-[20px] overflow-hidden shadow-sm flex flex-col justify-between p-8 sm:p-12">
-            <img 
+            <Image 
               src="/connect/Group 32871.png" 
               alt="" 
               className="absolute inset-0 w-full h-full object-cover"
-            />
+            width={1200} height={1200} />
             <div className="relative z-10 text-left">
               <h4 className="text-5xl sm:text-6xl font-bold text-white mb-4 tracking-tight">WhatsApp</h4>
               <p className="text-white/95 text-lg sm:text-xl leading-relaxed mb-6 max-w-[95%] font-medium font-poppins">
@@ -163,11 +163,11 @@ export function HowToApply() {
 
           {/* Black Card (Visit Campus) */}
           <div className="relative w-full aspect-[630/375] rounded-[20px] overflow-hidden shadow-sm flex items-center p-4 sm:p-6">
-            <img 
+            <Image 
               src="/connect/Group 32872.png" 
               alt="" 
               className="absolute inset-0 w-full h-full object-cover"
-            />
+            width={1200} height={1200} />
             <div className="w-[52%] relative z-10 flex flex-col items-start text-left ml-auto">
               <h4 className="text-2xl xs:text-3xl font-bold text-white mb-1 leading-tight">Visit<br/>Campus</h4>
               <p className="text-white/80 text-xs xs:text-sm leading-snug mb-2 font-poppins">

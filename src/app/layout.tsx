@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import "./globals.css";
 import { gotham, poppins } from "@/lib/fonts";
 import { siteConfig, SITE_URL } from "@/lib/site-config";
@@ -6,9 +7,9 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { organizationSchema, websiteSchema } from "@/lib/structured-data";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
-import { EnquiryModal } from "@/components/layout/EnquiryModal";
-import { DownloadBrochureModal } from "@/components/admissions/DownloadBrochureModal";
-import { CampusVisitModal } from "@/components/layout/CampusVisitModal";
+const EnquiryModal = dynamic(() => import("@/components/layout/EnquiryModal").then((mod) => mod.EnquiryModal));
+const DownloadBrochureModal = dynamic(() => import("@/components/admissions/DownloadBrochureModal").then((mod) => mod.DownloadBrochureModal));
+const CampusVisitModal = dynamic(() => import("@/components/layout/CampusVisitModal").then((mod) => mod.CampusVisitModal));
 import FloatingCta from "@/components/layout/FloatingCta";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
 /**

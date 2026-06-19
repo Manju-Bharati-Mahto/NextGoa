@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 export function Legacy() {
@@ -42,11 +43,11 @@ export function Legacy() {
                 className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 lg:-bottom-8 lg:-right-8 translate-x-[10.4%] translate-y-[13.8%] w-[250px] sm:w-[400px] lg:w-[500px] max-w-none z-0 pointer-events-none" 
               />
               
-              <img 
+              <Image 
                 src="/rectangle-319.webp" 
                 alt="PU Goa Academic Block" 
                 className="relative w-full h-auto rounded-[24px] object-cover z-10"
-              />
+              width={1200} height={1200} />
             </div>
           </div>
 

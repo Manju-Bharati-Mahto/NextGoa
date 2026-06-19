@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Eyebrow } from "./Decor";
 import { TwoThousandPlusIcon } from "./TwoThousandPlusIcon";
 
@@ -97,12 +98,12 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
 
             {/* Image at bottom */}
             <div className="relative mt-2 z-10 w-full flex-grow flex items-end justify-center pointer-events-none">
-              <img
+              <Image
                 src="/Image-opt.webp"
                 alt="MS Dhoni with Parul University students"
                 className="w-[110%] max-w-none ml-[5%] block"
                 style={{ marginBottom: "-30px" }}
-              />
+              width={1200} height={1200} />
             </div>
           </div>
 
@@ -138,7 +139,7 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
               overflow: "hidden",
             }}
           >
-            <img
+            <Image
               src="/Image-opt.webp"
               alt="MS Dhoni with Parul University students"
               style={{
@@ -148,7 +149,7 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
                 width: "100%",
                 height: "auto",
               }}
-            />
+            width={1200} height={1200} />
           </div>
         </div>
 

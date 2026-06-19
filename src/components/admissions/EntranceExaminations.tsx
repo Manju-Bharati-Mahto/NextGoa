@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React, { useState } from "react";
 import { cta } from "@/lib/navigation";
 import { ExamDatesTicket } from "../layout/ExamDatesTicket";
@@ -57,11 +58,11 @@ export function EntranceExaminations() {
                   The Goa Entrance Exam is designed to assess your readiness for Medical and Doctorate courses.
                 </p>
                 <div className="mt-6 flex items-center gap-3">
-                  <img
+                  <Image
                     src="/IMG.png"
                     alt="5,235 registered students"
                     className="h-8 w-auto object-contain"
-                  />
+                  width={1200} height={1200} />
                   <p className="font-[family-name:var(--font-poppins)] font-normal text-sm sm:text-base text-ink/80">
                     5,235 Students have registered.
                   </p>
