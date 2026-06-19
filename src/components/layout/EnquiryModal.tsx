@@ -394,20 +394,21 @@ export function EnquiryModal() {
         {/* Scrollable Content Area */}
         <div className={`overflow-y-auto flex-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] ${submitState === 'success' ? 'p-6 sm:p-10' : 'px-6 pb-6 sm:px-10 sm:pb-10 pt-2'}`}>
           {submitState === 'success' ? (
-            <div className="flex flex-col items-center justify-center py-16 space-y-6 animate-in zoom-in-50 fade-in duration-500 font-poppins">
-              <div className="rounded-full bg-[#10B981]/10 p-5">
-                <div className="rounded-full bg-[#10B981] p-4 text-white shadow-[0_0_20px_rgba(16,185,129,0.4)]">
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+            <div className="flex flex-col items-center justify-center py-12 sm:py-16 space-y-6 animate-in zoom-in-50 fade-in duration-500 font-poppins">
+              <div className="rounded-full bg-[#10B981]/10 p-4 sm:p-5">
+                <div className="rounded-full bg-[#10B981] p-3 sm:p-4 text-white flex items-center justify-center">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
                 </div>
               </div>
-              <div className="space-y-2 text-center">
-                <h3 className="text-3xl sm:text-4xl font-bold text-ink">Thank You!</h3>
-                <p className="text-lg text-gray-500 max-w-sm mx-auto">
-                  Your request has been successfully received. Our team will reach out to you shortly.
+              <div className="space-y-2 sm:space-y-3 text-center">
+                <h3 className="text-[28px] sm:text-[36px] font-black text-[#1C1C1E] tracking-tight">Thank You!</h3>
+                <p className="text-[15px] sm:text-[18px] text-[#5F6368] leading-relaxed max-w-md mx-auto px-4">
+                  Your request has been successfully received.<br />
+                  Our team will reach out to you shortly.
                 </p>
-                <p className="text-sm font-medium text-[#EE384E] mt-4">
+                <p className="text-[13px] sm:text-[14px] font-medium text-[#E72A2A] pt-4">
                   Redirecting to Application Portal in {countdown}s...
                 </p>
               </div>
