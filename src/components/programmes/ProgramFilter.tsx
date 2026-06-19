@@ -38,13 +38,13 @@ const allCourses = [
   { id: 16, title: "Bachelor of Medical Laboratory Science (BMLS)", description: "Allied healthcare bachelor's degree.", level: "Bachelor's", field: "B.AOTT", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/bmls.png", href: "/programs/allied-health" },
   { id: 23, title: "Bachelor of Computer Applications (BCA)", description: "3-year undergraduate IT program.", level: "Bachelor's", field: "BCA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bca_students.png", href: "/programs/it-cs" },
   { id: 24, title: "BCA Honours (NEP 2020)", description: "4-year honors program with specializations.", level: "Bachelor's", field: "BCA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bca_students.png", href: "/programs/it-cs" },
-  { id: 26, title: "Bachelor of Science (B.Sc.)", description: "3-year science degree in Biotech & Microbiology.", level: "Bachelor's", field: "B.Sc", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/bsc_applied_science.png", href: "/programs/applied-sciences" },
-  { id: 27, title: "Bachelor of Science - Honors (B.Sc. Hons.) (NEP 2020)", description: "4-year honors program in Biotech & Microbiology.", level: "Bachelor's", field: "B.Sc", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/bsc_hons_applied_science.png", href: "/programs/applied-sciences" },
+  { id: 26, title: "Bachelor of Science (B.Sc.)", description: "3-year science degree in Biotech & Microbiology.", level: "Bachelor's", field: "B.Sc", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/bsc_applied_science.png", href: "/programs/applied-and-health-care-sciences" },
+  { id: 27, title: "Bachelor of Science - Honors (B.Sc. Hons.) (NEP 2020)", description: "4-year honors program in Biotech & Microbiology.", level: "Bachelor's", field: "B.Sc", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/bsc_hons_applied_science.png", href: "/programs/applied-and-health-care-sciences" },
 
   // MASTER'S
   { id: 17, title: "Master of Business Administration (MBA)", description: "Postgraduate management degree.", level: "Master's", field: "MBA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/mba.png", href: "/programs/management-studies" },
   { id: 25, title: "Master of Computer Applications (MCA)", description: "Postgraduate IT and software program.", level: "Master's", field: "MCA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/mca_students.png", href: "/programs/it-cs" },
-  { id: 28, title: "Master of Science (M.Sc.)", description: "2-year master's in Biotech & Microbiology.", level: "Master's", field: "B.Sc", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/msc_applied_science.png", href: "/programs/applied-sciences" },
+  { id: 28, title: "Master of Science (M.Sc.)", description: "2-year master's in Biotech & Microbiology.", level: "Master's", field: "B.Sc", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/msc_applied_science.png", href: "/programs/applied-and-health-care-sciences" },
   { id: 29, title: "M.Tech in Computer Engineering", description: "Master of Technology program.", level: "Master's", field: "B.Tech", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_engineering.png", href: "/programs/engineering" },
 
   // DOCTORAL
@@ -102,7 +102,7 @@ const FACULTY_INFO: Record<string, { name: string; desc: string; icon: React.Com
     icon: HotelIcon, 
     image: "/programmes/hotel_management.jpg"
   },
-  "/programs/applied-sciences": { 
+  "/programs/applied-and-health-care-sciences": { 
     name: "Applied Sciences", 
     desc: "Where science serves humanity.", 
     icon: AppliedSciencesIcon, 

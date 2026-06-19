@@ -6,12 +6,16 @@ export function DynamicWhyPUGoa({
   data,
   themeColor,
   topBgColor,
-  useThickWave = false
+  useThickWave = false,
+  isWider = false,
+  reducedPadding = false
 }: { 
   data: WhyData,
   themeColor: { waveBand: string; waveAccent: string; cardBg: string; cardText: string; },
   topBgColor?: string,
-  useThickWave?: boolean
+  useThickWave?: boolean,
+  isWider?: boolean,
+  reducedPadding?: boolean
 }) {
   const waveHeight = useThickWave ? "clamp(50px, 8vw, 500px)" : "clamp(30px, 5vw, 150px)";
   
@@ -193,7 +197,7 @@ export function DynamicWhyPUGoa({
         </div>
       )}
 
-      <div className="relative z-10 mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-12 py-24 sm:py-36 flex flex-col items-start justify-center">
+      <div className={`relative z-10 mx-auto w-full ${isWider ? "max-w-[1600px]" : "max-w-[1440px]"} px-4 sm:px-6 lg:px-12 ${reducedPadding ? "py-12 sm:py-16" : "py-24 sm:py-36"} flex flex-col items-start justify-center`}>
         
         <h2 className="text-white mb-3 section-subheading">
           {data.title}
@@ -207,7 +211,7 @@ export function DynamicWhyPUGoa({
           {data.cards.map((card, idx) => (
             <div 
               key={idx} 
-              className="w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] xl:w-[calc(25%-1.5rem)] bg-[#FDE047] rounded-[24px] p-8 sm:p-10 flex flex-col items-start shadow-sm hover:shadow-md transition-shadow"
+              className={`w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] ${isWider ? "" : "xl:w-[calc(25%-1.5rem)]"} bg-[#FDE047] rounded-[24px] p-8 sm:p-10 flex flex-col items-start shadow-sm hover:shadow-md transition-shadow`}
             >
               <span className="text-ink text-[14px] font-medium mb-2 opacity-90">
                 {card.badge}
