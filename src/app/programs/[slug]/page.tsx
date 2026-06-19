@@ -129,9 +129,6 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
         <DynamicWhyPUGoa 
           data={data.why} 
           themeColor={data.themeColor} 
-          useThickWave={true}
-          isWider={true}
-          reducedPadding={true}
         />
       )}
 
@@ -162,10 +159,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
       {data.slug !== "management-studies" && data.slug !== "pharmacy" && data.slug !== "nursing" && data.slug !== "hotel-management" && (
         <DynamicWhyPUGoa 
           data={data.why} 
-          themeColor={data.themeColor} 
-          useThickWave={data.slug === "allied-healthcare" || data.slug === "applied-sciences" || data.slug === "physiotherapy"}
-          isWider={data.slug === "applied-sciences" || data.slug === "nursing" || data.slug === "physiotherapy" || data.slug === "allied-healthcare"}
-          reducedPadding={data.slug === "applied-sciences" || data.slug === "nursing" || data.slug === "physiotherapy" || data.slug === "allied-healthcare"}
+          themeColor={data.themeColor}
           bottomBgColor={data.slug === "applied-sciences" ? "#EAF7FD" : undefined}
         />
       )}

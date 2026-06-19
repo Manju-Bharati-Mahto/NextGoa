@@ -7,9 +7,9 @@ export function DynamicWhyPUGoa({
   themeColor,
   topBgColor,
   bottomBgColor,
-  useThickWave = false,
-  isWider = false,
-  reducedPadding = false
+  useThickWave = true,
+  isWider = true,
+  reducedPadding = true
 }: { 
   data: WhyData,
   themeColor: { waveBand: string; waveAccent: string; cardBg: string; cardText: string; },
