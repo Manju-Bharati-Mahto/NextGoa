@@ -92,7 +92,6 @@ export const physiotherapyData: ProgrammeData = {
   },
   faqs: [
     { question: "Is a clinical internship mandatory?", answer: "Yes, a 6-month rotatory clinical internship is mandatory to complete the BPT degree." },
-    { question: "Is the Physiotherapy degree recognized?", answer: "Yes, our BPT and MPT programmes are fully recognized and approved by the Indian Association of Physiotherapists (IAP)." },
     { question: "Do students get hands-on experience?", answer: "Absolutely. Students treat real patients under expert supervision at our active in-house OPD and specialized rehabilitation centers." },
     { question: "Can I specialize in Sports Physiotherapy?", answer: "Yes, Sports Physiotherapy is one of our most popular MPT specialisations. We also have official medical partnerships with local sports leagues for practical exposure." },
     { question: "What career paths are available after a BPT?", answer: "Graduates can work in multi-specialty hospitals, sports clubs, corporate ergonomics consulting, or set up their own independent private practice." }

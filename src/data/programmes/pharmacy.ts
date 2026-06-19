@@ -100,7 +100,6 @@ export const pharmacyData: ProgrammeData = {
     ]
   },
   faqs: [
-    { question: "Is the programme approved by PCI?", answer: "Yes, all our pharmacy programmes are strictly approved by the Pharmacy Council of India (PCI)." },
     { question: "Do students get hospital training?", answer: "Yes, rigorous hospital and clinical training is a mandatory part of the curriculum." },
     { question: "What are the career options after B.Pharm?", answer: "Graduates can work as clinical pharmacists, research scientists, QA/QC executives in pharmaceutical manufacturing, or drug inspectors." },
     { question: "Are there research opportunities for undergraduates?", answer: "Yes, final year B.Pharm students are encouraged to participate in molecular modeling, drug formulation, and clinical research projects under faculty mentorship." },

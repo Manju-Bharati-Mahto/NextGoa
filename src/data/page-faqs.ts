@@ -20,17 +20,9 @@ export const aboutFaqs: FaqItem[] = [
     question: "What is PU Goa?",
     answer: "Goa never really had a State Private University until PU Goa arrived in 2025. The whole setup happened because of a law called the Goa Private Universities Act, which the state had passed way back in 2020. This campus is located near the ONGC Betul area in South Goa. Backed by the Parul Education Foundation, this university is driven by over 20+ years of academic excellence & \"Only Merit\" policies!",
   },
-  {
-    question: "When was PU Goa established?",
-    answer: "In 2025, the Goa Government officially granted Parul University Goa. Dr. Pramod Sawant, who is the Hon'ble Chief Minister of Goa, came personally for the inauguration and visited the campus!",
-  }
 ];
 
 export const admissionsFaqs: FaqItem[] = [
-  {
-    question: "Are PU Goa’s degrees recognised?",
-    answer: "Yes. Parul University Goa is the first State Private University approved by the Government of Goa under the Goa Private Universities Act 2020. All degrees awarded are valid and recognised by the UGC and relevant statutory councils.",
-  },
   {
     question: "Can I get an education loan?",
     answer: "Yes, there are scholarships based on merit. It requires a 10+2 / entrance score, sports and cultural scholarships, and need-based aid. Counsellors help you map every option during admissions - book a call to see what you qualify for.",
