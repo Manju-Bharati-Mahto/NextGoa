@@ -22,7 +22,7 @@ export function LeadershipTeam() {
       name: "Dr. Ganesh S. Chavan",
       title: "Chief Finance and Accounts Officer",
       tagline: "FINANCE & ACCOUNTS",
-      image: "/leadership/Dr. Ganesh S. Chavan.png",
+      image: "",
       description:
         "An academic strategist with 17+ years in teaching, industry, and consultancy. He has authored 45+ research papers along with books and patents in digital finance.",
       linkedin: "https://www.linkedin.com/company/parul-university-goa/",
