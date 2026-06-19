@@ -4,9 +4,9 @@ import HideFooter from "@/components/layout/HideFooter";
 
 export default function NotFound() {
   return (
-    <main className="h-screen w-full bg-[#FFD523] flex flex-col items-center pt-[15vh] overflow-hidden font-[family-name:var(--font-poppins)] relative">
+    <main className="h-screen w-full bg-[#FFD523] flex flex-col pt-[15vh] overflow-hidden font-[family-name:var(--font-poppins)] relative">
       <HideFooter />
-      <div className="flex flex-col items-center text-center z-10 px-4 relative">
+      <div className="flex flex-col items-start text-left z-10 px-6 sm:px-12 lg:px-24 xl:px-32 relative w-full max-w-[1440px] mx-auto">
         <h1 
           className="text-[#ED383F] font-black text-9xl md:text-[200px] leading-none tracking-tight"
           style={{
