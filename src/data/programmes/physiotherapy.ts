@@ -73,7 +73,8 @@ export const physiotherapyData: ProgrammeData = {
     features: [
       { title: "Electrotherapy Lab", description: "Equipped with SWD, IFT, TENS, and advanced laser therapy units.", image: "/labs/Physiotherapy/DSC00025.jpg" },
       { title: "Exercise Therapy Lab", description: "Features complete resistance training, suspension therapy, and gait training tracks.", image: "/labs/Physiotherapy/DSC00034.jpg" },
-      { title: "Biomechanics Lab", description: "Advanced motion analysis and ergonomics testing equipment.", image: "/labs/Physiotherapy/DSC03244.jpg" }
+      { title: "Biomechanics Lab", description: "Advanced motion analysis and ergonomics testing equipment.", image: "/labs/Physiotherapy/DSC03244.jpg" },
+      { title: "Neurological Rehabilitation Lab", description: "Specialized equipment for neuro-motor recovery and balance training.", image: "/labs/Physiotherapy/DSC03245.jpg" }
     ],
     image: "/programmes/engineering_hero_bg.png"
   },

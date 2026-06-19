@@ -74,7 +74,8 @@ export const nursingData: ProgrammeData = {
     features: [
       { title: "Fundamentals Lab", description: "Basic nursing procedures on advanced mannequins.", image: "/labs/Nursing/DSC00047.jpg" },
       { title: "Maternal & Child Lab", description: "Specialized birthing simulators and neonatal care units.", image: "/labs/Nursing/DSC03026.jpg" },
-      { title: "Community Health Lab", description: "Equipped for rural healthcare training and public health camps.", image: "/labs/Nursing/DSC03028.jpg" }
+      { title: "Community Health Lab", description: "Equipped for rural healthcare training and public health camps.", image: "/labs/Nursing/DSC03028.jpg" },
+      { title: "Advanced Critical Care Lab", description: "State-of-the-art ICU simulation for critical patient management.", image: "/labs/Nursing/DSC03042.jpg" }
     ],
     image: "/programmes/engineering_hero_bg.png"
   },
