@@ -164,8 +164,8 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
           data={data.why} 
           themeColor={data.themeColor} 
           useThickWave={data.slug === "allied-healthcare" || data.slug === "applied-sciences" || data.slug === "physiotherapy"}
-          isWider={data.slug === "applied-sciences" || data.slug === "nursing" || data.slug === "physiotherapy"}
-          reducedPadding={data.slug === "applied-sciences" || data.slug === "nursing" || data.slug === "physiotherapy"}
+          isWider={data.slug === "applied-sciences" || data.slug === "nursing" || data.slug === "physiotherapy" || data.slug === "allied-healthcare"}
+          reducedPadding={data.slug === "applied-sciences" || data.slug === "nursing" || data.slug === "physiotherapy" || data.slug === "allied-healthcare"}
           bottomBgColor={data.slug === "applied-sciences" ? "#EAF7FD" : undefined}
         />
       )}
