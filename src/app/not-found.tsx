@@ -24,6 +24,15 @@ export default function NotFound() {
         </p>
       </div>
 
+      {/* Footer background behind the PNG */}
+      <div className="absolute bottom-0 left-0 right-0 h-[35vh] sm:h-[45vh] lg:h-[50vh] z-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-[18vw] sm:top-[10vw] bottom-0 left-0 right-0 bg-[#0caadd]" />
+        <div 
+          className="absolute top-0 left-0 right-0 bottom-0 bg-no-repeat bg-top bg-[length:300%_auto] sm:bg-[length:100%_auto]" 
+          style={{ backgroundImage: "url('/footer.svg')" }}
+        />
+      </div>
+
       <div className="absolute right-0 bottom-0 w-[96%] md:w-[94%] lg:w-[90%] xl:w-[85%] max-w-[1800px] z-0 pointer-events-none">
         <Image
           src="/404-illustration.png"
