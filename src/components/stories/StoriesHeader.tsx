@@ -3,13 +3,13 @@ import React from "react";
 export function StoriesHeader() {
   return (
     <section id="hero"
-      className="relative flex w-full min-h-[85vh] md:min-h-[55vw] flex-col items-center justify-start overflow-hidden bg-[url( py-16 sm:py-24"/story-bg.webp')] bg-cover bg-[center_top_10%] bg-no-repeat"
+      className="relative flex w-full min-h-[85vh] md:min-h-[55vw] flex-col items-center justify-start overflow-hidden bg-[url('/story-bg.webp')] bg-cover bg-[center_top_10%] bg-no-repeat"
     >
       {/* Light gradient overlay to ensure text is readable if background gets too bright */}
       <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-transparent pointer-events-none" />
 
       {/* Hero content */}
-      <div className="relative z-10 w-full max-w-7xl px-4 pt-8 sm:px-6 sm:pt-12 lg:pt-16 text-center">
+      <div className="relative z-10 w-full max-w-7xl px-4 pt-32 sm:px-6 sm:pt-40 lg:pt-48 text-center">
         {/* Yellow pill badge */}
         <span className="inline-block rounded-full bg-brand-yellow px-5 py-1.5 text-[14px] font-medium text-ink shadow-sm mb-5 uppercase tracking-wider">
           Stories from PU Goa

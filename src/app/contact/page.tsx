@@ -12,7 +12,7 @@ import GetInTouch from "@/components/contact/GetInTouch";
 export default function ContactUs() {
   return (
     <main className="flex-1 overflow-x-hidden font-poppins">
-      <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[url( py-16 sm:py-24"/hero-campus.webp')] bg-cover bg-bottom bg-no-repeat"
+      <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[url('/hero-campus.webp')] bg-cover bg-bottom bg-no-repeat"
       >
         {/* Light gradient overlay to ensure text is readable if sky gets too bright */}
         <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-transparent pointer-events-none" />
