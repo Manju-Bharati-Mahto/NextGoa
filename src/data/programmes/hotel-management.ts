@@ -95,6 +95,7 @@ export const hotelManagementData: ProgrammeData = {
     name: "Dr. Prashant Sharma",
     role: "Dean, Hotel Management",
     bio: "Dr. Prashant Sharma brings extensive experience in hospitality management and education, guiding students toward excellence in global hospitality and culinary arts.",
+    image: "/leaders/9911.jpg",
     faculty: [
       { role: "EXECUTIVE CHEF", name: "Chef Rahul Khanna", degree: "BHMCT, Culinary Arts", specialities: "Continental Cuisine, Advanced Baking" },
       { role: "ASSOCIATE PROFESSOR", name: "Ms. Neha Kapoor", degree: "MBA, Hospitality", specialities: "Rooms Division, Revenue Management" },
