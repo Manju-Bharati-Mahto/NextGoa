@@ -94,16 +94,7 @@ export const phdData: ProgrammeData = {
       }
     ]
   },
-  labs: {
-    title: "Dedicated research infrastructure.",
-    description: "Access specialized research centers and high-performance computing clusters 24/7.",
-    features: [
-      { title: "Central Research Facility", description: "Houses advanced characterization and analytical instruments." },
-      { title: "HPC Cluster", description: "Supercomputing resources for complex simulations and AI modeling." },
-      { title: "Incubation Center", description: "Transform your research IP into a commercial startup." }
-    ],
-    image: "/programmes/engineering_hero_bg.png"
-  },
+
   dean: {
     name: "Dr. Aravind Kumar",
     role: "Dean, Research & Development",

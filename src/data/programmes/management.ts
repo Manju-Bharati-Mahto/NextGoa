@@ -87,9 +87,9 @@ export const managementData: ProgrammeData = {
     title: "Learn in modern business environments.",
     description: "Our campus is equipped with state-of-the-art facilities that simulate real-world corporate environments.",
     features: [
-      { title: "Finance Lab", description: "Equipped with Bloomberg terminals for real-time market analysis." },
-      { title: "Incubation Centre", description: "Dedicated space for student entrepreneurs to develop and launch their startups." },
-      { title: "Conference Rooms", description: "Boardroom-style spaces for case study discussions and presentations." }
+      { title: "Finance Lab", description: "Equipped with Bloomberg terminals for real-time market analysis.", image: "/labs/Management studies/DSC03248.jpg" },
+      { title: "Incubation Centre", description: "Dedicated space for student entrepreneurs to develop and launch their startups.", image: "/labs/Management studies/DSC03255.jpg" },
+      { title: "Conference Rooms", description: "Boardroom-style spaces for case study discussions and presentations.", image: "/labs/Management studies/DSC03257.jpg" }
     ],
     image: "/programmes/engineering_hero_bg.png" // Placeholder
   },

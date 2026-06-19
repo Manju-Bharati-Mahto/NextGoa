@@ -79,9 +79,9 @@ export const alliedHealthData: ProgrammeData = {
     title: "Advanced paramedical laboratories.",
     description: "Our labs are equipped with industry-standard diagnostic and clinical equipment.",
     features: [
-      { title: "Pathology Lab", description: "Fully functional setup for hematology and biochemistry tests.", image: "/applied-science/DSC03110.jpg" },
-      { title: "Mock OT", description: "Simulated operation theater for training in surgical assistance.", image: "/applied-science/DSC03125.jpg" },
-      { title: "Radiology Suite", description: "Training setups for X-ray, Ultrasound, and basic MRI principles.", image: "/applied-science/DSC03157.jpg" }
+      { title: "Pathology Lab", description: "Fully functional setup for hematology and biochemistry tests.", image: "/labs/Applied and healthcare Science/DSC03110.jpg" },
+      { title: "Mock OT", description: "Simulated operation theater for training in surgical assistance.", image: "/labs/Applied and healthcare Science/DSC03125.jpg" },
+      { title: "Radiology Suite", description: "Training setups for X-ray, Ultrasound, and basic MRI principles.", image: "/labs/Applied and healthcare Science/DSC03157.jpg" }
     ],
     image: "/programmes/engineering_hero_bg.png"
   },

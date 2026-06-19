@@ -79,9 +79,9 @@ export const appliedSciencesData: ProgrammeData = {
     title: "Learn in modern scientific environments.",
     description: "Our campus is equipped with state-of-the-art facilities that simulate advanced research laboratories.",
     features: [
-      { title: "Molecular Biology Lab", description: "Equipped with advanced tools for DNA and RNA analysis." },
-      { title: "Microbiology Lab", description: "Dedicated space for culturing and studying microorganisms." },
-      { title: "Bioinformatics Center", description: "High-performance computing for biological data analysis." }
+      { title: "Molecular Biology Lab", description: "Equipped with advanced tools for DNA and RNA analysis.", image: "/labs/Applied and healthcare Science/DSC03130.jpg" },
+      { title: "Microbiology Lab", description: "Dedicated space for culturing and studying microorganisms.", image: "/labs/Applied and healthcare Science/DSC03132.jpg" },
+      { title: "Bioinformatics Center", description: "High-performance computing for biological data analysis.", image: "/labs/Applied and healthcare Science/DSC03135.jpg" }
     ],
     image: "/programmes/engineering_hero_bg.png" // Placeholder
   },

@@ -72,9 +72,9 @@ export const nursingData: ProgrammeData = {
     title: "Train in high-fidelity simulation centers.",
     description: "Our nursing labs replicate real hospital wards to ensure students build confidence and competence.",
     features: [
-      { title: "Fundamentals Lab", description: "Basic nursing procedures on advanced mannequins." },
-      { title: "Maternal & Child Lab", description: "Specialized birthing simulators and neonatal care units." },
-      { title: "Community Health Lab", description: "Equipped for rural healthcare training and public health camps." }
+      { title: "Fundamentals Lab", description: "Basic nursing procedures on advanced mannequins.", image: "/labs/Nursing/DSC00047.jpg" },
+      { title: "Maternal & Child Lab", description: "Specialized birthing simulators and neonatal care units.", image: "/labs/Nursing/DSC03026.jpg" },
+      { title: "Community Health Lab", description: "Equipped for rural healthcare training and public health camps.", image: "/labs/Nursing/DSC03028.jpg" }
     ],
     image: "/programmes/engineering_hero_bg.png"
   },
