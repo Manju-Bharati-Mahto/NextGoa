@@ -130,6 +130,8 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
           data={data.why} 
           themeColor={data.themeColor} 
           useThickWave={true}
+          isWider={true}
+          reducedPadding={true}
         />
       )}
 
@@ -168,7 +170,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
         />
       )}
 
-      {data.labs && data.slug !== "management-studies" && data.slug !== "nursing" && data.slug !== "physiotherapy" && data.slug !== "allied-health" && data.slug !== "phd" && (
+      {data.labs && data.slug !== "management-studies" && data.slug !== "allied-health" && data.slug !== "phd" && (
         <DynamicLabsAndLearning data={data.labs} />
       )}
 
