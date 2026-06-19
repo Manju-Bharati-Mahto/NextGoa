@@ -372,10 +372,9 @@ export function EnquiryModal() {
           isOpen 
             ? 'opacity-100 translate-y-0 scale-100 rotateX-0' 
             : 'opacity-0 translate-y-10 scale-95 rotateX-12'
-        } ${submitState === 'success' ? 'bg-transparent bg-cover bg-center bg-no-repeat shadow-none' : 'bg-white shadow-2xl'}`}
+        } ${submitState === 'success' ? 'bg-transparent bg-cover bg-center bg-no-repeat shadow-none bg-[url("/thankyoumobile.png")] sm:bg-[url("/thankyou.png")]' : 'bg-white shadow-2xl'}`}
         style={{ 
-          transformStyle: 'preserve-3d',
-          backgroundImage: submitState === 'success' ? "url('/thankyou.png')" : 'none'
+          transformStyle: 'preserve-3d'
         }}
       >
         <button
