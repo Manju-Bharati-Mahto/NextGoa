@@ -86,9 +86,7 @@ export default function Career() {
             </p>
 
             {/* Search Input Box */}
-            <Suspense fallback={<div className="h-[60px] lg:h-[70px] w-full max-w-[32rem] mb-8 lg:mb-16 rounded-full bg-white/50 animate-pulse" />}>
-              <CareerHeroSearch />
-            </Suspense>
+            <CareerHeroSearch />
 
             {/* Desktop University Tag */}
             <div className="hidden lg:flex items-start">
@@ -123,9 +121,7 @@ export default function Career() {
         </div>
       </section>
 
-      <Suspense fallback={<div className="w-full h-screen bg-[#FAFAFA] flex items-center justify-center animate-pulse"><div className="text-xl font-medium text-gray-500">Loading listings...</div></div>}>
-        <CareerListings />
-      </Suspense>
+      <CareerListings />
     </main>
   );
 }
