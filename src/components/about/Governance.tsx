@@ -137,8 +137,8 @@ export function Governance() {
       <div 
         className="relative z-10 mx-auto max-w-5xl px-6"
         style={{ 
-          paddingTop: "clamp(5rem, 12.2vw, 600px)", 
-          paddingBottom: "clamp(5rem, 13.3vw, 600px)" 
+          paddingTop: "clamp(4rem, 10vw, 500px)", 
+          paddingBottom: "clamp(4rem, 10vw, 500px)" 
         }}
       >
         <div className="text-center mb-14 text-white">

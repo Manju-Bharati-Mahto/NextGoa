@@ -273,13 +273,13 @@ export function FeePlans() {
 
         {/* Content Box */}
         <div className="bg-white rounded-[24px] p-6 sm:p-10 shadow-sm border border-gray-100 flex flex-col md:flex-row gap-10">
-          
+
           {/* Left Column (Search) */}
           <div className="w-full md:w-1/2 flex flex-col justify-center">
             <h4 className="font-poppins font-semibold text-[28px] sm:text-[32px] text-ink mb-6 text-center">
               Search your course to know
             </h4>
-            
+
             <div ref={dropdownRef} className="relative mb-6">
               <div className="relative">
                 <svg
@@ -355,7 +355,7 @@ export function FeePlans() {
           {/* Right Column (Dynamic Card) */}
           <div className="w-full md:w-1/2">
             <Link
-              href={selectedCourse.href} 
+              href={selectedCourse.href}
               className="relative w-full h-full min-h-[280px] rounded-[24px] overflow-hidden shadow-md flex flex-col justify-center p-6 sm:p-8 hover:scale-[1.02] transition-transform duration-300 block"
               style={{ backgroundColor: selectedCourse.color }}
             >
@@ -368,9 +368,9 @@ export function FeePlans() {
                   <h4 className="text-2xl sm:text-[30px] font-semibold mb-4 pr-12 leading-tight font-poppins drop-shadow-sm">
                     {selectedCourse.name}
                   </h4>
-                  
+
                   <div className="h-px w-full bg-current opacity-20 mb-4" />
-                  
+
                   <div className="flex items-baseline gap-1.5 flex-wrap mb-6">
                     <span className="text-[32px] sm:text-[42px] font-bold tracking-tight leading-tight drop-shadow-sm">
                       {selectedCourse.price}
@@ -383,7 +383,7 @@ export function FeePlans() {
 
                 <div className="flex flex-wrap gap-2 mt-auto">
                   {selectedCourse.tags.map((tag, idx) => (
-                    <span 
+                    <span
                       key={idx}
                       className="bg-white text-ink text-xs sm:text-[14px] font-bold px-4 py-2 rounded-full whitespace-nowrap shadow-sm"
                     >

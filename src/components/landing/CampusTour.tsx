@@ -91,8 +91,8 @@ export function CampusTour() {
       <div 
         className="relative z-10 mx-auto max-w-7xl px-6 text-center"
         style={{ 
-          paddingTop: "clamp(5rem, 12.2vw, 600px)", 
-          paddingBottom: "clamp(5rem, 13.3vw, 600px)" 
+          paddingTop: "clamp(3.5rem, 9vw, 400px)", 
+          paddingBottom: "clamp(3.5rem, 9vw, 400px)" 
         }}
       >
         <Eyebrow className="text-white">Campus Walkthrough</Eyebrow>

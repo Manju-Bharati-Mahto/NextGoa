@@ -17,9 +17,14 @@ export default function StudyAbroadHero() {
         }
       `}</style>
       <div className="relative z-20 w-full max-w-[1000px] px-4 text-center flex flex-col items-center">
-        <span className="inline-block rounded-full bg-[#FFD523] px-5 py-1 text-[13px] font-semibold text-ink shadow-sm mb-6">
-          Global Pathways
-        </span>
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
+          <span className="inline-block rounded-full bg-[#FFD523] px-5 py-1 text-[13px] font-semibold text-ink shadow-sm">
+            Global Pathways
+          </span>
+          <span className="inline-block rounded-full bg-[#FFD523] px-5 py-1 text-[13px] font-semibold text-ink shadow-sm">
+            Semester Programs
+          </span>
+        </div>
 
         <h1 className="text-[#E9324D] mb-6 section-heading">
           Study Abroad from PU Goa<br />

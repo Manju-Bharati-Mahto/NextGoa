@@ -80,7 +80,7 @@ export function Philosophy({ variant = "default" }: { variant?: "default" | "cle
   return (
     <section
       id="philosophy"
-      className={`relative overflow-hidden ${isClean ? "bg-transparent py-5 sm:py-20" : "bg-gradient-to-b from-[var(--color-ink-warm)] to-[var(--color-brand-white)]"}`}
+      className={`relative overflow-hidden ${isClean ? "bg-transparent py-5 sm:pb-12 sm:pt-5" : "bg-gradient-to-b from-[var(--color-ink-warm)] to-[var(--color-brand-white)]"}`}
     >
       {/* Background Blue Wavy Image from Figma */}
       {!isClean && (
