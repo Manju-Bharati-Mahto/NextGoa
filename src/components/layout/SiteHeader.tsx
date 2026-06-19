@@ -123,12 +123,12 @@ export function SiteHeader() {
           </nav>
 
           <div className="flex shrink-0 items-center gap-2 xl:gap-3">
-            <Link
-              href={cta.apply}
+            <button
+              data-enquiry-trigger="true"
               className="hidden sm:inline-flex whitespace-nowrap rounded-full bg-brand px-4 xl:px-5 py-2 xl:py-2.5 text-[13px] xl:text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-bright"
             >
               Apply Now
-            </Link>
+            </button>
             <Link
               href="/contact"
               className="hidden sm:inline-flex whitespace-nowrap rounded-full border border-white px-4 xl:px-5 py-2 xl:py-2.5 text-[13px] xl:text-sm font-semibold text-white shadow-sm transition-colors hover:bg-white hover:text-brand-blue"
@@ -310,13 +310,13 @@ export function SiteHeader() {
           >
             Contact Us
           </Link>
-          <Link
-            href={cta.apply}
+          <button
+            data-enquiry-trigger="true"
             onClick={() => setOpen(false)}
             className="flex w-full items-center justify-center rounded-full bg-[#E73649] px-6 py-4 text-md font-bold text-white transition-all hover:bg-[#D62B3D]"
           >
             Apply Now &rarr;
-          </Link>
+          </button>
         </div>
       </div>
     </header>

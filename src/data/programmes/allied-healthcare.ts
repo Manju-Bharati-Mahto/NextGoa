@@ -87,16 +87,54 @@ export const alliedHealthData: ProgrammeData = {
   },
   dean: {
     name: "Dr. Anupam Kumar",
+    linkedin: "https://www.linkedin.com/in/dr-anupam-kumar/",
     role: "Dean, Faculty of Applied and Healthcare Sciences",
     bio: "At the faculty of Applied and Healthcare Sciences we are dedicated to advancing knowledge, fostering innovation, and improving the environment, health and well-being of our society through cutting-edge research, education, and practice.",
     image: "/faculties/Applied and Healthcare Sciences/Dean.jpg",
     faculty: [
-      { role: "PROFESSOR", name: "Faculty Member", degree: "Faculty of Applied and Healthcare Sciences", specialities: "-------------", image: "/faculties/Applied and Healthcare Sciences/Faculty.jpg" },
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Faculty of Applied and Healthcare Sciences", specialities: "-------------", image: "/faculties/Applied and Healthcare Sciences/Faculty2.jpg" },
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Faculty of Applied and Healthcare Sciences", specialities: "-------------", image: "/faculties/Applied and Healthcare Sciences/Faculty3.jpg" },
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Faculty of Applied and Healthcare Sciences", specialities: "-------------", image: "/faculties/Applied and Healthcare Sciences/Faculty4.jpg" }
-    ]
+  {
+    role: "Assistant Professor",
+    name: "Dr. Manasi Pawaskar",
+    degree: "Ph.D.",
+    faculty: "Faculty of Applied and Health Sciences",
+    department: "Applied and Health Sciences",
+    experience: "2 Years",
+    image: "/faculties/Dr.-Manasi-Pawaskar.jpg"
   },
+  {
+    role: "Assistant Professor",
+    name: "Dr. Abhinaba Ghosh",
+    degree: "Ph.D.",
+    faculty: "Faculty of Applied and Health Sciences",
+    department: "Applied and Health Sciences",
+    experience: "1 Years",
+    image: "/faculties/Dr.-Abhinaba-Ghosh.jpg"
+  },
+  {
+    role: "Assistant Professor",
+    name: "Dr. Monalisa Chowdhury",
+    degree: "Ph.D.",
+    faculty: "Faculty of Applied and Health Sciences",
+    department: "Applied and Health Sciences",
+    image: "/faculties/Dr.-Monalisa-Chowdhury.jpg"
+  },
+  {
+    role: "Assistant Professor",
+    name: "Ms. Dhruvi Patel",
+    degree: "M.Sc.",
+    faculty: "Faculty of Applied and Health Sciences",
+    department: "Applied and Health Sciences",
+    experience: "7 Years",
+    image: "/faculties/Ms.-Dhruvi-Patel.jpg"
+  },
+  {
+    role: "Assistant Professor",
+    name: "Ms. Veda Paranjape",
+    degree: "M.Sc.",
+    faculty: "Faculty of Applied and Health Sciences",
+    image: "/faculties/Ms.-Veda-Paranjape.jpg"
+  },
+]},
   faqs: [
     { question: "What is the core difference between B.AOTT and B.MLS?", answer: "They sit in two very different parts of a hospital. B.AOTT trains you for the operation theatre. Think surgical assistance, handling the anaesthesia equipment, keeping the OT running in order. Subsequently, B.MLS is the lab side instead. You're working in diagnostics here, so pathology, biochemistry, and microbiology testing make up most of it." },
     { question: "What is the difference between B.Sc. and B.Sc. Honours?", answer: "B.Sc. runs for three years and keeps things broad, giving you a wide spread of learning & expertise. Honours stretches to four years under NEP 2020, and that extra time goes into a specialisation plus a research part at the end. It can count toward eligibility for international Master's programmes and the more advanced academic routes." },

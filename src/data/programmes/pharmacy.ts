@@ -88,17 +88,72 @@ export const pharmacyData: ProgrammeData = {
     image: "/programmes/engineering_hero_bg.png"
   },
   dean: {
-    name: "Dr. Rajesh Sharma",
+    name: "Dr. Lalit Lata Jha",
+    linkedin: "https://www.linkedin.com/company/parul-university-goa/",
     role: "Dean, Faculty of Pharmacy",
-    bio: "Dr. Sharma is a renowned academician and researcher with over 25 years of experience in pharmaceutical sciences, holding multiple patents in novel drug delivery systems.",
+    bio: "Dr. Lalit Lata Jha is a renowned academician and researcher with extensive experience in pharmaceutical sciences.",
     image: "/faculties/Pharmacy/Dean.png",
     faculty: [
-      { role: "PROFESSOR", name: "Dr. Sunita Rao", degree: "Ph.D., Pharmaceutics", specialities: "Novel Drug Delivery Systems, Nanotechnology", image: "/faculties/Pharmacy/Faculty.jpg" },
-      { role: "ASSOCIATE PROFESSOR", name: "Dr. Arvind Patel", degree: "Ph.D., Pharmacology", specialities: "Clinical Trials, Neuropharmacology", image: "/faculties/Pharmacy/Faculty1.jpg" },
-      { role: "ASSISTANT PROFESSOR", name: "Dr. Kavita Menon", degree: "Ph.D., Pharmacognosy", specialities: "Herbal Formulation, Phytochemistry", image: "/faculties/Pharmacy/Faculty2.jpg" },
-      { role: "ASSOCIATE PROFESSOR", name: "Dr. Vikram Joshi", degree: "Ph.D., Pharma Chemistry", specialities: "Drug Design, Synthetic Chemistry", image: "/faculties/Pharmacy/Faculty3.jpg" }
-    ]
+
+  {
+    role: "Associate Professor",
+    name: "Dr. Prabhat Dessai",
+    degree: "Ph.D.",
+    faculty: "Faculty of Pharmacy",
+    department: "Pharmacy",
+    experience: "16 Years",
+    researchArea: "Quality Assurance, Analytical Techniques",
+    image: "/faculties/Dr.-Prabhat-Dessai.jpg"
   },
+
+  {
+    role: "Assistant Professor",
+    name: "Dr. Sanjeeta Dessai",
+    degree: "Ph.D.",
+    faculty: "Faculty of Pharmacy",
+    department: "Pharmacy",
+    experience: "6 Years",
+    researchArea: "Packaging Technology, Novel drug delivery systems",
+    image: "/faculties/Dr.-Sanjeeta-Dessai.jpg"
+  },
+  {
+    role: "Assistant Professor",
+    name: "Ms. Henncia Gomes",
+    degree: "M.Pharm.",
+    faculty: "Faculty of Pharmacy",
+    department: "Pharmacy",
+    experience: "8 Years",
+    image: "/faculties/Ms.-Henncia-Gomes.jpg"
+  },
+  {
+    role: "Assistant Professor",
+    name: "Ms. Anisha Naik",
+    degree: "M.Pharm.",
+    faculty: "Faculty of Pharmacy",
+    department: "Pharmacy",
+    experience: "6 Years",
+    image: "/faculties/Ms.-Anisha-Naik.jpg"
+  },
+  {
+    role: "Assistant Professor",
+    name: "Mr. Damodar Goundkar",
+    degree: "M.Pharm.",
+    faculty: "Faculty of Pharmacy",
+    department: "Pharmacy",
+    experience: "2 Years",
+    researchArea: "Neuropharmacology / Neurodegenerative Disorders",
+    image: "/faculties/Mr.-Damodar-Goundkar.jpg"
+  },
+  {
+    role: "Assistant Professor",
+    name: "Ms. Shradha Umesh Naik",
+    degree: "M.Pharm.",
+    faculty: "Faculty of Pharmacy",
+    department: "Pharmacy",
+    researchArea: "Novel Drug Delivery Systems",
+    image: "/faculties/Ms.-Shradha-Umesh-Naik.jpg"
+  },
+]},
   faqs: [
     { question: "Do students get hospital training?", answer: "Yes, rigorous hospital and clinical training is a mandatory part of the curriculum." },
     { question: "What are the career options after B.Pharm?", answer: "Graduates can work as clinical pharmacists, research scientists, QA/QC executives in pharmaceutical manufacturing, or drug inspectors." },

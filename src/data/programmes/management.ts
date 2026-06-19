@@ -95,16 +95,64 @@ export const managementData: ProgrammeData = {
   },
   dean: {
     name: "Dr. Kshitiz Sharma",
+    linkedin: "https://in.linkedin.com/in/dr-kshitiz-sharma-blr",
     role: "Dean - Faculty of Management Studies",
     bio: "A seasoned academic and management strategist with extensive experience leading business schools and consulting for global enterprises across analytics, finance and operations.",
     image: "/faculties/Management/Dean.jpg",
     faculty: [
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Ph.D., Marketing", specialities: "Brand Strategy, Consumer Behaviour", image: "/faculties/Management/Faculty.jpg" },
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Ph.D., Finance", specialities: "Corporate Finance, FinTech", image: "/faculties/Management/Faculty1.jpg" },
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "MBA, Analytics", specialities: "Business Analytics, Data Visualization", image: "/faculties/Management/Faculty3.jpg" },
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Ph.D., HR", specialities: "Organizational Behaviour, HR Analytics", image: "/faculties/Management/Faculty4.jpg" }
-    ]
+  {
+    role: "Associate Professor",
+    name: "Dr. Rinki Mishra",
+    degree: "Ph.D.",
+    faculty: "Faculty of Management Studies",
+    department: "Management",
+    experience: "14 Years",
+    image: "/faculties/Dr.-Rinki-Mishra.jpg"
   },
+  {
+    role: "Associate Professor",
+    name: "Dr. Shaifali Garg",
+    degree: "Ph.D.",
+    faculty: "Faculty of Management Studies",
+    image: "/faculties/Dr.-Shaifali-Garg.jpg"
+  },
+  {
+    role: "Assistant Professor",
+    name: "Dr. Rohit Mishra",
+    degree: "Ph.D.",
+    faculty: "Faculty of Management Studies",
+    department: "Management",
+    experience: "8 Years",
+    image: "/faculties/Dr.-Rohit-Mishra.jpg"
+  },
+  {
+    role: "Assistant Professor",
+    name: "Dr. Poornima BG",
+    degree: "Ph.D.",
+    faculty: "Faculty of Management Studies",
+    department: "Management",
+    experience: "14 Years",
+    image: "/faculties/Dr.-Poornima-BG.jpg"
+  },
+  {
+    role: "Assistant Professor",
+    name: "Dr. Amar Jamnekar",
+    degree: "Ph.D.",
+    faculty: "Faculty of Management Studies",
+    department: "Management",
+    experience: "4Years",
+    image: "/faculties/Dr.-Amar-Jamnekar.jpg"
+  },
+  {
+    role: "Assistant Professor",
+    name: "Mr. Satyajitsinh Gohil",
+    degree: "MBA",
+    faculty: "Faculty of Management Studies",
+    department: "Management",
+    experience: "3 Years",
+    image: "/faculties/Mr.-Satyajitsinh-Gohil.jpg"
+  },
+]},
   faqs: [
     { question: "BBA vs BBA Honours: Which One Fits You?", answer: "If you would rather get into the working world sooner, the three-year BBA is the straightforward route. The BBA Honours takes four years instead, and it is built around the NEP 2020 structure, so you get time for proper research and an industry capstone before you finish. That extra year also tends to make things easier later, whether you are looking at a Master's abroad or thinking about an MBA somewhere down the road." },
     { question: "What Is the MBA Work Experience Requirement?", answer: "A lot of people ask us this, and the short answer is no, you do not need work experience to apply for the MBA at PU Goa. We take in fresh graduates and working professionals together, and experience helps, but it has never been a requirement. What actually matters for admission is your CAT, MAT, CMAT or PU Goa entrance score, and after that you sit for a group discussion and a personal interview. Placements and Recruiter Network: Studying management here puts you inside Parul University's larger placement network, which is not small. They work with over 1,000 recruiters, and they come from across consulting, banking, technology and the consumer space, so the range of roles you can aim for is fairly wide." },

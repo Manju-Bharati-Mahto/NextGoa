@@ -25,7 +25,7 @@ const admissionsData = [
 
 export default function AdmissionsSnapshot() {
   return (
-    <section className="w-full bg-[#FAFAFA] pb-8 sm:pb-12">
+    <section className="w-full bg-[#FAFAFA] pt-16 sm:pt-20 pb-8 sm:pb-12">
       <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}
@@ -55,14 +55,13 @@ export default function AdmissionsSnapshot() {
           ))}
         </div>
 
-        {/* Centralized Open Admissions Button */}
         <div className="mt-12 sm:mt-16 text-center">
-          <Link 
-            href={cta.apply} 
+          <button 
+            data-enquiry-trigger="true"
             className="inline-block bg-[#E73649] text-white font-bold text-[16px] sm:text-[18px] px-8 py-4 rounded-full hover:bg-[#D62839] transition-colors shadow-sm"
           >
             Open admissions &rarr;
-          </Link>
+          </button>
         </div>
 
       </div>

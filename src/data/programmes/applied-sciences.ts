@@ -88,16 +88,54 @@ export const appliedSciencesData: ProgrammeData = {
   },
   dean: {
     name: "Dr. Anupam Kumar",
+    linkedin: "https://www.linkedin.com/in/dr-anupam-kumar/",
     role: "Dean, Faculty of Applied and Healthcare Sciences",
     bio: "At the faculty of Applied and Healthcare Sciences we are dedicated to advancing knowledge, fostering innovation, and improving the environment, health and well-being of our society through cutting-edge research, education, and practice.",
     image: "/faculties/Applied and Healthcare Sciences/Dean.jpg",
     faculty: [
-      { role: "PROFESSOR", name: "Faculty Member", degree: "Faculty of Applied and Healthcare Sciences", specialities: "-------------", image: "/faculties/Applied and Healthcare Sciences/Faculty.jpg" },
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Faculty of Applied and Healthcare Sciences", specialities: "-------------", image: "/faculties/Applied and Healthcare Sciences/Faculty2.jpg" },
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Faculty of Applied and Healthcare Sciences", specialities: "-------------", image: "/faculties/Applied and Healthcare Sciences/Faculty3.jpg" },
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Faculty of Applied and Healthcare Sciences", specialities: "-------------", image: "/faculties/Applied and Healthcare Sciences/Faculty4.jpg" }
-    ]
+  {
+    role: "Assistant Professor",
+    name: "Dr. Manasi Pawaskar",
+    degree: "Ph.D.",
+    faculty: "Faculty of Applied and Health Sciences",
+    department: "Applied and Health Sciences",
+    experience: "2 Years",
+    image: "/faculties/Dr.-Manasi-Pawaskar.jpg"
   },
+  {
+    role: "Assistant Professor",
+    name: "Dr. Abhinaba Ghosh",
+    degree: "Ph.D.",
+    faculty: "Faculty of Applied and Health Sciences",
+    department: "Applied and Health Sciences",
+    experience: "1 Years",
+    image: "/faculties/Dr.-Abhinaba-Ghosh.jpg"
+  },
+  {
+    role: "Assistant Professor",
+    name: "Dr. Monalisa Chowdhury",
+    degree: "Ph.D.",
+    faculty: "Faculty of Applied and Health Sciences",
+    department: "Applied and Health Sciences",
+    image: "/faculties/Dr.-Monalisa-Chowdhury.jpg"
+  },
+  {
+    role: "Assistant Professor",
+    name: "Ms. Dhruvi Patel",
+    degree: "M.Sc.",
+    faculty: "Faculty of Applied and Health Sciences",
+    department: "Applied and Health Sciences",
+    experience: "7 Years",
+    image: "/faculties/Ms.-Dhruvi-Patel.jpg"
+  },
+  {
+    role: "Assistant Professor",
+    name: "Ms. Veda Paranjape",
+    degree: "M.Sc.",
+    faculty: "Faculty of Applied and Health Sciences",
+    image: "/faculties/Ms.-Veda-Paranjape.jpg"
+  },
+]},
   faqs: [
     { question: "What are the career prospects after B.Sc. Biotechnology?", answer: "Graduates can work in research labs, pharmaceutical companies, clinical diagnostics, or pursue higher studies like M.Sc. or Ph.D." },
     { question: "Is hands-on laboratory experience provided?", answer: "Yes, our curriculum heavily emphasizes practical laboratory sessions in state-of-the-art facilities." },

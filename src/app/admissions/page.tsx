@@ -43,7 +43,7 @@ export default function AdmissionsPage() {
       <TransportAndHostel />
       <TalkToUs />
       <FinalCta />
-      <Faq />
+      <Faq faqs={admissionsFaqs} />
     </main>
   );
 }

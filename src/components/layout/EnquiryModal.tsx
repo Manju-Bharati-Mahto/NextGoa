@@ -146,6 +146,7 @@ export function EnquiryModal() {
         break;
     }
   };
+  const [modalHeading, setModalHeading] = useState("Start Your Application");
 
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
@@ -158,8 +159,15 @@ export function EnquiryModal() {
 
       if (isEnquiry) {
         e.preventDefault();
+        
+        const buttonText = target.textContent?.toLowerCase() || "";
+        if (buttonText.includes("talk to counsellor") || buttonText.includes("talk to a counsellor")) {
+          setModalHeading("Request a Callback");
+        } else {
+          setModalHeading("Start Your Application");
+        }
+
         setIsOpen(true);
-        window.history.pushState({}, '', '/enquiry');
       }
     };
 
@@ -168,7 +176,6 @@ export function EnquiryModal() {
     if (typeof window !== "undefined" && window.location.hash === "#enquiry") {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsOpen(true);
-      window.history.replaceState({}, '', '/enquiry');
     }
 
     return () => {
@@ -181,13 +188,7 @@ export function EnquiryModal() {
 
   const close = () => {
     setIsOpen(false);
-    if (typeof window !== "undefined") {
-      if (window.location.hash === "#enquiry") {
-        window.history.pushState({}, "", window.location.pathname + window.location.search);
-      } else if (window.location.pathname === "/enquiry") {
-        window.history.pushState({}, "", "/");
-      }
-    }
+
     // Reset state after closing animation finishes
     setTimeout(() => {
       setSubmitState('idle');
@@ -332,7 +333,6 @@ export function EnquiryModal() {
                 value={value}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                placeholder={placeholder}
                 inputMode={type === "tel" ? "numeric" : undefined}
                 pattern={type === "tel" ? "[0-9]*" : undefined}
                 className={`w-full rounded-md border bg-[#FAFAFA] px-4 py-2.5 outline-none focus:ring-1 transition-all pr-10 ${borderColor}`}
@@ -394,7 +394,7 @@ export function EnquiryModal() {
         {submitState !== 'success' && (
           <div className="px-6 pt-6 pb-2 sm:px-10 sm:pt-10 sm:pb-6 shrink-0 z-10">
             <h2 className="text-left font-poppins text-2xl sm:text-4xl font-bold tracking-tight text-ink pr-8 sm:pr-0 pb-2">
-              Start Your Application
+              {modalHeading}
             </h2>
             <p className="text-left text-gray-500 text-sm sm:text-base">
               Takes under 30sec. A counsellor will reach out to guide you through the next steps.
@@ -446,7 +446,6 @@ export function EnquiryModal() {
                         id="programme-search"
                         autoComplete="off"
                         value={programmeSearch}
-                        placeholder="Type to search programmes..."
                         onChange={(e) => {
                           setProgrammeSearch(e.target.value);
                           setProgrammeDropdownOpen(true);

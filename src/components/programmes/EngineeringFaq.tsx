@@ -5,24 +5,24 @@ import Image from "next/image";
 
 const faqs = [
   {
-    question: "B.Tech. CSE vs CSE - Which one is better?",
-    answer: "",
+    question: "B.Tech CSE vs BCA — which should I pick?",
+    answer: "B.Tech CSE is a 4-year engineering degree with deeper mathematics, hardware and core CS. BCA is a 3-year application-focused degree (great for software roles or MCA after). Pick B.Tech if you want core engineering, research or international engineering pathways. Pick BCA if you want a faster route to industry or plan to do MCA.",
   },
   {
     question: "How does the international pathway work?",
-    answer: "",
+    answer: "You complete part of your degree at PU Goa and the remainder at a partner university abroad. We offer 2+2 (B.Tech), 1+1 (Master's) and 3+1+1 (UG+PG combo) models. You graduate with a recognised foreign degree at significantly lower cost than going abroad from day one.",
   },
   {
     question: "Are there any scholarships?",
     answer: "Yes, there are scholarships based on merit. It requires a 10+2 / entrance score, sports and cultural scholarships, and need-based aid. Counsellors help you map every option during admissions - book a call to see what you qualify for.",
   },
   {
-    question: "What is the placement record?",
-    answer: "",
+    question: "What's the placement record?",
+    answer: "PU Goa engineering students have access to the wider Parul University recruiter network of 1,000+ companies. Top recruiters include Infosys, TCS, Wipro, Accenture, Capgemini and Cognizant.",
   },
   {
-    question: "What is the entrance test for engineering courses?",
-    answer: "",
+    question: "Do I need JEE? What's the entrance test?",
+    answer: "JEE is not mandatory. PU Goa accepts JEE scores, accepts state-level engineering scores, and conducts its own entrance evaluation. Lateral entry is via diploma marks. Final eligibility is published on the admissions page.",
   },
 ];
 

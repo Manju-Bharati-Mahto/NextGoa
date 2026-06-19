@@ -63,6 +63,7 @@ export interface LabFeature {
   title: string;
   description: string;
   image?: string;
+  linkedin?: string;
 }
 
 export interface LabsData {
@@ -77,8 +78,12 @@ export interface FacultyMember {
   role: string;
   name: string;
   degree: string;
-  specialities: string;
+  faculty?: string;
+  department?: string;
+  experience?: string;
+  researchArea?: string;
   image?: string;
+  linkedin?: string;
 }
 
 export interface DeanData {
@@ -86,6 +91,7 @@ export interface DeanData {
   role: string;
   bio: string;
   image?: string;
+  linkedin?: string;
   faculty: FacultyMember[];
 }
 
