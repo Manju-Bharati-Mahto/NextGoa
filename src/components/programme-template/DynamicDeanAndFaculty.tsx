@@ -67,62 +67,66 @@ export function DynamicDeanAndFaculty({ data }: { data: DeanData }) {
           </div>
         </div>
 
-        {/* Mid Heading */}
-        <div className="text-center mb-12">
-          <h2 className="text-ink section-subheading">
-            Teaching Faculties
-          </h2>
-        </div>
-
-        {/* Faculty Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {data.faculty.map((facultyItem, idx) => (
-            <div 
-              key={idx} 
-              className="bg-white rounded-[16px] border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-row h-[180px]"
-            >
-              {/* Left: Faculty Image Placeholder */}
-              <div className="w-[140px] sm:w-[160px] h-full bg-gray-200 shrink-0 relative">
-                {facultyItem.image && (
-                  <Image
-                    src={facultyItem.image}
-                    alt={facultyItem.name}
-                    fill
-                    className="object-cover object-top"
-                  />
-                )}
-              </div>
-              
-              {/* Right: Faculty Details */}
-              <div className="p-5 sm:p-6 flex flex-col justify-center flex-grow">
-                <span className="bg-[#E73649] text-white text-[10px] sm:text-[11px] font-bold px-3 py-1 rounded-full w-max mb-3 uppercase tracking-wide">
-                  {facultyItem.role}
-                </span>
-                
-                <h4 className="font-bold text-ink text-[20px] sm:text-[22px] font-poppins leading-tight mb-1">
-                  {facultyItem.name}
-                </h4>
-                
-                <p className="text-[#0CAADD] font-bold text-[13px] sm:text-[14px] mb-4">
-                  {facultyItem.degree}
-                </p>
-                
-                <hr className="border-gray-200 mb-3 w-full" />
-                
-                <p className="text-gray-500 text-[12px] sm:text-[13px] leading-snug">
-                  {facultyItem.specialities}
-                </p>
-              </div>
+        {data.faculty && data.faculty.length > 0 && (
+          <>
+            {/* Mid Heading */}
+            <div className="text-center mb-12">
+              <h2 className="text-ink section-subheading">
+                Teaching Faculties
+              </h2>
             </div>
-          ))}
-        </div>
 
-        {/* Footer Text */}
-        <div className="text-center mt-12 sm:mt-16">
-          <p className="text-gray-400 font-medium text-[13px] sm:text-[14px]">
-            Full faculty directory available through the admissions office.
-          </p>
-        </div>
+            {/* Faculty Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              {data.faculty.map((facultyItem, idx) => (
+                <div 
+                  key={idx} 
+                  className="bg-white rounded-[16px] border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-row h-[180px]"
+                >
+                  {/* Left: Faculty Image Placeholder */}
+                  <div className="w-[140px] sm:w-[160px] h-full bg-gray-200 shrink-0 relative">
+                    {facultyItem.image && (
+                      <Image
+                        src={facultyItem.image}
+                        alt={facultyItem.name}
+                        fill
+                        className="object-cover object-top"
+                      />
+                    )}
+                  </div>
+                  
+                  {/* Right: Faculty Details */}
+                  <div className="p-5 sm:p-6 flex flex-col justify-center flex-grow">
+                    <span className="bg-[#E73649] text-white text-[10px] sm:text-[11px] font-bold px-3 py-1 rounded-full w-max mb-3 uppercase tracking-wide">
+                      {facultyItem.role}
+                    </span>
+                    
+                    <h4 className="font-bold text-ink text-[20px] sm:text-[22px] font-poppins leading-tight mb-1">
+                      {facultyItem.name}
+                    </h4>
+                    
+                    <p className="text-[#0CAADD] font-bold text-[13px] sm:text-[14px] mb-4">
+                      {facultyItem.degree}
+                    </p>
+                    
+                    <hr className="border-gray-200 mb-3 w-full" />
+                    
+                    <p className="text-gray-500 text-[12px] sm:text-[13px] leading-snug">
+                      {facultyItem.specialities}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Footer Text */}
+            <div className="text-center mt-12 sm:mt-16">
+              <p className="text-gray-400 font-medium text-[13px] sm:text-[14px]">
+                Full faculty directory available through the admissions office.
+              </p>
+            </div>
+          </>
+        )}
 
       </div>
     </section>
