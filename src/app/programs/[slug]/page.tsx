@@ -167,7 +167,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
         />
       )}
 
-      {data.slug !== "management-studies" && data.slug !== "nursing" && data.slug !== "physiotherapy" && data.slug !== "allied-health" && data.slug !== "phd" && (
+      {data.labs && data.slug !== "management-studies" && data.slug !== "nursing" && data.slug !== "physiotherapy" && data.slug !== "allied-health" && data.slug !== "phd" && (
         <DynamicLabsAndLearning data={data.labs} />
       )}
 
