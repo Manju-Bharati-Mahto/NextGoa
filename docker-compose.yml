@@ -5,15 +5,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      target: builder  
     container_name: nextgoa_app
     restart: always
     ports:
       - "3000:3000"
     environment:
-      - NODE_ENV=development
-    volumes:
-      - .:/app # 👈 Maps your local code into Docker for instant updates (Hot-Reloading)
-      - /app/node_modules # 👈 Prevents your local node_modules from breaking Docker
-      - /app/.next # 👈 Prevents build cache conflicts
-    command: npm run dev # 👈 Overrides production startup to run development server
+      - NODE_ENV=production
+gi
