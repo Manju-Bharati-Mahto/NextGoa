@@ -6,7 +6,7 @@ export default function NotFound() {
   return (
     <main className="h-screen w-full bg-[#FFD523] flex flex-col pt-[10vh] overflow-hidden font-[family-name:var(--font-poppins)] relative">
       <HideFooter />
-      <div className="flex flex-col items-start text-left z-10 px-8 md:px-16 lg:px-24 xl:px-32 mt-[50px] relative w-full">
+      <div className="flex flex-col items-start text-left z-10 px-8 md:px-16 lg:px-24 xl:px-32 mt-[100px] relative w-full">
         <h1 
           className="text-[#ED383F] font-black text-[120px] md:text-[160px] lg:text-[200px] leading-none tracking-tight"
           style={{
