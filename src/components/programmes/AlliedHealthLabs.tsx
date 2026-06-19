@@ -3,14 +3,14 @@ import { InteractiveLabsLayout } from "@/components/programme-template/Interacti
 
 export default function AlliedHealthLabs() {
   const labs = [
-    { title: "Microbiology and Clinical Pathology Laboratory", image: "/applied-science/DSC03110.jpg" },
-    { title: "Chemistry Laboratory", image: "/applied-science/DSC03121.jpg" },
-    { title: "Central Instrumentation Laboratory", image: "/applied-science/DSC03125.jpg" },
-    { title: "MCH Laboratory", image: "/applied-science/DSC03130.jpg" },
-    { title: "Foundation and Skill Laboratory", image: "/applied-science/DSC03132.jpg" },
-    { title: "Community and Nutrition Laboratory", image: "/applied-science/DSC03135.jpg" },
-    { title: "Advanced Allied and Healthcare Sciences Laboratories", image: "/applied-science/DSC03138.jpg" },
-    { title: "Preclinical Sciences Laboratory", image: "/applied-science/DSC03142.jpg" }
+    { title: "Microbiology and Clinical Pathology Laboratory", image: "/labs/Applied and healthcare Science/DSC03110.jpg" },
+    { title: "Chemistry Laboratory", image: "/labs/Applied and healthcare Science/DSC03121.jpg" },
+    { title: "Central Instrumentation Laboratory", image: "/labs/Applied and healthcare Science/DSC03125.jpg" },
+    { title: "MCH Laboratory", image: "/labs/Applied and healthcare Science/DSC03130.jpg" },
+    { title: "Foundation and Skill Laboratory", image: "/labs/Applied and healthcare Science/DSC03132.jpg" },
+    { title: "Community and Nutrition Laboratory", image: "/labs/Applied and healthcare Science/DSC03135.jpg" },
+    { title: "Advanced Allied and Healthcare Sciences Laboratories", image: "/labs/Applied and healthcare Science/DSC03138.jpg" },
+    { title: "Preclinical Sciences Laboratory", image: "/labs/Applied and healthcare Science/DSC03142.jpg" }
   ];
 
   return (
