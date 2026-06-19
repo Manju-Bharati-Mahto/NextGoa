@@ -54,11 +54,11 @@ export function Research() {
             >
               <div>
                 <span
-                  className={`inline-block rounded-full px-4 py-1 text-base font-semibold tracking-wide ${c.badgeClass}`}
+                  className={`inline-block font-poppins rounded-full px-5 py-1.5 text-[18px] sm:text-[20px] font-semibold tracking-wide ${c.badgeClass}`}
                 >
                   {c.badge}
                 </span>
-                <p className="mt-6 section-body text-white/95">
+                <p className="mt-6 font-poppins text-[17px] sm:text-[20px] leading-relaxed text-white/95">
                   {c.description}
                 </p>
               </div>

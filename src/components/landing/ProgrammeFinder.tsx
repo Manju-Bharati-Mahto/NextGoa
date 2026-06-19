@@ -175,7 +175,7 @@ function CourseCard({ color, title, tags, href, icon: IconComponent }: CourseCar
   return (
     <Link
       href={href}
-      className={`relative block w-full min-h-[136px] sm:min-h-[230px] rounded-[12px] sm:rounded-[16px] p-3 sm:p-6 flex flex-col justify-center overflow-hidden border text-left cursor-pointer ${theme.bg}`}
+      className={`relative block w-full min-h-[160px] sm:min-h-[280px] rounded-[12px] sm:rounded-[16px] p-4 sm:p-8 flex flex-col justify-center overflow-hidden border text-left cursor-pointer ${theme.bg}`}
     >
       {/* Decorative background icon — smaller on mobile */}
       <div className="absolute -right-2 -top-4 sm:-right-2 sm:-top-6 h-[80%] w-[45%] sm:h-[120%] sm:w-[55%] pointer-events-none opacity-40 flex items-center justify-end overflow-hidden">
@@ -187,7 +187,7 @@ function CourseCard({ color, title, tags, href, icon: IconComponent }: CourseCar
       {/* Content wrapper */}
       <div className="flex flex-col z-10 relative">
         {/* Title */}
-        <h3 className={`font-poppins font-semibold leading-tight tracking-tight mb-1.5 sm:mb-2.5 ${title === "Allied and Healthcare Sciences" ? "text-[15px] sm:text-[21px] sm:pr-8" : "text-[17px] sm:text-[25px] sm:pr-12"
+        <h3 className={`font-poppins font-semibold leading-tight tracking-tight mb-2 sm:mb-4 ${title === "Allied and Healthcare Sciences" ? "text-[18px] sm:text-[26px] sm:pr-8" : "text-[20px] sm:text-[32px] sm:pr-12"
           }`}>
           {title === "Allied and Healthcare Sciences" ? (
             <>Allied and Healthcare<br />Sciences</>

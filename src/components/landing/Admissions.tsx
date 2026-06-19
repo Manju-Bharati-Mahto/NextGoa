@@ -61,7 +61,7 @@ export function Admissions() {
         <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 text-left">
           <div className="rounded-[24px] bg-brand p-8 text-white shadow-sm">
             <div>
-              <span className="inline-block rounded-full bg-[#FEDB2F] text-[#1F1F1F] px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider">
+              <span className="inline-block rounded-full bg-[#FEDB2F] text-[#1F1F1F] px-4 py-1.5 font-poppins text-[13px] font-bold uppercase tracking-wider">
                 Application deadline
               </span>
             </div>
@@ -73,7 +73,7 @@ export function Admissions() {
           </div>
           <div className="rounded-[24px] bg-ocean p-8 text-white shadow-sm">
             <div>
-              <span className="inline-block rounded-full bg-[#FEDB2F] text-[#1F1F1F] px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider">
+              <span className="inline-block rounded-full bg-[#FEDB2F] text-[#1F1F1F] px-4 py-1.5 font-poppins text-[13px] font-bold uppercase tracking-wider">
                 Merit list &amp; counselling
               </span>
             </div>

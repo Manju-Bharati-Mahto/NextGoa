@@ -3,7 +3,7 @@ export function AdmissionsHero() {
   return (
     <section
       id="hero"
-      className="relative flex w-full min-h-[75vh] sm:min-h-[85vh] md:min-h-[68.6vw] flex-col items-center justify-start pt-32 overflow-hidden bg-white md:bg-[url('/b3-stretched.webp')] bg-cover bg-top bg-no-repeat"
+      className="relative flex w-full min-h-[75vh] sm:min-h-[85vh] md:min-h-[68.6vw] flex-col items-center justify-start pt-32 overflow-hidden bg-white md:bg-[url('/story-bg.webp')] bg-cover bg-top bg-no-repeat"
     >
       {/* Light gradient overlay to ensure text is readable */}
       <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-transparent pointer-events-none hidden md:block" />

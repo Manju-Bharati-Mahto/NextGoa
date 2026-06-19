@@ -19,9 +19,7 @@ export function Legacy() {
 
             <div className="relative z-10">
               <h2 className="text-brand mb-6 text-center sm:!text-left section-heading">
-                Where a 3-Decade-Old <br />
-                Legacy Meets <br />
-                India&apos;s Coastal Paradise!
+                Where a 3-Decade-Old Legacy Meets India&apos;s Coastal Paradise!
               </h2>
               
               <div className="text-ink text-center sm:!text-left section-body">

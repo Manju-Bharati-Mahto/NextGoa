@@ -76,7 +76,6 @@ export function FinalCta({
                   const isButton = action.triggerEnquiry || action.href === "#";
                   
                   const commonProps = {
-                    key: action.label,
                     "data-enquiry-trigger": action.triggerEnquiry ? "true" : undefined,
                     className: `inline-flex min-h-12 w-full max-w-[280px] sm:w-auto sm:max-w-none items-center justify-center gap-2 rounded-full px-6 font-sans text-[16px] font-bold transition ${
                       isPrimary
@@ -87,6 +86,7 @@ export function FinalCta({
 
                   return isButton ? (
                     <button
+                      key={action.label}
                       {...commonProps}
                       type="button"
                     >
@@ -95,6 +95,7 @@ export function FinalCta({
                     </button>
                   ) : (
                     <a
+                      key={action.label}
                       {...commonProps}
                       href={action.href}
                     >

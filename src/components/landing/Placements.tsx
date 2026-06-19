@@ -54,7 +54,7 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
 
   return (
     <section id="placements" className={isAbout ? "bg-gradient-to-b from-[#D6F0FA] via-[#F8F8F8]/50 to-brand-white -mt-10 pt-10 relative z-0" : "bg-brand-white"}>
-      <div className="mx-auto max-w-6xl px-4 pt-15 pb-20 sm:py-20">
+      <div className="mx-auto max-w-6xl px-4 pt-15 pb-20 sm:py-15">
         <div className="flex justify-center mb-6">
           <img src="/Test.svg" alt="" aria-hidden="true" className="h-[97px] w-auto" />
         </div>
@@ -74,7 +74,7 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
         ──────────────────────────────────────────────────────────────────── */}
 
         {/* Outer wrapper: on desktop only we add pt-16 for the photo overflow */}
-        <div className="relative mt-8 sm:pt-16" style={{ overflow: "visible" }}>
+        <div className="relative mt-8 sm:pt-5" style={{ overflow: "visible" }}>
 
           {/* ── MOBILE CARD (vertical, shown below sm) ── */}
           <div className="sm:hidden relative mx-auto w-full rounded-[24px] bg-[#E73649] text-white shadow-lg overflow-hidden flex flex-col" style={{ minHeight: "330px" }}>
@@ -179,7 +179,7 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
           {stats.map((s, idx) => (
             <div
               key={idx}
-              className={`${idx === 0 ? "col-span-2 sm:col-span-1" : ""} rounded-[16px] sm:rounded-[20px] border border-zinc-300 bg-white text-center sm:text-left shadow-sm ${idx === 0 ? "px-7 py-6" : "px-4 py-5 sm:px-7 sm:py-6"}`}
+              className={`${idx === 0 ? "col-span-2 sm:col-span-1" : ""} flex flex-col items-center justify-center rounded-[16px] sm:rounded-[20px] border border-zinc-300 bg-white text-center shadow-sm ${idx === 0 ? "px-7 py-6" : "px-4 py-5 sm:px-7 sm:py-6"}`}
             >
               <dt className={`font-sans font-bold leading-[1.15] text-[#0CAADD] tracking-tight ${("titleClass" in s && s.titleClass) || "text-[22px] sm:text-[28px] lg:text-[30px]"}`}>
                 {s.title}
@@ -197,7 +197,7 @@ export function Placements({ variant = "landing" }: { variant?: "landing" | "abo
             {aboutExtraStats.map((s, idx) => (
               <div
                 key={idx}
-                className={`${idx === 2 ? "col-span-2 sm:col-span-1" : ""} w-full sm:w-[30%] sm:max-w-[280px] rounded-[20px] border border-zinc-300 bg-white px-4 py-5 sm:px-7 sm:py-6 text-center sm:text-left shadow-sm mx-auto sm:mx-0`}
+                className={`${idx === 2 ? "col-span-2 sm:col-span-1" : ""} flex flex-col items-center justify-center w-full sm:w-[30%] sm:max-w-[280px] rounded-[20px] border border-zinc-300 bg-white px-4 py-5 sm:px-7 sm:py-6 text-center shadow-sm mx-auto sm:mx-0`}
               >
                 <dt className={`font-sans font-bold leading-[1.15] text-[#0CAADD] tracking-tight ${s.titleClass}`}>
                   {s.title}
