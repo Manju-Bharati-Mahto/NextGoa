@@ -31,7 +31,7 @@ const columns: { heading: string; links?: LinkItem[]; subSections?: { heading: s
       { label: "Hotel Management", href: "/programs/hotel-management" },
       { label: "Physiotherapy", href: "/programs/physiotherapy" },
       { label: "Allied and Healthcare Sciences", href: "/programs/allied-health" },
-      { label: "Applied Sciences", href: "/programs/applied-and-health-care-sciences" },
+      { label: "Applied Sciences", href: "/programs/applied-sciences" },
     ],
   },
   {

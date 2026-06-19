@@ -102,7 +102,7 @@ export interface ProgrammeData {
   why: WhyData;
   specialisations: SpecialisationsData;
   career: CareerOutcomesData;
-  labs: LabsData;
+  labs?: LabsData;
   dean: DeanData;
   faqs: FaqItem[];
   themeColor: {

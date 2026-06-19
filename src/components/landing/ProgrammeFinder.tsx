@@ -108,7 +108,7 @@ const faculties = [
     tags: ["B.Sc", "B.Sc Hons", "M.Sc"],
     levels: ["Undergraduate", "Postgraduate"],
     fields: ["Applied Sciences"],
-    slug: "applied-and-health-care-sciences",
+    slug: "applied-sciences",
     icon: AppliedSciencesIcon,
   },
   {

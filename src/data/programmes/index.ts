@@ -7,7 +7,7 @@ import { alliedHealthData } from "./allied-health";
 import { hotelManagementData } from "./hotel-management";
 import { phdData } from "./phd";
 
-import { appliedSciencesData } from "./applied-and-health-care-sciences";
+import { appliedSciencesData } from "./applied-sciences";
 
 const allProgrammes: Record<string, ProgrammeData> = {
   "management-studies": managementData,
@@ -16,7 +16,7 @@ const allProgrammes: Record<string, ProgrammeData> = {
   "physiotherapy": physiotherapyData,
   "allied-health": alliedHealthData,
   "hotel-management": hotelManagementData,
-  "applied-and-health-care-sciences": appliedSciencesData,
+  "applied-sciences": appliedSciencesData,
   "doctorate-programs": phdData,
 };
 

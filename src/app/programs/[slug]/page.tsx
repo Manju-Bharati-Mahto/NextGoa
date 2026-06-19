@@ -92,7 +92,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
         <AlliedHealthProgrammePicker />
       ) : data.slug === "hotel-management" ? (
         <HotelManagementProgrammePicker />
-      ) : data.slug === "applied-and-health-care-sciences" ? (
+      ) : data.slug === "applied-sciences" ? (
         <AppliedSciencesProgrammePicker />
       ) : data.slug === "phd" ? (
         <>
@@ -161,9 +161,9 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
         <DynamicWhyPUGoa 
           data={data.why} 
           themeColor={data.themeColor} 
-          useThickWave={data.slug === "allied-health" || data.slug === "applied-and-health-care-sciences"}
-          isWider={data.slug === "applied-and-health-care-sciences"}
-          reducedPadding={data.slug === "applied-and-health-care-sciences"}
+          useThickWave={data.slug === "allied-health" || data.slug === "applied-sciences"}
+          isWider={data.slug === "applied-sciences"}
+          reducedPadding={data.slug === "applied-sciences"}
         />
       )}
 

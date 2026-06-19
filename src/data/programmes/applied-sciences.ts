@@ -1,7 +1,7 @@
 import { ProgrammeData } from "./types";
 
 export const appliedSciencesData: ProgrammeData = {
-  slug: "applied-and-health-care-sciences",
+  slug: "applied-sciences",
   title: "Applied Sciences",
   hero: {
     badge: "Faculty of Applied Sciences",
