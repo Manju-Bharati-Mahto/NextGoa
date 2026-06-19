@@ -3,7 +3,7 @@ import { managementData } from "./management";
 import { pharmacyData } from "./pharmacy";
 import { nursingData } from "./nursing";
 import { physiotherapyData } from "./physiotherapy";
-import { alliedHealthData } from "./allied-health";
+import { alliedHealthData } from "./allied-healthcare";
 import { hotelManagementData } from "./hotel-management";
 import { phdData } from "./phd";
 
@@ -14,7 +14,7 @@ const allProgrammes: Record<string, ProgrammeData> = {
   "pharmacy": pharmacyData,
   "nursing": nursingData,
   "physiotherapy": physiotherapyData,
-  "allied-health": alliedHealthData,
+  "allied-healthcare": alliedHealthData,
   "hotel-management": hotelManagementData,
   "applied-sciences": appliedSciencesData,
   "doctorate-programs": phdData,

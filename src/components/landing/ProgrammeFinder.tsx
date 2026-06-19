@@ -100,7 +100,7 @@ const faculties = [
     tags: ["B.AOTT", "BMLS"],
     levels: ["Undergraduate", "Diploma"],
     fields: ["Allied and Healthcare Sciences"],
-    slug: "allied-health",
+    slug: "allied-healthcare",
     icon: AlliedHealthIcon,
   },
   {

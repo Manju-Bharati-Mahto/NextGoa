@@ -142,7 +142,7 @@ const COURSES: Course[] = [
     color: "#0caadd",
     textColor: "text-white",
     type: "pharmacy",
-    href: "/programs/allied-health",
+    href: "/programs/allied-healthcare",
   },
   {
     name: "Bachelor of Anaesthesia & Operation Theatre Technology",
@@ -151,7 +151,7 @@ const COURSES: Course[] = [
     color: "#0caadd",
     textColor: "text-white",
     type: "pharmacy",
-    href: "/programs/allied-health",
+    href: "/programs/allied-healthcare",
   },
   {
     name: "BHMCT",

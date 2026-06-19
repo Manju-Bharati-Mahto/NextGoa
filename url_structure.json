@@ -103,5 +103,10 @@
     "pageName": "404 Error Page",
     "mainDomain": "https://goa.paruluniversity.ac.in",
     "urlPath": "/404"
+  },
+  {
+    "pageName": "Allied & Healthcare Sciences",
+    "mainDomain": "https://goa.paruluniversity.ac.in",
+    "urlPath": "/programs/allied-healthcare"
   }
 ]

@@ -62,13 +62,13 @@ export default function RecruitersAndDestinations({ slug }: { slug?: string }) {
     ? managementCompanies 
     : slug === "pharmacy" 
       ? pharmacyCompanies 
-      : slug === "allied-health"
+      : slug === "allied-healthcare"
         ? alliedHealthCompanies
         : companies;
   const getSrc = (fileName: string) => {
     if (slug === "management-studies") return `/recruiters/management/${fileName}`;
     if (slug === "pharmacy") return `/recruiters/pharmacy/${fileName}`;
-    if (slug === "allied-health") return `/recruiters/allied-health/${fileName}`;
+    if (slug === "allied-healthcare") return `/recruiters/allied-healthcare/${fileName}`;
     return `/companies/${fileName}`;
   };
 

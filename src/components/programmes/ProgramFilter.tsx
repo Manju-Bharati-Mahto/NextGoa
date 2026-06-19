@@ -34,8 +34,8 @@ const allCourses = [
   { id: 12, title: "BHMCT", description: "Bachelor of Hotel Management and Catering Technology.", level: "Bachelor's", field: "BHMCT", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bhmct.png", href: "/programs/hotel-management" },
   { id: 13, title: "Bachelor of Science - Hotel Management", description: "B.Sc degree in hospitality.", level: "Bachelor's", field: "BHMCT", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bsc_hm.png", href: "/programs/hotel-management" },
   { id: 14, title: "B.Sc Hons. - Hotel Management", description: "4-year honors program.", level: "Bachelor's", field: "BHMCT", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bsc_hm_hons.png", href: "/programs/hotel-management" },
-  { id: 15, title: "Bachelor of Anaesthesia & Operation Theatre Technology", description: "Allied healthcare bachelor's degree.", level: "Bachelor's", field: "B.AOTT", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/baott.png", href: "/programs/allied-health" },
-  { id: 16, title: "Bachelor of Medical Laboratory Science (BMLS)", description: "Allied healthcare bachelor's degree.", level: "Bachelor's", field: "B.AOTT", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/bmls.png", href: "/programs/allied-health" },
+  { id: 15, title: "Bachelor of Anaesthesia & Operation Theatre Technology", description: "Allied healthcare bachelor's degree.", level: "Bachelor's", field: "B.AOTT", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/baott.png", href: "/programs/allied-healthcare" },
+  { id: 16, title: "Bachelor of Medical Laboratory Science (BMLS)", description: "Allied healthcare bachelor's degree.", level: "Bachelor's", field: "B.AOTT", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/bmls.png", href: "/programs/allied-healthcare" },
   { id: 23, title: "Bachelor of Computer Applications (BCA)", description: "3-year undergraduate IT program.", level: "Bachelor's", field: "BCA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bca_students.png", href: "/programs/it-cs" },
   { id: 24, title: "BCA Honours (NEP 2020)", description: "4-year honors program with specializations.", level: "Bachelor's", field: "BCA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bca_students.png", href: "/programs/it-cs" },
   { id: 26, title: "Bachelor of Science (B.Sc.)", description: "3-year science degree in Biotech & Microbiology.", level: "Bachelor's", field: "B.Sc", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/bsc_applied_science.png", href: "/programs/applied-sciences" },
@@ -126,7 +126,7 @@ const FACULTY_INFO: Record<string, { name: string; desc: string; icon: React.Com
     icon: PhysiotherapyIcon, 
     image: "/programmes/Physiotherapy Training.png"
   },
-  "/programs/allied-health": { 
+  "/programs/allied-healthcare": { 
     name: "Allied and Healthcare Sciences", 
     desc: "Where science serves humanity.", 
     icon: AlliedHealthIcon, 

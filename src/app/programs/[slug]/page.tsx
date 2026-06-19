@@ -88,7 +88,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
         <PhysiotherapyProgrammePicker />
       ) : data.slug === "management-studies" ? (
         <ManagementProgrammePicker />
-      ) : data.slug === "allied-health" ? (
+      ) : data.slug === "allied-healthcare" ? (
         <AlliedHealthProgrammePicker />
       ) : data.slug === "hotel-management" ? (
         <HotelManagementProgrammePicker />
@@ -111,7 +111,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
         <PhysiotherapyAccreditation />
       )}
       
-      {data.slug === "allied-health" && (
+      {data.slug === "allied-healthcare" && (
         <AlliedHealthAccreditation />
       )}
 
@@ -121,7 +121,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
 
       {data.slug === "management-studies" ? (
         <ManagementSpecialisations />
-      ) : data.slug !== "pharmacy" && data.slug !== "nursing" && data.slug !== "physiotherapy" && data.slug !== "allied-health" && data.slug !== "hotel-management" && data.slug !== "phd" ? (
+      ) : data.slug !== "pharmacy" && data.slug !== "nursing" && data.slug !== "physiotherapy" && data.slug !== "allied-healthcare" && data.slug !== "hotel-management" && data.slug !== "phd" ? (
         <DynamicSpecialisations data={data.specialisations} />
       ) : null}
 
@@ -139,11 +139,11 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
         <NursingAccreditation />
       )}
 
-      {data.slug !== "physiotherapy" && data.slug !== "allied-health" && data.slug !== "hotel-management" && data.slug !== "phd" && (
+      {data.slug !== "physiotherapy" && data.slug !== "allied-healthcare" && data.slug !== "hotel-management" && data.slug !== "phd" && (
         <RecruitersAndDestinations slug={data.slug} />
       )}
 
-      {(data.slug === "physiotherapy" || data.slug === "allied-health") && (
+      {(data.slug === "physiotherapy" || data.slug === "allied-healthcare") && (
         <PhysiotherapyNetwork />
       )}
 
@@ -163,22 +163,22 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
         <DynamicWhyPUGoa 
           data={data.why} 
           themeColor={data.themeColor} 
-          useThickWave={data.slug === "allied-health" || data.slug === "applied-sciences" || data.slug === "physiotherapy"}
+          useThickWave={data.slug === "allied-healthcare" || data.slug === "applied-sciences" || data.slug === "physiotherapy"}
           isWider={data.slug === "applied-sciences" || data.slug === "nursing" || data.slug === "physiotherapy"}
           reducedPadding={data.slug === "applied-sciences" || data.slug === "nursing" || data.slug === "physiotherapy"}
           bottomBgColor={data.slug === "applied-sciences" ? "#EAF7FD" : undefined}
         />
       )}
 
-      {data.labs && data.slug !== "management-studies" && data.slug !== "allied-health" && data.slug !== "phd" && (
+      {data.labs && data.slug !== "management-studies" && data.slug !== "allied-healthcare" && data.slug !== "phd" && (
         <DynamicLabsAndLearning data={data.labs} />
       )}
 
-      {data.slug === "allied-health" && (
+      {data.slug === "allied-healthcare" && (
         <AlliedHealthLabs />
       )}
 
-      {data.slug !== "nursing" && data.slug !== "physiotherapy" && data.slug !== "allied-health" && data.slug !== "hotel-management" && data.slug !== "pharmacy" && data.slug !== "phd" && (
+      {data.slug !== "nursing" && data.slug !== "physiotherapy" && data.slug !== "allied-healthcare" && data.slug !== "hotel-management" && data.slug !== "pharmacy" && data.slug !== "phd" && (
         <StudyAbroadModels />
       )}
 
@@ -198,7 +198,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
 
       <FinalCta 
         eyebrow="Admissions Open 2026"
-        title={data.slug === "nursing" ? "Ready to begin nursing?" : data.slug === "pharmacy" ? "Ready to enter pharmacy?" : data.slug === "physiotherapy" ? "Ready to start physio?" : data.slug === "allied-health" ? "Ready to start allied and healthcare sciences?" : data.slug === "hotel-management" ? "Ready to enter hospitality?" : data.slug === "phd" ? "Begin your doctoral journey." : "Ready to lead?"}
+        title={data.slug === "nursing" ? "Ready to begin nursing?" : data.slug === "pharmacy" ? "Ready to enter pharmacy?" : data.slug === "physiotherapy" ? "Ready to start physio?" : data.slug === "allied-healthcare" ? "Ready to start allied and healthcare sciences?" : data.slug === "hotel-management" ? "Ready to enter hospitality?" : data.slug === "phd" ? "Begin your doctoral journey." : "Ready to lead?"}
         description={data.slug === "phd" ? "PU Goa entrance and PhD admissions are open for the 2026-27 cycle." : "Admissions are open for the 2026-27 academic year."}
         actions={[
           { label: "Apply Now", href: "/apply", variant: "primary" },
