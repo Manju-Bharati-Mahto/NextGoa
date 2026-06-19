@@ -96,12 +96,7 @@ export const hotelManagementData: ProgrammeData = {
     role: "Dean, Hotel Management",
     bio: "Dr. Prashant Sharma brings extensive experience in hospitality management and education, guiding students toward excellence in global hospitality and culinary arts.",
     image: "/leaders/9911.jpg",
-    faculty: [
-      { role: "EXECUTIVE CHEF", name: "Chef Rahul Khanna", degree: "BHMCT, Culinary Arts", specialities: "Continental Cuisine, Advanced Baking" },
-      { role: "ASSOCIATE PROFESSOR", name: "Ms. Neha Kapoor", degree: "MBA, Hospitality", specialities: "Rooms Division, Revenue Management" },
-      { role: "ASSISTANT PROFESSOR", name: "Mr. David Fernandes", degree: "M.Sc., Tourism", specialities: "Destination Management, Travel Agency Ops" },
-      { role: "F&B DIRECTOR", name: "Mr. Sanjeev Nair", degree: "Diploma, Food & Beverage", specialities: "Mixology, Fine Dining Operations" }
-    ]
+    faculty: []
   },
   faqs: [
     { question: "Do we get to intern in 5-star hotels?", answer: "Yes, we guarantee internships in premium 5-star properties across India and abroad." },
