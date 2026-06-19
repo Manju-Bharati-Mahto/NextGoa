@@ -28,7 +28,7 @@ export default function NotFound() {
       <div className="absolute bottom-0 translate-y-[15%] md:translate-y-[20%] left-1/2 -translate-x-1/2 w-[80vw] md:w-[700px] aspect-square bg-white rounded-full z-0 pointer-events-none" />
 
       {/* Footer background behind the PNG */}
-      <div className="absolute bottom-0 left-0 right-0 h-[10vh] sm:h-[15vh] md:h-[20vh] lg:h-[25vh] xl:h-[30vh] z-0 pointer-events-none overflow-hidden">
+      <div className="absolute bottom-0 left-0 right-0 h-[15vh] sm:h-[18vh] md:h-[20vh] lg:h-[25vh] xl:h-[30vh] z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[18vw] sm:top-[10vw] bottom-0 left-0 right-0 bg-[#0caadd]" />
         <div 
           className="absolute top-0 left-0 right-0 bottom-0 bg-no-repeat bg-top bg-[length:300%_auto] sm:bg-[length:100%_auto]" 
