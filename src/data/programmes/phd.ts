@@ -103,11 +103,31 @@ export const phdData: ProgrammeData = {
     image: "/programmes/engineering_hero_bg.png",
     faculty: []},
   faqs: [
-    { question: "Full-time or Part-time PhD, what fits you?", answer: "Two synced routes - leading to one destination. Full-time is for those coming in as dedicated doctoral scholars with research as the primary focus. Part-time is for working professionals, people who cannot step away from their jobs and should not have to, as long as they carry an NOC from their employer." },
-    { question: "How are research supervisors assigned?", answer: "Not before admission. After. The Doctoral Research Committee weighs in based on your research domain and what faculty are available at that point. It is not arbitrary, but it is also not something that gets locked in during the application stage. That said, if there is a preferred area or a specific supervisor already in mind, mentioning it during the application is worth doing." },
-    { question: "How are the funding opportunities and research support?", answer: "Scholars working on externally sponsored projects can receive stipends through the funding agency attached to that project. Inside the institution, internal research grants exist, publication assistance is available, and conference funding can be accessed." },
-    { question: "What are the publication requirements before synopsis submission?", answer: "Publications need to happen before synopsis submission; that much is fixed. What exactly is required depends on your discipline and what your research committee prescribes on top of the standard guidelines." }
-  ],
+    {
+        question: "Full-time vs part-time PhD — which can I do?",
+        answer: "PU Goa offers both. Full-time scholars are expected to be on campus daily and often receive stipends or research assistantships. Part-time scholars (usually working professionals or academicians) have relaxed residency requirements but identical academic rigour."
+    },
+    {
+        question: "How is a supervisor allocated?",
+        answer: "Supervisor allocation happens after admission, based on your declared research area, supervisor availability, and the Doctoral Research Committee's review. You can express preferences during application."
+    },
+    {
+        question: "Stipend and grants?",
+        answer: "Full-time PhD scholars on externally funded projects (DST, ICMR, DBT, AICTE) receive project-linked stipends. The Intramural Research Grant (IMR) supports internal projects. APC and conference support are available across the board."
+    },
+    {
+        question: "Publication requirement before synopsis?",
+        answer: "PU Goa follows UGC norms — typically a minimum of two peer-reviewed publications (Scopus/Web of Science indexed) before synopsis submission. Discipline-specific committees may set higher bars."
+    },
+    {
+        question: "Eligibility — NET / GATE / GPAT or PU Goa entrance?",
+        answer: "A postgraduate degree in the relevant discipline with minimum 55% aggregate. UGC-NET, GATE, GPAT, CSIR-NET scores are accepted, OR you may sit for the PU Goa offline doctoral entrance examination."
+    },
+    {
+        question: "Can I apply without a Master's?",
+        answer: "No. A relevant Master's degree (M.Tech, M.Pharm, M.Sc, MBA, M.Sc Nursing, etc.) is the minimum eligibility. Integrated PhD pathways are not currently offered at PU Goa."
+    }
+],
   themeColor: {
     waveBand: "#E73649", // Red theme
     waveAccent: "#D62B3D",

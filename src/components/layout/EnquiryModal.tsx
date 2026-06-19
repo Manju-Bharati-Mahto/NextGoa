@@ -167,6 +167,36 @@ export function EnquiryModal() {
           setModalHeading("Start Your Application");
         }
 
+        let progAttr = target.getAttribute("data-enquiry-program");
+
+        // Infer from pathname if not explicitly set
+        if (!progAttr && typeof window !== "undefined") {
+          const path = window.location.pathname;
+          if (path.includes("/programs/nursing")) progAttr = "bsc-nursing";
+          else if (path.includes("/programs/engineering")) progAttr = "btech-cse";
+          else if (path.includes("/programs/management-studies")) progAttr = "bba";
+          else if (path.includes("/programs/pharmacy")) progAttr = "bpharm";
+          else if (path.includes("/programs/hotel-management")) progAttr = "bsc-hotel-management";
+          else if (path.includes("/programs/allied-healthcare")) progAttr = "bmls";
+          else if (path.includes("/programs/applied-sciences")) progAttr = "bsc-biotech";
+          else if (path.includes("/programs/physiotherapy")) progAttr = "bpt";
+        }
+
+        if (progAttr) {
+          const prog = allProgrammes.find(p => p.value === progAttr);
+          if (prog) {
+            // Apply it directly
+            setFormData(prev => ({ ...prev, programme: prog.value }));
+            setProgrammeSearch(prog.label);
+            setTouched(prev => ({ ...prev, programme: true }));
+            
+            // Also store it in window object as a fallback for useEffect to pick up
+            if (typeof window !== "undefined") {
+              (window as any)._pendingEnquiryProgram = prog.value;
+            }
+          }
+        }
+
         setIsOpen(true);
       }
     };
@@ -182,6 +212,20 @@ export function EnquiryModal() {
       document.removeEventListener("click", handleClick);
     };
   }, []);
+
+  // Additional effect to ensure program is selected when modal opens
+  useEffect(() => {
+    if (isOpen && typeof window !== "undefined" && (window as any)._pendingEnquiryProgram) {
+      const progVal = (window as any)._pendingEnquiryProgram;
+      const prog = allProgrammes.find(p => p.value === progVal);
+      if (prog) {
+        setFormData(prev => ({ ...prev, programme: prog.value }));
+        setProgrammeSearch(prog.label);
+        setTouched(prev => ({ ...prev, programme: true }));
+      }
+      (window as any)._pendingEnquiryProgram = null;
+    }
+  }, [isOpen]);
 
   const [submitState, setSubmitState] = useState<'idle' | 'submitting' | 'success'>('idle');
   const [countdown, setCountdown] = useState(5);

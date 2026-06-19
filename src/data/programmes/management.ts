@@ -100,64 +100,93 @@ export const managementData: ProgrammeData = {
     bio: "A seasoned academic and management strategist with extensive experience leading business schools and consulting for global enterprises across analytics, finance and operations.",
     image: "/faculties/Management/Dean.jpg",
     faculty: [
-  {
-    role: "Associate Professor",
-    name: "Dr. Rinki Mishra",
-    degree: "Ph.D.",
-    faculty: "Faculty of Management Studies",
-    department: "Management",
-    experience: "14 Years",
-    image: "/faculties/Dr.-Rinki-Mishra.jpg"
-  },
-  {
-    role: "Associate Professor",
-    name: "Dr. Shaifali Garg",
-    degree: "Ph.D.",
-    faculty: "Faculty of Management Studies",
-    image: "/faculties/Dr.-Shaifali-Garg.jpg"
-  },
-  {
-    role: "Assistant Professor",
-    name: "Dr. Rohit Mishra",
-    degree: "Ph.D.",
-    faculty: "Faculty of Management Studies",
-    department: "Management",
-    experience: "8 Years",
-    image: "/faculties/Dr.-Rohit-Mishra.jpg"
-  },
-  {
-    role: "Assistant Professor",
-    name: "Dr. Poornima BG",
-    degree: "Ph.D.",
-    faculty: "Faculty of Management Studies",
-    department: "Management",
-    experience: "14 Years",
-    image: "/faculties/Dr.-Poornima-BG.jpg"
-  },
-  {
-    role: "Assistant Professor",
-    name: "Dr. Amar Jamnekar",
-    degree: "Ph.D.",
-    faculty: "Faculty of Management Studies",
-    department: "Management",
-    experience: "4Years",
-    image: "/faculties/Dr.-Amar-Jamnekar.jpg"
-  },
-  {
-    role: "Assistant Professor",
-    name: "Mr. Satyajitsinh Gohil",
-    degree: "MBA",
-    faculty: "Faculty of Management Studies",
-    department: "Management",
-    experience: "3 Years",
-    image: "/faculties/Mr.-Satyajitsinh-Gohil.jpg"
-  },
+    {
+        role: "Associate Professor",
+        name: "Dr. Rinki Mishra",
+        degree: "Ph.D.",
+        faculty: "Faculty of Management Studies",
+        department: "Management",
+        experience: "14 Years 5 Months",
+        researchArea: "",
+        image: "/faculties/Dr.-Rinki-Mishra.jpg"
+    },
+    {
+        role: "Associate Professor",
+        name: "Dr. Shaifali Garg",
+        degree: "Ph.D.",
+        faculty: "Faculty of Management Studies",
+        department: "Management",
+        experience: "",
+        researchArea: "",
+        image: "/faculties/Dr.-Shaifali-Garg.jpg"
+    },
+    {
+        role: "Assistant Professor",
+        name: "Dr. Rohit Mishra",
+        degree: "Ph.D.",
+        faculty: "Faculty of Management Studies",
+        department: "Management",
+        experience: "8 Years 11 Months",
+        researchArea: "",
+        image: "/faculties/Dr.-Rohit-Mishra.jpg"
+    },
+    {
+        role: "Assistant Professor",
+        name: "Dr. Poornima BG",
+        degree: "Ph.D.",
+        faculty: "Faculty of Management Studies",
+        department: "Management",
+        experience: "14 Years 1 Months",
+        researchArea: "",
+        image: "/faculties/Dr.-Poornima-BG.jpg"
+    },
+    {
+        role: "Assistant Professor",
+        name: "Dr. Amar Jamnekar",
+        degree: "Ph.D.",
+        faculty: "Faculty of Management Studies",
+        department: "Management",
+        experience: "4Years 5 Month",
+        researchArea: "",
+        image: "/faculties/Dr.-Amar-Jamnekar.jpg"
+    },
+    {
+        role: "Assistant Professor",
+        name: "Mr. Satyajitsinh Gohil",
+        degree: "MBA",
+        faculty: "Faculty of Management Studies",
+        department: "Management",
+        experience: "3 Years 6  Months",
+        researchArea: "",
+        image: "/faculties/Mr.-Satyajitsinh-Gohil.jpg"
+    }
 ]},
   faqs: [
-    { question: "BBA vs BBA Honours: Which One Fits You?", answer: "If you would rather get into the working world sooner, the three-year BBA is the straightforward route. The BBA Honours takes four years instead, and it is built around the NEP 2020 structure, so you get time for proper research and an industry capstone before you finish. That extra year also tends to make things easier later, whether you are looking at a Master's abroad or thinking about an MBA somewhere down the road." },
-    { question: "What Is the MBA Work Experience Requirement?", answer: "A lot of people ask us this, and the short answer is no, you do not need work experience to apply for the MBA at PU Goa. We take in fresh graduates and working professionals together, and experience helps, but it has never been a requirement. What actually matters for admission is your CAT, MAT, CMAT or PU Goa entrance score, and after that you sit for a group discussion and a personal interview. Placements and Recruiter Network: Studying management here puts you inside Parul University's larger placement network, which is not small. They work with over 1,000 recruiters, and they come from across consulting, banking, technology and the consumer space, so the range of roles you can aim for is fairly wide." },
-    { question: "How Do the International 1+1 / 2+2 Pathways Work?", answer: "This depends on which programme you are in. BBA students go the 2+2 route, where you spend part of the degree at one of our international partner universities. MBA students do it differently, with a 1+1 model instead. Either way, you end up studying abroad for a real stretch of time, and the coursework is set up to match what is taught internationally." }
-  ],
+    {
+        question: "BBA vs BBA Honours — which one?",
+        answer: "BBA is a 3-year degree; BBA Honours is a 4-year degree aligned with NEP 2020. The 4th year includes a research capstone, making it eligible for 1-year Master's programmes abroad."
+    },
+    {
+        question: "What's the MBA work-experience requirement?",
+        answer: "PU Goa MBA admits both fresh graduates and working professionals. Cohorts are mixed; work experience is preferred but not mandatory. Selection is based on CAT / MAT / CMAT / PU Goa entrance + GD-PI."
+    },
+    {
+        question: "Average package and top recruiters?",
+        answer: "PU Goa management students access the wider Parul University recruiter network of 1,000+ companies including Deloitte, EY, KPMG, HDFC Bank, ICICI, Amazon and Asian Paints."
+    },
+    {
+        question: "How does the international 1+1 / 2+2 work?",
+        answer: "BBA students complete 2 years at PU Goa and 2 years at Rowan University (USA) or Humber Polytechnic (Canada). MBA students do 1 year here and 1 year at Massey, Marywood, Nottingham Trent or Canterbury Christ Church."
+    },
+    {
+        question: "Loan partners & scholarships?",
+        answer: "Tied up with leading nationalised and private banks for education loans. Merit, sports and need-based scholarships available — counsellors map every option during admissions."
+    },
+    {
+        question: "MBA vs PGDM?",
+        answer: "PU Goa offers a UGC-recognised MBA degree, valid for government jobs, doctoral admissions and most international Master's pathways. PGDM is a diploma — both have value, but MBA carries more academic portability."
+    }
+],
   themeColor: {
     waveBand: "#0CAADD",
     waveAccent: "#0094C4",

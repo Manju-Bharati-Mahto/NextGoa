@@ -85,139 +85,169 @@ export const physiotherapyData: ProgrammeData = {
     bio: "A clinician-educator with extensive experience in musculoskeletal rehabilitation, sports physiotherapy and community physiotherapy programmes.",
     image: "/faculties/Physiotherapy/Dean.jpg",
     faculty: [
-  {
-    role: "Professor",
-    name: "Dr. Sandipkumar Rameshbhai Parekh",
-    degree: "Ph.D.",
-    faculty: "Faculty of Physiotherapy",
-    department: "Physiotherapy",
-    experience: "12 Years",
-    researchArea: "Aquatic Physiotherapy, Musculoskeletal and Sports Physiotherapy",
-    image: "/faculties/Dr.-Sandipkumar-Rameshbhai-Parekh.jpg"
-  },
-  {
-    role: "Associate Professor",
-    name: "Dr. Dharmang D Vyas (PT)",
-    degree: "Ph.D.",
-    faculty: "Faculty of Physiotherapy",
-    department: "Physiotherapy",
-    experience: "13 Years",
-    researchArea: "Musculoskeletal and Sports Physiotherapy",
-    image: "/faculties/Dr.-Dharmang-D-Vyas--PT-.jpg"
-  },
-  {
-    role: "Associate Professor",
-    name: "Dr. Jeyaganesh V (PT)",
-    degree: "MPT",
-    faculty: "Faculty of Physiotherapy",
-    department: "Physiotherapy",
-    experience: "11 Years",
-    researchArea: "Stroke Rehabilitation, Neuro Rehabilitation",
-    image: "/faculties/Dr.-Jeyaganesh-V--PT-.jpg"
-  },
-  {
-    role: "Assistant Professor",
-    name: "Dr. Laxmi Kamat",
-    degree: "MPT",
-    faculty: "Faculty of Physiotherapy",
-    department: "Physiotherapy",
-    researchArea: "Rehabilitation",
-    image: "/faculties/Dr.-Laxmi-Kamat.jpg"
-  },
-  {
-    role: "Assistant Professor",
-    name: "Dr. Amiya Dessai",
-    degree: "MPT",
-    faculty: "Faculty of Physiotherapy",
-    image: "/faculties/Dr.-Amiya-Dessai.jpg"
-  },
-  {
-    role: "Assistant Professor",
-    name: "Dr. Vaishanavi Dessai",
-    degree: "MPT",
-    faculty: "Faculty of Physiotherapy",
-    department: "Physiotherapy",
-    researchArea: "Neurology, Pediatrics",
-    image: "/faculties/Dr.-Vaishanavi-Dessai.jpg"
-  },
-  {
-    role: "Assistant Professor",
-    name: "Dr. Prachi Brave",
-    degree: "MPT",
-    faculty: "Faculty of Physiotherapy",
-    department: "Physiotherapy",
-    researchArea: "Musculoskeletal Disorders",
-    image: "/faculties/Dr.-Prachi-Brave.jpg"
-  },
-  {
-    role: "Clinical Instructor",
-    name: "Dr. Darpan Vanavi",
-    degree: "MPT",
-    faculty: "Faculty of Physiotherapy",
-    department: "Physiotherapy",
-    researchArea: "Sports",
-    image: "/faculties/Dr.-Darpan-Vanavi.jpg"
-  },
-  {
-    role: "Clinical Intsructor",
-    name: "Dr. Parmar Hardikkumar Arjunbhai",
-    degree: "MPT",
-    faculty: "Faculty of Physiotherapy",
-    department: "Physiotherapy",
-    experience: "2 Years",
-    image: "/faculties/Dr.-Parmar-Hardikkumar-Arjunbhai.jpg"
-  },
-  {
-    role: "Clinical Instructor",
-    name: "Dr. Patel Manan Narendrakumar",
-    degree: "MPT",
-    faculty: "Faculty of Physiotherapy",
-    department: "Physiotherapy",
-    image: "/faculties/Dr.-Patel-Manan-Narendrakumar.jpg"
-  },
-  {
-    role: "Clinical Instructor",
-    name: "Dr.Lugella Fernandes",
-    degree: "BPT",
-    faculty: "Faculty of Physiotherapy",
-    department: "Physiotherapy",
-    researchArea: "Sports",
-    image: "/faculties/Dr.Lugella-Fernandes.jpg"
-  },
-  {
-    role: "Clinical Intsructor",
-    name: "Dr. Divya Tekwani",
-    degree: "BPT",
-    faculty: "Faculty of Physiotherapy",
-    department: "Physiotherapy",
-    researchArea: "Musculoskeletal Disorders",
-    image: "/faculties/Dr.-Divya-Tekwani.jpg"
-  },
-  {
-    role: "Clinical Intsructor",
-    name: "Dr. Krimisha Jay Chauhan",
-    degree: "BPT",
-    faculty: "Faculty of Physiotherapy",
-    department: "Physiotherapy",
-    experience: "4 Years",
-    researchArea: "Neurology, Pediatrics",
-    image: "/faculties/Dr.-Krimisha-Jay-Chauhan.jpg"
-  },
-  {
-    role: "Clinical Intsructor",
-    name: "Dr. Chirag Makvana",
-    degree: "BPT",
-    faculty: "Faculty of Physiotherapy",
-    department: "Physiotherapy",
-    image: "/faculties/Dr.-Chirag-Makvana.jpg"
-  },
+    {
+        role: "Professor",
+        name: "Dr. Sandipkumar Rameshbhai Parekh",
+        degree: "Ph.D.",
+        faculty: "Faculty of Physiotherapy",
+        department: "Physiotherapy",
+        experience: "12 Years",
+        researchArea: "Aquatic Physiotherapy, Musculoskeletal and Sports Physiotherapy",
+        image: "/faculties/Dr.-Sandipkumar-Rameshbhai-Parekh.jpg"
+    },
+    {
+        role: "Associate Professor",
+        name: "Dr. Dharmang D Vyas (PT)",
+        degree: "Ph.D.",
+        faculty: "Faculty of Physiotherapy",
+        department: "Physiotherapy",
+        experience: "13 Years 11 Months",
+        researchArea: "Musculoskeletal and Sports Physiotherapy",
+        image: "/faculties/Dr.-Dharmang-D-Vyas--PT-.jpg"
+    },
+    {
+        role: "Associate Professor",
+        name: "Dr. Jeyaganesh V (PT)",
+        degree: "MPT",
+        faculty: "Faculty of Physiotherapy",
+        department: "Physiotherapy",
+        experience: "11 Years 1 Month",
+        researchArea: "Stroke Rehabilitation, Neuro Rehabilitation",
+        image: "/faculties/Dr.-Jeyaganesh-V--PT-.jpg"
+    },
+    {
+        role: "Assistant Professor",
+        name: "Dr. Laxmi Kamat",
+        degree: "MPT",
+        faculty: "Faculty of Physiotherapy",
+        department: "Physiotherapy",
+        experience: "",
+        researchArea: "Rehabilitation",
+        image: "/faculties/Dr.-Laxmi-Kamat.jpg"
+    },
+    {
+        role: "Assistant Professor",
+        name: "Dr. Amiya Dessai",
+        degree: "MPT",
+        faculty: "Faculty of Physiotherapy",
+        department: "Physiotherapy",
+        experience: "",
+        researchArea: "",
+        image: "/faculties/Dr.-Amiya-Dessai.jpg"
+    },
+    {
+        role: "Assistant Professor",
+        name: "Dr. Vaishanavi Dessai",
+        degree: "MPT",
+        faculty: "Faculty of Physiotherapy",
+        department: "Physiotherapy",
+        experience: "",
+        researchArea: "Neurology, Pediatrics",
+        image: "/faculties/Dr.-Vaishanavi-Dessai.jpg"
+    },
+    {
+        role: "Assistant Professor",
+        name: "Dr. Prachi Brave",
+        degree: "MPT",
+        faculty: "Faculty of Physiotherapy",
+        department: "Physiotherapy",
+        experience: "",
+        researchArea: "Musculoskeletal Disorders",
+        image: "/faculties/Dr.-Prachi-Brave.jpg"
+    },
+    {
+        role: "Clinical Instructor",
+        name: "Dr. Darpan Vanavi",
+        degree: "MPT",
+        faculty: "Faculty of Physiotherapy",
+        department: "Physiotherapy",
+        experience: "1 Year 9 Months",
+        researchArea: "Sports",
+        image: "/faculties/Dr.-Darpan-Vanavi.jpg"
+    },
+    {
+        role: "Clinical Intsructor",
+        name: "Dr. Parmar Hardikkumar Arjunbhai",
+        degree: "MPT",
+        faculty: "Faculty of Physiotherapy",
+        department: "Physiotherapy",
+        experience: "2 Years 7 Months",
+        researchArea: "",
+        image: "/faculties/Dr.-Parmar-Hardikkumar-Arjunbhai.jpg"
+    },
+    {
+        role: "Clinical Instructor",
+        name: "Dr. Patel Manan Narendrakumar",
+        degree: "MPT",
+        faculty: "Faculty of Physiotherapy",
+        department: "Physiotherapy",
+        experience: "1 Year",
+        researchArea: "",
+        image: "/faculties/Dr.-Patel-Manan-Narendrakumar.jpg"
+    },
+    {
+        role: "Clinical Instructor",
+        name: "Dr.Lugella Fernandes",
+        degree: "BPT",
+        faculty: "Faculty of Physiotherapy",
+        department: "Physiotherapy",
+        experience: "",
+        researchArea: "Sports",
+        image: "/faculties/Dr.Lugella-Fernandes.jpg"
+    },
+    {
+        role: "Clinical Intsructor",
+        name: "Dr. Divya Tekwani",
+        degree: "BPT",
+        faculty: "Faculty of Physiotherapy",
+        department: "Physiotherapy",
+        experience: "6 Months",
+        researchArea: "Musculoskeletal Disorders",
+        image: "/faculties/Dr.-Divya-Tekwani.jpg"
+    },
+    {
+        role: "Clinical Intsructor",
+        name: "Dr. Krimisha Jay Chauhan",
+        degree: "BPT",
+        faculty: "Faculty of Physiotherapy",
+        department: "Physiotherapy",
+        experience: "4 Years",
+        researchArea: "Neurology, Pediatrics",
+        image: "/faculties/Dr.-Krimisha-Jay-Chauhan.jpg"
+    },
+    {
+        role: "Clinical Intsructor",
+        name: "Dr. Chirag Makvana",
+        degree: "BPT",
+        faculty: "Faculty of Physiotherapy",
+        department: "Physiotherapy",
+        experience: "1 Year",
+        researchArea: "",
+        image: "/faculties/Dr.-Chirag-Makvana.jpg"
+    }
 ]},
   faqs: [
-    { question: "Is a clinical internship mandatory?", answer: "Yes, a 6-month rotatory clinical internship is mandatory to complete the BPT degree." },
-    { question: "Do students get hands-on experience?", answer: "Absolutely. Students treat real patients under expert supervision at our active in-house OPD and specialized rehabilitation centers." },
-    { question: "Can I specialize in Sports Physiotherapy?", answer: "Yes, Sports Physiotherapy is one of our most popular MPT specialisations. We also have official medical partnerships with local sports leagues for practical exposure." },
-    { question: "What career paths are available after a BPT?", answer: "Graduates can work in multi-specialty hospitals, sports clubs, corporate ergonomics consulting, or set up their own independent private practice." }
-  ],
+    {
+        question: "Why is the in-house rehab clinic important?",
+        answer: "Physiotherapy is a hands-on science. PU Goa has a fully functional on-campus rehabilitation clinic where students treat real patients under faculty supervision from their second year onwards."
+    },
+    {
+        question: "Is sports physiotherapy a real career?",
+        answer: "Yes. Demand for sports physios has exploded with IPL franchises, ISL clubs, badminton and wrestling academies, fitness chains and corporate wellness. We pull this specialism forward in the curriculum."
+    },
+    {
+        question: "IAP recognition — what does it mean?",
+        answer: "The Indian Association of Physiotherapists is the national professional body. IAP-aligned programmes carry credibility for hospital empanelment, insurance billing and international licensing pathways."
+    },
+    {
+        question: "Entrance test required?",
+        answer: "Yes. PU Goa conducts its own offline entrance test for BPT. Eligibility is 10+2 Science (PCB). Shortlisted candidates are notified by email and SMS."
+    },
+    {
+        question: "Higher studies after BPT?",
+        answer: "MPT (Master of Physiotherapy) in Musculoskeletal, Neurological, Sports, Cardio-Pulmonary or Pediatric specialisations. Some graduates also pursue MBA in Hospital Administration."
+    }
+],
   themeColor: {
     waveBand: "#E73649",
     waveAccent: "#C92B3C",

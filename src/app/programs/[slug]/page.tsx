@@ -24,7 +24,6 @@ import NursingAccreditation from "@/components/programmes/NursingAccreditation";
 import AlliedHealthAccreditation from "@/components/programmes/AlliedHealthAccreditation";
 import HotelManagementAccreditation from "@/components/programmes/HotelManagementAccreditation";
 import NursingDestinations from "@/components/programmes/NursingDestinations";
-import PharmacyAccreditation from "@/components/programmes/PharmacyAccreditation";
 import StudyAbroadModels from "@/components/study-abroad/StudyAbroadModels";
 import AdmissionsSnapshot from "@/components/programmes/AdmissionsSnapshot";
 import { DynamicFaq } from "@/components/programme-template/DynamicFaq";
@@ -103,10 +102,8 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
         <ProgrammePicker />
       )}
 
-      {data.slug === "pharmacy" && (
-        <PharmacyAccreditation />
-      )}
-      
+
+
       {data.slug === "physiotherapy" && (
         <PhysiotherapyAccreditation />
       )}
@@ -132,6 +129,8 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
         />
       )}
 
+
+
       {data.slug === "nursing" && (
         <NursingAccreditation />
       )}
@@ -144,9 +143,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
         <PhysiotherapyNetwork />
       )}
 
-      {data.slug === "nursing" && (
-        <NursingDestinations />
-      )}
+
 
       {data.slug === "management-studies" && (
         <ManagementLearningEnvironment />
@@ -176,9 +173,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
         <StudyAbroadModels />
       )}
 
-      {data.slug === "hotel-management" && (
-        <HotelManagementDestinations />
-      )}
+
 
       {data.slug !== "phd" && (
         <DynamicDeanAndFaculty data={data.dean} />

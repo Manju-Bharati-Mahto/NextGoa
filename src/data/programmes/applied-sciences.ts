@@ -137,9 +137,22 @@ export const appliedSciencesData: ProgrammeData = {
   },
 ]},
   faqs: [
-    { question: "What are the career prospects after B.Sc. Biotechnology?", answer: "Graduates can work in research labs, pharmaceutical companies, clinical diagnostics, or pursue higher studies like M.Sc. or Ph.D." },
-    { question: "Is hands-on laboratory experience provided?", answer: "Yes, our curriculum heavily emphasizes practical laboratory sessions in state-of-the-art facilities." },
-    { question: "Are there opportunities for industry internships?", answer: "We facilitate internships with leading biotech and pharma companies during the course." }
+    {
+      question: "What is the core difference between B.AOTT and B.MLS?",
+      answer: "They sit in two very different parts of a hospital. B.AOTT trains you for the operation theatre. Think surgical assistance, handling the anaesthesia equipment, keeping the OT running in order. Subsequently, B.MLS is the lab side instead. You're working in diagnostics here, so pathology, biochemistry, and microbiology testing make up most of it."
+    },
+    {
+      question: "What is the difference between B.Sc. and B.Sc. Honours?",
+      answer: "B.Sc. runs for three years and keeps things broad, giving you a wide spread of learning & expertise. Honours stretches to four years under NEP 2020, and that extra time goes into a specialisation plus a research part at the end. It can count toward eligibility for international Master's programmes and the more advanced academic routes."
+    },
+    {
+      question: "What career opportunities are available after M.Sc. Biotechnology?",
+      answer: "Depends on interest solely. Some graduates head into research and development, others into quality control and assurance. Clinical research and regulatory affairs are common as well. There's also the sales side of biotechnology if that suits you. And if you'd rather stay in academics, doctoral study and research are perfect for building a career."
+    },
+    {
+      question: "Do these programmes include hospital postings and stipends?",
+      answer: "Indeed, both do. B.AOTT and B.MLS bring in clinical exposure and opportunities via partner hospitals. The big part is a one-year paid internship, and before that, the earlier semesters give you supervised practical training to build up to it."
+    }
   ],
   themeColor: {
     waveBand: "#0CAADD",

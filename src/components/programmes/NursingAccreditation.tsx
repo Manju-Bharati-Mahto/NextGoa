@@ -3,36 +3,12 @@ import { Icon } from "@iconify/react";
 
 export default function NursingAccreditation() {
   return (
-    <section className="w-full bg-white pb-12 pt-5 sm:pb-16">
-      <div className="py-8 sm:py-12">
-        <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8 text-center">
-          
-          <h2 className="text-[#E73649] mb-8 section-heading">
-            Recognition & Accreditation
-          </h2>
-          
-          <div className="w-full flex flex-col items-center justify-center">
-            {/* Top Fading Line */}
-            <div className="w-full max-w-[1000px] h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent mb-10 sm:mb-16"></div>
-            
-            <div className="relative w-full max-w-[600px] h-[100px] sm:h-[150px]">
-              <Image 
-                src="/programmes/gnc.png" 
-                alt="Recognition and Accreditation Logos" 
-                fill
-                className="object-contain"
-              />
-            </div>
+    <section className="w-full bg-white pb-12 pt-16 sm:pt-24 sm:pb-16">
 
-            {/* Bottom Fading Line */}
-            <div className="w-full max-w-[1000px] h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent mt-10 sm:mt-16"></div>
-          </div>
-        </div>
-      </div>
 
       {/* Entrance Test Notice Banner */}
       <div className="w-full bg-[#E73649] border-t-4 border-b-4 border-black/5">
-        <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-8 lg:px-12 py-8 sm:py-12 flex flex-col md:flex-row items-stretch justify-center">
+        <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-8 lg:px-12 py-12 sm:py-16 flex flex-col md:flex-row items-stretch justify-center">
           
           {/* Left info box */}
           <div className="bg-white rounded-t-[24px] md:rounded-tr-none md:rounded-l-[24px] p-6 sm:p-8 flex flex-row items-center gap-6 shadow-sm max-w-4xl flex-grow">
@@ -49,9 +25,9 @@ export default function NursingAccreditation() {
 
           {/* Right Register Button (wrapped in border) */}
           <div className="border border-white/80 border-t-0 md:border-t md:border-l-0 rounded-b-[24px] md:rounded-bl-none md:rounded-r-[24px] p-6 sm:p-8 md:px-16 flex items-center justify-center shrink-0">
-            <a href="/apply" className="bg-[#FCE34B] text-ink font-bold text-[18px] sm:text-[22px] px-14 sm:px-20 py-4 rounded-full transition-transform hover:scale-105 shadow-md text-center">
-              Register
-            </a>
+            <button data-enquiry-trigger="true" data-enquiry-program="bsc-nursing" className="bg-[#FCE34B] text-ink font-bold text-[18px] sm:text-[22px] px-14 sm:px-20 py-4 rounded-full transition-transform hover:scale-105 shadow-md text-center">
+              Apply Now
+            </button>
           </div>
 
         </div>
