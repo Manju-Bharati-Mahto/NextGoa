@@ -62,7 +62,7 @@ export function Testimonial() {
   const t = testimonials[currentIndex];
 
   return (
-    <section className="bg-gradient-to-t from-[#CBEFFD] to-brand-white sm: sm: py-16 sm:py-24">
+    <section className="bg-gradient-to-t from-[#CBEFFD] to-brand-white py-10 sm:pt-5 sm:pb-15">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 md:grid-cols-[1.8fr_1fr]">
         <div className="relative">
           {/* Animated text */}

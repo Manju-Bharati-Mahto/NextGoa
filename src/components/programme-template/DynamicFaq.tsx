@@ -4,18 +4,18 @@ import React, { useState } from "react";
 import { FaqItem } from "@/data/programmes/types";
 
 export function DynamicFaq({ data }: { data: FaqItem[] }) {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleFaq = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section className="w-full bg-[#FAFAFA] sm: py-16 sm:py-24">
+    <section className="w-full bg-[#FAFAFA] py-8 sm:py-12">
       <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <h2 className="text-ink mb-2 section-subheading">
             FAQs
           </h2>

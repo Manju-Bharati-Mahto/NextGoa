@@ -66,7 +66,7 @@ export function CampusHostel() {
       </div>
 
       <div 
-        className="relative z-10 mx-auto max-w-[1300px] px-6 lg:px-12 flex flex-col items-center pt-[calc(clamp(30px,6vw,120px)+2rem)] pb-[calc(clamp(30px,6vw,120px)+2rem)] sm:pt-[calc(clamp(30px,6vw,120px)+4rem)] sm:pb-[calc(clamp(30px,6vw,120px)+4rem)]"
+        className="relative z-10 mx-auto max-w-[1300px] px-6 lg:px-12 flex flex-col items-center pt-8 pb-8 sm:pt-16 sm:pb-16"
       >
         {/* Header */}
         <div className="text-center mb-16 lg:mb-24">

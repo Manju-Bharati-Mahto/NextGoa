@@ -98,7 +98,7 @@ export function EligibilitySection() {
   );
 
   return (
-    <section className="w-full bg-[#faf9f6] sm: px-4 sm:px-8 xl:px-16 py-16 sm:py-24">
+    <section className="w-full bg-[#faf9f6] px-4 sm:px-8 xl:px-16 py-10 sm:py-12">
       <div className="max-w-[1200px] mx-auto">
         {/* Header */}
         <div className="text-center mb-10">

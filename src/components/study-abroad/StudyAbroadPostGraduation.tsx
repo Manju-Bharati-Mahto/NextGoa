@@ -48,7 +48,7 @@ export default function StudyAbroadPostGraduation() {
 
   return (
     <section 
-      className={`bg-[#f8f8f8] sm:pb-24 sm:py-24 pt-22 pb-15 sm:pt-10 px-0 md:px-8 overflow-hidden ${poppins.className}`}
+      className={`bg-[#f8f8f8] py-10 sm:py-12 px-0 md:px-8 overflow-hidden ${poppins.className}`}
       style={poppins.style}
     >
       <style>{`

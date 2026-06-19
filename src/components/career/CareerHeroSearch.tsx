@@ -26,13 +26,14 @@ export function CareerHeroSearch() {
         </svg>
       </div>
       <input 
+        suppressHydrationWarning
         type="text" 
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search Job Title" 
         className="flex-1 min-w-0 bg-transparent px-2 sm:px-3 py-2 sm:py-3 outline-none text-[#111111] text-base sm:text-lg placeholder-gray-500 font-medium"
       />
-      <button type="submit" className="bg-[#EF3341] hover:bg-[#D92A36] transition-colors text-white font-medium text-base sm:text-lg px-5 sm:px-8 py-2.5 sm:py-3 rounded-full shadow-sm cursor-pointer whitespace-nowrap flex-shrink-0">
+      <button suppressHydrationWarning type="submit" className="bg-[#EF3341] hover:bg-[#D92A36] transition-colors text-white font-medium text-base sm:text-lg px-5 sm:px-8 py-2.5 sm:py-3 rounded-full shadow-sm cursor-pointer whitespace-nowrap flex-shrink-0">
         Apply Now
       </button>
     </form>

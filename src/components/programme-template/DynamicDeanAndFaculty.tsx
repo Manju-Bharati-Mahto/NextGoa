@@ -6,18 +6,18 @@ import { DeanData } from "@/data/programmes/types";
 
 export function DynamicDeanAndFaculty({ data }: { data: DeanData }) {
   return (
-    <section className="w-full bg-[#FAFAFA] sm: py-16 sm:py-24">
+    <section className="w-full bg-[#FAFAFA] py-8 sm:py-12">
       <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
         
         {/* Top Heading */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2 className="text-ink section-heading">
             Dean & Faculty
           </h2>
         </div>
 
         {/* Dean Banner */}
-        <div className="flex flex-col md:flex-row w-full max-w-5xl mx-auto rounded-[24px] overflow-hidden shadow-md mb-20 bg-white">
+        <div className="flex flex-col md:flex-row w-full max-w-5xl mx-auto rounded-[24px] overflow-hidden shadow-md mb-12 bg-white">
           {/* Left: Image Placeholder */}
           <div className="w-full md:w-[45%] h-[300px] md:h-auto bg-gray-200 relative shrink-0">
             {data.image && (

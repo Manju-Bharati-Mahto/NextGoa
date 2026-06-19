@@ -37,7 +37,7 @@ const jobRoles = [
 
 export default function CareerOutcomes() {
   return (
-    <section className="relative overflow-hidden z-10 w-full bg-[linear-gradient(to_bottom,#FDE047_50%,transparent_50%)] pt-[calc(clamp(30px,6vw,120px)+2rem)] pb-[calc(clamp(30px,6vw,120px)+2rem)] sm:pt-[calc(clamp(30px,6vw,120px)+4rem)] sm:pb-[calc(clamp(30px,6vw,120px)+4rem)] py-16 sm:py-24"
+    <section className="relative overflow-hidden z-10 w-full bg-[linear-gradient(to_bottom,#FDE047_50%,transparent_50%)] pt-[calc(clamp(30px,6vw,120px)+1rem)] pb-[calc(clamp(30px,6vw,120px)+1rem)] sm:pt-[calc(clamp(30px,6vw,120px)+2rem)] sm:pb-[calc(clamp(30px,6vw,120px)+2rem)]"
     >
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Middle Solid Red Background */}
@@ -85,15 +85,15 @@ export default function CareerOutcomes() {
           Career Outcomes
         </h2>
         
-        <h3 className="text-sunshine mb-6 section-heading">
+        <h3 className="text-sunshine mb-4 section-heading">
           Where this degree takes you.
         </h3>
         
-        <p className="text-white/90 max-w-3xl mb-16 section-body">
+        <p className="text-white/90 max-w-3xl mb-10 section-body">
           Roles, recruiters and global Master's destinations our engineering graduates build careers around.
         </p>
 
-        <h4 className="text-white font-bold text-[32px] sm:text-[40px] mb-10 tracking-tight">
+        <h4 className="text-white font-bold text-[32px] sm:text-[40px] mb-8 tracking-tight">
           Top job roles
         </h4>
 

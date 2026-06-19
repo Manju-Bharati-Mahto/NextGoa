@@ -105,15 +105,15 @@ export default function ProgrammePicker() {
   const visibleProgrammes = showAll ? currentProgrammes : currentProgrammes.slice(0, 3);
 
   return (
-    <section className="w-full bg-[#FAFAFA] sm: py-16 sm:py-24">
+    <section className="w-full bg-[#FAFAFA] py-12 sm:py-16">
       <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-8 lg:px-12">
         
         {/* Header Section */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2 className="text-ink mb-2 section-subheading">
             Engineering &amp; Technology
           </h2>
-          <h3 className="text-[#E73649] mb-10 section-heading">
+          <h3 className="text-[#E73649] mb-6 section-heading">
             Pick your Engineering Programme.
           </h3>
           

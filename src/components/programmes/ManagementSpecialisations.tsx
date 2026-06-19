@@ -7,41 +7,19 @@ export default function ManagementSpecialisations() {
   const [activeTab, setActiveTab] = useState<"bachelors" | "masters">("bachelors");
 
   return (
-    <section className="w-full bg-[#F8F9FA] sm: py-16 sm:py-24">
+    <section className="w-full bg-[#F8F9FA] pb-12 pt-5 sm:pb-16">
       <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-8">
           <h2 className="text-ink mb-2 section-subheading">
             Specialisations
           </h2>
-          <h3 className="text-[#E73649] mb-8 section-heading">
+          <h3 className="text-[#E73649] mb-6 section-heading">
             Pick a domain.
           </h3>
           
           {/* Toggle Buttons (Visible mainly on mobile for filtering, or just interactive) */}
-          <div className="flex items-center justify-center gap-4">
-            <button
-              onClick={() => setActiveTab("bachelors")}
-              className={`px-8 py-3 rounded-full font-bold text-[16px] transition-colors border ${
-                activeTab === "bachelors"
-                  ? "bg-[#0CAADD] text-white border-[#0CAADD]"
-                  : "bg-transparent text-ink border-gray-300 hover:border-gray-400"
-              }`}
-            >
-              Bachelor's
-            </button>
-            <button
-              onClick={() => setActiveTab("masters")}
-              className={`px-8 py-3 rounded-full font-bold text-[16px] transition-colors border ${
-                activeTab === "masters"
-                  ? "bg-[#0CAADD] text-white border-[#0CAADD]"
-                  : "bg-transparent text-ink border-gray-300 hover:border-gray-400"
-              }`}
-            >
-              Master's
-            </button>
-          </div>
         </div>
 
         {/* Cards Container */}

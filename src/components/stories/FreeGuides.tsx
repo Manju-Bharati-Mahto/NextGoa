@@ -65,18 +65,18 @@ function FileIcon({ className = "w-6 h-6" }: { className?: string }) {
 
 export function FreeGuides() {
   return (
-    <section className="bg-brand-white md: border-t border-black/5 py-16 sm:py-24">
+    <section className="bg-brand-white border-t border-black/5 py-12 sm:py-16">
       <div className="mx-auto max-w-[1680px] px-6 sm:px-10 flex flex-col items-center">
         
         {/* Title Block */}
-        <div className="text-center max-w-3xl mb-14">
+        <div className="text-center max-w-5xl mb-10">
           <p className="font-sans font-bold text-sm uppercase tracking-[0.15em] text-ink/60">
             Free Guides
           </p>
           <h2 className="mt-2 text-center text-brand section-heading">
             Download free guides - straight to your inbox.
           </h2>
-          <p className="mt-4 text-ink/70 section-body">
+          <p className="mt-4 text-ink/70 section-body px-4 md:px-0">
             Our most popular admissions, programme and pathway guides. One email, one PDF, zero spam.
           </p>
         </div>

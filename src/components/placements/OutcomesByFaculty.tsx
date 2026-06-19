@@ -163,7 +163,7 @@ export function OutcomesByFaculty() {
         </div>
 
         {/* Main Card */}
-        <div className="relative sm:mb-16 w-full mx-auto pt-8 lg:pt-12 px-8 lg:px-12 pb-4">
+        <div className="relative sm:mb-0 w-full mx-auto pt-8 lg:pt-12 px-8 lg:px-12 pb-4">
           {/* Faded Background Layer */}
           <div
             className="absolute inset-0 rounded-[24px] pointer-events-none"

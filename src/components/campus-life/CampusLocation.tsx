@@ -196,7 +196,7 @@ export function CampusLocation() {
   };
 
   return (
-    <section className="relative w-full bg-[#F8F8F8] lg: overflow-hidden py-16 sm:py-24">
+    <section className="relative w-full bg-[#F8F8F8] lg: overflow-hidden py-16 sm:pt-24 sm:pb-15">
       <style>{`
         @keyframes fadeSlideIn {
           0% { opacity: 0; transform: translateY(12px); }

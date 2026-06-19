@@ -31,7 +31,7 @@ const SupportPill = ({ text }: { text: string }) => (
 export default function StudyAbroadAssistance() {
   return (
     <section
-      className={`relative w-full bg-transparent px-4 md:px-8 overflow-hidden pt-[calc(clamp(30px,6vw,120px)+3rem)] pb-[calc(clamp(30px,6vw,120px)+3rem)] sm:pt-[calc(clamp(30px,6vw,120px)+4rem)] sm:pb-[calc(clamp(30px,6vw,120px)+4rem)] ${poppins.className}`}
+      className={`relative w-full bg-[#f8f8f8] px-4 md:px-8 overflow-hidden pt-[calc(clamp(30px,6vw,120px)+3rem)] pb-[calc(clamp(30px,6vw,120px)+3rem)] sm:pt-[calc(clamp(30px,6vw,120px)+4rem)] sm:pb-[calc(clamp(30px,6vw,120px)+4rem)] ${poppins.className}`}
       style={poppins.style}
     >
       {/* Background Red Wavy Image */}

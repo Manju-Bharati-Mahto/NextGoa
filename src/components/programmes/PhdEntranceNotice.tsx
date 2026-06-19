@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function PhdEntranceNotice() {
   return (
-    <section className="w-full py-16 sm:py-24">
+    <section className="w-full py-0 sm:py-0">
       {/* Entrance Test Notice Banner */}
       <div className="w-full bg-[#E73649] border-t-4 border-b-4 border-black/5">
         <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-8 lg:px-12 py-8 sm:py-12 flex flex-col md:flex-row items-stretch justify-center">

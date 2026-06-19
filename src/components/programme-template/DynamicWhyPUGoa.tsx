@@ -30,8 +30,8 @@ export function DynamicWhyPUGoa({
           topBgColor ? `linear-gradient(to bottom, ${topBgColor} 50%, transparent 50%)` : 
           bottomBgColor ? `linear-gradient(to bottom, transparent 50%, ${bottomBgColor} 50%)` : undefined,
         ...(useThickWave && {
-          paddingTop: "clamp(5rem, 12.2vw, 600px)",
-          paddingBottom: "clamp(5rem, 13.3vw, 600px)"
+          paddingTop: `calc(${waveHeight} + 1rem)`,
+          paddingBottom: `calc(${waveHeight} + 1rem)`
         })
       }}
     >
@@ -202,13 +202,13 @@ export function DynamicWhyPUGoa({
         </div>
       )}
 
-      <div className={`relative z-10 mx-auto w-full ${isWider ? "max-w-[1600px]" : "max-w-[1440px]"} px-4 sm:px-6 lg:px-12 ${reducedPadding ? "py-12 sm:py-16" : "py-24 sm:py-36"} flex flex-col items-start justify-center`}>
+      <div className={`relative z-10 mx-auto w-full ${isWider ? "max-w-[1600px]" : "max-w-[1440px]"} px-4 sm:px-6 lg:px-12 ${reducedPadding ? "py-4 sm:py-8" : "py-12 sm:py-16"} flex flex-col items-start justify-center`}>
         
-        <h2 className="text-white mb-3 section-subheading">
+        <h2 className="text-white mb-2 section-subheading">
           {data.title}
         </h2>
         
-        <h3 className="text-[#FDE047] mb-16 max-w-2xl section-heading">
+        <h3 className="text-[#FDE047] mb-8 max-w-2xl section-heading">
           {data.subtitle}
         </h3>
 

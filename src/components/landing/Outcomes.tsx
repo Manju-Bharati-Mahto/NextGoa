@@ -36,7 +36,7 @@ const row2 = [...row2Logos, ...row2Logos];
 
 export function Outcomes() {
   return (
-    <section className="bg-brand-white py-16 sm:py-24">
+    <section className="bg-brand-white py-10 sm:py-0">
       {/* Constrained Header Container */}
       <div className="mx-auto max-w-5xl px-6 sm:pt-10 pt-5">
         <Eyebrow className="text-ink">Outcomes</Eyebrow>
@@ -94,7 +94,7 @@ export function Outcomes() {
       </div>
 
       {/* Constrained Footer Container */}
-      <div className="mx-auto max-w-5xl px-6 pb-20 pt-10 flex justify-center">
+      <div className="mx-auto max-w-5xl px-6 pb-10 pt-10 flex justify-center">
         <a
           href="/documents/placement_brochure_2025_2026.pdf"
           target="_blank"

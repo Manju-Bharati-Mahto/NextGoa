@@ -121,7 +121,7 @@ export default function ContactUs() {
       </section>
 
       {/* Regional Offices Section with Animated Waves */}
-      <section className="relative w-full py-16 sm:py-24">
+      <section className="relative w-full">
         {/* The Blue Section */}
         <div className="relative w-full z-10 pointer-events-none">
           {/* Blue Background Layers */}
@@ -175,14 +175,14 @@ export default function ContactUs() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
               {/* Card 1 */}
               <div className="bg-[#CF4153] rounded-[20px] p-8 text-white shadow-md flex flex-col gap-4 font-poppins">
-                <h3 className="text-[#FCE34B] text-[24px] font-bold">Panjim</h3>
+                <h3 className="text-[#FCE34B] text-[28px] font-bold uppercase tracking-wide">Panjim</h3>
                 <div className="w-full h-px bg-white/20 my-1" />
-                <div className="flex items-center gap-3 text-[14px]">
-                  <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
-                  <span className="font-semibold">Rohan Nanodkar</span>
+                <div className="flex items-center gap-4 text-[16px]">
+                  <svg className="w-6 h-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                  <span className="font-semibold text-[18px]">Rohan Nanodkar</span>
                 </div>
-                <div className="flex items-center gap-3 text-[14px]">
-                  <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                <div className="flex items-center gap-4 text-[16px]">
+                  <svg className="w-6 h-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                   <a 
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=rohan.nanodkar19784@paruluniversity.ac.in" 
                     target="_blank" 
@@ -192,26 +192,26 @@ export default function ContactUs() {
                     rohan.nanodkar19784@paruluniversity.ac.in
                   </a>
                 </div>
-                <div className="flex items-center gap-3 text-[14px]">
-                  <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                <div className="flex items-center gap-4 text-[16px]">
+                  <svg className="w-6 h-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                   <a href="tel:+916353211070" className="hover:underline">+91 6353211070</a>
                 </div>
-                <div className="flex items-start gap-3 text-[14px]">
-                  <svg className="w-5 h-5 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                <div className="flex items-start gap-4 text-[16px]">
+                  <svg className="w-6 h-6 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                   <span className="leading-relaxed">F-31 and F-32, 1st Floor, Block C, Alfran Plaza, Opp. Don Bosco High School, Panjim - 403001, Goa</span>
                 </div>
               </div>
 
               {/* Card 2 */}
               <div className="bg-[#CF4153] rounded-[20px] p-8 text-white shadow-md flex flex-col gap-4 font-poppins">
-                <h3 className="text-[#FCE34B] text-[24px] font-bold uppercase">Sindhudurg</h3>
+                <h3 className="text-[#FCE34B] text-[28px] font-bold uppercase tracking-wide">Sindhudurg</h3>
                 <div className="w-full h-px bg-white/20 my-1" />
-                <div className="flex items-center gap-3 text-[14px]">
-                  <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
-                  <span className="font-semibold">Prathmesh Ghatkar</span>
+                <div className="flex items-center gap-4 text-[16px]">
+                  <svg className="w-6 h-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                  <span className="font-semibold text-[18px]">Prathmesh Ghatkar</span>
                 </div>
-                <div className="flex items-center gap-3 text-[14px]">
-                  <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                <div className="flex items-center gap-4 text-[16px]">
+                  <svg className="w-6 h-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                   <a 
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=prathamesh.ghatkar39870@paruluniversity.ac.in" 
                     target="_blank" 
@@ -221,26 +221,26 @@ export default function ContactUs() {
                     prathamesh.ghatkar39870@paruluniversity.ac.in
                   </a>
                 </div>
-                <div className="flex items-center gap-3 text-[14px]">
-                  <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                <div className="flex items-center gap-4 text-[16px]">
+                  <svg className="w-6 h-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                   <a href="tel:+919274388498" className="hover:underline">+91 9274388498</a>
                 </div>
-                <div className="flex items-start gap-3 text-[14px]">
-                  <svg className="w-5 h-5 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                <div className="flex items-start gap-4 text-[16px]">
+                  <svg className="w-6 h-6 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                   <span className="leading-relaxed">Office No. S-33, First Floor, Rameshwar Plaza, Near Moti Talav, Sawantwadi- 416510, Sindhudurg, Maharashtra</span>
                 </div>
               </div>
 
               {/* Card 3 */}
               <div className="bg-[#CF4153] rounded-[20px] p-8 text-white shadow-md flex flex-col gap-4 font-poppins">
-                <h3 className="text-[#FCE34B] text-[24px] font-bold uppercase">Kolhapur</h3>
+                <h3 className="text-[#FCE34B] text-[28px] font-bold uppercase tracking-wide">Kolhapur</h3>
                 <div className="w-full h-px bg-white/20 my-1" />
-                <div className="flex items-center gap-3 text-[14px]">
-                  <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
-                  <span className="font-semibold">Suraj Koushik</span>
+                <div className="flex items-center gap-4 text-[16px]">
+                  <svg className="w-6 h-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                  <span className="font-semibold text-[18px]">Suraj Koushik</span>
                 </div>
-                <div className="flex items-center gap-3 text-[14px]">
-                  <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                <div className="flex items-center gap-4 text-[16px]">
+                  <svg className="w-6 h-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                   <a 
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=suraj.koushik38877@paruluniversity.ac.in" 
                     target="_blank" 
@@ -250,26 +250,26 @@ export default function ContactUs() {
                     suraj.koushik38877@paruluniversity.ac.in
                   </a>
                 </div>
-                <div className="flex items-center gap-3 text-[14px]">
-                  <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                <div className="flex items-center gap-4 text-[16px]">
+                  <svg className="w-6 h-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                   <a href="tel:+919274412923" className="hover:underline">+91 9274412923</a>
                 </div>
-                <div className="flex items-start gap-3 text-[14px]">
-                  <svg className="w-5 h-5 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                <div className="flex items-start gap-4 text-[16px]">
+                  <svg className="w-6 h-6 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                   <span className="leading-relaxed">Office No. -304, C.s. No. 455 B/1, Matoshree Plaza, E Ward, Venus Corner, Station Road, Shahupuri, Kolhapur-416001, Maharashtra</span>
                 </div>
               </div>
 
               {/* Card 4 */}
               <div className="bg-[#CF4153] rounded-[20px] p-8 text-white shadow-md flex flex-col gap-4 font-poppins">
-                <h3 className="text-[#FCE34B] text-[24px] font-bold">Panjim</h3>
+                <h3 className="text-[#FCE34B] text-[28px] font-bold uppercase tracking-wide">Panjim</h3>
                 <div className="w-full h-px bg-white/20 my-1" />
-                <div className="flex items-center gap-3 text-[14px]">
-                  <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
-                  <span className="font-semibold">Pavan Manurkar</span>
+                <div className="flex items-center gap-4 text-[16px]">
+                  <svg className="w-6 h-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                  <span className="font-semibold text-[18px]">Pavan Manurkar</span>
                 </div>
-                <div className="flex items-center gap-3 text-[14px]">
-                  <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                <div className="flex items-center gap-4 text-[16px]">
+                  <svg className="w-6 h-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                   <a 
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=pavan.manurkar38928@paruluniversity.ac.in" 
                     target="_blank" 
@@ -279,12 +279,12 @@ export default function ContactUs() {
                     pavan.manurkar38928@paruluniversity.ac.in
                   </a>
                 </div>
-                <div className="flex items-center gap-3 text-[14px]">
-                  <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                <div className="flex items-center gap-4 text-[16px]">
+                  <svg className="w-6 h-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                   <a href="tel:+919274398117" className="hover:underline">+91 9274398117</a>
                 </div>
-                <div className="flex items-start gap-3 text-[14px]">
-                  <svg className="w-5 h-5 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                <div className="flex items-start gap-4 text-[16px]">
+                  <svg className="w-6 h-6 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                   <span className="leading-relaxed">Office No. 202, Lakshmi Chambers, Opposite Zillha Parishad, Sangli Miraj Road, Sangli-416416, Maharashtra</span>
                 </div>
               </div>

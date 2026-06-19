@@ -3,11 +3,11 @@ import { Icon } from "@iconify/react";
 
 export default function NursingAccreditation() {
   return (
-    <section className="w-full bg-white py-16 sm:py-24">
-      <div className="py-16 sm:py-24">
+    <section className="w-full bg-white pb-12 pt-5 sm:pb-16">
+      <div className="py-8 sm:py-12">
         <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8 text-center">
           
-          <h2 className="text-[#E73649] mb-12 section-heading">
+          <h2 className="text-[#E73649] mb-8 section-heading">
             Recognition & Accreditation
           </h2>
           

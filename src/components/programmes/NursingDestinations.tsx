@@ -26,7 +26,7 @@ export default function NursingDestinations() {
   ];
 
   return (
-    <section className="relative overflow-hidden z-10 w-full bg-transparent py-16 sm:py-24">
+    <section className="relative overflow-hidden z-10 w-full bg-[#fafafa]">
             <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Middle Solid Blue Background */}
         <div 
@@ -68,16 +68,22 @@ export default function NursingDestinations() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-12 py-24 sm:py-32">
+      <div 
+        className="relative z-10 mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-12"
+        style={{
+          paddingTop: "calc(clamp(50px, 8vw, 120px) + 3rem)",
+          paddingBottom: "calc(clamp(50px, 8vw, 120px) + 3rem)"
+        }}
+      >
         
         <h2 className="text-[#FCE34B] mb-2 section-subheading">
           Global Opportunities
         </h2>
-        <h3 className="text-white mb-12 section-heading">
+        <h3 className="text-white mb-8 section-heading">
           Explore international destinations.
         </h3>
 
-        <div className="flex flex-wrap justify-start gap-6 sm:gap-8 w-full mb-12">
+        <div className="flex flex-wrap justify-start gap-6 sm:gap-8 w-full mb-8">
           {destinations.map((dest, idx) => (
             <div 
               key={idx} 

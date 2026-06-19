@@ -10,7 +10,7 @@ const poppins = Poppins({
 export default function StudyAbroadModels() {
   return (
     <section
-      className={`relative w-full bg-transparent px-4 md:px-8 overflow-hidden ${poppins.className}`}
+      className={`relative w-full bg-[#f8f8f8] px-4 md:px-8 overflow-hidden ${poppins.className}`}
       style={{
         ...poppins.style,
         paddingTop: "clamp(5rem, 12.2vw, 600px)",

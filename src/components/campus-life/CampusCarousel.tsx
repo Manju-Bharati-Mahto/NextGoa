@@ -105,18 +105,43 @@ export function CampusCarousel() {
       </div>
 
       <div
-        className="relative z-10 mx-auto w-full flex flex-col items-center pt-[calc(clamp(30px,6vw,120px)+2rem)] pb-[calc(clamp(30px,6vw,120px)+2rem)] sm:pt-[calc(clamp(30px,6vw,120px)+4rem)] sm:pb-[calc(clamp(30px,6vw,120px)+4rem)]"
+        className="relative z-10 mx-auto w-full flex flex-col items-center pt-16 pb-16 sm:pt-24 sm:pb-24"
       >
-        {/* Header content */}
-        <div className="text-center px-6 max-w-3xl mb-12">
-          <h3 className="text-white mb-2 section-subheading">The Campus</h3>
-          <h2 className="text-white mb-6 section-heading">
-            A Campus Built for Inspiration
-          </h2>
-          <p className="text-white mx-auto max-w-2xl section-body">
-            The PU Goa campus is located near ONGC Betul, Tal. Quepem, Dist. Kushavati, South Goa.<br className="hidden sm:block" />
-            Modern, purposefully designed, and built to stimulate ideas and collaboration.
-          </p>
+        {/* Header content & Nav */}
+        <div className="w-full px-6 lg:px-[10%] mb-10 flex flex-col md:flex-row items-start md:items-end justify-between gap-6 relative z-30">
+          <div className="text-left max-w-4xl">
+            <h3 className="text-white mb-2 section-subheading text-left">The Campus</h3>
+            <h2 className="text-white mb-5 section-heading text-left !mx-0">
+              A Campus Built for Inspiration
+            </h2>
+            <p className="text-white max-w-3xl section-body text-left !mx-0">
+              The PU Goa campus is located near ONGC Betul, Tal. Quepem, Dist. Kushavati, South Goa.<br className="hidden sm:block" />
+              Modern, purposefully designed, and built to stimulate ideas and collaboration.
+            </p>
+          </div>
+
+          {/* Navigation Buttons */}
+          <div className="flex items-center gap-4 shrink-0 pb-2">
+            <button 
+              onClick={() => scroll('left')}
+              className="w-12 h-12 rounded-full bg-white text-[#0CAADD] flex items-center justify-center hover:bg-[#0CAADD] hover:text-white border-2 border-transparent hover:border-white shadow-md transition-all duration-300 ease-in-out cursor-pointer focus:outline-none"
+              aria-label="Scroll left"
+            >
+              <svg className="w-5 h-5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            <button 
+              onClick={() => scroll('right')}
+              className="w-12 h-12 rounded-full bg-white text-[#0CAADD] flex items-center justify-center hover:bg-[#0CAADD] hover:text-white border-2 border-transparent hover:border-white shadow-md transition-all duration-300 ease-in-out cursor-pointer focus:outline-none"
+              aria-label="Scroll right"
+            >
+              <svg className="w-5 h-5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
         </div>
 
         <div
@@ -156,28 +181,7 @@ export function CampusCarousel() {
           ))}
         </div>
 
-        {/* Navigation Buttons */}
-        <div className="flex justify-center items-center gap-4 mt-4 relative z-30">
-          <button 
-            onClick={() => scroll('left')}
-            className="w-12 h-12 rounded-full border border-black/10 bg-white text-ink flex items-center justify-center hover:bg-brand hover:text-white hover:border-brand shadow-sm transition-all duration-300 ease-in-out cursor-pointer focus:outline-none"
-            aria-label="Scroll left"
-          >
-            <svg className="pointer-events-none w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
 
-          <button 
-            onClick={() => scroll('right')}
-            className="w-12 h-12 rounded-full border border-black/10 bg-white text-ink flex items-center justify-center hover:bg-brand hover:text-white hover:border-brand shadow-sm transition-all duration-300 ease-in-out cursor-pointer focus:outline-none"
-            aria-label="Scroll right"
-          >
-            <svg className="pointer-events-none w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div>
 
       </div>
     </section>

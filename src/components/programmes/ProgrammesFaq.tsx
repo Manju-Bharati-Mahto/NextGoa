@@ -51,17 +51,17 @@ function FaqAccordionItem({ f, isOpen, onToggle }: { f: FaqItem; isOpen: boolean
 }
 
 export default function ProgrammesFaq() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="bg-[#F9F9F9] sm: sm: font-[family-name:var(--font-poppins)] py-16 sm:py-24">
+    <section id="faq" className="bg-[#F9F9F9] font-[family-name:var(--font-poppins)] py-6 sm:py-8">
       <JsonLd data={faqSchema(faqs)} />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-ink mb-3 section-subheading">
             FAQs
           </h2>
-          <h3 className="text-[#ED383F] tracking-tight leading-tight max-w-3xl mx-auto section-heading">
+          <h3 className="text-[#ED383F] tracking-tight leading-tight max-w-5xl mx-auto section-heading">
             Frequently asked questions about academic programmes.
           </h3>
         </div>

@@ -24,9 +24,9 @@ export default function GetInTouch() {
   }
 
   return (
-    <section className="w-full bg-[#F8F9FA] px-6 font-poppins py-16 sm:py-24">
+    <section className="w-full bg-[#F8F9FA] px-6 font-poppins py-12 sm:py-16">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-center text-[#E74C5E] font-bold text-[36px] sm:text-[44px] mb-12">
+        <h2 className="text-center text-[#E74C5E] font-bold text-[36px] sm:text-[44px] mb-8">
           Get in Touch
         </h2>
 
@@ -90,7 +90,7 @@ export default function GetInTouch() {
                 />
                 <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
                   <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1.5L6 6.5L11 1.5" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M1 1.5L6 6.5L11 1.5" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
               </div>
@@ -126,17 +126,17 @@ export default function GetInTouch() {
             </div>
           </form>
 
-          {/* Right Map - OpenStreetMap (Free, no API key) */}
+          {/* Right Map - Google Maps */}
           <div className="relative w-full h-[400px] lg:h-[500px] rounded-[24px] overflow-hidden shadow-sm border-2 border-[#E74C5E]">
             <iframe
               title="Parul University Goa Location"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=74.005%2C15.005%2C74.045%2C15.035&layer=mapnik&marker=15.018%2C74.025"
+              src="https://maps.google.com/maps?q=Parul+University+Goa&t=&z=13&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
-              className="w-full h-[calc(100%+50px)]"
+              className="absolute w-[calc(100%+400px)] h-[calc(100%+400px)] -top-[200px] -left-[200px] pointer-events-none"
             />
           </div>
         </div>
@@ -155,8 +155,8 @@ export default function GetInTouch() {
             {/* Checkmark */}
             <div className="w-20 h-20 bg-[#E74C5E]/10 rounded-full flex items-center justify-center mx-auto mb-6">
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <circle cx="20" cy="20" r="20" fill="#E74C5E"/>
-                <path d="M12 20L18 26L28 14" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <circle cx="20" cy="20" r="20" fill="#E74C5E" />
+                <path d="M12 20L18 26L28 14" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
 

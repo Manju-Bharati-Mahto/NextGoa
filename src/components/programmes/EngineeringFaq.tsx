@@ -27,18 +27,18 @@ const faqs = [
 ];
 
 export default function EngineeringFaq() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleFaq = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section className="w-full bg-[#FAFAFA] sm: py-16 sm:py-24">
+    <section className="w-full bg-[#FAFAFA] py-12 sm:pt-10 sm:pb-15">
       <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <h2 className="text-ink mb-2 section-subheading">
             FAQs
           </h2>

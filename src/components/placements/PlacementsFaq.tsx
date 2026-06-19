@@ -56,7 +56,7 @@ function FaqAccordionItem({ question, answer, isOpen, onToggle }: { question: st
 }
 
 export function PlacementsFaq() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
     <section className="bg-[#F5F6F8] py-16 sm:py-24">

@@ -3,13 +3,17 @@ import Image from 'next/image';
 
 export function InternshipsAndPPOs() {
   return (
-    <section className="relative w-full overflow-hidden bg-[#F8F9FA] py-16 sm:py-24"
+    <section className="relative w-full overflow-hidden bg-transparent py-16 sm:py-24"
       style={{
-        paddingTop: "clamp(5rem, 12.2vw, 600px)",
-        paddingBottom: "clamp(5rem, 13.3vw, 600px)"
+        paddingTop: "clamp(6rem, 10vw, 200px)",
+        paddingBottom: "clamp(6rem, 10vw, 200px)"
       }}
     >
       <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Top Background */}
+        <div className="absolute top-0 left-0 right-0 bottom-1/2 bg-[#f0f2f5]" />
+        {/* Bottom Background */}
+        <div className="absolute bottom-0 left-0 right-0 top-1/2 bg-[#fafafa]" />
         {/* Middle Solid Blue Background */}
         <div 
           className="absolute inset-x-0 bg-[#0CAADD]" 
