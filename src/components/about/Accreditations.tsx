@@ -1,6 +1,6 @@
 export function Accreditations() {
   return (
-    <section id="accreditations-recognitions" className="bg-brand-white sm: px-6 scroll-mt-24 md:scroll-mt-32 py-16 sm:py-24">
+    <section id="accreditations-recognitions" className="bg-brand-white px-6 scroll-mt-24 md:scroll-mt-32 py-10 sm:py-10">
       <div className="mx-auto max-w-7xl text-center">
         <h2 className="text-ink section-subheading">
           Legacy of
@@ -13,7 +13,7 @@ export function Accreditations() {
         <div className="mt-12 h-px w-full bg-gradient-to-r from-transparent via-zinc-300 to-transparent" />
 
         {/* Rankings SVG */}
-        <div className="py-10 sm:py-16 flex justify-center items-center overflow-hidden">
+        <div className="py-10 sm:py-12 flex justify-center items-center overflow-hidden">
           <img
             src="/RANK.svg"
             alt="Accreditations and Rankings"

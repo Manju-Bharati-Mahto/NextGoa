@@ -78,7 +78,10 @@ export function CampusStudentLife() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden flex flex-col justify-center pt-[calc(clamp(30px,6vw,120px)+2rem)] pb-[calc(clamp(30px,6vw,120px)+2rem)] sm:pt-[calc(clamp(30px,6vw,120px)+4rem)] sm:pb-[calc(clamp(30px,6vw,120px)+4rem)] py-16 sm:py-24"
+    <section className="relative w-full overflow-hidden flex flex-col justify-center pt-20 sm:pt-40 pb-20 sm:pb-32"
+      style={{
+        backgroundColor: "transparent",
+      }}
     >
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Middle Solid Blue Background */}
@@ -121,16 +124,42 @@ export function CampusStudentLife() {
         </div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full flex flex-col items-center text-center mb-8 sm:mb-16 mt-4 lg:mt-8">
-        <h3 className="text-white mb-2 section-subheading">
-          Clubs, Events & Student Life
-        </h3>
-        <h2 className="text-white mb-4 section-heading">
-          A campus alive with possibility.
-        </h2>
-        <p className="text-white/90 max-w-2xl mx-auto section-body">
-          Student-led clubs across academic, arts, sports, social impact, and entrepreneurship.
-        </p>
+      {/* Header content & Nav */}
+      <div className="relative z-10 w-full px-6 lg:px-[10%] mb-8 sm:mb-12 mt-4 flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
+        <div className="text-left max-w-4xl">
+          <h3 className="text-white mb-2 section-subheading text-left">
+            Clubs, Events & Student Life
+          </h3>
+          <h2 className="text-white mb-4 section-heading text-left !mx-0">
+            A campus alive with possibility.
+          </h2>
+          <p className="text-white/90 max-w-3xl section-body text-left !mx-0">
+            Student-led clubs across academic, arts, sports, social impact, and entrepreneurship.
+          </p>
+        </div>
+
+        {/* Navigation Buttons */}
+        <div className="flex items-center gap-4 shrink-0 pb-2">
+          <button 
+            onClick={() => scroll('left')}
+            className="w-12 h-12 rounded-full bg-white text-[#0CAADD] flex items-center justify-center hover:bg-[#0CAADD] hover:text-white border-2 border-transparent hover:border-white shadow-md transition-all duration-300 ease-in-out cursor-pointer focus:outline-none"
+            aria-label="Scroll left"
+          >
+            <svg className="w-5 h-5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          <button 
+            onClick={() => scroll('right')}
+            className="w-12 h-12 rounded-full bg-white text-[#0CAADD] flex items-center justify-center hover:bg-[#0CAADD] hover:text-white border-2 border-transparent hover:border-white shadow-md transition-all duration-300 ease-in-out cursor-pointer focus:outline-none"
+            aria-label="Scroll right"
+          >
+            <svg className="w-5 h-5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Carousel Container */}
@@ -141,7 +170,7 @@ export function CampusStudentLife() {
           onMouseLeave={handleMouseLeave}
           onMouseUp={handleMouseUp}
           onMouseMove={handleMouseMove}
-          className="flex overflow-x-auto gap-4 sm:gap-6 px-4 sm:px-6 lg:px-12 scroll-pl-4 sm:scroll-pl-6 lg:scroll-pl-12 snap-x snap-mandatory hide-scrollbar pb-2 lg:pb-8"
+          className="flex overflow-x-auto gap-4 sm:gap-6 px-6 lg:px-[10%] scroll-pl-6 lg:scroll-pl-[10%] snap-x snap-mandatory hide-scrollbar pb-2 lg:pb-8"
           style={{ cursor: 'grab' }}
         >
           {clubs.map((club, idx) => (
@@ -185,28 +214,7 @@ export function CampusStudentLife() {
         </div>
       </div>
 
-      {/* Navigation Buttons */}
-      <div className="flex justify-center items-center gap-4 mt-4 relative z-30">
-        <button 
-          onClick={() => scroll('left')}
-          className="w-12 h-12 rounded-full border border-black/10 bg-white text-ink flex items-center justify-center hover:bg-[#E73649] hover:text-white hover:border-[#E73649] shadow-sm transition-all duration-300 ease-in-out cursor-pointer focus:outline-none"
-          aria-label="Scroll left"
-        >
-          <svg className="pointer-events-none w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
 
-        <button 
-          onClick={() => scroll('right')}
-          className="w-12 h-12 rounded-full border border-black/10 bg-white text-ink flex items-center justify-center hover:bg-[#E73649] hover:text-white hover:border-[#E73649] shadow-sm transition-all duration-300 ease-in-out cursor-pointer focus:outline-none"
-          aria-label="Scroll right"
-        >
-          <svg className="pointer-events-none w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
-      </div>
 
       {/* CSS to hide scrollbar but keep functionality */}
       <style dangerouslySetInnerHTML={{

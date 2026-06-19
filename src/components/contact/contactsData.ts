@@ -23,37 +23,37 @@ export const contactsData: ContactsData =
         "contactPerson": "Rohan Nanodkar",
         "address": "Shop No. CF-45, Alfran Plaza, opp. Don Bosco high school, Panjim - 403001, Goa",
         "number": "+91 6353211070",
-        "email": "ROHAN.NANODKAR19784@PARULUNIVERSITY.AC.IN"
+        "email": "rohan.nanodkar19784@paruluniversity.ac.in"
       }
     ],
     "GUJARAT": [
       {
         "city": "Ahmedabad",
         "contactPerson": "Amar Vyas",
-        "address": "102, First Floor, D&amp;C Dynasty Building, Stadium Five Road, C.G. Road, Navrangpura, Ahmedabad \u2013 380009.",
+        "address": "102, First Floor, D&C Dynasty Building, Stadium Five Road, C.G. Road, Navrangpura, Ahmedabad \u2013 380009.",
         "number": "+91 9327919059",
         "email": "amar.vyas165000@paruluniversity.ac.in"
       },
       {
         "city": "Ahmedabad",
         "contactPerson": "Himani Shah",
-        "address": "102, First Floor, D&amp;C Dynasty Building, Stadium Five Road, C.G. Road, Navrangpura, Ahmedabad \u2013 380009.",
+        "address": "102, First Floor, D&C Dynasty Building, Stadium Five Road, C.G. Road, Navrangpura, Ahmedabad \u2013 380009.",
         "number": "+91 6352426327",
-        "email": "HIMANI.SHAH24100@PARULUNIVERSITY.AC.IN"
+        "email": "himani.shah24100@paruluniversity.ac.in"
       },
       {
         "city": "Ahmedabad",
         "contactPerson": "Sandeep Singh",
-        "address": "102, First Floor, D&amp;C Dynasty Building, Stadium Five Road, C.G. Road, Navrangpura, Ahmedabad \u2013 380009.",
+        "address": "102, First Floor, D&C Dynasty Building, Stadium Five Road, C.G. Road, Navrangpura, Ahmedabad \u2013 380009.",
         "number": "+91 9879105563",
-        "email": "SANDEEP.SINGH43949@PARULUNIVERSITY.AC.IN"
+        "email": "sandeep.singh43949@paruluniversity.ac.in"
       },
       {
         "city": "Amreli",
         "contactPerson": "Yuvrajsinh Parmar",
         "address": "City Point Complex, First Floor \u2013 104, Opposite ST Bus Stand, Amreli \u2013 365601, Gujarat.",
         "number": "+91 9510971501",
-        "email": "YUVRAJSINH.PARMAR28402@PARULUNIVERSITY.AC.IN"
+        "email": "yuvrajsinh.parmar28402@paruluniversity.ac.in"
       },
       {
         "city": "Anand",
@@ -67,21 +67,21 @@ export const contactsData: ContactsData =
         "contactPerson": "Pratik Desai",
         "address": "Sf-204- Aswa Jewellers K Roz Complex, Vv Nagar Road, Anand-388120, Gujarat",
         "number": "+91 7863810544",
-        "email": "PRATIKKUMAR.DESAI33942@PARULUNIVERSITY.AC.IN"
+        "email": "pratikkumar.desai33942@paruluniversity.ac.in"
       },
       {
         "city": "Anand",
         "contactPerson": "Devansh Soni",
         "address": "Sf-204- Aswa Jewellers K Roz Complex, Vv Nagar Road, Anand-388120, Gujarat",
         "number": "+91 9213019983",
-        "email": "DEVANSH.SONI44041@PARULUNIVERSITY.AC.IN"
+        "email": "devansh.soni44041@paruluniversity.ac.in"
       },
       {
         "city": "Bharuch",
         "contactPerson": "Mayurkumar Naginbhai Makwana",
         "address": "FF-1, Shreeji Darshan Complex, Nr. Chamunda Mata Temple, Zadeshwar Road, Bharuch \u2013 392011, Gujarat.",
         "number": "+91 9510971617",
-        "email": "MAYURKUMAR.MAKWANA18740@PARULUNIVERSITY.AC.IN"
+        "email": "mayurkumar.makwana18740@paruluniversity.ac.in"
       },
       {
         "city": "Bhavnagar",
@@ -95,28 +95,28 @@ export const contactsData: ContactsData =
         "contactPerson": "Divyesh Dodiya",
         "address": "Shop No. 58, 1st Floor, Parshvanath Complex, Paliyad Road, Botad Bus Stand, Botad - 364710, Gujarat",
         "number": "+91 9213019348",
-        "email": "DIVYESH.DODIYA45761@PARULUNIVERSITY.AC.IN"
+        "email": "divyesh.dodiya45761@paruluniversity.ac.in"
       },
       {
         "city": "Bhuj",
         "contactPerson": "Krupali Thacker",
         "address": "Shop No. 25, 7 Arrows, Nirmalsinh Vadi, Bhuj-Kutch \u2013 370001, Gujarat.",
         "number": "+91 9099997067",
-        "email": "KRUPALI.THACKER25680@PARULUNIVERSITY.AC.IN"
+        "email": "krupali.thacker25680@paruluniversity.ac.in"
       },
       {
         "city": "Dahod",
         "contactPerson": "Viraj Baria",
         "address": "The Landmark Building, First Floor, Shop No. 40, Near Croma Store, Godhra Road, Dahod \u2013 389151, Gujarat.",
         "number": "+919870096293",
-        "email": "VIRAJ.BARIA26867@PARULUNIVERSITY.AC.IN"
+        "email": "viraj.baria26867@paruluniversity.ac.in"
       },
       {
         "city": "Gandhinagar",
         "contactPerson": "Vaibhav Porwal",
         "address": "232, The Edumall Suyash Soltaire Near Podar School Kudasan, Gandhinagar-382421, Gujarat",
         "number": "+91 9213020032",
-        "email": "VAIBHAV.PORWAL45528@PARULUNIVERSITY.AC.IN"
+        "email": "vaibhav.porwal45528@paruluniversity.ac.in"
       },
       {
         "city": "Godhra",
@@ -144,7 +144,7 @@ export const contactsData: ContactsData =
         "contactPerson": "Smit Pradeepbhai Mori",
         "address": "201, The Earning Point, Above K.D. Bhindi Jewellers, Near Swaminarayan Temple, Zanzarda Road, Junagadh \u2013 362001, Gujarat.",
         "number": "+91 9099023370",
-        "email": "SMIT.MORI27167@PARULUNIVERSITY.AC.IN"
+        "email": "smit.mori27167@paruluniversity.ac.in"
       },
       {
         "city": "Jamkhambhaliya",
@@ -158,35 +158,35 @@ export const contactsData: ContactsData =
         "contactPerson": "Krunal Patel",
         "address": "I - 01, 02 Nandan Arcade, Opposite Mahindra Showroom, Lunawada, Mahisagar District-389230, Gujarat",
         "number": "+91 9213020037",
-        "email": "KRUNALKUMAR.PATEL45600@PARULUNIVERSITY.AC.IN"
+        "email": "krunalkumar.patel45600@paruluniversity.ac.in"
       },
       {
         "city": "Mehsana",
         "contactPerson": "Abhishek Shashtri",
         "address": "J - 323, Hub Town, Third Floor, Above Cafe Amul Beside New Bus Stand Main Gate, Modhera Cross Road, Mehsana-384002, Gujarat",
         "number": "+91 9099023144",
-        "email": "ABHISHEK.SHASHTRI45615@PARULUNIVERSITY.AC.IN"
+        "email": "abhishek.shashtri45615@paruluniversity.ac.in"
       },
       {
         "city": "Navsari",
         "contactPerson": "Tushar Patel",
         "address": "Office Number 304, 3rd Floor, Shree Madhav The Business Hub, Opp Navsari District Court, Navsari-396445, Gujarat",
         "number": "+91 9510971484",
-        "email": "TUSHAR.PATEL46237@PARULUNIVERSITY.AC.IN"
+        "email": "tushar.patel46237@paruluniversity.ac.in"
       },
       {
         "city": "Palanpur",
         "contactPerson": "Nikesh Patel",
         "address": "35, Shiv Plaza, Kishan Oil Mill Road, In Front of Captain Industries, Ahmedabad Highway, Palanpur \u2013 385001, Gujarat.",
         "number": "+91 9510971462",
-        "email": "NIKESHKUMAR.PATEL82142@PARULUNIVERSITY.AC.IN"
+        "email": "nikeshkumar.patel82142@paruluniversity.ac.in"
       },
       {
         "city": "Patan",
         "contactPerson": "Nisha Gajjar",
         "address": "Office Address 6 Ground Floor The Grand Raveta Chanasma Highway , PATAN-384265",
         "number": "+91 9213019982",
-        "email": "NISHABEN.GAJJAR43994@PARULUNIVERSITY.AC.IN"
+        "email": "nishaben.gajjar43994@paruluniversity.ac.in"
       },
       {
         "city": "Porbandar",
@@ -200,7 +200,7 @@ export const contactsData: ContactsData =
         "contactPerson": "Bhavin Chauhan",
         "address": "3rd Floor, Prism Complex, Nr. Modi School, Gandhigram Circle, 150 Feet Ring Road, Rajkot \u2013 360005, Gujarat.",
         "number": "+91 9099008877",
-        "email": "BHAVIN.CHAUHAN7073@PARULUNIVERSITY.AC.IN"
+        "email": "bhavin.chauhan7073@paruluniversity.ac.in"
       },
       {
         "city": "Rajkot",
@@ -242,7 +242,7 @@ export const contactsData: ContactsData =
         "contactPerson": "Pratik Sadhwani",
         "address": "124, Planet Square-3, Nr. Brahmakumaris Circle, 80 Feet Road, Surendranagar \u2013 363001, Gujarat.",
         "number": "+91 9327919050",
-        "email": "PRATIK.SADHWANI39618@PARULUNIVERSITY.AC.IN"
+        "email": "pratik.sadhwani39618@paruluniversity.ac.in"
       },
       {
         "city": "Vapi",
@@ -256,14 +256,14 @@ export const contactsData: ContactsData =
         "contactPerson": "Hitesh Pant",
         "address": "Office No 8, City Point Ground Floor Beside Croma Abrama Dharampur Road, Valsad-396002, Gujarat",
         "number": "+91 9510971600",
-        "email": "HITESH.PANT121125@PARULUNIVERSITY.AC.IN"
+        "email": "hitesh.pant121125@paruluniversity.ac.in"
       },
       {
         "city": "Valsad",
         "contactPerson": "Sanket Patel",
         "address": "Office Number 304, 3rd Floor, Shree Madhav The Business Hub, Opp Navsari District Court, Navsari-396445, Gujarat",
         "number": "+91 9213019341",
-        "email": "SANKETKUMAR.PATEL43846@PARULUNIVERSITY.AC.IN"
+        "email": "sanketkumar.patel43846@paruluniversity.ac.in"
       }
     ],
     "MAHARASHTRA": [
@@ -272,7 +272,7 @@ export const contactsData: ContactsData =
         "contactPerson": "Suhas Dhale",
         "address": "Shop No. 20, 1st Floor, Juzar Mega Mart, Jawahar Road, Jaistambh Chowk, Amravati \u2013 444601, Maharashtra.",
         "number": "+91 9213019981",
-        "email": "SUHAS.DHALE43596@PARULUNIVERSITY.AC.IN"
+        "email": "suhas.dhale43596@paruluniversity.ac.in"
       },
       {
         "city": "Chhatrapati Sambhajinagar",
@@ -286,14 +286,14 @@ export const contactsData: ContactsData =
         "contactPerson": "Tejpalsing Mahendra Patil",
         "address": "51, Ground Floor, Unity Chamber, Besides LIC Office, Ganesh Colony, Jalgaon \u2013 425001, Maharashtra.",
         "number": "+91 9875163907",
-        "email": "TEJPALSING.PATIL23260@PARULUNIVERSITY.AC.IN"
+        "email": "tejpalsing.patil23260@paruluniversity.ac.in"
       },
       {
         "city": "Kolhapur",
         "contactPerson": "Suraj Koushik",
         "address": "Office No. 304, C.S. No. 455 B/1, Matoshree Plaza, Station Road, Shahupuri, Kolhapur \u2013 416001, Maharashtra.",
         "number": "+91 9274412923",
-        "email": "SURAJ.KOUSHIK38877@PARULUNIVERSITY.AC.IN"
+        "email": "suraj.koushik38877@paruluniversity.ac.in"
       },
       {
         "city": "Mumbai",
@@ -307,42 +307,42 @@ export const contactsData: ContactsData =
         "contactPerson": "Sohail Dahanuwala",
         "address": "303, Modi House, 3rd Floor,bajaj Cross Road, Next To Mk Ghare Jewelers, Near Kandivali Railway Station, Kandivali(West) Mumbai - 400067, Maharastra",
         "number": "+91 9213019990",
-        "email": "SOHAIL.DAHANUWALA43595@PARULUNIVERSITY.AC.IN"
+        "email": "sohail.dahanuwala43595@paruluniversity.ac.in"
       },
       {
         "city": "Mumbai",
         "contactPerson": "Nomisha Khan",
         "address": "303, Modi House, 3rd Floor, Bajaj Cross Road, Next to Police Station, Kandivali (West), Mumbai \u2013 400067, Maharashtra.",
         "number": "+91 9510971480",
-        "email": "NOMISHA.KHAN19133@PARULUNIVERSITY.AC.IN"
+        "email": "nomisha.khan19133@paruluniversity.ac.in"
       },
       {
         "city": "Nagpur",
         "contactPerson": "Aarddeyya Ramteke",
         "address": "Plot No. 11, Hanuman Nagar, Near Medical Square, Medical Science College Road, Nagpur \u2013 440009, Maharashtra.",
         "number": "+91 9328920065",
-        "email": "AARDDEYYA.RAMTEKE38691@PARULUNIVERSITY.AC.IN"
+        "email": "aarddeyya.ramteke38691@paruluniversity.ac.in"
       },
       {
         "city": "Nashik",
         "contactPerson": "Pratiksha Bhalekar",
         "address": "Shop No. 10, Pratik Arcade, Near Bytco Point, Nashik Road, Nashik \u2013 422101, Maharashtra.",
         "number": "+91 9316732686",
-        "email": "PRATIKSHA.BHALEKAR22159@PARULUNIVERSITY.AC.IN"
+        "email": "pratiksha.bhalekar22159@paruluniversity.ac.in"
       },
       {
         "city": "Nashik",
         "contactPerson": "Diksha Gaware",
         "address": "Shop No. 10, Pratik Arcade, Near Bytco Point, Nashik Road, Nashik \u2013 422101, Maharashtra.",
         "number": "+91 6353211320",
-        "email": "DIKSHA.GAWARE22708@PARULUNIVERSITY.AC.IN"
+        "email": "diksha.gaware22708@paruluniversity.ac.in"
       },
       {
         "city": "Palghar",
         "contactPerson": "Jayesh Dubla",
         "address": "Office No. 25, Neel Shrushti CHS, Ground Floor, Opp. Tembhode Road, Palghar West \u2013 401404, Maharashtra.",
         "number": "+91 9510971597",
-        "email": "JAYESH.DUBLA32146@PARULUNIVERSITY.AC.IN"
+        "email": "jayesh.dubla32146@paruluniversity.ac.in"
       },
       {
         "city": "Pune",
@@ -363,49 +363,49 @@ export const contactsData: ContactsData =
         "contactPerson": "Prathmesh Ghatkar",
         "address": "Office No. S-33, First Floor, Rameshwar Plaza, Near Moti Talav, Sawantwadi- 416510, Sindhudurg, Maharashtra",
         "number": "+91 9274388498",
-        "email": "PRATHAMESH.GHATKAR39870@PARULUNIVERSITY.AC.IN"
+        "email": "prathamesh.ghatkar39870@paruluniversity.ac.in"
       },
       {
         "city": "Solapur",
         "contactPerson": "Dhananjay Ghorpade",
         "address": "102, Darshan Heights, Near Balaji Mandir, South Kasba, Chaupada, Solapur \u2013 413001, Maharashtra.",
         "number": "+91 9510971507",
-        "email": "DHANANJAY.GHORPADE32622@PARULUNIVERSITY.AC.IN"
+        "email": "dhananjay.ghorpade32622@paruluniversity.ac.in"
       },
       {
         "city": "Thane",
         "contactPerson": "Santosh Jagtap",
         "address": "201, A Wing, Pramila Heights, 2nd Floor, Raghoba Shankar Road, Chendani, Thane West \u2013 400601, Maharashtra.",
         "number": "+91 6354905643",
-        "email": "SANTOSH.JAGTAP43132@PARULUNIVERSITY.AC.IN"
+        "email": "santosh.jagtap43132@paruluniversity.ac.in"
       },
       {
         "city": "Nandurbar",
         "contactPerson": "Tejas Patil",
         "address": "209\u2013210/1, Plot No. 10, Dongargaon Road, Ahinsa Chowk, Near Canara Bank, Shahada, Nandurbar \u2013 425409, Maharashtra.",
         "number": "+91 9213008464",
-        "email": "TEJAS.PATIL43199@PARULUNIVERSITY.AC.IN"
+        "email": "tejas.patil43199@paruluniversity.ac.in"
       },
       {
         "city": "Satara",
         "contactPerson": "Jagadish Kamble",
         "address": "Office No. 103, Yashodham Complex, Opp. YC Science College, Satara \u2013 415001, Maharashtra.",
         "number": "+91 9213008461",
-        "email": "JAGADISH.KAMBLE43131@PARULUNIVERSITY.AC.IN"
+        "email": "jagadish.kamble43131@paruluniversity.ac.in"
       },
       {
         "city": "Ratnagiri",
         "contactPerson": "Saalim Kazi",
         "address": "Shop No. 201, 2nd Floor, Arihant Space Centre, Near Lotlikar Hospital, Maruti Mandir, Ratnagiri \u2013 415612, Maharashtra.",
         "number": "+91 9213008460",
-        "email": "SAALIM.KAZI43049@PARULUNIVERSITY.AC.IN"
+        "email": "saalim.kazi43049@paruluniversity.ac.in"
       }
     ],
     "RAJASTHAN": [
       {
         "city": "Ajmer",
         "contactPerson": "Mayank Sharma",
-        "address": "3rd Floor, Plot No. 11 &amp; 17, Ashok Vihar, Vaishali Nagar Main Road, Ajmer \u2013 305001, Rajasthan.",
+        "address": "3rd Floor, Plot No. 11 & 17, Ashok Vihar, Vaishali Nagar Main Road, Ajmer \u2013 305001, Rajasthan.",
         "number": "+91 9227989551",
         "email": "mayank.sharma40202@paruluniversity.ac.in"
       },
@@ -421,14 +421,14 @@ export const contactsData: ContactsData =
         "contactPerson": "Saransh Joshi",
         "address": "134, Sultan Nagar, Gopalpura Bypass, Near Gurjar Ki Thandi Underpass, Jaipur \u2013 302019, Rajasthan.",
         "number": "+91 9327919060",
-        "email": "SARANSH.JOSHI28622@PARULUNIVERSITY.AC.IN"
+        "email": "saransh.joshi28622@paruluniversity.ac.in"
       },
       {
         "city": "Jodhpur",
         "contactPerson": "Abhishek Choudhary",
         "address": "Plot No. 12, In Front of Hanwant School, Main Pal Road, Jodhpur \u2013 342001, Rajasthan.",
         "number": "+91 9316732689",
-        "email": "ABHISHEK.CHOUDHARY21234@PARULUNIVERSITY.AC.IN"
+        "email": "abhishek.choudhary21234@paruluniversity.ac.in"
       },
       {
         "city": "Kota",
@@ -442,7 +442,7 @@ export const contactsData: ContactsData =
         "contactPerson": "Sandeep Lodha",
         "address": "Office No. 110, Archie The Divine Complex, Near Geetanjali Hospital, Sector 4, Udaipur \u2013 313001, Rajasthan.",
         "number": "+91 9510971580",
-        "email": "SANDEEP.LODHA22032@PARULUNIVERSITY.AC.IN"
+        "email": "sandeep.lodha22032@paruluniversity.ac.in"
       }
     ]
   },
@@ -486,7 +486,7 @@ export const contactsData: ContactsData =
       {
         "city": "Kurnool",
         "contactPerson": "Parul University",
-        "address": "Parul University Admission Office, H. No. 46/1-M.V.S/401, New Ayyappa Swamy Temple Street, Landmark: Beside Agraseni Hospital &amp; B.K. Singh Towers, Sapthagiri Nagar, Kurnool \u2013 518002, Kurnool (Dt), Andhra Pradesh.",
+        "address": "Parul University Admission Office, H. No. 46/1-M.V.S/401, New Ayyappa Swamy Temple Street, Landmark: Beside Agraseni Hospital & B.K. Singh Towers, Sapthagiri Nagar, Kurnool \u2013 518002, Kurnool (Dt), Andhra Pradesh.",
         "number": "+91 93810 49149",
         "email": ""
       },
@@ -761,21 +761,21 @@ export const contactsData: ContactsData =
         "contactPerson": "Anurag Bhagat",
         "address": "Office No. 3, Ground Floor, Brihadeshwara Nath Apartment, Nath Chowk, Near SBI ATM, Bhagalpur \u2013 812001, Bihar.",
         "number": "+91 9316732693",
-        "email": "ANURAG.BHAGAT42091@PARULUNIVERSITY.AC.IN"
+        "email": "anurag.bhagat42091@paruluniversity.ac.in"
       },
       {
         "city": "GAYA",
         "contactPerson": "Prashant Tiwari",
         "address": "Parul University, Bala Ji Gharana Complex, 4th Floor, A.P. Colony, Near Shanti Niketan School, Gaya \u2013 823001, Bihar.",
         "number": "+91 9213008465",
-        "email": "PRASHANT.TIWARI43430@PARULUNIVERSITY.AC.IN"
+        "email": "prashant.tiwari43430@paruluniversity.ac.in"
       },
       {
         "city": "Muzzafarpur",
         "contactPerson": "Pawan Chaurasia",
         "address": "Ground Floor, Bandhu Complex, Amar Cinema Road, Muzaffarpur \u2013 842002, Bihar.",
         "number": "+91 7862880537",
-        "email": "PAWAN.CHAURASIA33625@PARULUNIVERSITY.AC.IN"
+        "email": "pawan.chaurasia33625@paruluniversity.ac.in"
       },
       {
         "city": "Patna",
@@ -791,14 +791,14 @@ export const contactsData: ContactsData =
         "contactPerson": "Sushanta Banerjee",
         "address": "Shop No. 206, Shri Ram Plaza, Bank More, Dhanbad \u2013 826001, Jharkhand.",
         "number": "+91 9510971481",
-        "email": "SUSHANTA.BANERJEE33592@PARULUNIVERSITY.AC.IN"
+        "email": "sushanta.banerjee33592@paruluniversity.ac.in"
       },
       {
         "city": "Jamshedpur",
         "contactPerson": "Himanshu Singh",
         "address": "Office No. G2, Ground Floor, Birendu Trade Center, Penar Road, Sakchi, Jamshedpur \u2013 831001, Jharkhand.",
         "number": "+91 6354905723",
-        "email": "HIMANSHU.SINGH37694@PARULUNIVERSITY.AC.IN"
+        "email": "himanshu.singh37694@paruluniversity.ac.in"
       },
       {
         "city": "Ranchi",
@@ -844,14 +844,14 @@ export const contactsData: ContactsData =
         "contactPerson": "Sourabh Chowdhury",
         "address": "208/286(A), SBI Building, Ramkrishna Pally, NH 34, Opposite of Trends, P.O. Malda \u2013 732101, West Bengal.",
         "number": "+91 9274416243",
-        "email": "SOURABH.CHOWDHURY38556@PARULUNIVERSITY.AC.IN"
+        "email": "sourabh.chowdhury38556@paruluniversity.ac.in"
       },
       {
         "city": "Siliguri",
         "contactPerson": "Biswadeep Sinha",
         "address": "220, Sachin Sarkar Sarani, College Para, Siliguri \u2013 734001, West Bengal.",
         "number": "+91 7862880771",
-        "email": "BISWADEEP.SINHA33593@PARULUNIVERSITY.AC.IN"
+        "email": "biswadeep.sinha33593@paruluniversity.ac.in"
       }
     ]
   },
@@ -862,28 +862,28 @@ export const contactsData: ContactsData =
         "contactPerson": "Pradeep Gupta",
         "address": "Shop No. 217, First Floor, VR Plaza, Link Road, Bilaspur \u2013 495001, Chhattisgarh.",
         "number": "+91 9510971513",
-        "email": "PRADEEP.GUPTA27425@PARULUNIVERSITY.AC.IN"
+        "email": "pradeep.gupta27425@paruluniversity.ac.in"
       },
       {
         "city": "Korba",
         "contactPerson": "Ullas Kumar Gopal",
         "address": "Plot No. 91A, Near Daxi Restaurant, TP Nagar, Korba \u2013 495677, Chhattisgarh.",
         "number": "+91 9274411599, +91 9522500888",
-        "email": "ULLAS.NAIR39381@PARULUNIVERSITY.AC.IN"
+        "email": "ullas.nair39381@paruluniversity.ac.in"
       },
       {
         "city": "Raipur",
         "contactPerson": "Archana Pandey",
         "address": "521, 3rd Floor, SLT Waterfront, Telibandha, G.E. Road, Raipur \u2013 492001, Chhattisgarh.",
         "number": "+91 9510971473",
-        "email": "ARCHANA.PANDEY26965@PARULUNIVERSITY.AC.IN"
+        "email": "archana.pandey26965@paruluniversity.ac.in"
       },
       {
         "city": "Raipur",
         "contactPerson": "Varun Sharma",
         "address": "521, 3rd Floor, SLT Waterfront, Telibandha, G.E. Road, Raipur \u2013 492001, Chhattisgarh.",
         "number": "+91 7862877956",
-        "email": "VARUN.SHARMA36545@PARULUNIVERSITY.AC.IN"
+        "email": "varun.sharma36545@paruluniversity.ac.in"
       }
     ],
     "MADHYA PRADESH": [
@@ -892,70 +892,70 @@ export const contactsData: ContactsData =
         "contactPerson": "Dharmendra Kumar",
         "address": "131/13, Suryoday Building, Third Floor, Zone 2 \u2013 Maharana Pratap Nagar, Bhopal \u2013 462011, Madhya Pradesh.",
         "number": "+91 9328920062",
-        "email": "DHARMENDRA.KUMAR39685@PARULUNIVERSITY.AC.IN"
+        "email": "dharmendra.kumar39685@paruluniversity.ac.in"
       },
       {
         "city": "Bhopal",
         "contactPerson": "Praveen Prabhakaran",
         "address": "131/13, Suryoday Building, Third Floor, Zone 2 \u2013 Maharana Pratap Nagar, Bhopal \u2013 462011, Madhya Pradesh.",
         "number": "+91 9510971476",
-        "email": "PRAVEEN.PRABHAKARAN23043@PARULUNIVERSITY.AC.IN"
+        "email": "praveen.prabhakaran23043@paruluniversity.ac.in"
       },
       {
         "city": "Dhar",
         "contactPerson": "Sangram Singh Panwar",
         "address": "44/4, Plot No. 42, Nearby Rajkamal Bhojanalaya, Above ESAF Bank, Trimurti Square, Dhar \u2013 454001, Madhya Pradesh.",
         "number": "+91 9274412917",
-        "email": "SANGRAM.PANWAR39780@PARULUNIVERSITY.AC.IN"
+        "email": "sangram.panwar39780@paruluniversity.ac.in"
       },
       {
         "city": "Gwalior",
         "contactPerson": "Kuldeep Singh",
         "address": "Pushpraj Annexe, Singhpur Road, Near MH Chauraha, Morar, Gwalior \u2013 474006, Madhya Pradesh.",
         "number": "+91 9510971546",
-        "email": "KULDEEP.SINGH27532@PARULUNIVERSITY.AC.IN"
+        "email": "kuldeep.singh27532@paruluniversity.ac.in"
       },
       {
         "city": "Indore",
         "contactPerson": "Hitesh Choudhary",
         "address": "M-29, Trade Centre, 18 South Tukoganj, Hotel Crown Palace Road, Indore \u2013 452001, Madhya Pradesh.",
         "number": "+91 9316732688",
-        "email": "HITESH.CHOUDHARY22851@PARULUNIVERSITY.AC.IN"
+        "email": "hitesh.choudhary22851@paruluniversity.ac.in"
       },
       {
         "city": "Indore",
         "contactPerson": "Kajal Upraliya",
         "address": "M-29, Trade Centre, 18 South Tukoganj, Hotel Crown Palace Road, Indore \u2013 452001, Madhya Pradesh.",
         "number": "+91 9510971581",
-        "email": "KAJAL.UPRALIYA27366@PARULUNIVERSITY.AC.IN"
+        "email": "kajal.upraliya27366@paruluniversity.ac.in"
       },
       {
         "city": "Jabalpur",
         "contactPerson": "Amrita Mishra",
         "address": "Shop No. G-1, Vimlasheel Heights, Labour Chowk, Yashwant Mala, Nehru Nagar, Jabalpur \u2013 482004, Madhya Pradesh.",
         "number": "+91 9510971486",
-        "email": "AMRITA.MISHRA28950@PARULUNIVERSITY.AC.IN"
+        "email": "amrita.mishra28950@paruluniversity.ac.in"
       },
       {
         "city": "Ratlam",
         "contactPerson": "Akash Khandker",
         "address": "125/5, 1st Floor, Opp. Hotel Ujala Palace, Station Road, Ratlam \u2013 457001, Madhya Pradesh.",
         "number": "+919510971577",
-        "email": "AKASH.KHANDKER42255@PARULUNIVERSITY.AC.IN"
+        "email": "akash.khandker42255@paruluniversity.ac.in"
       },
       {
         "city": "Rewa",
         "contactPerson": "Abhimanyu Tripathi",
         "address": "First Floor, Zamindar Complex, Next to Zudio Showroom, Allahabad Road, Bara, Rewa \u2013 486001, Madhya Pradesh.",
         "number": "+91 9510971552",
-        "email": "ABHIMANYU.TRIPATHI38368@PARULUNIVERSITY.AC.IN"
+        "email": "abhimanyu.tripathi38368@paruluniversity.ac.in"
       },
       {
         "city": "Ujjain",
         "contactPerson": "Mr. Vivek Mehta",
         "address": "No. D-212, Second Floor, Vishala Complex, 30 Munj Marg, Above Red Tape Showroom, Shaheed Park, Freeganj, Ujjain.",
         "number": "+919213008442",
-        "email": "viveK.MEHTA42752@paruluniversity.ac.in"
+        "email": "vivek.mehta42752@paruluniversity.ac.in"
       }
     ]
   },
@@ -966,21 +966,21 @@ export const contactsData: ContactsData =
         "contactPerson": "Vipul Pareek",
         "address": "R-18, First Floor, Vikas Marg, Opp. PNB Bank, Laxmi Nagar, Delhi \u2013 110092.",
         "number": "+916353211251",
-        "email": "VIPUL.PAREEK7168@PARULUNIVERSITY.AC.IN"
+        "email": "vipul.pareek7168@paruluniversity.ac.in"
       },
       {
         "city": "Delhi",
         "contactPerson": "Jaidev Mohanty",
         "address": "R-18, First Floor, Vikas Marg, Opp. PNB Bank, Laxmi Nagar, Delhi \u2013 110092.",
         "number": "+91 9327919054",
-        "email": "JAIDEV.MOHANTY144010@PARULUNIVERSITY.AC.IN"
+        "email": "jaidev.mohanty144010@paruluniversity.ac.in"
       },
       {
         "city": "Delhi",
         "contactPerson": "Pankaj Kumar",
         "address": "R-18, First Floor, Vikas Marg, Opp. PNB Bank, Laxmi Nagar, Delhi \u2013 110092.",
         "number": "+91 9510971584",
-        "email": "PANKAJ.SINGH32810@PARULUNIVERSITY.AC.IN"
+        "email": "pankaj.singh32810@paruluniversity.ac.in"
       }
     ],
     "HARYANA": [
@@ -989,14 +989,14 @@ export const contactsData: ContactsData =
         "contactPerson": "Rozy Azad",
         "address": "SCO 1066\u20131067, Sec 22B, Chandigarh \u2013 160022, Chandigarh.",
         "number": "+91 9510971477",
-        "email": "ROZY.AZAD21301@PARULUNIVERSITY.AC.IN"
+        "email": "rozy.azad21301@paruluniversity.ac.in"
       },
       {
         "city": "Chandigarh",
         "contactPerson": "Jaspreet Kaur",
         "address": "SCO 1066\u20131067, Sec 22B, Chandigarh \u2013 160022, Chandigarh.",
         "number": "+91 9327919047",
-        "email": "JASPREET.KAUR21149@PARULUNIVERSITY.AC.IN"
+        "email": "jaspreet.kaur21149@paruluniversity.ac.in"
       },
       {
         "city": "Chandigarh",
@@ -1010,7 +1010,7 @@ export const contactsData: ContactsData =
         "contactPerson": "Rajesh Kumar",
         "address": "DSS 112, 1st Floor, Green Square Market, Hisar \u2013 125001, Haryana.",
         "number": "+91 9875164549",
-        "email": "RAJESH.KUMAR42634@PARULUNIVERSITY.AC.IN"
+        "email": "rajesh.kumar42634@paruluniversity.ac.in"
       },
       {
         "city": "Karnal",
@@ -1026,30 +1026,30 @@ export const contactsData: ContactsData =
         "contactPerson": "Shubhash Chand Chandel",
         "address": "City Tower, New Road, Near Bus Stand, Hamirpur \u2013 177001, Himachal Pradesh.",
         "number": "+91 9099997062",
-        "email": "SUBHASH.CHANDEL22637@PARULUNIVERSITY.AC.IN"
+        "email": "subhash.chandel22637@paruluniversity.ac.in"
       }
     ],
-    "JAMMU &#038; KASHMIR": [
+    "JAMMU & KASHMIR": [
       {
         "city": "Jammu",
         "contactPerson": "Sunaina Gill",
         "address": "2nd Floor, KC Plaza Complex, Above Silverlines, Opp. ICICI Bank, Residency Road, Jammu \u2013 180001.",
         "number": "+91 9316732695",
-        "email": "SUNAINA.GILL22796@PARULUNIVERSITY.AC.IN"
+        "email": "sunaina.gill22796@paruluniversity.ac.in"
       },
       {
         "city": "Jammu",
         "contactPerson": "Joseph Kumar",
         "address": "2nd Floor, KC Plaza Complex, Above Silverlines, Opp. ICICI Bank, Residency Road, Jammu \u2013 180001.",
         "number": "+91 9099008854",
-        "email": "JOSEPH.KUMAR26869@PARULUNIVERSITY.AC.IN"
+        "email": "joseph.kumar26869@paruluniversity.ac.in"
       },
       {
         "city": "Srinagar",
         "contactPerson": "Aaqib Parray",
         "address": "Parraypora, IG Airport Road, Near 14th Avenue, Behind Unacademy Centre, Srinagar \u2013 190005.",
         "number": "+91 9274686673",
-        "email": "AAQIB.PARRAY41212@PARULUNIVERSITY.AC.IN"
+        "email": "aaqib.parray41212@paruluniversity.ac.in"
       }
     ],
     "PUNJAB": [
@@ -1058,21 +1058,21 @@ export const contactsData: ContactsData =
         "contactPerson": "Ajay Kumar",
         "address": "SCO 120, 6th Floor, Ranjit Avenue, B Block, Near Municipal Corporation Office, Amritsar \u2013 143001, Punjab.",
         "number": "+91 9510971520",
-        "email": "AJAY.KUMAR21300@PARULUNIVERSITY.AC.IN"
+        "email": "ajay.kumar21300@paruluniversity.ac.in"
       },
       {
         "city": "Amritsar",
         "contactPerson": "Mamta Sharma",
         "address": "SCO 120, 5th Floor, Ranjit Avenue, B Block, Dist Shopping Center, Opp. Municipal, Corporation Office, Amritsar-143001, Punjab",
         "number": "+91 9510971520",
-        "email": "MAMTA.SHARMA45743@PARULUNIVERSITY.AC.IN"
+        "email": "mamta.sharma45743@paruluniversity.ac.in"
       },
       {
         "city": "Ludhiana",
         "contactPerson": "Harmandeep Singh",
         "address": "3782, Cabin No. 1, Rasia Complex, First Floor, Jagjit Nagar, Ludhiana \u2013 140002, Punjab.",
         "number": "+91 9510971541",
-        "email": "HARMANDEEP.SIDHU22754@PARULUNIVERSITY.AC.IN"
+        "email": "harmandeep.sidhu22754@paruluniversity.ac.in"
       }
     ],
     "UTTAR PRADESH": [
@@ -1081,49 +1081,49 @@ export const contactsData: ContactsData =
         "contactPerson": "Siddharth Duboliya",
         "address": "4-First Floor, Maadhav Plaza, Sec. 3B, Avas Vikas, Sikandra, Agra \u2013 282007, Uttar Pradesh.",
         "number": "+91 9510971466",
-        "email": "SIDDHARTH.DUBOLIYA22625@PARULUNIVERSITY.AC.IN"
+        "email": "siddharth.duboliya22625@paruluniversity.ac.in"
       },
       {
         "city": "Bareilly",
         "contactPerson": "Hemant Mishra",
         "address": "A-2, Akash Floors, City Station Road, Civil Lines, Bareilly \u2013 243001, Uttar Pradesh.",
         "number": "+91 9510971467",
-        "email": "HEMANT.MISHRA28712@PARULUNIVERSITY.AC.IN"
+        "email": "hemant.mishra28712@paruluniversity.ac.in"
       },
       {
         "city": "Gorakhpur",
         "contactPerson": "Siddharth Gupta",
         "address": "B-13, Buddh Vihar Phase 2, Gorakhpur \u2013 273017, Uttar Pradesh.",
         "number": "+91 9274398119",
-        "email": "SIDDHARTH.GUPTA39169@PARULUNIVERSITY.AC.IN"
+        "email": "siddharth.gupta39169@paruluniversity.ac.in"
       },
       {
         "city": "Kanpur",
         "contactPerson": "Amit Singh",
         "address": "117/N/78, Near Suraj Nursing Home, Avon Market, Kakadeo, Kanpur \u2013 208024, Uttar Pradesh.",
         "number": "+919510971465",
-        "email": "AMIT.SINGH28816@PARULUNIVERSITY.AC.IN"
+        "email": "amit.singh28816@paruluniversity.ac.in"
       },
       {
         "city": "Lucknow",
         "contactPerson": "Shashank Shukla",
         "address": "2nd Floor, 27/2 Chandralok Colony, above Kama Medical, Aliganj Lucknow, Uttar Pradesh- 226024.",
         "number": "+91 9510971469",
-        "email": "SHAHSHANK.SHUKLA23077@PARULUNIVERSITY.AC.IN"
+        "email": "shahshank.shukla23077@paruluniversity.ac.in"
       },
       {
         "city": "PRAYAGRAJ",
         "contactPerson": "Rajveer Singh",
         "address": "3K, Thaskand Marg, Civil Lines, Prayagraj \u2013 211001, Uttar Pradesh.",
         "number": "+91 9213001680",
-        "email": "RAJ.SINGH42722@PARULUNIVERSITY.AC.IN"
+        "email": "raj.singh42722@paruluniversity.ac.in"
       },
       {
         "city": "Varanasi",
         "contactPerson": "Kuldeep Singh",
         "address": "D 57/3A-L, Hall No. 204, Shree Sai Complex, Sigra, Varanasi \u2013 221010, Uttar Pradesh.",
         "number": "+91 9687657418",
-        "email": "KULDEEP.SINGH26024@PARULUNIVERSITY.AC.IN"
+        "email": "kuldeep.singh26024@paruluniversity.ac.in"
       }
     ],
     "UTTARAKHAND": [
@@ -1132,21 +1132,21 @@ export const contactsData: ContactsData =
         "contactPerson": "Rajendra Rawat",
         "address": "1st Floor, Raj Plaza, 75 Rajpur Road, Dehradun \u2013 248001, Uttarakhand.",
         "number": "+91 9099008865",
-        "email": "RAJENDRA.RAWAT36423@PARULUNIVERSITY.AC.IN"
+        "email": "rajendra.rawat36423@paruluniversity.ac.in"
       },
       {
         "city": "Dehradun",
         "contactPerson": "Jagmohan",
         "address": "1st Floor, Raj Plaza, 75 Rajpur Road, Dehradun \u2013 248001, Uttarakhand.",
         "number": "+91 9510971550",
-        "email": "JAGMOHAN.TAMTA21643@PARULUNIVERSITY.AC.IN"
+        "email": "jagmohan.tamta21643@paruluniversity.ac.in"
       },
       {
         "city": "Haldwani",
         "contactPerson": "Ashish Sanwal",
         "address": "Ground Floor, Trishul Tower, Near Delhi Chat, Jagdamba Chauraha, Kathgodam Road, Haldwani \u2013 263139, Nainital, Uttarakhand.",
         "number": "+91 9875164765",
-        "email": "ASHISH.SANWAL38695@PARULUNIVERSITY.AC.IN"
+        "email": "ashish.sanwal38695@paruluniversity.ac.in"
       }
     ]
   },
@@ -1157,7 +1157,7 @@ export const contactsData: ContactsData =
         "contactPerson": "Mukesh Nayak",
         "address": "Ground floor, Aruni complex, near APST bus station, upper Chimi, F - sector, Ganga, Itanagar-791111, Arunachal Pradesh",
         "number": "+91 9213001374",
-        "email": "MUKESH.NAYAK41250@PARULUNIVERSITY.AC.IN"
+        "email": "mukesh.nayak41250@paruluniversity.ac.in"
       }
     ],
     "ASSAM": [
@@ -1198,7 +1198,7 @@ export const contactsData: ContactsData =
         "contactPerson": "Rupert Lyngdoh",
         "address": "2nd Floor, New Frank Tata Motors Building, Block-6, Jyllishop, Nongthymmai, Shillong \u2013 793014, EKHD, Meghalaya.",
         "number": "+91 9274398190",
-        "email": "RUPERT.LYNGDOH39185@PARULUNIVERSITY.AC.IN"
+        "email": "rupert.lyngdoh39185@paruluniversity.ac.in"
       }
     ],
     "MIZORAM": [
@@ -1207,7 +1207,7 @@ export const contactsData: ContactsData =
         "contactPerson": "Chawngthu Lalrindiki",
         "address": "Hlimen, Dam Veng, Near Lalming Infrastructure and Construction Pvt. Ltd., Aizawl \u2013 796005, Mizoram.",
         "number": "+91 9016228504",
-        "email": "LALRINDIKI.CHAWNGTHU22351@PARULUNIVERSITY.AC.IN"
+        "email": "lalrindiki.chawngthu22351@paruluniversity.ac.in"
       }
     ],
     "NAGALAND": [
@@ -1216,7 +1216,7 @@ export const contactsData: ContactsData =
         "contactPerson": "Mughato Zhimo",
         "address": "House No. 136, United Colony, Nagarjan Police Point, Ward No. 20, Dimapur \u2013 797112, Nagaland.",
         "number": "+91 9313923532",
-        "email": "MUGHATO.ZHIMO22029@PARULUNIVERSITY.AC.IN"
+        "email": "mughato.zhimo22029@paruluniversity.ac.in"
       }
     ],
     "SIKKIM": [
@@ -1225,7 +1225,7 @@ export const contactsData: ContactsData =
         "contactPerson": "Navin Nawbag",
         "address": "Deorali Bazaar, Besides Khadi Bhawan, NH 10, Gangtok \u2013 737101, Sikkim.",
         "number": "+91 9274398191",
-        "email": "NAVIN.NAWBAG39184@PARULUNIVERSITY.AC.IN"
+        "email": "navin.nawbag39184@paruluniversity.ac.in"
       }
     ],
     "TRIPURA": [
@@ -1234,7 +1234,7 @@ export const contactsData: ContactsData =
         "contactPerson": "Sudakshina Chakraborty",
         "address": "Mathchowhumani, Adjacent to State Bank of India MBB College Branch, P.O. Dhalewsar, Agartala \u2013 799001, Tripura (W).",
         "number": "+91 6354905683 ,+91 9510971523, +91 9313923529",
-        "email": "SUDAKSHINA.CHAKRABORTY24517@PARULUNIVERSITY.AC.IN"
+        "email": "sudakshina.chakraborty24517@paruluniversity.ac.in"
       }
     ]
   }

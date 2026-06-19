@@ -67,20 +67,44 @@ export function JourneyTimeline() {
   };
 
   return (
-    <section className="overflow-hidden bg-brand-white px-0 sm: sm: py-16 sm:py-24">
-      <div className="mx-auto max-w-5xl px-6 text-center">
-        <p className="text-ink section-subheading">
-          Journey
-        </p>
-        <h2 className="mx-auto mt-5 max-w-5xl text-brand section-heading">
-          From Vadodara To Goa,
-          <br className="hidden sm:block" />
-          Milestones That Thrive Our Story!
-        </h2>
-        <p className="mx-auto mt-4 max-w-3xl text-ink section-body">
-          30+ Years of building India&apos;s most recognised private university
-          ecosystem and bringing it to Goa&apos;s coast.
-        </p>
+    <section className="overflow-hidden bg-brand-white py-10 sm:pt-18">
+      <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row md:items-end md:justify-between gap-6">  
+        <div className="text-left">
+          <p className="text-ink section-subheading">
+            Journey
+          </p>
+          <h2 className="mt-4 text-brand section-heading max-w-5xl">
+            From Vadodara To Goa,
+            <br className="hidden sm:block" />
+            Milestones That Thrive Our Story!
+          </h2>
+          <p className="mt-4 max-w-4xl text-ink section-body">
+            30+ Years of building India&apos;s most recognised private university
+            ecosystem and bringing it to Goa&apos;s coast.
+          </p>
+        </div>
+
+        {/* Navigation Buttons */}
+        <div className="flex items-center gap-4 shrink-0 pb-2">
+          <button
+            onClick={() => scroll("left")}
+            className="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-sm border border-zinc-200 transition-colors hover:bg-brand/5 text-ink hover:text-brand"
+            aria-label="Scroll left"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="m15 18-6-6 6-6"/>
+            </svg>
+          </button>
+          <button
+            onClick={() => scroll("right")}
+            className="flex h-12 w-12 items-center justify-center rounded-full bg-brand shadow-md transition-colors hover:bg-brand-dark text-white"
+            aria-label="Scroll right"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="m9 18 6-6-6-6"/>
+            </svg>
+          </button>
+        </div>
       </div>
 
       <div className="relative mt-10 w-full sm:mt-17 group">

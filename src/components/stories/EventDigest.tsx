@@ -42,7 +42,7 @@ export function EventDigest({ stories = [] }: { stories?: Story[] }) {
   const smallerEventsDynamic = displayEvents.slice(1, 4);
 
   return (
-    <section className="bg-brand-white sm: md: border-t border-black/5 py-16 sm:py-24">
+    <section className="bg-brand-white border-t border-black/5 py-12 sm:py-16">
       <div className="mx-auto w-full max-w-[1680px] px-6 sm:px-10 flex flex-col items-center">
         
         {/* Title Block */}
@@ -56,7 +56,7 @@ export function EventDigest({ stories = [] }: { stories?: Story[] }) {
         </div>
 
         {/* Content Box */}
-        <div className="w-full max-w-6xl mt-16 text-left">
+        <div className="w-full max-w-6xl mt-10 text-left">
           
           {/* Header Row */}
           <div className="flex justify-between items-end mb-8 border-b border-black/5 pb-4">

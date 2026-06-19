@@ -69,10 +69,10 @@ function FaqAccordionItem({ f, isOpen, onToggle }: { f: FaqItem; isOpen: boolean
 }
 
 export default function StudyAbroadFaq() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className={`bg-[#f8f8f8] sm:pb-20 sm:pt-10 pb-10 sm:pt-8 sm:pt-0 pt-5 ${poppins.className}`} style={poppins.style}>
+    <section id="faq" className={`bg-[#f8f8f8] pb-12 sm:pb-20 pt-6 sm:pt-8 ${poppins.className}`} style={poppins.style}>
       <JsonLd data={faqSchema(faqs)} />
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">

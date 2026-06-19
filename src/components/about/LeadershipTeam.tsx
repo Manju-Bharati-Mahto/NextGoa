@@ -30,7 +30,7 @@ export function LeadershipTeam() {
   ];
 
   return (
-    <section className="bg-[#F8F8F8] sm: px-6 py-16 sm:py-24">
+    <section className="bg-[#F8F8F8] px-6 py-10 sm:py-12">
       <div className="mx-auto max-w-6xl">
         <div className="text-center mb-12">
           <h2 className="text-ink section-heading">

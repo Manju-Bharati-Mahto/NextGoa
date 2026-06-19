@@ -9,16 +9,16 @@ export default function HotelManagementAccreditation() {
     "/partners/hotel/image 249@2x.png",
     "/partners/hotel/image 250@2x.png",
     "/partners/hotel/image 251@2x.png",
-    "/partners/hotel/image 252@2x.png",
+    "/partners/hotel/image 252@2x.png", 
     "/partners/hotel/image 253@2x.png",
   ];
 
   return (
-    <section className="w-full bg-[#FAFAFA] sm: py-16 sm:py-24">
+    <section className="w-full bg-[#FAFAFA] pb-12 pt-5 sm:pb-16">
       <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
         
         {/* Accreditation Section */}
-        <div className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-10 mb-20 sm:mb-32">
+        <div className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-10 mb-12 sm:mb-16">
           <h2 className="text-[#E73649] text-center md:text-left max-w-[400px] section-heading">
             Recognition &<br/>Accreditation
           </h2>

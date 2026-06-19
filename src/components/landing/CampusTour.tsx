@@ -40,7 +40,7 @@ export function CampusTour() {
 
   return (
     <section id="campus-tour"
-      className="relative overflow-hidden bg-gradient-to-b from-[#CBEFFD] to-[#F8F8F8] py-16 sm:py-24"
+      className="relative overflow-hidden bg-gradient-to-b from-[#CBEFFD] to-[#F8F8F8] py-0"
     >
       {/* Background Red Wavy Image from Figma */}
       <div className="absolute inset-0 z-0 pointer-events-none">

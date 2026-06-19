@@ -23,7 +23,7 @@ const cards = [
 
 export function International() {
   return (
-    <section id="international" className="relative overflow-hidden bg-[#F8F8F8] py-16 sm:py-24">
+    <section id="international" className="relative overflow-hidden bg-[#F8F8F8] py-10 sm:py-0">
       {/* Top gradient that stops before the map */}
       <div className="absolute inset-x-0 top-0 h-[350px] sm:h-[450px] bg-gradient-to-b from-[#CBEFFD] to-[#F8F8F8] z-0 pointer-events-none" />
       
@@ -41,7 +41,7 @@ export function International() {
         className="pointer-events-none absolute bottom-[250px] lg:bottom-[300px] right-0 z-0 hidden h-64 w-auto sm:block lg:h-80"
       />
 
-      <div className="relative z-10 mx-auto max-w-6xl px-6 py-20">
+      <div className="relative z-10 mx-auto max-w-6xl px-6 pt-20 pb-10">
         <Eyebrow className="text-ink">International Teaser</Eyebrow>
         <h2 className="mt-2 text-center section-heading text-brand">
           Your Degree Can Take You Global

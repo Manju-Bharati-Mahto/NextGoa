@@ -67,10 +67,10 @@ export function StartupEcosystem() {
               <div className="text-[#00A8E8] font-black text-5xl sm:text-6xl leading-none flex items-baseline justify-center sm:justify-end tracking-tighter">
                 <span className="text-3xl sm:text-4xl mr-1 font-bold">₹</span>20<span className="text-3xl sm:text-4xl font-bold ml-1">Cr+</span>
               </div>
-              <div className="text-black text-[11px] sm:text-xs font-bold uppercase mt-4 tracking-widest">
+              <div className="text-black font-poppins text-sm sm:text-base font-bold uppercase mt-4 tracking-widest">
                 STARTUP FUNDING
               </div>
-              <p className="text-gray-600 text-sm mt-3 leading-relaxed">
+              <p className="text-gray-600 font-poppins text-base sm:text-lg mt-3 leading-relaxed">
                 Provided to PU-incubated startups.
               </p>
             </div>
@@ -79,10 +79,10 @@ export function StartupEcosystem() {
               <div className="text-[#00A8E8] font-black text-5xl sm:text-6xl leading-none flex items-baseline justify-center sm:justify-end tracking-tighter">
                 300+
               </div>
-              <div className="text-black text-[11px] sm:text-xs font-bold uppercase mt-4 tracking-widest">
+              <div className="text-black font-poppins text-sm sm:text-base font-bold uppercase mt-4 tracking-widest">
                 STARTUPS INCUBATED
               </div>
-              <p className="text-gray-600 text-sm mt-3 leading-relaxed">
+              <p className="text-gray-600 font-poppins text-base sm:text-lg mt-3 leading-relaxed">
                 Active companies built inside the PU E-Cell.
               </p>
             </div>
@@ -141,7 +141,7 @@ export function StartupEcosystem() {
         </div>
 
         {/* Bottom Call to Action Card */}
-        <div className="bg-white rounded-[20px] sm:rounded-[24px] border border-gray-100 overflow-hidden flex flex-col md:flex-row shadow-sm max-w-5xl mx-auto items-stretch mt-[80px] sm:mt-[61px]">
+        <div className="bg-white rounded-[20px] sm:rounded-[24px] border border-gray-100 overflow-hidden flex flex-col md:flex-row shadow-sm max-w-[1000px] w-[95%] mx-auto items-stretch mt-[100px] sm:mt-[85px]">
           
           <div className="flex items-center p-6 md:p-8 gap-5 md:gap-8 flex-1">
             <div className="relative flex-shrink-0 w-[50px] h-[50px] sm:w-[64px] sm:h-[64px] flex items-center justify-center">

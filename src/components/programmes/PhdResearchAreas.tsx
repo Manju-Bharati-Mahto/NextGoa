@@ -64,9 +64,9 @@ export default function PhdResearchAreas() {
   ];
 
   return (
-    <section className="w-full bg-[#FAFAFA] sm: py-16 sm:py-24">
+    <section className="w-full bg-[#FAFAFA] py-12 sm:py-16">
       <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 sm:mb-16">
+        <div className="text-center mb-8 sm:mb-10">
           <h2 className="text-ink mb-2 section-subheading">
             Research Areas
           </h2>

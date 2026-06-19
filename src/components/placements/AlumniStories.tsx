@@ -74,9 +74,13 @@ export function AlumniStories() {
 
   return (
     <section id="alumni"
-      className="relative w-full overflow-hidden bg-white pt-[calc(clamp(50px,8vw,120px)+4rem)] pb-[calc(clamp(50px,8vw,120px)+4rem)] scroll-mt-24 md:scroll-mt-32 py-16 sm:py-24"
+      className="relative w-full overflow-hidden bg-transparent pt-[calc(clamp(50px,8vw,120px)+4rem)] pb-[calc(clamp(50px,8vw,120px)+4rem)] scroll-mt-24 md:scroll-mt-32 py-16 sm:py-24"
     >
       <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Top Background */}
+        <div className="absolute top-0 left-0 right-0 bottom-1/2 bg-[#fff]" />
+        {/* Bottom Background */}
+        <div className="absolute bottom-0 left-0 right-0 top-1/2 bg-[#f0f2f5]" />
         {/* Middle Solid Red Background */}
         <div
           className="absolute inset-x-0 bg-[#E73649]"
@@ -210,6 +214,26 @@ export function AlumniStories() {
             </div>
           </div>
 
+        </div>
+
+        {/* Navigation Dots */}
+        <div className="flex justify-center items-center gap-2 mt-12 relative z-10">
+          {stories.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => {
+                setFade(false);
+                setTimeout(() => {
+                  setCurrentIndex(idx);
+                  setFade(true);
+                }, 300);
+              }}
+              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                idx === currentIndex ? "bg-[#FEDB2F] w-8" : "bg-white/40 hover:bg-white/60"
+              }`}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>

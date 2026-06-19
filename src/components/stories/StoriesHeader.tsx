@@ -3,25 +3,25 @@ import React from "react";
 export function StoriesHeader() {
   return (
     <section id="hero"
-      className="relative flex w-full min-h-[85vh] md:min-h-[55vw] flex-col items-center justify-start overflow-hidden bg-[url('/story-bg.webp')] bg-cover bg-[center_top_10%] bg-no-repeat"
+      className="relative flex w-full min-h-[85vh] md:min-h-[55vw] flex-col items-center justify-start overflow-hidden bg-[url('/b3-down.webp')] bg-cover bg-bottom bg-no-repeat"
     >
-      {/* Light gradient overlay to ensure text is readable if background gets too bright */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-transparent pointer-events-none" />
+      {/* Light gradient overlay to ensure text is readable against the background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/50 to-transparent pointer-events-none" />
 
       {/* Hero content */}
-      <div className="relative z-10 w-full max-w-7xl px-4 pt-32 sm:px-6 sm:pt-40 lg:pt-48 text-center">
+      <div className="relative z-10 w-full max-w-4xl px-4 pt-24 sm:px-6 sm:pt-32 lg:pt-36 text-center">
         {/* Yellow pill badge */}
-        <span className="inline-block rounded-full bg-brand-yellow px-5 py-1.5 text-[14px] font-medium text-ink shadow-sm mb-5 uppercase tracking-wider">
+        <span className="inline-block rounded-full bg-brand-yellow px-5 py-1.5 text-[14px] font-bold text-ink shadow-sm mb-6 uppercase tracking-wider">
           Stories from PU Goa
         </span>
 
         {/* Large heading */}
-        <h1 className="mx-auto w-full max-w-none tracking-tight text-brand section-heading">
+        <h1 className="mx-auto w-full max-w-none tracking-tight text-brand section-heading drop-shadow-sm">
           PU Goa Stories
         </h1>
 
         {/* Sub-heading description */}
-        <p className="mx-auto mt-6 max-w-[1100px] text-ink/90 section-body">
+        <p className="mx-auto mt-6 max-w-3xl font-[family-name:var(--font-poppins)] text-lg sm:text-[20px] leading-[1.6] text-ink font-medium drop-shadow-md bg-white/20 backdrop-blur-sm rounded-2xl p-4 shadow-sm border border-white/40">
           Everything happening at Parul University Goa, told in real time. Industry visits, placement wins, research breakthroughs, student life and admissions guides across every faculty.
         </p>
       </div>

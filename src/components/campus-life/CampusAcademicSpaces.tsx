@@ -79,17 +79,43 @@ export function CampusAcademicSpaces() {
   };
 
   return (
-    <section className="relative w-full bg-white sm: lg: overflow-hidden py-16 sm:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mb-12 sm:mb-16 flex flex-col items-center text-center">
-        <h3 className="text-[#1F1F1F] mb-2 section-subheading">
-          Academic Spaces
-        </h3>
-        <h2 className="leading-[1.1] text-[#E73649] mb-4 section-heading">
-          Built for inspiration.
-        </h2>
-        <p className="max-w-2xl mx-auto text-[#1F1F1F]/80 section-body">
-          Labs and classrooms designed with modern technology to prepare students for the future.
-        </p>
+    <section className="relative w-full bg-white sm: lg: overflow-hidden py-12 sm:py-16">
+      {/* Header content & Nav */}
+      <div className="w-full px-6 lg:px-[10%] mb-8 sm:mb-12 flex flex-col md:flex-row items-start md:items-end justify-between gap-6 relative z-30">
+        <div className="text-left max-w-4xl">
+          <h3 className="text-[#1F1F1F] mb-2 section-subheading text-left">
+            Academic Spaces
+          </h3>
+          <h2 className="leading-[1.1] text-[#E73649] mb-4 section-heading text-left !mx-0">
+            Built for inspiration.
+          </h2>
+          <p className="max-w-3xl text-[#1F1F1F]/80 section-body text-left !mx-0">
+            Labs and classrooms designed with modern technology to prepare students for the future.
+          </p>
+        </div>
+
+        {/* Navigation Buttons */}
+        <div className="flex items-center gap-4 shrink-0 pb-2">
+          <button 
+            onClick={() => scroll('left')}
+            className="w-12 h-12 rounded-full border border-black/10 bg-white text-ink flex items-center justify-center hover:bg-[#E73649] hover:text-white hover:border-[#E73649] shadow-sm transition-all duration-300 ease-in-out cursor-pointer focus:outline-none"
+            aria-label="Scroll left"
+          >
+            <svg className="w-5 h-5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          <button 
+            onClick={() => scroll('right')}
+            className="w-12 h-12 rounded-full border border-black/10 bg-white text-ink flex items-center justify-center hover:bg-[#E73649] hover:text-white hover:border-[#E73649] shadow-sm transition-all duration-300 ease-in-out cursor-pointer focus:outline-none"
+            aria-label="Scroll right"
+          >
+            <svg className="w-5 h-5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Carousel Container */}
@@ -100,7 +126,7 @@ export function CampusAcademicSpaces() {
           onMouseLeave={handleMouseLeave}
           onMouseUp={handleMouseUp}
           onMouseMove={handleMouseMove}
-          className="flex overflow-x-auto gap-4 sm:gap-6 px-4 sm:px-6 lg:px-12 scroll-pl-4 sm:scroll-pl-6 lg:scroll-pl-12 snap-x snap-mandatory hide-scrollbar pb-8"
+          className="flex overflow-x-auto gap-4 sm:gap-6 px-6 lg:px-[10%] scroll-pl-6 lg:scroll-pl-[10%] snap-x snap-mandatory hide-scrollbar pb-8"
           style={{ cursor: 'grab' }}
         >
           {spaces.map((space, idx) => (
@@ -133,28 +159,7 @@ export function CampusAcademicSpaces() {
         </div>
       </div>
 
-      {/* Navigation Buttons */}
-      <div className="flex justify-center items-center gap-4 mt-4 relative z-30">
-        <button 
-          onClick={() => scroll('left')}
-          className="w-12 h-12 rounded-full border border-black/10 bg-white text-ink flex items-center justify-center hover:bg-[#E73649] hover:text-white hover:border-[#E73649] shadow-sm transition-all duration-300 ease-in-out cursor-pointer focus:outline-none"
-          aria-label="Scroll left"
-        >
-          <svg className="pointer-events-none w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
 
-        <button 
-          onClick={() => scroll('right')}
-          className="w-12 h-12 rounded-full border border-black/10 bg-white text-ink flex items-center justify-center hover:bg-[#E73649] hover:text-white hover:border-[#E73649] shadow-sm transition-all duration-300 ease-in-out cursor-pointer focus:outline-none"
-          aria-label="Scroll right"
-        >
-          <svg className="pointer-events-none w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
-      </div>
 
       {/* CSS to hide scrollbar but keep functionality */}
       <style dangerouslySetInnerHTML={{

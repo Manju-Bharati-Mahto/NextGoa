@@ -54,9 +54,9 @@ export function Faq({ faqs = homeFaqs, title = "Questions Parents Ask", heading 
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="bg-brand-white sm: py-16 sm:py-24">
+    <section id="faq" className="bg-brand-white py-6 sm:py-8">
       <JsonLd data={faqSchema(faqs)} />
-      <div className="mx-auto max-w-6xl px-6 sm:py-15 sm:pt-10 pt-5 pb-5">
+      <div className="mx-auto max-w-6xl px-6 py-8">
         <Eyebrow className="text-ink">{title}</Eyebrow>
         <h2 className="mt-2 text-center section-heading text-brand">
           {heading}

@@ -60,7 +60,7 @@ export function CareerReadiness() {
   const [openCardIdx, setOpenCardIdx] = useState<number | null>(0);
 
   return (
-    <section className="w-full bg-[#F5F6F8] sm: sm: sm: py-16 sm:py-24">
+    <section className="w-full bg-[#F5F6F8] py-10 sm:py-5">
       <style>{`
         .hide-scrollbar::-webkit-scrollbar {
           display: none;

@@ -102,10 +102,10 @@ export default function StudyAbroadOpportunities() {
 
   return (
     <section
-      className={`relative w-full bg-transparent px-4 md:px-8 overflow-hidden ${poppins.className}`}
+      className={`relative w-full bg-[#f8f8f8] px-4 md:px-8 overflow-hidden ${poppins.className}`}
       style={{
-        paddingTop: "clamp(5rem, 12.2vw, 600px)",
-        paddingBottom: "clamp(5rem, 13.3vw, 600px)"
+        paddingTop: "clamp(6rem, 10vw, 200px)",
+        paddingBottom: "clamp(6rem, 10vw, 200px)"
       }}
     >
       {/* Background Blue Wavy Image */}
@@ -159,24 +159,47 @@ export default function StudyAbroadOpportunities() {
         </div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto flex flex-col items-center">
-        {/* Header Text */}
-        <p className="text-white mb-3 section-subheading text-center">
-          Begin in Goa · Graduate in the World
-        </p>
-        <h2 className="text-white text-center leading-tight mb-6 max-w-4xl section-heading">
-          Turn your wanderlust into a globally recognised degree
-        </h2>
-        <p className="text-white/90 text-center max-w-5xl mb-12 section-body">
-          At PU Goa, your education doesn&apos;t have to stop in India. Through
-          international pathways, academic partnerships and broadway programmes,
-          students can begin their journey in Goa and continue it across leading
-          global destinations. Backed by a global ecosystem of 800+ international
-          opportunities, PU Goa connects students to the world from day one.
-        </p>
+      <div className="relative z-10 max-w-[1200px] mx-auto w-full flex flex-col px-4">
+        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end mb-12 gap-8 w-full">
+          {/* Header Text */}
+          <div className="flex flex-col items-start max-w-5xl lg:max-w-5xl xl:max-w-5xl">
+            <p className="text-white mb-3 section-subheading text-left">
+              Begin in Goa · Graduate in the World
+            </p>
+            <h2 className="text-white text-left leading-tight mb-6 section-heading">
+              Turn your wanderlust into a globally recognised degree
+            </h2>
+            <p className="text-white/90 text-left section-body max-w-4xl">
+              At PU Goa, your education doesn&apos;t have to stop in India. Through
+              international pathways, academic partnerships and broadway programmes,
+              students can begin their journey in Goa and continue it across leading
+              global destinations. Backed by a global ecosystem of 800+ international
+              opportunities, PU Goa connects students to the world from day one.
+            </p>
+          </div>
+
+          {/* Navigation Arrows */}
+          <div className="flex items-center gap-4 shrink-0 pb-4 lg:pb-0">
+            <button
+              onClick={() => setCurrentSlide((prev) => (prev === 0 ? SLIDES.length - 1 : prev - 1))}
+              className="w-12 h-12 bg-white/90 hover:bg-white text-ink rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
+              aria-label="Previous slide"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            
+            <button
+              onClick={() => setCurrentSlide((prev) => (prev + 1) % SLIDES.length)}
+              className="w-12 h-12 bg-white/90 hover:bg-white text-ink rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
+              aria-label="Next slide"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
 
         {/* Featured Card Slider Wrapper */}
-        <div className="relative w-full max-w-[1200px] mx-auto flex flex-col items-center">
+        <div className="relative w-full mx-auto flex flex-col items-center">
           
           {/* Featured Card Slider */}
           <div
@@ -224,25 +247,6 @@ export default function StudyAbroadOpportunities() {
             </div>
             </div>
           </div>
-        </div>
-
-        {/* Navigation Arrows (Replacing Dots) */}
-        <div className="flex items-center justify-center gap-4 mt-8">
-          <button
-            onClick={() => setCurrentSlide((prev) => (prev === 0 ? SLIDES.length - 1 : prev - 1))}
-            className="w-12 h-12 bg-white/90 hover:bg-white text-ink rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
-            aria-label="Previous slide"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-          </button>
-          
-          <button
-            onClick={() => setCurrentSlide((prev) => (prev + 1) % SLIDES.length)}
-            className="w-12 h-12 bg-white/90 hover:bg-white text-ink rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
-            aria-label="Next slide"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-          </button>
         </div>
       </div>
     </section>

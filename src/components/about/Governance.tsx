@@ -69,7 +69,7 @@ export function Governance() {
   ];
 
   return (
-    <section id="board-of-governors" className="relative overflow-hidden bg-transparent scroll-mt-24 md:scroll-mt-32 py-16 sm:py-24">
+    <section id="board-of-governors" className="relative overflow-hidden bg-transparent scroll-mt-24 md:scroll-mt-32 py-0">
             <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Middle Solid Red Background */}
         <div 

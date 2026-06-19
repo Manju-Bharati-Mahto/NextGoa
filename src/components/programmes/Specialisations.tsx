@@ -58,11 +58,11 @@ export default function Specialisations() {
   const [activeSpec, setActiveSpec] = useState<SpecialisationData>(specialisations[0]);
 
   return (
-    <section className="w-full bg-[#F8F9FA] sm: py-16 sm:py-24">
+    <section className="w-full bg-[#F8F9FA] py-8 sm:py-12">
       <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2 className="text-ink mb-2 section-subheading">
             Specialisations
           </h2>
@@ -75,7 +75,7 @@ export default function Specialisations() {
         </div>
 
         {/* Horizontal scrollable toggles wrapper for mobile, wraps on desktop */}
-        <div className="w-full overflow-x-auto scrollbar-hide mb-10 pb-4">
+        <div className="w-full overflow-x-auto scrollbar-hide mb-6 pb-2">
           <div className="flex sm:flex-wrap items-center justify-start sm:justify-center gap-3 sm:gap-4 min-w-max sm:min-w-0 px-4 sm:px-0 mx-auto">
             {specialisations.map((spec) => {
               const isActive = activeSpec.id === spec.id;

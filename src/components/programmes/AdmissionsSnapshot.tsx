@@ -25,11 +25,11 @@ const admissionsData = [
 
 export default function AdmissionsSnapshot() {
   return (
-    <section className="w-full bg-[#FAFAFA] sm: py-16 sm:py-24">
+    <section className="w-full bg-[#FAFAFA] pb-8 sm:pb-12">
       <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-6">
           <h2 className="text-ink mb-2 section-subheading">
             Admissions Snapshot
           </h2>

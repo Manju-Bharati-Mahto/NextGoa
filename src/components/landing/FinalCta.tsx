@@ -45,9 +45,8 @@ export function FinalCta({
   background = "gradient",
 }: FinalCtaProps) {
   return (
-    <section className="bg-brand-white py-16 sm:py-24"
-    >
-      <div className="mx-auto max-w-[1600px] px-6 sm:pb-17 sm:pt-5 pt-5 pb-15">
+    <section className="bg-brand-white py-6 sm:py-0">
+      <div className="mx-auto max-w-[1600px] px-6 py-6 sm:py-8 lg:pb-12">
         <div className="relative isolate overflow-hidden rounded-[20px] shadow-xl">
           <Image
             src="/hero-campus.webp"
@@ -74,14 +73,13 @@ export function FinalCta({
                 {actions.map((action) => {
                   const isPrimary = action.variant === "primary";
                   const isButton = action.triggerEnquiry || action.href === "#";
-                  
+
                   const commonProps = {
                     "data-enquiry-trigger": action.triggerEnquiry ? "true" : undefined,
-                    className: `inline-flex min-h-12 w-full max-w-[280px] sm:w-auto sm:max-w-none items-center justify-center gap-2 rounded-full px-6 font-sans text-[16px] font-bold transition ${
-                      isPrimary
+                    className: `inline-flex min-h-12 w-full max-w-[280px] sm:w-auto sm:max-w-none items-center justify-center gap-2 rounded-full px-6 font-sans text-[16px] font-bold transition ${isPrimary
                         ? "bg-brand text-white hover:bg-brand-dark"
                         : "border border-white/30 bg-white/20 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_10px_30px_rgba(0,0,0,0.18)] backdrop-blur-md hover:bg-white/30"
-                    }`
+                      }`
                   };
 
                   return isButton ? (

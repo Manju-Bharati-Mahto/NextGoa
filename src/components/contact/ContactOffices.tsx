@@ -57,7 +57,7 @@ export default function ContactOffices() {
 
       {/* State Contacts Table Section */}
       <section className="relative w-full bg-[#FDFCF8] lg: py-16 sm:py-24">
-        <div className="w-full max-w-6xl mx-auto px-6 font-poppins">
+        <div className="w-full max-w-[1400px] mx-auto px-6 font-poppins">
           {/* South Zone Heads Grid */}
           {activeZone === "South Zone" && southZoneHeads.length > 0 && (
             <div className="mb-12 bg-[#FAFCFF] border border-[#E0E7FF] rounded-[20px] p-8 shadow-sm">
@@ -96,9 +96,9 @@ export default function ContactOffices() {
 
           {/* Table */}
           <div className="w-full overflow-x-auto rounded-[20px] shadow-sm">
-            <table className="w-full min-w-[900px] text-left border-collapse">
+            <table className="w-full min-w-[1100px] text-left border-collapse table-fixed">
               <thead>
-                <tr className="bg-[#0CAADD] text-white text-[14px] uppercase tracking-wider font-bold">
+                <tr className="bg-[#0CAADD] text-white text-[16px] uppercase tracking-wider font-bold">
                   <th className="py-5 px-6 font-bold w-[15%]">CITY</th>
                   <th className="py-5 px-6 font-bold w-[15%]">CONTACT PERSON</th>
                   <th className="py-5 px-6 font-bold w-[40%]">ADDRESS</th>
@@ -106,7 +106,7 @@ export default function ContactOffices() {
                   <th className="py-5 px-6 font-bold w-[15%]">EMAIL</th>
                 </tr>
               </thead>
-              <tbody className="text-[#333333] text-[14px]">
+              <tbody className="text-[#333333] text-[16px]">
                 {currentContacts.length > 0 ? (
                   currentContacts.map((contact, index) => (
                     <tr 
@@ -121,13 +121,13 @@ export default function ContactOffices() {
                           <a href={`tel:${contact.number.replace(/[\s-]/g, '')}`} className="hover:text-[#0CAADD] hover:underline transition-colors">{contact.number}</a>
                         ) : null}
                       </td>
-                      <td className="py-6 px-6 align-top whitespace-nowrap">
+                      <td className="py-6 px-6 align-top break-words">
                         {contact.email ? (
                           <a 
                             href={`https://mail.google.com/mail/?view=cm&fs=1&to=${contact.email.trim()}`} 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="hover:text-[#0CAADD] hover:underline transition-colors"
+                            className="hover:text-[#0CAADD] hover:underline transition-colors break-all"
                           >
                             {contact.email}
                           </a>

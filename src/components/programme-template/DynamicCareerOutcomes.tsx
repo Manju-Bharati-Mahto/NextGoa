@@ -16,11 +16,11 @@ export function DynamicCareerOutcomes({
   isPhdLayout?: boolean
 }) {
   return (
-    <section className="relative overflow-hidden z-10 w-full py-16 sm:py-24"
+    <section className="relative overflow-hidden z-10 w-full"
       style={{ 
         backgroundImage: `linear-gradient(to bottom, ${topBgColor} 50%, transparent 50%)`,
-        paddingTop: "clamp(5rem, 12.2vw, 600px)",
-        paddingBottom: "clamp(5rem, 13.3vw, 600px)"
+        paddingTop: "clamp(4rem, 8.5vw, 400px)",
+        paddingBottom: "clamp(4rem, 9.5vw, 400px)"
       }}
     >
       {/* Background Wavy Image from Figma */}
@@ -195,17 +195,17 @@ export function DynamicCareerOutcomes({
           Career Outcomes
         </h2>
         
-        <h3 className="text-sunshine mb-6 section-heading">
+        <h3 className="text-sunshine mb-4 section-heading">
           {data.heading || "Where this degree takes you."}
         </h3>
         
         {!data.hideSubheadingAndTopRolesTitle && (
           <>
-            <p className="text-white/90 max-w-3xl mb-16 section-body">
+            <p className="text-white/90 max-w-3xl mb-10 section-body">
               {data.subheading || "Roles, recruiters and global Master's destinations our graduates build careers around."}
             </p>
 
-            <h4 className="text-white font-bold text-[32px] sm:text-[40px] mb-10 tracking-tight">
+            <h4 className="text-white font-bold text-[32px] sm:text-[40px] mb-8 tracking-tight">
               Top job roles
             </h4>
           </>
