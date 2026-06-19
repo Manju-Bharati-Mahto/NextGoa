@@ -366,8 +366,18 @@ export function EnquiryModal() {
         aria-hidden="true"
       />
 
-      {/* Modal */}
-      <div className="relative w-full max-w-[800px] rounded-[24px] bg-white shadow-2xl z-10 animate-in fade-in zoom-in-95 duration-200 max-h-[90dvh] flex flex-col overflow-hidden">
+      {/* Modal Container */}
+      <div 
+        className={`relative w-full max-w-[800px] max-h-[90vh] bg-white rounded-3xl shadow-2xl flex flex-col overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] ${
+          isOpen 
+            ? 'opacity-100 translate-y-0 scale-100 rotateX-0' 
+            : 'opacity-0 translate-y-10 scale-95 rotateX-12'
+        } ${submitState === 'success' ? 'bg-cover bg-center bg-no-repeat' : ''}`}
+        style={{ 
+          transformStyle: 'preserve-3d',
+          backgroundImage: submitState === 'success' ? "url('/thankyou.png')" : 'none'
+        }}
+      >
         <button
           onClick={close}
           className="absolute right-4 top-4 sm:right-6 sm:top-6 z-20 rounded-full p-2 text-gray-500 bg-gray-100 hover:bg-gray-200 hover:text-gray-800 transition-all"
