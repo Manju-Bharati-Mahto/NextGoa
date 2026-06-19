@@ -1,0 +1,52 @@
+[
+  {
+    "pageName": "Home",
+    "mainDomain": "https://goa.paruluniversity.ac.in",
+    "urlPath": "/"
+  },
+  {
+    "pageName": "About Parul University Goa",
+    "mainDomain": "https://goa.paruluniversity.ac.in",
+    "urlPath": "/about"
+  },
+  {
+    "pageName": "Vision & Mission",
+    "mainDomain": "https://goa.paruluniversity.ac.in",
+    "urlPath": "/about/vision-mission"
+  },
+  {
+    "pageName": "Chancellor's Message",
+    "mainDomain": "https://goa.paruluniversity.ac.in",
+    "urlPath": "/about/chancellors-message"
+  },
+  {
+    "pageName": "President's Message",
+    "mainDomain": "https://goa.paruluniversity.ac.in",
+    "urlPath": "/about/presidents-message"
+  },
+  {
+    "pageName": "Vice Chancellor's Message",
+    "mainDomain": "https://goa.paruluniversity.ac.in",
+    "urlPath": "/about/vice-chancellor"
+  },
+  {
+    "pageName": "Leadership Team",
+    "mainDomain": "https://goa.paruluniversity.ac.in",
+    "urlPath": "/about/leadership"
+  },
+  {
+    "pageName": "Board of Governors",
+    "mainDomain": "https://goa.paruluniversity.ac.in",
+    "urlPath": "/about/board-of-governors"
+  },
+  {
+    "pageName": "Accreditations & Recognitions",
+    "mainDomain": "https://goa.paruluniversity.ac.in",
+    "urlPath": "/about/accreditations-recognitions"
+  },
+  {
+    "pageName": "Why Parul University Goa",
+    "mainDomain": "https://goa.paruluniversity.ac.in",
+    "urlPath": "/about/why-parul-university-goa"
+  }
+]

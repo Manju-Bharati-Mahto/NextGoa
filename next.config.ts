@@ -69,6 +69,26 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/about/chancellors-message',
+        destination: '/about#leadership',
+        permanent: true,
+      },
+      {
+        source: '/about/presidents-message',
+        destination: '/about#leadership',
+        permanent: true,
+      },
+      {
+        source: '/about/vice-chancellor',
+        destination: '/about#leadership',
+        permanent: true,
+      },
+      {
+        source: '/about/board-of-governors',
+        destination: '/about#board-of-governors',
+        permanent: true,
+      },
+      {
         source: '/international/study-abroad',
         destination: '/study-abroad',
         permanent: true,
