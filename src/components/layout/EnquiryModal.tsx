@@ -368,11 +368,11 @@ export function EnquiryModal() {
 
       {/* Modal Container */}
       <div 
-        className={`relative w-full max-w-[800px] max-h-[90vh] bg-white rounded-3xl shadow-2xl flex flex-col overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] ${
+        className={`relative w-full max-w-[800px] max-h-[90vh] rounded-3xl flex flex-col overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] ${
           isOpen 
             ? 'opacity-100 translate-y-0 scale-100 rotateX-0' 
             : 'opacity-0 translate-y-10 scale-95 rotateX-12'
-        } ${submitState === 'success' ? 'bg-cover bg-center bg-no-repeat' : ''}`}
+        } ${submitState === 'success' ? 'bg-transparent bg-cover bg-center bg-no-repeat shadow-none' : 'bg-white shadow-2xl'}`}
         style={{ 
           transformStyle: 'preserve-3d',
           backgroundImage: submitState === 'success' ? "url('/thankyou.png')" : 'none'
@@ -380,8 +380,10 @@ export function EnquiryModal() {
       >
         <button
           onClick={close}
-          className="absolute right-4 top-4 sm:right-6 sm:top-6 z-20 rounded-full p-2 text-gray-500 bg-gray-100 hover:bg-gray-200 hover:text-gray-800 transition-all"
-          aria-label="Close"
+          className={`absolute right-4 top-4 sm:right-6 sm:top-6 z-20 rounded-full p-2 transition-all ${
+            submitState === 'success' ? 'text-white bg-white/20 hover:bg-white/30' : 'text-gray-500 bg-gray-100 hover:bg-gray-200 hover:text-gray-800'
+          }`}
+          aria-label="Close modal"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -405,20 +407,20 @@ export function EnquiryModal() {
         <div className={`overflow-y-auto flex-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] ${submitState === 'success' ? 'p-6 sm:p-10' : 'px-6 pb-6 sm:px-10 sm:pb-10 pt-2'}`}>
           {submitState === 'success' ? (
             <div className="flex flex-col items-center justify-center py-12 sm:py-16 space-y-6 animate-in zoom-in-50 fade-in duration-500 font-poppins">
-              <div className="rounded-full bg-[#10B981]/10 p-4 sm:p-5">
-                <div className="rounded-full bg-[#10B981] p-3 sm:p-4 text-white flex items-center justify-center">
+              <div className="rounded-full bg-white/20 backdrop-blur-sm p-4 sm:p-5">
+                <div className="rounded-full bg-white p-3 sm:p-4 text-[#10B981] flex items-center justify-center shadow-lg">
                   <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
                 </div>
               </div>
               <div className="space-y-2 sm:space-y-3 text-center">
-                <h3 className="text-[28px] sm:text-[36px] font-black text-[#1C1C1E] tracking-tight">Thank You!</h3>
-                <p className="text-[15px] sm:text-[18px] text-[#5F6368] leading-relaxed max-w-md mx-auto px-4">
+                <h3 className="text-[28px] sm:text-[36px] font-black text-white tracking-tight drop-shadow-md">Thank You!</h3>
+                <p className="text-[15px] sm:text-[18px] text-white/90 leading-relaxed max-w-md mx-auto px-4 drop-shadow-sm">
                   Your request has been successfully received.<br />
                   Our team will reach out to you shortly.
                 </p>
-                <p className="text-[13px] sm:text-[14px] font-medium text-[#E72A2A] pt-4">
+                <p className="text-[13px] sm:text-[14px] font-medium text-white pt-4 drop-shadow-sm">
                   Redirecting to Application Portal in {countdown}s...
                 </p>
               </div>
