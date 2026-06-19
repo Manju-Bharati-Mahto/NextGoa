@@ -36,7 +36,7 @@ export default function NotFound() {
         />
       </div>
 
-      <div className="absolute right-0 bottom-0 w-[96%] md:w-[94%] lg:w-[90%] xl:w-[85%] max-w-[1800px] z-0 pointer-events-none">
+      <div className="absolute right-0 bottom-0 w-[90%] md:w-[80%] lg:w-[70%] xl:w-[60%] max-w-[1300px] z-0 pointer-events-none">
         <Image
           src="/404-illustration.png"
           alt="Man relaxing on a beach"
