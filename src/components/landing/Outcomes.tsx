@@ -64,12 +64,13 @@ export function Outcomes() {
           <div className="w-full overflow-hidden flex">
             <div className="animate-marquee flex w-max items-center">
               {row1.map((src, i) => (
-                <img
-                  key={i}
-                  src={src}
-                  alt="Recruiter logo"
-                  className="h-12 sm:h-16 w-auto object-contain mx-6 sm:mx-8 max-w-none hover:scale-105 transition-transform duration-200"
-                />
+                <div key={i} className="w-32 sm:w-48 h-12 sm:h-16 mx-4 sm:mx-6 flex items-center justify-center shrink-0">
+                  <img
+                    src={src}
+                    alt="Recruiter logo"
+                    className="w-full h-full object-contain hover:scale-105 transition-transform duration-200"
+                  />
+                </div>
               ))}
             </div>
           </div>
@@ -78,12 +79,13 @@ export function Outcomes() {
           <div className="w-full overflow-hidden flex">
             <div className="animate-marquee-reverse flex w-max items-center">
               {row2.map((src, i) => (
-                <img
-                  key={i}
-                  src={src}
-                  alt="Recruiter logo"
-                  className="h-12 sm:h-16 w-auto object-contain mx-6 sm:mx-8 max-w-none hover:scale-105 transition-transform duration-200"
-                />
+                <div key={i} className="w-32 sm:w-48 h-12 sm:h-16 mx-4 sm:mx-6 flex items-center justify-center shrink-0">
+                  <img
+                    src={src}
+                    alt="Recruiter logo"
+                    className="w-full h-full object-contain hover:scale-105 transition-transform duration-200"
+                  />
+                </div>
               ))}
             </div>
           </div>

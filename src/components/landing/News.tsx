@@ -8,28 +8,28 @@ import { BlogStory } from "@/lib/fetchBlogs";
 
 const placeholderStories = [
   {
-    tag: "Innovation",
-    tagClass: "bg-brand text-white",
-    title: "PU Goa Hackathon 2026 - 48 hours, 60 teams, 9 deployed prototypes.",
-    body: "From medical scheduling to coastal-tourism analytics, students built real solutions.",
+    tag: "STUDENT LIFE",
+    tagClass: "bg-[#04B86A] text-white",
+    title: "How Students Learn Creative Design and Editing at Parul University's Adobe Lab",
+    body: "The Adobe Creative Design Studio inside Parul University's Lakshya 2047...",
     image: "",
-    link: "/stories",
+    link: "/stories/how-students-learn-creative-design",
   },
   {
-    tag: "Alumni",
-    tagClass: "bg-ocean text-white",
-    title: "From BHMCT to The Leela: Aman's two-year journey to property operations.",
-    body: "How training pairs hands-on career years - without a single skip in between.",
+    tag: "STUDENT LIFE",
+    tagClass: "bg-[#04B86A] text-white",
+    title: "Parul University Autodesk Lab: CAD Studio for Mechanical, Civil and Architecture Students",
+    body: "The Autodesk Lab inside Parul University's Lakshya 2047 Centre provides...",
     image: "",
-    link: "/stories",
+    link: "/stories/parul-university-autodesk-lab",
   },
   {
-    tag: "Industry",
-    tagClass: "bg-ink text-white",
-    title: "Engineering students visit ONGC Betul during India Energy Week 2026.",
-    body: "A first-hand look at offshore operations, processing platforms, and energy supply chains.",
+    tag: "STUDENT LIFE",
+    tagClass: "bg-[#04B86A] text-white",
+    title: "How Parul University's Home Automation Lab Trains Students in BMS and HVAC...",
+    body: "The Home Automation Lab inside Parul University's Lakshya 2047 Centre...",
     image: "",
-    link: "/stories",
+    link: "/stories/how-parul-universitys-home-automation-lab-trains",
   },
 ];
 
@@ -62,30 +62,32 @@ export function News({ stories = [] }: { stories?: BlogStory[] }) {
   };
 
   const CardContent = ({ s }: { s: any }) => (
-    <Link href={s.link || "#"} target="_blank" className="block group overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-black/5 transition-all hover:shadow-lg h-full flex flex-col">
-      <div className="relative aspect-[16/10] bg-slate-100 overflow-hidden shrink-0">
-        {s.image ? (
-          <Image
-            src={s.image}
-            alt={s.title}
-            fill
-            sizes="(max-width: 768px) 100vw, 33vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-        ) : (
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-500 via-emerald-700 to-emerald-900">
-            <div className="absolute inset-0 opacity-25 [background:radial-gradient(circle_at_25%_70%,#bbf7d0_0,transparent_45%)]" />
-          </div>
-        )}
-      </div>
-      <div className="p-7 flex flex-col flex-1">
-        <div>
-          <span className={`inline-block rounded-full px-5 py-2 text-[10px] font-bold uppercase tracking-wide ${s.tagClass}`}>
+    <Link href={s.link || "#"} className="group flex flex-col justify-between overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-black/5 transition-all duration-300 hover:shadow-lg h-full">
+      <div className="flex flex-col h-full">
+        <div className="relative aspect-[16/12] bg-gradient-to-br from-brand via-brand-bright to-ocean overflow-hidden shrink-0">
+          {s.image ? (
+            <Image
+              src={s.image}
+              alt={s.title}
+              fill
+              sizes="(max-width: 768px) 100vw, 33vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          ) : (
+            <div className="absolute inset-0 opacity-25 [background:radial-gradient(circle_at_25%_70%,#ffffff_0,transparent_45%)]" />
+          )}
+        </div>
+        <div className="p-7">
+          <span className={`inline-block rounded-full px-5 py-2 text-[11px] font-bold uppercase tracking-wide ${s.tagClass}`}>
             {s.tag}
           </span>
+          <h3 className="mt-4 font-poppins text-lg font-semibold leading-snug tracking-tight text-ink group-hover:text-brand transition-colors line-clamp-2">
+            {s.title}
+          </h3>
+          <p className="mt-3 font-[family-name:var(--font-poppins)] text-sm leading-relaxed text-ink/70 line-clamp-3">
+            {s.body}
+          </p>
         </div>
-        <h3 className="mt-4 font-poppins text-lg lg:text-xl font-semibold leading-snug tracking-tight text-ink group-hover:text-brand transition-colors line-clamp-3">{s.title}</h3>
-        <p className="mt-3 section-body text-ink/70 line-clamp-3">{s.body}</p>
       </div>
     </Link>
   );
