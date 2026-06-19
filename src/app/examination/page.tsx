@@ -12,7 +12,7 @@ export default function ExaminationPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Banner Section */}
-      <section className="relative w-full h-[100vh]">
+      <section className="relative w-full h-[100vh] py-16 sm:py-24">
         <Image
           src="/examination/examination-banner.jpg"
           alt="Parul University Goa Examination Block"
@@ -33,7 +33,7 @@ export default function ExaminationPage() {
       </section>
 
       {/* Schedules Section */}
-      <section className="relative z-20 bg-gray-50 sm:pb-10 pb-5">
+      <section className="relative z-20 bg-gray-50 sm: py-16 sm:py-24">
         <ExaminationSchedules />
       </section>
     </main>

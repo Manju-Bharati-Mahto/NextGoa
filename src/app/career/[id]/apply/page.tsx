@@ -16,8 +16,7 @@ export default async function ApplyPage({ params }: { params: Promise<{ id: stri
   return (
     <main className="w-full flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section 
-        className="w-full relative pt-32 lg:pt-40 flex items-center z-20"
+      <section className="w-full relative lg: flex items-center z-20 py-16 sm:py-24"
         style={{ minHeight: 'max(500px, 45vw)' }}
       >
         {/* Background Image Overflowing Downward */}
@@ -53,7 +52,7 @@ export default async function ApplyPage({ params }: { params: Promise<{ id: stri
       </section>
 
       {/* Application Form Section */}
-      <section className="w-full pt-48 lg:pt-64 pb-20 lg:pb-32 relative z-10">
+      <section className="w-full lg: lg: relative z-10 py-16 sm:py-24">
         <div className="max-w-[1140px] mx-auto px-6 lg:px-12 bg-white p-8 lg:p-12 rounded-[2rem] border border-gray-200 shadow-sm">
           <h2 className="text-3xl font-extrabold mb-10 text-[#111111]">Basic Details</h2>
           

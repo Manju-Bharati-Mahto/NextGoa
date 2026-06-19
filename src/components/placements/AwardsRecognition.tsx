@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export function AwardsRecognition() {
   return (
-    <section className="w-full bg-[#1C1C1D] py-8 sm:py-24 border-y-[10px] sm:border-y-[20px] border-[#555555]">
+    <section className="w-full bg-[#1C1C1D] sm: border-y-[10px] sm:border-y-[20px] border-[#555555] py-16 sm:py-24">
       <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-[1.3fr_2fr_1.1fr] gap-6 lg:gap-8 items-stretch">
         
         {/* Left Column */}

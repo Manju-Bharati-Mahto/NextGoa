@@ -15,8 +15,7 @@ export default async function CareerDetailsPage({ params }: { params: Promise<{ 
   return (
     <main className="w-full flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section 
-        className="w-full relative pt-32 lg:pt-40 flex items-center z-20"
+      <section className="w-full relative lg: flex items-center z-20 py-16 sm:py-24"
         style={{ minHeight: 'max(500px, 42vw)' }}
       >
         {/* Background Image Overflowing Downward */}
@@ -58,7 +57,7 @@ export default async function CareerDetailsPage({ params }: { params: Promise<{ 
       </section>
 
       {/* Details Content Section */}
-      <section className="w-full pt-48 lg:pt-64 pb-16 lg:pb-24 relative z-10">
+      <section className="w-full lg: lg: relative z-10 py-16 sm:py-24">
         <div className="max-w-5xl mx-auto px-6 lg:px-12 flex flex-col gap-6">
           
           {/* Card 1: Key Responsibilities */}

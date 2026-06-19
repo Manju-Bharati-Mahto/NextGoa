@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function CampusSafety() {
   return (
-    <section className="relative w-full bg-white pt-[20vw] sm:pb-24 pb-20 md:pt-[10vw] md:pb-32 px-4 sm:px-6 lg:px-12 -mt-[5vw] z-0 overflow-hidden">
+    <section className="relative w-full bg-white pt-[20vw] sm: md:pt-[10vw] md: px-4 sm:px-6 lg:px-12 -mt-[5vw] z-0 overflow-hidden py-16 sm:py-24">
       {/* Top Half Green Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#DDF8E2] via-[#DDF8E2]/60 to-transparent h-[75%] z-0 pointer-events-none"></div>
 

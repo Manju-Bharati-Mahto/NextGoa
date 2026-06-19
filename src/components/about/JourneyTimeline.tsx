@@ -67,7 +67,7 @@ export function JourneyTimeline() {
   };
 
   return (
-    <section className="overflow-hidden bg-brand-white px-0 py-15 sm:pt-25 sm:pb-15">
+    <section className="overflow-hidden bg-brand-white px-0 sm: sm: py-16 sm:py-24">
       <div className="mx-auto max-w-5xl px-6 text-center">
         <p className="text-ink section-subheading">
           Journey

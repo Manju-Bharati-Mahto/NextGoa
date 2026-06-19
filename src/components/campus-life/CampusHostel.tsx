@@ -20,7 +20,7 @@ export function CampusHostel() {
   }, []);
 
   return (
-    <section className="relative w-full z-10">
+    <section className="relative w-full z-10 py-16 sm:py-24">
       {/* Background for the top part (above the top wave) */}
       <div className="absolute inset-x-0 top-0 h-[10vw] bg-[#F8F8F8] z-0 pointer-events-none" />
 

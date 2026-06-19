@@ -25,7 +25,7 @@ const benefits = [
 
 export default function BenefitsSection() {
   return (
-    <section id="explore" className="bg-[#F9F9F9] py-24 font-[family-name:var(--font-poppins)]">
+    <section id="explore" className="bg-[#F9F9F9] font-[family-name:var(--font-poppins)] py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="mb-4 inline-block rounded-full bg-[#FFD523] px-4 py-1.5 text-xs font-bold text-ink shadow-sm uppercase tracking-wider">

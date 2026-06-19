@@ -91,8 +91,7 @@ const DegreeCard = ({ data }: { data: typeof degrees[0] }) => (
 
 export default function DegreeLevelSection() {
   return (
-    <section 
-      className="relative w-full min-h-[500px] md:min-h-[800px] flex items-center bg-transparent overflow-hidden"
+    <section className="relative w-full min-h-[500px] md:min-h-[800px] flex items-center bg-transparent overflow-hidden py-16 sm:py-24"
       style={{ 
         paddingTop: "clamp(5rem, 12.2vw, 600px)", 
         paddingBottom: "clamp(5rem, 13.3vw, 600px)" 

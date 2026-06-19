@@ -31,7 +31,7 @@ export function TransportAndHostel() {
     scrollRef.current.scrollLeft = scrollLeft - walk;
   };
   return (
-    <section className="w-full bg-[#fedb2f] py-20 px-4 sm:px-8 xl:px-16">
+    <section className="w-full bg-[#fedb2f] px-4 sm:px-8 xl:px-16 py-16 sm:py-24">
       <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
         
         {/* Left Side: Transport */}

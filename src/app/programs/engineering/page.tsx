@@ -21,7 +21,7 @@ export default function EngineeringPage() {
     <main className="flex min-h-screen flex-col w-full bg-white font-[family-name:var(--font-poppins)]">
       
       {/* Hero Section */}
-      <section className="relative w-full min-h-[600px] lg:min-h-[700px] bg-white flex items-center overflow-hidden pt-[120px] lg:pt-[160px]">
+      <section className="relative w-full min-h-[600px] lg:min-h-[700px] bg-white flex items-center overflow-hidden pt-[120px] lg:pt-[160px] py-16 sm:py-24">
         <div className="absolute inset-0 z-0">
           <Image 
             src="/programmes/engineering.jpg" 
@@ -58,7 +58,7 @@ export default function EngineeringPage() {
       </section>
 
       {/* Programme Snapshot Section */}
-      <section className="relative w-full bg-gradient-to-b from-white via-[#FFF4B3] to-[#FEDB2F] py-16 sm:py-24">
+      <section className="relative w-full bg-gradient-to-b from-white via-[#FFF4B3] to-[#FEDB2F] sm: py-16 sm:py-24">
         <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 relative z-10">
           <div className="flex flex-wrap items-stretch justify-center gap-4 sm:gap-6">
             

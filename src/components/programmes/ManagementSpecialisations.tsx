@@ -7,7 +7,7 @@ export default function ManagementSpecialisations() {
   const [activeTab, setActiveTab] = useState<"bachelors" | "masters">("bachelors");
 
   return (
-    <section className="w-full bg-[#F8F9FA] py-24 sm:py-32">
+    <section className="w-full bg-[#F8F9FA] sm: py-16 sm:py-24">
       <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}

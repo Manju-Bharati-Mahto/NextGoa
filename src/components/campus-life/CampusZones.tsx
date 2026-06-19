@@ -1,6 +1,6 @@
 export function CampusZones() {
   return (
-    <section className="relative w-full bg-[#F8F8F8] py-10 sm:py-16">
+    <section className="relative w-full bg-[#F8F8F8] sm: py-16 sm:py-24">
       <div className="mx-auto max-w-7xl sm:px-6 px-4 lg:px-12">
         {/* Header */}
         <div className="flex flex-col items-center text-center max-w-5xl mx-auto mb-16">

@@ -4,8 +4,7 @@ import React from "react";
 
 export default function WhyPUGoa() {
   return (
-    <section 
-      className="relative overflow-hidden z-10 w-full bg-[linear-gradient(to_bottom,transparent_50%,#EAF7FD_50%)] pt-[calc(clamp(30px,6vw,120px)+2rem)] pb-[calc(clamp(30px,6vw,120px)+2rem)] sm:pt-[calc(clamp(30px,6vw,120px)+4rem)] sm:pb-[calc(clamp(30px,6vw,120px)+4rem)]"
+    <section className="relative overflow-hidden z-10 w-full bg-[linear-gradient(to_bottom,transparent_50%,#EAF7FD_50%)] pt-[calc(clamp(30px,6vw,120px)+2rem)] pb-[calc(clamp(30px,6vw,120px)+2rem)] sm:pt-[calc(clamp(30px,6vw,120px)+4rem)] sm:pb-[calc(clamp(30px,6vw,120px)+4rem)] py-16 sm:py-24"
     >
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Middle Solid Red Background */}

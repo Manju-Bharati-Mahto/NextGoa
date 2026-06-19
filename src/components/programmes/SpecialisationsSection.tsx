@@ -34,7 +34,7 @@ const specialisationsData = [
 
 export default function SpecialisationsSection() {
   return (
-    <section className="pt-20 pb-5 sm:pb-15 sm:pt-30 bg-[#F9F9F9] font-[family-name:var(--font-poppins)]">
+    <section className="sm: sm: bg-[#F9F9F9] font-[family-name:var(--font-poppins)] py-16 sm:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Content */}

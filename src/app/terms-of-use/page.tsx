@@ -4,7 +4,7 @@ export default function TermsOfUse() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative w-full h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+      <section className="relative w-full h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden py-16 sm:py-24">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -33,7 +33,7 @@ export default function TermsOfUse() {
       </section>
 
       {/* Content Section */}
-      <section className="relative z-30 max-w-4xl mx-auto px-6 py-20 font-poppins">
+      <section className="relative z-30 max-w-4xl mx-auto px-6 font-poppins py-16 sm:py-24">
         <div className="flex flex-col gap-6">
           <AccordionItem title="Right of use">
             <p className="text-[14px] text-[#111111] leading-relaxed">

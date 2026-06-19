@@ -16,8 +16,7 @@ export function DynamicCareerOutcomes({
   isPhdLayout?: boolean
 }) {
   return (
-    <section 
-      className="relative overflow-hidden z-10 w-full"
+    <section className="relative overflow-hidden z-10 w-full py-16 sm:py-24"
       style={{ 
         backgroundImage: `linear-gradient(to bottom, ${topBgColor} 50%, transparent 50%)`,
         paddingTop: "clamp(5rem, 12.2vw, 600px)",

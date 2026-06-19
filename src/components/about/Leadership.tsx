@@ -2,7 +2,7 @@ import { Eyebrow } from "@/components/landing/Decor";
 
 export function Leadership() {
   return (
-    <section id="leadership" className="bg-[#F8F8F8] py-20 sm:py-10 px-6 overflow-hidden scroll-mt-24 md:scroll-mt-32">
+    <section id="leadership" className="bg-[#F8F8F8] sm: px-6 overflow-hidden scroll-mt-24 md:scroll-mt-32 py-16 sm:py-24">
       <div className="mx-auto max-w-6xl">
         <div className="text-center mb-12">
           <Eyebrow className="text-ink">Our Leadership</Eyebrow>

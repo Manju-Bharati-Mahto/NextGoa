@@ -40,7 +40,7 @@ export default function StaffGrievancesPage() {
     <main className="w-full min-h-screen bg-[#F8F9FA] flex flex-col font-poppins">
       
       {/* Hero Section */}
-      <section className="w-full pt-20 overflow-hidden">
+      <section className="w-full overflow-hidden py-16 sm:py-24">
         <Image
           src="/grievances/Grievance.png"
           alt="Staff Grievances Background"
@@ -52,7 +52,7 @@ export default function StaffGrievancesPage() {
       </section>
 
       {/* Main Content Area */}
-      <section className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col gap-10">
+      <section className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-10 py-16 sm:py-24">
         
         {/* Red Text Box */}
         <div className="bg-[#E74C5E] text-white text-center py-8 px-6 sm:px-12 rounded-[20px] shadow-sm">

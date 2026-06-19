@@ -26,7 +26,7 @@ export default async function StoryPage({
     <main className="min-h-screen bg-white pb-16">
       <article className="pt-0">
         {/* Hero Section */}
-        <section className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden">
+        <section className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden py-16 sm:py-24">
           <div className="absolute inset-0 bg-black/60 z-10" />
           <Image
             src={story.image}
@@ -49,7 +49,7 @@ export default async function StoryPage({
 
         {/* Blockquote Section */}
         {quoteBlock && (
-          <section className="bg-[#f7f7f7] py-16 px-[50px] flex justify-center border-b border-gray-200">
+          <section className="bg-[#f7f7f7] px-[50px] flex justify-center border-b border-gray-200 py-16 sm:py-24">
             <div className="max-w-7xl w-full text-center">
               <Quote className="w-12 h-12 text-[#ff4b5c] mx-auto mb-6 opacity-80" />
               <blockquote className="section-subheading text-ink leading-relaxed">
@@ -60,7 +60,7 @@ export default async function StoryPage({
         )}
 
         {/* Main Content */}
-        <section className="max-w-7xl mx-auto w-full py-16 px-[50px]">
+        <section className="max-w-7xl mx-auto w-full px-[50px] py-16 sm:py-24">
           {contentBlocks.map((block, idx) => {
             if (block.type === "h2") {
               return (

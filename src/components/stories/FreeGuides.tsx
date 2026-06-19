@@ -65,7 +65,7 @@ function FileIcon({ className = "w-6 h-6" }: { className?: string }) {
 
 export function FreeGuides() {
   return (
-    <section className="bg-brand-white py-20 md:py-24 border-t border-black/5">
+    <section className="bg-brand-white md: border-t border-black/5 py-16 sm:py-24">
       <div className="mx-auto max-w-[1680px] px-6 sm:px-10 flex flex-col items-center">
         
         {/* Title Block */}

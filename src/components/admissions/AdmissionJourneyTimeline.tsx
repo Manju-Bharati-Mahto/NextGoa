@@ -110,7 +110,7 @@ export function AdmissionJourneyTimeline() {
   const currentStepData = steps[activeStep];
 
   return (
-    <section className="w-full bg-[#faf9f6] py-10 px-4 sm:px-8 xl:px-16">
+    <section className="w-full bg-[#faf9f6] px-4 sm:px-8 xl:px-16 py-16 sm:py-24">
       <div className="max-w-[1400px] mx-auto">
         {/* Header */}
         <div className="text-center mb-12">

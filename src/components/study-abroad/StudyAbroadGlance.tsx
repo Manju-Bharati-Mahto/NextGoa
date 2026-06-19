@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function StudyAbroadGlance() {
   return (
-    <section className="bg-gradient-to-b from-white via-[#F9F9F9] via-[15%] to-[#F9F9F9] py-24 font-[family-name:var(--font-poppins)]">
+    <section className="bg-gradient-to-b from-white via-[#F9F9F9] via-[15%] to-[#F9F9F9] font-[family-name:var(--font-poppins)] py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">

@@ -4,7 +4,7 @@ export default function PrivacyPolicy() {
   return (
     <main className="min-h-screen bg-[#FDFCF8]">
       {/* Hero Section */}
-      <section className="relative w-full h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden bg-[url('/hero-bg.jpg')] bg-cover bg-center bg-no-repeat">
+      <section className="relative w-full h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden bg-[url( py-16 sm:py-24"/hero-bg.jpg')] bg-cover bg-center bg-no-repeat">
         
         {/* Overlay to ensure text readability if needed */}
         <div className="absolute inset-0 bg-white/20 z-0"></div>
@@ -23,7 +23,7 @@ export default function PrivacyPolicy() {
       </section>
 
       {/* Content Section */}
-      <section className="relative z-30 max-w-4xl mx-auto px-6 py-20 font-poppins">
+      <section className="relative z-30 max-w-4xl mx-auto px-6 font-poppins py-16 sm:py-24">
         <div className="flex flex-col gap-6">
           
           <div className="bg-white rounded-[12px] border border-[#E5E5E5] overflow-hidden p-6 md:p-8">

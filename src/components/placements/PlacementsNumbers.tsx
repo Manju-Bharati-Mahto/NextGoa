@@ -3,8 +3,7 @@ import { Animated2200Icon } from "@/components/placements/Animated2200Icon";
 
 export function PlacementsNumbers() {
   return (
-    <section
-      className="relative w-full z-10 overflow-hidden bg-transparent text-white -mt-6 sm:-mt-12"
+    <section className="relative w-full z-10 overflow-hidden bg-transparent text-white -mt-6 sm:-mt-12 py-16 sm:py-24"
       style={{
         paddingTop: "clamp(5rem, 12.2vw, 600px)",
         paddingBottom: "clamp(5rem, 13.3vw, 600px)"

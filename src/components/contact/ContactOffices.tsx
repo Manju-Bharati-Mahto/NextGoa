@@ -56,7 +56,7 @@ export default function ContactOffices() {
       </div>
 
       {/* State Contacts Table Section */}
-      <section className="relative w-full bg-[#FDFCF8] py-16 lg:py-24">
+      <section className="relative w-full bg-[#FDFCF8] lg: py-16 sm:py-24">
         <div className="w-full max-w-6xl mx-auto px-6 font-poppins">
           {/* South Zone Heads Grid */}
           {activeZone === "South Zone" && southZoneHeads.length > 0 && (

@@ -179,7 +179,7 @@ export function PlacementsByTheNumbers() {
   let cumulativeForLabels = 0;
 
   return (
-    <section ref={sectionRef} className="w-full bg-white py-20 border-t border-gray-100">
+    <section ref={sectionRef} className="w-full bg-white border-t border-gray-100 py-16 sm:py-24">
       <div className="max-w-6xl mx-auto px-6 flex flex-col items-center">
         <h3 className="text-gray-900 mb-2 transition-all duration-300 section-subheading text-center">
           {activeSlide === 0 ? "Sector destinations" : "Package distribution"}

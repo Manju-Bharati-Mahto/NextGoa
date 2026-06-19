@@ -10,7 +10,7 @@ function PhoneIcon() {
 
 export function PlacementsCta() {
   return (
-    <section className="bg-[#F5F6F8] py-12 sm:py-20">
+    <section className="bg-[#F5F6F8] sm: py-16 sm:py-24">
       <div className="mx-auto max-w-[1100px] px-4 sm:px-6">
         <div className="relative isolate overflow-hidden rounded-[20px] shadow-sm mb-8 flex flex-col justify-center min-h-[300px]">
           <Image

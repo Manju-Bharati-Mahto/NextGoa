@@ -12,8 +12,7 @@ import GetInTouch from "@/components/contact/GetInTouch";
 export default function ContactUs() {
   return (
     <main className="flex-1 overflow-x-hidden font-poppins">
-      <section 
-        className="relative flex min-h-screen flex-col items-center justify-center pt-20 overflow-hidden bg-[url('/hero-campus.webp')] bg-cover bg-bottom bg-no-repeat"
+      <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[url( py-16 sm:py-24"/hero-campus.webp')] bg-cover bg-bottom bg-no-repeat"
       >
         {/* Light gradient overlay to ensure text is readable if sky gets too bright */}
         <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-transparent pointer-events-none" />
@@ -30,7 +29,7 @@ export default function ContactUs() {
       </section>
 
       {/* General Contact Information Section */}
-      <section className="w-full bg-[#FDFCF8] pb-24 relative z-20">
+      <section className="w-full bg-[#FDFCF8] relative z-20 py-16 sm:py-24">
         <div className="max-w-6xl mx-auto px-6">
           
           {/* Header */}
@@ -122,7 +121,7 @@ export default function ContactUs() {
       </section>
 
       {/* Regional Offices Section with Animated Waves */}
-      <section className="relative w-full">
+      <section className="relative w-full py-16 sm:py-24">
         {/* The Blue Section */}
         <div className="relative w-full z-10 pointer-events-none">
           {/* Blue Background Layers */}

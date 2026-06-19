@@ -24,7 +24,7 @@ export default function GetInTouch() {
   }
 
   return (
-    <section className="w-full bg-[#F8F9FA] py-20 px-6 font-poppins">
+    <section className="w-full bg-[#F8F9FA] px-6 font-poppins py-16 sm:py-24">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-center text-[#E74C5E] font-bold text-[36px] sm:text-[44px] mb-12">
           Get in Touch

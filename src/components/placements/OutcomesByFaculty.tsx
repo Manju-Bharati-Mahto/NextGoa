@@ -131,7 +131,7 @@ export function OutcomesByFaculty() {
   const data = facultyData[activeTab];
 
   return (
-    <section className="bg-[#F0F2F5] sm:py-24 sm:pb-0 py-15 px-4 sm:px-6 lg:px-8">
+    <section className="bg-[#F0F2F5] sm: sm: px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
       <div className="max-w-[1440px] mx-auto">
 
         {/* Header */}

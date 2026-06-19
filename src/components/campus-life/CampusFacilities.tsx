@@ -35,7 +35,7 @@ const cards = [
 
 export function CampusFacilities() {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-white via-white to-[#FEF3BA] pb-20 pt-25 lg:py-28">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-white via-white to-[#FEF3BA] lg: py-16 sm:py-24">
       {/* Decorative Trees */}
       <img src="/campus-life/left-tree.svg" alt="" className="absolute left-0 top-0 sm:top-[10%] opacity-30 sm:opacity-100 w-[140px] md:w-[200px] lg:w-[280px] pointer-events-none z-10" />
       <img src="/campus-life/right-tree.svg" alt="" className="absolute right-0 top-0 sm:top-[10%] opacity-30 sm:opacity-100 w-[140px] md:w-[200px] lg:w-[280px] pointer-events-none z-10" />

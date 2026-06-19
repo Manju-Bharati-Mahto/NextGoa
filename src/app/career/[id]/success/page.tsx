@@ -15,8 +15,7 @@ export default async function SuccessPage({ params }: { params: Promise<{ id: st
     <main className="w-full flex flex-col min-h-screen bg-[#14A8DA]">
 
       {/* Full Screen Background Image */}
-      <section 
-        className="w-full relative flex-1 flex items-center z-20 overflow-hidden"
+      <section className="w-full relative flex-1 flex items-center z-20 overflow-hidden py-16 sm:py-24"
       >
         <img 
           src="/car-hero-1.png" 

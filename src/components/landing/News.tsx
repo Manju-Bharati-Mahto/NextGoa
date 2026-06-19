@@ -91,7 +91,7 @@ export function News({ stories = [] }: { stories?: BlogStory[] }) {
   );
 
   return (
-    <section id="news" className="bg-brand-white">
+    <section id="news" className="bg-brand-white py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-6 py-0 sm:pt-10">
         <Eyebrow className="text-ink">News &amp; Stories</Eyebrow>
         <h2 className="mt-2 text-center section-heading text-brand">

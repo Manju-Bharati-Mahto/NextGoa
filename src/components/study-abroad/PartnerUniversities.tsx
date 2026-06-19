@@ -13,7 +13,7 @@ const partners = [
 
 export default function PartnerUniversities() {
   return (
-    <section className="bg-white py-24 font-[family-name:var(--font-poppins)] overflow-hidden">
+    <section className="bg-white font-[family-name:var(--font-poppins)] overflow-hidden py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-12 text-center">
         <h2 className="text-ink mb-4 section-heading">
           Our Global Partners

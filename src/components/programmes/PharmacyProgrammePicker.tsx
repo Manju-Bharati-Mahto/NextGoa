@@ -26,7 +26,7 @@ export default function PharmacyProgrammePicker() {
   ];
 
   return (
-    <section className="w-full bg-[#FAFAFA] py-24 sm:py-32">
+    <section className="w-full bg-[#FAFAFA] sm: py-16 sm:py-24">
       <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-8 lg:px-12">
         
         {/* Header Section */}

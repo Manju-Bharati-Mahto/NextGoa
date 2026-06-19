@@ -89,7 +89,7 @@ export function DocumentsChecklist() {
   const currentData = DATA[activeTab];
 
   return (
-    <section className="w-full bg-[#fcfcfc] sm:py-20 py-10 px-4 sm:px-8 xl:px-16">
+    <section className="w-full bg-[#fcfcfc] sm: px-4 sm:px-8 xl:px-16 py-16 sm:py-24">
       <div className="max-w-[1200px] mx-auto">
         
         {/* Header Section */}

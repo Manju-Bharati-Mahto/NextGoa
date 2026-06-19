@@ -176,7 +176,7 @@ export function LatestStories({ stories = [] }: { stories?: Story[] }) {
   }, [slideLock]);
 
   return (
-    <section className="bg-brand-white pb-24 pt-8 border-t border-black/5">
+    <section className="bg-brand-white border-t border-black/5 py-16 sm:py-24">
       <div className="mx-auto max-w-[1680px] px-6 sm:px-10">
         
         {/* Title Block */}

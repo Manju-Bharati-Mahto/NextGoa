@@ -23,7 +23,7 @@ const cards = [
 
 export function International() {
   return (
-    <section id="international" className="relative overflow-hidden bg-[#F8F8F8]">
+    <section id="international" className="relative overflow-hidden bg-[#F8F8F8] py-16 sm:py-24">
       {/* Top gradient that stops before the map */}
       <div className="absolute inset-x-0 top-0 h-[350px] sm:h-[450px] bg-gradient-to-b from-[#CBEFFD] to-[#F8F8F8] z-0 pointer-events-none" />
       

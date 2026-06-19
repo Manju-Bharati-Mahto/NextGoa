@@ -12,7 +12,7 @@ const pills = [
 
 export function VisionMission() {
   return (
-    <section id="vision-mission" className="bg-brand-white py-10 sm:py-16 px-6 scroll-mt-24 md:scroll-mt-32">
+    <section id="vision-mission" className="bg-brand-white sm: px-6 scroll-mt-24 md:scroll-mt-32 py-16 sm:py-24">
       <div className="mx-auto max-w-5xl">
         {/* Header */}
         <div className="text-center">

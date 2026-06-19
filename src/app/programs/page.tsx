@@ -14,8 +14,7 @@ export default function ProgrammesPage() {
   return (
     <main className="flex-1">
       {/* Hero Banner Section */}
-      <section
-        className="relative flex min-h-screen flex-col items-center justify-start pt-32 overflow-hidden bg-cover bg-center bg-no-repeat"
+      <section className="relative flex min-h-screen flex-col items-center justify-start overflow-hidden bg-cover bg-center bg-no-repeat py-16 sm:py-24"
         style={{ backgroundImage: "url('/programmes/Programme-banner.png')" }}
       >
         <div className="relative z-10 w-full max-w-7xl px-4 pt-4 sm:px-6 sm:pt-8 lg:pt-12 text-center">

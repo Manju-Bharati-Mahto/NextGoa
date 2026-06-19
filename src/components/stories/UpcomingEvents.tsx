@@ -22,7 +22,7 @@ export function UpcomingEvents({ stories = [] }: { stories?: Story[] }) {
   const visibleEvents = showAll ? [...initialEvents, ...extraEvents] : initialEvents;
 
   return (
-    <section className="relative w-full sm:py-20 sm:pt-5 md:py-15 overflow-hidden flex flex-col items-center bg-brand-white">
+    <section className="relative w-full sm: sm: md: overflow-hidden flex flex-col items-center bg-brand-white py-16 sm:py-24">
       <div className="relative z-10 mx-auto w-full max-w-[1680px] px-6 sm:px-10 flex flex-col items-center">
         
         {/* Title block */}

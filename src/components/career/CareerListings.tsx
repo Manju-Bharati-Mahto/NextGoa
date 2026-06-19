@@ -167,7 +167,7 @@ export function CareerListings() {
   );
 
   return (
-    <section id="career-listings" className="w-full bg-[#FAFAFA] py-12 lg:py-20 relative">
+    <section id="career-listings" className="w-full bg-[#FAFAFA] lg: relative py-16 sm:py-24">
       <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-[350px_1fr] gap-6 lg:gap-10">
         
         {/* Left Sidebar: Filter Graphic + Filter Options */}

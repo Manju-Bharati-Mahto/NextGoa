@@ -3,8 +3,7 @@ import Image from 'next/image';
 
 export function InternshipsAndPPOs() {
   return (
-    <section
-      className="relative w-full overflow-hidden bg-[#F8F9FA]"
+    <section className="relative w-full overflow-hidden bg-[#F8F9FA] py-16 sm:py-24"
       style={{
         paddingTop: "clamp(5rem, 12.2vw, 600px)",
         paddingBottom: "clamp(5rem, 13.3vw, 600px)"

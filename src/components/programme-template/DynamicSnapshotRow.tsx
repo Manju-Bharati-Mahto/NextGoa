@@ -4,7 +4,7 @@ import { SnapshotRowCard } from "@/data/programmes/types";
 
 export function DynamicSnapshotRow({ data }: { data: SnapshotRowCard[] }) {
   return (
-    <section className="relative w-full bg-gradient-to-b from-white via-[#FFF4B3] to-[#FEDB2F] py-16 sm:py-24">
+    <section className="relative w-full bg-gradient-to-b from-white via-[#FFF4B3] to-[#FEDB2F] sm: py-16 sm:py-24">
       <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 relative z-10">
         <div className="flex flex-wrap lg:flex-nowrap items-stretch justify-center gap-4 sm:gap-6">
           {data.map((card, idx) => (

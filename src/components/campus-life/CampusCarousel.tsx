@@ -62,7 +62,7 @@ export function CampusCarousel() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#FEF3BA] to-[#F8F8F8]">
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#FEF3BA] to-[#F8F8F8] py-16 sm:py-24">
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Middle Solid Blue Background */}
         <div

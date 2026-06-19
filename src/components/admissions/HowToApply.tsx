@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export function HowToApply() {
   return (
-    <section className="w-full bg-[#faf9f6] sm:py-10 py-10 px-4 sm:px-8 xl:px-16">
+    <section className="w-full bg-[#faf9f6] sm: px-4 sm:px-8 xl:px-16 py-16 sm:py-24">
       <div className="max-w-[1200px] mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-ink mb-2 section-subheading">How to Apply</h2>

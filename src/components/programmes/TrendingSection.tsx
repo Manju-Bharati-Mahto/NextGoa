@@ -72,8 +72,7 @@ export default function TrendingSection() {
   const activeCourse = trendingCourses[activeIndex];
 
   return (
-    <section 
-      className="relative z-20 w-full lg:min-h-[600px] flex items-center bg-transparent -mt-12 sm:-mt-24 lg:-mt-5 pb-16 lg:pb-0"
+    <section className="relative z-20 w-full lg:min-h-[600px] flex items-center bg-transparent -mt-12 sm:-mt-24 lg:-mt-5 lg: py-16 sm:py-24"
       style={{ 
         paddingTop: "clamp(3rem, 8vw, 120px)", 
         paddingBottom: "clamp(2.5rem, 7vw, 110px)" 

@@ -2,9 +2,8 @@ import React from "react";
 
 export function StoriesHeader() {
   return (
-    <section 
-      id="hero"
-      className="relative flex w-full min-h-[85vh] md:min-h-[55vw] flex-col items-center justify-start pt-32 overflow-hidden bg-[url('/story-bg.webp')] bg-cover bg-[center_top_10%] bg-no-repeat"
+    <section id="hero"
+      className="relative flex w-full min-h-[85vh] md:min-h-[55vw] flex-col items-center justify-start overflow-hidden bg-[url( py-16 sm:py-24"/story-bg.webp')] bg-cover bg-[center_top_10%] bg-no-repeat"
     >
       {/* Light gradient overlay to ensure text is readable if background gets too bright */}
       <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-transparent pointer-events-none" />

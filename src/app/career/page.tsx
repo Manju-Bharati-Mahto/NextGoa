@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Career() {
   return (
     <main className="flex-1 overflow-x-hidden font-[family-name:var(--font-poppins)] relative">
-      <section className="relative w-full pt-24 pb-16 lg:pt-40 lg:pb-20 flex items-center z-10 overflow-hidden">
+      <section className="relative w-full lg: lg: flex items-center z-10 overflow-hidden py-16 sm:py-24">
         {/* Full Hero Background */}
         <div className="absolute inset-x-0 top-0 bottom-0 z-0">
           <Image 

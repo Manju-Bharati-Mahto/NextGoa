@@ -103,7 +103,7 @@ function StoriesGridInner({
   return (
     <div id="stories-grid" className="w-full">
       {/* Moss Green Categories Section */}
-      <section className="bg-[#5B6933] text-white">
+      <section className="bg-[#5B6933] text-white py-16 sm:py-24">
         {/* Title */}
         <div className="mx-auto max-w-[1680px] px-6 sm:px-10 pt-16 pb-10 text-center">
           <h2 className="text-white section-subheading">
@@ -139,7 +139,7 @@ function StoriesGridInner({
       </section>
 
       {/* Stories Cards Grid (Off-white background starting immediately below the green selector) */}
-      <section className="bg-brand-white py-16 sm:py-20">
+      <section className="bg-brand-white sm: py-16 sm:py-24">
         <div className="mx-auto max-w-[1680px] px-6 sm:px-10">
           
           {/* Combined Stories Section */}

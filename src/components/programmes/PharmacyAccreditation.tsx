@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function PharmacyAccreditation() {
   return (
-    <section className="w-full bg-[#FAFAFA] py-16 sm:py-24">
+    <section className="w-full bg-[#FAFAFA] sm: py-16 sm:py-24">
       <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8 text-center">
         
         <h2 className="text-[#E73649] mb-12 section-heading">

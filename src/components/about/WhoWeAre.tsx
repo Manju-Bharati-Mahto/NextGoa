@@ -2,7 +2,7 @@ import { Eyebrow } from "@/components/landing/Decor";
 
 export function WhoWeAre() {
   return (
-    <section id="who-we-are" className="relative overflow-hidden bg-transparent z-10 scroll-mt-24 md:scroll-mt-32">
+    <section id="who-we-are" className="relative overflow-hidden bg-transparent z-10 scroll-mt-24 md:scroll-mt-32 py-16 sm:py-24">
             <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Middle Solid Blue Background */}
         <div 

@@ -19,8 +19,7 @@ export default function StudyAbroadComparison() {
   ];
 
   return (
-    <section
-      className="relative w-full font-[family-name:var(--font-poppins)] bg-transparent overflow-hidden pt-[calc(clamp(30px,6vw,120px)+2rem)] pb-[calc(clamp(30px,6vw,120px)+2rem)] sm:pt-[calc(clamp(30px,6vw,120px)+4rem)] sm:pb-[calc(clamp(30px,6vw,120px)+4rem)]"
+    <section className="relative w-full font-[family-name:var(--font-poppins)] bg-transparent overflow-hidden pt-[calc(clamp(30px,6vw,120px)+2rem)] pb-[calc(clamp(30px,6vw,120px)+2rem)] sm:pt-[calc(clamp(30px,6vw,120px)+4rem)] sm:pb-[calc(clamp(30px,6vw,120px)+4rem)] py-16 sm:py-24"
     >
       {/* Background Red Wavy Image */}
       <div className="absolute inset-0 z-0 pointer-events-none">

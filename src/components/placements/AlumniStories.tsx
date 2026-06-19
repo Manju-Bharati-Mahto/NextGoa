@@ -73,9 +73,8 @@ export function AlumniStories() {
   const currentStory = stories[currentIndex];
 
   return (
-    <section
-      id="alumni"
-      className="relative w-full overflow-hidden bg-white pt-[calc(clamp(50px,8vw,120px)+4rem)] pb-[calc(clamp(50px,8vw,120px)+4rem)] scroll-mt-24 md:scroll-mt-32"
+    <section id="alumni"
+      className="relative w-full overflow-hidden bg-white pt-[calc(clamp(50px,8vw,120px)+4rem)] pb-[calc(clamp(50px,8vw,120px)+4rem)] scroll-mt-24 md:scroll-mt-32 py-16 sm:py-24"
     >
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Middle Solid Red Background */}

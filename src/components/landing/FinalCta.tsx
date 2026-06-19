@@ -45,8 +45,7 @@ export function FinalCta({
   background = "gradient",
 }: FinalCtaProps) {
   return (
-    <section
-      className="bg-brand-white"
+    <section className="bg-brand-white py-16 sm:py-24"
     >
       <div className="mx-auto max-w-[1600px] px-6 sm:pb-17 sm:pt-5 pt-5 pb-15">
         <div className="relative isolate overflow-hidden rounded-[20px] shadow-xl">

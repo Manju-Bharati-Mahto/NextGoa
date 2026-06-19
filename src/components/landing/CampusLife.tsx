@@ -47,7 +47,7 @@ function CardItem({ card }: { card: (typeof cards)[number] }) {
 
 export function CampusLife() {
   return (
-    <section id="campus-life" className="bg-brand-white">
+    <section id="campus-life" className="bg-brand-white py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <Eyebrow className="text-ink">Campus Life</Eyebrow>
         <h2 className="mt-2 text-center section-heading text-brand">

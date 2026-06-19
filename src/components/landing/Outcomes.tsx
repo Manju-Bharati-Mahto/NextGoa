@@ -36,7 +36,7 @@ const row2 = [...row2Logos, ...row2Logos];
 
 export function Outcomes() {
   return (
-    <section className="bg-brand-white">
+    <section className="bg-brand-white py-16 sm:py-24">
       {/* Constrained Header Container */}
       <div className="mx-auto max-w-5xl px-6 sm:pt-10 pt-5">
         <Eyebrow className="text-ink">Outcomes</Eyebrow>

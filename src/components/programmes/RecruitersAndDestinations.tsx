@@ -73,7 +73,7 @@ export default function RecruitersAndDestinations({ slug }: { slug?: string }) {
   };
 
   return (
-    <section className="w-full bg-[#FAFAFA] py-20 pb-10 overflow-hidden border-t border-gray-100">
+    <section className="w-full bg-[#FAFAFA] overflow-hidden border-t border-gray-100 py-16 sm:py-24">
       <style>{`
         @keyframes marquee {
           0% { transform: translateX(0%); }

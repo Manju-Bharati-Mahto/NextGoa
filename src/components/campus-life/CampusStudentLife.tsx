@@ -78,8 +78,7 @@ export function CampusStudentLife() {
   };
 
   return (
-    <section
-      className="relative w-full overflow-hidden flex flex-col justify-center pt-[calc(clamp(30px,6vw,120px)+2rem)] pb-[calc(clamp(30px,6vw,120px)+2rem)] sm:pt-[calc(clamp(30px,6vw,120px)+4rem)] sm:pb-[calc(clamp(30px,6vw,120px)+4rem)]"
+    <section className="relative w-full overflow-hidden flex flex-col justify-center pt-[calc(clamp(30px,6vw,120px)+2rem)] pb-[calc(clamp(30px,6vw,120px)+2rem)] sm:pt-[calc(clamp(30px,6vw,120px)+4rem)] sm:pb-[calc(clamp(30px,6vw,120px)+4rem)] py-16 sm:py-24"
     >
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Middle Solid Blue Background */}

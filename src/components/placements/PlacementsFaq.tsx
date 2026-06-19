@@ -59,7 +59,7 @@ export function PlacementsFaq() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="bg-[#F5F6F8] pb-24 pt-12">
+    <section className="bg-[#F5F6F8] py-16 sm:py-24">
       <div className="mx-auto max-w-[1100px] px-4 sm:px-6">
         
         <div className="text-center mb-12">

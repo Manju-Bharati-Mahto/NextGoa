@@ -26,7 +26,7 @@ export default function HotelManagementDestinations() {
   ];
 
   return (
-    <section className="relative overflow-hidden z-10 w-full bg-transparent">
+    <section className="relative overflow-hidden z-10 w-full bg-transparent py-16 sm:py-24">
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Middle Solid Blue Background */}
         <div 
