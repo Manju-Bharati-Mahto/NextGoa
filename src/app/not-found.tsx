@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import HideFooter from "@/components/layout/HideFooter";
 
 export default function NotFound() {
   return (
     <main className="min-h-screen bg-[#FFD523] flex flex-col items-center justify-between pt-32 pb-0 overflow-hidden font-[family-name:var(--font-poppins)] relative">
+      <HideFooter />
       <div className="flex flex-col items-center text-center z-10 px-4">
         <h1 
           className="text-[#ED383F] font-black text-9xl md:text-[200px] leading-none tracking-tight"
