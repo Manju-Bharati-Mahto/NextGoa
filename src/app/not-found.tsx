@@ -25,7 +25,7 @@ export default function NotFound() {
       </div>
 
       {/* White Sun Circle */}
-      <div className="absolute bottom-[5vh] md:bottom-[10vh] left-1/2 -translate-x-1/2 w-[120vw] sm:w-[80vw] max-w-[700px] aspect-square bg-white rounded-full z-0 pointer-events-none" />
+      <div className="absolute bottom-0 translate-y-[35%] md:translate-y-[40%] left-1/2 -translate-x-1/2 w-[120vw] sm:w-[80vw] max-w-[700px] aspect-square bg-white rounded-full z-0 pointer-events-none" />
 
       {/* Footer background behind the PNG */}
       <div className="absolute bottom-0 left-0 right-0 h-[20vh] sm:h-[25vh] lg:h-[30vh] z-0 pointer-events-none overflow-hidden">
