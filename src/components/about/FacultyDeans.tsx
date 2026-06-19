@@ -19,9 +19,9 @@ export function FacultyDeans() {
     },
     {
       name: "Dr. Anupam Kumar",
-      faculty: "Applied & Health Sciences",
+      faculty: "Applied & Healthcare Sciences",
       stats: "PhD. Biotechnology • 15+ yrs • 50+ papers",
-      image: "/faculties/Applied and Health Sciences/Dean.jpg",
+      image: "/faculties/Applied and Healthcare Sciences/Dean.jpg",
       linkedin: "https://www.linkedin.com/in/dr-anupam-kumar/",
     },
     {

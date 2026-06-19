@@ -48,5 +48,60 @@
     "pageName": "Why Parul University Goa",
     "mainDomain": "https://goa.paruluniversity.ac.in",
     "urlPath": "/about/why-parul-university-goa"
+  },
+  {
+    "pageName": "International",
+    "mainDomain": "https://goa.paruluniversity.ac.in",
+    "urlPath": "/international"
+  },
+  {
+    "pageName": "study in india",
+    "mainDomain": "https://goa.paruluniversity.ac.in",
+    "urlPath": "/international/study-in-india"
+  },
+  {
+    "pageName": "study abroad",
+    "mainDomain": "https://goa.paruluniversity.ac.in",
+    "urlPath": "/international/study-abroad"
+  },
+  {
+    "pageName": "Why Goa",
+    "mainDomain": "https://goa.paruluniversity.ac.in",
+    "urlPath": "/why-goa"
+  },
+  {
+    "pageName": "Alumni",
+    "mainDomain": "https://goa.paruluniversity.ac.in",
+    "urlPath": "/alumni"
+  },
+  {
+    "pageName": "Blog & Stories",
+    "mainDomain": "https://goa.paruluniversity.ac.in",
+    "urlPath": "/blog"
+  },
+  {
+    "pageName": "Guides Hub",
+    "mainDomain": "https://goa.paruluniversity.ac.in",
+    "urlPath": "/guide"
+  },
+  {
+    "pageName": "FAQ Hub",
+    "mainDomain": "https://goa.paruluniversity.ac.in",
+    "urlPath": "/faq"
+  },
+  {
+    "pageName": "Careers (Jobs at PU Goa)",
+    "mainDomain": "https://goa.paruluniversity.ac.in",
+    "urlPath": "/careers"
+  },
+  {
+    "pageName": "Contact Us",
+    "mainDomain": "https://goa.paruluniversity.ac.in",
+    "urlPath": "/contact"
+  },
+  {
+    "pageName": "404 Error Page",
+    "mainDomain": "https://goa.paruluniversity.ac.in",
+    "urlPath": "/404"
   }
 ]

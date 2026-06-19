@@ -29,7 +29,7 @@ export default function StudentGrievancesPage() {
     },
     {
       sNo: 5,
-      particulars: "Ms.Dhruvi Mayank Patel, Assistant Professor, Parul College of Applied and Health Science",
+      particulars: "Ms.Dhruvi Mayank Patel, Assistant Professor, Parul College of Applied and Healthcare Science",
       designation: "Member",
       contact: "hemant.toshikhane@paruluniversity.ac.in\n8469496525"
     },

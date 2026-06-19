@@ -87,14 +87,14 @@ export const appliedSciencesData: ProgrammeData = {
   },
   dean: {
     name: "Dr. Anupam Kumar",
-    role: "Dean, Faculty of Applied and Health Sciences",
-    bio: "At the faculty of Applied and Health Sciences we are dedicated to advancing knowledge, fostering innovation, and improving the environment, health and well-being of our society through cutting-edge research, education, and practice.",
-    image: "/faculties/Applied and Health Sciences/Dean.jpg",
+    role: "Dean, Faculty of Applied and Healthcare Sciences",
+    bio: "At the faculty of Applied and Healthcare Sciences we are dedicated to advancing knowledge, fostering innovation, and improving the environment, health and well-being of our society through cutting-edge research, education, and practice.",
+    image: "/faculties/Applied and Healthcare Sciences/Dean.jpg",
     faculty: [
-      { role: "PROFESSOR", name: "Faculty Member", degree: "Faculty of Applied and Health Sciences", specialities: "-------------", image: "/faculties/Applied and Health Sciences/Faculty.jpg" },
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Faculty of Applied and Health Sciences", specialities: "-------------", image: "/faculties/Applied and Health Sciences/Faculty2.jpg" },
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Faculty of Applied and Health Sciences", specialities: "-------------", image: "/faculties/Applied and Health Sciences/Faculty3.jpg" },
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Faculty of Applied and Health Sciences", specialities: "-------------", image: "/faculties/Applied and Health Sciences/Faculty4.jpg" }
+      { role: "PROFESSOR", name: "Faculty Member", degree: "Faculty of Applied and Healthcare Sciences", specialities: "-------------", image: "/faculties/Applied and Healthcare Sciences/Faculty.jpg" },
+      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Faculty of Applied and Healthcare Sciences", specialities: "-------------", image: "/faculties/Applied and Healthcare Sciences/Faculty2.jpg" },
+      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Faculty of Applied and Healthcare Sciences", specialities: "-------------", image: "/faculties/Applied and Healthcare Sciences/Faculty3.jpg" },
+      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Faculty of Applied and Healthcare Sciences", specialities: "-------------", image: "/faculties/Applied and Healthcare Sciences/Faculty4.jpg" }
     ]
   },
   faqs: [
