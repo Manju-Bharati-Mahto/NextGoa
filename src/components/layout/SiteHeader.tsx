@@ -14,7 +14,7 @@ const subPrograms = [
   { label: "Nursing", href: "/programs/nursing" },
   { label: "Pharmacy", href: "/programs/pharmacy" },
   { label: "Physiotherapy", href: "/programs/physiotherapy" },
-  { label: "Allied & Health Sciences", href: "/programs/allied-health" },
+  { label: "Allied & Healthcare Sciences", href: "/programs/allied-health" },
   { label: "Doctorate Programs", href: "/programs/doctorate-programs" }
 ];
 

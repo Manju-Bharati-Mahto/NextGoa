@@ -51,7 +51,7 @@ export default function PhdResearchAreas() {
       ]
     },
     {
-      title: "Allied & Health Sciences",
+      title: "Allied & Healthcare Sciences",
       level: "PhD",
       theme: "red",
       topics: [
