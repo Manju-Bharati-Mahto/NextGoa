@@ -154,7 +154,7 @@ function DropdownFilter({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="relative w-full min-w-[150px] lg:w-full shrink-0">
+    <div className="relative w-[85%] sm:w-[300px] lg:w-full shrink-0">
       <label className="block text-[12px] lg:text-[14px] font-semibold text-ink/70 mb-1.5 lg:mb-2.5 font-poppins uppercase tracking-wider">
         {category}
       </label>
