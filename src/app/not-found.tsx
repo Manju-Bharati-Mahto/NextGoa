@@ -25,7 +25,7 @@ export default function NotFound() {
       </div>
 
       {/* Footer background behind the PNG */}
-      <div className="absolute bottom-0 left-0 right-0 h-[15vh] sm:h-[20vh] lg:h-[25vh] z-0 pointer-events-none overflow-hidden">
+      <div className="absolute bottom-0 left-0 right-0 h-[20vh] sm:h-[25vh] lg:h-[30vh] z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[18vw] sm:top-[10vw] bottom-0 left-0 right-0 bg-[#0caadd]" />
         <div 
           className="absolute top-0 left-0 right-0 bottom-0 bg-no-repeat bg-top bg-[length:300%_auto] sm:bg-[length:100%_auto]" 
