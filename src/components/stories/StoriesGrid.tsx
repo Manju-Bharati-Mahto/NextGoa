@@ -76,6 +76,7 @@ function StoriesGridInner({
 
   useEffect(() => {
     if (tagParam) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSelectedCategory(tagParam);
     }
   }, [tagParam]);

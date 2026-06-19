@@ -75,9 +75,9 @@ export default function StudyAbroadInvestment() {
               </p>
             </div>
             <div>
-              <Link href={cta.apply} className="inline-block bg-[#232323] hover:bg-[#111111] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-colors w-max shadow-md">
+              <button data-enquiry-trigger="true" className="inline-block bg-[#232323] hover:bg-[#111111] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-colors w-max shadow-md">
                 Talk to advisor
-              </Link>
+              </button>
             </div>
           </div>
 

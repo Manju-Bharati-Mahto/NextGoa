@@ -97,16 +97,11 @@ export const phdData: ProgrammeData = {
 
   dean: {
     name: "Dr. Aravind Kumar",
+    linkedin: "https://www.linkedin.com/company/parul-university-goa/",
     role: "Dean, Research & Development",
     bio: "Dr. Kumar has over 150 highly cited publications and has secured major grants from DST, SERB, and international funding agencies.",
     image: "/programmes/engineering_hero_bg.png",
-    faculty: [
-      { role: "DISTINGUISHED PROFESSOR", name: "Dr. V. N. Sharma", degree: "Ph.D., Physics", specialities: "Quantum Mechanics, Material Science" },
-      { role: "PROFESSOR", name: "Dr. Meenakshi Iyer", degree: "Ph.D., Biotechnology", specialities: "Genomics, Bioinformatics" },
-      { role: "ASSOCIATE PROFESSOR", name: "Dr. Sanjay Dutt", degree: "Ph.D., Computer Science", specialities: "Artificial Intelligence, Data Mining" },
-      { role: "ASSOCIATE PROFESSOR", name: "Dr. Priya Raj", degree: "Ph.D., Economics", specialities: "Macroeconomics, Public Policy" }
-    ]
-  },
+    faculty: []},
   faqs: [
     { question: "Full-time or Part-time PhD, what fits you?", answer: "Two synced routes - leading to one destination. Full-time is for those coming in as dedicated doctoral scholars with research as the primary focus. Part-time is for working professionals, people who cannot step away from their jobs and should not have to, as long as they carry an NOC from their employer." },
     { question: "How are research supervisors assigned?", answer: "Not before admission. After. The Doctoral Research Committee weighs in based on your research domain and what faculty are available at that point. It is not arbitrary, but it is also not something that gets locked in during the application stage. That said, if there is a preferred area or a specific supervisor already in mind, mentioning it during the application is worth doing." },

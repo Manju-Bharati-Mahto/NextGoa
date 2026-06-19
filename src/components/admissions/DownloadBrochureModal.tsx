@@ -8,11 +8,24 @@ export function DownloadBrochureModal() {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "" });
   const [touched, setTouched] = useState<Record<string, boolean>>({});
 
+  const [pdfUrl, setPdfUrl] = useState('/documents/Prospectus_AY_2026_27.pdf');
+  const [pdfFilename, setPdfFilename] = useState('Prospectus A.Y. 2026-27.pdf');
+
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
       const target = (e.target as Element).closest("[data-brochure-trigger]");
       if (target && target.getAttribute("data-brochure-trigger") === "true") {
         e.preventDefault();
+        
+        const customUrl = target.getAttribute("data-pdf-url");
+        if (customUrl) {
+          setPdfUrl(customUrl);
+          setPdfFilename(customUrl.split('/').pop() || 'document.pdf');
+        } else {
+          setPdfUrl('/documents/Prospectus_AY_2026_27.pdf');
+          setPdfFilename('Prospectus A.Y. 2026-27.pdf');
+        }
+
         setIsOpen(true);
       }
     };
@@ -51,12 +64,11 @@ export function DownloadBrochureModal() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
-    if (id === 'phone') {
-      const numericValue = value.replace(/\D/g, '').slice(0, 10);
-      setFormData(prev => ({ ...prev, [id]: numericValue }));
-      return;
-    }
+    if (id === 'phone' && value && !/^\d*$/.test(value)) return;
+    if (id === 'phone' && value.length > 10) return;
+    
     setFormData(prev => ({ ...prev, [id]: value }));
+    if (touched[id]) setTouched(prev => ({ ...prev, [id]: false }));
   };
 
   const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
@@ -85,8 +97,8 @@ export function DownloadBrochureModal() {
       setSubmitState('success');
       
       const link = document.createElement('a');
-      link.href = '/documents/Prospectus_AY_2026_27.pdf';
-      link.download = 'Prospectus A.Y. 2026-27.pdf';
+      link.href = pdfUrl;
+      link.download = pdfFilename;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -97,7 +109,7 @@ export function DownloadBrochureModal() {
     }, 1200);
   };
 
-  const renderField = ({ id, label, type = "text", required = false, placeholder = "" }: any) => {
+  const renderField = ({ id, label, type = "text", required = false }: any) => {
     const value = formData[id as keyof typeof formData];
     const isTouched = touched[id];
     const error = getError(id, value);
@@ -121,7 +133,6 @@ export function DownloadBrochureModal() {
             value={value}
             onChange={handleChange}
             onBlur={handleBlur}
-            placeholder={placeholder}
             inputMode={type === "tel" ? "numeric" : undefined}
             className={`w-full rounded-lg border bg-[#FAFAFA] px-4 py-2.5 outline-none focus:ring-1 transition-all ${borderColor}`}
           />
@@ -184,9 +195,9 @@ export function DownloadBrochureModal() {
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">
               
-              {renderField({ id: "name", label: "Full Name", required: true, placeholder: "Enter your full name" })}
-              {renderField({ id: "email", label: "Email Address", type: "email", required: true, placeholder: "Enter your email address" })}
-              {renderField({ id: "phone", label: "Phone Number", type: "tel", required: true, placeholder: "Enter your 10-digit number" })}
+              {renderField({ id: "name", label: "Full Name", required: true })}
+              {renderField({ id: "email", label: "Email Address", type: "email", required: true })}
+              {renderField({ id: "phone", label: "Phone Number", type: "tel", required: true })}
 
               <div className="pt-2">
                 <button

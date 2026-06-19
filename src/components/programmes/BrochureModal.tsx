@@ -23,6 +23,7 @@ export default function BrochureModal({ isOpen, onClose, programmeTitle }: Broch
 
   // Update programme if prop changes
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setFormData((prev) => ({ ...prev, programme: programmeTitle }));
   }, [programmeTitle]);
 

@@ -42,7 +42,7 @@ export function InteractiveLabsLayout({
         </div>
 
         {/* Main Content Layout */}
-        <div className="flex flex-col lg:flex-row w-full mx-auto min-h-[600px] shadow-[0_8px_30px_rgb(0,0,0,0.08)] rounded-[32px] overflow-hidden border border-gray-100 bg-white">
+        <div className="flex flex-col lg:flex-row w-full mx-auto min-h-[600px] shadow-[0_8px_30px_rgb(0,0,0,0.08)] rounded-[32px] overflow-hidden border border-gray-100 bg-white isolate transform-gpu">
           
           {/* Left Sidebar */}
           <div className="w-full lg:w-[500px] flex flex-col shrink-0">
@@ -77,12 +77,13 @@ export function InteractiveLabsLayout({
           <div className="bg-[#FFDE16] flex-grow p-6 sm:p-8 md:p-12">
             <div className="w-full h-full min-h-[500px] grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
               {imagesToShow.map((lab, i) => (
-                <div key={i} className="bg-[#1C1C1C] rounded-[24px] sm:rounded-[32px] overflow-hidden relative shadow-lg">
+                <div key={i} className="bg-[#1C1C1C] rounded-[24px] sm:rounded-[32px] overflow-hidden relative shadow-lg isolate transform-gpu">
                   {lab.image && (
                     <img 
                       src={lab.image} 
                       alt={lab.title} 
-                      className="absolute inset-0 w-full h-full object-cover opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-500" 
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full object-cover opacity-90 hover:opacity-100 hover:scale-105 transition-transform duration-500 transform-gpu will-change-transform" 
                     />
                   )}
                 </div>

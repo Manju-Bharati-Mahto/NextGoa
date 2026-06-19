@@ -223,14 +223,13 @@ export function DocumentsChecklist() {
           <div className="bg-[#e73649] rounded-b-[24px] md:rounded-bl-none md:rounded-r-[24px] p-6 lg:p-8 flex flex-col items-center justify-center text-center shadow-sm md:w-[40%]">
             <h4 className="font-poppins font-semibold text-[24px] sm:text-[28px] text-white mb-4">Quick reference</h4>
             <a 
-              href="/prospectus/PU_Goa_Document_Checklist.pdf"
-              download
+              href="#"
+              data-brochure-trigger="true"
+              data-pdf-url="/prospectus/PU_Goa_Document_Checklist.pdf"
               className="bg-[#FEDB2F] hover:bg-[#e5c52a] text-ink font-bold text-[15px] sm:text-[16px] px-6 py-3 rounded-full flex items-center gap-3 transition-colors shadow-sm w-full sm:w-auto justify-center"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20" fill="currentColor">
-                <path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/>
-              </svg>
-              Download printable checklist (PDF)
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Download checklist
             </a>
           </div>
         </div>

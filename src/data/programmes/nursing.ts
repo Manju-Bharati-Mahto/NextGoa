@@ -81,16 +81,117 @@ export const nursingData: ProgrammeData = {
   },
   dean: {
     name: "Dr. Jeyalakshmi.K",
+    linkedin: "https://www.linkedin.com/company/parul-university-goa/",
     role: "Dean - Faculty of Nursing",
     bio: "A leader in nursing education with deep clinical and academic experience across community health, midwifery and critical care nursing.",
     image: "/faculties/Nursing/Dean.png",
     faculty: [
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Ph.D., Nursing", specialities: "Medical-Surgical Nursing", image: "/faculties/Nursing/Faculty.jpg" },
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Ph.D., Nursing", specialities: "Community Health Nursing", image: "/faculties/Nursing/Faculty2.jpg" },
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Ph.D., Nursing", specialities: "Pediatric Nursing", image: "/faculties/Nursing/Faculty3.webp" },
-      { role: "ASSOCIATE PROFESSOR", name: "Faculty Member", degree: "Ph.D., Nursing", specialities: "Medical-Surgical Nursing", image: "/faculties/Nursing/Faculty4.jpg" }
-    ]
+  {
+    role: "Associate Professor",
+    name: "Ms. Betty Oommen Koshy",
+    degree: "M.Sc.",
+    faculty: "Faculty of Nursing",
+    department: "Nursing",
+    experience: "14 Years",
+    image: "/faculties/Ms.-Betty-Oommen-Koshy.jpg"
   },
+  {
+    role: "Assistant Professor",
+    name: "Ms. Vinitha Dsouza",
+    degree: "M.Sc.",
+    faculty: "Faculty of Nursing",
+    department: "Nursing",
+    experience: "13 Years",
+    image: "/faculties/Ms.-Vinitha-Dsouza.jpg"
+  },
+  {
+    role: "Assistant Professor",
+    name: "Dr. Kallabi Borah",
+    degree: "Ph.D.",
+    faculty: "Faculty of Nursing",
+    department: "Nursing",
+    experience: "6 years",
+    image: "/faculties/Dr.-Kallabi-Borah.webp"
+  },
+  {
+    role: "Nursing Tutor",
+    name: "Ms. Ankita Anil Fotto",
+    degree: "B.Sc.",
+    faculty: "Faculty of Nursing",
+    department: "Nursing",
+    experience: "4 years",
+    image: "/faculties/Ms.-Ankita-Anil-Fotto.webp"
+  },
+  {
+    role: "Nursing Tutor",
+    name: "Ms. Pranali Premanand Shetkar",
+    degree: "B.Sc.",
+    faculty: "Faculty of Nursing",
+    department: "Nursing",
+    experience: "2 Years",
+    image: "/faculties/Ms.-Pranali-Premanand-Shetkar.jpg"
+  },
+  {
+    role: "Nursing Tutor",
+    name: "Ms. Swizel Fernandes",
+    degree: "B.Sc.",
+    faculty: "Faculty of Nursing",
+    department: "Nursing",
+    experience: "1 Years",
+    image: "/faculties/Ms.-Swizel-Fernandes.jpg"
+  },
+  {
+    role: "Nursing Tutor",
+    name: "Ms. Prajyoti Pradeep Shet Desai",
+    degree: "B.Sc.",
+    faculty: "Faculty of Nursing",
+    department: "Nursing",
+    experience: "1 Years",
+    image: "/faculties/Ms.-Prajyoti-Pradeep-Shet-Desai.webp"
+  },
+  {
+    role: "Nursing Tutor",
+    name: "Ms. Sanjana U. Talekar",
+    degree: "B.Sc.",
+    faculty: "Faculty of Nursing",
+    department: "Nursing",
+    experience: "1 Years",
+    image: "/faculties/Ms.-Sanjana-U.-Talekar.jpg"
+  },
+  {
+    role: "Nursing Tutor",
+    name: "Ms. Rachana Shyam Fal Dessai",
+    degree: "B.Sc.",
+    faculty: "Faculty of Nursing",
+    department: "Nursing",
+    experience: "1 Years",
+    image: "/faculties/Ms.-Rachana-Shyam-Fal-Dessai.jpg"
+  },
+  {
+    role: "Nursing Tutor",
+    name: "Ms. Meegal Fernandes",
+    degree: "B.Sc.",
+    faculty: "Faculty of Nursing",
+    image: "/faculties/Ms.-Meegal-Fernandes.jpg"
+  },
+  {
+    role: "Nursing Tutor",
+    name: "Ms. Priya Halgekar",
+    degree: "P.B.B.Sc (N)",
+    faculty: "Faculty of Nursing",
+    department: "Nursing",
+    experience: "1 Years",
+    image: "/faculties/Ms.-Priya-Halgekar.webp"
+  },
+  {
+    role: "Nursing Tutor",
+    name: "Ms. Snehal Mascarenhas",
+    degree: "P.B.B.Sc (N)",
+    faculty: "Faculty of Nursing",
+    department: "Nursing",
+    image: "/faculties/Ms.-Snehal-Mascarenhas.webp"
+  },
+]},
   faqs: [
     { question: "Is the entrance test compulsory?", answer: "Indeed. PU Goa holds its own test, offline, for the B.Sc. Nursing seats. Eligibility criteria: You'll need 10+2 in Science with PCB to sit for it. After that, if your name's on the shortlist, the college reaches out by email and SMS." },
     { question: "What is the eligibility for B.Sc. Nursing and GNM?", answer: "These two differ a fair bit. B.Sc. Nursing asks for 10+2 with PCB and English, and your aggregate has to touch 45% at least. GNM is easier to get into. Any stream works, provided you've done English. One's a full degree. The other is a diploma, though it still leads somewhere, with decent room to grow afterwards." },

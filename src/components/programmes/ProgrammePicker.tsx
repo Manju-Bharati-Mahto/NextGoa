@@ -43,6 +43,7 @@ export default function ProgrammePicker() {
     if (levelParam === 'Bachelors') levelParam = "Bachelor's";
     if (levelParam === 'Masters') levelParam = "Master's";
     if (levelParam) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setActiveLevel(levelParam);
     }
   }, []);

@@ -21,6 +21,7 @@ export default function CountryCallbackModal({ isOpen, onClose, country }: Count
 
   // Update country if prop changes
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setFormData((prev) => ({ ...prev, interestCountry: country }));
   }, [country]);
 

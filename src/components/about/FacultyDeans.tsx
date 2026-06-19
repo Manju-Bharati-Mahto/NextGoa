@@ -16,6 +16,7 @@ export function FacultyDeans() {
       stats: "PhD. Management • 23+ yrs • 44 papers",
       image: "/faculties/Management/Dean.jpg",
       linkedin: "https://in.linkedin.com/in/dr-kshitiz-sharma-blr",
+      orcid: "https://orcid.org/0000-0002-1145-8979",
     },
     {
       name: "Dr. Anupam Kumar",
@@ -23,6 +24,7 @@ export function FacultyDeans() {
       stats: "PhD. Biotechnology • 15+ yrs • 50+ papers",
       image: "/faculties/Applied and Healthcare Sciences/Dean.jpg",
       linkedin: "https://www.linkedin.com/in/dr-anupam-kumar/",
+      orcid: "https://orcid.org/0000-0002-6608-3860",
     },
     {
       name: "Dr. Lalit Lata Jha",
@@ -30,6 +32,7 @@ export function FacultyDeans() {
       stats: "PhD. Pharmacy • 23+ yrs • 41 papers",
       image: "/faculties/Pharmacy/Dean.png",
       linkedin: "https://www.linkedin.com/in/dr-lalit-lata-jha-2494841a",
+      orcid: "https://orcid.org/0000-0003-0919-3366",
     },
     {
       name: "Dr. Aseem Yadav",
@@ -112,9 +115,16 @@ export function FacultyDeans() {
                     <p className="font-[family-name:var(--font-poppins)] text-[12px] sm:text-[13px] leading-[1.6] text-ink/50 pr-4">
                       {dean.stats}
                     </p>
-                    <a href={dean.linkedin || "#"} target="_blank" rel="noopener noreferrer" className="flex-shrink-0 text-[#E73649] hover:text-[#c42d3d] transition-colors" aria-label="LinkedIn Profile">
-                      <Icon icon="mdi:linkedin" className="w-7 h-7 rounded-md" />
-                    </a>
+                    <div className="flex gap-2 items-center">
+                      {(dean as any).orcid && (
+                        <a href={(dean as any).orcid} target="_blank" rel="noopener noreferrer" className="flex-shrink-0 hover:opacity-80 transition-opacity" aria-label="ORCID Profile">
+                          <img src="/orchid.svg" alt="ORCID" className="w-6 h-6" />
+                        </a>
+                      )}
+                      <a href={dean.linkedin || "#"} target="_blank" rel="noopener noreferrer" className="flex-shrink-0 text-[#E73649] hover:text-[#c42d3d] transition-colors" aria-label="LinkedIn Profile">
+                        <Icon icon="mdi:linkedin" className="w-7 h-7 rounded-md" />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

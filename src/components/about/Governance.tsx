@@ -18,22 +18,7 @@ export function Governance() {
         </svg>
       ),
     },
-    {
-      label: "RECOGNITION",
-      title: "Who recognises it?",
-      description:
-        "The University Grants Commission (UGC), with faculty-specific approvals from AICTE (Engineering, Management), PCI (Pharmacy), INC (Nursing) and other relevant statutory bodies.",
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          className="w-5 h-5 text-[#0CAADD]"
-        >
-          <path d="M6 23V15.27C5.36 14.69 4.86 13.99 4.51 13.17C4.17 12.35 4 11.46 4 10.5C4 8.15 4.78 6.18 6.33 4.57C7.89 2.96 9.78 2.16 12 2.16C14.22 2.16 16.11 2.96 17.67 4.57C19.22 6.18 20 8.15 20 10.5C20 11.46 19.83 12.35 19.49 13.17C19.14 13.99 18.64 14.69 18 15.27V23L12 21L6 23ZM12 16.5C13.67 16.5 15.08 15.92 16.25 14.75C17.42 13.58 18 12.17 18 10.5C18 8.83 17.42 7.42 16.25 6.25C15.08 5.08 13.67 4.5 12 4.5C10.33 4.5 8.92 5.08 7.75 6.25C6.58 7.42 6 8.83 6 10.5C6 12.17 6.58 13.58 7.75 14.75C8.92 15.92 10.33 16.5 12 16.5ZM9.68 13.7L12 12.3L14.33 13.7L13.7 11.05L15.78 9.28L13.05 9.05L12 6.55L10.95 9.05L8.22 9.28L10.3 11.05L9.68 13.7Z" />
-        </svg>
-      ),
-    },
+
     {
       label: "COLLABORATION",
       title: "How is PU Goa connected to Parul University, Vadodara?",
@@ -135,7 +120,7 @@ export function Governance() {
 
 
       <div 
-        className="relative z-10 mx-auto max-w-5xl px-6"
+        className="relative z-10 mx-auto max-w-7xl px-6"
         style={{ 
           paddingTop: "clamp(4rem, 10vw, 500px)", 
           paddingBottom: "clamp(4rem, 10vw, 500px)" 
@@ -150,17 +135,12 @@ export function Governance() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
           {cards.map((card, idx) => {
-            let colSpanClass = "md:col-span-6";
-            if (idx === 0 || idx === 3) colSpanClass = "md:col-span-5";
-            if (idx === 1 || idx === 2) colSpanClass = "md:col-span-7";
-            const heightClass = idx === 1 ? "md:min-h-[360px]" : "";
-
             return (
               <div
                 key={idx}
-                className={`bg-white rounded-[20px] p-8 sm:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex flex-col items-start text-left ${colSpanClass} ${heightClass}`}
+                className={`bg-white rounded-[20px] p-8 sm:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex flex-col items-start text-left h-full`}
               >
                 {/* Icon & Label */}
                 <div className="flex items-center gap-3 mb-5">

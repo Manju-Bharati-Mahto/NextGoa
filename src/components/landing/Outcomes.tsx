@@ -97,14 +97,13 @@ export function Outcomes() {
 
       {/* Constrained Footer Container */}
       <div className="mx-auto max-w-5xl px-6 pb-10 pt-10 flex justify-center">
-        <a
-          href="/documents/placement_brochure_2025_2026.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          data-placement-trigger="true"
+          data-pdf-url="/documents/placement_brochure_2025_2026.pdf"
           className="inline-flex items-center justify-center bg-[#FEDB2F] hover:bg-[#e5c52a] text-black font-bold text-[15px] sm:text-[16px] px-8 py-3.5 rounded-full transition-colors shadow-sm"
         >
           Full placements report →
-        </a>
+        </button>
       </div>
     </section>
   );

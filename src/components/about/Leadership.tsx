@@ -60,13 +60,21 @@ export function Leadership() {
                   behind Parul University's National and Global Expansion.
                 </p>
                 <div className="mt-8 flex gap-4">
-                  <a href="https://www.linkedin.com/school/paruluniversity/" target="_blank" rel="noopener noreferrer" className="inline-block transition-transform hover:scale-110" aria-label="LinkedIn">
+                  <a href="https://www.linkedin.com/in/dr-devanshu-patel-b4687887/" target="_blank" rel="noopener noreferrer" className="inline-block transition-transform hover:scale-110" aria-label="LinkedIn">
                     <img src="/linkedin-icon.svg" alt="LinkedIn" className="h-12 w-12 rounded-[16px] shadow-sm" />
                   </a>
-                  <a href="https://www.instagram.com/paruluniversity/?hl=en" target="_blank" rel="noopener noreferrer" className="inline-block transition-transform hover:scale-110" aria-label="Instagram">
+                  <a href="https://www.instagram.com/drdevanshupatel/" target="_blank" rel="noopener noreferrer" className="inline-block transition-transform hover:scale-110" aria-label="Instagram">
                     <img src="/instagram-icon.svg" alt="Instagram" className="h-12 w-12 rounded-[16px] shadow-sm" />
                   </a>
-
+                  <a href="https://x.com/drdevanshupatel" target="_blank" rel="noopener noreferrer" className="inline-block transition-transform hover:scale-110" aria-label="X">
+                    <img src="/x-icon.svg" alt="X" className="h-12 w-12 rounded-[16px] shadow-sm" />
+                  </a>
+                  <a href="https://www.facebook.com/devanshu.j.patel" target="_blank" rel="noopener noreferrer" className="inline-block transition-transform hover:scale-110" aria-label="Facebook">
+                    <img src="/facebook-icon.svg" alt="Facebook" className="h-12 w-12 rounded-[16px] shadow-sm" />
+                  </a>
+                  <a href="https://www.youtube.com/@paruluniversity" target="_blank" rel="noopener noreferrer" className="inline-block transition-transform hover:scale-110" aria-label="YouTube">
+                    <img src="/youtube-icon.svg" alt="YouTube" className="h-12 w-12 rounded-[16px] shadow-sm" />
+                  </a>
                 </div>
               </div>
               
@@ -108,11 +116,17 @@ export function Leadership() {
                   inspiration behind the institution's name.
                 </p>
                 <div className="mt-8 flex gap-4">
-                  <a href="https://www.linkedin.com/school/paruluniversity/" target="_blank" rel="noopener noreferrer" className="inline-block transition-transform hover:scale-110" aria-label="LinkedIn">
+                  <a href="https://www.linkedin.com/in/dr-parul-patel-9b57501a7/" target="_blank" rel="noopener noreferrer" className="inline-block transition-transform hover:scale-110" aria-label="LinkedIn">
                     <img src="/linkedin-icon.svg" alt="LinkedIn" className="h-12 w-12 rounded-[16px] shadow-sm" />
                   </a>
-                  <a href="https://www.instagram.com/paruluniversity/?hl=en" target="_blank" rel="noopener noreferrer" className="inline-block transition-transform hover:scale-110" aria-label="Instagram">
+                  <a href="https://www.instagram.com/drparulpatel1975/" target="_blank" rel="noopener noreferrer" className="inline-block transition-transform hover:scale-110" aria-label="Instagram">
                     <img src="/instagram-icon.svg" alt="Instagram" className="h-12 w-12 rounded-[16px] shadow-sm" />
+                  </a>
+                  <a href="https://www.facebook.com/parul.patel.791904" target="_blank" rel="noopener noreferrer" className="inline-block transition-transform hover:scale-110" aria-label="Facebook">
+                    <img src="/facebook-icon.svg" alt="Facebook" className="h-12 w-12 rounded-[16px] shadow-sm" />
+                  </a>
+                  <a href="https://www.youtube.com/@paruluniversity" target="_blank" rel="noopener noreferrer" className="inline-block transition-transform hover:scale-110" aria-label="YouTube">
+                    <img src="/youtube-icon.svg" alt="YouTube" className="h-12 w-12 rounded-[16px] shadow-sm" />
                   </a>
                 </div>
               </div>

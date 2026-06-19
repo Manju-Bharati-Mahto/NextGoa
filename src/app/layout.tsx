@@ -9,6 +9,7 @@ import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 const EnquiryModal = dynamic(() => import("@/components/layout/EnquiryModal").then((mod) => mod.EnquiryModal));
 const DownloadBrochureModal = dynamic(() => import("@/components/admissions/DownloadBrochureModal").then((mod) => mod.DownloadBrochureModal));
+const DownloadPlacementReportModal = dynamic(() => import("@/components/admissions/DownloadPlacementReportModal").then((mod) => mod.DownloadPlacementReportModal));
 const CampusVisitModal = dynamic(() => import("@/components/layout/CampusVisitModal").then((mod) => mod.CampusVisitModal));
 import FloatingCta from "@/components/layout/FloatingCta";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
@@ -78,6 +79,7 @@ export default function RootLayout({
         <SiteFooter />
         <EnquiryModal />
         <DownloadBrochureModal />
+        <DownloadPlacementReportModal />
         <CampusVisitModal />
         <FloatingCta />
         <ScrollToTop />

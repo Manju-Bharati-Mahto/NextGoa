@@ -80,11 +80,12 @@ export const hotelManagementData: ProgrammeData = {
 
   dean: {
     name: "Dr. Prashant Sharma",
+    linkedin: "https://www.linkedin.com/company/parul-university-goa/",
     role: "Dean, Hotel Management",
     bio: "Dr. Prashant Sharma brings extensive experience in hospitality management and education, guiding students toward excellence in global hospitality and culinary arts.",
     image: "/leaders/9911.jpg",
-    faculty: []
-  },
+    faculty: [
+]},
   faqs: [
     { question: "Do we get to intern in 5-star hotels?", answer: "Yes, we guarantee internships in premium 5-star properties across India and abroad." },
     { question: "What kind of practical facilities are on campus?", answer: "Our campus features commercial-grade training kitchens, a mock bar, a training restaurant, and a model guest room to provide real-world hospitality experience." },

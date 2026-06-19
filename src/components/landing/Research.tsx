@@ -17,7 +17,7 @@ const cards = [
       { value: "APC", label: "Publishing support" },
     ],
     cta: "Explore research →",
-    link: "/stories?tag=Research#stories-grid",
+    link: "https://www.paruluniversity.ac.in/research-and-development-centre/",
   },
   {
     badge: "Entrepreneurship",
@@ -96,6 +96,8 @@ export function Research() {
                 <div className="mt-8">
                   <Link
                     href={c.link || "#"}
+                    target={c.link?.startsWith("http") ? "_blank" : undefined}
+                    rel={c.link?.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="inline-block rounded-full bg-sunshine px-5 py-2.5 font-[family-name:var(--font-poppins)] text-[18px] font-bold text-ink transition-transform hover:scale-[1.03]"
                   >
                     {c.cta}

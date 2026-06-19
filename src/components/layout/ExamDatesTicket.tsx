@@ -39,12 +39,12 @@ export function ExamDatesTicket() {
           </div>
 
           {/* Apply Now button */}
-          <Link
-            href={cta.apply}
+          <button
+            data-enquiry-trigger="true"
             className="inline-flex items-center justify-center rounded-full bg-black px-[4.5cqw] py-[1.8cqw] text-[2.4cqw] font-bold text-white shadow-sm hover:bg-[#ee364f] transition-colors duration-300"
           >
             Apply Now
-          </Link>
+          </button>
         </div>
       </div>
     </div>
