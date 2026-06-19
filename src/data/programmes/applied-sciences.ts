@@ -81,7 +81,8 @@ export const appliedSciencesData: ProgrammeData = {
     features: [
       { title: "Molecular Biology Lab", description: "Equipped with advanced tools for DNA and RNA analysis.", image: "/labs/Applied and healthcare Science/DSC03130.jpg" },
       { title: "Microbiology Lab", description: "Dedicated space for culturing and studying microorganisms.", image: "/labs/Applied and healthcare Science/DSC03132.jpg" },
-      { title: "Bioinformatics Center", description: "High-performance computing for biological data analysis.", image: "/labs/Applied and healthcare Science/DSC03135.jpg" }
+      { title: "Bioinformatics Center", description: "High-performance computing for biological data analysis.", image: "/labs/Applied and healthcare Science/DSC03135.jpg" },
+      { title: "Advanced Research Lab", description: "State-of-the-art facilities for interdisciplinary research.", image: "/labs/Applied and healthcare Science/DSC03138.jpg" }
     ],
     image: "/programmes/engineering_hero_bg.png" // Placeholder
   },

@@ -6,6 +6,7 @@ export function DynamicWhyPUGoa({
   data,
   themeColor,
   topBgColor,
+  bottomBgColor,
   useThickWave = false,
   isWider = false,
   reducedPadding = false
@@ -13,6 +14,7 @@ export function DynamicWhyPUGoa({
   data: WhyData,
   themeColor: { waveBand: string; waveAccent: string; cardBg: string; cardText: string; },
   topBgColor?: string,
+  bottomBgColor?: string,
   useThickWave?: boolean,
   isWider?: boolean,
   reducedPadding?: boolean
@@ -21,9 +23,12 @@ export function DynamicWhyPUGoa({
   
   return (
     <section 
-      className={`relative overflow-hidden z-10 w-full ${!topBgColor ? "bg-transparent" : ""}`}
+      className={`relative overflow-hidden z-10 w-full ${!(topBgColor || bottomBgColor) ? "bg-transparent" : ""}`}
       style={{
-        backgroundImage: topBgColor ? `linear-gradient(to bottom, ${topBgColor} 50%, transparent 50%)` : undefined,
+        backgroundImage: 
+          topBgColor && bottomBgColor ? `linear-gradient(to bottom, ${topBgColor} 50%, ${bottomBgColor} 50%)` :
+          topBgColor ? `linear-gradient(to bottom, ${topBgColor} 50%, transparent 50%)` : 
+          bottomBgColor ? `linear-gradient(to bottom, transparent 50%, ${bottomBgColor} 50%)` : undefined,
         ...(useThickWave && {
           paddingTop: "clamp(5rem, 12.2vw, 600px)",
           paddingBottom: "clamp(5rem, 13.3vw, 600px)"

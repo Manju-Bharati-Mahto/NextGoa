@@ -164,6 +164,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
           useThickWave={data.slug === "allied-health" || data.slug === "applied-sciences"}
           isWider={data.slug === "applied-sciences"}
           reducedPadding={data.slug === "applied-sciences"}
+          bottomBgColor={data.slug === "applied-sciences" ? "#EAF7FD" : undefined}
         />
       )}
 
