@@ -24,13 +24,13 @@ export default function NotFound() {
         </p>
       </div>
 
-      <div className="absolute inset-x-0 bottom-0 w-full z-0 pointer-events-none flex justify-center">
+      <div className="absolute right-0 bottom-0 w-[96%] md:w-[94%] lg:w-[90%] xl:w-[85%] max-w-[1800px] z-0 pointer-events-none">
         <Image
           src="/404-illustration.png"
           alt="Man relaxing on a beach"
           width={2278}
           height={1328}
-          className="w-[96%] md:w-[94%] lg:w-[90%] xl:w-[85%] max-w-[1800px] h-auto object-contain object-bottom"
+          className="w-full h-auto object-contain object-right-bottom"
           priority
         />
       </div>
