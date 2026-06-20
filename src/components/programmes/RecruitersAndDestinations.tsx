@@ -25,6 +25,7 @@ const companies = [
   "Frame 188.png",
   "Frame 189.png",
   "Frame 190.png",
+  "oberoi.png",
 ];
 
 const destinations = [
@@ -106,7 +107,7 @@ export default function RecruitersAndDestinations({ slug }: { slug?: string }) {
         <div className="animate-marquee items-center gap-12 sm:gap-20 px-6">
           {/* Duplicate the array twice to ensure seamless infinite scrolling */}
           {[...activeCompanies, ...activeCompanies].map((fileName, idx) => (
-            <div key={idx} className="relative w-36 h-16 shrink-0 mix-blend-multiply">
+            <div key={idx} className={`relative w-28 h-12 shrink-0 mix-blend-multiply ${fileName.includes('oberoi') ? 'scale-[1.3]' : ''}`}>
               <Image
                 src={getSrc(fileName)}
                 alt={`Recruiter ${idx}`}

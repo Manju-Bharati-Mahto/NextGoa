@@ -84,15 +84,30 @@ export const hotelManagementData: ProgrammeData = {
     role: "Dean, Hotel Management",
     bio: "Dr. Prashant Sharma brings extensive experience in hospitality management and education, guiding students toward excellence in global hospitality and culinary arts.",
     image: "/leaders/9911.jpg",
-    faculty: [
-]},
+    faculty: []
+  },
   faqs: [
-    { question: "Do we get to intern in 5-star hotels?", answer: "Yes, we guarantee internships in premium 5-star properties across India and abroad." },
-    { question: "What kind of practical facilities are on campus?", answer: "Our campus features commercial-grade training kitchens, a mock bar, a training restaurant, and a model guest room to provide real-world hospitality experience." },
-    { question: "Are there international career opportunities?", answer: "Absolutely. The hospitality industry is global. We offer opportunities for paid internships in Europe, the Middle East, and on international cruise lines." },
-    { question: "Can I specialize in Culinary Arts?", answer: "Yes, Culinary Arts is a major specialization where you will master international cuisines, baking, and food production management." },
-    { question: "What is the difference between BHMCT and B.Sc in Hotel Management?", answer: "BHMCT is a comprehensive 4-year professional degree covering all aspects of hospitality management, while B.Sc is typically a 3-year degree with a more focused academic approach." }
-  ],
+    {
+        question: "Is hotel management a good career?",
+        answer: "It is one of the fastest-growing global sectors. Beyond hotels, graduates work in luxury retail, cruise lines, airlines, event management, and corporate facilities. It offers unmatched international mobility."
+    },
+    {
+        question: "Why study hotel management in Goa?",
+        answer: "Goa is India's most international tourist destination — luxury resorts, fine-dining restaurants, boutique hotels and a year-round F&B economy. Internships, weekend exposure and live-event banquets are all 20 minutes from campus."
+    },
+    {
+        question: "How does salary growth look?",
+        answer: "First job: 3–5 LPA in Indian luxury hotels. Cruise lines: USD 800–1500/month tax-free. By year 7–10, F&B Manager / Chef roles touch 15–25 LPA in India and significantly higher abroad."
+    },
+    {
+        question: "What are abroad opportunities?",
+        answer: "Cruise lines (Royal Caribbean, Carnival, Princess) recruit directly. Gulf luxury hotels (Taj, Marriott, IHG Dubai) recruit from Indian hospitality colleges. Europe pathways exist via Switzerland and hospitality exchange programmes."
+    },
+    {
+        question: "What to choose between kitchen, front office, and cruise?",
+        answer: "First two years are common across all functions. From year three you specialise — internships across kitchens, front office, F&B and accommodation help you discover where you thrive before committing."
+    }
+],
   themeColor: {
     waveBand: "#E73649", // Red theme
     waveAccent: "#C92B3C",

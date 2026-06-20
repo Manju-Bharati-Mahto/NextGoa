@@ -12,19 +12,9 @@ const facultyList: FacultyMember[] = [
     "degree": "Ph.D.",
     "faculty": "Faculty of Engineering, IT & CS",
     "department": "Engineering ,IT & CS",
-    "experience": "16 Years",
-    "researchArea": "Power Electronics, Renewable Energy and Distribution Generation Experience: 16 Years 5 Months",
+    "experience": "16 Years 5 Months",
+    "researchArea": "Power Electronics, Renewable Energy and Distribution Generation",
     "image": "/faculties/Dr.-K.-Vasudevan.jpg"
-  },
-  {
-    "role": "Associate Professor",
-    "name": "Dr. Sujit Kr Singh",
-    "degree": "Ph.D.",
-    "faculty": "Faculty of Engineering, IT & CS",
-    "department": "Engineering ,IT & CS",
-    "experience": "13 Years",
-    "researchArea": "AIML, Deep Learning",
-    "image": "/faculties/Dr.-Sujit-Kr-Singh.jpg"
   },
   {
     "role": "Associate Professor",
@@ -32,7 +22,7 @@ const facultyList: FacultyMember[] = [
     "degree": "Ph.D.",
     "faculty": "Faculty of Engineering, IT & CS",
     "department": "Engineering ,IT & CS",
-    "experience": "17 Years",
+    "experience": "17 Years 9 Months",
     "researchArea": "Internet of Things, Cloud Security, iOS Application Development, Android Application Development",
     "image": "/faculties/Dr.-Dhaval-Nimavat.jpg"
   },
@@ -42,7 +32,7 @@ const facultyList: FacultyMember[] = [
     "degree": "Ph.D.",
     "faculty": "Faculty of Engineering, IT & CS",
     "department": "Engineering ,IT & CS",
-    "experience": "18 Years",
+    "experience": "18 Years 1 Month",
     "researchArea": "Mathematical Modeling",
     "image": "/faculties/Dr.-Ashok-Baldev-Tejwani.jpg"
   },
@@ -52,8 +42,59 @@ const facultyList: FacultyMember[] = [
     "degree": "Ph.D.",
     "faculty": "Faculty of Engineering, IT & CS",
     "department": "Engineering ,IT & CS",
+    "experience": "",
     "researchArea": "Mathematical Modeling",
     "image": "/faculties/Dr.-Radhika-Sharma.jpg"
+  },
+  {
+    "role": "Assistant Professor",
+    "name": "Ms. Patta mani chandana",
+    "degree": "M.Sc.",
+    "faculty": "Faculty of Engineering, IT & CS",
+    "department": "Engineering ,IT & CS",
+    "experience": "",
+    "researchArea": "Mathematical Modeling",
+    "image": "/faculties/Ms.-Patta-mani-chandana.jpg"
+  },
+  {
+    "role": "Assistant Professor",
+    "name": "Ms. Namratha Singh",
+    "degree": "MCA",
+    "faculty": "Faculty of Engineering, IT & CS",
+    "department": "Engineering ,IT & CS",
+    "experience": "",
+    "researchArea": "AI  / ML",
+    "image": "/faculties/Ms.-Namratha-Singh.jpg"
+  },
+  {
+    "role": "Assistant Professor",
+    "name": "Ms. Harsha Dessai",
+    "degree": "M.E.(I.T)",
+    "faculty": "Faculty of Engineering, IT & CS",
+    "department": "Engineering ,IT & CS",
+    "experience": "2 Years 10 Months",
+    "researchArea": "",
+    "image": "/faculties/Ms.-Harsha-Dessai.jpg"
+  },
+  {
+    "role": "Assistant Professor",
+    "name": "Ms. Anupama Biswas",
+    "degree": "M.A",
+    "faculty": "Faculty of Engineering, IT & CS",
+    "department": "Engineering ,IT & CS",
+    "experience": "2 Years 4 Months",
+    "researchArea": "English Language Education",
+    "image": "/faculties/Ms.-Anupama-Biswas.jpg"
+  },
+  {
+    "role": "Assistant Professor",
+    "name": "Mr. Somnath Bhattacharya",
+    "degree": "MCA",
+    "faculty": "Faculty of Engineering, IT & CS",
+    "department": "Engineering ,IT & CS",
+    "experience": "1 Year 9 Months",
+    "researchArea": "Data Science with Python",
+    "image": "/faculties/Mr.-Somnath-Bhattacharya.jpg"
   }
 ];
 

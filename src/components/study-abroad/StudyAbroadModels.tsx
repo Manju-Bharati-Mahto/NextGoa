@@ -1,6 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Poppins } from "next/font/google";
+import { useState } from "react";
+import CostSheetModal from "./CostSheetModal";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -8,6 +12,8 @@ const poppins = Poppins({
 });
 
 export default function StudyAbroadModels() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section
       className={`relative w-full bg-[#f8f8f8] px-4 md:px-8 overflow-hidden ${poppins.className}`}
@@ -175,21 +181,26 @@ export default function StudyAbroadModels() {
                 </div>
               ))}
               
-              <Link 
-                href="/study-abroad"
+              <button 
+                onClick={() => setIsModalOpen(true)}
                 className="inline-flex items-center gap-2 bg-[#e73649] hover:bg-[#D62839] text-white px-8 py-2.5 rounded-full font-bold text-[18px] transition-all duration-300 hover:shadow-lg ml-0 md:ml-2"
               >
                 Explore More
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </Link>
+              </button>
             </div>
           </div>
 
         </div>
 
       </div>
+
+      <CostSheetModal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </section>
   );
 }

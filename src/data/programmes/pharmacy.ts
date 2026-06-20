@@ -94,72 +94,89 @@ export const pharmacyData: ProgrammeData = {
     bio: "Dr. Lalit Lata Jha is a renowned academician and researcher with extensive experience in pharmaceutical sciences.",
     image: "/faculties/Pharmacy/Dean.png",
     faculty: [
-
-  {
-    role: "Associate Professor",
-    name: "Dr. Prabhat Dessai",
-    degree: "Ph.D.",
-    faculty: "Faculty of Pharmacy",
-    department: "Pharmacy",
-    experience: "16 Years",
-    researchArea: "Quality Assurance, Analytical Techniques",
-    image: "/faculties/Dr.-Prabhat-Dessai.jpg"
-  },
-
-  {
-    role: "Assistant Professor",
-    name: "Dr. Sanjeeta Dessai",
-    degree: "Ph.D.",
-    faculty: "Faculty of Pharmacy",
-    department: "Pharmacy",
-    experience: "6 Years",
-    researchArea: "Packaging Technology, Novel drug delivery systems",
-    image: "/faculties/Dr.-Sanjeeta-Dessai.jpg"
-  },
-  {
-    role: "Assistant Professor",
-    name: "Ms. Henncia Gomes",
-    degree: "M.Pharm.",
-    faculty: "Faculty of Pharmacy",
-    department: "Pharmacy",
-    experience: "8 Years",
-    image: "/faculties/Ms.-Henncia-Gomes.jpg"
-  },
-  {
-    role: "Assistant Professor",
-    name: "Ms. Anisha Naik",
-    degree: "M.Pharm.",
-    faculty: "Faculty of Pharmacy",
-    department: "Pharmacy",
-    experience: "6 Years",
-    image: "/faculties/Ms.-Anisha-Naik.jpg"
-  },
-  {
-    role: "Assistant Professor",
-    name: "Mr. Damodar Goundkar",
-    degree: "M.Pharm.",
-    faculty: "Faculty of Pharmacy",
-    department: "Pharmacy",
-    experience: "2 Years",
-    researchArea: "Neuropharmacology / Neurodegenerative Disorders",
-    image: "/faculties/Mr.-Damodar-Goundkar.jpg"
-  },
-  {
-    role: "Assistant Professor",
-    name: "Ms. Shradha Umesh Naik",
-    degree: "M.Pharm.",
-    faculty: "Faculty of Pharmacy",
-    department: "Pharmacy",
-    researchArea: "Novel Drug Delivery Systems",
-    image: "/faculties/Ms.-Shradha-Umesh-Naik.jpg"
-  },
+    {
+        role: "Associate Professor",
+        name: "Dr. Prabhat Dessai",
+        degree: "Ph.D.",
+        faculty: "Faculty of Pharmacy",
+        department: "Pharmacy",
+        experience: "16 Years 8",
+        researchArea: "Quality Assurance, Analytical Techniques",
+        image: "/faculties/Dr.-Prabhat-Dessai.jpg"
+    },
+    {
+        role: "Assistant Professor",
+        name: "Dr. Sanjeeta Dessai",
+        degree: "Ph.D.",
+        faculty: "Faculty of Pharmacy",
+        department: "Pharmacy",
+        experience: "6 Years 9",
+        researchArea: "Packaging Technology, Novel drug delivery systems",
+        image: "/faculties/Dr.-Sanjeeta-Dessai.jpg"
+    },
+    {
+        role: "Assistant Professor",
+        name: "Ms. Henncia Gomes",
+        degree: "M.Pharm.",
+        faculty: "Faculty of Pharmacy",
+        department: "Pharmacy",
+        experience: "8 Years",
+        researchArea: "",
+        image: "/faculties/Ms.-Henncia-Gomes.jpg"
+    },
+    {
+        role: "Assistant Professor",
+        name: "Ms. Anisha Naik",
+        degree: "M.Pharm.",
+        faculty: "Faculty of Pharmacy",
+        department: "Pharmacy",
+        experience: "6 Years 10",
+        researchArea: "",
+        image: "/faculties/Ms.-Anisha-Naik.jpg"
+    },
+    {
+        role: "Assistant Professor",
+        name: "Mr. Damodar Goundkar",
+        degree: "M.Pharm.",
+        faculty: "Faculty of Pharmacy",
+        department: "Pharmacy",
+        experience: "2 Years 11",
+        researchArea: "Neuropharmacology / Neurodegenerative Disorders",
+        image: "/faculties/Mr.-Damodar-Goundkar.jpg"
+    },
+    {
+        role: "Assistant Professor",
+        name: "Ms. Shradha Umesh Naik",
+        degree: "M.Pharm.",
+        faculty: "Faculty of Pharmacy",
+        department: "Pharmacy",
+        experience: "Fresher",
+        researchArea: "Novel Drug Delivery Systems",
+        image: "/faculties/Ms.-Shradha-Umesh-Naik.jpg"
+    }
 ]},
   faqs: [
-    { question: "Do students get hospital training?", answer: "Yes, rigorous hospital and clinical training is a mandatory part of the curriculum." },
-    { question: "What are the career options after B.Pharm?", answer: "Graduates can work as clinical pharmacists, research scientists, QA/QC executives in pharmaceutical manufacturing, or drug inspectors." },
-    { question: "Are there research opportunities for undergraduates?", answer: "Yes, final year B.Pharm students are encouraged to participate in molecular modeling, drug formulation, and clinical research projects under faculty mentorship." },
-    { question: "What is eligibility criteria for B.Pharm?", answer: "Eligibility criteria for B.Pharm is 10+2 with PCB/PCM (physics, chemistry, biology or maths) and other criterias are will be updated on the website or brochure." }
-  ],
+    {
+        question: "Is the B.Pharm PCI approved?",
+        answer: "Yes. All pharmacy programmes at Parul University are approved by the Pharmacy Council of India (PCI). You are eligible to register as a pharmacist upon graduation."
+    },
+    {
+        question: "What is Central Instrumentation, and why does it matter?",
+        answer: "It's a single laboratory housing HPLC, UV-Vis spectrophotometers, FTIR, dissolution test apparatus and other research-grade equipment. Most pharmacy colleges share these; here, students get individual hands-on time from second year."
+    },
+    {
+        question: "Do you offer hostel and stipend during postings?",
+        answer: "Yes — separate boys' and girls' hostels with mess and 24×7 security. Industry internships in the final year typically carry a stipend depending on the partner company."
+    },
+    {
+        question: "Higher studies after B.Pharm?",
+        answer: "M.Pharm (Pharmaceutics, Pharmacology, Pharmaceutical Chemistry, Quality Assurance), Pharm.D (post-baccalaureate), or MBA in Pharma Management for industry leadership tracks."
+    },
+    {
+        question: "Is Pharmacy a good career choice?",
+        answer: "Pharmacy is one of the most stable healthcare careers — protected by regulation, recession-resistant, and increasingly important as India becomes the pharmacy of the world. Roles span clinical, industry, regulatory and research."
+    }
+],
   themeColor: {
     waveBand: "#0CAADD",
     waveAccent: "#0A99C7",

@@ -50,6 +50,24 @@ export function PlacementsNumbers() {
         </div>
       </div>
       
+      {/* Decorative Assets */}
+      <div className="absolute left-0 top-[20%] z-0 w-32 md:w-64 h-64 md:h-[400px] pointer-events-none opacity-40">
+        <Image
+          src="/abroad/Global Lighthouse.svg"
+          alt="Lighthouse Decoration"
+          fill
+          className="object-contain object-left"
+        />
+      </div>
+      <div className="absolute right-0 bottom-[10%] z-0 w-40 md:w-72 h-40 md:h-72 pointer-events-none">
+        <Image
+          src="/abroad/Global Sunrise.png"
+          alt="Sunrise Decoration"
+          fill
+          className="object-contain object-right"
+        />
+      </div>
+
       <div className="relative z-10 mx-auto max-w-7xl px-6 flex flex-col items-center justify-center">
         {/* Heading Section */}
         <p className="text-white mb-2 text-center section-subheading">

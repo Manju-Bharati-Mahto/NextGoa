@@ -4,31 +4,7 @@ import { Icon } from "@iconify/react";
 export default function PhysiotherapyAccreditation() {
   return (
     <section className="w-full bg-[#FAFAFA] pb-12 pt-5 sm:pb-16">
-      <div className="py-8 sm:py-12">
-        <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8 text-center">
-          
-          <h2 className="text-[#E73649] mb-8 section-heading">
-            Recognition & Accreditation
-          </h2>
-          
-          <div className="w-full flex flex-col items-center justify-center">
-            {/* Top Fading Line */}
-            <div className="w-full max-w-[1000px] h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent mb-6 sm:mb-8"></div>
-            
-            <div className="relative w-full max-w-[600px] h-[100px] sm:h-[150px]">
-              <Image 
-                src="/awards-1.png" 
-                alt="Recognition and Accreditation Logos" 
-                fill
-                className="object-contain"
-              />
-            </div>
 
-            {/* Bottom Fading Line */}
-            <div className="w-full max-w-[1000px] h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent mt-6 sm:mt-8"></div>
-          </div>
-        </div>
-      </div>
 
       {/* Entrance Test Notice Banner */}
       <div className="w-full bg-[#E73649] border-t-4 border-b-4 border-black/5">

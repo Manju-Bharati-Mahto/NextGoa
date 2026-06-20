@@ -6,24 +6,28 @@ import Image from "next/image";
 const faqs = [
   {
     question: "B.Tech CSE vs BCA — which should I pick?",
-    answer: "B.Tech CSE is a 4-year engineering degree with deeper mathematics, hardware and core CS. BCA is a 3-year application-focused degree (great for software roles or MCA after). Pick B.Tech if you want core engineering, research or international engineering pathways. Pick BCA if you want a faster route to industry or plan to do MCA.",
+    answer: "B.Tech CSE is a 4-year engineering degree with deeper mathematics, hardware and core CS. BCA is a 3-year application-focused degree (great for software roles or MCA after). Pick B.Tech if you want core engineering, research or international engineering pathways. Pick BCA if you want a faster route to industry or plan to do MCA."
   },
   {
     question: "How does the international pathway work?",
-    answer: "You complete part of your degree at PU Goa and the remainder at a partner university abroad. We offer 2+2 (B.Tech), 1+1 (Master's) and 3+1+1 (UG+PG combo) models. You graduate with a recognised foreign degree at significantly lower cost than going abroad from day one.",
+    answer: "You complete part of your degree at PU Goa and the remainder at a partner university abroad. We offer 2+2 (B.Tech), 1+1 (Master's) and 3+1+1 (UG+PG combo) models. You graduate with a recognised foreign degree at significantly lower cost than going abroad from day one."
   },
   {
     question: "Are there any scholarships?",
-    answer: "Yes, there are scholarships based on merit. It requires a 10+2 / entrance score, sports and cultural scholarships, and need-based aid. Counsellors help you map every option during admissions - book a call to see what you qualify for.",
+    answer: "Yes, there are scholarships based on merit. It requires a 10+2 / entrance score, sports and cultural scholarships, and need-based aid. Counsellors help you map every option during admissions - book a call to see what you qualify for."
+  },
+  {
+    question: "Is BCA Honours NEP-aligned? Will it qualify me for MCA / abroad?",
+    answer: "Yes. BCA Honours is a 4-year degree under NEP 2020 with a research/industry capstone in the final year. It satisfies eligibility for MCA, M.Sc. CS and most foreign Master's programmes that require a 4-year UG."
   },
   {
     question: "What's the placement record?",
-    answer: "PU Goa engineering students have access to the wider Parul University recruiter network of 1,000+ companies. Top recruiters include Infosys, TCS, Wipro, Accenture, Capgemini and Cognizant.",
+    answer: "PU Goa engineering students have access to the wider Parul University recruiter network of 1,000+ companies. Top recruiters include Infosys, TCS, Wipro, Accenture, Capgemini and Cognizant."
   },
   {
     question: "Do I need JEE? What's the entrance test?",
-    answer: "JEE is not mandatory. PU Goa accepts JEE scores, accepts state-level engineering scores, and conducts its own entrance evaluation. Lateral entry is via diploma marks. Final eligibility is published on the admissions page.",
-  },
+    answer: "JEE is not mandatory. PU Goa accepts JEE scores, accepts state-level engineering scores, and conducts its own entrance evaluation. Lateral entry is via diploma marks. Final eligibility is published on the admissions page."
+  }
 ];
 
 export default function EngineeringFaq() {

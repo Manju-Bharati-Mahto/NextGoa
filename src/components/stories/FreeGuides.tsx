@@ -74,7 +74,7 @@ export function FreeGuides() {
             Free Guides
           </p>
           <h2 className="mt-2 text-center text-brand section-heading">
-            Download free guides - straight to your inbox.
+            Download free guides — straight to your inbox.
           </h2>
           <p className="mt-4 text-ink/70 section-body px-4 md:px-0">
             Our most popular admissions, programme and pathway guides. One email, one PDF, zero spam.

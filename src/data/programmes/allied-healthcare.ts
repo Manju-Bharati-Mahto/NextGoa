@@ -92,59 +92,83 @@ export const alliedHealthData: ProgrammeData = {
     bio: "At the faculty of Applied and Healthcare Sciences we are dedicated to advancing knowledge, fostering innovation, and improving the environment, health and well-being of our society through cutting-edge research, education, and practice.",
     image: "/faculties/Applied and Healthcare Sciences/Dean.jpg",
     faculty: [
-  {
-    role: "Assistant Professor",
-    name: "Dr. Manasi Pawaskar",
-    degree: "Ph.D.",
-    faculty: "Faculty of Applied and Health Sciences",
-    department: "Applied and Health Sciences",
-    experience: "2 Years",
-    image: "/faculties/Dr.-Manasi-Pawaskar.jpg"
-  },
-  {
-    role: "Assistant Professor",
-    name: "Dr. Abhinaba Ghosh",
-    degree: "Ph.D.",
-    faculty: "Faculty of Applied and Health Sciences",
-    department: "Applied and Health Sciences",
-    experience: "1 Years",
-    image: "/faculties/Dr.-Abhinaba-Ghosh.jpg"
-  },
-  {
-    role: "Assistant Professor",
-    name: "Dr. Monalisa Chowdhury",
-    degree: "Ph.D.",
-    faculty: "Faculty of Applied and Health Sciences",
-    department: "Applied and Health Sciences",
-    image: "/faculties/Dr.-Monalisa-Chowdhury.jpg"
-  },
-  {
-    role: "Assistant Professor",
-    name: "Ms. Dhruvi Patel",
-    degree: "M.Sc.",
-    faculty: "Faculty of Applied and Health Sciences",
-    department: "Applied and Health Sciences",
-    experience: "7 Years",
-    image: "/faculties/Ms.-Dhruvi-Patel.jpg"
-  },
-  {
-    role: "Assistant Professor",
-    name: "Ms. Veda Paranjape",
-    degree: "M.Sc.",
-    faculty: "Faculty of Applied and Health Sciences",
-    image: "/faculties/Ms.-Veda-Paranjape.jpg"
-  },
+    {
+        role: "Assistant Professor",
+        name: "Dr. Manasi Pawaskar",
+        degree: "Ph.D.",
+        faculty: "Faculty of Applied and Health Sciences",
+        department: "Applied and Health Sciences",
+        experience: "2 Years",
+        researchArea: "",
+        image: "/faculties/Dr.-Manasi-Pawaskar.jpg"
+    },
+    {
+        role: "Assistant Professor",
+        name: "Dr. Abhinaba Ghosh",
+        degree: "Ph.D.",
+        faculty: "Faculty of Applied and Health Sciences",
+        department: "Applied and Health Sciences",
+        experience: "1 Years  8 Months",
+        researchArea: "",
+        image: "/faculties/Dr.-Abhinaba-Ghosh.jpg"
+    },
+    {
+        role: "Assistant Professor",
+        name: "Dr. Monalisa Chowdhury",
+        degree: "Ph.D.",
+        faculty: "Faculty of Applied and Health Sciences",
+        department: "Applied and Health Sciences",
+        experience: "5 Months",
+        researchArea: "",
+        image: "/faculties/Dr.-Monalisa-Chowdhury.jpg"
+    },
+    {
+        role: "Assistant Professor",
+        name: "Ms. Dhruvi Patel",
+        degree: "M.Sc.",
+        faculty: "Faculty of Applied and Health Sciences",
+        department: "Applied and Health Sciences",
+        experience: "7 Years",
+        researchArea: "",
+        image: "/faculties/Ms.-Dhruvi-Patel.jpg"
+    },
+    {
+        role: "Assistant Professor",
+        name: "Ms. Veda Paranjape",
+        degree: "M.Sc.",
+        faculty: "Faculty of Applied and Health Sciences",
+        department: "Applied and Health Sciences",
+        experience: "",
+        researchArea: "",
+        image: "/faculties/Ms.-Veda-Paranjape.jpg"
+    }
 ]},
   faqs: [
-    { question: "What is the core difference between B.AOTT and B.MLS?", answer: "They sit in two very different parts of a hospital. B.AOTT trains you for the operation theatre. Think surgical assistance, handling the anaesthesia equipment, keeping the OT running in order. Subsequently, B.MLS is the lab side instead. You're working in diagnostics here, so pathology, biochemistry, and microbiology testing make up most of it." },
-    { question: "What is the difference between B.Sc. and B.Sc. Honours?", answer: "B.Sc. runs for three years and keeps things broad, giving you a wide spread of learning & expertise. Honours stretches to four years under NEP 2020, and that extra time goes into a specialisation plus a research part at the end. It can count toward eligibility for international Master's programmes and the more advanced academic routes." },
-    { question: "What career opportunities are available after M.Sc. Biotechnology?", answer: "Depends on interest solely. Some graduates head into research and development, others into quality control and assurance. Clinical research and regulatory affairs are common as well. There's also the sales side of biotechnology if that suits you. And if you'd rather stay in academics, doctoral study and research are perfect for building a career." },
-    { question: "Do these programmes include hospital postings and stipends?", answer: "Indeed, both do. B.AOTT and B.MLS bring in clinical exposure and opportunities via partner hospitals. The big part is a one-year paid internship, and before that, the earlier semesters give you supervised practical training to build up to it." }
-  ],
+    {
+        question: "B.AOTT vs B.MLS — what's the difference?",
+        answer: "B.AOTT (Anesthesia & Operation Theatre Technology) trains you to assist surgeons and manage OT equipment. B.MLS (Medical Laboratory Science) focuses on diagnostics, pathology, blood banking and clinical microbiology. Both have high hospital demand."
+    },
+    {
+        question: "B.Sc. vs B.Sc. Honours?",
+        answer: "B.Sc. is 3 years and broader. B.Sc. Honours is 4 years under NEP 2020 with a specialisation (Biotech or Micro) and a research capstone. Honours qualifies you for foreign Master's programmes that need a 4-year UG and gives an academic edge for M.Sc./Ph.D. admissions."
+    },
+    {
+        question: "Career paths after M.Sc. Biotech?",
+        answer: "R&D scientist (pharma, agri-biotech, food), QC/QA in biopharma manufacturing, clinical research associate, biotech sales, regulatory affairs, or Ph.D. for academic research."
+    },
+    {
+        question: "Hospital postings and stipend?",
+        answer: "B.AOTT and B.MLS include a one-year paid internship across partner hospitals. Earlier semesters include unpaid clinical exposure under supervision."
+    },
+    {
+        question: "Do I need an entrance test?",
+        answer: "Most Allied Health programmes are merit-based on 10+2 marks. Some programmes have a PU Goa entrance evaluation — admissions counsellors will confirm by programme."
+    }
+],
   themeColor: {
-    waveBand: "#1F1F1F", // Black theme
-    waveAccent: "#333333",
-    cardBg: "#1F1F1F",
+    waveBand: "#E73649", // Red theme
+    waveAccent: "#C92B3C",
+    cardBg: "#E73649",
     cardText: "#FFFFFF"
   }
 };

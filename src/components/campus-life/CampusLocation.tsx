@@ -295,10 +295,15 @@ export function CampusLocation() {
             <p className="font-sans text-white/90 text-[16px] sm:text-[18px] text-center sm:text-left py-2 sm:py-0">
               <span className="text-[#FEDB2F] font-semibold">Campus address:</span> Parul University Goa · Tal. Quepem, Dist. South Goa · near ONGC Betul, Goa
             </p>
-            <button className="w-full sm:w-auto shrink-0 bg-[#FEDB2F] hover:bg-white text-[#1F1F1F] font-sans font-bold text-[16px] sm:text-[18px] px-8 py-4 rounded-[12px] transition-colors flex items-center justify-center gap-2">
+            <a 
+              href="https://www.google.com/maps/dir//Parul+University+Goa/@15.1287554,73.9452229,896m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bbe4d7ef23d2303:0xaebb37dd7e075d01!8m2!3d15.1287554!4d73.9477978!16s%2Fg%2F11xw2ktbks?entry=ttu" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="w-full sm:w-auto shrink-0 bg-[#FEDB2F] hover:bg-white text-[#1F1F1F] font-sans font-bold text-[16px] sm:text-[18px] px-8 py-4 rounded-[12px] transition-colors flex items-center justify-center gap-2"
+            >
               Open in Maps
               <Icon icon="mdi:arrow-right" className="text-[22px]" />
-            </button>
+            </a>
           </div>
         </div>
 
