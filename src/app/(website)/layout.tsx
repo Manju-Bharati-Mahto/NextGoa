@@ -63,30 +63,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang={siteConfig.lang}
-      className={`${gotham.variable} ${poppins.variable} h-full antialiased`}
-      suppressHydrationWarning
-    >
-      <head>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
-        <link rel="alternate" type="application/json" title="LLM Knowledge Graph" href="/llm-knowledge.json" />
-      </head>
-      <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
-        {/* Site-wide entity definitions for search engines + AI answer engines. */}
-        <JsonLd data={organizationSchema()} />
-        <JsonLd data={websiteSchema()} />
-        <SiteHeader />
-        {children}
-        <SiteFooter />
-        <EnquiryModal />
-        <DownloadBrochureModal />
-        <DownloadPlacementReportModal />
-        <CampusVisitModal />
-        <FloatingCta />
-        <ScrollToTop />
-        <ScrollRestoration />
-      </body>
-    </html>
+    <>
+      <JsonLd data={organizationSchema()} />
+      <JsonLd data={websiteSchema()} />
+
+      <SiteHeader />
+
+      {children}
+
+      <SiteFooter />
+
+      <EnquiryModal />
+      <DownloadBrochureModal />
+      <CampusVisitModal />
+      <FloatingCta />
+      <ScrollToTop />
+    </>
   );
 }
