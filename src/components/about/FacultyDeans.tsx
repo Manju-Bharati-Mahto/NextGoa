@@ -53,7 +53,7 @@ export function FacultyDeans() {
       faculty: "Faculty of Hotel Management",
       stats: "Extensive Experience in Hospitality and Culinary Arts",
       image: "/leaders/9911.jpg",
-      linkedin: "https://www.linkedin.com/company/parul-university-goa/",
+      linkedin: "https://www.linkedin.com/in/prashant-sharma-1a884b17/",
     },
   ];
 

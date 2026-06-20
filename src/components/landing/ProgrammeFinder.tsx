@@ -263,7 +263,7 @@ export function ProgrammeFinder() {
   return (
     <section id="programmes" className="bg-brand-white py-10 sm:py-12">
       <div className="mx-auto max-w-6xl px-6 py-8">
-        <Eyebrow className="text-ink">Find Your Program</Eyebrow>
+        <Eyebrow className="text-ink">Find Your Faculty</Eyebrow>
         <h2 className="mt-2 text-center section-heading text-brand">
           Tell us where you&apos;re headed.
         </h2>
@@ -320,7 +320,7 @@ export function ProgrammeFinder() {
             disabled={!ready}
             className="mt-2 whitespace-nowrap rounded-full bg-brand px-8 py-3 text-base font-semibold text-white transition-colors hover:bg-brand-dark disabled:cursor-not-allowed sm:ml-4 sm:mt-0"
           >
-            Find programs
+            Find Faculties
           </button>
         </form>
 

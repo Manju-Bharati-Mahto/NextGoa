@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { navItems, cta } from "@/lib/navigation";
 
 const subPrograms = [
@@ -49,6 +50,7 @@ function Logo() {
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [mobileProgramsOpen, setMobileProgramsOpen] = useState(false);
+  const pathname = usePathname() || "";
 
   useEffect(() => {
     if (open) {
@@ -68,18 +70,22 @@ export function SiteHeader() {
         <div className="mx-auto flex w-full items-center sm:justify-around justify-between gap-3 px-4 xl:px-8 py-4">
           <Logo />
 
-          <nav aria-label="Primary" className="hidden items-center gap-3 xl:gap-5 xl:flex">
+          <nav aria-label="Primary" className="hidden items-center gap-3 xl:gap-5 xl:flex h-full">
             {navItems.map((item) => {
+              const isActive = pathname === item.href || (item.label === "Programs" && pathname.startsWith("/programs"));
+              
               if (item.label === "Programs") {
                 return (
-                  <div key={item.label} className="relative group py-4 -my-4 flex items-center">
+                  <div key={item.label} className="relative group py-4 -my-4 flex items-center h-full">
                     <Link
                       href={item.href}
-                      className="flex items-center gap-1.5 whitespace-nowrap font-[family-name:var(--font-poppins)] text-[15px] font-semibold text-white transition-colors hover:text-white/80"
+                      className={`flex items-center gap-1.5 whitespace-nowrap font-[family-name:var(--font-poppins)] text-[15px] font-semibold transition-all hover:text-white pb-1 relative
+                        ${isActive ? "text-white" : "text-white/80"}
+                      `}
                     >
                       {item.label}
                       <svg
-                        className="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180 text-white/80"
+                        className="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180"
                         fill="none"
                         stroke="currentColor"
                         strokeWidth="2.5"
@@ -87,6 +93,10 @@ export function SiteHeader() {
                       >
                         <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                       </svg>
+                      {/* Active Indicator Underline */}
+                      {isActive && (
+                        <span className="absolute bottom-0 left-0 w-full h-0.5 bg-brand rounded-t-full"></span>
+                      )}
                     </Link>
                     {/* Dropdown Panel */}
                     <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
@@ -96,7 +106,9 @@ export function SiteHeader() {
                             <Link
                               key={sub.href}
                               href={sub.href}
-                              className="group/link flex items-center justify-between px-4 py-3 text-[14px] font-[family-name:var(--font-poppins)] font-semibold text-slate-700 hover:text-[#ED383F] hover:bg-[#ED383F]/5 rounded-xl transition-all"
+                              className={`group/link flex items-center justify-between px-4 py-3 text-[14px] font-[family-name:var(--font-poppins)] font-semibold rounded-xl transition-all
+                                ${pathname === sub.href ? "text-[#ED383F] bg-[#ED383F]/10" : "text-slate-700 hover:text-[#ED383F] hover:bg-[#ED383F]/5"}
+                              `}
                             >
                               <span>{sub.label}</span>
                               <svg className="w-4 h-4 opacity-0 -translate-x-2 transition-all duration-300 group-hover/link:opacity-100 group-hover/link:translate-x-0 text-[#ED383F]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
@@ -111,13 +123,20 @@ export function SiteHeader() {
                 );
               }
               return (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="whitespace-nowrap font-[family-name:var(--font-poppins)] text-[15px] font-semibold text-white transition-colors hover:text-white/80 py-2"
-                >
-                  {item.label}
-                </Link>
+                <div key={item.label} className="relative h-full flex items-center py-4 -my-4">
+                  <Link
+                    href={item.href}
+                    className={`whitespace-nowrap font-[family-name:var(--font-poppins)] text-[15px] font-semibold transition-all hover:text-white pb-1 relative
+                      ${isActive ? "text-white" : "text-white/80"}
+                    `}
+                  >
+                    {item.label}
+                    {/* Active Indicator Underline */}
+                    {isActive && (
+                      <span className="absolute bottom-0 left-0 w-full h-0.5 bg-brand rounded-t-full"></span>
+                    )}
+                  </Link>
+                </div>
               );
             })}
           </nav>

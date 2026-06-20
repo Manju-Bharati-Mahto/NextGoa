@@ -22,7 +22,7 @@ export default function StudyAbroadHero() {
             Global Pathways
           </span>
           <span className="inline-block rounded-full bg-[#FFD523] px-5 py-1 text-[13px] font-semibold text-ink shadow-sm">
-            Semester Programs
+            Semester Exchange
           </span>
         </div>
 

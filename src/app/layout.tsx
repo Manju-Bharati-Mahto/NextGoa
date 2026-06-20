@@ -13,6 +13,7 @@ const DownloadPlacementReportModal = dynamic(() => import("@/components/admissio
 const CampusVisitModal = dynamic(() => import("@/components/layout/CampusVisitModal").then((mod) => mod.CampusVisitModal));
 import FloatingCta from "@/components/layout/FloatingCta";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
+import { ScrollRestoration } from "@/components/layout/ScrollRestoration";
 /**
  * Site-wide metadata defaults. `metadataBase` lets every page emit absolute
  * canonical/OG URLs from relative paths. The title `template` appends the brand
@@ -69,6 +70,7 @@ export default function RootLayout({
     >
       <head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+        <link rel="alternate" type="application/json" title="LLM Knowledge Graph" href="/llm-knowledge.json" />
       </head>
       <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
         {/* Site-wide entity definitions for search engines + AI answer engines. */}
@@ -83,6 +85,7 @@ export default function RootLayout({
         <CampusVisitModal />
         <FloatingCta />
         <ScrollToTop />
+        <ScrollRestoration />
       </body>
     </html>
   );
