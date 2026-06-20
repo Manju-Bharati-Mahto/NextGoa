@@ -25,7 +25,7 @@ export default function PlacementsPage() {
       <AlumniStories />
       <OutcomesByFaculty />
       <InternshipsAndPPOs />
-      {/* <BeyondPlacements /> */}
+      <BeyondPlacements />
       <Accreditations />
       <StartupEcosystem />
       <CareerReadiness />

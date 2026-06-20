@@ -190,7 +190,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
         title={data.slug === "nursing" ? "Ready to begin nursing?" : data.slug === "pharmacy" ? "Ready to enter pharmacy?" : data.slug === "physiotherapy" ? "Ready to start physio?" : data.slug === "allied-healthcare" ? "Ready to start allied and healthcare sciences?" : data.slug === "hotel-management" ? "Ready to enter hospitality?" : data.slug === "phd" ? "Begin your doctoral journey." : "Ready to lead?"}
         description={data.slug === "phd" ? "PU Goa entrance and PhD admissions are open for the 2026-27 cycle." : "Admissions are open for the 2026-27 academic year."}
         actions={[
-          { label: "Apply Now", href: "/apply", variant: "primary" },
+          { label: "Apply Now", href: "#", variant: "primary", triggerEnquiry: true },
           { label: "Talk to Counsellor", href: "#", variant: "dark", triggerEnquiry: true },
           { label: "Chat on WhatsApp", href: "https://wa.me/919558210145", variant: "dark" },
           { label: "1800 890 9090", href: "tel:18008909090", variant: "dark", icon: "phone" }

@@ -80,7 +80,7 @@ export const hotelManagementData: ProgrammeData = {
 
   dean: {
     name: "Dr. Prashant Sharma",
-    linkedin: "https://www.linkedin.com/company/parul-university-goa/",
+    linkedin: "https://www.linkedin.com/in/prashant-sharma-1a884b17/",
     role: "Dean, Hotel Management",
     bio: "Dr. Prashant Sharma brings extensive experience in hospitality management and education, guiding students toward excellence in global hospitality and culinary arts.",
     image: "/leaders/9911.jpg",

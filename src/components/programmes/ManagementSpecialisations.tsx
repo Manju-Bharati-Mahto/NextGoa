@@ -43,12 +43,6 @@ export default function ManagementSpecialisations() {
                 </span>
               ))}
             </div>
-            
-            <div className="mt-auto">
-              <Link href="#" className="font-bold text-ink text-[15px] flex items-center gap-2 hover:opacity-80 transition-opacity">
-                View &rarr;
-              </Link>
-            </div>
           </div>
 
           {/* MBA Card */}
@@ -68,12 +62,6 @@ export default function ManagementSpecialisations() {
                   {spec}
                 </span>
               ))}
-            </div>
-            
-            <div className="mt-auto">
-              <Link href="#" className="font-bold text-white text-[15px] flex items-center gap-2 hover:opacity-80 transition-opacity">
-                View &rarr;
-              </Link>
             </div>
           </div>
 

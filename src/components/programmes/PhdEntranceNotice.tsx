@@ -24,9 +24,9 @@ export default function PhdEntranceNotice() {
 
           {/* Right Register Button (wrapped in border) */}
           <div className="border border-white/80 border-t-0 md:border-t md:border-l-0 rounded-b-[24px] md:rounded-bl-none md:rounded-r-[24px] p-6 sm:p-8 md:px-16 flex items-center justify-center shrink-0">
-            <Link href="/apply" className="bg-[#FCE34B] text-ink font-bold text-[18px] sm:text-[22px] px-14 sm:px-20 py-4 rounded-full transition-transform hover:scale-105 shadow-md text-center">
+            <button type="button" data-enquiry-trigger="true" className="bg-[#FCE34B] text-ink font-bold text-[18px] sm:text-[22px] px-14 sm:px-20 py-4 rounded-full transition-transform hover:scale-105 shadow-md text-center">
               Register
-            </Link>
+            </button>
           </div>
 
         </div>

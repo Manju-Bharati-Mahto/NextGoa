@@ -52,7 +52,7 @@ export default function StoriesPage() {
         title="Want to be part of the next story?"
         description="Apply for the 2026-27 academic year or come visit campus."
         actions={[
-          { label: "Apply Now", href: "/admissions", variant: "primary" },
+          { label: "Apply Now", href: "#", variant: "primary", triggerEnquiry: true },
           { label: "Book a Visit", href: "/admissions#visit" },
           { label: "1800 890 9090", href: "tel:18008909090", icon: "phone" }
         ]}

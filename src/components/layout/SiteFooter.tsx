@@ -22,7 +22,7 @@ const columns: { heading: string; links?: LinkItem[]; subSections?: { heading: s
     ],
   },
   {
-    heading: "Programmes",
+    heading: "Programs",
     links: [
       { label: "Engineering, IT & CS", href: "/programs/engineering" },
       { label: "Management Studies", href: "/programs/management-studies" },
