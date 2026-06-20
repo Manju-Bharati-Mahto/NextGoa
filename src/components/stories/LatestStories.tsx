@@ -325,7 +325,7 @@ export function LatestStories({ stories = [] }: { stories?: Story[] }) {
               The PU Goa Weekly
             </span>
             <h3 className="text-white section-subheading">
-              Placements, Programme Launches, Scholarships — Once a Week.
+              Placements, Programme Launches, Scholarships Once a Week.
             </h3>
             <p className="mt-3 text-white/60 text-sm">
               No spam. Unsubscribe any time.

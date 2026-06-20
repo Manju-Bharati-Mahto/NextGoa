@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Poppins } from "next/font/google";
 import CountryCallbackModal from "./CountryCallbackModal";
+import PartnerDetailsModal, { PartnerDetails } from "./PartnerDetailsModal";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -12,6 +13,7 @@ const poppins = Poppins({
 
 export default function StudyAbroadPartners() {
   const [showAll, setShowAll] = useState(false);
+  const [selectedPartner, setSelectedPartner] = useState<PartnerDetails | null>(null);
 
   const countriesData = [
     {
@@ -20,9 +22,18 @@ export default function StudyAbroadPartners() {
       partnersCount: "3",
       facultiesServed: "Design • Engineering • IT/CS • Management",
       partners: [
-        { name: "University of Waikato", src: "/abroad/partners/NEW ZELAND/WAIKATO.png", bg: "white" },
-        { name: "Victoria University of Wellington", src: "/abroad/partners/NEW ZELAND/WELLINGTON.png", bg: "white" },
-        { name: "Massey University", src: "/abroad/partners/NEW ZELAND/Massey.png", bg: "white" }
+        { 
+          name: "University of Waikato", src: "/abroad/partners/NEW ZELAND/WAIKATO.png", bg: "white",
+          details: { faculties: ["Management", "Engineering"], pathways: ["Bachelor's (2+2)", "Master's (1+1)"], desc: "Known for its triple-crown accredited business school and strong engineering pathways." }
+        },
+        { 
+          name: "Victoria University of Wellington", src: "/abroad/partners/NEW ZELAND/WELLINGTON.png", bg: "white",
+          details: { faculties: ["IT/CS", "Design"], pathways: ["Progression (3+2)"], desc: "A leading university in New Zealand for digital arts and computer science." }
+        },
+        { 
+          name: "Massey University", src: "/abroad/partners/NEW ZELAND/Massey.png", bg: "white",
+          details: { faculties: ["Design", "Engineering"], pathways: ["Bachelor's Transfer (1+2)"], desc: "Offers practical, research-led pathways with excellent facilities." }
+        }
       ]
     },
     {
@@ -31,7 +42,10 @@ export default function StudyAbroadPartners() {
       partnersCount: "1",
       facultiesServed: "Design • Engineering • Management",
       partners: [
-        { name: "Neoma Business School", src: "/abroad/partners/FRANCE/NEOMA.png", bg: "white" }
+        { 
+          name: "Neoma Business School", src: "/abroad/partners/FRANCE/NEOMA.png", bg: "white",
+          details: { faculties: ["Management", "Design", "Engineering"], pathways: ["Progression (3+1)", "Master's (1+1)"], desc: "One of the top business schools in France, offering extensive global management pathways." }
+        }
       ]
     },
     {
@@ -40,7 +54,10 @@ export default function StudyAbroadPartners() {
       partnersCount: "1",
       facultiesServed: "Management",
       partners: [
-        { name: "Humber Polytechnic", src: "/abroad/partners/CANADA/HUMBER.png", bg: "white" }
+        { 
+          name: "Humber Polytechnic", src: "/abroad/partners/CANADA/HUMBER.png", bg: "white",
+          details: { faculties: ["Management"], pathways: ["Progression (3+1)"], desc: "A leader in polytechnic education providing hands-on management training." }
+        }
       ]
     },
     {
@@ -49,10 +66,22 @@ export default function StudyAbroadPartners() {
       partnersCount: "4",
       facultiesServed: "Engineering • Management",
       partners: [
-        { name: "Rowan University", src: "/abroad/partners/AMERICA/ROWAN.png", bg: "white" },
-        { name: "LSUS Shreveport", src: "/abroad/partners/AMERICA/LSUShreveport_logo.png", bg: "white" },
-        { name: "Marywood University", src: "/abroad/partners/AMERICA/MARYWOOD.png", bg: "white" },
-        { name: "Saint Peter's University", src: "/abroad/partners/AMERICA/Saint_Peters_University_Logo.png", bg: "white" }
+        { 
+          name: "Rowan University", src: "/abroad/partners/AMERICA/ROWAN.png", bg: "white",
+          details: { faculties: ["Engineering", "Management"], pathways: ["Bachelor's (2+2)", "Master's (1+1)"], desc: "A comprehensive public university offering strong research opportunities." }
+        },
+        { 
+          name: "LSUS Shreveport", src: "/abroad/partners/AMERICA/LSUShreveport_logo.png", bg: "white",
+          details: { faculties: ["Management"], pathways: ["Master's (1+1)"], desc: "Provides specialized management programs with high industry integration." }
+        },
+        { 
+          name: "Marywood University", src: "/abroad/partners/AMERICA/MARYWOOD.png", bg: "white",
+          details: { faculties: ["Engineering"], pathways: ["Bachelor's (2+2)"], desc: "Focuses on ethical leadership and strong foundational engineering." }
+        },
+        { 
+          name: "Saint Peter's University", src: "/abroad/partners/AMERICA/Saint_Peters_University_Logo.png", bg: "white",
+          details: { faculties: ["Engineering", "Management"], pathways: ["Progression (3+1)"], desc: "A Jesuit university known for personalized attention and rigorous academics." }
+        }
       ]
     },
     {
@@ -61,10 +90,22 @@ export default function StudyAbroadPartners() {
       partnersCount: "4",
       facultiesServed: "Design • Media & VFX Animation • Architecture • Engineering • IT/CS • Management • Liberal Arts",
       partners: [
-        { name: "Nottingham Trent University", src: "/abroad/partners/UK/notti1.png", bg: "white", scale: "scale-[1.15]" },
-        { name: "University of Bradford", src: "/abroad/partners/UK/BRADFORD.png", bg: "white", scale: "scale-100" },
-        { name: "University of Surrey", src: "/abroad/partners/UK/SURREY.png", bg: "white", scale: "scale-100" },
-        { name: "Birmingham City University", src: "/abroad/partners/UK/bcu_logo.png", bg: "white", scale: "scale-[1.15]" }
+        { 
+          name: "Nottingham Trent University", src: "/abroad/partners/UK/notti1.png", bg: "white", scale: "scale-[1.15]",
+          details: { faculties: ["Design", "Liberal Arts", "Architecture"], pathways: ["Bachelor's Transfer (1+2)", "Progression (3+1)"], desc: "Award-winning university heavily focused on employability and practical design skills." }
+        },
+        { 
+          name: "University of Bradford", src: "/abroad/partners/UK/BRADFORD.png", bg: "white", scale: "scale-100",
+          details: { faculties: ["Engineering", "IT/CS"], pathways: ["Progression (3+1)", "Master's (1+1)"], desc: "Pioneering technology university with outstanding engineering facilities." }
+        },
+        { 
+          name: "University of Surrey", src: "/abroad/partners/UK/SURREY.png", bg: "white", scale: "scale-100",
+          details: { faculties: ["Architecture", "Engineering"], pathways: ["Progression (3+2)"], desc: "Renowned for its research and excellent professional training placements." }
+        },
+        { 
+          name: "Birmingham City University", src: "/abroad/partners/UK/bcu_logo.png", bg: "white", scale: "scale-[1.15]",
+          details: { faculties: ["Media & VFX Animation", "IT/CS", "Management"], pathways: ["Progression (3+1)"], desc: "A vibrant creative and technical hub in the heart of Birmingham." }
+        }
       ]
     },
     {
@@ -73,8 +114,14 @@ export default function StudyAbroadPartners() {
       partnersCount: "2",
       facultiesServed: "Agriculture • Engineering • IT/CS",
       partners: [
-        { name: "Charles Sturt University", src: "/abroad/partners/AUSTRALIA/CHARLES STRUT.webp", bg: "white" },
-        { name: "Western Sydney University", src: "/abroad/partners/AUSTRALIA/WESTERN SYDNEY.png", bg: "white" }
+        { 
+          name: "Charles Sturt University", src: "/abroad/partners/AUSTRALIA/CHARLES STRUT.webp", bg: "white",
+          details: { faculties: ["Agriculture", "IT/CS"], pathways: ["Bachelor's (2+2)", "Master's (1+1)"], desc: "Leading regional university with a strong focus on agricultural tech and IT." }
+        },
+        { 
+          name: "Western Sydney University", src: "/abroad/partners/AUSTRALIA/WESTERN SYDNEY.png", bg: "white",
+          details: { faculties: ["Engineering", "IT/CS"], pathways: ["Progression (3+1)"], desc: "World-class university located in Australia's fastest-growing economic region." }
+        }
       ]
     }
   ];
@@ -96,85 +143,7 @@ export default function StudyAbroadPartners() {
           in each country
         </p>
 
-        {/* Filter Bar */}
-        <div className="bg-[#fdfdfd] border border-gray-200 rounded-2xl p-4 w-full max-w-4xl flex flex-col md:flex-row items-end gap-4 shadow-sm mb-12">
-          <div className="flex-1 w-full">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              I&apos;m studying / want to study
-            </label>
-            <div className="relative">
-              <select className="w-full appearance-none border border-gray-300 rounded-lg py-2.5 px-4 text-gray-500 focus:outline-none focus:ring-1 focus:ring-[#f0424e] bg-white">
-                <option>Any faculty</option>
-                <option>Engineering</option>
-                <option>IT/CS</option>
-                <option>Management</option>
-              </select>
-              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500">
-                <svg
-                  className="h-5 w-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
 
-          <div className="flex-1 w-full">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Any faculty I&apos;d like to go to
-            </label>
-            <div className="relative">
-              <select className="w-full appearance-none border border-gray-300 rounded-lg py-2.5 px-4 text-gray-500 focus:outline-none focus:ring-1 focus:ring-[#f0424e] bg-white">
-                <option>Any faculty</option>
-                <option>Engineering</option>
-                <option>IT/CS</option>
-                <option>Management</option>
-              </select>
-              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500">
-                <svg
-                  className="h-5 w-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-
-          <div className="w-full md:w-auto mt-4 md:mt-0">
-            <button className="w-full md:w-auto bg-[#f0424e] hover:bg-[#d63a44] text-white font-medium rounded-lg py-2.5 px-6 flex items-center justify-center transition-colors">
-              <svg
-                className="h-5 w-5 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2.5"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-              Find Pathways
-            </button>
-          </div>
-        </div>
 
         {/* Cards */}
         <div className="flex flex-col gap-8 w-full max-w-4xl">
@@ -185,7 +154,8 @@ export default function StudyAbroadPartners() {
               flagSrc={data.flagSrc}
               partnersCount={data.partnersCount}
               facultiesServed={data.facultiesServed}
-              partners={data.partners}
+              partners={data.partners as PartnerDetails[]}
+              onPartnerClick={setSelectedPartner}
             />
           ))}
         </div>
@@ -213,6 +183,12 @@ export default function StudyAbroadPartners() {
           </button>
         </div>
       </div>
+
+      <PartnerDetailsModal
+        isOpen={!!selectedPartner}
+        onClose={() => setSelectedPartner(null)}
+        partner={selectedPartner}
+      />
     </section>
   );
 }
@@ -223,12 +199,14 @@ function CountryCard({
   partnersCount,
   facultiesServed,
   partners,
+  onPartnerClick,
 }: {
   country: string;
   flagSrc: string;
   partnersCount: string;
   facultiesServed: string;
-  partners: { name: string; src: string; bg: string }[];
+  partners: PartnerDetails[];
+  onPartnerClick: (partner: PartnerDetails) => void;
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -280,6 +258,7 @@ function CountryCard({
               key={index} 
               partner={partner} 
               className={wClass}
+              onClick={() => onPartnerClick(partner)}
             />
           );
         })}
@@ -294,16 +273,17 @@ function CountryCard({
   );
 }
 
-function PartnerLogoCard({ partner, className = "" }: { partner: { name: string; src: string; bg: string; scale?: string }, className?: string }) {
+function PartnerLogoCard({ partner, className = "", onClick }: { partner: PartnerDetails, className?: string, onClick: () => void }) {
   const [imgError, setImgError] = useState(false);
 
   return (
-    <div
-      className={`flex items-center justify-center p-4 sm:p-5 border-r border-b min-h-[140px] md:min-h-0 relative ${className}`}
+    <button
+      onClick={onClick}
+      className={`group flex items-center justify-center p-4 sm:p-5 border-r border-b min-h-[140px] md:min-h-0 relative cursor-pointer outline-none focus:ring-2 focus:ring-inset focus:ring-[#f0424e] ${className}`}
       style={{ backgroundColor: partner.bg, borderColor: partner.bg === "white" ? "#e5e7eb" : partner.bg }}
     >
       {!imgError ? (
-        <div className="relative flex-1 w-full min-h-[80px] flex items-center justify-center">
+        <div className="relative flex-1 w-full min-h-[80px] flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
           <Image
             src={partner.src}
             alt={partner.name}
@@ -315,12 +295,13 @@ function PartnerLogoCard({ partner, className = "" }: { partner: { name: string;
         </div>
       ) : (
         <div 
-          className="w-full flex items-center justify-center text-center font-bold text-sm leading-snug px-2"
+          className="w-full flex items-center justify-center text-center font-bold text-sm leading-snug px-2 transition-transform duration-300 group-hover:scale-105"
           style={{ color: partner.bg === "white" || partner.bg === "#white" ? "#333" : "white" }}
         >
           {partner.name}
         </div>
       )}
-    </div>
+      <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+    </button>
   );
 }

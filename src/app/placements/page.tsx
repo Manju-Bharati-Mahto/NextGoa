@@ -5,7 +5,7 @@ import { AlumniStories } from "@/components/placements/AlumniStories";
 import { OutcomesByFaculty } from "@/components/placements/OutcomesByFaculty";
 import { InternshipsAndPPOs } from "@/components/placements/Internships";
 import { BeyondPlacements } from "@/components/placements/BeyondPlacements";
-import { AwardsRecognition } from "@/components/placements/AwardsRecognition";
+import { Accreditations } from "@/components/about/Accreditations";
 import { StartupEcosystem } from "@/components/placements/StartupEcosystem";
 import { CareerReadiness } from "@/components/placements/CareerReadiness";
 import { Faq } from "@/components/landing/Faq";
@@ -25,8 +25,8 @@ export default function PlacementsPage() {
       <AlumniStories />
       <OutcomesByFaculty />
       <InternshipsAndPPOs />
-      <BeyondPlacements />
-      <AwardsRecognition />
+      {/* <BeyondPlacements /> */}
+      <Accreditations />
       <StartupEcosystem />
       <CareerReadiness />
       <FinalCta />
