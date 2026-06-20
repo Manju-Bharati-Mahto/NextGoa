@@ -52,11 +52,11 @@ export default async function ApplyPage({ params }: { params: Promise<{ id: stri
       </section>
 
       {/* Application Form Section */}
-      <section className="w-full lg: lg: relative z-10 py-16 sm:py-24">
-        <div className="max-w-[1140px] mx-auto px-6 lg:px-12 bg-white p-8 lg:p-12 rounded-[2rem] border border-gray-200 shadow-sm">
+      <section className="w-full relative z-10 pb-16 sm:pb-24 pt-8 md:pt-[10vw]">
+        <div className="max-w-[1140px] mx-auto px-6 lg:px-12 bg-white p-8 lg:p-12 rounded-[2rem] border border-gray-200 shadow-sm mt-12 md:mt-[5vw]">
           <h2 className="text-3xl font-extrabold mb-10 text-[#111111]">Basic Details</h2>
           
-          <ApplyForm jobId={jobId} />
+          <ApplyForm jobId={jobId} jobTitle={job.title} />
         </div>
       </section>
     </main>

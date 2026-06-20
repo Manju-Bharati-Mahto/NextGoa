@@ -217,7 +217,7 @@ export function CareerListings() {
               visibleJobs.map((job) => (
                 <div key={job.id} className="bg-white rounded-[2rem] border border-gray-200 p-6 shadow-sm flex flex-col">
                   <h3 className="text-[22px] font-bold text-[#111111] leading-snug mb-4">
-                    {job.department}
+                    {job.title}
                   </h3>
                   <hr className="border-gray-300 mb-5" />
                   
@@ -225,8 +225,8 @@ export function CareerListings() {
                     {job.position} Position
                   </div>
 
-                  <p className="text-[#333333] text-[15px] leading-[1.6] mb-8">
-                    {job.description}
+                  <p className="text-[#333333] text-[15px] leading-[1.6] mb-8 line-clamp-3 text-ellipsis overflow-hidden">
+                    {job.cardDescription}
                   </p>
                   
                   <div className="mt-auto flex items-center gap-4 w-full">

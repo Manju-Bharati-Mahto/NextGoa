@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function TermsOfUse() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white pb-24 sm:pb-32 md:pb-48 lg:pb-56">
       {/* Hero Section */}
       <section className="relative w-full h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden py-16 sm:py-24">
         {/* Background Image */}
