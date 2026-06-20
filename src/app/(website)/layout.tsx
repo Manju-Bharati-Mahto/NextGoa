@@ -1,0 +1,92 @@
+import type { Metadata } from "next";
+import dynamic from "next/dynamic";
+import "./globals.css";
+import { gotham, poppins } from "@/lib/fonts";
+import { siteConfig, SITE_URL } from "@/lib/site-config";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { organizationSchema, websiteSchema } from "@/lib/structured-data";
+import { SiteHeader } from "@/components/layout/SiteHeader";
+import { SiteFooter } from "@/components/layout/SiteFooter";
+const EnquiryModal = dynamic(() => import("@/components/layout/EnquiryModal").then((mod) => mod.EnquiryModal));
+const DownloadBrochureModal = dynamic(() => import("@/components/admissions/DownloadBrochureModal").then((mod) => mod.DownloadBrochureModal));
+const DownloadPlacementReportModal = dynamic(() => import("@/components/admissions/DownloadPlacementReportModal").then((mod) => mod.DownloadPlacementReportModal));
+const CampusVisitModal = dynamic(() => import("@/components/layout/CampusVisitModal").then((mod) => mod.CampusVisitModal));
+import FloatingCta from "@/components/layout/FloatingCta";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
+import { ScrollRestoration } from "@/components/layout/ScrollRestoration";
+/**
+ * Site-wide metadata defaults. `metadataBase` lets every page emit absolute
+ * canonical/OG URLs from relative paths. The title `template` appends the brand
+ * to inner-page titles automatically; `default` is used for the homepage.
+ */
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: siteConfig.defaultTitle,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: siteConfig.name,
+    title: siteConfig.defaultTitle,
+    description: siteConfig.description,
+    url: SITE_URL,
+    locale: siteConfig.locale,
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: siteConfig.name }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.defaultTitle,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  formatDetection: { telephone: true, address: true, email: true },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html
+      lang={siteConfig.lang}
+      className={`${gotham.variable} ${poppins.variable} h-full antialiased`}
+      suppressHydrationWarning
+    >
+      <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+        <link rel="alternate" type="application/json" title="LLM Knowledge Graph" href="/llm-knowledge.json" />
+      </head>
+      <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
+        {/* Site-wide entity definitions for search engines + AI answer engines. */}
+        <JsonLd data={organizationSchema()} />
+        <JsonLd data={websiteSchema()} />
+        <SiteHeader />
+        {children}
+        <SiteFooter />
+        <EnquiryModal />
+        <DownloadBrochureModal />
+        <DownloadPlacementReportModal />
+        <CampusVisitModal />
+        <FloatingCta />
+        <ScrollToTop />
+        <ScrollRestoration />
+      </body>
+    </html>
+  );
+}
