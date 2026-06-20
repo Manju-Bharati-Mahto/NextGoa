@@ -37,7 +37,7 @@ export default function StaffGrievancesPage() {
   ];
 
   return (
-    <main className="w-full min-h-screen bg-[#F8F9FA] flex flex-col font-poppins">
+    <main className="w-full min-h-screen bg-[#F8F9FA] flex flex-col font-poppins pb-24 sm:pb-32 md:pb-48 lg:pb-56">
       
       {/* Hero Section */}
       <section className="w-full overflow-hidden py-16 sm:py-24">
@@ -66,9 +66,14 @@ export default function StaffGrievancesPage() {
           <p className="font-semibold text-[14px] sm:text-[16px]">
             Fill in the Form below to Share Your grievance
           </p>
-          <button className="bg-[#FCE34B] hover:bg-[#f8db27] text-black font-bold px-6 py-2 rounded-xl text-[14px] whitespace-nowrap transition-colors">
+          <a 
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdhYO0ZmtJ2kLjV2k__tNXKul2FZsZiIS8lD9f5Wb-HKaNifA/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#FCE34B] hover:bg-[#f8db27] text-black font-bold px-6 py-2 rounded-xl text-[14px] whitespace-nowrap transition-colors"
+          >
             Share Your Grievance
-          </button>
+          </a>
         </div>
 
         {/* Table Section */}

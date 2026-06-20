@@ -57,29 +57,12 @@ export default async function CareerDetailsPage({ params }: { params: Promise<{ 
       </section>
 
       {/* Details Content Section */}
-      <section className="w-full lg: lg: relative z-10 py-16 sm:py-24">
-        <div className="max-w-5xl mx-auto px-6 lg:px-12 flex flex-col gap-6">
+      <section className="w-full relative z-10 pb-16 sm:pb-24 pt-8 md:pt-[10vw]">
+        <div className="max-w-5xl mx-auto px-6 lg:px-12 flex flex-col gap-6 mt-12 md:mt-[5vw]">
           
-          {/* Card 1: Key Responsibilities */}
+          {/* Card 1: Job Description */}
           <div className="bg-white rounded-[1rem] border border-gray-200 p-8 shadow-sm">
-            <h2 className="text-[22px] font-bold mb-5 text-[#111111]">Key Responsibilities</h2>
-            <ul className="list-disc pl-5 text-[#111111] leading-[1.6] text-[15px] space-y-1.5">
-              <li>Managing academic data and records</li>
-              <li>Assisting in the development and maintenance of academic policies and resources</li>
-              <li>Planning and implementing various academic programs and departmental initiatives</li>
-              <li>Supporting overall academic services and operations</li>
-            </ul>
-          </div>
-
-          {/* Card 2: Who Can Apply? */}
-          <div className="bg-white rounded-[1rem] border border-gray-200 p-8 shadow-sm">
-            <h2 className="text-[22px] font-bold mb-5 text-[#111111]">Who Can Apply?</h2>
-            <ul className="list-disc pl-5 text-[#111111] leading-[1.6] text-[15px] space-y-1.5">
-              <li>Bachelor's or master's Degree (B.A., M.A., B.Ed. or equivalent)</li>
-              <li>Minimum 5 years of relevant experience</li>
-              <li>Proficiency in Microsoft Office</li>
-              <li>Good communication skills in English, Hindi, and Gujarati</li>
-            </ul>
+            <div className="text-[#111111] leading-[1.6] text-[15px] flex flex-col gap-2" dangerouslySetInnerHTML={{ __html: job.description }} />
           </div>
 
           {/* Card 3: Application Deadline */}

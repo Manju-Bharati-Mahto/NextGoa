@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function PrivacyPolicy() {
   return (
-    <main className="min-h-screen bg-[#FDFCF8]">
+    <main className="min-h-screen bg-[#FDFCF8] pb-24 sm:pb-32 md:pb-48 lg:pb-56">
       {/* Hero Section */}
       <section className="relative w-full h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden bg-[url('/hero-bg.jpg')] bg-cover bg-center bg-no-repeat">
         
