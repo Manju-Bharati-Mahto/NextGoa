@@ -229,3 +229,4 @@ Newest first. Update on every meaningful structural or capability change.
   - Dynamic `sitemap.xml`, AI-crawler-friendly `robots.txt`, `llms.txt`, `manifest.webmanifest`.
   - Placeholder `SiteHeader` / `SiteFooter` (NAP) and semantic homepage.
 - README added (this file).
+
