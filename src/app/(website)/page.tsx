@@ -38,6 +38,8 @@ export default function Home() {
     body: s.excerpt,
     image: s.image,
     link: `/stories/${s.slug}`,
+    date: s.date,
+    timestamp: new Date(s.date).getTime()
   }));
 
   return (

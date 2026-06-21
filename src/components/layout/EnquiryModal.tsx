@@ -100,7 +100,7 @@ export function EnquiryModal() {
   );
 
   // Group filtered programmes by faculty (only for courses)
-  const groupedProgrammes = menuType === "courses" ? filteredProgrammes.reduce((acc, p) => {
+  const groupedProgrammes = menuType === "courses" ? (filteredProgrammes as typeof allCourses).reduce((acc, p) => {
     if (!acc[p.faculty]) acc[p.faculty] = [];
     acc[p.faculty].push(p);
     return acc;
