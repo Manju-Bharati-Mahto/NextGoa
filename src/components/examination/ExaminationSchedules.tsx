@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Download } from "lucide-react";
-import { getPdfs } from "@/app/actions/examination";
+import { getPdfs } from "@/app/(website)/actions/examination";
 
 const TABS = ["Theory Schedule", "Practical Schedule", "Circulars"];
 

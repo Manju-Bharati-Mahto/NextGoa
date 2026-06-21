@@ -7,6 +7,8 @@ type FacultyName =
   | 'Engineering & CS'
   | 'Management'
   | 'Pharmacy'
+  | 'Nursing'
+  | 'Physiotherapy'
   | 'Allied and Healthcare Sciences'
   | 'Hotel Management'
   | 'Diploma Engineering';
@@ -115,12 +117,42 @@ const facultyData: Record<FacultyName, FacultyData> = {
     avgPackage: '3.5 LPA',
     recruiters: '80+',
   },
+  'Nursing': {
+    companies: [
+      { src: '/recruiters/nursing/image 241.png', alt: 'Apollo' },
+      { src: '/recruiters/nursing/image 242.png', alt: 'Manipal' },
+      { src: '/recruiters/nursing/image 243.png', alt: 'Fortis' },
+      { src: '/recruiters/nursing/image 244.png', alt: 'Max Healthcare' },
+      { src: '/recruiters/nursing/image 245.png', alt: 'Care Hospitals' },
+      { src: '/recruiters/nursing/image 246.png', alt: 'Hinduja Hospital' },
+      { src: '/recruiters/nursing/image 247.png', alt: 'Lilavati Hospital' },
+    ],
+    highestPackage: '6 LPA',
+    avgPackage: '3 - 4 LPA',
+    recruiters: '50+',
+  },
+  'Physiotherapy': {
+    companies: [
+      { src: '/recruiters/nursing/image 241.png', alt: 'Apollo' },
+      { src: '/recruiters/nursing/image 242.png', alt: 'Manipal' },
+      { src: '/recruiters/nursing/image 243.png', alt: 'Fortis' },
+      { src: '/recruiters/nursing/image 244.png', alt: 'Max Healthcare' },
+      { src: '/recruiters/nursing/image 245.png', alt: 'Care Hospitals' },
+      { src: '/recruiters/nursing/image 246.png', alt: 'Hinduja Hospital' },
+      { src: '/recruiters/nursing/image 247.png', alt: 'Lilavati Hospital' },
+    ],
+    highestPackage: '7.7 LPA',
+    avgPackage: '3 LPA',
+    recruiters: '40+',
+  },
 };
 
 const tabs: FacultyName[] = [
   'Engineering & CS',
   'Management',
   'Pharmacy',
+  'Nursing',
+  'Physiotherapy',
   'Allied and Healthcare Sciences',
   'Hotel Management',
   'Diploma Engineering',
@@ -145,12 +177,12 @@ export function OutcomesByFaculty() {
 
         {/* Tabs */}
         <div className="w-full overflow-x-auto scrollbar-hide -mx-4 px-4 sm:-mx-8 sm:px-8 md:mx-0 md:px-0 py-1.5 mb-10">
-          <div className="flex flex-nowrap md:flex-wrap md:justify-center gap-3 min-w-max md:min-w-0">
+          <div className="flex flex-nowrap justify-start lg:justify-center gap-3 w-max mx-auto">
             {tabs.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-6 py-3 rounded-full font-sans text-[17px] sm:text-[18px] transition-colors shrink-0 whitespace-nowrap ${
+                className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full font-sans text-[14px] sm:text-[15px] transition-colors shrink-0 whitespace-nowrap ${
                   activeTab === tab
                     ? 'bg-[#0CAADD] text-white shadow-sm'
                     : 'bg-white text-gray-700 border border-gray-200 hover:border-[#0CAADD] hover:text-[#0CAADD]'
@@ -184,12 +216,12 @@ export function OutcomesByFaculty() {
               Placement Record 2025-26
             </h3>
 
-            {/* Company Logos Grid */}
-            <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-7 gap-x-8 gap-y-8 items-center justify-items-center mt-12 sm:mt-16">
+            {/* Company Logos Flex Container */}
+            <div className="flex flex-wrap justify-center gap-x-6 sm:gap-x-8 gap-y-8 items-center mt-12 sm:mt-16">
               {data.companies.map((company) => (
                 <div
                   key={company.alt}
-                  className="relative w-full h-16 sm:h-20"
+                  className="relative w-[28%] sm:w-[16%] lg:w-[12%] h-16 sm:h-20"
                 >
                   <Image
                     src={company.src}

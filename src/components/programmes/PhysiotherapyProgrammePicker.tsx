@@ -40,7 +40,7 @@ export default function PhysiotherapyProgrammePicker() {
             Physiotherapy
           </h2>
           <h3 className="text-[#0CAADD] mb-6 section-heading">
-            Pick your Physiotherapy Programme.
+            Explore the Science of Movement and Rehabilitation
           </h3>
           
           {/* Toggles */}

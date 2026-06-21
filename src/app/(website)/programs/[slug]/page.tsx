@@ -34,6 +34,7 @@ import HotelManagementDestinations from "@/components/programmes/HotelManagement
 
 import AlliedHealthProgrammePicker from "@/components/programmes/AlliedHealthProgrammePicker";
 import PhdResearchAreas from "@/components/programmes/PhdResearchAreas";
+import PhdProgrammePicker from "@/components/programmes/PhdProgrammePicker";
 import PhdEntranceNotice from "@/components/programmes/PhdEntranceNotice";
 import PhdDoctoralProcess from "@/components/programmes/PhdDoctoralProcess";
 
@@ -95,7 +96,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
         <AppliedSciencesProgrammePicker />
       ) : data.slug === "phd" ? (
         <>
-          <PhdResearchAreas />
+          <PhdProgrammePicker />
           <PhdEntranceNotice />
         </>
       ) : (
@@ -112,9 +113,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
         <AlliedHealthAccreditation />
       )}
 
-      {data.slug === "hotel-management" && (
-        <HotelManagementAccreditation />
-      )}
+
 
       {data.slug === "management-studies" ? (
         <ManagementSpecialisations />
@@ -135,13 +134,11 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
         <NursingAccreditation />
       )}
 
-      {data.slug !== "physiotherapy" && data.slug !== "allied-healthcare" && data.slug !== "hotel-management" && data.slug !== "phd" && (
+      {data.slug !== "phd" && (
         <RecruitersAndDestinations slug={data.slug} />
       )}
 
-      {(data.slug === "physiotherapy" || data.slug === "allied-healthcare") && (
-        <PhysiotherapyNetwork />
-      )}
+
 
 
 
@@ -180,7 +177,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
       )}
 
       {data.slug !== "phd" && (
-        <AdmissionsSnapshot />
+        <AdmissionsSnapshot slug={data.slug} />
       )}
 
       <DynamicFaq data={data.faqs} />

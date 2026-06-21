@@ -181,10 +181,6 @@ export const managementData: ProgrammeData = {
     {
         question: "Loan partners & scholarships?",
         answer: "Tied up with leading nationalised and private banks for education loans. Merit, sports and need-based scholarships available — counsellors map every option during admissions."
-    },
-    {
-        question: "MBA vs PGDM?",
-        answer: "PU Goa offers a UGC-recognised MBA degree, valid for government jobs, doctoral admissions and most international Master's pathways. PGDM is a diploma — both have value, but MBA carries more academic portability."
     }
 ],
   themeColor: {

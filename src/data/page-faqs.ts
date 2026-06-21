@@ -1,10 +1,7 @@
 import { FaqItem } from "@/lib/structured-data";
 
 export const homeFaqs: FaqItem[] = [
-  {
-    question: "Which entrance tests are accepted?",
-    answer: "Engineering accepts JEE and the PU Goa entrance. Management accepts CAT, MAT and CUET-PG. Pharmacy accepts GPAT for M.Pharm. PhD requires UGC NET / GATE / a PU Goa research aptitude test. Nursing, BPT and Allied Health admissions go through the PU Goa offline entrance test.",
-  },
+
   {
     question: "What are the fees & scholarships?",
     answer: "Fees vary by programme and are mentioned in the brochure for each faculty. Merit scholarships, girl-child scholarships, and need-based aid are available. Sports and cultural quotas also carry fee benefits. Talk to a counselor today.",
@@ -40,10 +37,7 @@ export const aboutFaqs: FaqItem[] = [
 ];
 
 export const admissionsFaqs: FaqItem[] = [
-  {
-    question: "Is Parul University Goa a recognised university?",
-    answer: "Yes. Parul University Goa is the first State Private University approved by the Government of Goa under the Goa Private Universities Act 2020. All degrees awarded are valid and recognised by the UGC and relevant statutory councils.",
-  },
+
   {
     question: "Is PU Goa the same as Parul University in Gujarat?",
     answer: "The people behind both institutions are the same. The sponsoring bodies are different. Parul University Goa is an independent university operating under Goa's regulatory framework, while Parul University Gujarat operates under Gujarat's. Both share the same founding vision, the same values, and the same commitment to student success. PU Goa students benefit fully from the academic reputation, global partnerships, industry network, and institutional expertise built over three decades by the founding team.",

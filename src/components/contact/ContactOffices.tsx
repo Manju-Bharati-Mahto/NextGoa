@@ -116,9 +116,9 @@ export default function ContactOffices() {
                       <td className="py-6 px-6 align-top">{contact.city}</td>
                       <td className="py-6 px-6 align-top">{contact.contactPerson}</td>
                       <td className="py-6 px-6 align-top leading-relaxed pr-10">{contact.address}</td>
-                      <td className="py-6 px-6 align-top whitespace-nowrap">
+                      <td className="py-6 px-6 align-top break-words">
                         {contact.number ? (
-                          <a href={`tel:${contact.number.replace(/[\s-]/g, '')}`} className="hover:text-[#0CAADD] hover:underline transition-colors">{contact.number}</a>
+                          <a href={`tel:${contact.number.replace(/[\s-]/g, '')}`} className="hover:text-[#0CAADD] hover:underline transition-colors break-words">{contact.number}</a>
                         ) : null}
                       </td>
                       <td className="py-6 px-6 align-top break-words">

@@ -25,7 +25,7 @@ export default function NursingAccreditation() {
 
           {/* Right Register Button (wrapped in border) */}
           <div className="border border-white/80 border-t-0 md:border-t md:border-l-0 rounded-b-[24px] md:rounded-bl-none md:rounded-r-[24px] p-6 sm:p-8 md:px-16 flex items-center justify-center shrink-0">
-            <button data-enquiry-trigger="true" data-enquiry-program="bsc-nursing" className="bg-[#FCE34B] text-ink font-bold text-[18px] sm:text-[22px] px-14 sm:px-20 py-4 rounded-full transition-transform hover:scale-105 shadow-md text-center">
+            <button data-enquiry-trigger="true" data-enquiry-menu="faculties" data-enquiry-program="nursing" className="bg-[#FCE34B] text-ink font-bold text-[18px] sm:text-[22px] px-14 sm:px-20 py-4 rounded-full transition-transform hover:scale-105 shadow-md text-center">
               Apply Now
             </button>
           </div>

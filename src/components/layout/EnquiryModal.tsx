@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef, useCallback } from "react";
 import { usePathname } from "next/navigation";
 
-const allProgrammes = [
+const allCourses = [
   // Engineering - Diploma
   { value: "diploma-computer-engineering", label: "Diploma in Computer Engineering", faculty: "Engineering" },
   // Engineering - B.Tech
@@ -44,7 +44,23 @@ const allProgrammes = [
   { value: "bsc-hons-microbio", label: "B.Sc. Hons. Microbiology", faculty: "Applied Sciences" },
   { value: "msc-biotech", label: "M.Sc. Biotechnology", faculty: "Applied Sciences" },
   { value: "msc-microbio", label: "M.Sc. Microbiology", faculty: "Applied Sciences" },
+  // Doctorate
+  { value: "phd", label: "Doctor of Philosophy (Ph.D.)", faculty: "Doctorate" },
 ];
+
+const allFaculties = [
+  { value: "engineering", label: "Engineering" },
+  { value: "computer-applications", label: "Computer Applications" },
+  { value: "management", label: "Management Studies" },
+  { value: "pharmacy", label: "Pharmacy" },
+  { value: "nursing", label: "Nursing" },
+  { value: "physiotherapy", label: "Physiotherapy" },
+  { value: "hotel-management", label: "Hotel Management" },
+  { value: "allied-healthcare", label: "Allied and Healthcare Sciences" },
+  { value: "applied-sciences", label: "Applied Sciences" },
+  { value: "phd", label: "Doctorate Programs" },
+];
+
 
 export function EnquiryModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -67,6 +83,7 @@ export function EnquiryModal() {
   });
 
   const [touched, setTouched] = useState<Record<string, boolean>>({});
+  const [menuType, setMenuType] = useState<"courses" | "faculties">("courses");
 
   // Searchable programme combobox state
   const [programmeSearch, setProgrammeSearch] = useState("");
@@ -76,19 +93,21 @@ export function EnquiryModal() {
   const programmeInputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
 
-  const filteredProgrammes = allProgrammes.filter(p =>
+  const activeList = menuType === "faculties" ? allFaculties : allCourses;
+
+  const filteredProgrammes = activeList.filter(p =>
     p.label.toLowerCase().includes(programmeSearch.toLowerCase())
   );
 
-  // Group filtered programmes by faculty
-  const groupedProgrammes = filteredProgrammes.reduce((acc, p) => {
+  // Group filtered programmes by faculty (only for courses)
+  const groupedProgrammes = menuType === "courses" ? (filteredProgrammes as typeof allCourses).reduce((acc, p) => {
     if (!acc[p.faculty]) acc[p.faculty] = [];
     acc[p.faculty].push(p);
     return acc;
-  }, {} as Record<string, typeof allProgrammes>);
+  }, {} as Record<string, typeof allCourses>) : {};
 
   // Flat list for keyboard navigation
-  const flatFiltered = Object.values(groupedProgrammes).flat();
+  const flatFiltered = menuType === "courses" ? Object.values(groupedProgrammes).flat() : filteredProgrammes;
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -168,22 +187,16 @@ export function EnquiryModal() {
         }
 
         let progAttr = target.getAttribute("data-enquiry-program");
+        let menuAttr = target.getAttribute("data-enquiry-menu");
+        
+        let newMenuType = menuAttr === "faculties" ? "faculties" : "courses";
+        setMenuType(newMenuType as "courses" | "faculties");
 
-        // Infer from pathname if not explicitly set
-        if (!progAttr && typeof window !== "undefined") {
-          const path = window.location.pathname;
-          if (path.includes("/programs/nursing")) progAttr = "bsc-nursing";
-          else if (path.includes("/programs/engineering")) progAttr = "btech-cse";
-          else if (path.includes("/programs/management-studies")) progAttr = "bba";
-          else if (path.includes("/programs/pharmacy")) progAttr = "bpharm";
-          else if (path.includes("/programs/hotel-management")) progAttr = "bsc-hotel-management";
-          else if (path.includes("/programs/allied-healthcare")) progAttr = "bmls";
-          else if (path.includes("/programs/applied-sciences")) progAttr = "bsc-biotech";
-          else if (path.includes("/programs/physiotherapy")) progAttr = "bpt";
-        }
+        // URL inference removed as per request; only explicit data-enquiry-program attributes will auto-select
 
         if (progAttr) {
-          const prog = allProgrammes.find(p => p.value === progAttr);
+          const listToSearch = newMenuType === "faculties" ? allFaculties : allCourses;
+          const prog = listToSearch.find(p => p.value === progAttr);
           if (prog) {
             // Apply it directly
             setFormData(prev => ({ ...prev, programme: prog.value }));
@@ -217,7 +230,7 @@ export function EnquiryModal() {
   useEffect(() => {
     if (isOpen && typeof window !== "undefined" && (window as any)._pendingEnquiryProgram) {
       const progVal = (window as any)._pendingEnquiryProgram;
-      const prog = allProgrammes.find(p => p.value === progVal);
+      const prog = (menuType === "faculties" ? allFaculties : allCourses).find(p => p.value === progVal);
       if (prog) {
         setFormData(prev => ({ ...prev, programme: prog.value }));
         setProgrammeSearch(prog.label);
@@ -528,8 +541,38 @@ export function EnquiryModal() {
                         className="absolute z-50 mt-1 w-full max-h-[220px] overflow-y-auto rounded-lg border border-gray-200 bg-white shadow-xl"
                         style={{ scrollbarWidth: 'thin' }}
                       >
-                        {Object.keys(groupedProgrammes).length === 0 ? (
+                        {filteredProgrammes.length === 0 ? (
                           <li className="px-4 py-3 text-sm text-gray-400 italic">No programmes found</li>
+                        ) : menuType === "faculties" ? (
+                          filteredProgrammes.map((p, index) => {
+                            const isHighlighted = index === highlightedIndex;
+                            const isSelected = formData.programme === p.value;
+                            return (
+                              <li
+                                key={p.value}
+                                data-programme-item
+                                onMouseDown={(e) => {
+                                  e.preventDefault();
+                                  selectProgramme(p.value, p.label);
+                                }}
+                                onMouseEnter={() => setHighlightedIndex(index)}
+                                className={`cursor-pointer px-4 py-3 text-[15px] transition-colors border-b border-gray-50 last:border-0 ${
+                                  isSelected
+                                    ? 'bg-[#11B1E3]/10 text-[#11B1E3] font-medium'
+                                    : isHighlighted
+                                    ? 'bg-gray-100 text-ink'
+                                    : 'text-gray-700 hover:bg-gray-50'
+                                }`}
+                              >
+                                {p.label}
+                                {isSelected && (
+                                  <svg className="inline-block ml-2 w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="#11B1E3" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                  </svg>
+                                )}
+                              </li>
+                            );
+                          })
                         ) : (
                           Object.entries(groupedProgrammes).map(([faculty, programmes]) => (
                             <li key={faculty}>
