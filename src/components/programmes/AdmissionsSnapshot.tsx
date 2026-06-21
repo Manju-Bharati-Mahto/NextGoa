@@ -4,26 +4,75 @@ import React from "react";
 import Link from "next/link";
 import { cta } from "@/lib/navigation";
 
-const admissionsData = [
-  {
-    title: "Eligibility",
-    description: "10+2 with PCM (B.Tech). Diploma (Lateral). 10+2 any stream (BCA). Bachelor's degree (MCA).",
-  },
-  {
-    title: "Entrance",
-    description: "JEE / state CET / PU Goa entrance accepted. Counselling-based for Diploma & BCA.",
-  },
-  {
-    title: "Fees &\nScholarships",
-    description: "Tiered fees by programme. Merit, sports & need-based scholarships available.",
-  },
-  {
-    title: "Key Dates",
-    description: "Applications open for 2026-27. Early-bird scholarship deadlines apply.",
-  },
-];
+interface AdmissionsSnapshotProps {
+  slug?: string;
+}
 
-export default function AdmissionsSnapshot() {
+export default function AdmissionsSnapshot({ slug }: AdmissionsSnapshotProps) {
+  const getAdmissionsData = () => {
+    let eligibility = "10+2 with PCM (B.Tech). Diploma (Lateral). 10+2 any stream (BCA). Bachelor's degree (MCA).";
+    let entrance = "JEE / state CET / PU Goa entrance accepted.";
+
+    switch (slug) {
+      case "engineering":
+        eligibility = "10+2 with PCM (B.Tech). Diploma for Lateral Entry. Bachelor's degree (M.Tech).";
+        entrance = "JEE / state CET / PU Goa entrance accepted.";
+        break;
+      case "it-cs":
+        eligibility = "10+2 any stream (BCA). Bachelor's degree (MCA).";
+        entrance = "PU Goa entrance accepted. Counselling-based for BCA.";
+        break;
+      case "management-studies":
+        eligibility = "10+2 any stream (BBA). Bachelor's degree (MBA).";
+        entrance = "PU Goa entrance accepted / National level exams.";
+        break;
+      case "pharmacy":
+        eligibility = "10+2 with PCB/PCM (B.Pharm). D.Pharm for Lateral Entry.";
+        entrance = "PUCET accepted.";
+        break;
+      case "applied-sciences":
+        eligibility = "10+2 with Science (PCB/PCM) for B.Sc. Bachelor's degree for M.Sc.";
+        entrance = "PUCET accepted.";
+        break;
+      case "nursing":
+        eligibility = "10+2 with PCB and English (B.Sc Nursing). GNM for Post Basic.";
+        entrance = "PUCET accepted.";
+        break;
+      case "physiotherapy":
+        eligibility = "10+2 with PCB and English (BPT).";
+        entrance = "PUCET accepted.";
+        break;
+      case "hotel-management":
+        eligibility = "10+2 any stream (BHMCT / B.Sc HM).";
+        entrance = "PU Goa entrance accepted.";
+        break;
+      case "allied-healthcare":
+        eligibility = "10+2 with Science (PCB) for B.AOTT / BMLS.";
+        entrance = "PUCET accepted.";
+        break;
+    }
+
+    return [
+      {
+        title: "Eligibility",
+        description: eligibility,
+      },
+      {
+        title: "Entrance",
+        description: entrance,
+      },
+      {
+        title: "Fees &\nScholarships",
+        description: "Tiered fees by programme. Merit, sports & need-based scholarships available.",
+      },
+      {
+        title: "Key Dates",
+        description: "Applications open for 2026-27. Early-bird scholarship deadlines apply.",
+      },
+    ];
+  };
+
+  const admissionsData = getAdmissionsData();
   return (
     <section className="w-full bg-[#FAFAFA] pt-16 sm:pt-20 pb-8 sm:pb-12">
       <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-8">

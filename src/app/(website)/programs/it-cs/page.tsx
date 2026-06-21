@@ -105,7 +105,7 @@ export default function ItCsPage() {
       <CareerOutcomes />
 
       {/* Recruiters & Destinations Section */}
-      <RecruitersAndDestinations />
+      <RecruitersAndDestinations slug="it-cs" />
 
       {/* IT & Computer Science Programme Picker Section */}
       <ItComputerSciencePicker />
@@ -126,7 +126,7 @@ export default function ItCsPage() {
       <StudyAbroadModels />
 
       {/* Admissions Snapshot Section */}
-      <AdmissionsSnapshot />
+      <AdmissionsSnapshot slug="it-cs" />
 
       {/* FAQs Section */}
       <EngineeringFaq />

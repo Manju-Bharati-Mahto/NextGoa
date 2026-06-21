@@ -47,16 +47,7 @@ export function FinalCta({
   return (
     <section className="bg-brand-white py-6 sm:py-0">
       <div className="mx-auto max-w-[1600px] px-6 py-6 sm:py-8 lg:pb-12">
-        <div className="relative isolate overflow-hidden rounded-[20px] shadow-xl">
-          <Image
-            src="/hero-campus.webp"
-            alt=""
-            fill
-            sizes="(min-width: 1152px) 1088px, 100vw"
-            className="-z-10 object-cover object-bottom"
-          />
-          <div className="absolute inset-0 -z-10 bg-black/75" />
-
+        <div className="relative isolate overflow-hidden rounded-[20px] shadow-xl bg-cover bg-center bg-no-repeat bg-[url('/thankyoumobile.png')] sm:bg-[url('/thankyou.png')]">
           <div className="px-6 py-20 text-center sm:py-28">
             <span className="inline-block rounded-full bg-sunshine px-5 py-2 text-sm font-bold text-ink">
               {eyebrow}

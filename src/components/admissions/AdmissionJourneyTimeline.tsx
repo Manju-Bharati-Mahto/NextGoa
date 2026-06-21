@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface TimelineStep {
   id: string;
@@ -89,6 +90,7 @@ const steps: TimelineStep[] = [
 
 export function AdmissionJourneyTimeline() {
   const [activeStep, setActiveStep] = useState(0);
+  const router = useRouter();
 
   const handleStepSelect = (stepIndex: number) => {
     setActiveStep(stepIndex);
@@ -104,6 +106,8 @@ export function AdmissionJourneyTimeline() {
   const handleNextPhaseClick = () => {
     if (activeStep < steps.length - 1) {
       handleStepSelect(activeStep + 1);
+    } else {
+      router.push('/campus-life');
     }
   };
 
@@ -324,7 +328,11 @@ export function AdmissionJourneyTimeline() {
                             <button
                               onClick={(e) => {
                                 e.stopPropagation(); // Prevent re-triggering card click
-                                handleNextPhaseClick();
+                                if (index < steps.length - 1) {
+                                  handleStepSelect(index + 1);
+                                } else {
+                                  router.push('/campus-life');
+                                }
                               }}
                               className="w-full bg-white hover:bg-gray-100 text-ink font-semibold text-sm sm:text-xs rounded-full py-3 transition-colors shadow-sm"
                             >

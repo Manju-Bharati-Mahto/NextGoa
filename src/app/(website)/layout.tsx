@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
-import "./globals.css";
+import "../globals.css";
 import { gotham, poppins } from "@/lib/fonts";
 import { siteConfig, SITE_URL } from "@/lib/site-config";
 import { JsonLd } from "@/components/seo/JsonLd";

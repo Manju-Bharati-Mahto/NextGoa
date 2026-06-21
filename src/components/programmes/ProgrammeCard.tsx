@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import BrochureModal from './BrochureModal';
+import ViewDetailsModal from './ViewDetailsModal';
 
 type ProgrammeCardProps = {
   title: string;
@@ -13,10 +14,14 @@ type ProgrammeCardProps = {
   isNew?: boolean;
   level?: string;
   tuitionFee?: string;
+  isViewDetails?: boolean;
+  note?: string;
+  modalEligibility?: string;
 };
 
-export default function ProgrammeCard({ title, duration, eligibility, intake, mode, isNew, level, tuitionFee }: ProgrammeCardProps) {
+export default function ProgrammeCard({ title, duration, eligibility, intake, mode, isNew, level, tuitionFee, isViewDetails, note, modalEligibility }: ProgrammeCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
 
   let themeColor = "#0CAADD"; // Default Blue for Bachelor's
   
@@ -94,13 +99,23 @@ export default function ProgrammeCard({ title, duration, eligibility, intake, mo
 
         {/* Buttons */}
         <div className="flex flex-wrap items-center gap-3 mt-auto">
-          <button 
-            data-enquiry-trigger="true"
-            className="text-white rounded-full px-6 py-2.5 font-bold text-[14px] sm:text-[15px] transition-transform hover:scale-105 shadow-sm"
-            style={{ backgroundColor: themeColor }}
-          >
-            Apply Now
-          </button>
+          {isViewDetails ? (
+            <button 
+              onClick={() => setIsDetailsModalOpen(true)}
+              className="text-white rounded-full px-6 py-2.5 font-bold text-[14px] sm:text-[15px] transition-transform hover:scale-105 shadow-sm"
+              style={{ backgroundColor: themeColor }}
+            >
+              View Details
+            </button>
+          ) : (
+            <button 
+              data-enquiry-trigger="true"
+              className="text-white rounded-full px-6 py-2.5 font-bold text-[14px] sm:text-[15px] transition-transform hover:scale-105 shadow-sm"
+              style={{ backgroundColor: themeColor }}
+            >
+              Apply Now
+            </button>
+          )}
           <button 
             onClick={() => setIsModalOpen(true)}
             className="border border-ink text-ink hover:bg-gray-50 rounded-full px-6 py-2.5 font-bold text-[14px] sm:text-[15px] transition-transform hover:scale-105"
@@ -114,6 +129,15 @@ export default function ProgrammeCard({ title, duration, eligibility, intake, mo
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
         programmeTitle={title} 
+      />
+
+      <ViewDetailsModal 
+        isOpen={isDetailsModalOpen} 
+        onClose={() => setIsDetailsModalOpen(false)} 
+        programmeTitle={title}
+        eligibility={modalEligibility || eligibility}
+        duration={duration}
+        note={note}
       />
     </div>
   );

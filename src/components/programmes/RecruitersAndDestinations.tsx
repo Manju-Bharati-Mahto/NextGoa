@@ -50,28 +50,61 @@ export default function RecruitersAndDestinations({ slug }: { slug?: string }) {
     "bosch logo.png", "mirae-asset-sharekhan-logo.jpg", "suzlon_logo.jpg"
   ];
   const pharmacyCompanies = [
-    "Alembic Pharmaceutical.png", "GSK.png", "Intas Pharma.jfif", 
-    "Piramal Pharma Ltd.png", "Sun Pharma.png", "Zydus_Lifesciences.svg.png", 
+    "Alembic Pharmaceutical.png", "GSK.png", "Intas Pharma.jfif",
+    "Piramal Pharma Ltd.png", "Sun Pharma.png", "Zydus_Lifesciences.svg.png",
     "cadila-pharmaceuticals6224.jpg"
   ];
   const alliedHealthCompanies = [
-    "Alembic Pharmaceutical.png", "Asian Paints.png", "Piramal Pharma Ltd.png",
-    "Reliance Industries.png", "Sun Pharma.png", "The_Lupin_Logo.svg.png",
-    "ZYDUS H.png"
+    "image 248.png", "image 249.png", "image 250.png", "image 251.png", "image 252.png"
   ];
+  const nursingCompanies = [
+    "image 241.png", "image 242.png", "image 243.png", 
+    "image 244.png", "image 245.png", "image 246.png", "image 247.png"
+  ];
+  const hotelManagementCompanies = [
+    "Crone Plaza.jpg", "Hyatt-Place-Logo.png", "JW Marriott.png", 
+    "Radisson Blue Fujairah.png", "Taj Hotel.png", "Westin_Hotels_&_Resorts_logo.svg.png", 
+    "the_zuri_hotels__resorts_logo.jpg"
+  ];
+  const engineeringCompanies = [
+    "Accenture.png", "Automation Anywhere logo.png", "Capgemini.png", "Cognizant.png", "Commvault.png",
+    "DELOITTE.png", "Deltax.jpg", "Einfochip.png", "HCL Tech.png", "HashedIn Technologies.png",
+    "IBM.png", "Informatica_Logo.png", "Juspay.jpg", "LG Soft India Pvt. Ltd.png", "LTM-Logo.svg",
+    "MRI.png", "Mastek.png", "Microsoft_logo_(2012).svg.png", "Motadata.png", "One Compiler.png",
+    "PWC.png", "Prograd.png", "Servicenow.png", "Simform.png", "Sophos.png",
+    "Synchrony_Financial_logo.svg.png", "TCS_Logo_(cropped).jpg", "Techmahindra.png", "WIPRO.png", "WSP.png",
+    "Zeta.png", "addverb-logo-1 (1).png", "drawinbox.png", "soprasteria_logo.jpg", "synoptek-logo-200x200-1 (1).png"
+  ];
+
   const activeCompanies = slug === "management-studies" 
     ? managementCompanies 
     : slug === "pharmacy" 
       ? pharmacyCompanies 
-      : slug === "allied-healthcare"
+      : (slug === "allied-healthcare" || slug === "applied-sciences")
         ? alliedHealthCompanies
-        : companies;
+        : (slug === "nursing" || slug === "physiotherapy")
+          ? nursingCompanies
+          : (slug === "engineering" || slug === "it-cs")
+            ? engineeringCompanies
+            : slug === "hotel-management"
+              ? hotelManagementCompanies
+              : companies;
   const getSrc = (fileName: string) => {
     if (slug === "management-studies") return `/recruiters/management/${fileName}`;
     if (slug === "pharmacy") return `/recruiters/pharmacy/${fileName}`;
-    if (slug === "allied-healthcare") return `/recruiters/allied-healthcare/${fileName}`;
+    if (slug === "allied-healthcare" || slug === "applied-sciences") return `/recruiters/allied-healthcare/${fileName}`;
+    if (slug === "nursing" || slug === "physiotherapy") return `/recruiters/nursing/${fileName}`;
+    if (slug === "engineering" || slug === "it-cs") return `/recruiters/engineering/${fileName}`;
+    if (slug === "hotel-management") return `/recruiters/hotel-management/${fileName}`;
     return `/companies/${fileName}`;
   };
+
+  // Ensure we have enough items so that 50% of the total width is wider than any screen
+  const minItemsForScreen = 15; // roughly 3000px
+  const multiplier = Math.ceil(minItemsForScreen / activeCompanies.length);
+  const repeatedHalf = Array(multiplier).fill(activeCompanies).flat();
+  // Duration is 2 seconds per item to maintain consistent speed
+  const animationDuration = repeatedHalf.length * 2;
 
   return (
     <section className="w-full bg-[#FAFAFA] overflow-hidden border-t border-gray-100 py-16 sm:pt-15 sm:pb-15">
@@ -83,7 +116,7 @@ export default function RecruitersAndDestinations({ slug }: { slug?: string }) {
         .animate-marquee {
           display: flex;
           width: max-content;
-          animation: marquee ${slug === "pharmacy" ? "15s" : "40s"} linear infinite;
+          animation: marquee ${animationDuration}s linear infinite;
         }
         .animate-marquee:hover {
           animation-play-state: paused;
@@ -91,12 +124,28 @@ export default function RecruitersAndDestinations({ slug }: { slug?: string }) {
       `}</style>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center mb-10">
-        <h2 className="text-[#E73649] mb-3 section-heading">
-          Top recruiter network
-        </h2>
-        <p className="text-ink/80 section-body">
-          Indicative recruiters from the wider Parul University network.
-        </p>
+        {slug === "allied-healthcare" || slug === "applied-sciences" ? (
+          <>
+            <h3 className="text-ink font-bold text-xl sm:text-2xl mb-2">
+              Hospital & Industry Network
+            </h3>
+            <h2 className="text-[#E73649] mb-3 section-heading">
+              Where you'll train and serve.
+            </h2>
+            <p className="text-ink/80 section-body">
+              Indicative network from the wider Parul University clinical and industry partnerships.
+            </p>
+          </>
+        ) : (
+          <>
+            <h2 className="text-[#E73649] mb-3 section-heading">
+              Top recruiter network
+            </h2>
+            <p className="text-ink/80 section-body">
+              Indicative recruiters from the wider Parul University network.
+            </p>
+          </>
+        )}
       </div>
 
       {/* Marquee Section */}
@@ -106,7 +155,7 @@ export default function RecruitersAndDestinations({ slug }: { slug?: string }) {
         
         <div className="animate-marquee items-center gap-12 sm:gap-20 px-6">
           {/* Duplicate the array twice to ensure seamless infinite scrolling */}
-          {[...activeCompanies, ...activeCompanies].map((fileName, idx) => (
+          {[...repeatedHalf, ...repeatedHalf].map((fileName, idx) => (
             <div key={idx} className={`relative w-28 h-12 shrink-0 mix-blend-multiply ${fileName.includes('oberoi') ? 'scale-[1.3]' : ''}`}>
               <Image
                 src={getSrc(fileName)}

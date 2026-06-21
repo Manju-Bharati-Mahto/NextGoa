@@ -8,10 +8,6 @@ const faqs: FaqItem[] = [
   {
     question: "What degree structures are offered at Parul University Goa?",
     answer: "PU Goa offers 27 programmes across eight faculties for the 2026-27 academic year, ranging from Diploma to Doctoral level. These cover Engineering, IT and Computer Science; Management Studies; Pharmacy; Nursing; Physiotherapy; Allied and Healthcare Sciences; Hotel Management and Catering Technology; and PhD. The popular courses are Cyber Security and Data Science; MBA with specialisations in Analytics and Finance; B.Pharm; B.Sc. Nursing; BPT; and BHMCT in Hotel Management and Catering Technology.",
-  },
-  {
-    question: "What are entrance tests and eligibility requirements?",
-    answer: "PU Goa accepts national entrance exams such as JEE Main, CUET, CAT, MAT, CMAT, GPAT, GATE, and UGC NET for selected programmes. Eligibility criteria vary according to the course you want, which is based on academic qualifications and applicable entrance scores.",
   }
 ];
 

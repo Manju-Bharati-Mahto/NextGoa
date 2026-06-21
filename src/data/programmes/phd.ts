@@ -112,18 +112,6 @@ export const phdData: ProgrammeData = {
         answer: "Supervisor allocation happens after admission, based on your declared research area, supervisor availability, and the Doctoral Research Committee's review. You can express preferences during application."
     },
     {
-        question: "Stipend and grants?",
-        answer: "Full-time PhD scholars on externally funded projects (DST, ICMR, DBT, AICTE) receive project-linked stipends. The Intramural Research Grant (IMR) supports internal projects. APC and conference support are available across the board."
-    },
-    {
-        question: "Publication requirement before synopsis?",
-        answer: "PU Goa follows UGC norms — typically a minimum of two peer-reviewed publications (Scopus/Web of Science indexed) before synopsis submission. Discipline-specific committees may set higher bars."
-    },
-    {
-        question: "Eligibility — NET / GATE / GPAT or PU Goa entrance?",
-        answer: "A postgraduate degree in the relevant discipline with minimum 55% aggregate. UGC-NET, GATE, GPAT, CSIR-NET scores are accepted, OR you may sit for the PU Goa offline doctoral entrance examination."
-    },
-    {
         question: "Can I apply without a Master's?",
         answer: "No. A relevant Master's degree (M.Tech, M.Pharm, M.Sc, MBA, M.Sc Nursing, etc.) is the minimum eligibility. Integrated PhD pathways are not currently offered at PU Goa."
     }

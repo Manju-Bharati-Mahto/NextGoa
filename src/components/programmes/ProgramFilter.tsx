@@ -305,7 +305,7 @@ export default function ProgramFilter() {
   }, [filteredCourses]);
 
   return (
-    <section className="lg: bg-[#F9F9F9] font-sans py-16 sm:py-24">
+    <section id="program-filter" className="lg: bg-[#F9F9F9] font-sans py-16 sm:py-24">
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center mb-12">
           <h3 className="text-4xl md:text-5xl font-bold text-[#ED383F] mb-6 font-poppins leading-tight">

@@ -105,7 +105,7 @@ export default function EngineeringPage() {
       <CareerOutcomes />
 
       {/* Recruiters & Destinations Section */}
-      <RecruitersAndDestinations />
+      <RecruitersAndDestinations slug="engineering" />
 
       {/* Programme Picker Section */}
       <ProgrammePicker />
@@ -126,7 +126,7 @@ export default function EngineeringPage() {
       <StudyAbroadModels />
 
       {/* Admissions Snapshot Section */}
-      <AdmissionsSnapshot />
+      <AdmissionsSnapshot slug="engineering" />
 
       {/* FAQs Section */}
       <EngineeringFaq />
