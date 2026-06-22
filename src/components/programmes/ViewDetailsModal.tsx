@@ -26,7 +26,7 @@ export default function ViewDetailsModal({ isOpen, onClose, programmeTitle, elig
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 text-left">
+    <div data-lenis-prevent="true" className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 text-left">
       <div className="absolute inset-0 bg-[#0A2540]/60 backdrop-blur-sm" onClick={onClose} />
       
       <div className="relative w-full max-w-[900px] bg-white rounded-[24px] shadow-2xl z-10 flex flex-col overflow-hidden max-h-[90vh]">

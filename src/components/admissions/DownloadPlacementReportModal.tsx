@@ -145,7 +145,7 @@ export function DownloadPlacementReportModal() {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
+    <div data-lenis-prevent="true" className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
       {/* Backdrop */}
       <div
         className="absolute inset-0 bg-[#0A2540]/60 backdrop-blur-sm transition-opacity"

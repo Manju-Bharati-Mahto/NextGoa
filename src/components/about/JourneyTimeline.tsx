@@ -4,7 +4,7 @@ import { useRef } from "react";
 
 const milestones = [
   {
-    year: "2009",
+    year: "2015",
     label: "FOUNDATION",
     description:
       "Parul University, Vadodara established under the Gujarat Private Universities Act.",
@@ -19,7 +19,7 @@ const milestones = [
     year: "2020",
     label: "LEGISLATION",
     description:
-      "Goa Private Universities Act passed, laying the legal foundation for PU Goa.",
+      "Parul University, Vadodara reaches 120+ global partner universities across 7 countries.",
   },
   {
     year: "2023",
@@ -31,7 +31,7 @@ const milestones = [
     year: "2024",
     label: "GLOBAL REACH",
     description:
-      "Parul University, Vadodara reaches 120+ global partner universities across 7 countries.",
+      "Goa Private Universities Act passed, laying the legal foundation for PU Goa.",
   },
   {
     year: "2025",

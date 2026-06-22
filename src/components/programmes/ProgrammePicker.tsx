@@ -99,6 +99,17 @@ export default function ProgrammePicker() {
         tuitionFee: "₹1,45,000",
         specialisations: [] 
       }
+    ],
+    "Doctoral Programs": [
+      {
+        title: "Doctor of Philosophy - Computer Science and Engineering",
+        duration: "3 Years",
+        eligibility: "Master's in a relevant subject with 55% (general) / 50% (SC/ST/OBC-NCL / EWS / differently-abled), or 4-yr Bachelor's with 75%.",
+        intake: "30",
+        mode: "Full-time",
+        tuitionFee: "₹1,05,000",
+        specialisations: []
+      }
     ]
   };
 
@@ -120,7 +131,7 @@ export default function ProgrammePicker() {
           
           {/* Toggles */}
           <div className="flex flex-wrap justify-center items-center gap-3">
-            {["Diploma", "Bachelor's", "Lateral Entry"].map((level) => (
+            {["Diploma", "Bachelor's", "Lateral Entry", "Doctoral Programs"].map((level) => (
               <button
                 key={level}
                 onClick={() => {

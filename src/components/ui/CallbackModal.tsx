@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from 'react';
 import React, { useState } from 'react';
 import { Icon } from '@iconify/react';
 
@@ -9,6 +10,17 @@ interface CallbackModalProps {
 }
 
 export function CallbackModal({ isOpen, onClose }: CallbackModalProps) {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -30,7 +42,7 @@ export function CallbackModal({ isOpen, onClose }: CallbackModalProps) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-sm">
+    <div data-lenis-prevent="true" className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-sm">
       <div 
         className="relative w-full max-w-md bg-white rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-2xl animate-in fade-in zoom-in-95 duration-200"
         onClick={e => e.stopPropagation()}
