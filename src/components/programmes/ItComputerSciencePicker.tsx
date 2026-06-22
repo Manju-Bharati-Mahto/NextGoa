@@ -96,9 +96,29 @@ export default function ItComputerSciencePicker() {
     }))
   ];
 
+  const doctoralProgrammes: Programme[] = [
+    {
+      title: "Doctor of Philosophy - Information Technology",
+      duration: "3 Years",
+      eligibility: "Master's in a relevant subject with 55% (general) / 50% (SC/ST/OBC-NCL / EWS / differently-abled), or 4-yr Bachelor's with 75%.",
+      intake: "30",
+      mode: "Full-time",
+      tuitionFee: "₹1,05,000"
+    },
+    {
+      title: "Doctor of Philosophy - IT and Computer Science",
+      duration: "3 Years",
+      eligibility: "Master's in a relevant subject with 55% (general) / 50% (SC/ST/OBC-NCL / EWS / differently-abled), or 4-yr Bachelor's with 75%.",
+      intake: "30",
+      mode: "Full-time",
+      tuitionFee: "₹1,05,000"
+    }
+  ];
+
   const programmeData: Record<string, Programme[]> = {
     "Bachelor's": bcaProgrammes,
-    "Master's": mcaProgrammes
+    "Master's": mcaProgrammes,
+    "Doctoral Programs": doctoralProgrammes
   };
 
   const currentProgrammes = programmeData[activeLevel] || [];
@@ -119,7 +139,7 @@ export default function ItComputerSciencePicker() {
           
           {/* Toggles */}
           <div className="flex flex-wrap justify-center items-center gap-3">
-            {["Bachelor's", "Master's"].map((level) => (
+            {["Bachelor's", "Master's", "Doctoral Programs"].map((level) => (
               <button
                 key={level}
                 onClick={() => {

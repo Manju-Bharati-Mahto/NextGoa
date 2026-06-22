@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import ProgrammeCard from "./ProgrammeCard";
 
 export default function NursingProgrammePicker() {
-  const [activeLevel, setActiveLevel] = useState<string>("All Programs");
+  const [activeLevel, setActiveLevel] = useState<string>("Bachelor's");
   const [showAll, setShowAll] = useState<boolean>(false);
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -17,34 +17,47 @@ export default function NursingProgrammePicker() {
     }
   }, []);
 
-  const nursingProgrammes = [
-    { 
-      title: "General Nursing and\nMidwifery (G.N.M)", 
-      duration: "3 Years", 
-      eligibility: "10+2 in any stream with English (40% Gen/EWS, 35% Reserved) OR 10+2 with English and 40% in vocational ANM.", 
-      intake: "40", 
-      mode: "Full-time",
-      tuitionFee: "₹1,10,000"
-    },
-    { 
-      title: "Bachelor of Science\nin Nursing", 
-      duration: "4 Years", 
-      eligibility: "10+2 Science (PCB) with English. Minimum 45% (40% Reserved).", 
-      intake: "100", 
-      mode: "Full-time",
-      tuitionFee: "₹1,80,000"
-    },
-    { 
-      title: "Post Basic Bachelor of Science\nin Nursing (PB-B.Sc.)", 
-      duration: "2 Years", 
-      eligibility: "GNM pass from INC/State Council recognized institution. Registered as Nurse & Midwife.", 
-      intake: "40", 
-      mode: "Full-time",
-      tuitionFee: "₹1,20,000"
-    }
-  ];
+  const programmesData: Record<string, any[]> = {
+    "Bachelor's": [
+      { 
+        title: "General Nursing and\nMidwifery (G.N.M)", 
+        duration: "3 Years", 
+        eligibility: "10+2 in any stream with English (40% Gen/EWS, 35% Reserved) OR 10+2 with English and 40% in vocational ANM.", 
+        intake: "40", 
+        mode: "Full-time",
+        tuitionFee: "₹1,10,000"
+      },
+      { 
+        title: "Bachelor of Science\nin Nursing", 
+        duration: "4 Years", 
+        eligibility: "10+2 Science (PCB) with English. Minimum 45% (40% Reserved).", 
+        intake: "100", 
+        mode: "Full-time",
+        tuitionFee: "₹1,80,000"
+      },
+      { 
+        title: "Post Basic Bachelor of Science\nin Nursing (PB-B.Sc.)", 
+        duration: "2 Years", 
+        eligibility: "GNM pass from INC/State Council recognized institution. Registered as Nurse & Midwife.", 
+        intake: "40", 
+        mode: "Full-time",
+        tuitionFee: "₹1,20,000"
+      }
+    ],
+    "Doctoral Programs": [
+      {
+        title: "Doctor of Philosophy - Nursing",
+        duration: "3 Years",
+        eligibility: "Master's in a relevant subject with 55% (general) / 50% (SC/ST/OBC-NCL / EWS / differently-abled), or 4-yr Bachelor's with 75%.",
+        intake: "30",
+        mode: "Full-time",
+        tuitionFee: "₹1,05,000"
+      }
+    ]
+  };
 
-  const currentProgrammes = showAll ? nursingProgrammes : nursingProgrammes.slice(0, 3);
+  const currentProgrammes = programmesData[activeLevel] || [];
+  const visibleProgrammes = showAll ? currentProgrammes : currentProgrammes.slice(0, 3);
 
   return (
     <section className="w-full bg-[#FAFAFA] py-12 sm:py-16">
@@ -61,7 +74,7 @@ export default function NursingProgrammePicker() {
           
           {/* Toggles */}
           <div className="flex flex-wrap justify-center items-center gap-3">
-            {["All Programs"].map((level) => (
+            {["Bachelor's", "Doctoral Programs"].map((level) => (
               <button
                 key={level}
                 onClick={() => setActiveLevel(level)}
@@ -79,7 +92,7 @@ export default function NursingProgrammePicker() {
 
         {/* Cards Grid */}
         <div className="flex flex-wrap justify-center gap-6 sm:gap-10 w-full mx-auto items-stretch">
-          {currentProgrammes.map((prog, idx) => (
+          {visibleProgrammes.map((prog, idx) => (
             <ProgrammeCard
               key={idx}
               title={prog.title}
@@ -99,7 +112,7 @@ export default function NursingProgrammePicker() {
         </div>
 
         {/* View All Button */}
-        {!showAll && nursingProgrammes.length > 3 && (
+        {!showAll && currentProgrammes.length > 3 && (
           <div className="text-center mt-8">
             <button 
               onClick={() => setShowAll(true)}

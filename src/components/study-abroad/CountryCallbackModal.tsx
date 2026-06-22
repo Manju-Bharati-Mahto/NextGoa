@@ -122,7 +122,7 @@ export default function CountryCallbackModal({ isOpen, onClose, country }: Count
   };
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 text-left">
+    <div data-lenis-prevent="true" className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 text-left">
       <div className="absolute inset-0 bg-[#0A2540]/60 backdrop-blur-sm transition-opacity" onClick={onClose} />
       
       <div className="relative w-full max-w-[600px] rounded-[24px] bg-white shadow-2xl z-10 animate-in fade-in zoom-in-95 duration-200 flex flex-col overflow-hidden">

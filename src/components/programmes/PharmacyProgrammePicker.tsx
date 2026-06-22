@@ -6,24 +6,78 @@ import ProgrammeCard from "./ProgrammeCard";
 export default function PharmacyProgrammePicker() {
   const [activeLevel, setActiveLevel] = useState<string>("Bachelor's");
 
-  const pharmacyProgrammes = [
-    { 
-      title: "Bachelor of Pharmacy\n(B.Pharm.)", 
-      duration: "4 Years", 
-      eligibility: "10+2 Science (PCM or PCB) from a recognized board.", 
-      intake: "60", 
-      mode: "Full-time",
-      tuitionFee: "₹1,35,000"
-    },
-    { 
-      title: "B.Pharm. - Lateral Entry", 
-      duration: "3 Years", 
-      eligibility: "Diploma in Pharmacy from a recognized university.", 
-      intake: "10", 
-      mode: "Full-time",
-      tuitionFee: "₹1,35,000"
-    }
-  ];
+  const programmesData: Record<string, any[]> = {
+    "Bachelor's": [
+      { 
+        title: "Bachelor of Pharmacy\n(B.Pharm.)", 
+        duration: "4 Years", 
+        eligibility: "10+2 Science (PCM or PCB) from a recognized board.", 
+        intake: "60", 
+        mode: "Full-time",
+        tuitionFee: "₹1,35,000"
+      },
+      { 
+        title: "B.Pharm. - Lateral Entry", 
+        duration: "3 Years", 
+        eligibility: "Diploma in Pharmacy from a recognized university.", 
+        intake: "10", 
+        mode: "Full-time",
+        tuitionFee: "₹1,35,000"
+      }
+    ],
+    "Doctoral Programs": [
+      {
+        title: "Doctor of Philosophy - Pharmaceutics",
+        duration: "3 Years",
+        eligibility: "Master's in a relevant subject with 55% (general) / 50% (SC/ST/OBC-NCL / EWS / differently-abled), or 4-yr Bachelor's with 75%.",
+        intake: "30",
+        mode: "Full-time",
+        tuitionFee: "₹1,05,000"
+      },
+      {
+        title: "Doctor of Philosophy - Pharmaceutical Technology",
+        duration: "3 Years",
+        eligibility: "Master's in a relevant subject with 55% (general) / 50% (SC/ST/OBC-NCL / EWS / differently-abled), or 4-yr Bachelor's with 75%.",
+        intake: "30",
+        mode: "Full-time",
+        tuitionFee: "₹1,05,000"
+      },
+      {
+        title: "Doctor of Philosophy - Pharmaceutical Quality Assurance",
+        duration: "3 Years",
+        eligibility: "Master's in a relevant subject with 55% (general) / 50% (SC/ST/OBC-NCL / EWS / differently-abled), or 4-yr Bachelor's with 75%.",
+        intake: "30",
+        mode: "Full-time",
+        tuitionFee: "₹1,05,000"
+      },
+      {
+        title: "Doctor of Philosophy - Pharmacology",
+        duration: "3 Years",
+        eligibility: "Master's in a relevant subject with 55% (general) / 50% (SC/ST/OBC-NCL / EWS / differently-abled), or 4-yr Bachelor's with 75%.",
+        intake: "30",
+        mode: "Full-time",
+        tuitionFee: "₹1,05,000"
+      },
+      {
+        title: "Doctor of Philosophy - Pharmacognosy",
+        duration: "3 Years",
+        eligibility: "Master's in a relevant subject with 55% (general) / 50% (SC/ST/OBC-NCL / EWS / differently-abled), or 4-yr Bachelor's with 75%.",
+        intake: "30",
+        mode: "Full-time",
+        tuitionFee: "₹1,05,000"
+      },
+      {
+        title: "Doctor of Philosophy - Pharmaceutical Chemistry",
+        duration: "3 Years",
+        eligibility: "Master's in a relevant subject with 55% (general) / 50% (SC/ST/OBC-NCL / EWS / differently-abled), or 4-yr Bachelor's with 75%.",
+        intake: "30",
+        mode: "Full-time",
+        tuitionFee: "₹1,05,000"
+      }
+    ]
+  };
+
+  const currentProgrammes = programmesData[activeLevel] || [];
 
   return (
     <section className="w-full bg-[#FAFAFA] py-12 sm:py-16">
@@ -40,7 +94,7 @@ export default function PharmacyProgrammePicker() {
           
           {/* Toggles */}
           <div className="flex flex-wrap justify-center items-center gap-3">
-            {["Bachelor's"].map((level) => (
+            {["Bachelor's", "Doctoral Programs"].map((level) => (
               <button
                 key={level}
                 onClick={() => setActiveLevel(level)}
@@ -58,7 +112,7 @@ export default function PharmacyProgrammePicker() {
 
         {/* Cards Grid */}
         <div className="flex flex-wrap justify-center gap-6 sm:gap-10 w-full mx-auto items-stretch">
-          {pharmacyProgrammes.map((prog, idx) => (
+          {currentProgrammes.map((prog, idx) => (
             <ProgrammeCard
               key={idx}
               title={prog.title}

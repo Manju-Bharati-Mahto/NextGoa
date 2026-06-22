@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Poppins } from "next/font/google";
 
 const poppins = Poppins({
@@ -14,6 +14,17 @@ type CostSheetModalProps = {
 };
 
 export default function CostSheetModal({ isOpen, onClose }: CostSheetModalProps) {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     pathway: "",
@@ -60,7 +71,7 @@ export default function CostSheetModal({ isOpen, onClose }: CostSheetModalProps)
   const YEARS = ["2026", "2027", "2028 or later"];
 
   return (
-    <div className={`fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 ${poppins.className}`}>
+    <div data-lenis-prevent="true" className={`fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 ${poppins.className}`}>
       <div className="bg-white w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden flex flex-col relative animate-slide-up">
         {/* Close Button */}
         <button

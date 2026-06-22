@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from 'react';
 import React, { useState } from "react";
 
 interface FormData {
@@ -23,6 +24,13 @@ interface Props {
 }
 
 export default function PIERCModal({ onClose }: Props) {
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
+
   const [step, setStep] = useState(1);
   const [form, setForm] = useState<FormData>({
     fullName: "", email: "", phone: "", college: "",
@@ -43,8 +51,7 @@ export default function PIERCModal({ onClose }: Props) {
   }
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4"
+    <div data-lenis-prevent="true" className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4"
       onClick={onClose}
     >
       <div

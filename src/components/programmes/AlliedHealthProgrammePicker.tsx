@@ -6,24 +6,46 @@ import ProgrammeCard from "./ProgrammeCard";
 export default function AlliedHealthProgrammePicker() {
   const [activeLevel, setActiveLevel] = useState<string>("Bachelor's");
 
-  const alliedHealthProgrammes = [
-    { 
-      title: "Bachelor of Anaesthesia & Operation Theatre Technology (B.AOTT)", 
-      duration: "4 Years", 
-      eligibility: "Candidate shall have passed 12th Examination in Science stream with Physics, Chemistry & Biology subjects from a recognized board.", 
-      intake: "60", 
-      mode: "Full-time",
-      tuitionFee: "₹85,000"
-    },
-    { 
-      title: "Bachelor of Medical Laboratory Science (BMLS)", 
-      duration: "4 Years", 
-      eligibility: "Candidate shall have passed 12th Examination in Science stream with Physics, Chemistry & Biology subjects from a recognized board.", 
-      intake: "60", 
-      mode: "Full-time",
-      tuitionFee: "₹85,000"
-    }
-  ];
+  const programmesData = {
+    "Bachelor's": [
+      { 
+        title: "Bachelor of Anaesthesia & Operation Theatre Technology (B.AOTT)", 
+        duration: "4 Years", 
+        eligibility: "Candidate shall have passed 12th Examination in Science stream with Physics, Chemistry & Biology subjects from a recognized board.", 
+        intake: "60", 
+        mode: "Full-time",
+        tuitionFee: "₹85,000"
+      },
+      { 
+        title: "Bachelor of Medical Laboratory Science (BMLS)", 
+        duration: "4 Years", 
+        eligibility: "Candidate shall have passed 12th Examination in Science stream with Physics, Chemistry & Biology subjects from a recognized board.", 
+        intake: "60", 
+        mode: "Full-time",
+        tuitionFee: "₹85,000"
+      }
+    ],
+    "Doctoral Programs": [
+      {
+        title: "Doctor of Philosophy - Biotechnology",
+        duration: "3 Years",
+        eligibility: "Master's in a relevant subject with 55% (general) / 50% (SC/ST/OBC-NCL / EWS / differently-abled), or 4-yr Bachelor's with 75%.",
+        intake: "30",
+        mode: "Full-time",
+        tuitionFee: "₹1,05,000"
+      },
+      {
+        title: "Doctor of Philosophy - Microbiology",
+        duration: "3 Years",
+        eligibility: "Master's in a relevant subject with 55% (general) / 50% (SC/ST/OBC-NCL / EWS / differently-abled), or 4-yr Bachelor's with 75%.",
+        intake: "30",
+        mode: "Full-time",
+        tuitionFee: "₹1,05,000"
+      }
+    ]
+  };
+
+  const activeProgrammes = programmesData[activeLevel as keyof typeof programmesData] || [];
 
   return (
     <section className="w-full bg-[#FAFAFA] py-12 sm:py-16">
@@ -40,7 +62,7 @@ export default function AlliedHealthProgrammePicker() {
           
           {/* Toggles */}
           <div className="flex flex-wrap justify-center items-center gap-3">
-            {["Bachelor's"].map((level) => (
+            {Object.keys(programmesData).map((level) => (
               <button
                 key={level}
                 onClick={() => setActiveLevel(level)}
@@ -58,7 +80,7 @@ export default function AlliedHealthProgrammePicker() {
 
         {/* Cards Grid */}
         <div className="flex flex-wrap justify-center gap-6 sm:gap-10 w-full max-w-7xl mx-auto items-stretch">
-          {alliedHealthProgrammes.map((prog, idx) => (
+          {activeProgrammes.map((prog, idx) => (
             <ProgrammeCard
               key={idx}
               title={prog.title}

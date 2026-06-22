@@ -54,7 +54,7 @@ export default function PartnerDetailsModal({ isOpen, onClose, partner }: Props)
   if (!isOpen || !partner) return null;
 
   return (
-    <div className={`fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 ${poppins.className}`}>
+    <div data-lenis-prevent="true" className={`fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 ${poppins.className}`}>
       {/* Backdrop */}
       <div 
         className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
