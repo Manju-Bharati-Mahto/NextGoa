@@ -26,7 +26,8 @@ export default function ManagementProgrammePicker() {
         intake: "120", 
         mode: "Full-time",
         tuitionFee: "₹90,000",
-        specialisations: []
+        specialisations: [],
+        enquiryValue: "bba"
       },
       ...["General", "Data Analytics", "Financial Management", "Human Resource", "Marketing", "Logistics and Supply Chain Management"].map(spec => ({
         title: `BBA Honours (NEP 2020)\n${spec}`, 
@@ -35,7 +36,8 @@ export default function ManagementProgrammePicker() {
         intake: "60", 
         mode: "Full-time",
         tuitionFee: "₹90,000",
-        specialisations: []
+        specialisations: [],
+        enquiryValue: "bba-hons"
       }))
     ],
     "Master's": [
@@ -46,7 +48,8 @@ export default function ManagementProgrammePicker() {
         intake: "60", 
         mode: "Full-time",
         tuitionFee: "₹1,45,000",
-        specialisations: []
+        specialisations: [],
+        enquiryValue: "mba"
       }))
     ],
     "Doctoral Programs": [
@@ -56,7 +59,8 @@ export default function ManagementProgrammePicker() {
         eligibility: "Master's in a relevant subject with 55% (general) / 50% (SC/ST/OBC-NCL / EWS / differently-abled), or 4-yr Bachelor's with 75%.",
         intake: "30",
         mode: "Full-time",
-        tuitionFee: "₹1,05,000"
+        tuitionFee: "₹1,05,000",
+        enquiryValue: "phd"
       },
       {
         title: "Doctor of Philosophy - Human Resource",
@@ -64,7 +68,8 @@ export default function ManagementProgrammePicker() {
         eligibility: "Master's in a relevant subject with 55% (general) / 50% (SC/ST/OBC-NCL / EWS / differently-abled), or 4-yr Bachelor's with 75%.",
         intake: "30",
         mode: "Full-time",
-        tuitionFee: "₹1,05,000"
+        tuitionFee: "₹1,05,000",
+        enquiryValue: "phd"
       }
     ]
   };
@@ -117,6 +122,7 @@ export default function ManagementProgrammePicker() {
               tuitionFee={prog.tuitionFee}
               intake={prog.intake}
               mode={prog.mode}
+              enquiryValue={prog.enquiryValue}
             />
           ))}
         </div>

@@ -93,7 +93,8 @@ export const physiotherapyData: ProgrammeData = {
         department: "Physiotherapy",
         experience: "12 Years",
         researchArea: "Aquatic Physiotherapy, Musculoskeletal and Sports Physiotherapy",
-        image: "/faculties/Dr.-Sandipkumar-Rameshbhai-Parekh.jpg"
+        image: "/faculties/Dr.-Sandipkumar-Rameshbhai-Parekh.jpg",
+        linkedin: "https://www.linkedin.com/in/sandip-parekh-327952145"
     },
     {
         role: "Associate Professor",
@@ -103,7 +104,8 @@ export const physiotherapyData: ProgrammeData = {
         department: "Physiotherapy",
         experience: "13 Years 11 Months",
         researchArea: "Musculoskeletal and Sports Physiotherapy",
-        image: "/faculties/Dr.-Dharmang-D-Vyas--PT-.jpg"
+        image: "/faculties/Dr.-Dharmang-D-Vyas--PT-.jpg",
+        linkedin: "https://www.linkedin.com/in/dharmang-vyas-2a139018b/"
     },
     {
         role: "Associate Professor",
@@ -113,7 +115,9 @@ export const physiotherapyData: ProgrammeData = {
         department: "Physiotherapy",
         experience: "11 Years 1 Month",
         researchArea: "Stroke Rehabilitation, Neuro Rehabilitation",
-        image: "/faculties/Dr.-Jeyaganesh-V--PT-.jpg"
+        image: "/faculties/Dr.-Jeyaganesh-V--PT-.jpg",
+        linkedin: "http://www.linkedin.com/in/jeyaganesh-vellaisamy-14124b77",
+        orcid: "https://orcid.org/0000-0001-9877-3471"
     },
     {
         role: "Assistant Professor",

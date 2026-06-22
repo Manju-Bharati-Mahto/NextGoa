@@ -59,7 +59,8 @@ export default function ProgrammePicker() {
         intake: "120", 
         mode: "Full-time", 
         tuitionFee: "₹65,000",
-        specialisations: [] 
+        specialisations: [],
+        enquiryValue: "diploma-computer-engineering"
       }
     ],
     "Bachelor's": [
@@ -70,23 +71,25 @@ export default function ProgrammePicker() {
         intake: "120", 
         mode: "Full-time", 
         tuitionFee: "₹1,45,000",
-        specialisations: [] 
+        specialisations: [],
+        enquiryValue: "btech-cse"
       },
       ...[
-        "AI and Machine Learning",
-        "AI and Data Science",
-        "AI",
-        "Cyber Security",
-        "Quantum Computing in AI"
-      ].map(spec => ({
-        title: `B.Tech. Computer Science and Engineering\nwith ${spec}`,
+        { spec: "AI and Machine Learning", val: "btech-cse-aiml" },
+        { spec: "AI and Data Science", val: "btech-cse-aids" },
+        { spec: "AI", val: "btech-cse-ai" },
+        { spec: "Cyber Security", val: "btech-cse-cybersecurity" },
+        { spec: "Quantum Computing in AI", val: "btech-cse-quantum" }
+      ].map(item => ({
+        title: `B.Tech. Computer Science and Engineering\nwith ${item.spec}`,
         isNew: true,
         duration: "4 Years",
         eligibility: btechEligibility,
         intake: "120",
         mode: "Full-time",
         tuitionFee: "₹1,45,000",
-        specialisations: []
+        specialisations: [],
+        enquiryValue: item.val
       }))
     ],
     "Lateral Entry": [
@@ -97,7 +100,8 @@ export default function ProgrammePicker() {
         intake: "120", 
         mode: "Full-time", 
         tuitionFee: "₹1,45,000",
-        specialisations: [] 
+        specialisations: [],
+        enquiryValue: "btech-lateral"
       }
     ],
     "Doctoral Programs": [
@@ -108,7 +112,8 @@ export default function ProgrammePicker() {
         intake: "30",
         mode: "Full-time",
         tuitionFee: "₹1,05,000",
-        specialisations: []
+        specialisations: [],
+        enquiryValue: "phd"
       }
     ]
   };
@@ -162,6 +167,7 @@ export default function ProgrammePicker() {
               intake={prog.intake}
               mode={prog.mode}
               isNew={prog.isNew}
+              enquiryValue={prog.enquiryValue}
             />
           ))}
         </div>

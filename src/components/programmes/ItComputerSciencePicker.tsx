@@ -11,6 +11,7 @@ type Programme = {
   mode: string;
   isNew?: boolean;
   tuitionFee?: string;
+  enquiryValue?: string;
 };
 
 export default function ItComputerSciencePicker() {
@@ -46,7 +47,8 @@ export default function ItComputerSciencePicker() {
       eligibility: bcaEligibility,
       intake: "120",
       mode: "Full-time",
-      tuitionFee: "₹85,000"
+      tuitionFee: "₹85,000",
+      enquiryValue: "bca"
     },
     ...specialisationsList.map(spec => ({
       title: `Bachelor of Computer Application (BCA)\nwith ${spec}`,
@@ -55,7 +57,8 @@ export default function ItComputerSciencePicker() {
       eligibility: bcaEligibility,
       intake: "120",
       mode: "Full-time",
-      tuitionFee: "₹85,000"
+      tuitionFee: "₹85,000",
+      enquiryValue: "bca"
     })),
     {
       title: "Bachelor of Computer Application - Honors (BCA Hons.)\nGeneral (NEP 2020)",
@@ -63,7 +66,8 @@ export default function ItComputerSciencePicker() {
       eligibility: bcaEligibility,
       intake: "120",
       mode: "Full-time",
-      tuitionFee: "₹85,000"
+      tuitionFee: "₹85,000",
+      enquiryValue: "bca"
     },
     ...specialisationsList.map(spec => ({
       title: `Bachelor of Computer Application - Honors (BCA Hons.)\nwith ${spec} (NEP 2020)`,
@@ -72,7 +76,8 @@ export default function ItComputerSciencePicker() {
       eligibility: bcaEligibility,
       intake: "120",
       mode: "Full-time",
-      tuitionFee: "₹85,000"
+      tuitionFee: "₹85,000",
+      enquiryValue: "bca"
     }))
   ];
 
@@ -83,7 +88,8 @@ export default function ItComputerSciencePicker() {
       eligibility: mcaEligibility,
       intake: "120",
       mode: "Full-time",
-      tuitionFee: "₹1,25,000"
+      tuitionFee: "₹1,25,000",
+      enquiryValue: "mca"
     },
     ...specialisationsList.map(spec => ({
       title: `Master of Computer Application (MCA)\nwith ${spec}`,
@@ -92,7 +98,8 @@ export default function ItComputerSciencePicker() {
       eligibility: mcaEligibility,
       intake: "120",
       mode: "Full-time",
-      tuitionFee: "₹1,25,000"
+      tuitionFee: "₹1,25,000",
+      enquiryValue: "mca"
     }))
   ];
 
@@ -103,7 +110,8 @@ export default function ItComputerSciencePicker() {
       eligibility: "Master's in a relevant subject with 55% (general) / 50% (SC/ST/OBC-NCL / EWS / differently-abled), or 4-yr Bachelor's with 75%.",
       intake: "30",
       mode: "Full-time",
-      tuitionFee: "₹1,05,000"
+      tuitionFee: "₹1,05,000",
+      enquiryValue: "phd"
     },
     {
       title: "Doctor of Philosophy - IT and Computer Science",
@@ -111,7 +119,8 @@ export default function ItComputerSciencePicker() {
       eligibility: "Master's in a relevant subject with 55% (general) / 50% (SC/ST/OBC-NCL / EWS / differently-abled), or 4-yr Bachelor's with 75%.",
       intake: "30",
       mode: "Full-time",
-      tuitionFee: "₹1,05,000"
+      tuitionFee: "₹1,05,000",
+      enquiryValue: "phd"
     }
   ];
 
@@ -169,6 +178,7 @@ export default function ItComputerSciencePicker() {
               tuitionFee={prog.tuitionFee}
               intake={prog.intake}
               mode={prog.mode}
+              enquiryValue={prog.enquiryValue}
             />
           ))}
         </div>

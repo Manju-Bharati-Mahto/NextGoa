@@ -14,7 +14,8 @@ export default function HotelManagementProgrammePicker() {
       eligibility: "Candidate shall have passed 12th Examination in any stream (Science/Commerce/Arts) with a minimum of 45% for General category (40% for SC/ST/SEBC Candidates) with English subject from a recognized board.",
       intake: "120",
       mode: "Full-time",
-      tuitionFee: "₹1,00,000"
+      tuitionFee: "₹1,00,000",
+      enquiryValue: "bhmct"
     },
     { 
       title: "Bachelor of Science -\nHotel Management",
@@ -23,7 +24,8 @@ export default function HotelManagementProgrammePicker() {
       eligibility: "Candidate shall have passed 12th Examination in any stream (Science/Commerce/Arts) from a recognized board.",
       intake: "120",
       mode: "Full-time",
-      tuitionFee: "₹1,00,000"
+      tuitionFee: "₹1,00,000",
+      enquiryValue: "bsc-hotel-management"
     },
     { 
       title: "Bachelor of Science - Honors\n(B.Sc Hons.) - Hotel Management",
@@ -32,7 +34,8 @@ export default function HotelManagementProgrammePicker() {
       eligibility: "Candidate shall have passed 12th Examination in any stream (Science/Commerce/Arts) from a recognized board.",
       intake: "120",
       mode: "Full-time",
-      tuitionFee: "₹1,00,000"
+      tuitionFee: "₹1,00,000",
+      enquiryValue: "bsc-hons-hotel-management"
     }
   ];
 
@@ -81,6 +84,7 @@ export default function HotelManagementProgrammePicker() {
               tuitionFee={prog.tuitionFee}
               intake={prog.intake}
               mode={prog.mode}
+              enquiryValue={prog.enquiryValue}
             />
           ))}
         </div>
