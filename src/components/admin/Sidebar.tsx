@@ -29,7 +29,7 @@ export default function Sidebar() {
           href="/admin/blogs"
           className="block p-3 rounded hover:bg-slate-800"
         >
-          Leads
+          Blogs
         </Link>
 
         {/* <Link
