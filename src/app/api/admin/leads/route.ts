@@ -31,7 +31,7 @@ export async function GET(req: NextRequest) {
       SELECT *
       FROM form_submissions
       ${where}
-      ORDER BY id DESC
+      ORDER BY id ASC
       LIMIT ?
       OFFSET ?
       `,

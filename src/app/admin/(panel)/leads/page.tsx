@@ -14,6 +14,7 @@ export default function LeadsPage() {
   const [total, setTotal] = useState(0);
   const [search, setSearch] = useState("");
   const [selectedForm, setSelectedForm] = useState("all");
+  
 
  useEffect(() => {
   loadLeads();

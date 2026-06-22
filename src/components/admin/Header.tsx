@@ -15,7 +15,7 @@ export default function Header() {
     const data = await res.json();
 
     if (data.success) {
-      router.replace("/login");
+      router.replace("/admin/login");
       router.refresh();
     }
 

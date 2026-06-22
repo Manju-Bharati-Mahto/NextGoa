@@ -13,14 +13,20 @@ export default function Sidebar() {
       <nav className="p-4 space-y-2">
 
         <Link
-          href="/dashboard"
+          href="/admin/dashboard"
           className="block p-3 rounded hover:bg-slate-800"
         >
           Dashboard
         </Link>
 
         <Link
-          href="/leads"
+          href="/admin/leads"
+          className="block p-3 rounded hover:bg-slate-800"
+        >
+          Leads
+        </Link>
+        <Link
+          href="/admin/blogs"
           className="block p-3 rounded hover:bg-slate-800"
         >
           Leads
