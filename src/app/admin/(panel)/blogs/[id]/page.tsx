@@ -2,6 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
+import dynamic from "next/dynamic";
+import "react-quill-new/dist/quill.snow.css";
+
+const ReactQuill = dynamic(() => import("react-quill-new"), {
+  ssr: false,
+});
 
 export default function EditBlogPage() {
 
@@ -12,6 +18,12 @@ export default function EditBlogPage() {
   const id = params.id;
 
   const [loading, setLoading] = useState(false);
+
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [featuredImage, setFeaturedImage] = useState("");
+
+  const [ogImageFile, setOgImageFile] = useState<File | null>(null);
+  const [currentOgImage, setCurrentOgImage] = useState("");
 
   const [pageLoading, setPageLoading] = useState(true);
 
@@ -24,8 +36,6 @@ export default function EditBlogPage() {
     excerpt: "",
 
     content: "",
-
-    featured_image: "",
 
     category: "",
 
@@ -40,8 +50,6 @@ export default function EditBlogPage() {
     og_title: "",
 
     og_description: "",
-
-    og_image: "",
 
     status: "draft",
 
@@ -63,7 +71,23 @@ export default function EditBlogPage() {
 
       const data = await res.json();
 
-      setForm(data);
+      setFeaturedImage(data.featured_image || "");
+      setCurrentOgImage(data.og_image || "");
+
+      setForm({
+        title: data.title || "",
+        slug: data.slug || "",
+        excerpt: data.excerpt || "",
+        content: data.content || "",
+        category: data.category || "",
+        meta_title: data.meta_title || "",
+        meta_description: data.meta_description || "",
+        meta_keywords: data.meta_keywords || "",
+        canonical_url: data.canonical_url || "",
+        og_title: data.og_title || "",
+        og_description: data.og_description || "",
+        status: data.status || "draft",
+      });
 
     } catch (err) {
 
@@ -115,65 +139,50 @@ export default function EditBlogPage() {
 
   }
 
-  async function updateBlog(
-    e: React.FormEvent
-  ) {
+  async function updateBlog(e: React.FormEvent) {
+  e.preventDefault();
 
-    e.preventDefault();
+  setLoading(true);
 
-    setLoading(true);
+  try {
+    const formData = new FormData();
 
-    try {
-
-      const res = await fetch(
-
-        `/api/admin/blogs/${id}`,
-
-        {
-
-          method: "PUT",
-
-          headers: {
-
-            "Content-Type":
-              "application/json",
-
-          },
-
-          body: JSON.stringify(form),
-
-        }
-
-      );
-
-      const result =
-        await res.json();
-
-      if (!result.success) {
-
-        alert(result.message);
-
-        setLoading(false);
-
-        return;
-
-      }
-
-      alert("Blog Updated Successfully");
-
-      router.push("/blogs");
-
-    } catch (err) {
-
-      console.log(err);
-
-      alert("Something went wrong.");
-
+    Object.entries(form).forEach(([key, value]) => {
+      formData.append(key, value);
+    });
+    
+    formData.append("featured_image_path", featuredImage);
+    formData.append("og_image_path", currentOgImage); 
+   if (imageFile) {
+      formData.append("featured_image", imageFile);
     }
 
-    setLoading(false);
+    if (ogImageFile) {
+      formData.append("og_image", ogImageFile);
+    }
 
+    const res = await fetch(`/api/admin/blogs/${id}`, {
+      method: "PUT",
+      body: formData,
+    });
+
+    const result = await res.json();
+
+    if (!result.success) {
+      alert(result.message);
+      return;
+    }
+
+    alert("Blog Updated Successfully");
+
+    router.push("/admin/blogs");
+  } catch (err) {
+    console.error(err);
+    alert("Something went wrong.");
+  } finally {
+    setLoading(false);
   }
+}
 
   async function deleteBlog() {
 
@@ -304,27 +313,36 @@ export default function EditBlogPage() {
 
       <div>
 
-        <label className="font-medium">
-          Featured Image
-        </label>
+      <label className="font-medium">
+        Featured Image
+      </label>
 
-        <input
-          type="text"
-          name="featured_image"
-          value={form.featured_image}
-          onChange={handleChange}
-          className="w-full border rounded-lg p-3 mt-1"
+      <input
+        type="file"
+        accept="image/*"
+        className="w-full border rounded-lg p-3 mt-1"
+        onChange={(e) => {
+          if (e.target.files?.length) {
+            setImageFile(e.target.files[0]);
+          }
+        }}
+      />
+
+      {imageFile ? (
+        <img
+          src={URL.createObjectURL(imageFile)}
+          alt="Preview"
+          className="w-56 mt-4 rounded-lg border"
         />
-
-        {form.featured_image && (
-
+      ) : (
+        featuredImage && (
           <img
-            src={form.featured_image}
-            alt=""
+            src={featuredImage}
+            alt="Current Image"
             className="w-56 mt-4 rounded-lg border"
           />
-
-        )}
+        )
+      )}
 
       </div>
 
@@ -354,13 +372,7 @@ export default function EditBlogPage() {
           Content
         </label>
 
-        <textarea
-          rows={15}
-          name="content"
-          value={form.content}
-          onChange={handleChange}
-          className="w-full border rounded-lg p-3 mt-1"
-        />
+      <ReactQuill theme="snow" value={form.content} onChange={(value) => setForm((prev) => ({ ...prev, content: value, })) } />
 
       </div>
 
@@ -438,14 +450,38 @@ export default function EditBlogPage() {
 
       {/* OG Image */}
 
-      <input
-        type="text"
-        name="og_image"
-        value={form.og_image}
-        onChange={handleChange}
-        placeholder="OG Image"
-        className="w-full border rounded-lg p-3"
+      <div>
+  <label className="font-medium">
+    OG Image
+  </label>
+
+  <input
+    type="file"
+    accept="image/*"
+    className="w-full border rounded-lg p-3 mt-1"
+    onChange={(e) => {
+      if (e.target.files?.length) {
+        setOgImageFile(e.target.files[0]);
+      }
+    }}
+  />
+
+  {ogImageFile ? (
+    <img
+      src={URL.createObjectURL(ogImageFile)}
+      alt="OG Preview"
+      className="w-56 mt-4 rounded-lg border"
+    />
+  ) : (
+    currentOgImage && (
+      <img
+        src={currentOgImage}
+        alt="Current OG"
+        className="w-56 mt-4 rounded-lg border"
       />
+    )
+  )}
+</div>
 
       {/* Status */}
 

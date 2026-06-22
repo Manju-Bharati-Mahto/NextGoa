@@ -1,82 +1,123 @@
 import { NextRequest, NextResponse } from "next/server";
 import db from "@/lib/db";
+import { writeFile } from "fs/promises";
+import path from "path";
+import { v4 as uuid } from "uuid";
 
 export async function POST(req: NextRequest) {
+  try {
+    const formData = await req.formData();
 
-  const body = await req.json();
+    const title = formData.get("title") as string;
+    const slug = formData.get("slug") as string;
+    const excerpt = formData.get("excerpt") as string;
+    const content = formData.get("content") as string;
+    const category = formData.get("category") as string;
 
-  await db.execute(
-    `
-    INSERT INTO blogs(
+    const meta_title = formData.get("meta_title") as string;
+    const meta_description = formData.get("meta_description") as string;
+    const meta_keywords = formData.get("meta_keywords") as string;
 
-    title,
+    const canonical_url = formData.get("canonical_url") as string;
 
-    slug,
+    const og_title = formData.get("og_title") as string;
+    const og_description = formData.get("og_description") as string;
 
-    excerpt,
+    const status = formData.get("status") as string;
 
-    content,
+    let featured_image = "";
+    const image = formData.get("featured_image") as File | null;
 
-    featured_image,
+    let og_image = "";
+    const ogImage = formData.get("og_image") as File | null;
 
-    category,
 
-    meta_title,
+    if (image && image.size > 0) {
+      const bytes = await image.arrayBuffer();
+      const buffer = Buffer.from(bytes);
 
-    meta_description,
+      const filename = `${uuid()}-${image.name}`;
 
-    meta_keywords,
+      const uploadPath = path.join(
+        process.cwd(),
+        "public",
+        "uploads",
+        filename
+      );
 
-    canonical_url,
+      await writeFile(uploadPath, buffer);
 
-    og_title,
+      featured_image = `/uploads/${filename}`;
+    }
+    if (ogImage && ogImage.size > 0) {
+      const bytes = await ogImage.arrayBuffer();
+      const buffer = Buffer.from(bytes);
 
-    og_description,
+      const filename = `${uuid()}-${ogImage.name}`;
 
-    og_image,
+      const uploadPath = path.join(
+        process.cwd(),
+        "public",
+        "uploads",
+        filename
+      );
 
-    status
+      await writeFile(uploadPath, buffer);
 
-    )
+      og_image = `/uploads/ogimg/${filename}`;
+    }
 
-    VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+    await db.execute(
+      `
+      INSERT INTO blogs (
+        title,
+        slug,
+        excerpt,
+        content,
+        featured_image,
+        category,
+        meta_title,
+        meta_description,
+        meta_keywords,
+        canonical_url,
+        og_title,
+        og_description,
+        og_image,
+        status
+      )
+      VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+      `,
+      [
+        title,
+        slug,
+        excerpt,
+        content,
+        featured_image,
+        category,
+        meta_title,
+        meta_description,
+        meta_keywords,
+        canonical_url,
+        og_title,
+        og_description,
+        og_image,
+        status,
+      ]
+    );
 
-`,
-    [
-
-      body.title,
-
-      body.slug,
-
-      body.excerpt,
-
-      body.content,
-
-      body.featured_image,
-
-      body.category,
-
-      body.meta_title,
-
-      body.meta_description,
-
-      body.meta_keywords,
-
-      body.canonical_url,
-
-      body.og_title,
-
-      body.og_description,
-
-      body.og_image,
-
-      body.status,
-
-    ]
-  );
-
-  return NextResponse.json({
-    success: true,
-  });
-
+    return NextResponse.json({
+      success: true,
+      message: "Blog created successfully",
+    });
+  } catch (error: any) {
+    return NextResponse.json(
+      {
+        success: false,
+        message: error.message,
+      },
+      {
+        status: 500,
+      }
+    );
+  }
 }

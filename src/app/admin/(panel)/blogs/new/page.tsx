@@ -2,6 +2,10 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import dynamic from "next/dynamic";
+import "react-quill-new/dist/quill.snow.css";
+
+const ReactQuill = dynamic(() => import("react-quill-new"), { ssr: false, });
 
 export default function NewBlogPage() {
 
@@ -9,26 +13,23 @@ export default function NewBlogPage() {
 
   const [loading, setLoading] = useState(false);
 
+  const [imageFile, setImageFile] = useState<File | null>(null);
+
+  const [ogImageFile, setOgImageFile] = useState<File | null>(null);
+
   const [form, setForm] = useState({
     title: "",
     slug: "",
     excerpt: "",
     content: "",
-
-    featured_image: "",
-
     category: "",
-
     meta_title: "",
     meta_description: "",
     meta_keywords: "",
-
     canonical_url: "",
-
     og_title: "",
     og_description: "",
     og_image: "",
-
     status: "draft",
   });
 
@@ -62,61 +63,71 @@ export default function NewBlogPage() {
 
   }
 
-  async function saveBlog(
-    e: React.FormEvent
+  async function saveBlog(e: React.FormEvent) {
+  e.preventDefault();
+
+  if (!form.title.trim()) {
+    alert("Title is required.");
+    return;
+  }
+
+  if (
+    !form.content ||
+    form.content === "<p><br></p>" ||
+    form.content.trim() === ""
   ) {
+    alert("Content is required.");
+    return;
+  }
 
-    e.preventDefault();
+  if (!imageFile) {
+    alert("Please select a featured image.");
+    return;
+  }
 
-    setLoading(true);
+  setLoading(true);
 
-    try {
+  try {
+    const formData = new FormData();
 
-      const res = await fetch(
-        "/api/admin/blogs",
-        {
-          method: "POST",
+    Object.entries(form).forEach(([key, value]) => {
+      formData.append(key, value);
+    });
 
-          headers: {
-            "Content-Type":
-              "application/json",
-          },
-
-          body: JSON.stringify(form),
-        }
-      );
-
-      const result =
-        await res.json();
-
-      if (!result.success) {
-
-        alert(result.message);
-
-        setLoading(false);
-
-        return;
-      }
-
-      alert("Blog Created");
-
-      router.push(
-        "/blogs"
-      );
-
-    } catch (err) {
-
-      console.log(err);
-
-      alert(
-        "Something went wrong."
-      );
-
+    if (imageFile) {
+      formData.append("featured_image", imageFile);
     }
 
-    setLoading(false);
+    if (ogImageFile) {
+      formData.append("og_image", ogImageFile);
+    }
 
+    const res = await fetch("/api/admin/blogs/create", {
+      method: "POST",
+      body: formData,
+    });
+
+    const result = await res.json();
+
+    if (!res.ok || !result.success) {
+      throw new Error(result.message || "Failed to create blog.");
+    }
+
+    alert("Blog created successfully.");
+
+    router.push("/blogs");
+  } catch (error) {
+    console.error(error);
+
+    alert(
+      error instanceof Error
+        ? error.message
+        : "Something went wrong."
+    );
+  } finally {
+    setLoading(false);
   }
+}
 
   return (
 
@@ -190,25 +201,26 @@ export default function NewBlogPage() {
       <div>
 
         <label className="font-medium">
-          Featured Image URL
+          Featured Image
         </label>
 
         <input
-          type="text"
-          name="featured_image"
-          value={form.featured_image}
-          onChange={handleChange}
-          placeholder="/uploads/blog.jpg"
+          type="file"
+          accept="image/*"
           className="w-full border rounded-lg p-3 mt-1"
+          onChange={(e) => {
+            if (e.target.files?.length) {
+              setImageFile(e.target.files[0]);
+            }
+          }}
         />
 
-        {form.featured_image && (
-
+        {imageFile && (
           <img
-            src={form.featured_image}
+            src={URL.createObjectURL(imageFile)}
+            alt="Featured Image Preview"
             className="w-56 rounded-lg mt-4 border"
           />
-
         )}
 
       </div>
@@ -239,13 +251,7 @@ export default function NewBlogPage() {
           Content
         </label>
 
-        <textarea
-          rows={15}
-          name="content"
-          value={form.content}
-          onChange={handleChange}
-          className="w-full border rounded-lg p-3 mt-1"
-        />
+        <ReactQuill theme="snow" value={form.content} onChange={(value) => setForm((prev) => ({ ...prev, content: value, })) } className="mt-2 " />
 
       </div>
 
@@ -396,26 +402,27 @@ export default function NewBlogPage() {
 
         <div className="mb-5">
 
-          <label className="font-medium">
+           <label className="font-medium">
             Open Graph Image
           </label>
 
           <input
-            type="text"
-            name="og_image"
-            value={form.og_image}
-            onChange={handleChange}
+            type="file"
+            accept="image/*"
             className="w-full border rounded-lg p-3 mt-1"
+            onChange={(e) => {
+              if (e.target.files?.length) {
+                setOgImageFile(e.target.files[0]);
+              }
+            }}
           />
 
-          {form.og_image && (
-
+          {ogImageFile && (
             <img
-              src={form.og_image}
+              src={URL.createObjectURL(ogImageFile)}
               alt="OG Preview"
               className="w-56 rounded-lg mt-4 border"
             />
-
           )}
 
         </div>
