@@ -5,7 +5,7 @@ export function middleware(request: NextRequest) {
   const token =
     request.cookies.get("admin_token")?.value;
   // Login page
-  if (pathname === "/login") {
+  if (pathname === "/admin/login") {
     if (token) {
       return NextResponse.redirect(
         new URL("/dashboard", request.url)
@@ -16,11 +16,11 @@ export function middleware(request: NextRequest) {
   }
 
   const protectedRoutes = [
-    "/dashboard",
-    "/leads",
-    "/users",
-    "/roles",
-    "/settings",
+    "/admin/dashboard",
+    "/admin/leads",
+    "/admin/users",
+    "/admin/roles",
+    "/admin/settings",
   ];
 
   const isProtected =
@@ -30,7 +30,7 @@ export function middleware(request: NextRequest) {
 
   if (isProtected && !token) {
     return NextResponse.redirect(
-      new URL("/login", request.url)
+      new URL("/admin/login", request.url)
     );
   }
 
@@ -39,11 +39,11 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/login",
-    "/dashboard/:path*",
-    "/leads/:path*",
-    "/users/:path*",
-    "/roles/:path*",
-    "/settings/:path*",
+    "/admin/login",
+    "/admin/dashboard/:path*",
+    "/admin/leads/:path*",
+    "/admin/users/:path*",
+    "/admin/roles/:path*",
+    "/admin/settings/:path*",
   ],
 };
