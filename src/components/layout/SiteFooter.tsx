@@ -7,6 +7,7 @@ import { siteConfig } from "@/lib/site-config";
  * NAP contact column, and three link columns. The NAP is real, crawlable text -
  * a local-SEO trust signal that must match the JSON-LD and external listings.
  */
+
 type LinkItem = { label: string; href: string };
 const columns: { heading: string; links?: LinkItem[]; subSections?: { heading: string; links: LinkItem[] }[] }[] = [
   {
@@ -208,6 +209,10 @@ export function SiteFooter() {
 
         <div className="pointer-events-none absolute bottom-[-30px] right-[-30px] hidden lg:block z-0">
           <ShellMark />
+        </div>
+
+        <div className="mt-16 border-t border-white/20 pt-8 text-center text-base font-poppins text-white/80">
+          <p>Copyright @ {new Date().getFullYear()}. All Rights Reserved by Parul University</p>
         </div>
       </div>
     </footer>
