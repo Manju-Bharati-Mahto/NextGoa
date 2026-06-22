@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { Icon } from "@iconify/react";
 import { DeanData } from "@/data/programmes/types";
 
 export function DynamicDeanAndFaculty({ data }: { data: DeanData }) {
@@ -60,19 +61,30 @@ export function DynamicDeanAndFaculty({ data }: { data: DeanData }) {
                 {data.bio}
               </p>
               
-              {data.linkedin && (
-                <a 
-                  href={data.linkedin} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="bg-white hover:bg-gray-100 text-[#CF4055] px-6 py-3 rounded-full transition-colors w-max flex items-center gap-3 font-semibold"
-                >
-                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                  Connect on LinkedIn
-                </a>
-              )}
+              <div className="flex flex-wrap gap-4">
+                {data.orcid && (
+                  <a 
+                    href={data.orcid} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="bg-white hover:bg-gray-100 text-[#CF4055] px-6 py-3 rounded-full transition-colors w-max flex items-center gap-3 font-semibold"
+                  >
+                    <img src="/orchid.svg" alt="ORCID" className="w-5 h-5" />
+                    View ORCID Profile
+                  </a>
+                )}
+                {data.linkedin && (
+                  <a 
+                    href={data.linkedin} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="bg-white hover:bg-gray-100 text-[#CF4055] px-6 py-3 rounded-full transition-colors w-max flex items-center gap-3 font-semibold"
+                  >
+                    <Icon icon="mdi:linkedin" className="w-5 h-5 rounded-md" />
+                    Connect on LinkedIn
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -115,13 +127,6 @@ export function DynamicDeanAndFaculty({ data }: { data: DeanData }) {
                       <h4 className="font-bold text-ink text-[20px] sm:text-[22px] font-poppins leading-tight">
                         {facultyItem.name}
                       </h4>
-                      {facultyItem.linkedin && (
-                        <a href={facultyItem.linkedin} target="_blank" rel="noopener noreferrer" className="text-[#0077b5] hover:text-[#005582] transition-colors shrink-0">
-                          <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 sm:w-5 sm:h-5">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                          </svg>
-                        </a>
-                      )}
                     </div>
                     
                     <p className="text-[#0CAADD] font-bold text-[13px] sm:text-[14px] mb-4">
@@ -144,6 +149,21 @@ export function DynamicDeanAndFaculty({ data }: { data: DeanData }) {
                         <p><strong className="text-gray-800">Research Area:</strong> {facultyItem.researchArea}</p>
                       )}
                     </div>
+
+                    {(facultyItem.linkedin || facultyItem.orcid) && (
+                      <div className="flex gap-2 items-center mt-4 pt-3 border-t border-gray-100">
+                        {facultyItem.orcid && (
+                          <a href={facultyItem.orcid} target="_blank" rel="noopener noreferrer" className="flex-shrink-0 hover:opacity-80 transition-opacity" aria-label="ORCID Profile">
+                            <img src="/orchid.svg" alt="ORCID" className="w-6 h-6" />
+                          </a>
+                        )}
+                        {facultyItem.linkedin && (
+                          <a href={facultyItem.linkedin} target="_blank" rel="noopener noreferrer" className="flex-shrink-0 text-[#E73649] hover:text-[#c42d3d] transition-colors" aria-label="LinkedIn Profile">
+                            <Icon icon="mdi:linkedin" className="w-7 h-7 rounded-md" />
+                          </a>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}

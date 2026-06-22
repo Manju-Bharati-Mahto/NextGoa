@@ -25,7 +25,8 @@ export default function NursingProgrammePicker() {
         eligibility: "10+2 in any stream with English (40% Gen/EWS, 35% Reserved) OR 10+2 with English and 40% in vocational ANM.", 
         intake: "40", 
         mode: "Full-time",
-        tuitionFee: "₹1,10,000"
+        tuitionFee: "₹1,10,000",
+        enquiryValue: "gnm"
       },
       { 
         title: "Bachelor of Science\nin Nursing", 
@@ -33,7 +34,8 @@ export default function NursingProgrammePicker() {
         eligibility: "10+2 Science (PCB) with English. Minimum 45% (40% Reserved).", 
         intake: "100", 
         mode: "Full-time",
-        tuitionFee: "₹1,80,000"
+        tuitionFee: "₹1,80,000",
+        enquiryValue: "bsc-nursing"
       },
       { 
         title: "Post Basic Bachelor of Science\nin Nursing (PB-B.Sc.)", 
@@ -41,7 +43,8 @@ export default function NursingProgrammePicker() {
         eligibility: "GNM pass from INC/State Council recognized institution. Registered as Nurse & Midwife.", 
         intake: "40", 
         mode: "Full-time",
-        tuitionFee: "₹1,20,000"
+        tuitionFee: "₹1,20,000",
+        enquiryValue: "pb-bsc-nursing"
       }
     ],
     "Doctoral Programs": [
@@ -51,7 +54,8 @@ export default function NursingProgrammePicker() {
         eligibility: "Master's in a relevant subject with 55% (general) / 50% (SC/ST/OBC-NCL / EWS / differently-abled), or 4-yr Bachelor's with 75%.",
         intake: "30",
         mode: "Full-time",
-        tuitionFee: "₹1,05,000"
+        tuitionFee: "₹1,05,000",
+        enquiryValue: "phd"
       }
     ]
   };
@@ -101,13 +105,13 @@ export default function NursingProgrammePicker() {
               tuitionFee={prog.tuitionFee}
               intake={prog.intake}
               mode={prog.mode}
+              enquiryValue={prog.enquiryValue}
             />
           ))}
         </div>
 
         {/* Important Notes */}
         <div className="mt-12 text-center text-ink/80 text-[14px] sm:text-[15px] max-w-2xl mx-auto">
-          <p className="mb-2"><strong>Note:</strong> Apart from this candidate shall have appeared NEET examination in the concurrent year.</p>
           <p>Admission will be granted based on the entrance examination conducted by the University.</p>
         </div>
 

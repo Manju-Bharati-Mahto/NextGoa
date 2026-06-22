@@ -74,6 +74,7 @@ export default function PhdProgrammePicker() {
               level="Master's"
               isViewDetails={true}
               modalEligibility={prog.modalEligibility}
+              enquiryValue="phd"
               note="A relaxation of 5% of marks, from 55% to 50%, or an equivalent relaxation of grade, may be allowed for those belonging to SC/ST/OBC (non-creamy layer)/ differently-abled, economically weaker section (EWS) and other categories of candidates as per the decision of the Commission from time to time."
             />
           ))}

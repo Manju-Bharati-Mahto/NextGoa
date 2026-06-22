@@ -89,7 +89,8 @@ export const pharmacyData: ProgrammeData = {
   },
   dean: {
     name: "Dr. Lalit Lata Jha",
-    linkedin: "https://www.linkedin.com/company/parul-university-goa/",
+    linkedin: "https://www.linkedin.com/in/dr-lalit-lata-jha-2494841a",
+    orcid: "https://orcid.org/0000-0003-0919-3366",
     role: "Dean, Faculty of Pharmacy",
     bio: "Dr. Lalit Lata Jha is a renowned academician and researcher with extensive experience in pharmaceutical sciences.",
     image: "/faculties/Pharmacy/Dean.png",
@@ -102,7 +103,9 @@ export const pharmacyData: ProgrammeData = {
         department: "Pharmacy",
         experience: "16 Years 8",
         researchArea: "Quality Assurance, Analytical Techniques",
-        image: "/faculties/Dr.-Prabhat-Dessai.jpg"
+        image: "/faculties/Dr.-Prabhat-Dessai.jpg",
+        linkedin: "http://linkedin.com/in/dr-prabhat-dessai-ba3b08365",
+        orcid: "https://orcid.org/0000-0003-0664-0431"
     },
     {
         role: "Assistant Professor",
@@ -112,7 +115,9 @@ export const pharmacyData: ProgrammeData = {
         department: "Pharmacy",
         experience: "6 Years 9",
         researchArea: "Packaging Technology, Novel drug delivery systems",
-        image: "/faculties/Dr.-Sanjeeta-Dessai.jpg"
+        image: "/faculties/Dr.-Sanjeeta-Dessai.jpg",
+        linkedin: "https://www.linkedin.com/in/dr-sanjeeta-rane-135361152/",
+        orcid: "https://orcid.org/0009-0004-6505-4840"
     },
     {
         role: "Assistant Professor",
@@ -122,7 +127,8 @@ export const pharmacyData: ProgrammeData = {
         department: "Pharmacy",
         experience: "8 Years",
         researchArea: "",
-        image: "/faculties/Ms.-Henncia-Gomes.jpg"
+        image: "/faculties/Ms.-Henncia-Gomes.jpg",
+        linkedin: "https://www.linkedin.com/in/hencia-gomes-b5084b178"
     },
     {
         role: "Assistant Professor",
@@ -132,7 +138,8 @@ export const pharmacyData: ProgrammeData = {
         department: "Pharmacy",
         experience: "6 Years 10",
         researchArea: "",
-        image: "/faculties/Ms.-Anisha-Naik.jpg"
+        image: "/faculties/Ms.-Anisha-Naik.jpg",
+        linkedin: "https://in.linkedin.com/in/anisha-naik-16355b147"
     },
     {
         role: "Assistant Professor",
@@ -142,7 +149,9 @@ export const pharmacyData: ProgrammeData = {
         department: "Pharmacy",
         experience: "2 Years 11",
         researchArea: "Neuropharmacology / Neurodegenerative Disorders",
-        image: "/faculties/Mr.-Damodar-Goundkar.jpg"
+        image: "/faculties/Mr.-Damodar-Goundkar.jpg",
+        linkedin: "http://www.linkedin.com/in/mr-damodar-goundar-b68a4619a",
+        orcid: "https://orcid.org/0000-0002-3278-989X"
     },
     {
         role: "Assistant Professor",
@@ -152,7 +161,8 @@ export const pharmacyData: ProgrammeData = {
         department: "Pharmacy",
         experience: "Fresher",
         researchArea: "Novel Drug Delivery Systems",
-        image: "/faculties/Ms.-Shradha-Umesh-Naik.jpg"
+        image: "/faculties/Ms.-Shradha-Umesh-Naik.jpg",
+        linkedin: "https://www.linkedin.com/in/shradha-naik-aa788028a/"
     }
 ]},
   faqs: [

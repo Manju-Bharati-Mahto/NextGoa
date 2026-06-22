@@ -96,6 +96,7 @@ export const managementData: ProgrammeData = {
   dean: {
     name: "Dr. Kshitiz Sharma",
     linkedin: "https://in.linkedin.com/in/dr-kshitiz-sharma-blr",
+    orcid: "https://orcid.org/0000-0002-1145-8979",
     role: "Dean - Faculty of Management Studies",
     bio: "A seasoned academic and management strategist with extensive experience leading business schools and consulting for global enterprises across analytics, finance and operations.",
     image: "/faculties/Management/Dean.jpg",
@@ -108,7 +109,9 @@ export const managementData: ProgrammeData = {
         department: "Management",
         experience: "14 Years 5 Months",
         researchArea: "",
-        image: "/faculties/Dr.-Rinki-Mishra.jpg"
+        image: "/faculties/Dr.-Rinki-Mishra.jpg",
+        linkedin: "https://www.linkedin.com/in/dr-rinki-mishra-93533810a",
+        orcid: "https://orcid.org/0000-0001-8914-207X"
     },
     {
         role: "Associate Professor",
@@ -128,7 +131,9 @@ export const managementData: ProgrammeData = {
         department: "Management",
         experience: "8 Years 11 Months",
         researchArea: "",
-        image: "/faculties/Dr.-Rohit-Mishra.jpg"
+        image: "/faculties/Dr.-Rohit-Mishra.jpg",
+        linkedin: "https://www.linkedin.com/in/dr-rohit-mishra-631959128",
+        orcid: "https://orcid.org/0009-0000-4847-860X"
     },
     {
         role: "Assistant Professor",
@@ -138,7 +143,8 @@ export const managementData: ProgrammeData = {
         department: "Management",
         experience: "14 Years 1 Months",
         researchArea: "",
-        image: "/faculties/Dr.-Poornima-BG.jpg"
+        image: "/faculties/Dr.-Poornima-BG.jpg",
+        linkedin: "https://www.linkedin.com/in/poornima-bg-3a51354a/"
     },
     {
         role: "Assistant Professor",
@@ -148,7 +154,9 @@ export const managementData: ProgrammeData = {
         department: "Management",
         experience: "4Years 5 Month",
         researchArea: "",
-        image: "/faculties/Dr.-Amar-Jamnekar.jpg"
+        image: "/faculties/Dr.-Amar-Jamnekar.jpg",
+        linkedin: "https://www.linkedin.com/in/dr-amar-jamnekar-59112545",
+        orcid: "https://orcid.org/0009-0002-8907-0242"
     },
     {
         role: "Assistant Professor",
@@ -158,7 +166,9 @@ export const managementData: ProgrammeData = {
         department: "Management",
         experience: "3 Years 6  Months",
         researchArea: "",
-        image: "/faculties/Mr.-Satyajitsinh-Gohil.jpg"
+        image: "/faculties/Mr.-Satyajitsinh-Gohil.jpg",
+        linkedin: "https://www.linkedin.com/in/prof-satyajitsinh-gohil-321500138",
+        orcid: "https://orcid.org/0000-0001-6487-3511"
     }
 ]},
   faqs: [

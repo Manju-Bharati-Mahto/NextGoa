@@ -65,7 +65,7 @@
   --font-sans: var(--font-gotham), ui-sans-serif, system-ui, sans-serif;
   
   /* Poppins loaded via next/font/google */
-  --font-poppins: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-poppins: var(--font-poppins-base), ui-sans-serif, system-ui, sans-serif;
 
   /* Custom responsive screen breakpoints */
   --breakpoint-xs: 375px;

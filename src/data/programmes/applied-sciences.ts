@@ -89,6 +89,7 @@ export const appliedSciencesData: ProgrammeData = {
   dean: {
     name: "Dr. Anupam Kumar",
     linkedin: "https://www.linkedin.com/in/dr-anupam-kumar/",
+    orcid: "https://orcid.org/0000-0002-6608-3860",
     role: "Dean, Faculty of Applied and Healthcare Sciences",
     bio: "At the faculty of Applied and Healthcare Sciences we are dedicated to advancing knowledge, fostering innovation, and improving the environment, health and well-being of our society through cutting-edge research, education, and practice.",
     image: "/faculties/Applied and Healthcare Sciences/Dean.jpg",
@@ -100,7 +101,8 @@ export const appliedSciencesData: ProgrammeData = {
     faculty: "Faculty of Applied and Health Sciences",
     department: "Applied and Health Sciences",
     experience: "2 Years",
-    image: "/faculties/Dr.-Manasi-Pawaskar.jpg"
+    image: "/faculties/Dr.-Manasi-Pawaskar.jpg",
+    linkedin: "https://www.linkedin.com/in/dr-manasi-pawaskar-17a53b92/"
   },
   {
     role: "Assistant Professor",
@@ -109,7 +111,8 @@ export const appliedSciencesData: ProgrammeData = {
     faculty: "Faculty of Applied and Health Sciences",
     department: "Applied and Health Sciences",
     experience: "1 Years",
-    image: "/faculties/Dr.-Abhinaba-Ghosh.jpg"
+    image: "/faculties/Dr.-Abhinaba-Ghosh.jpg",
+    linkedin: "https://uk.linkedin.com/in/abhinabaghosh"
   },
   {
     role: "Assistant Professor",
@@ -117,7 +120,8 @@ export const appliedSciencesData: ProgrammeData = {
     degree: "Ph.D.",
     faculty: "Faculty of Applied and Health Sciences",
     department: "Applied and Health Sciences",
-    image: "/faculties/Dr.-Monalisa-Chowdhury.jpg"
+    image: "/faculties/Dr.-Monalisa-Chowdhury.jpg",
+    linkedin: "https://www.linkedin.com/in/monalisa-chowdhury-bb1806179/"
   },
   {
     role: "Assistant Professor",
@@ -126,7 +130,9 @@ export const appliedSciencesData: ProgrammeData = {
     faculty: "Faculty of Applied and Health Sciences",
     department: "Applied and Health Sciences",
     experience: "7 Years",
-    image: "/faculties/Ms.-Dhruvi-Patel.jpg"
+    image: "/faculties/Ms.-Dhruvi-Patel.jpg",
+    linkedin: "http://www.linkedin.com/in/dhruvi-patel-582447126",
+    orcid: "https://orcid.org/0000-0002-6824-295X"
   },
   {
     role: "Assistant Professor",

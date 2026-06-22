@@ -26,7 +26,8 @@ export default function AppliedSciencesProgrammePicker() {
         intake: "60", 
         mode: "Full-time",
         tuitionFee: "₹85,000",
-        specialisations: []
+        specialisations: [],
+        enquiryValue: spec === "Biotechnology" ? "bsc-biotech" : "bsc-microbio"
       })),
       ...["Biotechnology", "Microbiology"].map(spec => ({
         title: `Bachelor of Science - Honors (B.Sc. Hons.) (NEP 2020)\n${spec}`, 
@@ -35,7 +36,8 @@ export default function AppliedSciencesProgrammePicker() {
         intake: "60", 
         mode: "Full-time",
         tuitionFee: "₹85,000",
-        specialisations: []
+        specialisations: [],
+        enquiryValue: spec === "Biotechnology" ? "bsc-hons-biotech" : "bsc-hons-microbio"
       }))
     ],
     "Master's": [
@@ -46,7 +48,8 @@ export default function AppliedSciencesProgrammePicker() {
         intake: "30", 
         mode: "Full-time",
         tuitionFee: "₹1,10,000",
-        specialisations: []
+        specialisations: [],
+        enquiryValue: spec === "Biotechnology" ? "msc-biotech" : "msc-microbio"
       }))
     ]
   };
@@ -99,6 +102,7 @@ export default function AppliedSciencesProgrammePicker() {
               tuitionFee={prog.tuitionFee}
               intake={prog.intake}
               mode={prog.mode}
+              enquiryValue={prog.enquiryValue}
             />
           ))}
         </div>

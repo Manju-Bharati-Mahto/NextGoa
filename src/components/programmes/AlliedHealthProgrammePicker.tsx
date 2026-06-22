@@ -14,7 +14,8 @@ export default function AlliedHealthProgrammePicker() {
         eligibility: "Candidate shall have passed 12th Examination in Science stream with Physics, Chemistry & Biology subjects from a recognized board.", 
         intake: "60", 
         mode: "Full-time",
-        tuitionFee: "₹85,000"
+        tuitionFee: "₹85,000",
+        enquiryValue: "baott"
       },
       { 
         title: "Bachelor of Medical Laboratory Science (BMLS)", 
@@ -22,7 +23,8 @@ export default function AlliedHealthProgrammePicker() {
         eligibility: "Candidate shall have passed 12th Examination in Science stream with Physics, Chemistry & Biology subjects from a recognized board.", 
         intake: "60", 
         mode: "Full-time",
-        tuitionFee: "₹85,000"
+        tuitionFee: "₹85,000",
+        enquiryValue: "bmls"
       }
     ],
     "Doctoral Programs": [
@@ -32,7 +34,8 @@ export default function AlliedHealthProgrammePicker() {
         eligibility: "Master's in a relevant subject with 55% (general) / 50% (SC/ST/OBC-NCL / EWS / differently-abled), or 4-yr Bachelor's with 75%.",
         intake: "30",
         mode: "Full-time",
-        tuitionFee: "₹1,05,000"
+        tuitionFee: "₹1,05,000",
+        enquiryValue: "phd"
       },
       {
         title: "Doctor of Philosophy - Microbiology",
@@ -40,7 +43,8 @@ export default function AlliedHealthProgrammePicker() {
         eligibility: "Master's in a relevant subject with 55% (general) / 50% (SC/ST/OBC-NCL / EWS / differently-abled), or 4-yr Bachelor's with 75%.",
         intake: "30",
         mode: "Full-time",
-        tuitionFee: "₹1,05,000"
+        tuitionFee: "₹1,05,000",
+        enquiryValue: "phd"
       }
     ]
   };
@@ -89,6 +93,7 @@ export default function AlliedHealthProgrammePicker() {
               tuitionFee={prog.tuitionFee}
               intake={prog.intake}
               mode={prog.mode}
+              enquiryValue={prog.enquiryValue}
             />
           ))}
         </div>

@@ -94,7 +94,9 @@ export const nursingData: ProgrammeData = {
         department: "Nursing",
         experience: "14 Years",
         researchArea: "",
-        image: "/faculties/Ms.-Betty-Oommen-Koshy.jpg"
+        image: "/faculties/Ms.-Betty-Oommen-Koshy.jpg",
+        linkedin: "https://www.linkedin.com/in/betty-koshy-79420216a",
+        orcid: "http://orcid.org/0000-0001-7178-7902"
     },
     {
         role: "Assistant Professor",

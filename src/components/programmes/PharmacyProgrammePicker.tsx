@@ -14,7 +14,8 @@ export default function PharmacyProgrammePicker() {
         eligibility: "10+2 Science (PCM or PCB) from a recognized board.", 
         intake: "60", 
         mode: "Full-time",
-        tuitionFee: "₹1,35,000"
+        tuitionFee: "₹1,35,000",
+        enquiryValue: "bpharm"
       },
       { 
         title: "B.Pharm. - Lateral Entry", 
@@ -22,7 +23,8 @@ export default function PharmacyProgrammePicker() {
         eligibility: "Diploma in Pharmacy from a recognized university.", 
         intake: "10", 
         mode: "Full-time",
-        tuitionFee: "₹1,35,000"
+        tuitionFee: "₹1,35,000",
+        enquiryValue: "bpharm-lateral"
       }
     ],
     "Doctoral Programs": [
@@ -32,7 +34,8 @@ export default function PharmacyProgrammePicker() {
         eligibility: "Master's in a relevant subject with 55% (general) / 50% (SC/ST/OBC-NCL / EWS / differently-abled), or 4-yr Bachelor's with 75%.",
         intake: "30",
         mode: "Full-time",
-        tuitionFee: "₹1,05,000"
+        tuitionFee: "₹1,05,000",
+        enquiryValue: "phd"
       },
       {
         title: "Doctor of Philosophy - Pharmaceutical Technology",
@@ -40,7 +43,8 @@ export default function PharmacyProgrammePicker() {
         eligibility: "Master's in a relevant subject with 55% (general) / 50% (SC/ST/OBC-NCL / EWS / differently-abled), or 4-yr Bachelor's with 75%.",
         intake: "30",
         mode: "Full-time",
-        tuitionFee: "₹1,05,000"
+        tuitionFee: "₹1,05,000",
+        enquiryValue: "phd"
       },
       {
         title: "Doctor of Philosophy - Pharmaceutical Quality Assurance",
@@ -48,7 +52,8 @@ export default function PharmacyProgrammePicker() {
         eligibility: "Master's in a relevant subject with 55% (general) / 50% (SC/ST/OBC-NCL / EWS / differently-abled), or 4-yr Bachelor's with 75%.",
         intake: "30",
         mode: "Full-time",
-        tuitionFee: "₹1,05,000"
+        tuitionFee: "₹1,05,000",
+        enquiryValue: "phd"
       },
       {
         title: "Doctor of Philosophy - Pharmacology",
@@ -56,7 +61,8 @@ export default function PharmacyProgrammePicker() {
         eligibility: "Master's in a relevant subject with 55% (general) / 50% (SC/ST/OBC-NCL / EWS / differently-abled), or 4-yr Bachelor's with 75%.",
         intake: "30",
         mode: "Full-time",
-        tuitionFee: "₹1,05,000"
+        tuitionFee: "₹1,05,000",
+        enquiryValue: "phd"
       },
       {
         title: "Doctor of Philosophy - Pharmacognosy",
@@ -64,7 +70,8 @@ export default function PharmacyProgrammePicker() {
         eligibility: "Master's in a relevant subject with 55% (general) / 50% (SC/ST/OBC-NCL / EWS / differently-abled), or 4-yr Bachelor's with 75%.",
         intake: "30",
         mode: "Full-time",
-        tuitionFee: "₹1,05,000"
+        tuitionFee: "₹1,05,000",
+        enquiryValue: "phd"
       },
       {
         title: "Doctor of Philosophy - Pharmaceutical Chemistry",
@@ -72,7 +79,8 @@ export default function PharmacyProgrammePicker() {
         eligibility: "Master's in a relevant subject with 55% (general) / 50% (SC/ST/OBC-NCL / EWS / differently-abled), or 4-yr Bachelor's with 75%.",
         intake: "30",
         mode: "Full-time",
-        tuitionFee: "₹1,05,000"
+        tuitionFee: "₹1,05,000",
+        enquiryValue: "phd"
       }
     ]
   };
@@ -121,6 +129,7 @@ export default function PharmacyProgrammePicker() {
               tuitionFee={prog.tuitionFee}
               intake={prog.intake}
               mode={prog.mode}
+              enquiryValue={prog.enquiryValue}
             />
           ))}
         </div>

@@ -84,6 +84,7 @@ export interface FacultyMember {
   researchArea?: string;
   image?: string;
   linkedin?: string;
+  orcid?: string;
 }
 
 export interface DeanData {
@@ -92,6 +93,7 @@ export interface DeanData {
   bio: string;
   image?: string;
   linkedin?: string;
+  orcid?: string;
   faculty: FacultyMember[];
 }
 

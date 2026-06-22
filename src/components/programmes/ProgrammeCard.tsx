@@ -17,9 +17,10 @@ type ProgrammeCardProps = {
   isViewDetails?: boolean;
   note?: string;
   modalEligibility?: string;
+  enquiryValue?: string;
 };
 
-export default function ProgrammeCard({ title, duration, eligibility, intake, mode, isNew, level, tuitionFee, isViewDetails, note, modalEligibility }: ProgrammeCardProps) {
+export default function ProgrammeCard({ title, duration, eligibility, intake, mode, isNew, level, tuitionFee, isViewDetails, note, modalEligibility, enquiryValue }: ProgrammeCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
 
@@ -110,6 +111,7 @@ export default function ProgrammeCard({ title, duration, eligibility, intake, mo
           ) : (
             <button 
               data-enquiry-trigger="true"
+              data-enquiry-program={enquiryValue}
               className="text-white rounded-full px-6 py-2.5 font-bold text-[14px] sm:text-[15px] transition-transform hover:scale-105 shadow-sm"
               style={{ backgroundColor: themeColor }}
             >
