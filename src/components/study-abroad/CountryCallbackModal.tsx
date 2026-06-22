@@ -62,29 +62,80 @@ export default function CountryCallbackModal({ isOpen, onClose, country }: Count
     setTouched(prev => ({ ...prev, [id]: true }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const requiredFields = ['name', 'mobile', 'email'];
-    const hasErrors = requiredFields.some(field => getError(field, formData[field as keyof typeof formData] || ""));
+    const requiredFields = ["name", "mobile", "email"];
+
+    const hasErrors = requiredFields.some((field) =>
+      getError(field, formData[field as keyof typeof formData] || "")
+    );
 
     if (hasErrors) {
       const allTouched = requiredFields.reduce((acc, field) => {
         acc[field] = true;
         return acc;
       }, {} as Record<string, boolean>);
-      setTouched(prev => ({ ...prev, ...allTouched }));
+
+      setTouched((prev) => ({
+        ...prev,
+        ...allTouched,
+      }));
+
       return;
     }
 
-    setSubmitState('submitting');
-    setTimeout(() => {
-      setSubmitState('success');
+    try {
+      setSubmitState("submitting");
+
+      const response = await fetch("/api/form-submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          formName: "Study In Abroad",
+
+          sendToCRM: true,
+
+          sendToGoogleSheet: false,
+
+          data: {
+            fullName: formData.name,
+            mobile: formData.mobile,
+            email: formData.email,
+            interestCountry: formData.interestCountry,
+          },
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!result.success) {
+        throw new Error(result.message);
+      }
+
+      setSubmitState("success");
+
       setTimeout(() => {
         onClose();
-        setSubmitState('idle');
+
+        setSubmitState("idle");
+
+        setFormData({
+          name: "",
+          mobile: "",
+          email: "",
+          interestCountry: country,
+        });
+
       }, 3000);
-    }, 1200);
+
+    } catch (error: any) {
+      console.error(error);
+      alert(error.message || "Something went wrong");
+      setSubmitState("idle");
+    }
   };
 
   const renderField = ({ id, label, type = "text", required = false }: any) => {

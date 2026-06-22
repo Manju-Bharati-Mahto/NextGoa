@@ -159,34 +159,83 @@ export function TalkToUs() {
     setTouched(prev => ({ ...prev, [id]: true }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const requiredFields = ['name', 'mobile', 'email', 'programme', 'city'];
-    const hasErrors = requiredFields.some(field => getError(field, formData[field as keyof typeof formData] || ""));
+
+    const requiredFields = [
+      "name",
+      "mobile",
+      "email",
+      "programme",
+      "city",
+    ];
+
+    const hasErrors = requiredFields.some((field) =>
+      getError(field, formData[field as keyof typeof formData] || "")
+    );
 
     if (hasErrors) {
       const allTouched = requiredFields.reduce((acc, field) => {
         acc[field] = true;
         return acc;
       }, {} as Record<string, boolean>);
-      setTouched(prev => ({ ...prev, ...allTouched }));
+
+      setTouched((prev) => ({ ...prev, ...allTouched }));
       return;
     }
 
-    setSubmitState('submitting');
-    setTimeout(() => {
-      setSubmitState('success');
-      
-      // Trigger brochure download
-      const link = document.createElement('a');
-      link.href = '/documents/Prospectus_AY_2026_27.pdf';
-      link.download = 'Prospectus A.Y. 2026-27.pdf';
+    try {
+      setSubmitState("submitting");
+
+      const response = await fetch("/api/form-submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          formName: "Talk To Us",
+          sendToCRM: true,
+          sendToGoogleSheet: false,
+          data: formData,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!result.success) {
+        throw new Error("Submission failed");
+      }
+
+      setSubmitState("success");
+
+      // Download brochure
+      const link = document.createElement("a");
+      link.href = "/documents/Prospectus_AY_2026_27.pdf";
+      link.download = "Prospectus A.Y. 2026-27.pdf";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
 
-      setTimeout(() => setSubmitState('idle'), 4000);
-    }, 1200);
+      // Reset form
+      setFormData({
+        name: "",
+        mobile: "",
+        email: "",
+        programme: "",
+        qualification: "",
+        city: "",
+        help: "",
+      });
+
+      setProgrammeSearch("");
+      setTouched({});
+
+      setTimeout(() => setSubmitState("idle"), 4000);
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong. Please try again.");
+      setSubmitState("idle");
+    }
   };
 
   const renderField = ({ id, label, type = "text", required = false, isSelect = false, options = [], placeholder = "" }: any) => {

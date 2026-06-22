@@ -114,20 +114,78 @@ export function CampusVisitModal() {
     setStep(2);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const step2Fields = ['name', 'mobile', 'email', 'city'];
-    const hasErrors = step2Fields.some(f => getError(f, visitData[f as keyof typeof visitData]));
+
+    const step2Fields = [
+      "name",
+      "mobile",
+      "email",
+      "city",
+    ];
+
+    const hasErrors = step2Fields.some((f) =>
+      getError(f, visitData[f as keyof typeof visitData])
+    );
+
     if (hasErrors) {
-      const allTouched = step2Fields.reduce((acc, f) => { acc[f] = true; return acc; }, {} as Record<string, boolean>);
-      setTouched(prev => ({ ...prev, ...allTouched }));
+      const allTouched = step2Fields.reduce((acc, f) => {
+        acc[f] = true;
+        return acc;
+      }, {} as Record<string, boolean>);
+
+      setTouched((prev) => ({
+        ...prev,
+        ...allTouched,
+      }));
+
       return;
     }
-    setSubmitState('submitting');
-    setTimeout(() => {
-      setSubmitState('success');
-      setTimeout(() => close(), 3000);
-    }, 1200);
+
+    try {
+      setSubmitState("submitting");
+
+      console.log("Submitting Data:", visitData);
+
+      const res = await fetch("/api/form-submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          formName: "Campus Visit",
+          sendToCRM: false,
+          sendToGoogleSheet: false,
+          data: visitData,
+        }),
+      });
+
+      // Read response as text first
+      const text = await res.text();
+
+      let result;
+
+      try {
+        result = JSON.parse(text);
+      } catch {
+        throw new Error("Invalid API Response: " + text);
+      }
+
+      if (!res.ok || !result.success) {
+        throw new Error(result.message || "Submission failed");
+      }
+
+      setSubmitState("success");
+
+      setTimeout(() => {
+        close();
+      }, 3000);
+
+    } catch (err: any) {
+      console.error("Campus Visit Error:", err);
+      alert(err.message);
+      setSubmitState("idle");
+    }
   };
 
   const renderInput = (id: string, label: string, type = "text", required = true) => {

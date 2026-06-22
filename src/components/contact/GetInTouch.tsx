@@ -16,12 +16,44 @@ export default function GetInTouch() {
     setForm((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+
     if (!isComplete) return;
-    setShowPopup(true);
-    setForm({ fullName: "", phone: "", email: "", help: "" });
-  }
+
+    try {
+      const response = await fetch("/api/form-submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          formName: "Contact Form",
+          sendToCRM: true,
+          sendToGoogleSheet: false,
+          data: form,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setShowPopup(true);
+
+        setForm({
+          fullName: "",
+          phone: "",
+          email: "",
+          help: "",
+        });
+      } else {
+        alert(data.message || "Failed to submit form");
+      }
+    } catch (error) {
+      console.error("Submit Error:", error);
+      alert("Something went wrong");
+    }
+  };
 
   return (
     <section className="w-full bg-[#F8F9FA] px-6 font-poppins py-12 sm:py-16">

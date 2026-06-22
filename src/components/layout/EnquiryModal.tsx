@@ -300,50 +300,83 @@ export function EnquiryModal() {
     setTouched(prev => ({ ...prev, [id]: true }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const requiredFields = ['name', 'mobile', 'email', 'programme', 'city'];
+    const requiredFields = [
+      "name",
+      "mobile",
+      "email",
+      "programme",
+      "city",
+    ];
 
-    // Check if there are any errors
-    const hasErrors = requiredFields.some(field => getError(field, formData[field as keyof typeof formData] || ""));
+    const hasErrors = requiredFields.some((field) =>
+      getError(field, formData[field as keyof typeof formData] || "")
+    );
 
     if (hasErrors) {
-      // Mark all required fields as touched to display validation messages
       const allTouched = requiredFields.reduce((acc, field) => {
         acc[field] = true;
         return acc;
       }, {} as Record<string, boolean>);
 
-      setTouched(prev => ({ ...prev, ...allTouched }));
+      setTouched((prev) => ({
+        ...prev,
+        ...allTouched,
+      }));
+
       return;
     }
 
-    // Simulate API call and success animation
-    setSubmitState('submitting');
-    setTimeout(() => {
-      setSubmitState('success');
-      
-      // Trigger brochure download
-      const link = document.createElement('a');
-      link.href = '/documents/Prospectus_AY_2026_27.pdf';
-      link.download = 'Prospectus A.Y. 2026-27.pdf';
+    try {
+
+      setSubmitState("submitting");
+
+      const res = await fetch("/api/form-submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          formName: "Enquiry Modal",
+          sendToCRM: true,
+          sendToGoogleSheet: false,
+          data: formData,
+        }),
+      });
+
+      const result = await res.json();
+
+      console.log(result);
+
+      if (!result.success) {
+        throw new Error(result.message);
+      }
+
+      setSubmitState("success");
+
+      const link = document.createElement("a");
+      link.href =
+        "/documents/Prospectus_AY_2026_27.pdf";
+      link.download =
+        "Prospectus A.Y. 2026-27.pdf";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
 
-      // Redirect to admissions portal after 5 seconds
-      let timeLeft = 5;
-      setCountdown(timeLeft);
-      const interval = setInterval(() => {
-        timeLeft -= 1;
-        setCountdown(timeLeft);
-        if (timeLeft <= 0) {
-          clearInterval(interval);
-          window.location.href = "https://admissions.paruluniversity.ac.in/goa";
-        }
-      }, 1000);
-    }, 1200);
+      setTimeout(() => {
+        close();
+      }, 3000);
+
+    } catch (err) {
+
+      console.error(err);
+
+      alert("Something went wrong.");
+
+      setSubmitState("idle");
+    }
   };
 
   const renderField = ({ id, label, type = "text", required = false, isSelect = false, options = [], placeholder = "" }: any) => {

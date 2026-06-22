@@ -76,29 +76,59 @@ export function DownloadBrochureModal() {
     setTouched(prev => ({ ...prev, [id]: true }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const requiredFields = ['name', 'phone', 'email'];
-    const hasErrors = requiredFields.some(field => getError(field, formData[field as keyof typeof formData] || ""));
+    const requiredFields = ["name", "phone", "email"];
+
+    const hasErrors = requiredFields.some((field) =>
+      getError(field, formData[field as keyof typeof formData] || "")
+    );
 
     if (hasErrors) {
       const allTouched = requiredFields.reduce((acc, field) => {
         acc[field] = true;
         return acc;
       }, {} as Record<string, boolean>);
-      setTouched(prev => ({ ...prev, ...allTouched }));
+
+      setTouched((prev) => ({ ...prev, ...allTouched }));
       return;
     }
 
-    setSubmitState('submitting');
-    
-    setTimeout(() => {
-      setSubmitState('success');
-      
-      const link = document.createElement('a');
-      link.href = pdfUrl;
-      link.download = pdfFilename;
+    try {
+      setSubmitState("submitting");
+
+      const response = await fetch("/api/form-submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          formName: "Download Brochure",
+          sendToCRM: true,
+          sendToGoogleSheet: false,
+          data: {
+            name: formData.name,
+            email: formData.email,
+            mobile: formData.phone,
+          },
+        }),
+      });
+
+      const result = await response.json();
+
+      console.log(result);
+
+      if (!result.success) {
+        throw new Error(result.message || "Submission failed");
+      }
+
+      setSubmitState("success");
+
+      // Download brochure
+      const link = document.createElement("a");
+      link.href = "/documents/Prospectus_AY_2026_27.pdf";
+      link.download = "Prospectus A.Y. 2026-27.pdf";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -106,7 +136,12 @@ export function DownloadBrochureModal() {
       setTimeout(() => {
         close();
       }, 3000);
-    }, 1200);
+
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong.");
+      setSubmitState("idle");
+    }
   };
 
   const renderField = ({ id, label, type = "text", required = false }: any) => {

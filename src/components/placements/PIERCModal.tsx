@@ -44,11 +44,50 @@ export default function PIERCModal({ onClose }: Props) {
   const step1Complete = form.fullName && form.email && form.phone && form.college;
   const step2Complete = form.startupName && form.stage && form.domain && form.problem;
 
-  function handleSubmit(e: React.FormEvent) {
+  const handleSubmit = async ( e: React.FormEvent ) => {
     e.preventDefault();
-    window.open("https://www.pierc.org/", "_blank");
-    onClose();
-  }
+    try {
+
+      const response = await fetch(
+        "/api/form-submit",
+        {
+
+          method: "POST",
+
+          headers: {
+            "Content-Type": "application/json",
+          },
+
+          body: JSON.stringify({
+
+            formName: "PIERC Registration",
+            sendToCRM: false,
+            sendToGoogleSheet: true,
+            data: form,
+
+          }),
+
+        }
+      );
+
+      const result = await response.json();
+
+      if (!result.success) {
+
+        alert(result.message);
+
+        return;
+
+      }
+
+      window.open("https://www.pierc.org/","_blank");
+      onClose();
+
+    } catch (err) {
+      console.log(err);
+      alert("Something went wrong");
+    }
+  };
 
   return (
     <div data-lenis-prevent="true" className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4"

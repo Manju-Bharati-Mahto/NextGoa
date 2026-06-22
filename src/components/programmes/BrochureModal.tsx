@@ -61,40 +61,87 @@ export default function BrochureModal({ isOpen, onClose, programmeTitle }: Broch
 
   const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
     const { id } = e.target;
-    setTouched(prev => ({ ...prev, [id]: true }));
-  };
+      setTouched(prev => ({ ...prev, [id]: true }));
+    };
 
-  const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const requiredFields = ['name', 'mobile', 'email'];
-    const hasErrors = requiredFields.some(field => getError(field, formData[field as keyof typeof formData] || ""));
+    const requiredFields = ["name", "mobile", "email"];
+
+    const hasErrors = requiredFields.some((field) =>
+      getError(field, formData[field as keyof typeof formData] || "")
+    );
 
     if (hasErrors) {
       const allTouched = requiredFields.reduce((acc, field) => {
         acc[field] = true;
         return acc;
       }, {} as Record<string, boolean>);
-      setTouched(prev => ({ ...prev, ...allTouched }));
+
+      setTouched((prev) => ({ ...prev, ...allTouched }));
       return;
     }
 
-    setSubmitState('submitting');
-    setTimeout(() => {
-      setSubmitState('success');
-      
-      const link = document.createElement('a');
-      link.href = '/documents/Prospectus_AY_2026_27.pdf';
-      link.download = 'Prospectus A.Y. 2026-27.pdf';
+    try {
+      setSubmitState("submitting");
+
+      const response = await fetch("/api/form-submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          formName: "Programme Brochure",
+          sendToCRM: true,
+          sendToGoogleSheet: false,
+          data: {
+            name: formData.name,
+            mobile: formData.mobile,
+            email: formData.email,
+            programme: formData.programme,
+          },
+        }),
+      });
+
+      const result = await response.json();
+
+      console.log("API RESPONSE:", result);
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Submission Failed");
+      }
+
+      setSubmitState("success");
+
+      // Download PDF
+      const link = document.createElement("a");
+      link.href = "/documents/Prospectus_AY_2026_27.pdf";
+      link.download = "Prospectus A.Y. 2026-27.pdf";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
 
+      // Reset Form
+      setFormData({
+        name: "",
+        mobile: "",
+        email: "",
+        programme: programmeTitle,
+      });
+
+      setTouched({});
+
       setTimeout(() => {
         onClose();
-        setSubmitState('idle');
-      }, 3000);
-    }, 1200);
+        setSubmitState("idle");
+      }, 2500);
+
+    } catch (err) {
+      console.error("SUBMIT ERROR:", err);
+      alert("Something went wrong. Please try again.");
+      setSubmitState("idle");
+    }
   };
 
   const renderField = ({ id, label, type = "text", required = false }: any) => {
