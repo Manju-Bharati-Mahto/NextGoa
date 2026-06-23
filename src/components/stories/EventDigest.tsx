@@ -64,7 +64,7 @@ export function EventDigest({ stories = [] }: { stories?: Story[] }) {
               Events
             </h3>
             <Link
-              href="/stories?tag=Events"
+              href="/blog?tag=Events"
               className="bg-sunshine hover:bg-sunshine-deep text-ink px-5 py-2 text-xs sm:text-sm font-bold tracking-wide rounded-full inline-flex items-center gap-1 transition-all shadow-sm active:scale-95 cursor-pointer"
             >
               View all ↗

@@ -19,7 +19,7 @@ const columns: { heading: string; links?: LinkItem[]; subSections?: { heading: s
       { label: "Campus Life", href: "/campus-life" },
       { label: "Placements", href: "/placements" },
       { label: "Study Abroad", href: "/study-abroad" },
-      { label: "Stories", href: "/stories" },
+      { label: "Blogs", href: "/blog" },
     ],
   },
   {

@@ -16,7 +16,7 @@ export const navItems: NavItem[] = [
   { label: "Study Abroad", href: "/study-abroad" },
   { label: "Placements", href: "/placements" },
   { label: "Campus Life", href: "/campus-life" },
-  { label: "Stories", href: "/stories" },
+  { label: "Blogs", href: "/blog" },
 ];
 
 /** Primary CTA destinations. */

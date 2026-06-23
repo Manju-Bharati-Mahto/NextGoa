@@ -38,7 +38,7 @@ export default async function StoryPage({
           <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4 max-w-5xl mx-auto mt-16">
             <div className="text-white/80 text-sm md:text-base font-medium mb-6">
               <Link href="/" className="hover:text-white transition-colors">Home</Link> &gt;{" "}
-              <Link href="/stories" className="hover:text-white transition-colors">Stories</Link> &gt;{" "}
+              <Link href="/blog" className="hover:text-white transition-colors">Blogs</Link> &gt;{" "}
               <span className="text-white">{story.title}</span>
             </div>
             <h1 className="section-heading text-white mb-2 max-w-4xl drop-shadow-md">

@@ -12,7 +12,7 @@ import { breadcrumbSchema } from "@/lib/structured-data";
 export const metadata: Metadata = {
   title: "Stories | Parul University Goa",
   description: "Explore the latest news, academics, placements, research, and student life stories from Parul University Goa.",
-  alternates: { canonical: "/stories" },
+  alternates: { canonical: "/blog" },
 };
 
 import { stories } from "@/data/stories";
@@ -24,7 +24,7 @@ export default function StoriesPage() {
     title: s.title,
     body: s.excerpt,
     image: s.image,
-    link: `/stories/${s.slug}`,
+    link: `/blog/${s.slug}`,
     date: s.date
   }));
 
@@ -37,7 +37,7 @@ export default function StoriesPage() {
       <JsonLd
         data={breadcrumbSchema([
           { name: "Home", path: "/" },
-          { name: "Stories", path: "/stories" },
+          { name: "Blogs", path: "/blog" },
         ])}
       />
 
