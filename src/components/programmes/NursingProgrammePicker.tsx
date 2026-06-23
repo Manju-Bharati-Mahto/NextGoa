@@ -41,7 +41,7 @@ export default function NursingProgrammePicker() {
         title: "Post Basic Bachelor of Science\nin Nursing (PB-B.Sc.)", 
         duration: "2 Years", 
         eligibility: "GNM pass from INC/State Council recognized institution. Registered as Nurse & Midwife.", 
-        intake: "40", 
+        intake: "40",   
         mode: "Full-time",
         tuitionFee: "₹1,20,000",
         enquiryValue: "pb-bsc-nursing"

@@ -13,7 +13,7 @@ const placeholderStories = [
     title: "How Students Learn Creative Design and Editing at Parul University's Adobe Lab",
     body: "The Adobe Creative Design Studio inside Parul University's Lakshya 2047...",
     image: "",
-    link: "/stories/how-students-learn-creative-design",
+    link: "/blog/how-students-learn-creative-design",
   },
   {
     tag: "STUDENT LIFE",
@@ -21,7 +21,7 @@ const placeholderStories = [
     title: "Parul University Autodesk Lab: CAD Studio for Mechanical, Civil and Architecture Students",
     body: "The Autodesk Lab inside Parul University's Lakshya 2047 Centre provides...",
     image: "",
-    link: "/stories/parul-university-autodesk-lab",
+    link: "/blog/parul-university-autodesk-lab",
   },
   {
     tag: "STUDENT LIFE",
@@ -29,7 +29,7 @@ const placeholderStories = [
     title: "How Parul University's Home Automation Lab Trains Students in BMS and HVAC...",
     body: "The Home Automation Lab inside Parul University's Lakshya 2047 Centre...",
     image: "",
-    link: "/stories/how-parul-universitys-home-automation-lab-trains",
+    link: "/blog/how-parul-universitys-home-automation-lab-trains",
   },
 ];
 
@@ -144,7 +144,7 @@ export function News({ stories = [] }: { stories?: BlogStory[] }) {
 
         <div className="mt-10 flex justify-center">
           <Link 
-            href="/stories" 
+            href="/blog" 
             className="inline-flex items-center justify-center rounded-full bg-brand px-8 py-3 text-[15px] font-poppins font-semibold text-white shadow-sm transition-all hover:bg-brand/90 hover:shadow-md"
           >
             All news →

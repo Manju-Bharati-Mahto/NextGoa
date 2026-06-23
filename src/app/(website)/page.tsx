@@ -37,7 +37,7 @@ export default function Home() {
     title: s.title,
     body: s.excerpt,
     image: s.image,
-    link: `/stories/${s.slug}`,
+    link: `/blog/${s.slug}`,
     date: s.date,
     timestamp: new Date(s.date).getTime()
   }));

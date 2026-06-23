@@ -43,7 +43,7 @@ export const staticRoutes: StaticRoute[] = [
     summary: "Eligibility, application process, fees, and how to apply for the 2026 intake.",
   },
   {
-    path: "/stories",
+    path: "/blog",
     changeFrequency: "weekly",
     priority: 0.8,
     title: "Stories",
