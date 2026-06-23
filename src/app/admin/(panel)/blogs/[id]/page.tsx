@@ -2,12 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
-import dynamic from "next/dynamic";
-import "react-quill-new/dist/quill.snow.css";
 
-const ReactQuill = dynamic(() => import("react-quill-new"), {
-  ssr: false,
-});
 
 export default function EditBlogPage() {
 
@@ -25,7 +20,11 @@ export default function EditBlogPage() {
   const [ogImageFile, setOgImageFile] = useState<File | null>(null);
   const [currentOgImage, setCurrentOgImage] = useState("");
 
+  const [faqs, setFaqs] = useState([ { question: "", answer: "", }, ]);
+
   const [pageLoading, setPageLoading] = useState(true);
+
+  
 
   const [form, setForm] = useState({
 
@@ -34,8 +33,6 @@ export default function EditBlogPage() {
     slug: "",
 
     excerpt: "",
-
-    content: "",
 
     category: "",
 
@@ -55,6 +52,16 @@ export default function EditBlogPage() {
 
   });
 
+  const [sections, setSections] = useState([
+  {
+    tag: "h2",
+    title: "",
+    details: "",
+  },
+]);
+
+  
+
   useEffect(() => {
 
     loadBlog();
@@ -70,6 +77,11 @@ export default function EditBlogPage() {
       );
 
       const data = await res.json();
+      setFaqs(
+        data.faqs?.length
+          ? data.faqs
+          : [{ question: "", answer: "" }]
+      );
 
       setFeaturedImage(data.featured_image || "");
       setCurrentOgImage(data.og_image || "");
@@ -78,7 +90,6 @@ export default function EditBlogPage() {
         title: data.title || "",
         slug: data.slug || "",
         excerpt: data.excerpt || "",
-        content: data.content || "",
         category: data.category || "",
         meta_title: data.meta_title || "",
         meta_description: data.meta_description || "",
@@ -88,6 +99,18 @@ export default function EditBlogPage() {
         og_description: data.og_description || "",
         status: data.status || "draft",
       });
+
+      setSections(
+        data.content
+          ? JSON.parse(data.content)
+          : [
+              {
+                tag: "h2",
+                title: "",
+                details: "",
+              },
+            ]
+      );
 
     } catch (err) {
 
@@ -100,6 +123,8 @@ export default function EditBlogPage() {
     setPageLoading(false);
 
   }
+
+  
 
   function handleChange(
 
@@ -139,6 +164,45 @@ export default function EditBlogPage() {
 
   }
 
+  const addFaq = () => { setFaqs([ ...faqs, { question: "", answer: "", }, ]); };
+    const removeFaq = (index: number) => {
+      setFaqs(faqs.filter((_, i) => i !== index));
+    };
+    const updateFaq = (
+    index: number,
+    field: "question" | "answer",
+    value: string
+  ) => {
+    const updated = [...faqs];
+    updated[index][field] = value;
+    setFaqs(updated);
+  };
+
+  const addSection = () => {
+  setSections([
+    ...sections,
+    {
+      tag: "h2",
+      title: "",
+      details: "",
+    },
+  ]);
+};
+
+const removeSection = (index: number) => {
+  setSections(sections.filter((_, i) => i !== index));
+};
+
+const updateSection = (
+  index: number,
+  field: "tag" | "title" | "details",
+  value: string
+) => {
+  const updated = [...sections];
+  updated[index][field] = value;
+  setSections(updated);
+};
+
   async function updateBlog(e: React.FormEvent) {
   e.preventDefault();
 
@@ -148,8 +212,18 @@ export default function EditBlogPage() {
     const formData = new FormData();
 
     Object.entries(form).forEach(([key, value]) => {
-      formData.append(key, value);
-    });
+  formData.append(key, value);
+});
+
+formData.append(
+  "sections",
+  JSON.stringify(sections)
+);
+
+formData.append(
+  "faqs",
+  JSON.stringify(faqs)
+);
     
     formData.append("featured_image_path", featuredImage);
     formData.append("og_image_path", currentOgImage); 
@@ -366,15 +440,83 @@ export default function EditBlogPage() {
 
       {/* Content */}
 
-      <div>
+     <div className="border rounded-xl p-6">
 
-        <label className="font-medium">
-          Content
-        </label>
+  <h2 className="text-2xl font-bold mb-6">
+    Blog Sections
+  </h2>
 
-      <ReactQuill theme="snow" value={form.content} onChange={(value) => setForm((prev) => ({ ...prev, content: value, })) } />
+  {sections.map((section, index) => (
 
-      </div>
+    <div
+      key={index}
+      className="border rounded-lg p-5 mb-6"
+    >
+
+      <label className="font-medium">
+        Heading Tag
+      </label>
+
+      <select
+        value={section.tag}
+        onChange={(e) =>
+          updateSection(index, "tag", e.target.value)
+        }
+        className="w-full border rounded-lg p-3 mt-1"
+      >
+        <option value="h2">H2</option>
+        <option value="h3">H3</option>
+        <option value="h4">H4</option>
+        <option value="p">Paragraph</option>
+      </select>
+
+      <label className="font-medium block mt-4">
+        Heading
+      </label>
+
+      <input
+        type="text"
+        value={section.title}
+        onChange={(e) =>
+          updateSection(index, "title", e.target.value)
+        }
+        className="w-full border rounded-lg p-3 mt-1"
+      />
+
+      <label className="font-medium block mt-4">
+        Details
+      </label>
+
+      <textarea
+        rows={6}
+        value={section.details}
+        onChange={(e) =>
+          updateSection(index, "details", e.target.value)
+        }
+        className="w-full border rounded-lg p-3 mt-1"
+      />
+
+      <button
+        type="button"
+        onClick={() => removeSection(index)}
+        className="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg"
+      >
+        Remove Section
+      </button>
+
+    </div>
+
+  ))}
+
+  <button
+    type="button"
+    onClick={addSection}
+    className="bg-blue-600 text-white px-5 py-3 rounded-lg"
+  >
+    + Add Section
+  </button>
+
+</div>
 
       <hr />
 
@@ -481,6 +623,66 @@ export default function EditBlogPage() {
       />
     )
   )}
+</div>
+<div className="border-t pt-8">
+
+  <h2 className="text-2xl font-bold mb-6">
+    FAQs
+  </h2>
+
+  {faqs.map((faq, index) => (
+
+    <div
+      key={index}
+      className="border rounded-lg p-4 mb-5"
+    >
+
+      <label className="font-medium">
+        Question
+      </label>
+
+      <input
+        type="text"
+        value={faq.question}
+        onChange={(e) =>
+          updateFaq(index, "question", e.target.value)
+        }
+        className="w-full border rounded-lg p-3 mt-1"
+      />
+
+      <label className="font-medium mt-4 block">
+        Answer
+      </label>
+
+      <textarea
+        rows={4}
+        value={faq.answer}
+        onChange={(e) =>
+          updateFaq(index, "answer", e.target.value)
+        }
+        className="w-full border rounded-lg p-3 mt-1"
+      />
+
+      <button
+        type="button"
+        onClick={() => removeFaq(index)}
+        className="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg"
+      >
+        Remove FAQ
+      </button>
+
+    </div>
+
+  ))}
+
+  <button
+    type="button"
+    onClick={addFaq}
+    className="bg-blue-600 text-white px-5 py-3 rounded-lg"
+  >
+    + Add FAQ
+  </button>
+
 </div>
 
       {/* Status */}

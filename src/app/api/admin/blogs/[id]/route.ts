@@ -34,7 +34,20 @@ export async function GET(
       );
     }
 
-    return NextResponse.json(rows[0]);
+    const [faqRows]: any = await db.query(
+      `
+      SELECT *
+      FROM blog_faqs
+      WHERE blog_id=?
+      ORDER BY sort_order
+      `,
+      [id]
+    );
+
+    return NextResponse.json({
+      ...rows[0],
+      faqs: faqRows,
+    });
 
   } catch (error: any) {
 
@@ -64,7 +77,9 @@ export async function PUT(
     const title = formData.get("title") as string;
     const slug = formData.get("slug") as string;
     const excerpt = formData.get("excerpt") as string;
-    const content = formData.get("content") as string;
+    const sections = JSON.parse(
+      (formData.get("sections") as string) || "[]"
+    );
     const category = formData.get("category") as string;
 
     const meta_title = formData.get("meta_title") as string;
@@ -77,6 +92,10 @@ export async function PUT(
     const og_description = formData.get("og_description") as string;
 
     const status = formData.get("status") as string;
+
+    const faqs = JSON.parse(
+      (formData.get("faqs") as string) || "[]"
+    );
 
     // Existing Images
     let featured_image =
@@ -162,7 +181,7 @@ export async function PUT(
         title,
         slug,
         excerpt,
-        content,
+        JSON.stringify(sections),
         featured_image,
         category,
         meta_title,
@@ -176,6 +195,36 @@ export async function PUT(
         id,
       ]
     );
+
+    await db.execute(
+      "DELETE FROM blog_faqs WHERE blog_id=?",
+      [id]
+    );
+
+    for (let i = 0; i < faqs.length; i++) {
+
+      if (!faqs[i].question.trim()) continue;
+
+      await db.execute(
+        `
+        INSERT INTO blog_faqs
+        (
+          blog_id,
+          question,
+          answer,
+          sort_order
+        )
+        VALUES (?,?,?,?)
+        `,
+        [
+          id,
+          faqs[i].question,
+          faqs[i].answer,
+          i,
+        ]
+      );
+
+    }
 
     return NextResponse.json({
       success: true,

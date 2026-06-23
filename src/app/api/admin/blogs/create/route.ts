@@ -11,7 +11,9 @@ export async function POST(req: NextRequest) {
     const title = formData.get("title") as string;
     const slug = formData.get("slug") as string;
     const excerpt = formData.get("excerpt") as string;
-    const content = formData.get("content") as string;
+    const sections = JSON.parse(
+      (formData.get("sections") as string) || "[]"
+    );
     const category = formData.get("category") as string;
 
     const meta_title = formData.get("meta_title") as string;
@@ -24,6 +26,10 @@ export async function POST(req: NextRequest) {
     const og_description = formData.get("og_description") as string;
 
     const status = formData.get("status") as string;
+
+    const faqs = JSON.parse(
+      (formData.get("faqs") as string) || "[]"
+    );
 
     let featured_image = "";
     const image = formData.get("featured_image") as File | null;
@@ -67,43 +73,69 @@ export async function POST(req: NextRequest) {
       og_image = `/uploads/ogimg/${filename}`;
     }
 
-    await db.execute(
-      `
-      INSERT INTO blogs (
-        title,
-        slug,
-        excerpt,
-        content,
-        featured_image,
-        category,
-        meta_title,
-        meta_description,
-        meta_keywords,
-        canonical_url,
-        og_title,
-        og_description,
-        og_image,
-        status
-      )
-      VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)
-      `,
-      [
-        title,
-        slug,
-        excerpt,
-        content,
-        featured_image,
-        category,
-        meta_title,
-        meta_description,
-        meta_keywords,
-        canonical_url,
-        og_title,
-        og_description,
-        og_image,
-        status,
-      ]
-    );
+   const [result]: any = await db.execute(
+  `
+  INSERT INTO blogs (
+    title,
+    slug,
+    excerpt,
+    content,
+    featured_image,
+    category,
+    meta_title,
+    meta_description,
+    meta_keywords,
+    canonical_url,
+    og_title,
+    og_description,
+    og_image,
+    status
+  )
+  VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+  `,
+  [
+    title,
+    slug,
+    excerpt,
+    JSON.stringify(sections),
+    featured_image,
+    category,
+    meta_title,
+    meta_description,
+    meta_keywords,
+    canonical_url,
+    og_title,
+    og_description,
+    og_image,
+    status,
+  ]
+);
+
+const blogId = result.insertId;
+for (let i = 0; i < faqs.length; i++) {
+
+  if (!faqs[i].question.trim()) continue;
+
+  await db.execute(
+    `
+    INSERT INTO blog_faqs
+    (
+      blog_id,
+      question,
+      answer,
+      sort_order
+    )
+    VALUES (?,?,?,?)
+    `,
+    [
+      blogId,
+      faqs[i].question,
+      faqs[i].answer,
+      i,
+    ]
+  );
+
+}
 
     return NextResponse.json({
       success: true,

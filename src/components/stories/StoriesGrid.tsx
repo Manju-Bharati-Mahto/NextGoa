@@ -63,23 +63,40 @@ function StoryCard({ s }: { s: Story }) {
   );
 }
 
-function StoriesGridInner({ 
-  goaStories = [], 
-  mainStories = [] 
-}: { 
-  goaStories?: Story[]; 
-  mainStories?: Story[] 
-}) {
+function StoriesGridInner() {
+  
   const searchParams = useSearchParams();
   const tagParam = searchParams.get("tag");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(tagParam);
+  const [stories, setStories] = useState<Story[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (tagParam) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setSelectedCategory(tagParam);
+    async function fetchStories() {
+      try {
+        const res = await fetch("/api/blogs");
+        const data = await res.json();
+
+        const formatted = data.map((blog: any) => ({
+          tag: blog.category,
+          tagClass: "bg-brand/10 text-brand ring-1 ring-brand/20",
+          title: blog.title,
+          body: blog.excerpt,
+          image: blog.featured_image,
+          link: `/stories/${blog.slug}`,
+          date: blog.created_at,
+        }));
+
+        setStories(formatted);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
     }
-  }, [tagParam]);
+
+    fetchStories();
+  }, []);
 
   const handleCategorySelect = (categoryName: string) => {
     if (selectedCategory === categoryName) {
@@ -89,17 +106,13 @@ function StoriesGridInner({
     }
   };
 
-  const filteredGoa =
-    selectedCategory === null
-      ? goaStories
-      : goaStories.filter((s) => s.tag.toLowerCase() === selectedCategory.toLowerCase());
-
-  const filteredMain =
-    selectedCategory === null
-      ? mainStories
-      : mainStories.filter((s) => s.tag.toLowerCase() === selectedCategory.toLowerCase());
-
-  const allStories = [...filteredGoa, ...filteredMain];
+  const filteredStories =
+  selectedCategory === null
+    ? stories
+    : stories.filter(
+        (story) =>
+          story.tag.toLowerCase() === selectedCategory.toLowerCase()
+      );
 
   return (
     <div id="stories-grid" className="w-full">
@@ -144,9 +157,13 @@ function StoriesGridInner({
         <div className="mx-auto max-w-[1680px] px-6 sm:px-10">
           
           {/* Combined Stories Section */}
-          {allStories.length > 0 ? (
+          {loading ? (
+  <div className="text-center py-20">
+    Loading...
+  </div>
+) : filteredStories.length > 0 ? (
             <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-8 transition-all duration-300">
-              {allStories.map((s, index) => (
+              {filteredStories.map((s, index) => (
                 <StoryCard key={s.title + index} s={s} />
               ))}
             </ul>
@@ -162,16 +179,16 @@ function StoriesGridInner({
   );
 }
 
-export function StoriesGrid({ 
-  goaStories = [], 
-  mainStories = [] 
-}: { 
-  goaStories?: Story[]; 
-  mainStories?: Story[] 
-}) {
+export function StoriesGrid() {
   return (
-    <Suspense fallback={<div className="h-96 w-full flex items-center justify-center bg-brand-white">Loading stories...</div>}>
-      <StoriesGridInner goaStories={goaStories} mainStories={mainStories} />
+    <Suspense
+      fallback={
+        <div className="h-96 w-full flex items-center justify-center bg-brand-white">
+          Loading stories...
+        </div>
+      }
+    >
+      <StoriesGridInner />
     </Suspense>
   );
 }
