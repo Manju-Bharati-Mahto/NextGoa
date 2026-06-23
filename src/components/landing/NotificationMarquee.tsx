@@ -21,7 +21,14 @@ export function NotificationMarquee() {
         {/* We repeat the content multiple times to ensure a seamless infinite scroll loop */}
         {[...Array(10)].map((_, i) => (
           <div key={i} className="flex items-center">
-            <span className="font-semibold text-[16px] sm:text-[20px] tracking-wide">{notificationText}</span>
+            <a 
+              href="/notifications/Notification_038_Revision-in-the-calender-of-events-for-admission-to-Ph.D-Programmes-2026-27.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="font-semibold text-[16px] sm:text-[20px] tracking-wide cursor-pointer"
+            >
+              {notificationText}
+            </a>
             <TeardropAsterisk />
           </div>
         ))}
@@ -30,7 +37,11 @@ export function NotificationMarquee() {
       <style jsx>{`
         .animate-marquee {
           display: inline-flex;
-          animation: marquee 30s linear infinite;
+          animation: marquee 90s linear infinite;
+        }
+
+        .animate-marquee:hover {
+          animation-play-state: paused;
         }
 
         @keyframes marquee {
