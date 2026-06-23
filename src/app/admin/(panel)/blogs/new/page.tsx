@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+
 
 
 export default function NewBlogPage() {
@@ -16,11 +17,27 @@ export default function NewBlogPage() {
 
   const [faqs, setFaqs] = useState([ { question: "", answer: "", }, ]);
 
+  const [categories, setCategories] = useState<any[]>([]);
+    useEffect(() => {
+    loadCategories();
+  }, []);
+
+  async function loadCategories() {
+    try {
+      const res = await fetch("/api/admin/blog-categories");
+      const data = await res.json();
+
+      setCategories(data);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+  
   const [form, setForm] = useState({
     title: "",
     slug: "",
     excerpt: "",
-    category: "",
+    category: [] as string[],
     meta_title: "",
     meta_description: "",
     meta_keywords: "",
@@ -30,6 +47,7 @@ export default function NewBlogPage() {
     og_image: "",
     status: "draft",
   });
+
 
   const [sections, setSections] = useState([
     {
@@ -136,7 +154,16 @@ const updateSection = (
     const formData = new FormData();
 
     Object.entries(form).forEach(([key, value]) => {
-      formData.append(key, value);
+
+      if (key === "category") {
+        formData.append(
+          "category",
+          JSON.stringify(value)
+        );
+      } else {
+        formData.append(key, value as string);
+      }
+
     });
     formData.append("sections", JSON.stringify(sections));
     formData.append("faqs", JSON.stringify(faqs));
@@ -227,22 +254,59 @@ const updateSection = (
 
       {/* Category */}
 
-      <div>
+    <div>
 
-        <label className="font-medium">
-          Category
-        </label>
+  <label className="font-medium">
+    Categories
+  </label>
 
-        <input
-          type="text"
-          name="category"
-          value={form.category}
-          onChange={handleChange}
-          placeholder="Admissions"
-          className="w-full border rounded-lg p-3 mt-1"
-        />
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-3">
 
-      </div>
+    {categories.map((category: any) => (
+
+  <label
+    key={category.id}
+    className="flex items-center gap-2 border rounded-lg p-3 cursor-pointer hover:bg-gray-50"
+  >
+
+    <input
+      type="checkbox"
+      checked={form.category.includes(String(category.id))}
+      onChange={(e) => {
+
+        if (e.target.checked) {
+
+          setForm(prev => ({
+            ...prev,
+            category: [
+              ...prev.category,
+              String(category.id),
+            ],
+          }));
+
+        } else {
+
+          setForm(prev => ({
+            ...prev,
+            category: prev.category.filter(
+              c => c !== String(category.id)
+            ),
+          }));
+
+        }
+
+      }}
+    />
+
+    {category.name}
+
+  </label>
+
+))}
+
+  </div>
+
+</div>
 
       {/* Featured Image */}
 

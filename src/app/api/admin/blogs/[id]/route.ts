@@ -34,6 +34,10 @@ export async function GET(
       );
     }
 
+    const categories = rows[0].category
+      ? rows[0].category.split(",")
+      : [];
+
     const [faqRows]: any = await db.query(
       `
       SELECT *
@@ -46,6 +50,7 @@ export async function GET(
 
     return NextResponse.json({
       ...rows[0],
+      categories,
       faqs: faqRows,
     });
 
@@ -80,7 +85,9 @@ export async function PUT(
     const sections = JSON.parse(
       (formData.get("sections") as string) || "[]"
     );
-    const category = formData.get("category") as string;
+    const categories = JSON.parse(
+    (formData.get("category") as string) || "[]"
+  );
 
     const meta_title = formData.get("meta_title") as string;
     const meta_description = formData.get("meta_description") as string;
@@ -183,7 +190,7 @@ export async function PUT(
         excerpt,
         JSON.stringify(sections),
         featured_image,
-        category,
+        categories.join(","),
         meta_title,
         meta_description,
         meta_keywords,
@@ -195,11 +202,12 @@ export async function PUT(
         id,
       ]
     );
-
+    
     await db.execute(
       "DELETE FROM blog_faqs WHERE blog_id=?",
       [id]
     );
+
 
     for (let i = 0; i < faqs.length; i++) {
 
@@ -254,11 +262,19 @@ export async function DELETE(
     const { id } = await params;
 
     await db.execute(
-      `
-      DELETE FROM blogs
-      WHERE id=?
-      `,
-      [id]
+    `
+    DELETE FROM blog_faqs
+    WHERE blog_id=?
+    `,
+    [id]
+    );
+
+    await db.execute(
+    `
+    DELETE FROM blogs
+    WHERE id=?
+    `,
+    [id]
     );
 
     return NextResponse.json({

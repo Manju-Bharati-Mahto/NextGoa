@@ -16,6 +16,7 @@ export interface Story {
   date?: string;
 }
 
+
 const categories = [
   { name: "News", icon: "newspaper" },
   { name: "Events", icon: "theater_comedy" },
@@ -25,6 +26,8 @@ const categories = [
   { name: "Student Life", icon: "school" },
   { name: "Admissions Tips", icon: "assignment" }
 ];
+
+
 
 function StoryCard({ s }: { s: Story }) {
   return (
@@ -77,14 +80,13 @@ function StoriesGridInner() {
         const res = await fetch("/api/blogs");
         const data = await res.json();
 
-        const formatted = data.map((blog: any) => ({
-          tag: blog.category,
+       const formatted = data.map((blog: any) => ({
+          tag: blog.category_names,
           tagClass: "bg-brand/10 text-brand ring-1 ring-brand/20",
           title: blog.title,
           body: blog.excerpt,
           image: blog.featured_image,
-          link: `/stories/${blog.slug}`,
-          date: blog.created_at,
+          link: `/blog/${blog.slug}`,
         }));
 
         setStories(formatted);
@@ -109,11 +111,11 @@ function StoriesGridInner() {
   const filteredStories =
   selectedCategory === null
     ? stories
-    : stories.filter(
-        (story) =>
-          story.tag.toLowerCase() === selectedCategory.toLowerCase()
-      );
-
+    : stories.filter(story =>
+  story.tag
+    .toLowerCase()
+    .includes(selectedCategory.toLowerCase())
+);
   return (
     <div id="stories-grid" className="w-full">
       {/* Moss Green Categories Section */}

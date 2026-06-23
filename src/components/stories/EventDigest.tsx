@@ -1,45 +1,62 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
 
-interface SmallerEvent {
+interface Story {
   title: string;
+  body: string;
+  image: string;
+  link: string;
+  date: string;
   tag: string;
-  icon: string;
 }
 
-const smallerEvents: SmallerEvent[] = [
-  {
-    title: "Inauguration graced by Chief Minister of Goa, Dr. Pramod Sawant",
-    tag: "EVENTS &middot; 1 MAY 2026",
-    icon: "material-symbols:celebration-outline",
-  },
-  {
-    title: "Oath-Taking Ceremony graced by Health Minister Shri Vishwajit Rane",
-    tag: "EVENTS &middot; 1 MAY 2026",
-    icon: "material-symbols:medical-services-outline",
-  },
-  {
-    title: "Annual Convocation Ceremony for Class of 2026",
-    tag: "EVENTS &middot; 10 MAY 2026",
-    icon: "material-symbols:school-outline",
-  },
-];
+export function EventDigest() {
 
-import { Story } from "./StoriesGrid";
+  const [events, setEvents] = useState<Story[]>([]);
+  const [loading, setLoading] = useState(true);
 
-export function EventDigest({ stories = [] }: { stories?: Story[] }) {
-  // Try to find Events, fallback to any stories if not enough events
-  const eventStories = stories.filter((s) => s.tag === "Events");
-  const displayEvents = eventStories.length >= 4 ? eventStories : stories;
-  
-  if (displayEvents.length === 0) return null;
+  useEffect(() => {
+    loadEvents();
+  }, []);
 
-  const featuredEvent = displayEvents[0];
-  const smallerEventsDynamic = displayEvents.slice(1, 4);
+  async function loadEvents() {
+    try {
+      const res = await fetch("/api/blogs?limit=4");
+      const data = await res.json();
+
+      const formatted = data
+        .filter((blog: any) =>
+          blog.category_names?.toLowerCase().includes("events")
+        )
+        .slice(0, 4)
+        .map((blog: any) => ({
+          title: blog.title,
+          body: blog.excerpt,
+          image: blog.featured_image,
+          link: `/blog/${blog.slug}`,
+          date: new Date(blog.created_at).toLocaleDateString(),
+          tag: "Events",
+        }));
+
+      setEvents(formatted);
+
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  if (loading) return null;
+
+  if (events.length === 0) return null;
+
+  const featuredEvent = events[0];
+  const smallerEventsDynamic = events.slice(1, 4);
 
   return (
     <section className="bg-brand-white border-t border-black/5 py-12 sm:py-16">

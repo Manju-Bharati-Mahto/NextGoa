@@ -14,9 +14,36 @@ interface CarouselCard {
 
 import { Story } from "./StoriesGrid";
 
-export function LatestStories({ stories = [] }: { stories?: Story[] }) {
+export function LatestStories() {
   // Use first 5 stories for carousel, fallback to empty array if none
-  const carouselCards = stories.slice(0, 5);
+  const [carouselCards, setCarouselCards] = useState<Story[]>([]);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    loadStories();
+  }, []);
+
+  async function loadStories() {
+    try {
+      const res = await fetch("/api/blogs?limit=15");
+      const data = await res.json();
+
+      const formatted = data.map((blog: any) => ({
+        tag: blog.category_names,
+        tagClass: "bg-brand/10 text-brand ring-1 ring-brand/20",
+        title: blog.title,
+        body: blog.excerpt,
+        image: blog.featured_image,
+        link: `/blog/${blog.slug}`,
+        date: blog.created_at,
+      }));
+
+        setCarouselCards(formatted);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    }
 
   const [currentIndex, setCurrentIndex] = useState(1); // Real Card 0 starts at index 1
   const [isTransitioning, setIsTransitioning] = useState(true);

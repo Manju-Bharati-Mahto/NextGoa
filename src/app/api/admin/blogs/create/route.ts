@@ -14,7 +14,9 @@ export async function POST(req: NextRequest) {
     const sections = JSON.parse(
       (formData.get("sections") as string) || "[]"
     );
-    const category = formData.get("category") as string;
+    const categories = JSON.parse(
+      (formData.get("category") as string) || "[]"
+    );
 
     const meta_title = formData.get("meta_title") as string;
     const meta_description = formData.get("meta_description") as string;
@@ -76,20 +78,20 @@ export async function POST(req: NextRequest) {
    const [result]: any = await db.execute(
   `
   INSERT INTO blogs (
-    title,
-    slug,
-    excerpt,
-    content,
-    featured_image,
-    category,
-    meta_title,
-    meta_description,
-    meta_keywords,
-    canonical_url,
-    og_title,
-    og_description,
-    og_image,
-    status
+  title,
+  slug,
+  excerpt,
+  content,
+  featured_image,
+  category,
+  meta_title,
+  meta_description,
+  meta_keywords,
+  canonical_url,
+  og_title,
+  og_description,
+  og_image,
+  status
   )
   VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)
   `,
@@ -99,7 +101,7 @@ export async function POST(req: NextRequest) {
     excerpt,
     JSON.stringify(sections),
     featured_image,
-    category,
+    categories.join(","),
     meta_title,
     meta_description,
     meta_keywords,
@@ -112,6 +114,7 @@ export async function POST(req: NextRequest) {
 );
 
 const blogId = result.insertId;
+
 for (let i = 0; i < faqs.length; i++) {
 
   if (!faqs[i].question.trim()) continue;
