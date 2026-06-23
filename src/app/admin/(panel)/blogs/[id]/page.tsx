@@ -23,34 +23,22 @@ export default function EditBlogPage() {
   const [faqs, setFaqs] = useState([ { question: "", answer: "", }, ]);
 
   const [pageLoading, setPageLoading] = useState(true);
-
+  const [categories, setCategories] = useState<any[]>([]);
   
 
   const [form, setForm] = useState({
-
-    title: "",
-
-    slug: "",
-
-    excerpt: "",
-
-    category: "",
-
-    meta_title: "",
-
-    meta_description: "",
-
-    meta_keywords: "",
-
-    canonical_url: "",
-
-    og_title: "",
-
-    og_description: "",
-
-    status: "draft",
-
-  });
+  title: "",
+  slug: "",
+  excerpt: "",
+  category: [] as string[],
+  meta_title: "",
+  meta_description: "",
+  meta_keywords: "",
+  canonical_url: "",
+  og_title: "",
+  og_description: "",
+  status: "draft",
+});
 
   const [sections, setSections] = useState([
   {
@@ -63,7 +51,7 @@ export default function EditBlogPage() {
   
 
   useEffect(() => {
-
+    loadCategories();
     loadBlog();
 
   }, []);
@@ -90,7 +78,7 @@ export default function EditBlogPage() {
         title: data.title || "",
         slug: data.slug || "",
         excerpt: data.excerpt || "",
-        category: data.category || "",
+        category: data.categories || [],
         meta_title: data.meta_title || "",
         meta_description: data.meta_description || "",
         meta_keywords: data.meta_keywords || "",
@@ -211,8 +199,17 @@ const updateSection = (
   try {
     const formData = new FormData();
 
-    Object.entries(form).forEach(([key, value]) => {
-  formData.append(key, value);
+   Object.entries(form).forEach(([key, value]) => {
+
+  if (key === "category") {
+    formData.append(
+      "category",
+      JSON.stringify(value)
+    );
+  } else {
+    formData.append(key, value as string);
+  }
+
 });
 
 formData.append(
@@ -257,7 +254,16 @@ formData.append(
     setLoading(false);
   }
 }
+async function loadCategories() {
+  try {
+    const res = await fetch("/api/admin/blog-categories");
+    const data = await res.json();
 
+    setCategories(data);
+  } catch (err) {
+    console.log(err);
+  }
+}
   async function deleteBlog() {
 
     if (
@@ -370,18 +376,58 @@ formData.append(
       {/* Category */}
 
       <div>
-        <label className="font-medium">
-          Category
-        </label>
 
-        <input
-          type="text"
-          name="category"
-          value={form.category}
-          onChange={handleChange}
-          className="w-full border rounded-lg p-3 mt-1"
-        />
-      </div>
+  <label className="font-medium">
+    Categories
+  </label>
+
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-3">
+
+    {categories.map((cat: any) => (
+
+<label
+  key={cat.id}
+  className="flex items-center gap-2 border rounded-lg p-3 cursor-pointer hover:bg-gray-50"
+>
+
+<input
+type="checkbox"
+checked={form.category.includes(String(cat.id))}
+onChange={(e)=>{
+
+if(e.target.checked){
+
+setForm(prev=>({
+...prev,
+category:[
+...prev.category,
+String(cat.id)
+]
+}));
+
+}else{
+
+setForm(prev=>({
+...prev,
+category:prev.category.filter(
+item=>item!==String(cat.id)
+)
+}));
+
+}
+
+}}
+/>
+
+<span>{cat.name}</span>
+
+</label>
+
+))}
+
+  </div>
+
+</div>
 
       {/* Featured Image */}
 
