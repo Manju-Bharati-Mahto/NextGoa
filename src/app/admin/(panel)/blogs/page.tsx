@@ -36,7 +36,7 @@ export default function BlogsPage() {
         </h1>
 
         <Link
-          href="/blogs/new"
+          href="/admin/blogs/new"
           className="bg-blue-600 text-white px-5 py-2 rounded-lg"
         >
           + Add Blog
@@ -110,7 +110,7 @@ export default function BlogsPage() {
               <td className="border p-3 flex gap-2">
 
                 <Link
-                  href={`/blogs/${blog.id}`}
+                  href={`/admin/blogs/${blog.id}`}
                   className="bg-yellow-500 text-white px-3 py-1 rounded"
                 >
                   Edit

@@ -2,10 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import dynamic from "next/dynamic";
-import "react-quill-new/dist/quill.snow.css";
 
-const ReactQuill = dynamic(() => import("react-quill-new"), { ssr: false, });
 
 export default function NewBlogPage() {
 
@@ -17,11 +14,12 @@ export default function NewBlogPage() {
 
   const [ogImageFile, setOgImageFile] = useState<File | null>(null);
 
+  const [faqs, setFaqs] = useState([ { question: "", answer: "", }, ]);
+
   const [form, setForm] = useState({
     title: "",
     slug: "",
     excerpt: "",
-    content: "",
     category: "",
     meta_title: "",
     meta_description: "",
@@ -32,6 +30,14 @@ export default function NewBlogPage() {
     og_image: "",
     status: "draft",
   });
+
+  const [sections, setSections] = useState([
+    {
+      tag: "h2",
+      title: "",
+      details: "",
+    },
+  ]);
 
   function handleChange(
     e: React.ChangeEvent<
@@ -63,20 +69,59 @@ export default function NewBlogPage() {
 
   }
 
+  const addFaq = () => {
+    setFaqs([
+      ...faqs,
+      {
+        question: "",
+        answer: "",
+      },
+    ]);
+  };
+
+  const removeFaq = (index: number) => {
+    setFaqs(faqs.filter((_, i) => i !== index));
+  };
+
+  const updateFaq = (
+    index: number,
+    field: "question" | "answer",
+    value: string
+  ) => {
+    const updated = [...faqs];
+    updated[index][field] = value;
+    setFaqs(updated);
+  };
+
+  const addSection = () => {
+  setSections([
+    ...sections,
+    {
+      tag: "h2",
+      title: "",
+      details: "",
+    },
+  ]);
+};
+
+const removeSection = (index: number) => {
+  setSections(sections.filter((_, i) => i !== index));
+};
+
+const updateSection = (
+  index: number,
+  field: "tag" | "title" | "details",
+  value: string
+) => {
+  const updated = [...sections];
+  updated[index][field] = value;
+  setSections(updated);
+};
   async function saveBlog(e: React.FormEvent) {
   e.preventDefault();
 
   if (!form.title.trim()) {
     alert("Title is required.");
-    return;
-  }
-
-  if (
-    !form.content ||
-    form.content === "<p><br></p>" ||
-    form.content.trim() === ""
-  ) {
-    alert("Content is required.");
     return;
   }
 
@@ -93,6 +138,9 @@ export default function NewBlogPage() {
     Object.entries(form).forEach(([key, value]) => {
       formData.append(key, value);
     });
+    formData.append("sections", JSON.stringify(sections));
+    formData.append("faqs", JSON.stringify(faqs));
+    
 
     if (imageFile) {
       formData.append("featured_image", imageFile);
@@ -245,16 +293,83 @@ export default function NewBlogPage() {
 
       {/* Content */}
 
-      <div>
+     <div className="border rounded-xl p-6">
 
-        <label className="font-medium">
-          Content
-        </label>
+      <h2 className="text-2xl font-bold mb-6">
+        Blog Sections
+      </h2>
 
-        <ReactQuill theme="snow" value={form.content} onChange={(value) => setForm((prev) => ({ ...prev, content: value, })) } className="mt-2 " />
+      {sections.map((section, index) => (
 
-      </div>
+        <div
+          key={index}
+          className="border rounded-lg p-5 mb-6"
+        >
 
+          <label className="font-medium">
+            Heading Tag
+          </label>
+
+          <select
+            value={section.tag}
+            onChange={(e) =>
+              updateSection(index, "tag", e.target.value)
+            }
+            className="w-full border rounded-lg p-3 mt-1"
+          >
+            <option value="h2">H2</option>
+            <option value="h3">H3</option>
+            <option value="h4">H4</option>
+            <option value="p">Paragraph</option>
+          </select>
+
+          <label className="font-medium block mt-4">
+            Heading
+          </label>
+
+          <input
+            type="text"
+            value={section.title}
+            onChange={(e) =>
+              updateSection(index, "title", e.target.value)
+            }
+            className="w-full border rounded-lg p-3 mt-1"
+          />
+
+          <label className="font-medium block mt-4">
+            Details
+          </label>
+
+          <textarea
+            rows={6}
+            value={section.details}
+            onChange={(e) =>
+              updateSection(index, "details", e.target.value)
+            }
+            className="w-full border rounded-lg p-3 mt-1"
+          />
+
+          <button
+            type="button"
+            onClick={() => removeSection(index)}
+            className="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg"
+          >
+            Remove Section
+          </button>
+
+        </div>
+
+      ))}
+
+      <button
+        type="button"
+        onClick={addSection}
+        className="bg-blue-600 text-white px-5 py-3 rounded-lg"
+      >
+        + Add Section
+      </button>
+
+    </div>
       {/* Status */}
 
       <div>
@@ -428,7 +543,60 @@ export default function NewBlogPage() {
         </div>
 
       </div>
+<div className="border-t pt-8">
+  <h2 className="text-2xl font-bold mb-6">
+    FAQs
+  </h2>
 
+  {faqs.map((faq, index) => (
+    <div
+      key={index}
+      className="border rounded-lg p-4 mb-5"
+    >
+      <label className="font-medium">
+        Question
+      </label>
+
+      <input
+        type="text"
+        value={faq.question}
+        onChange={(e) =>
+          updateFaq(index, "question", e.target.value)
+        }
+        className="w-full border rounded-lg p-3 mt-1"
+      />
+
+      <label className="font-medium block mt-4">
+        Answer
+      </label>
+
+      <textarea
+        rows={4}
+        value={faq.answer}
+        onChange={(e) =>
+          updateFaq(index, "answer", e.target.value)
+        }
+        className="w-full border rounded-lg p-3 mt-1"
+      />
+
+      <button
+        type="button"
+        onClick={() => removeFaq(index)}
+        className="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg"
+      >
+        Remove FAQ
+      </button>
+    </div>
+  ))}
+
+  <button
+    type="button"
+    onClick={addFaq}
+    className="bg-blue-600 text-white px-5 py-3 rounded-lg"
+  >
+    + Add FAQ
+  </button>
+</div>
       {/* Buttons */}
 
       <div className="flex gap-4 pt-6">
