@@ -10,7 +10,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Stories | Parul University Goa",
+  title: "Blogs | Parul University Goa",
   description: "Explore the latest news, academics, placements, research, and student life stories from Parul University Goa.",
   alternates: { canonical: "/blog" },
 };
