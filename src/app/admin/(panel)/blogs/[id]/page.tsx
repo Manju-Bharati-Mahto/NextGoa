@@ -24,7 +24,11 @@ export default function EditBlogPage() {
 
   const [pageLoading, setPageLoading] = useState(true);
   const [categories, setCategories] = useState<any[]>([]);
-  
+  const [imageError, setImageError] = useState("");
+  const [ogImageError, setOgImageError] = useState("");
+
+ const MAX_FILE_SIZE = 1 * 1024 * 1024; // 1MB
+    
 
   const [form, setForm] = useState({
   title: "",
@@ -438,15 +442,32 @@ item=>item!==String(cat.id)
       </label>
 
       <input
-        type="file"
-        accept="image/*"
-        className="w-full border rounded-lg p-3 mt-1"
-        onChange={(e) => {
-          if (e.target.files?.length) {
-            setImageFile(e.target.files[0]);
-          }
-        }}
-      />
+  type="file"
+  accept="image/*"
+  className="w-full border rounded-lg p-3 mt-1"
+  onChange={(e) => {
+    const file = e.target.files?.[0];
+
+    setImageError("");
+
+    if (!file) return;
+
+    if (file.size > MAX_FILE_SIZE) {
+      setImageError("Image size must be less than 1 MB.");
+      e.target.value = "";
+      setImageFile(null);
+      return;
+    }
+
+    setImageFile(file);
+  }}
+/>
+
+{imageError && (
+  <p className="mt-2 text-sm text-red-600 font-medium">
+    {imageError}
+  </p>
+)}
 
       {imageFile ? (
         <img
@@ -644,15 +665,32 @@ item=>item!==String(cat.id)
   </label>
 
   <input
-    type="file"
-    accept="image/*"
-    className="w-full border rounded-lg p-3 mt-1"
-    onChange={(e) => {
-      if (e.target.files?.length) {
-        setOgImageFile(e.target.files[0]);
-      }
-    }}
-  />
+  type="file"
+  accept="image/*"
+  className="w-full border rounded-lg p-3 mt-1"
+  onChange={(e) => {
+    const file = e.target.files?.[0];
+
+    setOgImageError("");
+
+    if (!file) return;
+
+    if (file.size > MAX_FILE_SIZE) {
+      setOgImageError("OG Image size must be less than 1 MB.");
+      e.target.value = "";
+      setOgImageFile(null);
+      return;
+    }
+
+    setOgImageFile(file);
+  }}
+/>
+
+{ogImageError && (
+  <p className="mt-2 text-sm text-red-600 font-medium">
+    {ogImageError}
+  </p>
+)}
 
   {ogImageFile ? (
     <img

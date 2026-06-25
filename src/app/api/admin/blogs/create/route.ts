@@ -72,7 +72,7 @@ export async function POST(req: NextRequest) {
 
       await writeFile(uploadPath, buffer);
 
-      og_image = `/uploads/ogimg/${filename}`;
+      og_image = `/uploads/ogimage/${filename}`;
     }
 
    const [result]: any = await db.execute(

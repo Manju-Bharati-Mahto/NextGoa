@@ -8,7 +8,7 @@ export function proxy(request: NextRequest) {
   if (pathname === "/admin/login") {
     if (token) {
       return NextResponse.redirect(
-        new URL("/dashboard", request.url)
+        new URL("/admin/dashboard", request.url)
       );
     }
 
