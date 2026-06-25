@@ -134,7 +134,7 @@ return (
                   {formData?.email || "-"}
                </td>
                <td className="px-5 py-4">
-                  {formData?.mobile || "-"}
+                  {formData?.mobile || formData?.phone || "-"}
                </td>
                <td className="px-5 py-4 text-gray-500">
                   {new Date(lead.created_at).toLocaleDateString()}

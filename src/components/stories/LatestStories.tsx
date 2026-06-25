@@ -18,6 +18,10 @@ export function LatestStories() {
   // Use first 5 stories for carousel, fallback to empty array if none
   const [carouselCards, setCarouselCards] = useState<Story[]>([]);
   const [loading, setLoading] = useState(true);
+  const [formData, setFormData] = useState({
+  name: "",
+  email: "",
+});
   useEffect(() => {
     loadStories();
   }, []);
@@ -44,7 +48,52 @@ export function LatestStories() {
         setLoading(false);
       }
     }
+const handleSubmit = async (
+  e: React.FormEvent<HTMLFormElement>
+) => {
+  e.preventDefault();
 
+  if (!formData.email.trim()) {
+    alert("Email is required");
+    return;
+  }
+
+  try {
+    setLoading(true);
+
+    const res = await fetch("/api/form-submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        formName: "Newsletter Subscription",
+        sendToCRM: false,
+        sendToGoogleSheet: false,
+        data: formData,
+      }),
+    });
+
+    const result = await res.json();
+
+    if (!result.success) {
+      throw new Error(result.message);
+    }
+
+    alert("Subscribed Successfully");
+
+    setFormData({
+      name: "",
+      email: "",
+    });
+
+  } catch (err) {
+    console.error(err);
+    alert("Something went wrong.");
+  } finally {
+    setLoading(false);
+  }
+};
   const [currentIndex, setCurrentIndex] = useState(1); // Real Card 0 starts at index 1
   const [isTransitioning, setIsTransitioning] = useState(true);
   const [slideLock, setSlideLock] = useState(false);
@@ -360,27 +409,18 @@ export function LatestStories() {
           </div>
 
           {/* Right Side - Form */}
-          <form className="flex flex-col gap-4 w-full lg:max-w-[600px]">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full lg:max-w-[600px]" >
             <div className="flex flex-col sm:flex-row gap-4">
-              <input
-                type="text"
-                placeholder="Your name (optional)"
-                className="w-full bg-[#1F1F1F]/60 border border-white/10 rounded-full px-8 py-4 text-white placeholder-white/40 focus:outline-none focus:border-white/30 text-base"
-              />
-              <input
-                type="email"
-                placeholder="Email address *"
-                required
-                className="w-full bg-[#1F1F1F]/60 border border-white/10 rounded-full px-8 py-4 text-white placeholder-white/40 focus:outline-none focus:border-white/30 text-base"
-              />
+              <input type="text" placeholder="Your name (optional)" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value, }) } className="w-full bg-[#1F1F1F]/60 border border-white/10 rounded-full px-8 py-4 text-white" />
+             <input type="email" placeholder="Email address *" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value, }) } className="w-full bg-[#1F1F1F]/60 border border-white/10 rounded-full px-8 py-4 text-white" />
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-4 mt-2">
               <button
-                type="submit"
-                className="w-full sm:w-auto bg-[#E73649] hover:bg-[#c92b3c] text-white px-10 py-4 rounded-full text-base font-semibold tracking-wide shadow-md transition-all hover:scale-[1.02] cursor-pointer whitespace-nowrap"
-              >
-                Subscribe &rarr;
-              </button>
+    type="submit"
+    disabled={loading}
+  className="w-full sm:w-auto bg-[#E73649] hover:bg-[#c92b3c] text-white px-10 py-4 rounded-full text-base font-semibold tracking-wide shadow-md transition-all hover:scale-[1.02] cursor-pointer whitespace-nowrap">
+    {loading ? "Submitting..." : "Subscribe"}
+  </button>
               <span className="text-sm text-white/50 w-full text-center sm:text-left ml-2">
                 We never share your email.
               </span>
