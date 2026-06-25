@@ -22,6 +22,10 @@ export default function NewBlogPage() {
     loadCategories();
   }, []);
 
+    const [imageError, setImageError] = useState("");
+const [ogImageError, setOgImageError] = useState("");
+const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB
+
   async function loadCategories() {
     try {
       const res = await fetch("/api/admin/blog-categories");
@@ -315,17 +319,33 @@ const updateSection = (
         <label className="font-medium">
           Featured Image
         </label>
+<input
+  type="file"
+  accept="image/*" className="w-full border rounded-lg p-3 mt-1"
+  onChange={(e) => {
+    const file = e.target.files?.[0];
 
-        <input
-          type="file"
-          accept="image/*"
-          className="w-full border rounded-lg p-3 mt-1"
-          onChange={(e) => {
-            if (e.target.files?.length) {
-              setImageFile(e.target.files[0]);
-            }
-          }}
-        />
+    setImageError("");
+
+    if (!file) return;
+
+    if (file.size > MAX_FILE_SIZE) {
+      setImageError("Image size must be less than 2 MB.");
+      e.target.value = "";
+      setImageFile(null);
+      return;
+    }
+
+    setImageFile(file);
+  }}
+/>
+
+{imageError && (
+  <p className="text-red-600 text-sm mt-1">
+    {imageError}
+  </p>
+)}
+       
 
         {imageFile && (
           <img
@@ -584,7 +604,32 @@ const updateSection = (
            <label className="font-medium">
             Open Graph Image
           </label>
+<input
+  type="file"
+  accept="image/*"  className="w-full border rounded-lg p-3 mt-1"
+  onChange={(e) => {
+    const file = e.target.files?.[0];
 
+    setOgImageError("");
+
+    if (!file) return;
+
+    if (file.size > MAX_FILE_SIZE) {
+      setOgImageError("Image size must be less than 2 MB.");
+      e.target.value = "";
+      setOgImageFile(null);
+      return;
+    }
+
+    setOgImageFile(file);
+  }}
+/>
+
+{ogImageError && (
+  <p className="text-red-600 text-sm mt-1">
+    {ogImageError}
+  </p>
+)}
           <input
             type="file"
             accept="image/*"
