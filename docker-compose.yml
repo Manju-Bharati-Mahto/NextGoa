@@ -13,8 +13,6 @@ services:
       - .env
     environment:
       - NODE_ENV=production
-    volumes:
-      - ./public/uploads:/app/public/uploads
     depends_on:
       - db
     networks:
