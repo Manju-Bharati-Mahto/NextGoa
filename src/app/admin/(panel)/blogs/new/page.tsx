@@ -330,7 +330,7 @@ const updateSection = (
     if (!file) return;
 
     if (file.size > MAX_FILE_SIZE) {
-      setImageError("Image size must be less than 2 MB.");
+      setImageError("Image size must be less than 1 MB.");
       e.target.value = "";
       setImageFile(null);
       return;
@@ -615,7 +615,7 @@ const updateSection = (
     if (!file) return;
 
     if (file.size > MAX_FILE_SIZE) {
-      setOgImageError("Image size must be less than 2 MB.");
+      setOgImageError("Image size must be less than 1 MB.");
       e.target.value = "";
       setOgImageFile(null);
       return;
