@@ -1,16 +1,68 @@
 import { NextRequest, NextResponse } from "next/server";
 import db from "@/lib/db";
 
-// GET All Blogs
-export async function GET() {
+// GET ALL BLOGS
+export async function GET(req: NextRequest) {
   try {
-    const [rows]: any = await db.query(`
-      SELECT *
-      FROM blogs
-      ORDER BY id DESC
-    `);
+    const { searchParams } = new URL(req.url);
 
-    return NextResponse.json(rows);
+    const page = Number(searchParams.get("page") || 1);
+    const limit = Number(searchParams.get("limit") || 10);
+    const search = searchParams.get("search") || "";
+
+    const offset = (page - 1) * limit;
+
+    let where = "WHERE 1=1";
+    const params: any[] = [];
+
+    if (search) {
+      where += `
+      AND (
+        b.title LIKE ?
+        OR b.slug LIKE ?
+        OR b.status LIKE ?
+      )
+      `;
+
+      params.push(`%${search}%`);
+      params.push(`%${search}%`);
+      params.push(`%${search}%`);
+    }
+
+    const [rows]: any = await db.query(
+      `
+      SELECT
+        b.*,
+        (
+          SELECT GROUP_CONCAT(c.name SEPARATOR ', ')
+          FROM blog_categories c
+          WHERE FIND_IN_SET(c.id, b.category)
+        ) AS category_names
+      FROM blogs b
+      ${where}
+      ORDER BY b.id DESC
+      LIMIT ?
+      OFFSET ?
+      `,
+      [...params, limit, offset]
+    );
+
+    const [countRows]: any = await db.query(
+      `
+      SELECT COUNT(*) total
+      FROM blogs b
+      ${where}
+      `,
+      params
+    );
+
+    return NextResponse.json({
+      data: rows,
+      total: countRows[0].total,
+      page,
+      limit,
+      totalPages: Math.ceil(countRows[0].total / limit),
+    });
 
   } catch (error: any) {
 
@@ -23,6 +75,7 @@ export async function GET() {
         status: 500,
       }
     );
+
   }
 }
 
@@ -86,5 +139,6 @@ export async function POST(req: NextRequest) {
         status: 500,
       }
     );
+
   }
 }
