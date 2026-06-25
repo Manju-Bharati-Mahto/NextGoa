@@ -190,7 +190,7 @@ const updateSection = (
 
     alert("Blog created successfully.");
 
-    router.push("/blogs");
+    router.push("/admin/blogs");
   } catch (error) {
     console.error(error);
 
@@ -678,7 +678,7 @@ const updateSection = (
         <button
           type="button"
           onClick={() =>
-            router.push("/blogs")
+            router.push("/admin/blogs")
           }
           className="border px-6 py-3 rounded-lg"
         >

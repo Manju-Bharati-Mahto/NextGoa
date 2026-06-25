@@ -30,7 +30,7 @@ const data = await res.json();
 console.log("DATA:", data);
 
     if (data.success) {
-      router.push("/dashboard");
+      router.push("/admin/dashboard");
     } else {
       alert(data.message);
     }

@@ -157,7 +157,7 @@ export async function PUT(
 
       await writeFile(uploadPath, buffer);
 
-      og_image = `/uploads/ogimg/${filename}`;
+      og_image = `/uploads/ogimage/${filename}`;
     }
 
     // ===========================
