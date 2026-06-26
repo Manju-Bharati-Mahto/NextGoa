@@ -243,3 +243,5 @@ img, svg {
   animation: wave-flow 40s linear infinite;
   will-change: transform;
 }
+
+.list-disc{margin:0px 20px;}
