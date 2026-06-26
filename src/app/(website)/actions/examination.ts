@@ -16,6 +16,8 @@ const programToFolder: Record<string, string> = {
   "BBA": "bba",
   "B.Tech": "btech",
   "B.Pharm": "bpharm",
+  "PhD - Regular Batch1 (Regular Semester)": "phd/phd-regular",
+  "PhD - External Batch1 (Regular Semester)": "phd/phd-external",
 };
 
 export async function getPdfs(tab: string, session: string, program: string) {

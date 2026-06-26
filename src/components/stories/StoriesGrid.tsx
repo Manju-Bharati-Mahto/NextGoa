@@ -166,7 +166,7 @@ return (
   <button
     onClick={() => setCurrentPage((p) => p - 1)}
     disabled={currentPage === 1}
-    className="flex items-center gap-2 px-4 py-2 rounded-full border border-[#5B6933]/20 bg-white text-[#5B6933] hover:bg-[#5B6933] hover:text-white transition-all duration-300 disabled:opacity-40 disabled:hover:bg-white disabled:hover:text-[#5B6933]"
+    className="flex items-center gap-2 px-4 py-2 rounded-full border border-[#d62b3d]/20 bg-white text-[#d62b3d] hover:bg-[#d62b3d] hover:text-white transition-all duration-300 disabled:opacity-40 disabled:hover:bg-white disabled:hover:text-[#d62b3d]"
   >
     <ChevronLeft size={18} />
   </button>
@@ -178,7 +178,7 @@ return (
       className={`w-11 h-11 rounded-full text-sm font-semibold transition-all duration-300 ${
         currentPage === i + 1
           ? "bg-[#5B6933] text-white shadow-lg scale-105"
-          : "bg-white border border-gray-300 text-gray-700 hover:border-[#5B6933] hover:text-[#5B6933] hover:shadow"
+          : "bg-white border border-gray-300 text-gray-700 hover:border-[#d62b3d] hover:text-[#d62b3d] hover:shadow"
       }`}
     >
       {i + 1}

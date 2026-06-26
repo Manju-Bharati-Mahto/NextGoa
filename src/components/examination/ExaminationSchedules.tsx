@@ -13,12 +13,33 @@ const SESSIONS = [
   "Supplementary Examination 2025-26",
 ];
 
-const PROGRAMS = ["B.Sc.", "BCA", "MCA", "BBA", "B.Tech", "B.Pharm"];
+const BASE_PROGRAMS = ["B.Sc.", "BCA", "MCA", "BBA", "B.Tech", "B.Pharm"];
 
 export function ExaminationSchedules() {
   const [activeTab, setActiveTab] = useState("Theory Schedule");
   const [selectedSession, setSelectedSession] = useState("Winter Examination 2025-26");
   const [selectedProgram, setSelectedProgram] = useState("B.Sc.");
+
+  const currentPrograms = [...BASE_PROGRAMS];
+  if (activeTab === "Theory Schedule" && selectedSession === "Summer Examination 2025-26") {
+    currentPrograms.push(
+      "PhD - Regular Batch1 (Regular Semester)",
+      "PhD - External Batch1 (Regular Semester)"
+    );
+  }
+
+  useEffect(() => {
+    const validPrograms = [...BASE_PROGRAMS];
+    if (activeTab === "Theory Schedule" && selectedSession === "Summer Examination 2025-26") {
+      validPrograms.push(
+        "PhD - Regular Batch1 (Regular Semester)",
+        "PhD - External Batch1 (Regular Semester)"
+      );
+    }
+    if (!validPrograms.includes(selectedProgram)) {
+      setSelectedProgram("B.Sc.");
+    }
+  }, [activeTab, selectedSession, selectedProgram]);
 
   const [pdfs, setPdfs] = useState<{ id: number, title: string, url: string }[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -77,7 +98,7 @@ export function ExaminationSchedules() {
             {/* Programs Filter */}
             <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm h-full">
               <div className="flex flex-col gap-4">
-                {PROGRAMS.map((program) => (
+                {currentPrograms.map((program) => (
                   <label key={program} className="flex items-center gap-3 cursor-pointer">
                     <input
                       type="radio"
