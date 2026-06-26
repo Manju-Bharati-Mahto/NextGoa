@@ -15,6 +15,7 @@ date?: string;
 }
 const STORIES_PER_PAGE = 8;
 const categories = [
+{ name: "All", icon: "apps" },
 { name: "News", icon: "newspaper" },
 { name: "Events", icon: "theater_comedy" },
 { name: "Academic", icon: "menu_book" },
@@ -62,9 +63,8 @@ return (
 function StoriesGridInner() {
 const searchParams = useSearchParams();
 const tagParam = searchParams.get("tag");
-const [selectedCategory, setSelectedCategory] = useState
-<string | null>
-(tagParam);
+const [selectedCategory, setSelectedCategory] =
+useState(tagParam || "All");
 const [stories, setStories] = useState<Story[]>([]);
 const [loading, setLoading] = useState(true);
 const [currentPage, setCurrentPage] = useState(1);
@@ -91,21 +91,17 @@ setLoading(false);
 fetchStories();
 }, []);
 const handleCategorySelect = (categoryName: string) => {
-if (selectedCategory === categoryName) {
-setSelectedCategory(null);
-} else {
-setSelectedCategory(categoryName);
-}
-setCurrentPage(1);
+  setSelectedCategory(categoryName);
+  setCurrentPage(1);
 };
 const filteredStories =
-selectedCategory === null
-? stories
-: stories.filter(story =>
-story.tag
-.toLowerCase()
-.includes(selectedCategory.toLowerCase())
-);
+selectedCategory === "All"
+  ? stories
+  : stories.filter((story) =>
+      story.tag
+        .toLowerCase()
+        .includes(selectedCategory.toLowerCase())
+    );
 const totalPages = Math.ceil(
 filteredStories.length / STORIES_PER_PAGE
 );
