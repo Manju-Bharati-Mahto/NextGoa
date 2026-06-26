@@ -82,7 +82,7 @@ export function websiteSchema() {
 
 export type Crumb = { name: string; path: string };
 
-/** Breadcrumb trail. `path` is site-relative, e.g. "/programs/btech-cse". */
+/** Breadcrumb trail. `path` is site-relative, e.g. "/faculty/btech-cse". */
 export function breadcrumbSchema(crumbs: Crumb[]) {
   return {
     "@context": "https://schema.org",
@@ -114,7 +114,7 @@ export function faqSchema(items: FaqItem[]) {
 export type CourseInfo = {
   name: string;
   description: string;
-  /** Site-relative URL of the program page, e.g. "/programs/btech-cse". */
+  /** Site-relative URL of the program page, e.g. "/faculty/btech-cse". */
   path: string;
   /** e.g. "Bachelor's degree", "Master's degree", "Doctoral". */
   credential?: string;

@@ -11,7 +11,7 @@ export type NavItem = { label: string; href: string };
 export const navItems: NavItem[] = [
   { label: "About", href: "/about" },
   { label: "Admissions", href: "/admissions" },
-  { label: "Programs", href: "/programs" },
+  { label: "Programs", href: "/faculty" },
   { label: "Examinations", href: "/examination" },
   { label: "Study Abroad", href: "/study-abroad" },
   { label: "Placements", href: "/placements" },

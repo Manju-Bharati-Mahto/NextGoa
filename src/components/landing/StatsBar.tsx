@@ -71,8 +71,8 @@ function AnimatedNumber({ value }: { value: string }) {
 
 export function StatsBar() {
   return (
-    <section id="stats" className="bg-ink-warm py-16 sm:py-5">
-      <div className="mx-auto max-w-7xl px-6 py-15 sm:py-25">
+    <section id="stats" className="bg-ink-warm py-8 sm:py-5">
+      <div className="mx-auto max-w-7xl px-6 py-8 sm:py-25">
         <dl className="grid grid-cols-1 gap-14 sm:gap-6 sm:grid-cols-3 sm:divide-x sm:divide-white/10">
           {stats.map((s) => (
             <div key={s.label} className="text-center">

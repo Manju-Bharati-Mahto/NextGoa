@@ -15,25 +15,25 @@ const trendingCourses = [
     course: "B.Tech CSE",
     tags: ["12 Seats Left", "Most Applied"],
     icon: EngineeringIcon,
-    href: "/programs/engineering",
+    href: "/faculty/engineering",
   },
   {
     course: "B.Sc. Nursing",
     tags: ["5 Seats Left", "High Demand"],
     icon: NursingIcon,
-    href: "/programs/nursing",
+    href: "/faculty/nursing",
   },
   {
     course: "MBA",
     tags: ["18 Seats Left", "Top Placement"],
     icon: ManagementIcon,
-    href: "/programs/management-studies",
+    href: "/faculty/management-studies",
   },
   {
     course: "BHMCT",
     tags: ["8 Seats Left", "Fast Filling"],
     icon: HotelIcon,
-    href: "/programs/hotel-management",
+    href: "/faculty/hotel-management",
   }
 ];
 

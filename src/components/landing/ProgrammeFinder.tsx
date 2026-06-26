@@ -116,7 +116,7 @@ const faculties = [
     tags: ["PhD"],
     levels: ["Doctoral (PhD)"],
     fields: ["Engineering & Technology", "IT & Computer Science", "Management Studies", "Pharmacy", "Nursing", "Allied and Healthcare Sciences", "Applied Sciences"],
-    slug: "phd",
+    slug: "doctorate-programs",
     icon: DoctoralIcon,
   }
 ];
@@ -371,7 +371,7 @@ export function ProgrammeFinder() {
                       color={colors[i % colors.length]}
                       title={fac.name}
                       tags={fac.tags}
-                      href={`/programs/${fac.slug}`}
+                      href={`/faculty/${fac.slug}`}
                       icon={fac.icon}
                     />
                   </li>

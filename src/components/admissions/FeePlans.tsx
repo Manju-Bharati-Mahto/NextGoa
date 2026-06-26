@@ -23,7 +23,7 @@ const COURSES: Course[] = [
     color: "#ee364f",
     textColor: "text-white",
     type: "tech",
-    href: "/programs/engineering",
+    href: "/faculty/engineering",
   },
   {
     name: "General Nursing and Midwifery (G.N.M)",
@@ -32,7 +32,7 @@ const COURSES: Course[] = [
     color: "#ee364f",
     textColor: "text-white",
     type: "medical",
-    href: "/programs/nursing",
+    href: "/faculty/nursing",
   },
 
   // Bachelors
@@ -43,7 +43,7 @@ const COURSES: Course[] = [
     color: "#ee364f",
     textColor: "text-white",
     type: "tech",
-    href: "/programs/engineering",
+    href: "/faculty/engineering",
   },
   {
     name: "B.Tech - Lateral Entry",
@@ -52,7 +52,7 @@ const COURSES: Course[] = [
     color: "#ee364f",
     textColor: "text-white",
     type: "tech",
-    href: "/programs/engineering",
+    href: "/faculty/engineering",
   },
   {
     name: "Bachelor of Computer Applications (BCA)",
@@ -61,7 +61,7 @@ const COURSES: Course[] = [
     color: "#ee364f",
     textColor: "text-white",
     type: "tech",
-    href: "/programs/engineering",
+    href: "/faculty/engineering",
   },
   {
     name: "BCA Honours (NEP 2020)",
@@ -70,7 +70,7 @@ const COURSES: Course[] = [
     color: "#ee364f",
     textColor: "text-white",
     type: "tech",
-    href: "/programs/engineering",
+    href: "/faculty/engineering",
   },
   {
     name: "Bachelor of Business Administration (BBA)",
@@ -79,7 +79,7 @@ const COURSES: Course[] = [
     color: "#0caadd",
     textColor: "text-white",
     type: "business",
-    href: "/programs/management-studies",
+    href: "/faculty/management-studies",
   },
   {
     name: "BBA Honours (NEP 2020)",
@@ -88,7 +88,7 @@ const COURSES: Course[] = [
     color: "#0caadd",
     textColor: "text-white",
     type: "business",
-    href: "/programs/management-studies",
+    href: "/faculty/management-studies",
   },
   {
     name: "Bachelor of Science in Nursing",
@@ -97,7 +97,7 @@ const COURSES: Course[] = [
     color: "#ee364f",
     textColor: "text-white",
     type: "medical",
-    href: "/programs/nursing",
+    href: "/faculty/nursing",
   },
   {
     name: "Bachelor of Physiotherapy (BPT)",
@@ -106,7 +106,7 @@ const COURSES: Course[] = [
     color: "#ee364f",
     textColor: "text-white",
     type: "medical",
-    href: "/programs/physiotherapy",
+    href: "/faculty/physiotherapy",
   },
   {
     name: "Post Basic B.Sc Nursing (PB-B.Sc.)",
@@ -115,7 +115,7 @@ const COURSES: Course[] = [
     color: "#ee364f",
     textColor: "text-white",
     type: "medical",
-    href: "/programs/nursing",
+    href: "/faculty/nursing",
   },
   {
     name: "Bachelor of Pharmacy (B.Pharm.)",
@@ -124,7 +124,7 @@ const COURSES: Course[] = [
     color: "#0caadd",
     textColor: "text-white",
     type: "pharmacy",
-    href: "/programs/pharmacy",
+    href: "/faculty/pharmacy",
   },
   {
     name: "B.Pharm. - Lateral Entry",
@@ -133,7 +133,7 @@ const COURSES: Course[] = [
     color: "#0caadd",
     textColor: "text-white",
     type: "pharmacy",
-    href: "/programs/pharmacy",
+    href: "/faculty/pharmacy",
   },
   {
     name: "Bachelor of Medical Laboratory Science (BMLS)",
@@ -142,7 +142,7 @@ const COURSES: Course[] = [
     color: "#0caadd",
     textColor: "text-white",
     type: "pharmacy",
-    href: "/programs/allied-healthcare",
+    href: "/faculty/allied-healthcare",
   },
   {
     name: "Bachelor of Anaesthesia & Operation Theatre Technology",
@@ -151,7 +151,7 @@ const COURSES: Course[] = [
     color: "#0caadd",
     textColor: "text-white",
     type: "pharmacy",
-    href: "/programs/allied-healthcare",
+    href: "/faculty/allied-healthcare",
   },
   {
     name: "BHMCT",
@@ -160,7 +160,7 @@ const COURSES: Course[] = [
     color: "#fedb2f",
     textColor: "text-ink",
     type: "business",
-    href: "/programs/hotel-management",
+    href: "/faculty/hotel-management",
   },
   {
     name: "Bachelor of Science - Hotel Management",
@@ -169,7 +169,7 @@ const COURSES: Course[] = [
     color: "#fedb2f",
     textColor: "text-ink",
     type: "business",
-    href: "/programs/hotel-management",
+    href: "/faculty/hotel-management",
   },
   {
     name: "B.Sc Hons. - Hotel Management",
@@ -178,7 +178,7 @@ const COURSES: Course[] = [
     color: "#fedb2f",
     textColor: "text-ink",
     type: "business",
-    href: "/programs/hotel-management",
+    href: "/faculty/hotel-management",
   },
 
   // Masters
@@ -189,7 +189,7 @@ const COURSES: Course[] = [
     color: "#ee364f",
     textColor: "text-white",
     type: "tech",
-    href: "/programs/engineering",
+    href: "/faculty/engineering",
   },
   {
     name: "Master of Business Administration (MBA)",
@@ -198,7 +198,7 @@ const COURSES: Course[] = [
     color: "#fedb2f",
     textColor: "text-ink",
     type: "business",
-    href: "/programs/management-studies",
+    href: "/faculty/management-studies",
   },
 
   // Ph.D
@@ -209,7 +209,7 @@ const COURSES: Course[] = [
     color: "#0caadd",
     textColor: "text-white",
     type: "tech",
-    href: "/programs/doctorate-programs",
+    href: "/faculty/doctorate-programs",
   },
   {
     name: "Ph.D in Management",
@@ -218,7 +218,7 @@ const COURSES: Course[] = [
     color: "#0caadd",
     textColor: "text-white",
     type: "tech",
-    href: "/programs/doctorate-programs",
+    href: "/faculty/doctorate-programs",
   },
   {
     name: "Ph.D in Pharmacy",
@@ -227,7 +227,7 @@ const COURSES: Course[] = [
     color: "#0caadd",
     textColor: "text-white",
     type: "tech",
-    href: "/programs/doctorate-programs",
+    href: "/faculty/doctorate-programs",
   },
 ];
 
