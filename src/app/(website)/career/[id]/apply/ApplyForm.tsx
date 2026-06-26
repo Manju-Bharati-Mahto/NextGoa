@@ -3,24 +3,81 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
+
 export default function ApplyForm({ jobId, jobTitle }: { jobId: number, jobTitle?: string }) {
   const router = useRouter();
   const [fileName, setFileName] = useState<string | null>(null);
+  const [formData, setFormData] = useState({
+  fullName: "",
+  mobile: "",
+  email: "",
+  position: jobTitle || "",
+  location: "",
+  resume: null as File | null,
+});
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); // Prevent standard HTTP form submission
-    
-    // Navigate to the success page only after HTML5 validation passes
-    router.push(`/career/${jobId}/success`);
-  };
+  const handleSubmit = async (
+  e: React.FormEvent<HTMLFormElement>
+) => {
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files.length > 0) {
-      setFileName(e.target.files[0].name);
-    } else {
-      setFileName(null);
+  e.preventDefault();
+
+  try {
+
+    const body = new FormData();
+
+    body.append("jobId", String(jobId));
+    body.append("jobTitle", jobTitle || "");
+
+    body.append("fullName", formData.fullName);
+    body.append("mobile", formData.mobile);
+    body.append("email", formData.email);
+    body.append("position", formData.position);
+    body.append("location", formData.location);
+
+    if (formData.resume) {
+      body.append("resume", formData.resume);
     }
-  };
+
+    const res = await fetch("/api/careers", {
+      method: "POST",
+      body,
+    });
+
+    const result = await res.json();
+
+    if (result.success) {
+      router.push(`/career/${jobId}/success`);
+    } else {
+      alert(result.message);
+    }
+
+  } catch (err) {
+
+    console.error(err);
+
+    alert("Something went wrong");
+
+  }
+
+};
+
+  const handleFileChange = (
+  e: React.ChangeEvent<HTMLInputElement>
+) => {
+
+  const file = e.target.files?.[0];
+
+  if (!file) return;
+
+  setFileName(file.name);
+
+  setFormData((prev) => ({
+    ...prev,
+    resume: file,
+  }));
+};
+  
 
 
   return (
@@ -29,19 +86,19 @@ export default function ApplyForm({ jobId, jobTitle }: { jobId: number, jobTitle
       {/* Full Name */}
       <div className="flex flex-col gap-2">
         <label className="text-[15px] font-bold text-[#111111]">Full Name</label>
-        <input required type="text" className="border border-gray-200 rounded-xl px-4 py-3 bg-[#FAFAFA] focus:outline-none focus:border-gray-400 transition-colors text-[15px] placeholder-gray-400" placeholder="Name" />
+        <input required type="text" value={formData.fullName} onChange={(e) => setFormData({ ...formData, fullName: e.target.value, }) } className="border border-gray-200 rounded-xl px-4 py-3 bg-[#FAFAFA] focus:outline-none focus:border-gray-400 transition-colors text-[15px] placeholder-gray-400"  placeholder="Name" />
       </div>
 
       {/* Mobile No. */}
       <div className="flex flex-col gap-2">
         <label className="text-[15px] font-bold text-[#111111]">Mobile No.</label>
-        <input required type="tel" className="border border-gray-200 rounded-xl px-4 py-3 bg-[#FAFAFA] focus:outline-none focus:border-gray-400 transition-colors text-[15px] placeholder-gray-400" placeholder="XXXXX XXXXX" />
+        <input required type="tel" value={formData.mobile} onChange={(e) => setFormData({ ...formData, mobile: e.target.value, }) } className="border border-gray-200 rounded-xl px-4 py-3 bg-[#FAFAFA] focus:outline-none focus:border-gray-400 transition-colors text-[15px] placeholder-gray-400" placeholder="XXXXX XXXXX" />
       </div>
 
       {/* Email */}
       <div className="flex flex-col gap-2">
         <label className="text-[15px] font-bold text-[#111111]">Email</label>
-        <input required type="email" className="border border-gray-200 rounded-xl px-4 py-3 bg-[#FAFAFA] focus:outline-none focus:border-gray-400 transition-colors text-[15px] placeholder-gray-400" placeholder="Sample@gmail.com" />
+        <input required type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value, }) } className="border border-gray-200 rounded-xl px-4 py-3 bg-[#FAFAFA] focus:outline-none focus:border-gray-400 transition-colors text-[15px] placeholder-gray-400" placeholder="Sample@gmail.com" />
       </div>
 
       <div className="hidden md:block"></div> {/* Empty space */}
@@ -49,13 +106,13 @@ export default function ApplyForm({ jobId, jobTitle }: { jobId: number, jobTitle
       {/* Position */}
       <div className="flex flex-col gap-2">
         <label className="text-[15px] font-bold text-[#111111]">Position</label>
-        <input required type="text" defaultValue={jobTitle} className="border border-gray-200 rounded-xl px-4 py-3 bg-[#FAFAFA] focus:outline-none focus:border-gray-400 transition-colors text-[15px] placeholder-gray-400" placeholder="Select Position" />
+        <input required type="text" value={formData.position} onChange={(e) => setFormData({ ...formData, position: e.target.value, }) } className="border border-gray-200 rounded-xl px-4 py-3 bg-[#FAFAFA] focus:outline-none focus:border-gray-400 transition-colors text-[15px] placeholder-gray-400" placeholder="Select Position" />
       </div>
 
       {/* Location */}
       <div className="flex flex-col gap-2">
         <label className="text-[15px] font-bold text-[#111111]">Location</label>
-        <input required type="text" className="border border-gray-200 rounded-xl px-4 py-3 bg-[#FAFAFA] focus:outline-none focus:border-gray-400 transition-colors text-[15px] placeholder-gray-400" placeholder="Current Location" />
+        <input required type="text" value={formData.location} onChange={(e) => setFormData({ ...formData, location: e.target.value, }) } className="border border-gray-200 rounded-xl px-4 py-3 bg-[#FAFAFA] focus:outline-none focus:border-gray-400 transition-colors text-[15px] placeholder-gray-400" placeholder="Current Location" />
       </div>
 
       <div className="hidden md:block"></div> {/* Empty space */}
