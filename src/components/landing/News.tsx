@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useRef, useState, useEffect } from "react";
 import { Eyebrow } from "./Decor";
 import Image from "next/image";
-import { BlogStory } from "@/lib/fetchBlogs";
 
 const placeholderStories = [
   {
@@ -33,29 +32,43 @@ const placeholderStories = [
   },
 ];
 
-export function News({ stories = [] }: { stories?: BlogStory[] }) {
+export function News() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [stories, setStories] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   // Use up to 3 of the latest fetched stories, fallback to placeholders if empty
-  const activeStories = stories.length >= 3 ? stories.slice(0, 3) : placeholderStories;
+  const activeStories = stories.length > 0 ? stories : placeholderStories;
 
   /* Update dot indicator using IntersectionObserver */
-  useEffect(() => {
-    const observers: IntersectionObserver[] = [];
-    cardRefs.current.forEach((el, idx) => {
-      if (!el) return;
-      const obs = new IntersectionObserver(
-        ([entry]) => { if (entry.isIntersecting && entry.intersectionRatio >= 0.5) setActiveIndex(idx); },
-        { root: scrollRef.current, threshold: 0.5 }
-      );
-      obs.observe(el);
-      observers.push(obs);
-    });
-    return () => observers.forEach((o) => o.disconnect());
-  }, []);
+ useEffect(() => {
+  async function loadStories() {
+    try {
+      const res = await fetch("/api/blogs?limit=3");
+      const data = await res.json();
+
+      const formatted = data.map((blog: any) => ({
+        tag: blog.category_names,
+        tagClass: "bg-[#04B86A] text-white",
+        title: blog.title,
+        body: blog.excerpt,
+        image: blog.featured_image,
+        link: `/blog/${blog.slug}`,
+      }));
+
+      setStories(formatted);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  loadStories();
+}, []);
 
   const scrollTo = (idx: number) => {
     cardRefs.current[idx]?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
