@@ -45,8 +45,8 @@ services:
     environment:
       PMA_HOST: db
       PMA_PORT: 3306
-      UPLOAD_LIMIT: 64M
-      PMA_ABSOLUTE_URI: "https://staging-goa.paruluniversity.ac.in/phpmyadmin/"
+      # UPLOAD_LIMIT: 64M
+      # PMA_ABSOLUTE_URI: "https://staging-goa.paruluniversity.ac.in/phpmyadmin/"
     depends_on:
       - db
     networks:
