@@ -647,16 +647,6 @@ const updateSection = (
     {ogImageError}
   </p>
 )}
-          <input
-            type="file"
-            accept="image/*"
-            className="w-full border rounded-lg p-3 mt-1"
-            onChange={(e) => {
-              if (e.target.files?.length) {
-                setOgImageFile(e.target.files[0]);
-              }
-            }}
-          />
 
           {ogImageFile && (
             <img

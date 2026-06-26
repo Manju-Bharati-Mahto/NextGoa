@@ -1,9 +1,93 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import db from "@/lib/db";
 
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+
+  const [rows]: any = await db.query(
+    `
+    SELECT *
+    FROM blogs
+    WHERE slug=?
+    LIMIT 1
+    `,
+    [slug]
+  );
+
+  if (!rows.length) {
+    return {
+      title: "Blog Not Found",
+    };
+  }
+
+  const blog = rows[0];
+
+  return {
+    title: blog.meta_title || blog.title,
+
+    description:
+      blog.meta_description || blog.excerpt,
+
+    keywords: blog.meta_keywords
+      ? blog.meta_keywords.split(",")
+      : [],
+
+    alternates: {
+      canonical:
+        blog.canonical_url ||
+        `/blog/${blog.slug}`,
+    },
+
+    openGraph: {
+      title:
+        blog.og_title ||
+        blog.meta_title ||
+        blog.title,
+
+      description:
+        blog.og_description ||
+        blog.meta_description ||
+        blog.excerpt,
+
+      url:
+        blog.canonical_url ||
+        `/blog/${blog.slug}`,
+
+      images: [
+        {
+          url:
+            blog.og_image ||
+            blog.featured_image,
+        },
+      ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+
+      title:
+        blog.og_title ||
+        blog.title,
+
+      description:
+        blog.og_description ||
+        blog.excerpt,
+
+      images: [
+        blog.og_image ||
+        blog.featured_image,
+      ],
+    },
+  };
+}
 
 export default async function StoryPage({
   params,
