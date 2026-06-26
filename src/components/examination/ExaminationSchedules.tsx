@@ -62,8 +62,8 @@ export function ExaminationSchedules() {
             key={tab}
             onClick={() => setActiveTab(tab)}
             className={`py-4 px-6 rounded-2xl text-xl font-bold transition-colors cursor-pointer ${activeTab === tab
-                ? "bg-[#0eb1df] text-white"
-                : "bg-[#f1f9fc] text-[#0eb1df] border border-[#0eb1df]"
+              ? "bg-[#0eb1df] text-white"
+              : "bg-[#f1f9fc] text-[#0eb1df] border border-[#0eb1df]"
               }`}
           >
             {tab}

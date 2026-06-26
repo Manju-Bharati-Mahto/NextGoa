@@ -245,3 +245,13 @@ img, svg {
 }
 
 .list-disc{margin:0px 20px;}
+
+::selection {
+  background-color: #0CAADD !important;
+  color: white !important;
+}
+
+::-moz-selection {
+  background-color: #0CAADD !important;
+  color: white !important;
+}

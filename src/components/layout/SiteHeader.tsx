@@ -72,9 +72,9 @@ export function SiteHeader() {
 
           <nav aria-label="Primary" className="hidden items-center gap-3 xl:gap-5 xl:flex h-full">
             {navItems.map((item) => {
-              const isActive = pathname === item.href || (item.label === "Programs" && pathname.startsWith("/faculty"));
+              const isActive = pathname === item.href || (item.label === "Faculties" && pathname.startsWith("/faculty"));
 
-              if (item.label === "Programs") {
+              if (item.label === "Faculties") {
                 return (
                   <div key={item.label} className="relative group py-4 -my-4 flex items-center h-full">
                     <Link
@@ -105,7 +105,7 @@ export function SiteHeader() {
                               ${pathname === "/faculty" ? "text-[#ED383F] bg-[#ED383F]/10" : "text-slate-800 hover:text-[#ED383F] hover:bg-[#ED383F]/5"}
                             `}
                           >
-                            <span>All Programs</span>
+                            <span>All Faculties</span>
                             <svg className="w-4 h-4 opacity-0 -translate-x-2 transition-all duration-300 group-hover/link:opacity-100 group-hover/link:translate-x-0 text-[#ED383F]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                             </svg>
@@ -210,7 +210,7 @@ export function SiteHeader() {
         >
           <ul className="flex flex-col gap-6">
             {navItems.map((item, idx) => {
-              if (item.label === "Programs") {
+              if (item.label === "Faculties") {
                 return (
                   <li
                     key={item.label}
@@ -265,7 +265,7 @@ export function SiteHeader() {
                               onClick={() => setOpen(false)}
                               className="block text-[17px] font-semibold text-white/90 hover:text-white transition-colors"
                             >
-                              All Programs &rarr;
+                              All Faculties &rarr;
                             </Link>
                           </li>
                           {subPrograms.map((sub) => (
