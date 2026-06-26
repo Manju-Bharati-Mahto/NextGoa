@@ -59,7 +59,7 @@ export default function Home() {
         <CampusLife />
         <WhyGoa />
         <International />
-        <News stories={mappedStories} />
+        <News />
         <FinalCta />
         <Faq />
       </main>
