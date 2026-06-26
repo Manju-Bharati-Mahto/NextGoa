@@ -41,6 +41,7 @@ const MAX_FILE_SIZE = 1 * 1024 * 1024; // 1MB
     title: "",
     slug: "",
     excerpt: "",
+    blockquote:"",
     category: [] as string[],
     meta_title: "",
     meta_description: "",
@@ -369,6 +370,22 @@ const updateSection = (
           rows={4}
           name="excerpt"
           value={form.excerpt}
+          onChange={handleChange}
+          className="w-full border rounded-lg p-3 mt-1"
+        />
+
+      </div>
+    {/* Block Quote */}
+      <div>
+
+        <label className="font-medium">
+          Block Quote
+        </label>
+
+        <textarea
+          rows={2}
+          name="blockquote"
+          value={form.blockquote}
           onChange={handleChange}
           className="w-full border rounded-lg p-3 mt-1"
         />

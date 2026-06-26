@@ -82,6 +82,8 @@ export async function PUT(
     const title = formData.get("title") as string;
     const slug = formData.get("slug") as string;
     const excerpt = formData.get("excerpt") as string;
+    const blockquote = formData.get("blockquote") as string;
+    
     const sections = JSON.parse(
       (formData.get("sections") as string) || "[]"
     );
@@ -171,6 +173,7 @@ export async function PUT(
         title=?,
         slug=?,
         excerpt=?,
+        blockquote =?,
         content=?,
         featured_image=?,
         category=?,
@@ -188,6 +191,7 @@ export async function PUT(
         title,
         slug,
         excerpt,
+        blockquote,
         JSON.stringify(sections),
         featured_image,
         categories.join(","),

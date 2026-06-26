@@ -63,11 +63,40 @@ const [faqs]: any = await db.query(
           </div>
         </section>
 
-        
+        {/* Quote Section */}
+
+
+    
+
         {/* Main Content */}
         <section className="max-w-7xl mx-auto w-full px-[50px] py-16 sm:py-24">
 
           <div className="space-y-8">
+            {story.blockquote && (
+      <div className="relative bg-[#F7F7F5] rounded-sm px-10 md:px-20 py-16 text-center">
+
+      {/* Quote Icon */}
+
+      <div className="absolute left-1/2 -top-9 -translate-x-1/2 w-18 h-18 rounded-full bg-white shadow-md flex items-center justify-center">
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-10 h-10 text-[#0B3A6E]"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path d="M7.17 6A5.001 5.001 0 002 11v7h7v-7H5.09A3.001 3.001 0 017.17 8V6zm10 0A5.001 5.001 0 0012 11v7h7v-7h-3.91A3.001 3.001 0 0117.17 8V6z" />
+        </svg>
+
+      </div>
+
+      <p className="max-w-5xl mx-auto text-2xl md:text-3xl leading-relaxed font-medium text-[#0A1733]">
+        {story.blockquote}
+      </p>
+
+    </div>
+    )}
+
 
   {sections.map((section: any, index: number) => {
 

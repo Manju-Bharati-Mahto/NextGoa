@@ -34,6 +34,7 @@ export default function EditBlogPage() {
   title: "",
   slug: "",
   excerpt: "",
+  blockquote: "",
   category: [] as string[],
   meta_title: "",
   meta_description: "",
@@ -83,6 +84,7 @@ export default function EditBlogPage() {
         slug: data.slug || "",
         excerpt: data.excerpt || "",
         category: data.categories || [],
+        blockquote: data.blockquote || [],
         meta_title: data.meta_title || "",
         meta_description: data.meta_description || "",
         meta_keywords: data.meta_keywords || "",
@@ -506,6 +508,19 @@ item=>item!==String(cat.id)
       </div>
 
       {/* Content */}
+
+      {/* Block Quote */}
+
+      <textarea
+        rows={2}
+        name="blockquote"
+        value={form.blockquote}
+        onChange={handleChange}
+        placeholder="Block Quote"
+        className="w-full border rounded-lg p-3"
+      />
+
+      {/* Block Quote */}
 
      <div className="border rounded-xl p-6">
 
