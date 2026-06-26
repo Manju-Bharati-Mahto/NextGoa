@@ -6,25 +6,25 @@ type Phase = "text-in" | "text" | "text-out" | "logo-in" | "logo" | "logo-out";
 
 const TEXT_HOLD = 1500;
 const LOGO_HOLD = 1500;
-const EXIT_DUR  = 1500;
+const EXIT_DUR = 1500;
 const ENTER_DUR = 1500;
-const EASING    = "cubic-bezier(0.4, 0, 0.2, 1)";
+const EASING = "cubic-bezier(0.4, 0, 0.2, 1)";
 
 const NEXT: Record<Phase, Phase> = {
-  "text-in":  "text",
-  "text":     "text-out",
+  "text-in": "text",
+  "text": "text-out",
   "text-out": "logo-in",
-  "logo-in":  "logo",
-  "logo":     "logo-out",
+  "logo-in": "logo",
+  "logo": "logo-out",
   "logo-out": "text-in",
 };
 
 const DELAY: Record<Phase, number> = {
-  "text-in":  ENTER_DUR,
-  "text":     TEXT_HOLD,
+  "text-in": ENTER_DUR,
+  "text": TEXT_HOLD,
   "text-out": EXIT_DUR,
-  "logo-in":  ENTER_DUR,
-  "logo":     LOGO_HOLD,
+  "logo-in": ENTER_DUR,
+  "logo": LOGO_HOLD,
   "logo-out": EXIT_DUR,
 };
 
@@ -48,14 +48,14 @@ export function Hero() {
   const textPhase = ["text-in", "text"].includes(phase)
     ? "visible"
     : phase === "text-out"
-    ? "out"
-    : "below"; // during logo phases: parked below, ready to rise in
+      ? "out"
+      : "below"; // during logo phases: parked below, ready to rise in
 
   const logoPhase = ["logo-in", "logo"].includes(phase)
     ? "visible"
     : phase === "logo-out"
-    ? "out"
-    : "below"; // during text phases: parked below, ready to rise in
+      ? "out"
+      : "below"; // during text phases: parked below, ready to rise in
 
   const dur = (entering: boolean) =>
     `${entering ? ENTER_DUR : EXIT_DUR}ms ${EASING}`;
@@ -65,19 +65,19 @@ export function Hero() {
 
   const textStyle: React.CSSProperties = {
     transition: `opacity ${dur(textEntering)}, transform ${dur(textEntering)}`,
-    opacity:    textPhase === "visible" ? 1 : 0,
-    transform:  textPhase === "visible" ? "translateY(0)"
-              : textPhase === "out"     ? "translateY(-40px)"
-              :                           "translateY(50px)",
+    opacity: textPhase === "visible" ? 1 : 0,
+    transform: textPhase === "visible" ? "translateY(0)"
+      : textPhase === "out" ? "translateY(-40px)"
+        : "translateY(50px)",
     pointerEvents: textPhase === "visible" ? "auto" : "none",
   };
 
   const logoStyle: React.CSSProperties = {
     transition: `opacity ${dur(logoEntering)}, transform ${dur(logoEntering)}`,
-    opacity:    logoPhase === "visible" ? 1 : 0,
-    transform:  logoPhase === "visible" ? "translateY(0)"
-              : logoPhase === "out"     ? "translateY(-40px)"
-              :                           "translateY(50px)",
+    opacity: logoPhase === "visible" ? 1 : 0,
+    transform: logoPhase === "visible" ? "translateY(0)"
+      : logoPhase === "out" ? "translateY(-40px)"
+        : "translateY(50px)",
     pointerEvents: "none",
   };
 
