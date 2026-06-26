@@ -11,6 +11,8 @@ export async function POST(req: NextRequest) {
     const title = formData.get("title") as string;
     const slug = formData.get("slug") as string;
     const excerpt = formData.get("excerpt") as string;
+    const blockquote = formData.get("blockquote") as string;
+    
     const sections = JSON.parse(
       (formData.get("sections") as string) || "[]"
     );
@@ -81,6 +83,7 @@ export async function POST(req: NextRequest) {
   title,
   slug,
   excerpt,
+  blockquote,
   content,
   featured_image,
   category,
