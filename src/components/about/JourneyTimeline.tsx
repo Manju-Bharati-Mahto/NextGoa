@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const milestones = [
   {
@@ -11,9 +11,9 @@ const milestones = [
   },
   {
     year: "2018",
-    label: "ACCREDITATION",
+    label: "ACHIEVEMENT",
     description:
-      "Parul University, Vadodara conferred NAAC A++ in its first cycle.",
+      "National Recognition as the “Best University in Placements”",
   },
   {
     year: "2020",
@@ -25,7 +25,7 @@ const milestones = [
     year: "2023",
     label: "PLACEMENTS",
     description:
-      "Parul University ecosystem crosses 2,200+ recruiting companies and 60 LPA highest package.",
+      "Parul University, Vadodara conferred NAAC A++ in its first cycle.",
   },
   {
     year: "2024",
@@ -37,7 +37,7 @@ const milestones = [
     year: "2025",
     label: "APPROVAL",
     description:
-      "PU Goa becomes the first State Private University approved under the Goa Act.",
+      "Parul University ecosystem crosses 2,200+ recruiting companies and 60 LPA highest package.",
   },
   {
     year: "2025",
@@ -55,6 +55,31 @@ const milestones = [
 
 export function JourneyTimeline() {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    startX.current = e.pageX - (scrollRef.current?.offsetLeft || 0);
+    scrollLeft.current = scrollRef.current?.scrollLeft || 0;
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !scrollRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - (scrollRef.current.offsetLeft || 0);
+    const walk = (x - startX.current) * 2; 
+    scrollRef.current.scrollLeft = scrollLeft.current - walk;
+  };
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
@@ -68,7 +93,7 @@ export function JourneyTimeline() {
 
   return (
     <section className="overflow-hidden bg-brand-white py-10 sm:pt-18">
-      <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row md:items-end md:justify-between gap-6">  
+      <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
         <div className="text-left">
           <p className="text-ink section-subheading">
             Journey
@@ -92,7 +117,7 @@ export function JourneyTimeline() {
             aria-label="Scroll left"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="m15 18-6-6 6-6"/>
+              <path d="m15 18-6-6 6-6" />
             </svg>
           </button>
           <button
@@ -101,7 +126,7 @@ export function JourneyTimeline() {
             aria-label="Scroll right"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="m9 18 6-6-6-6"/>
+              <path d="m9 18 6-6-6-6" />
             </svg>
           </button>
         </div>
@@ -114,7 +139,13 @@ export function JourneyTimeline() {
 
         <div
           ref={scrollRef}
-          className="scrollbar-hide snap-x snap-mandatory overflow-x-auto overflow-y-hidden pb-12 pt-12 -webkit-overflow-scrolling-touch"
+          onMouseDown={handleMouseDown}
+          onMouseLeave={handleMouseLeave}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
+          className={`scrollbar-hide overflow-x-auto overflow-y-hidden pb-12 pt-12 -webkit-overflow-scrolling-touch ${
+            isDragging ? 'cursor-grabbing' : 'snap-x snap-mandatory cursor-grab'
+          }`}
         >
           <div className="relative flex w-max min-w-full items-center px-6 sm:px-12 h-[550px]">
             {/* Continuous gradient timeline line */}
@@ -141,8 +172,8 @@ export function JourneyTimeline() {
                   {/* Milestone Card */}
                   <div
                     className={`absolute left-1/2 -translate-x-1/2 w-[260px] sm:w-[290px] bg-white rounded-[20px] p-6 sm:p-7 shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-black/5 transition-all duration-500 group-hover/card:shadow-[0_12px_40px_rgb(0,0,0,0.12)] ${isEven
-                        ? 'bottom-[calc(50%+5rem)] group-hover/card:-translate-y-3'
-                        : 'top-[calc(50%+5rem)] group-hover/card:translate-y-3'
+                      ? 'bottom-[calc(50%+5rem)] group-hover/card:-translate-y-3'
+                      : 'top-[calc(50%+5rem)] group-hover/card:translate-y-3'
                       }`}
                   >
                     {/* Small pointer triangle on the card */}

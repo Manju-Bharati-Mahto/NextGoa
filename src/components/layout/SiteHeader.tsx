@@ -7,16 +7,16 @@ import { usePathname } from "next/navigation";
 import { navItems, cta } from "@/lib/navigation";
 
 const subPrograms = [
-  { label: "Engineering & Technology", href: "/programs/engineering" },
-  { label: "IT & Computer Science", href: "/programs/it-cs" },
-  { label: "Management Studies", href: "/programs/management-studies" },
-  { label: "Hotel Management", href: "/programs/hotel-management" },
-  { label: "Applied Sciences", href: "/programs/applied-sciences" },
-  { label: "Nursing", href: "/programs/nursing" },
-  { label: "Pharmacy", href: "/programs/pharmacy" },
-  { label: "Physiotherapy", href: "/programs/physiotherapy" },
-  { label: "Allied & Healthcare Sciences", href: "/programs/allied-healthcare" },
-  { label: "Doctorate Programs", href: "/programs/doctorate-programs" }
+  { label: "Engineering & Technology", href: "/faculty/engineering" },
+  { label: "IT & Computer Science", href: "/faculty/it-cs" },
+  { label: "Management Studies", href: "/faculty/management-studies" },
+  { label: "Hotel Management", href: "/faculty/hotel-management" },
+  { label: "Applied Sciences", href: "/faculty/applied-sciences" },
+  { label: "Nursing", href: "/faculty/nursing" },
+  { label: "Pharmacy", href: "/faculty/pharmacy" },
+  { label: "Physiotherapy", href: "/faculty/physiotherapy" },
+  { label: "Allied & Healthcare Sciences", href: "/faculty/allied-healthcare" },
+  { label: "Doctorate Programs", href: "/faculty/doctorate-programs" }
 ];
 
 /**
@@ -72,7 +72,7 @@ export function SiteHeader() {
 
           <nav aria-label="Primary" className="hidden items-center gap-3 xl:gap-5 xl:flex h-full">
             {navItems.map((item) => {
-              const isActive = pathname === item.href || (item.label === "Programs" && pathname.startsWith("/programs"));
+              const isActive = pathname === item.href || (item.label === "Programs" && pathname.startsWith("/faculty"));
 
               if (item.label === "Programs") {
                 return (
@@ -100,9 +100,9 @@ export function SiteHeader() {
                       <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.2)] border border-white/60 p-2 overflow-hidden ring-1 ring-black/5">
                         <div className="grid grid-cols-1 gap-0.5">
                           <Link
-                            href="/programs"
+                            href="/faculty"
                             className={`group/link flex items-center justify-between px-4 py-3 text-[14px] font-[family-name:var(--font-poppins)] font-bold rounded-xl transition-all
-                              ${pathname === "/programs" ? "text-[#ED383F] bg-[#ED383F]/10" : "text-slate-800 hover:text-[#ED383F] hover:bg-[#ED383F]/5"}
+                              ${pathname === "/faculty" ? "text-[#ED383F] bg-[#ED383F]/10" : "text-slate-800 hover:text-[#ED383F] hover:bg-[#ED383F]/5"}
                             `}
                           >
                             <span>All Programs</span>
@@ -261,7 +261,7 @@ export function SiteHeader() {
                         <ul className="flex flex-col gap-4 border-l-2 border-white/20 pl-4 py-2">
                           <li>
                             <Link
-                              href="/programs"
+                              href="/faculty"
                               onClick={() => setOpen(false)}
                               className="block text-[17px] font-semibold text-white/90 hover:text-white transition-colors"
                             >

@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "standalone",
+  trailingSlash: true,
   turbopack: {},
   webpack: (config, { dev, isServer }) => {
     if (dev && !isServer) {

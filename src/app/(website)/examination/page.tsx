@@ -22,10 +22,13 @@ export default function ExaminationPage() {
         />
         
         {/* Overlay Content (Text centered in the sky area) */}
-        <div className="absolute inset-0 z-10 flex flex-col items-center justify-start pt-[25vh]">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 tracking-tight">
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-start pt-[25vh] px-4 text-center">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-brand tracking-tight font-poppins">
             Examination
           </h1>
+          <p className="mx-auto mt-6 max-w-[1100px] text-[18px] sm:text-[22px] font-[family-name:var(--font-poppins)] font-normal leading-relaxed text-ink">
+            Your central hub for examination-related information, announcements, and support.
+          </p>
         </div>
 
         {/* Bottom White Gradient Fade */}

@@ -19,9 +19,12 @@ export default function ContactUs() {
 
         {/* Hero content */}
         <div className="relative z-10 w-full max-w-7xl px-4 text-center pb-20">
-          <h1 className="font-poppins mx-auto w-full max-w-none text-[48px] sm:text-[64px] lg:text-[80px] font-bold leading-[1.1] tracking-tight text-[#111111]">
+          <h1 className="font-poppins mx-auto w-full max-w-none text-[48px] sm:text-[64px] lg:text-[80px] font-bold leading-[1.1] tracking-tight text-brand">
             Contact Us
           </h1>
+          <p className="mx-auto mt-6 max-w-[1100px] text-[18px] sm:text-[22px] font-[family-name:var(--font-poppins)] font-normal leading-relaxed text-ink">
+            Have a question? Connect with our team for admissions, academics, or general inquiries.
+          </p>
         </div>
 
         {/* Bottom fade to transition smoothly into the next section (white) */}

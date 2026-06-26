@@ -1,5 +1,5 @@
 import { Eyebrow } from "./Decor";
-
+import Link from "next/link";
 /**
  * "Outcomes" recruiter wall. The design shows brand logos; we render the names
  * as a muted, monochrome wordmark wall instead of fabricating trademarked logo
@@ -97,13 +97,12 @@ export function Outcomes() {
 
       {/* Constrained Footer Container */}
       <div className="mx-auto max-w-5xl px-6 pb-10 pt-10 flex justify-center">
-        <button
-          data-placement-trigger="true"
-          data-pdf-url="/documents/placement_brochure_2025_2026.pdf"
+        <Link
+          href="/placements"
           className="inline-flex items-center justify-center bg-[#FEDB2F] hover:bg-[#e5c52a] text-black font-bold text-[15px] sm:text-[16px] px-8 py-3.5 rounded-full transition-colors shadow-sm"
         >
           Full placements report →
-        </button>
+        </Link>
       </div>
     </section>
   );

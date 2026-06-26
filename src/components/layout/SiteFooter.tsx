@@ -25,14 +25,14 @@ const columns: { heading: string; links?: LinkItem[]; subSections?: { heading: s
   {
     heading: "Programs",
     links: [
-      { label: "Engineering, IT & CS", href: "/programs/engineering" },
-      { label: "Management Studies", href: "/programs/management-studies" },
-      { label: "Pharmacy", href: "/programs/pharmacy" },
-      { label: "Nursing", href: "/programs/nursing" },
-      { label: "Hotel Management", href: "/programs/hotel-management" },
-      { label: "Physiotherapy", href: "/programs/physiotherapy" },
-      { label: "Allied and Healthcare Sciences", href: "/programs/allied-healthcare" },
-      { label: "Applied Sciences", href: "/programs/applied-sciences" },
+      { label: "Engineering, IT & CS", href: "/faculty/engineering" },
+      { label: "Management Studies", href: "/faculty/management-studies" },
+      { label: "Pharmacy", href: "/faculty/pharmacy" },
+      { label: "Nursing", href: "/faculty/nursing" },
+      { label: "Hotel Management", href: "/faculty/hotel-management" },
+      { label: "Physiotherapy", href: "/faculty/physiotherapy" },
+      { label: "Allied and Healthcare Sciences", href: "/faculty/allied-healthcare" },
+      { label: "Applied Sciences", href: "/faculty/applied-sciences" },
     ],
   },
   {

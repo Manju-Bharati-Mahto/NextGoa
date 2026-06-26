@@ -12,8 +12,8 @@ const acceptedTests = ["JEE", "CUET", "CAT", "MAT", "GPAT", "UGC NET", "PU Goa E
 
 export function Admissions() {
   return (
-    <section id="admissions" className="bg-brand-white py-10 sm:py-0">
-      <div className="mx-auto max-w-6xl px-6 py-8">
+    <section id="admissions" className="bg-brand-white py-0">
+      <div className="mx-auto max-w-6xl px-6 py-4 sm:py-8">
         <div className="flex justify-center mb-6">
           <img src="/1.svg" alt="Admissions illustration" className="h-[97px] w-auto" />
         </div>

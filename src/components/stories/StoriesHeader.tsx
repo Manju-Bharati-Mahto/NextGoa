@@ -12,12 +12,12 @@ export function StoriesHeader() {
       <div className="relative z-10 w-full max-w-4xl px-4 pt-24 sm:px-6 sm:pt-32 lg:pt-36 text-center">
         {/* Yellow pill badge */}
         <span className="inline-block rounded-full bg-brand-yellow px-5 py-1.5 text-[14px] font-bold text-ink shadow-sm mb-6 uppercase tracking-wider">
-          Stories from PU Goa
+          Blogs from PU Goa
         </span>
 
         {/* Large heading */}
         <h1 className="mx-auto w-full max-w-none tracking-tight text-brand section-heading drop-shadow-sm">
-          PU Goa Stories
+          PU Goa Blogs
         </h1>
 
         {/* Sub-heading description */}

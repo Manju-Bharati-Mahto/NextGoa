@@ -50,6 +50,6 @@ export const staticRoutes: StaticRoute[] = [
     summary: "News, placements, research, academics, and student life stories from Parul University Goa.",
   },
   // --- Add as each section ships ---
-  // { path: "/programs", changeFrequency: "weekly",  priority: 0.9, title: "Programmes", summary: "All undergraduate, postgraduate, and doctoral programmes." },
+  // { path: "/faculty", changeFrequency: "weekly",  priority: 0.9, title: "Programmes", summary: "All undergraduate, postgraduate, and doctoral programmes." },
   // { path: "/about",      changeFrequency: "monthly", priority: 0.6, title: "About",      summary: "History, accreditation, leadership, and rankings." },
 ];
