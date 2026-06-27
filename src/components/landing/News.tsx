@@ -50,6 +50,10 @@ export function News() {
       const res = await fetch("/api/blogs?limit=3");
       const data = await res.json();
 
+      if (!Array.isArray(data)) {
+        throw new Error(data.message || "Failed to fetch blogs");
+      }
+
       const formatted = data.map((blog: any) => ({
         tag: blog.category_names,
         tagClass: "bg-[#04B86A] text-white",
