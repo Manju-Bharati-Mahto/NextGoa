@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Download, FilterX } from "lucide-react";
+import { FilterX, FileSpreadsheet, } from "lucide-react";
 
 export default function CareersPage() {
   const [applications, setApplications] = useState<any[]>([]);
@@ -57,19 +57,19 @@ export default function CareersPage() {
           onClick={exportCSV}
           className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg"
         >
-          <Download size={20} />
+          <FileSpreadsheet size={20} />
         </button>
       </div>
 
       <div className="bg-gray-50 border rounded-xl p-5 mb-6">
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-4 gap-4">
         <input type="text" placeholder="🔍 Search by name, email, phone or job..." value={search} onChange={(e) => { setSearch(e.target.value); setPage(1); }} className="w-full border rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500" />
 
         <input type="date" value={fromDate} onChange={(e) => { setFromDate(e.target.value); setPage(1); }} className="border rounded-xl px-4 py-3" />
 
         <input type="date" value={toDate} onChange={(e) => { setToDate(e.target.value); setPage(1); }} className="border rounded-xl px-4 py-3" />
         
-        <button onClick={() => { setSearch(""); setFromDate(""); setToDate(""); setPage(1); }} className="mt-4 px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300" >
+        <button onClick={() => { setSearch(""); setFromDate(""); setToDate(""); setPage(1); }} className="h-11 w-11 flex items-center justify-center rounded-xl bg-red-100 text-red-600 hover:bg-red-600 hover:text-white transition-all" >
              <FilterX size={20} />
         </button>
         </div>
