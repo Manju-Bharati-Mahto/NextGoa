@@ -83,7 +83,7 @@ export default function BlogsPage() {
 
 <tr>
 
-<th className="px-4 py-4 text-left font-semibold">#</th>
+{/* <th className="px-4 py-4 text-left font-semibold">#</th> */}
 <th className="px-4 py-4 text-left font-semibold">Image</th>
 <th className="px-4 py-4 text-left font-semibold">Title</th>
 <th className="px-4 py-4 text-left font-semibold">Category</th>
@@ -103,9 +103,9 @@ key={blog.id}
 className="border-b hover:bg-gray-50 transition"
 >
 
-              <td className="border p-3">
+              {/* <td className="border p-3">
                 {blog.id}
-              </td>
+              </td> */}
 
               <td className="border p-3">
 
