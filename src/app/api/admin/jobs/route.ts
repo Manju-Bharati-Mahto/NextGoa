@@ -14,6 +14,9 @@ export async function GET(req: NextRequest) {
 
     const search = searchParams.get("search") || "";
 
+    const fromDate = searchParams.get("fromDate") || "";
+    const toDate = searchParams.get("toDate") || "";
+
     let where = "WHERE 1=1";
     const params: any[] = [];
 
@@ -35,6 +38,16 @@ export async function GET(req: NextRequest) {
         `%${search}%`,
         `%${search}%`
       );
+    }
+
+    if (fromDate) {
+      where += " AND DATE(created_at) >= ?";
+      params.push(fromDate);
+    }
+
+    if (toDate) {
+      where += " AND DATE(created_at) <= ?";
+      params.push(toDate);
     }
 
     const [rows]: any = await db.query(

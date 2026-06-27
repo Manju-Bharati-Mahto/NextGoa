@@ -9,15 +9,17 @@ export default function CareersPage() {
   const [totalPages, setTotalPages] = useState(1);
   const [total, setTotal] = useState(0);
   const [search, setSearch] = useState("");
+  const [fromDate, setFromDate] = useState("");
+  const [toDate, setToDate] = useState("");
 
   useEffect(() => {
-    loadApplications();
-  }, [page, search]);
+  loadApplications();
+}, [page, search, fromDate, toDate]);
 
   async function loadApplications() {
     try {
       const res = await fetch(
-        `/api/admin/jobs?page=${page}&limit=${limit}&search=${search}`
+        `/api/admin/jobs?page=${page}&limit=${limit}&search=${search}&fromDate=${fromDate}&toDate=${toDate}`
       );
 
       const result = await res.json();
@@ -30,9 +32,12 @@ export default function CareersPage() {
     }
   }
 
-  const exportCSV = () => {
-    window.open("/api/admin/jobs/export", "_blank");
-  };
+ const exportCSV = () => {
+  window.open(
+    `/api/admin/jobs/export?search=${search}&fromDate=${fromDate}&toDate=${toDate}`,
+    "_blank"
+  );
+};
 
   return (
     <div className="bg-white rounded-xl shadow p-6">
@@ -56,6 +61,50 @@ export default function CareersPage() {
       </div>
 
       <div className="bg-gray-50 border rounded-xl p-5 mb-6">
+        <div className="grid md:grid-cols-3 gap-4">
+        <input
+            type="text"
+            placeholder="🔍 Search..."
+            value={search}
+            onChange={(e) => {
+            setSearch(e.target.value);
+            setPage(1);
+            }}
+            className="border rounded-xl px-4 py-3"
+        />
+
+        <input
+            type="date"
+            value={fromDate}
+            onChange={(e) => {
+            setFromDate(e.target.value);
+            setPage(1);
+            }}
+            className="border rounded-xl px-4 py-3"
+        />
+
+        <input
+            type="date"
+            value={toDate}
+            onChange={(e) => {
+            setToDate(e.target.value);
+            setPage(1);
+            }}
+            className="border rounded-xl px-4 py-3"
+        />
+
+        </div>
+        <button
+            onClick={() => {
+                setSearch("");
+                setFromDate("");
+                setToDate("");
+                setPage(1);
+            }}
+            className="mt-4 px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300"
+            >
+            Clear Filters
+            </button>
         <input
           type="text"
           placeholder="🔍 Search by name, email, phone or job..."
