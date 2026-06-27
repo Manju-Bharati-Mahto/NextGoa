@@ -1,8 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import db from "@/lib/db";
+import { requireAdmin } from "@/lib/adminAuth";
+
 
 // GET ALL BLOGS
 export async function GET(req: NextRequest) {
+  const user = await requireAdmin();
+
+  if (user instanceof NextResponse) {
+    return user;
+  }
   try {
     const { searchParams } = new URL(req.url);
 

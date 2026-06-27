@@ -1,15 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import db from "@/lib/db";
-import { requireAdmin } from "@/lib/adminAuth";
 
 export async function GET(req: NextRequest) {
   try {
-  const user = await requireAdmin();
-
-  if (user instanceof NextResponse) {
-    return user;
-  }
     
+
     const { searchParams } = new URL(req.url);
 
     const page = Number(searchParams.get("page") || 1);
@@ -17,28 +12,37 @@ export async function GET(req: NextRequest) {
 
     const offset = (page - 1) * limit;
 
-    const form = searchParams.get("form") || "all";
     const search = searchParams.get("search") || "";
 
     let where = "WHERE 1=1";
     const params: any[] = [];
 
-    if (form !== "all") {
-      where += " AND form_name = ?";
-      params.push(form);
-    }
-
     if (search) {
-      where += " AND form_data LIKE ?";
-      params.push(`%${search}%`);
+      where += `
+        AND (
+          full_name LIKE ?
+          OR email LIKE ?
+          OR mobile LIKE ?
+          OR job_title LIKE ?
+          OR location LIKE ?
+        )
+      `;
+
+      params.push(
+        `%${search}%`,
+        `%${search}%`,
+        `%${search}%`,
+        `%${search}%`,
+        `%${search}%`
+      );
     }
 
     const [rows]: any = await db.query(
       `
       SELECT *
-      FROM form_submissions
+      FROM careers
       ${where}
-      ORDER BY id ASC
+      ORDER BY id DESC
       LIMIT ?
       OFFSET ?
       `,
@@ -47,8 +51,8 @@ export async function GET(req: NextRequest) {
 
     const [countRows]: any = await db.query(
       `
-      SELECT COUNT(*) total
-      FROM form_submissions
+      SELECT COUNT(*) AS total
+      FROM careers
       ${where}
       `,
       params
@@ -63,7 +67,6 @@ export async function GET(req: NextRequest) {
     });
 
   } catch (err: any) {
-
     return NextResponse.json(
       {
         success: false,
@@ -73,6 +76,5 @@ export async function GET(req: NextRequest) {
         status: 500,
       }
     );
-
   }
 }

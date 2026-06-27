@@ -1,10 +1,16 @@
 import { NextResponse } from "next/server";
 import db from "@/lib/db";
+import { requireAdmin } from "@/lib/adminAuth";
 
 export async function GET() {
+  const user = await requireAdmin();
+
+  if (user instanceof NextResponse) {
+    return user;
+  }
   try {
     // Cards
-
+    
     const [[leadCount]]: any = await db.query(
       `SELECT COUNT(*) total FROM form_submissions`
     );

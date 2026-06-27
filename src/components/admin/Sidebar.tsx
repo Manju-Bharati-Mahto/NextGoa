@@ -31,6 +31,12 @@ export default function Sidebar() {
         >
           Blogs
         </Link>
+         <Link
+          href="/admin/jobs"
+          className="block p-3 rounded hover:bg-slate-800"
+        >
+          Jobs
+        </Link>
 
         {/* <Link
           href="/users"

@@ -8,37 +8,43 @@ export async function GET(req: NextRequest) {
   if (user instanceof NextResponse) {
     return user;
   }
-  try {
-    const user = await requireAdmin();
 
-    if (user instanceof NextResponse) {
-      return user;
-    }
-    
+  try {
     const { searchParams } = new URL(req.url);
 
-    const form = searchParams.get("form") || "all";
     const search = searchParams.get("search") || "";
 
     let where = "WHERE 1=1";
     const params: any[] = [];
 
-    if (form !== "all") {
-      where += " AND form_name = ?";
-      params.push(form);
-    }
-
     if (search) {
-      where += " AND form_data LIKE ?";
-      params.push(`%${search}%`);
+      where += `
+        AND (
+          full_name LIKE ?
+          OR email LIKE ?
+          OR mobile LIKE ?
+          OR position LIKE ?
+          OR location LIKE ?
+        )
+      `;
+
+      const keyword = `%${search}%`;
+
+      params.push(
+        keyword,
+        keyword,
+        keyword,
+        keyword,
+        keyword
+      );
     }
 
     const [rows]: any = await db.query(
       `
       SELECT *
-      FROM form_submissions
+      FROM careers
       ${where}
-      ORDER BY id ASC
+      ORDER BY id DESC
       `,
       params
     );
@@ -47,29 +53,26 @@ export async function GET(req: NextRequest) {
 
     csvRows.push([
       "ID",
-      "Form",
-      "Name",
+      "Full Name",
       "Email",
-      "Phone",
-      "Date",
+      "Mobile",
+      "Position",
+      "Location",
+      "Resume",
+      "Applied Date",
     ].join(","));
 
-    rows.forEach((lead: any) => {
-
-      const formData =
-        typeof lead.form_data === "string"
-          ? JSON.parse(lead.form_data)
-          : lead.form_data;
-
+    rows.forEach((job: any) => {
       csvRows.push([
-        lead.id,
-        `"${lead.form_name}"`,
-        `"${formData?.fullName || formData?.name || ""}"`,
-        `"${formData?.email || ""}"`,
-        `"${formData?.mobile || ""}"`,
-        `"${new Date(lead.created_at).toLocaleString()}"`
+        job.id,
+        `"${job.full_name}"`,
+        `"${job.email}"`,
+        `"${job.mobile}"`,
+        `"${job.job_title}"`,
+        `"${job.location}"`,
+        `${process.env.NEXT_PUBLIC_SITE_URL || "https://goa.paruluniversity.ac.in"}${job.resume}`,
+        `"${new Date(job.created_at).toLocaleString()}"`,
       ].join(","));
-
     });
 
     const csv = csvRows.join("\n");
@@ -79,12 +82,10 @@ export async function GET(req: NextRequest) {
       headers: {
         "Content-Type": "text/csv",
         "Content-Disposition":
-          'attachment; filename="leads.csv"',
+          'attachment; filename="career-applications.csv"',
       },
     });
-
   } catch (error: any) {
-
     return NextResponse.json(
       {
         success: false,
@@ -94,6 +95,5 @@ export async function GET(req: NextRequest) {
         status: 500,
       }
     );
-
   }
 }

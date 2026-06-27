@@ -3,13 +3,21 @@ import db from "@/lib/db";
 import { writeFile } from "fs/promises";
 import path from "path";
 import { v4 as uuid } from "uuid";
+import { requireAdmin } from "@/lib/adminAuth";
 
 // GET Single Blog
 export async function GET(
+  
   req: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
+  const user = await requireAdmin();
+
+  if (user instanceof NextResponse) {
+    return user;
+  }
   try {
+    
     const { id } = await params;
 
     const [rows]: any = await db.query(

@@ -3,9 +3,16 @@ import db from "@/lib/db";
 import { writeFile } from "fs/promises";
 import path from "path";
 import { v4 as uuid } from "uuid";
+import { requireAdmin } from "@/lib/adminAuth";
 
 export async function POST(req: NextRequest) {
+  const user = await requireAdmin();
+
+  if (user instanceof NextResponse) {
+    return user;
+  }
   try {
+    
     const formData = await req.formData();
 
     const title = formData.get("title") as string;

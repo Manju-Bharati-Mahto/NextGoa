@@ -1,9 +1,15 @@
 import { NextResponse } from "next/server";
 import db from "@/lib/db";
+import { requireAdmin } from "@/lib/adminAuth";
 
 export async function GET() {
-  try {
+  const user = await requireAdmin();
 
+  if (user instanceof NextResponse) {
+    return user;
+  }
+  try {
+   
     const [rows]: any = await db.query(`
       SELECT
         id,

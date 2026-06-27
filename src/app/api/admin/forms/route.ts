@@ -1,7 +1,15 @@
 import { NextResponse } from "next/server";
 import db from "@/lib/db";
+import { requireAdmin } from "@/lib/adminAuth";
 
 export async function GET() {
+  
+  const user = await requireAdmin();
+
+  if (user instanceof NextResponse) {
+    return user;
+  }
+  
   const [rows]: any = await db.query(`
       SELECT DISTINCT form_name
       FROM form_submissions
