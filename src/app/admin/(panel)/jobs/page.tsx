@@ -79,7 +79,7 @@ export default function CareersPage() {
         <table className="min-w-full">
           <thead className="bg-gray-100">
             <tr>
-              <th className="px-5 py-4 text-left font-semibold">#</th>
+              {/* <th className="px-5 py-4 text-left font-semibold">#</th> */}
               <th className="px-5 py-4 text-left font-semibold">Job</th>
               <th className="px-5 py-4 text-left font-semibold">Name</th>
               <th className="px-5 py-4 text-left font-semibold">Email</th>
@@ -96,9 +96,9 @@ export default function CareersPage() {
                 key={item.id}
                 className="hover:bg-blue-50 transition border-t"
               >
-                <td className="px-5 py-4">
+                {/* <td className="px-5 py-4">
                   #{item.id}
-                </td>
+                </td> */}
 
                 <td className="px-5 py-4">
                   <span className="bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full">
