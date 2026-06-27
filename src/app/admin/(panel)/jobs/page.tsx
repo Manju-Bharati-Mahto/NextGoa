@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Download, FilterX } from "lucide-react";
 
 export default function CareersPage() {
   const [applications, setApplications] = useState<any[]>([]);
@@ -56,7 +57,7 @@ export default function CareersPage() {
           onClick={exportCSV}
           className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg"
         >
-          Export CSV
+          <Download size={20} />
         </button>
       </div>
 
@@ -69,7 +70,7 @@ export default function CareersPage() {
         <input type="date" value={toDate} onChange={(e) => { setToDate(e.target.value); setPage(1); }} className="border rounded-xl px-4 py-3" />
         
         <button onClick={() => { setSearch(""); setFromDate(""); setToDate(""); setPage(1); }} className="mt-4 px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300" >
-            Clear Filters
+             <FilterX size={20} />
         </button>
         </div>
       </div>
