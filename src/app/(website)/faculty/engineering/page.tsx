@@ -14,6 +14,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Engineering | Parul University Goa",
   description: "Explore our engineering programmes.",
+  alternates: { canonical: "/faculty/engineering" },
 };
 
 export default function EngineeringPage() {

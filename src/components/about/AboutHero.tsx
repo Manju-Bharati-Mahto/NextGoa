@@ -2,15 +2,15 @@ import React from "react";
 
 export function AboutHero() {
   return (
-    <section 
+    <section
       id="hero"
-      className="relative flex min-h-screen flex-col items-center justify-start pt-32 overflow-hidden bg-[url('/about-bg23-trimmed.png')] bg-cover bg-center bg-no-repeat"
+      className="relative flex h-[110vh] flex-col items-center justify-start pt-24 2xl:pt-32 overflow-hidden bg-[url('/about-bg23-trimmed.png')] bg-cover bg-center bg-no-repeat"
     >
       {/* Light gradient overlay to ensure text is readable if sky gets too bright */}
       <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-transparent pointer-events-none" />
 
       {/* Hero content */}
-      <div className="relative z-10 w-full max-w-7xl px-4 pt-8 sm:px-6 sm:pt-12 lg:pt-16 text-center">
+      <div className="relative z-10 w-full max-w-7xl px-4 pt-4 lg:pt-8 2xl:pt-16 text-center">
         <span className="inline-block rounded-full bg-brand-yellow px-4 py-1.5 text-xs font-bold text-ink shadow-sm uppercase tracking-wider mb-6">
           About Us
         </span>

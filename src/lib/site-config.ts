@@ -16,7 +16,7 @@
  * `metadataBase` for resolving Open Graph / canonical URLs, and in the sitemap.
  */
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.paruluniversity.ac.in"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://goa.paruluniversity.ac.in"
 ).replace(/\/$/, "");
 
 export const siteConfig = {

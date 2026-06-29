@@ -18,14 +18,6 @@ import { Faq } from "@/components/landing/Faq";
 import { FinalCta } from "@/components/landing/FinalCta";
 import { stories } from "@/data/stories";
 
-/**
- * Landing page - composes the sections in the order of the Figma "Landing page"
- * design. The root layout supplies the default title/description/OG and the
- * site-wide Organization + WebSite JSON-LD, so this page only sets its canonical.
- * All sections are static (SSG); StickyApplyBar is the lone client island
- * (alongside the interactive header + programme finder).
- */
-
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };

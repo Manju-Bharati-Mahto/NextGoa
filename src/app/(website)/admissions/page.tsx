@@ -19,6 +19,7 @@ import { admissionsFaqs } from "@/data/page-faqs";
 export const metadata: Metadata = {
   title: "Admissions | Parul University Goa",
   description: "Start your journey at Parul University Goa. Learn about our admission process, important dates, eligibility criteria, and fee structures.",
+  alternates: { canonical: "/admissions" },
 };
 
 export default function AdmissionsPage() {
