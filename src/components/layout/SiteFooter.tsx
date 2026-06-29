@@ -33,6 +33,7 @@ const columns: { heading: string; links?: LinkItem[]; subSections?: { heading: s
       { label: "Physiotherapy", href: "/faculty/physiotherapy" },
       { label: "Allied and Healthcare Sciences", href: "/faculty/allied-healthcare" },
       { label: "Applied Sciences", href: "/faculty/applied-sciences" },
+      { label: "Doctorate Programs", href: "/faculty/doctorate-programs" },
     ],
   },
   {
@@ -212,7 +213,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-16 border-t border-white/20 pt-8 text-center text-base font-poppins text-white/80">
-          <p>Copyright @ {new Date().getFullYear()}. All Rights Reserved by Parul University</p>
+          <p>Copyright © {new Date().getFullYear()}. All Rights Reserved by Parul University</p>
         </div>
       </div>
     </footer>

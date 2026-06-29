@@ -14,6 +14,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "IT & Computer Science | Parul University Goa",
   description: "Explore our IT and Computer Science programmes.",
+  alternates: { canonical: "/faculty/it-cs" },
 };
 
 export default function ItCsPage() {
