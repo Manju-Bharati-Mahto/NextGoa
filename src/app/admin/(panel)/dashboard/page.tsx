@@ -160,7 +160,7 @@ return (
             return(
             <div
                key={lead.id}
-               className="flex justify-between items-start border-b pb-3 last:border-0"
+               className="flex justify-between items-start border-light pb-3 last:border-0"
                >
                <div>
                   <p className="font-semibold text-gray-800">

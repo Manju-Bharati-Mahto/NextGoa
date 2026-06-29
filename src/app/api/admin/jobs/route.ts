@@ -1,9 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 import db from "@/lib/db";
+import { requirePermission } from "@/lib/adminAuth";
 
 export async function GET(req: NextRequest) {
   try {
-    
+     const user = await requirePermission("jobs");
+
+if (user instanceof NextResponse) {
+  return user;
+}
 
     const { searchParams } = new URL(req.url);
 

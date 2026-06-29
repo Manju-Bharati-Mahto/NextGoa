@@ -41,8 +41,8 @@ selectedForm === "all"
 lead.form_name === selectedForm
 );
 return (
-<div className="bg-white rounded-xl shadow p-6">
-   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
+<div className="bg-light-white p-6">
+   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8 bg-white p-4 rounded-xl">
       <div>
          <h1 className="text-3xl font-bold text-gray-800">
             Leads
@@ -55,8 +55,12 @@ return (
         Export CSV
       </button>
    </div>
-   <div className="bg-gray-50 border rounded-xl p-5 mb-6">
+   <div className="bg-white rounded-xl p-4 mb-6">
+       <h2 className="text-2xl font-bold text-gray-800 mb-3">
+            Filter
+      </h2>
       <div className="grid md:grid-cols-2 gap-4">
+         
          <input
             type="text"
             placeholder="🔍 Search by name, email or phone..."
@@ -65,13 +69,13 @@ return (
          setSearch(e.target.value);
          setPage(1);
          }}
-         className="border rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+         className="form-control rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
          />
          <select
             value={selectedForm}
             onChange={(e)=>
             setSelectedForm(e.target.value)}
-            className="border rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+            className="form-select rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
             >
             <option value="all">
                All Forms
@@ -84,9 +88,9 @@ return (
          </select>
       </div>
    </div>
-   <div className="overflow-x-auto rounded-xl border">
+   <div className="overflow-x-auto rounded-xl bg-white">
       <table className="min-w-full">
-         <thead className="bg-gray-100">
+         <thead className="bg-white-100 border-light">
             <tr>
                <th className="px-5 py-4 text-left font-semibold">
                   #
@@ -117,7 +121,7 @@ return (
             return(
             <tr
                key={lead.id}
-               className="hover:bg-blue-50 transition border-t"
+               className="hover:bg-blue-50 transition border-light"
                >
                <td className="px-5 py-4">
                   #{lead.id}
@@ -144,8 +148,7 @@ return (
             })}
          </tbody>
       </table>
-   </div>
-   <div className="flex flex-col md:flex-row justify-between items-center mt-6 gap-4">
+      <div className="flex flex-col md:flex-row justify-between items-center  gap-4 p-4">
       <div className="text-gray-600">
          Showing
          <span className="font-semibold mx-1">
@@ -181,6 +184,8 @@ return (
          </button>
       </div>
    </div>
+   </div>
+   
 </div>
 );
 }

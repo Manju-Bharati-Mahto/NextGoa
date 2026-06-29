@@ -1,12 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import db from "@/lib/db";
-import { requireAdmin } from "@/lib/adminAuth";
-
+import { requirePermission } from "@/lib/adminAuth";
 
 // GET ALL BLOGS
 export async function GET(req: NextRequest) {
-  const user = await requireAdmin();
-
+     const user = await requirePermission("blogs");
+  
   if (user instanceof NextResponse) {
     return user;
   }

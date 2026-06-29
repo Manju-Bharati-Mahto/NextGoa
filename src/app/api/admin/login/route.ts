@@ -32,12 +32,25 @@ export async function POST(req: NextRequest) {
         { status: 401 }
       );
     }
-
-    const token = generateToken({
-      id: user.id,
-      role_id: user.role_id,
-      email: user.email,
-    });
+const [permissionRows]: any = await db.query(
+`
+SELECT p.slug
+FROM user_permissions up
+INNER JOIN permissions p
+ON up.permission_id = p.id
+WHERE up.user_id = ?
+`,
+[user.id]
+);
+const permissions = permissionRows.map(
+  (item: any) => item.slug
+);
+   const token = generateToken({
+  id: user.id,
+  role_id: user.role_id,
+  email: user.email,
+  permissions,
+});
 
     const response = NextResponse.json({
       success: true,

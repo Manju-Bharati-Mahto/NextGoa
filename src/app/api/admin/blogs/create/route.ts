@@ -1,160 +1,68 @@
 import { NextRequest, NextResponse } from "next/server";
 import db from "@/lib/db";
-import { writeFile } from "fs/promises";
-import path from "path";
-import { v4 as uuid } from "uuid";
-import { requireAdmin } from "@/lib/adminAuth";
+import { requirePermission } from "@/lib/adminAuth";
+
+import { parseBlogForm } from "@/lib/blog/parseBlogForm";
+import { uploadImage } from "@/lib/blog/uploadImage";
+import { getBlogData } from "@/lib/blog/blogData";
+import { saveFaqs } from "@/lib/blog/saveFaqs";
 
 export async function POST(req: NextRequest) {
-  const user = await requireAdmin();
 
-  if (user instanceof NextResponse) {
-    return user;
-  }
   try {
-    
-    const formData = await req.formData();
 
-    const title = formData.get("title") as string;
-    const slug = formData.get("slug") as string;
-    const excerpt = formData.get("excerpt") as string;
-    const blockquote = formData.get("blockquote") as string;
-    
-    const sections = JSON.parse(
-      (formData.get("sections") as string) || "[]"
-    );
-    const categories = JSON.parse(
-      (formData.get("category") as string) || "[]"
-    );
+    const user = await requirePermission("blogs.create");
 
-    const meta_title = formData.get("meta_title") as string;
-    const meta_description = formData.get("meta_description") as string;
-    const meta_keywords = formData.get("meta_keywords") as string;
-
-    const canonical_url = formData.get("canonical_url") as string;
-
-    const og_title = formData.get("og_title") as string;
-    const og_description = formData.get("og_description") as string;
-
-    const status = formData.get("status") as string;
-
-    const faqs = JSON.parse(
-      (formData.get("faqs") as string) || "[]"
-    );
-
-    let featured_image = "";
-    const image = formData.get("featured_image") as File | null;
-
-    let og_image = "";
-    const ogImage = formData.get("og_image") as File | null;
-
-
-    if (image && image.size > 0) {
-      const bytes = await image.arrayBuffer();
-      const buffer = Buffer.from(bytes);
-
-      const filename = `${uuid()}-${image.name}`;
-
-      const uploadPath = path.join(
-        process.cwd(),
-        "public",
-        "uploads",
-        filename
-      );
-
-      await writeFile(uploadPath, buffer);
-
-      featured_image = `/uploads/${filename}`;
-    }
-    if (ogImage && ogImage.size > 0) {
-      const bytes = await ogImage.arrayBuffer();
-      const buffer = Buffer.from(bytes);
-
-      const filename = `${uuid()}-${ogImage.name}`;
-
-      const uploadPath = path.join(
-        process.cwd(),
-        "public",
-        "uploads",
-        filename
-      );
-
-      await writeFile(uploadPath, buffer);
-
-      og_image = `/uploads/ogimage/${filename}`;
+    if (user instanceof NextResponse) {
+      return user;
     }
 
-   const [result]: any = await db.execute(
-  `
-  INSERT INTO blogs (
-  title,
-  slug,
-  excerpt,
-  blockquote,
-  content,
-  featured_image,
-  category,
-  meta_title,
-  meta_description,
-  meta_keywords,
-  canonical_url,
-  og_title,
-  og_description,
-  og_image,
-  status
-  )
-  VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)
-  `,
-  [
-    title,
-    slug,
-    excerpt,
-    JSON.stringify(sections),
-    featured_image,
-    categories.join(","),
-    meta_title,
-    meta_description,
-    meta_keywords,
-    canonical_url,
-    og_title,
-    og_description,
-    og_image,
-    status,
-  ]
-);
+    const body: any = await parseBlogForm(req);
 
-const blogId = result.insertId;
+    body.featured_image =
+      body.featuredImage && body.featuredImage.size > 0
+        ? await uploadImage(body.featuredImage)
+        : "";
 
-for (let i = 0; i < faqs.length; i++) {
+    body.og_image =
+      body.ogImage && body.ogImage.size > 0
+        ? await uploadImage(body.ogImage, "uploads/ogimage")
+        : "";
 
-  if (!faqs[i].question.trim()) continue;
+    const [result]: any = await db.execute(
+      `
+      INSERT INTO blogs (
+        title,
+        slug,
+        excerpt,
+        blockquote,
+        content,
+        featured_image,
+        category,
+        meta_title,
+        meta_description,
+        meta_keywords,
+        canonical_url,
+        og_title,
+        og_description,
+        og_image,
+        status,
+        publish_at
+      )
+      VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+      `,
+      getBlogData(body)
+    );
 
-  await db.execute(
-    `
-    INSERT INTO blog_faqs
-    (
-      blog_id,
-      question,
-      answer,
-      sort_order
-    )
-    VALUES (?,?,?,?)
-    `,
-    [
-      blogId,
-      faqs[i].question,
-      faqs[i].answer,
-      i,
-    ]
-  );
-
-}
+    await saveFaqs(result.insertId, body.faqs);
 
     return NextResponse.json({
       success: true,
       message: "Blog created successfully",
     });
+
   } catch (error: any) {
+
     return NextResponse.json(
       {
         success: false,
@@ -164,5 +72,7 @@ for (let i = 0; i < faqs.length; i++) {
         status: 500,
       }
     );
+
   }
+
 }
