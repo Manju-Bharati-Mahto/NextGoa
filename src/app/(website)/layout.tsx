@@ -27,6 +27,9 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
+  verification: {
+    google: "KtdNIJ_eHwvI8f08Lf-HtQs88inCceXYwZuLFy9SaUo",
+  },
   openGraph: {
     type: "website",
     siteName: siteConfig.name,
