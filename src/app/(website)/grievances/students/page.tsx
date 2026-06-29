@@ -1,6 +1,13 @@
 import React from "react";
 import Image from "next/image";
 
+
+export const metadata = {
+  alternates: {
+    canonical: "/grievances/students",
+  },
+};
+
 export default function StudentGrievancesPage() {
   const committeeMembers = [
     {

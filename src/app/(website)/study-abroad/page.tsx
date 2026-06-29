@@ -17,6 +17,9 @@ import StudyAbroadFaq from "@/components/study-abroad/StudyAbroadFaq";
 export const metadata: Metadata = {
   title: "Study Abroad | Parul University Goa",
   description: "Take your education global with Parul University Goa's extensive study abroad programs and international partner universities.",
+  alternates: {
+    canonical: "/study-abroad",
+  },
 };
 
 export default function StudyAbroadPage() {

@@ -12,6 +12,9 @@ import { Faq } from "@/components/landing/Faq";
 import { FinalCta } from "@/components/landing/FinalCta";
 
 export const metadata = {
+  alternates: {
+    canonical: "/placements",
+  },
   title: "Placements | Parul University Goa",
   description: "Outstanding placements at Parul University Goa with top recruiters.",
 };

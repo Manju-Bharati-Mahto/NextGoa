@@ -1,5 +1,12 @@
 import Image from "next/image";
 
+
+export const metadata = {
+  alternates: {
+    canonical: "/terms-of-use",
+  },
+};
+
 export default function TermsOfUse() {
   return (
     <main className="min-h-screen bg-white pb-24 sm:pb-32 md:pb-48 lg:pb-56">
