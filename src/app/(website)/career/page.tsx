@@ -5,7 +5,7 @@ import { CareerListings } from "@/components/career/CareerListings";
 import { CareerHeroSearch } from "@/components/career/CareerHeroSearch";
 
 export const metadata: Metadata = {
-  title: "Careers at Parul University Goa - Apply for Teaching & Non-Teaching Jobs in Goa",
+  title: { absolute: "Careers at Parul University Goa - Apply for Teaching & Non-Teaching Jobs in Goa" },
   description: "Explore career opportunities at Parul University Goa. Apply for faculty, administrative, and campus jobs in South Goa across multiple departments and disciplines.",
   alternates: { canonical: "/career" },
 };

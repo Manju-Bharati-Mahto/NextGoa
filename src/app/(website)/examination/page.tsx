@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { ExaminationSchedules } from "@/components/examination/ExaminationSchedules";
 
 export const metadata: Metadata = {
-  title: "Examination | Parul University Goa",
+  title: { absolute: "Examination | Parul University Goa" },
   description: "Examination details and guidelines for Parul University Goa.",
   alternates: { canonical: "/examination" },
 };

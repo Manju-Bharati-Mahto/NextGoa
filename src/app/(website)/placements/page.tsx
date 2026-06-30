@@ -15,7 +15,7 @@ export const metadata = {
   alternates: {
     canonical: "/placements",
   },
-  title: "Placements | Parul University Goa",
+  title: { absolute: "Placements | Parul University Goa" },
   description: "Outstanding placements at Parul University Goa with top recruiters.",
 };
 

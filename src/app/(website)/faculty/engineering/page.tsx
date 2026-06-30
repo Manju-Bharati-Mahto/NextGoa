@@ -12,7 +12,7 @@ import EngineeringFaq from "@/components/programmes/EngineeringFaq";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Faculty of Engineering, IT & Computer Science - Parul University Goa",
+  title: { absolute: "Faculty of Engineering, IT & Computer Science - Parul University Goa" },
   description: "Explore the Faculty of Engineering, IT & Computer Science at Parul University Goa. Discover industry-focused programs, advanced labs and expert mentorship. Apply now!",
   alternates: { canonical: "/faculty/engineering" },
 };

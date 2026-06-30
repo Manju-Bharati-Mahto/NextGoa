@@ -5,7 +5,7 @@ import GatewaySection from "@/components/programmes/GatewaySection";
 import TrendingSection from "@/components/programmes/TrendingSection";
 
 export const metadata: Metadata = {
-  title: "Explore Faculties Across Disciplines - Parul University Goa",
+  title: { absolute: "Explore Faculties Across Disciplines - Parul University Goa" },
   description: "Explore the academic faculties at Parul University Goa offering programs in engineering, management, nursing, pharmacy, hospitality and more. Find your ideal path and apply now!",
   alternates: { canonical: "/faculty" },
 };
