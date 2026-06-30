@@ -5,8 +5,8 @@ import GatewaySection from "@/components/programmes/GatewaySection";
 import TrendingSection from "@/components/programmes/TrendingSection";
 
 export const metadata: Metadata = {
-  title: "Explore UG, PG, Diploma & Ph.D. Programs, Fees & Eligibility - Parul University Goa",
-  description: "Discover industry-focused UG, PG, Diploma, Honours and Ph.D. programs at Parul University Goa. Explore courses, eligibility, fees and start your academic journey today.",
+  title: "Explore Faculties Across Disciplines - Parul University Goa",
+  description: "Explore the academic faculties at Parul University Goa offering programs in engineering, management, nursing, pharmacy, hospitality and more. Find your ideal path and apply now!",
   alternates: { canonical: "/faculty" },
 };
 

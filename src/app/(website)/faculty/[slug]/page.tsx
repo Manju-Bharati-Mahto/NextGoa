@@ -50,6 +50,54 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const data = getProgrammeData(slug);
   if (!data) return { title: "Programme Not Found | Parul University Goa" };
 
+  if (slug === "allied-healthcare") {
+    return {
+      title: "Allied & Health Sciences Courses in Goa - Parul University Goa",
+      description: "Discover Allied & Health Sciences programs at Parul University Goa, including Biotechnology, Microbiology, BMLS, B.AOTT, M.Sc. and Ph.D. Build a future in healthcare and science. Apply now!",
+      alternates: { canonical: `/faculty/${slug}` },
+    };
+  }
+
+  if (slug === "management-studies") {
+    return {
+      title: "Management Studies Programs | BBA, MBA & Ph.D. Program - Parul University Goa",
+      description: "Explore Management Studies at Parul University Goa with BBA, MBA and Ph.D. programs. Gain leadership skills, industry exposure and entrepreneurial expertise. Apply now!",
+      alternates: { canonical: `/faculty/${slug}` },
+    };
+  }
+
+  if (slug === "hotel-management") {
+    return {
+      title: "Hotel Management Programs | BHMCT & B.Sc. Courses - Parul University Goa",
+      description: "Explore Hotel Management programs at Parul University Goa, including BHMCT and B.Sc. courses. Gain hands-on hospitality training, industry exposure and career-ready skills. Apply now!",
+      alternates: { canonical: `/faculty/${slug}` },
+    };
+  }
+
+  if (slug === "pharmacy") {
+    return {
+      title: "Pharmacy Programs | B.Pharm, D.Pharm & M.Pharm - Parul University Goa",
+      description: "Explore pharmacy programs at Parul University Goa, including B.Pharm, D.Pharm, M.Pharm and Ph.D. Gain hands-on training, research exposure and industry-ready skills. Apply now!",
+      alternates: { canonical: `/faculty/${slug}` },
+    };
+  }
+
+  if (slug === "nursing") {
+    return {
+      title: "Nursing Programs | GNM, B.Sc. Nursing & Ph.D. - Parul University Goa",
+      description: "Explore nursing programs at Parul University Goa, including GNM, B.Sc. Nursing and Ph.D. Gain hands-on clinical training, expert mentorship and industry-ready skills. Apply now!",
+      alternates: { canonical: `/faculty/${slug}` },
+    };
+  }
+
+  if (slug === "physiotherapy") {
+    return {
+      title: "Physiotherapy Programs | BPT Course Admission - Parul University Goa",
+      description: "Explore the Physiotherapy program at Parul University Goa with hands-on clinical training, expert faculty and modern rehabilitation facilities. Start your healthcare career. Apply now!",
+      alternates: { canonical: `/faculty/${slug}` },
+    };
+  }
+
   return {
     title: `${data.title} | Parul University Goa`,
     description: `Explore our ${data.title} programme.`,
@@ -67,17 +115,17 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
 
   return (
     <main className="flex min-h-screen flex-col w-full bg-white font-[family-name:var(--font-poppins)]">
-      
+
       <DynamicHero data={data.hero} />
-      
+
       {data.slug !== "phd" && (
         <DynamicSnapshotRow data={data.snapshotRow} />
       )}
 
-      <DynamicCareerOutcomes 
-        data={data.career} 
-        themeColor={data.themeColor} 
-        topBgColor={data.slug === "phd" ? "#FFFFFF" : "#FDE047"} 
+      <DynamicCareerOutcomes
+        data={data.career}
+        themeColor={data.themeColor}
+        topBgColor={data.slug === "phd" ? "#FFFFFF" : "#FDE047"}
         isPhdLayout={data.slug === "phd"}
       />
 
@@ -109,7 +157,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
       {data.slug === "physiotherapy" && (
         <PhysiotherapyAccreditation />
       )}
-      
+
       {data.slug === "allied-healthcare" && (
         <AlliedHealthAccreditation />
       )}
@@ -123,9 +171,9 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
       ) : null}
 
       {data.slug === "nursing" && (
-        <DynamicWhyPUGoa 
-          data={data.why} 
-          themeColor={data.themeColor} 
+        <DynamicWhyPUGoa
+          data={data.why}
+          themeColor={data.themeColor}
         />
       )}
 
@@ -152,8 +200,8 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
       )}
 
       {data.slug !== "management-studies" && data.slug !== "pharmacy" && data.slug !== "nursing" && data.slug !== "hotel-management" && (
-        <DynamicWhyPUGoa 
-          data={data.why} 
+        <DynamicWhyPUGoa
+          data={data.why}
           themeColor={data.themeColor}
           bottomBgColor={data.slug === "applied-sciences" ? "#EAF7FD" : undefined}
         />
@@ -183,7 +231,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
 
       <DynamicFaq data={data.faqs} />
 
-      <FinalCta 
+      <FinalCta
         eyebrow="Admissions Open 2026"
         title={data.slug === "nursing" ? "Ready to begin nursing?" : data.slug === "pharmacy" ? "Ready to enter pharmacy?" : data.slug === "physiotherapy" ? "Ready to start physio?" : data.slug === "allied-healthcare" ? "Ready to start allied and healthcare sciences?" : data.slug === "hotel-management" ? "Ready to enter hospitality?" : data.slug === "phd" ? "Begin your doctoral journey." : "Ready to lead?"}
         description={data.slug === "phd" ? "PU Goa entrance and PhD admissions are open for the 2026-27 cycle." : "Admissions are open for the 2026-27 academic year."}

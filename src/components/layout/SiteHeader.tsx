@@ -135,6 +135,8 @@ export function SiteHeader() {
                 <div key={item.label} className="relative h-full flex items-center py-4 -my-4">
                   <Link
                     href={item.href}
+                    target={item.newTab ? "_blank" : undefined}
+                    rel={item.newTab ? "noopener noreferrer" : undefined}
                     className={`whitespace-nowrap font-[family-name:var(--font-poppins)] text-[15px] font-semibold transition-all py-1 relative text-white
                       after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2.5px] after:bg-[#E73649] after:origin-left after:transition-transform after:duration-300 after:ease-out
                       ${isActive ? "after:scale-x-100" : "after:scale-x-0 hover:after:scale-x-50"}
@@ -296,6 +298,8 @@ export function SiteHeader() {
                   <Link
                     href={item.href}
                     onClick={() => setOpen(false)}
+                    target={item.newTab ? "_blank" : undefined}
+                    rel={item.newTab ? "noopener noreferrer" : undefined}
                     className="group inline-flex flex-col font-[family-name:var(--font-poppins)] text-xl font-medium text-white transition-colors"
                   >
                     <div className="flex items-center gap-3">
