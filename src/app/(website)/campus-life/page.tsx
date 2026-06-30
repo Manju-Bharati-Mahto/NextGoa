@@ -12,8 +12,8 @@ import { Faq } from "@/components/landing/Faq";
 import { campusLifeFaqs } from "@/data/page-faqs";
 
 export const metadata: Metadata = {
-  title: "Campus Life",
-  description: "Experience vibrant campus life at Parul University Goa - where learning and living become one with nature.",
+  title: "Parul University Goa Campus Life | Facilities, Hostel, Activities & Infrastructure",
+  description: "Explore campus life at Parul University Goa – modern facilities, hostels, student clubs, cultural events, and a vibrant learning experience in Goa.",
   alternates: { canonical: "/campus-life" },
 };
 

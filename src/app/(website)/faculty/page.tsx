@@ -5,9 +5,9 @@ import GatewaySection from "@/components/programmes/GatewaySection";
 import TrendingSection from "@/components/programmes/TrendingSection";
 
 export const metadata: Metadata = {
-  title: "Programmes | Parul University Goa",
-  description: "Explore the academic programmes offered at Parul University Goa.",
-  alternates: { canonical: "/programmes" },
+  title: "Explore UG, PG, Diploma & Ph.D. Programs, Fees & Eligibility - Parul University Goa",
+  description: "Discover industry-focused UG, PG, Diploma, Honours and Ph.D. programs at Parul University Goa. Explore courses, eligibility, fees and start your academic journey today.",
+  alternates: { canonical: "/faculty" },
 };
 
 export default function ProgrammesPage() {

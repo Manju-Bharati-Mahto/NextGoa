@@ -18,8 +18,9 @@ import { Faq } from "@/components/landing/Faq";
 import { aboutFaqs } from "@/data/page-faqs";
 
 export const metadata: Metadata = {
-  title: "About Us",
-  alternates: { canonical: "/about" },
+  title: "About Parul University Goa | Leading Private University in Goa",
+  description: "Discover Parul University Goa, a private university providing world-class education, industry partnerships, practical learning, research opportunities, international exposure, and student-centric academic excellence.",
+  alternates: { canonical: "/about-us" },
 };
 
 export default function About() {
