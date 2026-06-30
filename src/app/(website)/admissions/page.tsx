@@ -17,8 +17,8 @@ import { breadcrumbSchema } from "@/lib/structured-data";
 import { admissionsFaqs } from "@/data/page-faqs";
 
 export const metadata: Metadata = {
-  title: "Admissions | Parul University Goa",
-  description: "Start your journey at Parul University Goa. Learn about our admission process, important dates, eligibility criteria, and fee structures.",
+  title: "Admissions Open 2026 - Apply for Admission at Parul University Goa",
+  description: "Apply for Parul University Goa Admissions 2026. Explore UG, PG and Diploma programs, eligibility, admission process, scholarships, required documents, fees, and important admission dates.",
   alternates: { canonical: "/admissions" },
 };
 

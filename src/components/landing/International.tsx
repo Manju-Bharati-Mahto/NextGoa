@@ -86,7 +86,7 @@ export function International() {
 
         <p className="mt-10 text-center">
           <Link
-            href="/study-abroad"
+            href="/international/study-abroad"
             className="inline-block rounded-full bg-brand px-7 py-3.5 text-sm font-bold text-white transition-colors hover:bg-brand-dark"
           >
             Explore Global Opportunities →

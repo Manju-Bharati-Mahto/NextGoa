@@ -1,5 +1,12 @@
 import Image from "next/image";
 
+
+export const metadata = {
+  alternates: {
+    canonical: "/privacy-policy",
+  },
+};
+
 export default function PrivacyPolicy() {
   return (
     <main className="min-h-screen bg-[#FDFCF8] pb-24 sm:pb-32 md:pb-48 lg:pb-56">

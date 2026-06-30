@@ -89,8 +89,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/international/study-abroad',
-        destination: '/study-abroad',
+        source: '/study-abroad',
+        destination: '/international/study-abroad',
         permanent: true,
       },
       {

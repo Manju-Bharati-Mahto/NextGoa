@@ -51,5 +51,5 @@ export const staticRoutes: StaticRoute[] = [
   },
   // --- Add as each section ships ---
   // { path: "/faculty", changeFrequency: "weekly",  priority: 0.9, title: "Programmes", summary: "All undergraduate, postgraduate, and doctoral programmes." },
-  // { path: "/about",      changeFrequency: "monthly", priority: 0.6, title: "About",      summary: "History, accreditation, leadership, and rankings." },
+  // { path: "/about-us",      changeFrequency: "monthly", priority: 0.6, title: "About",      summary: "History, accreditation, leadership, and rankings." },
 ];

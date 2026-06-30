@@ -181,7 +181,7 @@ export default function RecruitersAndDestinations({ slug }: { slug?: string }) {
               Higher Studies Destinations
             </h3>
             <Link 
-              href="/study-abroad"
+              href="/international/study-abroad"
               className="bg-[#E73649] text-white font-bold text-[16px] px-8 py-4 rounded-full hover:bg-[#D62B3D] transition-colors whitespace-nowrap shadow-sm hover:shadow-md"
             >
               Explore Study Abroad &rarr;

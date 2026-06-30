@@ -14,11 +14,7 @@ const CampusVisitModal = dynamic(() => import("@/components/layout/CampusVisitMo
 import FloatingCta from "@/components/layout/FloatingCta";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { ScrollRestoration } from "@/components/layout/ScrollRestoration";
-/**
- * Site-wide metadata defaults. `metadataBase` lets every page emit absolute
- * canonical/OG URLs from relative paths. The title `template` appends the brand
- * to inner-page titles automatically; `default` is used for the homepage.
- */
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {

@@ -6,14 +6,14 @@
  * the landing page is fully functional today. Swap each `href` to a real route
  * (e.g. "/programmes") as those pages ship, and register the route in routes.ts.
  */
-export type NavItem = { label: string; href: string };
+export type NavItem = { label: string; href: string; newTab?: boolean };
 
 export const navItems: NavItem[] = [
-  { label: "About", href: "/about" },
+  { label: "About", href: "/about-us" },
   { label: "Admissions", href: "/admissions" },
   { label: "Faculties", href: "/faculty" },
   { label: "Examinations", href: "/examination" },
-  { label: "Study Abroad", href: "/study-abroad" },
+  { label: "Study Abroad", href: "/international/study-abroad" },
   { label: "Placements", href: "/placements" },
   { label: "Campus Life", href: "/campus-life" },
   { label: "Blogs", href: "/blog" },

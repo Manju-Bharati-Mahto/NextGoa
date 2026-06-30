@@ -15,8 +15,11 @@ import StudyAbroadCTA from "@/components/study-abroad/StudyAbroadCTA";
 import StudyAbroadFaq from "@/components/study-abroad/StudyAbroadFaq";
 
 export const metadata: Metadata = {
-  title: "Study Abroad | Parul University Goa",
-  description: "Take your education global with Parul University Goa's extensive study abroad programs and international partner universities.",
+  title: "Study Abroad Programs | Global Pathways & Student Exchange - Parul University Goa",
+  description: "Explore study abroad programs at Parul University Goa with global pathways, semester exchanges, international internships and partner universities worldwide. Apply now!",
+  alternates: {
+    canonical: "/international/study-abroad",
+  },
 };
 
 export default function StudyAbroadPage() {

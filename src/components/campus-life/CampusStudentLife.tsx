@@ -7,22 +7,22 @@ const clubs = [
   {
     title: "Academic & Tech",
     tags: ["CODING", "ROBOTICS", "AI/ML", "PHARMA", "HOSPITALITY"],
-    image: "/campus-culture/Academic & Tech.jpg"
+    image: "/campus-culture/academic-and-tech.jpg"
   },
   {
     title: "Arts & Culture",
     tags: ["MUSIC", "DRAMA", "PHOTOGRAPHY", "LITERARY", "FILM"],
-    image: "/campus-culture/Arts & Culture.jpg"
+    image: "/campus-culture/arts-and-culture.jpg"
   },
   {
     title: "Freshers Fest",
     tags: ["MUSIC", "DANCE", "DJ NIGHT", "ICE BREAKERS"],
-    image: "/campus-culture/Freshers Fest.jpg"
+    image: "/campus-culture/freshers-fest.jpg"
   },
   {
     title: "Goan Cultural Carnival",
     tags: ["LOCAL CUISINE", "FOLK DANCE", "ART", "HERITAGE"],
-    image: "/campus-culture/Goan Cultural Carnival.jpg"
+    image: "/campus-culture/goan-cultural-carnival.jpg"
   }
 ];
 
