@@ -12,7 +12,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Parul University Goa Blog | Career Guides, Courses & Admission Insights",
+  title: { absolute: "Parul University Goa Blog | Career Guides, Courses & Admission Insights" },
   description:
     "Explore Parul University Goa’s blog for expert insights on courses, career options, admission guides, and student life in Goa. Stay updated with trends in AI, healthcare, and hospitality.",
   alternates: {
