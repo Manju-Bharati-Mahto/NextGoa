@@ -51,13 +51,24 @@ export async function getPdfs(tab: string, session: string, program: string) {
     }
 
     const files = await fs.readdir(dirPath);
-    const pdfs = files
-      .filter(f => f.toLowerCase().endsWith('.pdf'))
-      .map((file, index) => ({
-        id: index + 1,
-        title: file.replace(/-/g, ' ').replace(/_/g, ' ').replace('.pdf', ''),
-        url: urlPrefix + encodeURIComponent(file),
-      }));
+    
+    // Read stats for all pdf files to sort them by modification time
+    const pdfFiles = files.filter(f => f.toLowerCase().endsWith('.pdf'));
+    const filesWithStats = await Promise.all(
+      pdfFiles.map(async (file) => {
+        const stats = await fs.stat(path.join(dirPath, file));
+        return { file, mtimeMs: stats.mtimeMs };
+      })
+    );
+
+    // Sort descending by modified time (recent first)
+    filesWithStats.sort((a, b) => b.mtimeMs - a.mtimeMs);
+
+    const pdfs = filesWithStats.map(({ file }, index) => ({
+      id: index + 1,
+      title: file.replace(/-/g, ' ').replace(/_/g, ' ').replace('.pdf', ''),
+      url: urlPrefix + encodeURIComponent(file),
+    }));
 
     return pdfs;
   } catch (error) {
