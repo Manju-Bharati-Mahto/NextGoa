@@ -52,17 +52,19 @@ export async function getPdfs(tab: string, session: string, program: string) {
 
     const files = await fs.readdir(dirPath);
     
-    // Read stats for all pdf files to sort them by modification time
+    // Read stats for all pdf files to sort them by when they were added/modified
     const pdfFiles = files.filter(f => f.toLowerCase().endsWith('.pdf'));
     const filesWithStats = await Promise.all(
       pdfFiles.map(async (file) => {
         const stats = await fs.stat(path.join(dirPath, file));
-        return { file, mtimeMs: stats.mtimeMs };
+        // Use the most recent timestamp among modified, changed, or created time
+        const latestTime = Math.max(stats.mtimeMs, stats.ctimeMs, stats.birthtimeMs);
+        return { file, latestTime };
       })
     );
 
-    // Sort descending by modified time (recent first)
-    filesWithStats.sort((a, b) => b.mtimeMs - a.mtimeMs);
+    // Sort descending by the latest time (recent first)
+    filesWithStats.sort((a, b) => b.latestTime - a.latestTime);
 
     const pdfs = filesWithStats.map(({ file }, index) => ({
       id: index + 1,
