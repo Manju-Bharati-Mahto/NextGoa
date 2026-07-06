@@ -269,6 +269,16 @@ export function EnquiryModal() {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    if (submitState === 'success' && countdown > 0) {
+      timer = setTimeout(() => setCountdown(prev => prev - 1), 1000);
+    } else if (submitState === 'success' && countdown === 0) {
+      window.location.href = "https://admissions.paruluniversity.ac.in/goa";
+    }
+    return () => clearTimeout(timer);
+  }, [submitState, countdown]);
+
   if (!isOpen) return null;
 
   const getError = (id: string, value: string) => {
@@ -364,10 +374,6 @@ export function EnquiryModal() {
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-
-      setTimeout(() => {
-        close();
-      }, 3000);
 
     } catch (err) {
 
