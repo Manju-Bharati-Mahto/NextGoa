@@ -452,3 +452,5 @@ img, svg {
 .search-input{
   padding: 0px 40px;
 }
+html { scroll-behavior: smooth; }
+

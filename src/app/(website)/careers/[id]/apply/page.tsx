@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MOCK_JOBS } from "@/data/jobs";
 import ApplyForm from "./ApplyForm";
+import ApplyScrollButton from "@/components/career/ApplyScrollButton";
 
 export default async function ApplyPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -43,16 +44,14 @@ export default async function ApplyPage({ params }: { params: Promise<{ id: stri
                 winning career
               </h1>
               
-              <button className="bg-[#EF3341] hover:bg-[#D92A36] transition-colors text-white text-[16px] md:text-[18px] font-bold px-8 py-3 md:px-10 md:py-3.5 rounded-full w-fit shadow-md">
-                Submit now
-              </button>
+              <ApplyScrollButton />
             </div>
           </div>
         </div>
       </section>
 
       {/* Application Form Section */}
-      <section className="w-full relative z-10 pb-16 sm:pb-24 pt-8 md:pt-[10vw]">
+      <section id="apply-form" className="w-full relative z-10 pb-16 sm:pb-24 pt-8 md:pt-[10vw]">
         <div className="max-w-[1140px] mx-auto px-6 lg:px-12 bg-white p-8 lg:p-12 rounded-[2rem] border border-gray-200 shadow-sm mt-12 md:mt-[5vw]">
           <h2 className="text-3xl font-extrabold mb-10 text-[#111111]">Basic Details</h2>
           
