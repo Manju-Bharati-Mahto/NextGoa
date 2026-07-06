@@ -47,7 +47,7 @@ export default function ApplyForm({ jobId, jobTitle }: { jobId: number, jobTitle
     const result = await res.json();
 
     if (result.success) {
-      router.push(`/career/${jobId}/success`);
+      router.push(`/careers/${jobId}/success`);
     } else {
       alert(result.message);
     }

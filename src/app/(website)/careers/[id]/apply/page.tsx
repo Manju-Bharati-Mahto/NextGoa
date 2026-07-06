@@ -32,7 +32,7 @@ export default async function ApplyPage({ params }: { params: Promise<{ id: stri
           <div className="max-w-[1440px] w-full mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center h-full">
             {/* Left Content */}
             <div className="flex-1 flex flex-col justify-center w-full max-w-[800px] md:pr-8">
-              <Link href={`/career/${job.id}`} className="text-[#111111] hover:opacity-80 transition-opacity mb-4 md:mb-6 font-medium text-sm w-fit flex items-center gap-2">
+              <Link href={`/careers/${job.id}`} className="text-[#111111] hover:opacity-80 transition-opacity mb-4 md:mb-6 font-medium text-sm w-fit flex items-center gap-2">
                 &larr; Back to Job Details
               </Link>
               
