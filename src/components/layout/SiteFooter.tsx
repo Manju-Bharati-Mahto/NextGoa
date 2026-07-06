@@ -14,7 +14,7 @@ const columns: { heading: string; links?: LinkItem[]; subSections?: { heading: s
     heading: "Quick Links",
     links: [
       { label: "About Us", href: "/about-us" },
-      { label: "Career", href: "/career" },
+      { label: "Careers", href: "/careers" },
       { label: "Admissions", href: "/admissions" },
       { label: "Campus Life", href: "/campus-life" },
       { label: "Placements", href: "/placements" },

@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 export default function FloatingCta() {
   const pathname = usePathname();
 
-  if (pathname === "/career" || pathname?.startsWith("/career/")) {
+  if (pathname === "/careers" || pathname?.startsWith("/careers/")) {
     return null;
   }
 

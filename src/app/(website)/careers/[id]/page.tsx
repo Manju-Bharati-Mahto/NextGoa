@@ -32,7 +32,7 @@ export default async function CareerDetailsPage({ params }: { params: Promise<{ 
             
             {/* Left Content */}
             <div className="flex-1 flex flex-col justify-center w-full max-w-[750px] md:pr-8">
-              <Link href="/career" className="text-white hover:opacity-80 transition-opacity mb-6 font-medium text-sm w-fit flex items-center gap-2">
+              <Link href="/careers" className="text-white hover:opacity-80 transition-opacity mb-6 font-medium text-sm w-fit flex items-center gap-2">
                 &larr; Back to Listings
               </Link>
 
@@ -47,7 +47,7 @@ export default async function CareerDetailsPage({ params }: { params: Promise<{ 
               </h1>
               
               {/* CTA */}
-              <Link href={`/career/${jobId}/apply`} className="bg-[#EF3341] hover:bg-[#D92A36] transition-colors text-white text-[16px] md:text-[18px] font-bold px-8 py-3 md:px-10 md:py-3.5 rounded-full w-fit shadow-md text-center">
+              <Link href={`/careers/${jobId}/apply`} className="bg-[#EF3341] hover:bg-[#D92A36] transition-colors text-white text-[16px] md:text-[18px] font-bold px-8 py-3 md:px-10 md:py-3.5 rounded-full w-fit shadow-md text-center">
                 Apply Now
               </Link>
             </div>
