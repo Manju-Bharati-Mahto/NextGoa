@@ -3,7 +3,6 @@ import Image from "next/image";
 import { Suspense } from "react";
 import { CareerListings } from "@/components/career/CareerListings";
 import { CareerHeroSearch } from "@/components/career/CareerHeroSearch";
-import db from "@/lib/db";
 
 export const metadata: Metadata = {
   title: { absolute: "Careers at Parul University Goa - Apply for Teaching & Non-Teaching Jobs in Goa" },
@@ -11,20 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/careers" },
 };
 
-export default async function Career() {
-  let jobs: any[] = [];
-  try {
-    const [rows]: any = await db.query(
-      `SELECT id, title, slug, department, position, location, type, card_description, status, content, created_at, updated_at
-       FROM vacancies
-       WHERE is_deleted = 0 AND status = 'published'
-       ORDER BY id DESC`
-    );
-    jobs = rows;
-  } catch (error) {
-    console.error("Failed to fetch jobs from database:", error);
-  }
-
+export default function Career() {
   return (
     <main className="flex-1 overflow-x-hidden font-[family-name:var(--font-poppins)] relative">
       <section className="relative w-full lg: lg: flex items-center z-10 overflow-hidden py-16 sm:py-24">
@@ -136,7 +122,7 @@ export default async function Career() {
         </div>
       </section>
 
-      <CareerListings initialJobs={jobs} />
+      <CareerListings />
     </main>
   );
 }
