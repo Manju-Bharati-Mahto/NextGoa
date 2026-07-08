@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Mail, Lock } from "lucide-react";
+import { toast } from "sonner";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -25,16 +26,14 @@ export default function LoginPage() {
       }),
     });
 
-    console.log("STATUS:", res.status);
 
 const data = await res.json();
 
-console.log("DATA:", data);
 
     if (data.success) {
       router.push("/admin/dashboard");
     } else {
-      alert(data.message);
+      toast.error(data.message);
     }
   }
 

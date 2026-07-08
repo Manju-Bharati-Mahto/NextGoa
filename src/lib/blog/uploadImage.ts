@@ -9,7 +9,7 @@ export async function uploadImage(
   folder = "uploads"
 
 ) {
-
+   
   if (!file || file.size === 0) {
 
     return "";

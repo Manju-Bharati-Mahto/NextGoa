@@ -1,6 +1,7 @@
 import Sidebar from "@/components/admin/Sidebar";
 import Header from "@/components/admin/Header";
 import Footer from "@/components/admin/Footer";
+import { Toaster } from "sonner";
 
 export default function AdminLayout({
   children,
@@ -8,7 +9,7 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="h-screen flex">
+    <div className="flex">
 
       <div className="flex-1 flex flex-col">
         {/* <Header /> */}
@@ -19,6 +20,11 @@ export default function AdminLayout({
 
         {/* <Footer /> */}
       </div>
+
+      <Toaster
+        richColors
+        position="top-right"
+      />
     </div>
   );
 }

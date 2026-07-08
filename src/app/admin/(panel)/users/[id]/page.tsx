@@ -1,4 +1,4 @@
-import UserForm from "@/components/admin/UserForm";
+import UserForm from "@/components/admin/forms/UserForm";
 
 export default async function EditUserPage({
 params,

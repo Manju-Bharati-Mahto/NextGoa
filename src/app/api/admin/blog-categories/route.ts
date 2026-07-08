@@ -3,13 +3,12 @@ import db from "@/lib/db";
 import { requirePermission } from "@/lib/adminAuth";
 
 export async function GET() {
-   const user = await requirePermission("blog-categories");
+  const user = await requirePermission("blog-categories");
 
-if (user instanceof NextResponse) {
-  return user;
-}
+  if (user instanceof NextResponse) {
+    return user;
+  }
   try {
-   
     const [rows]: any = await db.query(`
       SELECT
         id,
@@ -21,9 +20,7 @@ if (user instanceof NextResponse) {
     `);
 
     return NextResponse.json(rows);
-
   } catch (error: any) {
-
     return NextResponse.json(
       {
         success: false,
@@ -31,8 +28,7 @@ if (user instanceof NextResponse) {
       },
       {
         status: 500,
-      }
+      },
     );
-
   }
 }

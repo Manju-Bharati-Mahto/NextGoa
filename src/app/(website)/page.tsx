@@ -1,60 +1,51 @@
 import type { Metadata } from "next";
-import { Hero } from "@/components/landing/Hero";
-import { NotificationMarquee } from "@/components/landing/NotificationMarquee";
-import { StatsBar } from "@/components/landing/StatsBar";
-import { Philosophy } from "@/components/landing/Philosophy";
-import { ProgrammeFinder } from "@/components/landing/ProgrammeFinder";
-import { Admissions } from "@/components/landing/Admissions";
-import { Placements } from "@/components/landing/Placements";
-import { Outcomes } from "@/components/landing/Outcomes";
-import { Research } from "@/components/landing/Research";
-import { Testimonial } from "@/components/landing/Testimonial";
-import { CampusTour } from "@/components/landing/CampusTour";
-import { CampusLife } from "@/components/landing/CampusLife";
-import { WhyGoa } from "@/components/landing/WhyGoa";
-import { International } from "@/components/landing/International";
-import { News } from "@/components/landing/News";
-import { Faq } from "@/components/landing/Faq";
-import { FinalCta } from "@/components/landing/FinalCta";
-import { stories } from "@/data/stories";
+import PageRenderer from "@/components/pages/PageRenderer";
+import { getPage } from "@/lib/frontend/getPage";
+import { SITE_URL } from "@/lib/site-config";
 
-export const metadata: Metadata = {
-  alternates: { canonical: "/" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const response = await getPage("home");
 
+  if (!response?.page) {
+    return {};
+  }
+
+  const page = response.page;
+
+  return {
+    title: page.seo_title || page.title,
+    description: page.seo_description,
+    keywords: page.seo_keywords,
+
+    alternates: {
+      canonical: page.canonical_url,
+    },
+
+    openGraph: {
+      title: page.og_title || page.title,
+      description: page.og_description,
+      url: `${SITE_URL}`,
+      images: page.og_image
+        ? [
+            {
+              url: `${SITE_URL}${page.og_image}`,
+            },
+          ]
+        : [],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: page.og_title || page.title,
+      description: page.og_description,
+      images: page.og_image ? [`${SITE_URL}${page.og_image}`] : [],
+    },
+  };
+}
 export default function Home() {
-  const mappedStories = stories.map(s => ({
-    tag: s.category,
-    tagClass: "bg-[#04B86A] text-white", // specific tag class for landing page
-    title: s.title,
-    body: s.excerpt,
-    image: s.image,
-    link: `/blog/${s.slug}`,
-    date: s.date,
-    timestamp: new Date(s.date).getTime()
-  }));
-
   return (
-    <>
-      <main className="flex-1 overflow-x-hidden">
-        <Hero />
-        <NotificationMarquee />
-        <StatsBar />
-        <Philosophy />
-        <ProgrammeFinder />
-        <Admissions />
-        <Placements />
-        <Outcomes />
-        <Research />
-        <Testimonial />
-        <CampusTour />
-        <CampusLife />
-        <WhyGoa />
-        <International />
-        <News />
-        <FinalCta />
-        <Faq />
-      </main>
-    </>
+    <main className="flex-1 overflow-x-hidden">
+      <PageRenderer slug="home" />
+    </main>
   );
 }

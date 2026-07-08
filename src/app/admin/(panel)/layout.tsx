@@ -8,7 +8,7 @@ export default function PanelLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="h-screen flex">
+    <div className="flex">
       <Sidebar />
 
       <div className="flex-1 flex flex-col">

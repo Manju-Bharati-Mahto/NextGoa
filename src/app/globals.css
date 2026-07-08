@@ -410,6 +410,7 @@ img, svg {
 }
 .bg-light-white{
   background: #f2f2f2;
+  min-height: 100dvh;
 }
 .cards-admin-text{
     margin-bottom: 1.875rem;
@@ -427,10 +428,16 @@ img, svg {
   align-content: center;
 }
 .border-dotted{
-  border-bottom: 1px dashed var(--border);
+  border-bottom: 1px dashed var(--border) !important;
 }
 .border-light{
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border) !important;
+}
+.border-light-all{
+  border: 1px solid var(--border) !important;
+}
+.border-light-t{
+  border-top: 1px solid var(--border) !important;
 }
 .form-check-input:checked {
     background-color: var(--primary);
@@ -452,5 +459,3 @@ img, svg {
 .search-input{
   padding: 0px 40px;
 }
-html { scroll-behavior: smooth; }
-
