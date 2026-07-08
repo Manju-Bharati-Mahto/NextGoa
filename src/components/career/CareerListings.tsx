@@ -2,9 +2,26 @@
 
 import { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 
-export function CareerListings({ initialJobs = [] }: { initialJobs?: any[] }) {
+const POSITIONS = [
+  "Administration",
+  "Coaching",
+  "Leadership",
+  "Non Teaching",
+  "Programme",
+  "Research",
+  "Teaching",
+  "Technical",
+  "Uncategorized",
+];
+
+const LOCATIONS = ["Vadodara", "Goa", "Ahmedabad", "Rajkot"];
+const TYPES = ["On-site", "Remote", "Hybrid"];
+
+import Link from "next/link";
+import { MOCK_JOBS } from "@/data/jobs";
+
+export function CareerListings() {
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
@@ -22,31 +39,6 @@ export function CareerListings({ initialJobs = [] }: { initialJobs?: any[] }) {
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
 
   const [showAll, setShowAll] = useState(false);
-
-  const positions = useMemo(() => {
-    const list = Array.from(new Set(initialJobs.map(j => j.position).filter(Boolean))) as string[];
-    return list.length > 0 ? list.sort() : [
-      "Administration",
-      "Coaching",
-      "Leadership",
-      "Non Teaching",
-      "Programme",
-      "Research",
-      "Teaching",
-      "Technical",
-      "Uncategorized",
-    ];
-  }, [initialJobs]);
-
-  const locations = useMemo(() => {
-    const list = Array.from(new Set(initialJobs.map(j => j.location).filter(Boolean))) as string[];
-    return list.length > 0 ? list.sort() : ["Goa", "Vadodara", "Ahmedabad", "Rajkot"];
-  }, [initialJobs]);
-
-  const types = useMemo(() => {
-    const list = Array.from(new Set(initialJobs.map(j => j.type).filter(Boolean))) as string[];
-    return list.length > 0 ? list.sort() : ["On-site", "Remote", "Hybrid"];
-  }, [initialJobs]);
 
   const toggleFilter = (
     current: string[],
@@ -66,34 +58,33 @@ export function CareerListings({ initialJobs = [] }: { initialJobs?: any[] }) {
   };
 
   const filteredJobs = useMemo(() => {
-    const results = initialJobs.filter((job) => {
+    const results = MOCK_JOBS.filter((job) => {
       // Search text filter
       const searchMatch = !searchQuery || 
-        (job.department || "").toLowerCase().includes(searchQuery) ||
-        (job.position || "").toLowerCase().includes(searchQuery) ||
-        (job.title || "").toLowerCase().includes(searchQuery) ||
-        (job.card_description || "").toLowerCase().includes(searchQuery);
+        job.department.toLowerCase().includes(searchQuery) ||
+        job.position.toLowerCase().includes(searchQuery) ||
+        job.description.toLowerCase().includes(searchQuery);
 
       // Position filter
       const positionMatch =
         selectedPositions.length === 0 ||
-        selectedPositions.some(p => (job.position || "").toLowerCase().includes(p.toLowerCase()));
+        selectedPositions.some(p => job.position.toLowerCase().includes(p.toLowerCase()));
 
       // Location filter
       const locationMatch =
         selectedLocations.length === 0 ||
-        selectedLocations.some(l => (job.location || "").toLowerCase() === l.toLowerCase());
+        selectedLocations.some(l => job.location.toLowerCase() === l.toLowerCase());
 
       // Type filter
       const typeMatch =
         selectedTypes.length === 0 ||
-        selectedTypes.some(t => (job.type || "").toLowerCase() === t.toLowerCase());
+        selectedTypes.some(t => job.type.toLowerCase() === t.toLowerCase());
 
       return searchMatch && positionMatch && locationMatch && typeMatch;
     });
 
     return results;
-  }, [initialJobs, searchQuery, selectedPositions, selectedLocations, selectedTypes]);
+  }, [searchQuery, selectedPositions, selectedLocations, selectedTypes]);
 
   // Determine which jobs to actually show
   const visibleJobs = showAll ? filteredJobs : filteredJobs.slice(0, 4);
@@ -115,7 +106,7 @@ export function CareerListings({ initialJobs = [] }: { initialJobs?: any[] }) {
             </div>
             <span className="text-[13px] text-[#111111]" onClick={() => setSelectedPositions([])}>All</span>
           </label>
-          {positions.map((pos) => {
+          {POSITIONS.map((pos) => {
             const isChecked = selectedPositions.includes(pos);
             return (
               <label key={pos} className="flex items-center gap-3 cursor-pointer group" onClick={(e) => { e.preventDefault(); toggleFilter(selectedPositions, setSelectedPositions, pos); }}>
@@ -136,7 +127,7 @@ export function CareerListings({ initialJobs = [] }: { initialJobs?: any[] }) {
         <h4 className="text-sm font-bold text-[#111111] mb-3">Location</h4>
         <hr className="border-gray-200 mb-4" />
         <div className="flex flex-col gap-2.5">
-          {locations.map((loc) => {
+          {LOCATIONS.map((loc) => {
             const isChecked = selectedLocations.includes(loc);
             return (
               <label key={loc} className="flex items-center gap-3 cursor-pointer group" onClick={(e) => { e.preventDefault(); toggleFilter(selectedLocations, setSelectedLocations, loc); }}>
@@ -157,7 +148,7 @@ export function CareerListings({ initialJobs = [] }: { initialJobs?: any[] }) {
         <h4 className="text-sm font-bold text-[#111111] mb-3">Job Type</h4>
         <hr className="border-gray-200 mb-4" />
         <div className="flex flex-col gap-2.5">
-          {types.map((type) => {
+          {TYPES.map((type) => {
             const isChecked = selectedTypes.includes(type);
             return (
               <label key={type} className="flex items-center gap-3 cursor-pointer group" onClick={(e) => { e.preventDefault(); toggleFilter(selectedTypes, setSelectedTypes, type); }}>
@@ -235,11 +226,11 @@ export function CareerListings({ initialJobs = [] }: { initialJobs?: any[] }) {
                   </div>
 
                   <p className="text-[#333333] text-[15px] leading-[1.6] mb-8 line-clamp-3 text-ellipsis overflow-hidden">
-                    {job.card_description}
+                    {job.cardDescription}
                   </p>
                   
                   <div className="mt-auto flex items-center gap-4 w-full">
-                    <Link href={`/careers/${job.slug}`} className="flex-1 bg-[#EF3341] hover:bg-[#D92A36] transition-colors text-white text-[16px] font-bold py-3 rounded-full text-center block">
+                    <Link href={`/careers/${job.id}`} className="flex-1 bg-[#EF3341] hover:bg-[#D92A36] transition-colors text-white text-[16px] font-bold py-3 rounded-full text-center block">
                       Details
                     </Link>
                     <button className="flex-1 bg-transparent border border-[#111111] text-[#111111] hover:bg-gray-50 transition-colors text-[16px] font-medium py-3 rounded-full">
