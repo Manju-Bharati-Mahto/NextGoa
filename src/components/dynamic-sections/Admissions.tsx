@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Eyebrow } from "./Decor";
-import { ExamDatesTicket } from "../layout/ExamDatesTicket";
+import { ExamDatesTicket } from "./ExamDatesTicket";
 
 interface AdmissionsProps {
   data: {
