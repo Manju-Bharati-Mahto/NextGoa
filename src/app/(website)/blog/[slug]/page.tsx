@@ -31,7 +31,7 @@ export async function generateMetadata({
   const blog = rows[0];
 
   return {
-    title: blog.meta_title || blog.title,
+    title: { absolute: blog.meta_title || blog.title },
 
     description:
       blog.meta_description || blog.excerpt,
