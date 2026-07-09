@@ -31,7 +31,7 @@ export async function processSectionUploads(
         // Upload new image
         section.content.backgroundImage = await uploadImage(
           file,
-          "uploads/goa-uploads/hero",
+          "goa-uploads/pages/hero",
         );
       }
 
@@ -48,7 +48,7 @@ export async function processSectionUploads(
         if (item.documentFile?.size) {
           item.link = await uploadImage(
             item.documentFile,
-            "uploads/pages/marqueedoc",
+            "goa-uploads/pages/marqueedoc",
           );
         }
 
@@ -58,7 +58,7 @@ export async function processSectionUploads(
     if (section.content.registeredImageFile?.size) {
       section.content.registeredImage = await uploadImage(
         section.content.registeredImageFile,
-        "uploads/pages/admissions",
+        "goa-uploads/pages/admissions",
       );
     }
     if (section.type === "placements") {
@@ -79,7 +79,7 @@ export async function processSectionUploads(
 
         section.content.highlightCard.image = await uploadImage(
           file,
-          "uploads/pages/placements",
+          "goa-uploads/pages/placements",
         );
       } else if (oldSection?.content?.highlightCard?.image) {
         section.content.highlightCard.image =
@@ -106,7 +106,7 @@ export async function processSectionUploads(
           // Upload new image
           logo.image = await uploadImage(
             logo.imageFile,
-            "uploads/pages/recruiters",
+            "goa-uploads/pages/recruiters",
           );
         } else if (oldLogo?.image) {
           // Keep existing image
@@ -130,7 +130,7 @@ export async function processSectionUploads(
 
           logo.image = await uploadImage(
             logo.imageFile,
-            "uploads/pages/recruiters",
+            "goa-uploads/pages/recruiters",
           );
         } else if (oldLogo?.image) {
           logo.image = oldLogo.image;
@@ -145,7 +145,7 @@ export async function processSectionUploads(
       if (section.content.googleImageFile?.size) {
         section.content.googleImage = await uploadImage(
           section.content.googleImageFile,
-          "uploads/pages/testimonial",
+          "goa-uploads/pages/testimonial",
         );
       } else if (oldSection?.content?.googleImage) {
         section.content.googleImage = oldSection.content.googleImage;
@@ -163,7 +163,7 @@ export async function processSectionUploads(
         if (item.imageFile?.size) {
           item.image = await uploadImage(
             item.imageFile,
-            "uploads/pages/testimonial",
+            "goa-uploads/pages/testimonial",
           );
         } else if (oldItem?.image) {
           item.image = oldItem.image;
@@ -190,7 +190,7 @@ export async function processSectionUploads(
         // Upload new thumbnail
         section.content.thumbnail = await uploadImage(
           file,
-          "uploads/pages/campus-tour",
+          "goa-uploads/pages/campus-tour",
         );
       }
       // Keep existing thumbnail
@@ -215,7 +215,7 @@ export async function processSectionUploads(
         }
 
         // Upload new image
-        section.content.image = await uploadImage(file, "uploads/pages/whygoa");
+        section.content.image = await uploadImage(file, "goa-uploads/pages/whygoa");
       } else if (oldSection?.content?.image) {
         // Keep existing image
         section.content.image = oldSection.content.image;
@@ -240,7 +240,7 @@ export async function processSectionUploads(
         // Upload new image
         section.content.worldMap = await uploadImage(
           file,
-          "uploads/pages/international",
+          "goa-uploads/pages/international",
         );
       } else if (oldSection?.content?.worldMap) {
         // Keep existing image
@@ -268,7 +268,7 @@ export async function processSectionUploads(
 
         section.content.backgroundImage = await uploadImage(
           file,
-          "uploads/pages/final-cta",
+          "goa-uploads/pages/final-cta",
         );
       } else if (oldSection?.content?.backgroundImage) {
         section.content.backgroundImage = oldSection.content.backgroundImage;
@@ -297,7 +297,7 @@ export async function processSectionUploads(
         // Upload new image
         section.content.backgroundImage = await uploadImage(
           file,
-          "uploads/pages/banner",
+          "goa-uploads/pages/banner",
         );
       } else if (oldSection?.content?.backgroundImage) {
         // Keep existing image
@@ -321,7 +321,7 @@ export async function processSectionUploads(
 
         section.content.image = await uploadImage(
           file,
-          "uploads/pages/accreditations",
+          "goa-uploads/pages/accreditations",
         );
       } else if (oldSection?.content?.image) {
         section.content.image = oldSection.content.image;
@@ -339,7 +339,7 @@ export async function processSectionUploads(
                 if (pdf.fileFile instanceof File && pdf.fileFile.size > 0) {
                   pdf.file = await uploadImage(
                     pdf.fileFile,
-                    "uploads/pages/examination",
+                    "goa-uploads/pages/examination",
                   );
                 }
 
@@ -352,7 +352,7 @@ export async function processSectionUploads(
             if (pdf.fileFile instanceof File && pdf.fileFile.size > 0) {
               pdf.file = await uploadImage(
                 pdf.fileFile,
-                "uploads/pages/examination",
+                "goa-uploads/pages/examination",
               );
             }
 
@@ -376,7 +376,7 @@ export async function processSectionUploads(
 
           section.content.rightImage = await uploadImage(
             file,
-            "uploads/pages/trending",
+            "goa-uploads/pages/trending",
           );
         } else if (oldSection?.content?.rightImage) {
           section.content.rightImage = oldSection.content.rightImage;
