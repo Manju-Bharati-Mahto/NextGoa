@@ -4,11 +4,13 @@ import { getPage } from "@/lib/frontend/getPage";
 import { SITE_URL } from "@/lib/site-config";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const page = await getPage("home");
+  const response = await getPage("home");
 
-  if (!page) {
+  if (!response?.page) {
     return {};
   }
+
+  const page = response.page;
 
   return {
     title: page.seo_title || page.title,
