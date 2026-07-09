@@ -29,6 +29,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: '/sitemap.xml',
+        destination: '/sitemap_index.xml',
+        permanent: true,
+      },
+      {
         source: '/about/vision-mission',
         destination: '/about#vision-mission',
         permanent: true,

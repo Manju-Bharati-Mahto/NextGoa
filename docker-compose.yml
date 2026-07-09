@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   web:
     build:
@@ -15,6 +13,7 @@ services:
       - NODE_ENV=production
     volumes:
       - /opt/next/NextGoa/public/uploads:/app/public/uploads
+      - /opt/next/NextGoa/goa-uploads:/app/goa-uploads
     depends_on:
       - db
     networks:
@@ -45,8 +44,8 @@ services:
     environment:
       PMA_HOST: db
       PMA_PORT: 3306
-      # UPLOAD_LIMIT: 64M
-      # PMA_ABSOLUTE_URI: "https://staging-goa.paruluniversity.ac.in/phpmyadmin/"
+      UPLOAD_LIMIT: 64M
+      PMA_ABSOLUTE_URI: "https://goa.paruluniversity.ac.in/phpmyadmin/"
     depends_on:
       - db
     networks:
