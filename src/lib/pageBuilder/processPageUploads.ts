@@ -16,7 +16,7 @@ export async function processPageUploads(body: any, oldPage?: any) {
 
     body.featured_image = await uploadImage(
       body.featuredImageFile,
-      "uploads/pages/featured",
+      "goa-uploads/pages/featured",
     );
   } else {
     body.featured_image = oldPage?.featured_image || "";

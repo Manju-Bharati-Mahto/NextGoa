@@ -31,7 +31,7 @@ export async function processSectionUploads(
         // Upload new image
         section.content.backgroundImage = await uploadImage(
           file,
-          "uploads/pages/hero",
+          "uploads/goa-uploads/hero",
         );
       }
 
