@@ -43,26 +43,27 @@ export default async function Sidebar() {
       ],
     },
     {
-      title: "Careers",
+      title: "Jobs",
       permission: "carrers",
       children: [
         {
-          title: "Create Careers",
+          title: "Create Job",
           href: "/admin/carrers/create",
           permission: "carrers.create",
         },
         {
-          title: "View Careers",
+          title: "View Job",
           href: "/admin/carrers",
           permission: "carrers",
         },
+        {
+          title: "View Job Application",
+          href: "/admin/jobs",
+          permission: "jobs",
+        },
       ],
     },
-    {
-      title: "Jobs",
-      href: "/admin/jobs",
-      permission: "jobs",
-    },
+
     {
       title: "Users",
       permission: "users",
@@ -92,6 +93,22 @@ export default async function Sidebar() {
           title: "View Pages",
           href: "/admin/pages",
           permission: "pages",
+        },
+      ],
+    },
+    {
+      title: "Redirections",
+      permission: "redirect.view",
+      children: [
+        {
+          title: "Add Redirection",
+          href: "/admin/redirects/create",
+          permission: "redirect.create",
+        },
+        {
+          title: "View Redirections",
+          href: "/admin/redirects",
+          permission: "redirect.view",
         },
       ],
     },
@@ -130,20 +147,20 @@ export default async function Sidebar() {
   ];
 
   const visibleMenus =
-  user.role_id === 1
-    ? menus
-    : menus
-        .map((menu) => ({
-          ...menu,
-          children: menu.children?.filter((child) =>
-            permissions.includes(child.permission)
-          ),
-        }))
-        .filter(
-          (menu) =>
-            permissions.includes(menu.permission) ||
-            (menu.children && menu.children.length > 0)
-        );
+    user.role_id === 1
+      ? menus
+      : menus
+          .map((menu) => ({
+            ...menu,
+            children: menu.children?.filter((child) =>
+              permissions.includes(child.permission),
+            ),
+          }))
+          .filter(
+            (menu) =>
+              permissions.includes(menu.permission) ||
+              (menu.children && menu.children.length > 0),
+          );
 
   return (
     <aside className="w-64 bg-slate-900 text-white">
