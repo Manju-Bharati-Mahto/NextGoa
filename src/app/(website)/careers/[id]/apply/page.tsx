@@ -1,27 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import db from "@/lib/db";
+import { MOCK_JOBS } from "@/data/jobs";
 import ApplyForm from "./ApplyForm";
 import ApplyScrollButton from "@/components/career/ApplyScrollButton";
 
-interface ApplyPageProps {
-  params: Promise<{ slug: string }>;
-}
-
-export default async function ApplyPage({ params }: ApplyPageProps) {
-  const { slug } = await params;
-
-  let job: any = null;
-  try {
-    const [rows]: any = await db.query(
-      "SELECT id, title, slug FROM vacancies WHERE slug = ? AND is_deleted = 0",
-      [slug]
-    );
-    job = rows[0];
-  } catch (error) {
-    console.error("Error fetching job details for apply page:", error);
-  }
+export default async function ApplyPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const jobId = parseInt(id);
+  const job = MOCK_JOBS.find((j) => j.id === jobId);
 
   if (!job) {
     notFound();
@@ -46,7 +33,7 @@ export default async function ApplyPage({ params }: ApplyPageProps) {
           <div className="max-w-[1440px] w-full mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center h-full">
             {/* Left Content */}
             <div className="flex-1 flex flex-col justify-center w-full max-w-[800px] md:pr-8">
-              <Link href={`/careers/${job.slug}`} className="text-[#111111] hover:opacity-80 transition-opacity mb-4 md:mb-6 font-medium text-sm w-fit flex items-center gap-2">
+              <Link href={`/careers/${job.id}`} className="text-[#111111] hover:opacity-80 transition-opacity mb-4 md:mb-6 font-medium text-sm w-fit flex items-center gap-2">
                 &larr; Back to Job Details
               </Link>
               
@@ -68,7 +55,7 @@ export default async function ApplyPage({ params }: ApplyPageProps) {
         <div className="max-w-[1140px] mx-auto px-6 lg:px-12 bg-white p-8 lg:p-12 rounded-[2rem] border border-gray-200 shadow-sm mt-12 md:mt-[5vw]">
           <h2 className="text-3xl font-extrabold mb-10 text-[#111111]">Basic Details</h2>
           
-          <ApplyForm jobId={job.id} jobTitle={job.title} jobSlug={job.slug} />
+          <ApplyForm jobId={jobId} jobTitle={job.title} />
         </div>
       </section>
     </main>

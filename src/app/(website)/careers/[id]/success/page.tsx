@@ -1,24 +1,11 @@
 import { notFound } from "next/navigation";
-import db from "@/lib/db";
+import { MOCK_JOBS } from "@/data/jobs";
 import Link from "next/link";
 
-interface SuccessPageProps {
-  params: Promise<{ slug: string }>;
-}
-
-export default async function SuccessPage({ params }: SuccessPageProps) {
-  const { slug } = await params;
-
-  let job: any = null;
-  try {
-    const [rows]: any = await db.query(
-      "SELECT title FROM vacancies WHERE slug = ? AND is_deleted = 0",
-      [slug]
-    );
-    job = rows[0];
-  } catch (error) {
-    console.error("Error fetching job details for success page:", error);
-  }
+export default async function SuccessPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const jobId = parseInt(id);
+  const job = MOCK_JOBS.find((j) => j.id === jobId);
 
   if (!job) {
     notFound();
@@ -26,8 +13,10 @@ export default async function SuccessPage({ params }: SuccessPageProps) {
 
   return (
     <main className="w-full flex flex-col min-h-screen bg-[#14A8DA]">
+
       {/* Full Screen Background Image */}
-      <section className="w-full relative flex-1 flex items-center z-20 overflow-hidden py-16 sm:py-24">
+      <section className="w-full relative flex-1 flex items-center z-20 overflow-hidden py-16 sm:py-24"
+      >
         <img 
           src="/car-hero-1.png" 
           alt="Thank You Background" 
