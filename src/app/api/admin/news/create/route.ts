@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
     const blogData = getBlogData(body);
     const params = [
       ...blogData.slice(0, 14),
-      "blog", // blog_type
+      "news", // blog_type
       ...blogData.slice(14),
     ];
 
@@ -66,7 +66,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      message: "Blog created successfully",
+      message: "News created successfully",
     });
 
   } catch (error: any) {

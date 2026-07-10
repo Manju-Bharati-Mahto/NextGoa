@@ -3,97 +3,90 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Story } from "./EventGrid";
 
-interface CarouselCard {
-  tag: string;
-  tagClass: string;
-  title: string;
-  body: string;
-  image: string;
-}
-
-import { Story } from "./StoriesGrid";
-
-export function LatestStories() {
-  // Use first 5 stories for carousel, fallback to empty array if none
+export function LatestEvents() {
   const [carouselCards, setCarouselCards] = useState<Story[]>([]);
   const [loading, setLoading] = useState(true);
   const [formData, setFormData] = useState({
-  name: "",
-  email: "",
-});
+    name: "",
+    email: "",
+  });
+
   useEffect(() => {
     loadStories();
   }, []);
 
   async function loadStories() {
     try {
-      const res = await fetch("/api/blogs?limit=15");
+      const res = await fetch("/api/events?limit=15");
       const data = await res.json();
 
       const formatted = data.map((blog: any) => ({
-        tag: blog.category_names,
+        tag: blog.category_names || "Events",
         tagClass: "bg-brand/10 text-brand ring-1 ring-brand/20",
         title: blog.title,
         body: blog.excerpt,
         image: blog.featured_image,
-        link: `/blog/${blog.slug}`,
+        link: `/events/${blog.slug}`,
         date: blog.created_at,
       }));
 
-        setCarouselCards(formatted);
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setLoading(false);
+      setCarouselCards(formatted);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
+    e.preventDefault();
+
+    if (!formData.email.trim()) {
+      alert("Email is required");
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      const res = await fetch("/api/form-submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          formName: "Newsletter Subscription",
+          sendToCRM: false,
+          sendToGoogleSheet: false,
+          data: formData,
+        }),
+      });
+
+      const result = await res.json();
+
+      if (!result.success) {
+        throw new Error(result.message);
       }
+
+      alert("Subscribed Successfully");
+
+      setFormData({
+        name: "",
+        email: "",
+      });
+
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong.");
+    } finally {
+      setLoading(false);
     }
-const handleSubmit = async (
-  e: React.FormEvent<HTMLFormElement>
-) => {
-  e.preventDefault();
+  };
 
-  if (!formData.email.trim()) {
-    alert("Email is required");
-    return;
-  }
-
-  try {
-    setLoading(true);
-
-    const res = await fetch("/api/form-submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        formName: "Newsletter Subscription",
-        sendToCRM: false,
-        sendToGoogleSheet: false,
-        data: formData,
-      }),
-    });
-
-    const result = await res.json();
-
-    if (!result.success) {
-      throw new Error(result.message);
-    }
-
-    alert("Subscribed Successfully");
-
-    setFormData({
-      name: "",
-      email: "",
-    });
-
-  } catch (err) {
-    console.error(err);
-    alert("Something went wrong.");
-  } finally {
-    setLoading(false);
-  }
-};
   const isCarousel = carouselCards.length > 3;
 
   const [currentIndex, setCurrentIndex] = useState(1);
@@ -259,6 +252,8 @@ const handleSubmit = async (
     }
   }, [slideLock, isCarousel]);
 
+  if (loading || carouselCards.length === 0) return null;
+
   return (
     <section className="bg-brand-white border-t border-black/5 py-12 sm:py-16">
       <div className="mx-auto max-w-[1680px] px-6 sm:px-10">
@@ -283,7 +278,7 @@ const handleSubmit = async (
             </div>
           </div>
 
-          {/* Navigation Buttons (Moved to Header) */}
+          {/* Navigation Buttons */}
           {isCarousel && (
             <div className="flex items-center gap-3 mt-4 md:mt-0">
               <button
@@ -321,28 +316,28 @@ const handleSubmit = async (
         >
           <style dangerouslySetInnerHTML={{
             __html: `
-            .carousel-track-container {
+            .carousel-track-container-events {
               display: flex;
               transition: ${isTransitioning ? "transform 0.8s cubic-bezier(0.25, 1, 0.5, 1)" : "none"};
             }
             ${isCarousel ? `
             @media (max-width: 767px) {
-              .carousel-track-container {
+              .carousel-track-container-events {
                 transform: translateX(calc(-${currentIndex * 85}%));
               }
             }
             @media (min-width: 768px) and (max-width: 1023px) {
-              .carousel-track-container {
+              .carousel-track-container-events {
                 transform: translateX(calc(-${currentIndex * 45}%));
               }
             }
             @media (min-width: 1024px) {
-              .carousel-track-container {
+              .carousel-track-container-events {
                 transform: translateX(calc(-${currentIndex * 30}%));
               }
             }
             ` : `
-            .carousel-track-container {
+            .carousel-track-container-events {
               transform: none !important;
               justify-content: center;
             }
@@ -350,7 +345,7 @@ const handleSubmit = async (
           `}} />
 
           <div
-            className="carousel-track-container -mx-2 md:-mx-3"
+            className="carousel-track-container-events -mx-2 md:-mx-3"
             onTransitionEnd={handleTransitionEnd}
           >
             {extendedCards.map((card, idx) => {
@@ -408,8 +403,6 @@ const handleSubmit = async (
           </div>
         </div>
 
-        {/* Navigation buttons moved to header */}
-
         {/* Newsletter Subscription Banner */}
         <div className="mt-16 bg-[#000000] rounded-[24px] p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 text-left">
           {/* Left Side */}
@@ -429,15 +422,15 @@ const handleSubmit = async (
           <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full lg:max-w-[600px]" >
             <div className="flex flex-col sm:flex-row gap-4">
               <input type="text" placeholder="Your name (optional)" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value, }) } className="w-full bg-[#1F1F1F]/60 border border-white/10 rounded-full px-8 py-4 text-white" />
-             <input type="email" placeholder="Email address *" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value, }) } className="w-full bg-[#1F1F1F]/60 border border-white/10 rounded-full px-8 py-4 text-white" />
+              <input type="email" placeholder="Email address *" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value, }) } className="w-full bg-[#1F1F1F]/60 border border-white/10 rounded-full px-8 py-4 text-white" />
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-4 mt-2">
               <button
-    type="submit"
-    disabled={loading}
-  className="w-full sm:w-auto bg-[#E73649] hover:bg-[#c92b3c] text-white px-10 py-4 rounded-full text-base font-semibold tracking-wide shadow-md transition-all hover:scale-[1.02] cursor-pointer whitespace-nowrap">
-    {loading ? "Submitting..." : "Subscribe"}
-  </button>
+                type="submit"
+                disabled={loading}
+                className="w-full sm:w-auto bg-[#E73649] hover:bg-[#c92b3c] text-white px-10 py-4 rounded-full text-base font-semibold tracking-wide shadow-md transition-all hover:scale-[1.02] cursor-pointer whitespace-nowrap">
+                {loading ? "Submitting..." : "Subscribe"}
+              </button>
               <span className="text-sm text-white/50 w-full text-center sm:text-left ml-2">
                 We never share your email.
               </span>

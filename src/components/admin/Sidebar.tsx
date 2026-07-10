@@ -31,13 +31,18 @@ export default async function Sidebar() {
       permission: "blogs",
       children: [
         {
-          title: "Create Blog",
-          href: "/admin/blogs/create",
-          permission: "blogs.create",
+          title: "Blogs",
+          href: "/admin/blogs",
+          permission: "blogs",
         },
         {
-          title: "View Blogs",
-          href: "/admin/blogs",
+          title: "News",
+          href: "/admin/news",
+          permission: "blogs",
+        },
+        {
+          title: "Events",
+          href: "/admin/events",
           permission: "blogs",
         },
       ],

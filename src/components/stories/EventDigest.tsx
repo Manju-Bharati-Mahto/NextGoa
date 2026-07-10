@@ -25,19 +25,16 @@ export function EventDigest() {
 
   async function loadEvents() {
     try {
-      const res = await fetch("/api/blogs?limit=4");
+      const res = await fetch("/api/events?limit=4");
       const data = await res.json();
 
       const formatted = data
-        .filter((blog: any) =>
-          blog.category_names?.toLowerCase().includes("events")
-        )
         .slice(0, 4)
         .map((blog: any) => ({
           title: blog.title,
           body: blog.excerpt,
           image: blog.featured_image,
-          link: `/blog/${blog.slug}`,
+          link: `/events/${blog.slug}`,
           date: new Date(blog.created_at).toLocaleDateString(),
           tag: "Events",
         }));

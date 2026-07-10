@@ -3,7 +3,6 @@ import db from "@/lib/db";
 
 export async function GET(req: NextRequest) {
   try {
-
     const limit = Number(req.nextUrl.searchParams.get("limit") || 0);
 
     let query = `
@@ -16,7 +15,7 @@ export async function GET(req: NextRequest) {
       ) AS category_names
     FROM blogs b
     WHERE b.status='published'
-    AND (b.blog_type = 'blog' OR b.blog_type IS NULL OR b.blog_type = '')
+      AND b.blog_type = 'news'
     ORDER BY b.created_at DESC
     `;
 
@@ -29,15 +28,12 @@ export async function GET(req: NextRequest) {
 
     const [rows]: any = await db.query(query, params);
 
-
     return NextResponse.json(rows);
 
   } catch (error) {
-
     console.error(error);
-
     return NextResponse.json(
-      { message: "Failed to fetch blogs" },
+      { message: "Failed to fetch news" },
       { status: 500 }
     );
   }

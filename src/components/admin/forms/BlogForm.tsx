@@ -6,15 +6,18 @@ import { Plus, ChevronDown, ChevronRight, Trash2, } from "lucide-react";
 
 interface BlogFormProps {
   blogId?: number;
+  blogType?: "blog" | "news" | "event";
 }
 
 export default function BlogForm({
   blogId,
+  blogType = "blog",
 }: BlogFormProps) {
 
     const router = useRouter();
 
     const isEdit = !!blogId;
+    const typePlural = blogType === "blog" ? "blogs" : blogType === "news" ? "news" : "events";
 
     const [loading, setLoading] = useState(false);
 
@@ -141,7 +144,7 @@ export default function BlogForm({
 
         try {
 
-        const res = await fetch(`/api/admin/blogs/${blogId}`);
+        const res = await fetch(`/api/admin/${typePlural}/${blogId}`);
 
 const data = await res.json();
 
@@ -577,9 +580,9 @@ if (blog.publish_at) {
 
         const url = isEdit
 
-        ? `/api/admin/blogs/${blogId}`
+        ? `/api/admin/${typePlural}/${blogId}`
 
-        : "/api/admin/blogs/create";
+        : `/api/admin/${typePlural}/create`;
 
         const method = isEdit
 
@@ -612,18 +615,20 @@ if (blog.publish_at) {
 
         }
 
+        const typeLabel = blogType === "blog" ? "Blog" : blogType === "news" ? "News" : "Event";
+
         alert(
 
         isEdit
 
-            ? "Blog updated successfully."
+            ? `${typeLabel} updated successfully.`
 
-            : "Blog created successfully."
+            : `${typeLabel} created successfully.`
 
         );
 
         router.push(
-        "/admin/blogs"
+        `/admin/${typePlural}`
         );
 
     } catch (err) {
@@ -664,7 +669,7 @@ if (blog.publish_at) {
         const res =
         await fetch(
 
-            `/api/admin/blogs/${blogId}`,
+            `/api/admin/${typePlural}/${blogId}`,
 
             {
 
@@ -685,12 +690,14 @@ if (blog.publish_at) {
 
         }
 
+        const typeLabel = blogType === "blog" ? "Blog" : blogType === "news" ? "News" : "Event";
+
         alert(
-        "Blog deleted."
+        `${typeLabel} deleted.`
         );
 
         router.push(
-        "/admin/blogs"
+        `/admin/${typePlural}`
         );
 
     } catch (err) {
@@ -710,13 +717,13 @@ if (blog.publish_at) {
    <div className="page-titles">
       <h1 className="text-3xl font-bold text-gray-800">
          {isEdit
-         ? "Edit Blog"
-         : "Create Blog"}
+         ? `Edit ${blogType === "blog" ? "Blog" : blogType === "news" ? "News" : "Event"}`
+         : `Create ${blogType === "blog" ? "Blog" : blogType === "news" ? "News" : "Event"}`}
       </h1>
       <p className="text-gray-500 mt-2">
          {isEdit
-         ? "Update your blog article."
-         : "Create and publish your blog article."}
+         ? `Update your ${blogType} article.`
+         : `Create and publish your ${blogType} article.`}
       </p>
    </div>
    <div className="grid grid-cols-1 xl:grid-cols-12 gap-6">

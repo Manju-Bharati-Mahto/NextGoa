@@ -15,15 +15,10 @@ export function UpcomingEvents() {
 
   async function loadEvents() {
     try {
-      const res = await fetch("/api/blogs");
+      const res = await fetch("/api/events");
       const data = await res.json();
 
-      const upcoming = data
-        .filter(
-          (blog: any) =>
-            blog.category?.toLowerCase() === "events"
-        )
-        .slice(0, 6);
+      const upcoming = data.slice(0, 6);
 
       setEvents(upcoming);
     } catch (err) {

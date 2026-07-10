@@ -65,7 +65,7 @@ export async function PUT(
     const blogData = getBlogData(body);
     const dbParams = [
       ...blogData.slice(0, 14),
-      "blog", // blog_type
+      "news", // blog_type
       ...blogData.slice(14),
       id,
     ];
@@ -103,7 +103,7 @@ export async function PUT(
 
     return NextResponse.json({
       success: true,
-      message: "Blog updated successfully",
+      message: "News updated successfully",
     });
 
   } catch (error: any) {
@@ -140,7 +140,7 @@ export async function DELETE(
 
     return NextResponse.json({
       success: true,
-      message: "Blog deleted successfully",
+      message: "News deleted successfully",
     });
 
   } catch (error: any) {
@@ -178,7 +178,7 @@ export async function GET(
       return NextResponse.json(
         {
           success: false,
-          message: "Blog not found",
+          message: "News not found",
         },
         {
           status: 404,

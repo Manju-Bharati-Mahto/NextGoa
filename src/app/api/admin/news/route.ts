@@ -2,10 +2,10 @@ import { NextRequest, NextResponse } from "next/server";
 import db from "@/lib/db";
 import { requirePermission } from "@/lib/adminAuth";
 
-// GET ALL BLOGS
+// GET ALL NEWS
 export async function GET(req: NextRequest) {
-     const user = await requirePermission("blogs");
-  
+  const user = await requirePermission("blogs");
+
   if (user instanceof NextResponse) {
     return user;
   }
@@ -18,7 +18,7 @@ export async function GET(req: NextRequest) {
 
     const offset = (page - 1) * limit;
 
-    let where = "WHERE (b.blog_type = 'blog' OR b.blog_type IS NULL OR b.blog_type = '')";
+    let where = "WHERE b.blog_type = 'news'";
     const params: any[] = [];
 
     if (search) {
@@ -85,9 +85,13 @@ export async function GET(req: NextRequest) {
   }
 }
 
-// CREATE BLOG
+// CREATE NEWS
 export async function POST(req: NextRequest) {
   try {
+    const user = await requirePermission("blogs.create");
+    if (user instanceof NextResponse) {
+      return user;
+    }
 
     const body = await req.json();
 
@@ -127,7 +131,7 @@ export async function POST(req: NextRequest) {
         body.og_title,
         body.og_description,
         body.og_image,
-        "blog",
+        "news",
         body.status,
       ]
     );
