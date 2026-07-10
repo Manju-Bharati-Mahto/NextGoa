@@ -143,7 +143,7 @@ export default function AdmissionTimelineSection({ data, onChange }: Props) {
 
         <input
           className="form-control"
-          placeholder="/campus-life"
+          placeholder="/campus"
           value={data?.nextUrl || ""}
           onChange={(e) => update("nextUrl", e.target.value)}
         />

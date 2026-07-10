@@ -6,12 +6,12 @@ export async function GET() {
   const staticPaths = [
     { path: "/faculty", changefreq: "weekly", priority: 0.9 },
     { path: "/faculty/engineering", changefreq: "weekly", priority: 0.9 },
-    { path: "/faculty/management-studies", changefreq: "weekly", priority: 0.9 },
-    { path: "/faculty/pharmacy", changefreq: "weekly", priority: 0.9 },
+    { path: "/faculty-of-management-studies", changefreq: "weekly", priority: 0.9 },
+    { path: "/faculty-of-pharmacy", changefreq: "weekly", priority: 0.9 },
     { path: "/faculty/applied-sciences", changefreq: "weekly", priority: 0.9 },
-    { path: "/faculty/nursing", changefreq: "weekly", priority: 0.9 },
-    { path: "/faculty/physiotherapy", changefreq: "weekly", priority: 0.9 },
-    { path: "/faculty/hotel-management", changefreq: "weekly", priority: 0.9 },
+    { path: "/faculty-of-nursing", changefreq: "weekly", priority: 0.9 },
+    { path: "/faculty-of-physiotherapy", changefreq: "weekly", priority: 0.9 },
+    { path: "/faculty-of-hotel-management", changefreq: "weekly", priority: 0.9 },
     { path: "/faculty/allied-healthcare", changefreq: "weekly", priority: 0.9 },
     { path: "/faculty/it-cs", changefreq: "weekly", priority: 0.9 },
     { path: "/faculty/doctorate-programs", changefreq: "weekly", priority: 0.9 }

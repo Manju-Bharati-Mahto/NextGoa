@@ -15,7 +15,7 @@ export const navItems: NavItem[] = [
   { label: "Examinations", href: "/examination" },
   { label: "Study Abroad", href: "/international/study-abroad" },
   { label: "Placements", href: "/placements" },
-  { label: "Campus Life", href: "/campus-life" },
+  { label: "Campus Life", href: "/campus" },
   { label: "Blogs", href: "/blog" },
 ];
 

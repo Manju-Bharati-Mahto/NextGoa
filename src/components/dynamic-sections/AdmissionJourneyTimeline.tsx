@@ -46,7 +46,7 @@ export function AdmissionJourneyTimeline({ data }: Props) {
     if (activeStep < steps.length - 1) {
       handleStepSelect(activeStep + 1);
     } else {
-      router.push(data?.nextUrl || "/campus-life");
+      router.push(data?.nextUrl || "/campus");
     }
   };
 
@@ -351,7 +351,7 @@ export function AdmissionJourneyTimeline({ data }: Props) {
                                 if (index < steps.length - 1) {
                                   handleStepSelect(index + 1);
                                 } else {
-                                  router.push(data?.nextUrl || "/campus-life");
+                                  router.push(data?.nextUrl || "/campus");
                                 }
                               }}
                               className="w-full bg-white hover:bg-gray-100 text-ink font-semibold text-sm sm:text-xs rounded-full py-3 transition-colors shadow-sm"

@@ -32,7 +32,7 @@ const COURSES: Course[] = [
     color: "#ee364f",
     textColor: "text-white",
     type: "medical",
-    href: "/faculty/nursing",
+    href: "/faculty-of-nursing",
   },
 
   // Bachelors
@@ -79,7 +79,7 @@ const COURSES: Course[] = [
     color: "#0caadd",
     textColor: "text-white",
     type: "business",
-    href: "/faculty/management-studies",
+    href: "/faculty-of-management-studies",
   },
   {
     name: "BBA Honours (NEP 2020)",
@@ -88,7 +88,7 @@ const COURSES: Course[] = [
     color: "#0caadd",
     textColor: "text-white",
     type: "business",
-    href: "/faculty/management-studies",
+    href: "/faculty-of-management-studies",
   },
   {
     name: "Bachelor of Science in Nursing",
@@ -97,7 +97,7 @@ const COURSES: Course[] = [
     color: "#ee364f",
     textColor: "text-white",
     type: "medical",
-    href: "/faculty/nursing",
+    href: "/faculty-of-nursing",
   },
   {
     name: "Bachelor of Physiotherapy (BPT)",
@@ -106,7 +106,7 @@ const COURSES: Course[] = [
     color: "#ee364f",
     textColor: "text-white",
     type: "medical",
-    href: "/faculty/physiotherapy",
+    href: "/faculty-of-physiotherapy",
   },
   {
     name: "Post Basic B.Sc Nursing (PB-B.Sc.)",
@@ -115,7 +115,7 @@ const COURSES: Course[] = [
     color: "#ee364f",
     textColor: "text-white",
     type: "medical",
-    href: "/faculty/nursing",
+    href: "/faculty-of-nursing",
   },
   {
     name: "Bachelor of Pharmacy (B.Pharm.)",
@@ -124,7 +124,7 @@ const COURSES: Course[] = [
     color: "#0caadd",
     textColor: "text-white",
     type: "pharmacy",
-    href: "/faculty/pharmacy",
+    href: "/faculty-of-pharmacy",
   },
   {
     name: "B.Pharm. - Lateral Entry",
@@ -133,7 +133,7 @@ const COURSES: Course[] = [
     color: "#0caadd",
     textColor: "text-white",
     type: "pharmacy",
-    href: "/faculty/pharmacy",
+    href: "/faculty-of-pharmacy",
   },
   {
     name: "Bachelor of Medical Laboratory Science (BMLS)",
@@ -160,7 +160,7 @@ const COURSES: Course[] = [
     color: "#fedb2f",
     textColor: "text-ink",
     type: "business",
-    href: "/faculty/hotel-management",
+    href: "/faculty-of-hotel-management",
   },
   {
     name: "Bachelor of Science - Hotel Management",
@@ -169,7 +169,7 @@ const COURSES: Course[] = [
     color: "#fedb2f",
     textColor: "text-ink",
     type: "business",
-    href: "/faculty/hotel-management",
+    href: "/faculty-of-hotel-management",
   },
   {
     name: "B.Sc Hons. - Hotel Management",
@@ -178,7 +178,7 @@ const COURSES: Course[] = [
     color: "#fedb2f",
     textColor: "text-ink",
     type: "business",
-    href: "/faculty/hotel-management",
+    href: "/faculty-of-hotel-management",
   },
 
   // Masters
@@ -198,7 +198,7 @@ const COURSES: Course[] = [
     color: "#fedb2f",
     textColor: "text-ink",
     type: "business",
-    href: "/faculty/management-studies",
+    href: "/faculty-of-management-studies",
   },
 
   // Ph.D
