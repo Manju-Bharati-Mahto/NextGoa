@@ -1,5 +1,6 @@
 export interface Job {
   id: number;
+  slug: string;
   department: string;
   position: string;
   title: string;
@@ -12,6 +13,7 @@ export interface Job {
 export const MOCK_JOBS: Job[] = [
   {
     "id": 1,
+    "slug": "director-deputy-director-cultural-affairs",
     "department": "Administration",
     "position": "Leadership",
     "title": "Director/Deputy Director – Cultural Affairs",
@@ -22,6 +24,7 @@ export const MOCK_JOBS: Job[] = [
   },
   {
     "id": 2,
+    "slug": "director-deputy-director-sports-cell",
     "department": "Administration",
     "position": "Leadership",
     "title": "Director/Deputy Director – Sports Cell",
@@ -32,6 +35,7 @@ export const MOCK_JOBS: Job[] = [
   },
   {
     "id": 3,
+    "slug": "director-deputy-director-iqac",
     "department": "Administration",
     "position": "Leadership",
     "title": "Director/Deputy Director – Internal Quality Assurance Cell (IQAC)",
@@ -42,6 +46,7 @@ export const MOCK_JOBS: Job[] = [
   },
   {
     "id": 4,
+    "slug": "director-deputy-director-research-development",
     "department": "Administration",
     "position": "Leadership",
     "title": "Director/Deputy Director – Research & Development",
@@ -52,6 +57,7 @@ export const MOCK_JOBS: Job[] = [
   },
   {
     "id": 5,
+    "slug": "director-deputy-director-nep",
     "department": "Administration",
     "position": "Leadership",
     "title": "Director/Deputy Director – National Education Policy (NEP)",
@@ -62,6 +68,7 @@ export const MOCK_JOBS: Job[] = [
   },
   {
     "id": 6,
+    "slug": "director-deputy-director-training-placement-career-development",
     "department": "Administration",
     "position": "Leadership",
     "title": "Director/Deputy Director – Training, Placement & Career development",
@@ -72,6 +79,7 @@ export const MOCK_JOBS: Job[] = [
   },
   {
     "id": 7,
+    "slug": "director-deputy-director-entrepreneurship-innovation",
     "department": "Administration",
     "position": "Leadership",
     "title": "Director/Deputy Director – Entrepreneurship & Innovation",
@@ -82,6 +90,7 @@ export const MOCK_JOBS: Job[] = [
   },
   {
     "id": 8,
+    "slug": "director-deputy-director-cirr-oia",
     "department": "Administration",
     "position": "Leadership",
     "title": "Director/Deputy Director – Centre for International Relations and Research (CIRR) & Office of International Affairs (OIA)",
@@ -92,6 +101,7 @@ export const MOCK_JOBS: Job[] = [
   },
   {
     "id": 9,
+    "slug": "non-teaching-positions-librarian-assistant-librarian",
     "department": "Academics",
     "position": "Teaching",
     "title": "NON-Teaching Positions for Librarian/Assistant Librarian",
@@ -102,6 +112,7 @@ export const MOCK_JOBS: Job[] = [
   },
   {
     "id": 10,
+    "slug": "non-teaching-positions-security-guards",
     "department": "Academics",
     "position": "Teaching",
     "title": "NON-Teaching Positions for Security Guards",
@@ -112,6 +123,7 @@ export const MOCK_JOBS: Job[] = [
   },
   {
     "id": 11,
+    "slug": "non-teaching-positions-hostel-warden",
     "department": "Academics",
     "position": "Teaching",
     "title": "NON-Teaching Positions for Hostel Warden (Male & Female)",
@@ -122,6 +134,7 @@ export const MOCK_JOBS: Job[] = [
   },
   {
     "id": 12,
+    "slug": "non-teaching-positions-system-support-engineer",
     "department": "Academics",
     "position": "Teaching",
     "title": "NON-Teaching Positions for System Support Engineer",
@@ -132,6 +145,7 @@ export const MOCK_JOBS: Job[] = [
   },
   {
     "id": 13,
+    "slug": "non-teaching-positions-drivers",
     "department": "Academics",
     "position": "Teaching",
     "title": "NON-Teaching Positions for Drivers",
@@ -142,6 +156,7 @@ export const MOCK_JOBS: Job[] = [
   },
   {
     "id": 14,
+    "slug": "non-teaching-positions-plumber",
     "department": "Academics",
     "position": "Teaching",
     "title": "NON-Teaching Positions for Plumber",
@@ -152,6 +167,7 @@ export const MOCK_JOBS: Job[] = [
   },
   {
     "id": 15,
+    "slug": "non-teaching-positions-electrician",
     "department": "Academics",
     "position": "Teaching",
     "title": "NON-Teaching Positions for Electrician",
@@ -162,6 +178,7 @@ export const MOCK_JOBS: Job[] = [
   },
   {
     "id": 16,
+    "slug": "non-teaching-positions-lab-assistant",
     "department": "Academics",
     "position": "Teaching",
     "title": "NON-Teaching Positions for Lab Assistant",
@@ -172,6 +189,7 @@ export const MOCK_JOBS: Job[] = [
   },
   {
     "id": 17,
+    "slug": "non-teaching-positions-for-office-assistant",
     "department": "Academics",
     "position": "Teaching",
     "title": "NON-Teaching Positions for Office Assistant",
@@ -182,6 +200,7 @@ export const MOCK_JOBS: Job[] = [
   },
   {
     "id": 18,
+    "slug": "faculty-of-hotel-management-professor-associate-professor-assistant-professor",
     "department": "Academics",
     "position": "Teaching",
     "title": "Faculty of Hotel Management (Professor | Associate Professor | Assistant Professor )",
@@ -192,6 +211,7 @@ export const MOCK_JOBS: Job[] = [
   },
   {
     "id": 19,
+    "slug": "non-teaching-positions-for-senior-civil-engineer",
     "department": "Academics",
     "position": "Teaching",
     "title": "NON-Teaching Positions for Senior Civil Engineer",
@@ -202,6 +222,7 @@ export const MOCK_JOBS: Job[] = [
   },
   {
     "id": 20,
+    "slug": "faculty-of-nursing-professor-associate-professor-assistant-professor",
     "department": "Academics",
     "position": "Teaching",
     "title": "Faculty of Nursing (Professor | Associate Professor | Assistant Professor )",
@@ -212,6 +233,7 @@ export const MOCK_JOBS: Job[] = [
   },
   {
     "id": 21,
+    "slug": "faculty-of-applied-health-sciences-professor-associate-professor-assistant-professor",
     "department": "Academics",
     "position": "Teaching",
     "title": "Faculty of Applied & Health Sciences (Professor | Associate Professor | Assistant Professor )",
@@ -222,6 +244,7 @@ export const MOCK_JOBS: Job[] = [
   },
   {
     "id": 22,
+    "slug": "faculty-of-engineering-it-cs-professor-associate-professor-assistant-professor",
     "department": "Academics",
     "position": "Teaching",
     "title": "Faculty of Engineering, IT & CS  (Professor | Associate Professor | Assistant Professor )",
@@ -232,6 +255,7 @@ export const MOCK_JOBS: Job[] = [
   },
   {
     "id": 23,
+    "slug": "faculty-of-management-studies-professor-associate-professor-assistant-professor",
     "department": "Academics",
     "position": "Teaching",
     "title": "Faculty of Management Studies  (Professor | Associate Professor | Assistant Professor )",
@@ -242,6 +266,7 @@ export const MOCK_JOBS: Job[] = [
   },
   {
     "id": 24,
+    "slug": "faculty-of-physiotherapy-professor-associate-professor-assistant-professor",
     "department": "Academics",
     "position": "Teaching",
     "title": "Faculty of Physiotherapy (Professor | Associate Professor | Assistant professor)",
@@ -252,6 +277,7 @@ export const MOCK_JOBS: Job[] = [
   },
   {
     "id": 25,
+    "slug": "faculty-of-pharmacy-professor-associate-professor-assistant-professor",
     "department": "Academics",
     "position": "Teaching",
     "title": "Faculty of Pharmacy (Professor | Associate Professor | Assistant Professor)",

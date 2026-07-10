@@ -5,8 +5,7 @@ import Link from "next/link";
 
 export default async function CareerDetailsPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const jobId = parseInt(id);
-  const job = MOCK_JOBS.find((j) => j.id === jobId);
+  const job = MOCK_JOBS.find((j) => j.slug === id || String(j.id) === id);
 
   if (!job) {
     notFound();
@@ -47,7 +46,7 @@ export default async function CareerDetailsPage({ params }: { params: Promise<{ 
               </h1>
               
               {/* CTA */}
-              <Link href={`/careers/${jobId}/apply`} className="bg-[#EF3341] hover:bg-[#D92A36] transition-colors text-white text-[16px] md:text-[18px] font-bold px-8 py-3 md:px-10 md:py-3.5 rounded-full w-fit shadow-md text-center">
+              <Link href={`/careers/${job.slug}/apply`} className="bg-[#EF3341] hover:bg-[#D92A36] transition-colors text-white text-[16px] md:text-[18px] font-bold px-8 py-3 md:px-10 md:py-3.5 rounded-full w-fit shadow-md text-center">
                 Apply Now
               </Link>
             </div>
