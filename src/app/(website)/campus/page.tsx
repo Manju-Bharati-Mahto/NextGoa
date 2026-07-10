@@ -14,7 +14,7 @@ import { campusLifeFaqs } from "@/data/page-faqs";
 export const metadata: Metadata = {
   title: { absolute: "Parul University Goa Campus Life | Facilities, Hostel, Activities & Infrastructure" },
   description: "Explore campus life at Parul University Goa – modern facilities, hostels, student clubs, cultural events, and a vibrant learning experience in Goa.",
-  alternates: { canonical: "/campus-life" },
+  alternates: { canonical: "/campus" },
 };
 
 export default function CampusLifePage() {

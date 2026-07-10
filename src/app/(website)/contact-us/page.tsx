@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  alternates: { canonical: "/contact" },
+  alternates: { canonical: "/contact-us" },
 };
 
 import ContactOffices from "@/components/contact/ContactOffices";

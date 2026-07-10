@@ -9,12 +9,12 @@ import { navItems, cta } from "@/lib/navigation";
 const subPrograms = [
   { label: "Engineering & Technology", href: "/faculty/engineering" },
   { label: "IT & Computer Science", href: "/faculty/it-cs" },
-  { label: "Management Studies", href: "/faculty/management-studies" },
-  { label: "Hotel Management", href: "/faculty/hotel-management" },
+  { label: "Management Studies", href: "/faculty-of-management-studies" },
+  { label: "Hotel Management", href: "/faculty-of-hotel-management" },
   { label: "Applied Sciences", href: "/faculty/applied-sciences" },
-  { label: "Nursing", href: "/faculty/nursing" },
-  { label: "Pharmacy", href: "/faculty/pharmacy" },
-  { label: "Physiotherapy", href: "/faculty/physiotherapy" },
+  { label: "Nursing", href: "/faculty-of-nursing" },
+  { label: "Pharmacy", href: "/faculty-of-pharmacy" },
+  { label: "Physiotherapy", href: "/faculty-of-physiotherapy" },
   { label: "Allied & Healthcare Sciences", href: "/faculty/allied-healthcare" },
   { label: "Doctorate Programs", href: "/faculty/doctorate-programs" }
 ];
@@ -157,7 +157,7 @@ export function SiteHeader() {
               Apply Now
             </button>
             <Link
-              href="/contact"
+              href="/contact-us"
               className="hidden sm:inline-flex whitespace-nowrap rounded-full border border-white px-4 xl:px-5 py-2 xl:py-2.5 text-[13px] xl:text-sm font-semibold text-white shadow-sm transition-colors hover:bg-white hover:text-brand-blue"
             >
               Contact Us
@@ -328,7 +328,7 @@ export function SiteHeader() {
         {/* Bottom CTA */}
         <div className="flex shrink-0 flex-col gap-3 p-6 pt-8">
           <Link
-            href="/contact"
+            href="/contact-us"
             onClick={() => setOpen(false)}
             className="flex w-full items-center justify-center rounded-full border-2 border-white px-6 py-3.5 text-md font-bold text-white transition-all hover:bg-white hover:text-brand-blue"
           >

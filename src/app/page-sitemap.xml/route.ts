@@ -9,8 +9,8 @@ export async function GET() {
     { path: "/privacy-policy", changefreq: "monthly", priority: 0.9 },
     { path: "/terms-of-use", changefreq: "monthly", priority: 0.9 },
     { path: "/documents/Prospectus_AY_2026_27.pdf", changefreq: "monthly", priority: 0.9 },
-    { path: "/contact", changefreq: "weekly", priority: 0.9 },
-    { path: "/campus-life", changefreq: "weekly", priority: 0.9 },
+    { path: "/contact-us", changefreq: "weekly", priority: 0.9 },
+    { path: "/campus", changefreq: "weekly", priority: 0.9 },
     { path: "/examination", changefreq: "weekly", priority: 0.9 },
     { path: "/international/study-abroad", changefreq: "weekly", priority: 0.9 },
     { path: "/placements", changefreq: "weekly", priority: 0.9 }
