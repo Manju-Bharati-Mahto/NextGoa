@@ -3,82 +3,69 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
+interface ApplyFormProps {
+  jobId: number;
+  jobTitle?: string;
+  jobSlug?: string;
+}
 
-export default function ApplyForm({ jobId, jobTitle }: { jobId: number, jobTitle?: string }) {
+export default function ApplyForm({ jobId, jobTitle, jobSlug }: ApplyFormProps) {
   const router = useRouter();
   const [fileName, setFileName] = useState<string | null>(null);
   const [formData, setFormData] = useState({
-  fullName: "",
-  mobile: "",
-  email: "",
-  position: jobTitle || "",
-  location: "",
-  resume: null as File | null,
-});
+    fullName: "",
+    mobile: "",
+    email: "",
+    position: jobTitle || "",
+    location: "",
+    resume: null as File | null,
+  });
 
-  const handleSubmit = async (
-  e: React.FormEvent<HTMLFormElement>
-) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-  e.preventDefault();
+    try {
+      const body = new FormData();
+      body.append("jobId", String(jobId));
+      body.append("jobTitle", jobTitle || "");
+      body.append("fullName", formData.fullName);
+      body.append("mobile", formData.mobile);
+      body.append("email", formData.email);
+      body.append("position", formData.position);
+      body.append("location", formData.location);
 
-  try {
+      if (formData.resume) {
+        body.append("resume", formData.resume);
+      }
 
-    const body = new FormData();
+      const res = await fetch("/api/careers", {
+        method: "POST",
+        body,
+      });
 
-    body.append("jobId", String(jobId));
-    body.append("jobTitle", jobTitle || "");
+      const result = await res.json();
 
-    body.append("fullName", formData.fullName);
-    body.append("mobile", formData.mobile);
-    body.append("email", formData.email);
-    body.append("position", formData.position);
-    body.append("location", formData.location);
-
-    if (formData.resume) {
-      body.append("resume", formData.resume);
+      if (result.success) {
+        router.push(`/careers/${jobSlug}/success`);
+      } else {
+        alert(result.message || "Failed to submit application");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong");
     }
+  };
 
-    const res = await fetch("/api/careers", {
-      method: "POST",
-      body,
-    });
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
 
-    const result = await res.json();
-
-    if (result.success) {
-      router.push(`/careers/${jobId}/success`);
-    } else {
-      alert(result.message);
-    }
-
-  } catch (err) {
-
-    console.error(err);
-
-    alert("Something went wrong");
-
-  }
-
-};
-
-  const handleFileChange = (
-  e: React.ChangeEvent<HTMLInputElement>
-) => {
-
-  const file = e.target.files?.[0];
-
-  if (!file) return;
-
-  setFileName(file.name);
-
-  setFormData((prev) => ({
-    ...prev,
-    resume: file,
-  }));
-};
-  
-
+    setFileName(file.name);
+    setFormData((prev) => ({
+      ...prev,
+      resume: file,
+    }));
+  };
 
   return (
     <form className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6" onSubmit={handleSubmit}>
@@ -86,7 +73,7 @@ export default function ApplyForm({ jobId, jobTitle }: { jobId: number, jobTitle
       {/* Full Name */}
       <div className="flex flex-col gap-2">
         <label className="text-[15px] font-bold text-[#111111]">Full Name</label>
-        <input required type="text" value={formData.fullName} onChange={(e) => setFormData({ ...formData, fullName: e.target.value, }) } className="border border-gray-200 rounded-xl px-4 py-3 bg-[#FAFAFA] focus:outline-none focus:border-gray-400 transition-colors text-[15px] placeholder-gray-400"  placeholder="Name" />
+        <input required type="text" value={formData.fullName} onChange={(e) => setFormData({ ...formData, fullName: e.target.value, }) } className="border border-gray-200 rounded-xl px-4 py-3 bg-[#FAFAFA] focus:outline-none focus:border-gray-400 transition-colors text-[15px] placeholder-gray-400" placeholder="Name" />
       </div>
 
       {/* Mobile No. */}
@@ -103,10 +90,10 @@ export default function ApplyForm({ jobId, jobTitle }: { jobId: number, jobTitle
 
       <div className="hidden md:block"></div> {/* Empty space */}
 
-      {/* Position */}
+      {/* Position / Job Detail */}
       <div className="flex flex-col gap-2">
-        <label className="text-[15px] font-bold text-[#111111]">Position</label>
-        <input required type="text" value={formData.position} onChange={(e) => setFormData({ ...formData, position: e.target.value, }) } className="border border-gray-200 rounded-xl px-4 py-3 bg-[#FAFAFA] focus:outline-none focus:border-gray-400 transition-colors text-[15px] placeholder-gray-400" placeholder="Select Position" />
+        <label className="text-[15px] font-bold text-[#111111]">Position / Job Detail</label>
+        <input required type="text" value={formData.position} onChange={(e) => setFormData({ ...formData, position: e.target.value, }) } className="border border-gray-200 rounded-xl px-4 py-3 bg-[#FAFAFA] focus:outline-none focus:border-gray-400 transition-colors text-[15px] placeholder-gray-400" placeholder="Select Position / Job Detail" />
       </div>
 
       {/* Location */}
