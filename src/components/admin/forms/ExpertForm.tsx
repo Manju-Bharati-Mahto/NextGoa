@@ -31,6 +31,10 @@ export default function ExpertForm({ expertId }: ExpertFormProps) {
 
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
+  const [faculties, setFaculties] = useState<any[]>([]);
+
+  const [selectedFaculties, setSelectedFaculties] = useState<number[]>([]);
+
   const [form, setForm] = useState({
     category: "Leadership",
 
@@ -39,10 +43,10 @@ export default function ExpertForm({ expertId }: ExpertFormProps) {
     designation: "",
 
     department: "",
-    
-    experience:"",
-    
-    research_area:"",
+
+    experience: "",
+
+    research_area: "",
 
     tagline: "",
 
@@ -102,7 +106,22 @@ export default function ExpertForm({ expertId }: ExpertFormProps) {
       form.social_links.filter((_: any, i: number) => i !== index),
     );
   }
+  function toggleFaculty(id: number) {
+    if (selectedFaculties.includes(id)) {
+      setSelectedFaculties(selectedFaculties.filter((x) => x !== id));
+    } else {
+      setSelectedFaculties([...selectedFaculties, id]);
+    }
+  }
+  async function loadFaculties() {
+    const res = await fetch("/api/admin/faculty/list");
 
+    const result = await res.json();
+
+    if (result.success) {
+      setFaculties(result.data);
+    }
+  }
   async function loadExpert() {
     try {
       const res = await fetch(`/api/admin/experts/${expertId}`);
@@ -198,6 +217,8 @@ export default function ExpertForm({ expertId }: ExpertFormProps) {
     setLoading(false);
   }
   useEffect(() => {
+    loadFaculties();
+
     if (expertId) {
       loadExpert();
     }
@@ -278,8 +299,6 @@ export default function ExpertForm({ expertId }: ExpertFormProps) {
                   onChange={(e) => update("research_area", e.target.value)}
                 />
               </div>
-
-              
 
               <div>
                 <label className="form-label">Tagline</label>
@@ -446,6 +465,27 @@ export default function ExpertForm({ expertId }: ExpertFormProps) {
                   />
 
                   <span>{category.label}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+
+          <div className="cards-admin-text">
+            <div className="border-light px-5 py-4">
+              <h3 className="font-semibold">Faculties</h3>
+            </div>
+
+            <div className="p-5 space-y-3">
+              {faculties.map((faculty) => (
+                <label key={faculty.id} className="flex items-center gap-3">
+                  <input
+                    type="checkbox"
+                    className="form-check-input"
+                    checked={selectedFaculties.includes(faculty.id)}
+                    onChange={() => toggleFaculty(faculty.id)}
+                  />
+
+                  <span>{faculty.title}</span>
                 </label>
               ))}
             </div>
