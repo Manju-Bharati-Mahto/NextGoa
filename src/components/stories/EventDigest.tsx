@@ -95,7 +95,7 @@ export function EventDigest() {
                 <div className="relative w-full aspect-[16/10] bg-slate-100 overflow-hidden">
                   {featuredEvent.image ? (
                     <Image
-                      src={featuredEvent.image}
+                      src={`${process.env.NEXT_PUBLIC_APP_URL}${featuredEvent.image}`}
                       alt={featuredEvent.title}
                       fill
                       sizes="(max-width: 1024px) 100vw, 50vw"
