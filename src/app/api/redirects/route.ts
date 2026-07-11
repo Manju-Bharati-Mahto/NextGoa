@@ -14,9 +14,8 @@ export async function GET(req: NextRequest) {
     `
     SELECT *
     FROM redirects
-    WHERE
-      source_url=?
-      AND is_active=1
+    WHERE source_url = ?
+      AND is_active = 1
     LIMIT 1
     `,
     [path],
@@ -27,6 +26,19 @@ export async function GET(req: NextRequest) {
       success: false,
     });
   }
+
+  // Increment hit count
+  await db.execute(
+    `
+    UPDATE redirects
+    SET hit_count = hit_count + 1
+    WHERE id = ?
+    `,
+    [rows[0].id],
+  );
+
+  // Return updated hit count
+  rows[0].hit_count = rows[0].hit_count + 1;
 
   return NextResponse.json({
     success: true,
