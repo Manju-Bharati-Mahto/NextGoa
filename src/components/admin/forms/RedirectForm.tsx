@@ -24,6 +24,9 @@ export default function RedirectForm({ redirectId }: Props) {
 
     is_active: "1",
   });
+  const redirectNeedsDestination = [301, 302, 303, 307, 308].includes(
+    Number(form.redirect_type),
+  );
 
   useEffect(() => {
     if (!isEdit) return;
@@ -86,11 +89,14 @@ export default function RedirectForm({ redirectId }: Props) {
   }
 
   return (
-    <form onSubmit={submit} className="space-y-6 bg-light-white rounded-xl shadow p-8">
+    <form
+      onSubmit={submit}
+      className="space-y-6 bg-light-white rounded-xl shadow p-8"
+    >
       <div className="bg-white rounded-xl p-6">
         <div className="cards-admin-header">
-              <h2 className="text-2xl font-bold mb-6">Page Details</h2>
-            </div>
+          <h2 className="text-2xl font-bold mb-6">Page Details</h2>
+        </div>
 
         <div className="grid grid-cols-1 gap-6">
           <div>
@@ -109,21 +115,24 @@ export default function RedirectForm({ redirectId }: Props) {
             />
           </div>
 
-          <div>
-            <label className="form-label">Destination URL</label>
+          {redirectNeedsDestination && (
+            <div>
+              <label className="form-label">Destination URL</label>
 
-            <input
-              className="form-control"
-              placeholder="/new-page"
-              value={form.destination_url}
-              onChange={(e) =>
-                setForm({
-                  ...form,
-                  destination_url: e.target.value,
-                })
-              }
-            />
-          </div>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="/new-page"
+                value={form.destination_url}
+                onChange={(e) =>
+                  setForm({
+                    ...form,
+                    destination_url: e.target.value,
+                  })
+                }
+              />
+            </div>
+          )}
 
           <div>
             <label className="form-label">Redirect Type</label>
@@ -139,18 +148,17 @@ export default function RedirectForm({ redirectId }: Props) {
               }
             >
               <option value="301">301 Permanent</option>
-
               <option value="302">302 Temporary</option>
-
               <option value="303">303 See Other</option>
-
               <option value="307">307 Temporary Redirect</option>
 
               <option value="308">308 Permanent Redirect</option>
-
+              <option value="401">401 Unauthorized</option>
+              <option value="403">403 Forbidden</option>
+              <option value="404">404 Not Found</option>
               <option value="410">410 Gone</option>
-
-              <option value="451">451 Unavailable</option>
+              <option value="451">451 Unavailable For Legal Reasons</option>
+              <option value="410">410 Gone</option>
             </select>
           </div>
 

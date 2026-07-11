@@ -8,8 +8,7 @@ export async function proxy(request: NextRequest) {
   if (
     pathname.startsWith("/api") ||
     pathname.startsWith("/_next") ||
-    pathname.startsWith("/uploads") ||
-    pathname.includes(".")
+    pathname === "/favicon.ico"
   ) {
     return NextResponse.next();
   }
@@ -20,9 +19,7 @@ export async function proxy(request: NextRequest) {
 
   if (pathname === "/admin/login") {
     if (token) {
-      return NextResponse.redirect(
-        new URL("/admin/dashboard", request.url),
-      );
+      return NextResponse.redirect(new URL("/admin/dashboard", request.url));
     }
 
     return NextResponse.next();
@@ -45,9 +42,7 @@ export async function proxy(request: NextRequest) {
   );
 
   if (isProtected && !token) {
-    return NextResponse.redirect(
-      new URL("/admin/login", request.url),
-    );
+    return NextResponse.redirect(new URL("/admin/login", request.url));
   }
 
   // ==========================
@@ -65,10 +60,47 @@ export async function proxy(request: NextRequest) {
     const redirect = await res.json();
 
     if (redirect.success && redirect.data) {
-      return NextResponse.redirect(
-        new URL(redirect.data.destination_url, request.url),
-        redirect.data.redirect_type,
-      );
+      switch (redirect.data.redirect_type) {
+        // Redirects
+        case 301:
+        case 302:
+        case 303:
+        case 307:
+        case 308:
+          return NextResponse.redirect(
+            new URL(redirect.data.destination_url, request.url),
+            redirect.data.redirect_type,
+          );
+
+        // Error Status
+        case 401:
+          return new NextResponse("Unauthorized", {
+            status: 401,
+          });
+
+        case 403:
+          return new NextResponse("Forbidden", {
+            status: 403,
+          });
+
+        case 404:
+          return new NextResponse("Not Found", {
+            status: 404,
+          });
+
+        case 410:
+          return new NextResponse("Gone", {
+            status: 410,
+          });
+
+        case 451:
+          return new NextResponse("Unavailable For Legal Reasons", {
+            status: 451,
+          });
+
+        default:
+          return NextResponse.next();
+      }
     }
   }
 

@@ -122,9 +122,8 @@ export default function RedirectPage() {
             }}
             className="form-control w-72"
           />
-        
+
           <div className="flex items-center gap-3">
-            
             <button
               type="button"
               onClick={() => fileInputRef.current?.click()}
@@ -147,14 +146,12 @@ export default function RedirectPage() {
             </Link>
           </div>
           <input
-  ref={fileInputRef}
-  type="file"
-  accept=".xlsx"
-  className="hidden"
-  onChange={importRedirects}
-/>
-
-         
+            ref={fileInputRef}
+            type="file"
+            accept=".xlsx"
+            className="hidden"
+            onChange={importRedirects}
+          />
         </div>
       </div>
 
