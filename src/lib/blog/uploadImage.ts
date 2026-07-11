@@ -6,7 +6,7 @@ export async function uploadImage(
 
   file: File | null,
 
-  folder = "uploads"
+  folder = "uploads/blogs"
 
 ) {
    

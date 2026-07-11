@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import db from "@/lib/db";
 
-
 export async function generateMetadata({
   params,
 }: {
@@ -19,7 +18,7 @@ export async function generateMetadata({
     WHERE slug=?
     LIMIT 1
     `,
-    [slug]
+    [slug],
   );
 
   if (!rows.length) {
@@ -33,39 +32,24 @@ export async function generateMetadata({
   return {
     title: { absolute: blog.meta_title || blog.title },
 
-    description:
-      blog.meta_description || blog.excerpt,
+    description: blog.meta_description || blog.excerpt,
 
-    keywords: blog.meta_keywords
-      ? blog.meta_keywords.split(",")
-      : [],
+    keywords: blog.meta_keywords ? blog.meta_keywords.split(",") : [],
 
     alternates: {
-      canonical:
-        blog.canonical_url ||
-        `/blog/${blog.slug}`,
+      canonical: blog.canonical_url || `/blog/${blog.slug}`,
     },
 
     openGraph: {
-      title:
-        blog.og_title ||
-        blog.meta_title ||
-        blog.title,
+      title: blog.og_title || blog.meta_title || blog.title,
 
-      description:
-        blog.og_description ||
-        blog.meta_description ||
-        blog.excerpt,
+      description: blog.og_description || blog.meta_description || blog.excerpt,
 
-      url:
-        blog.canonical_url ||
-        `/blog/${blog.slug}`,
+      url: blog.canonical_url || `/blog/${blog.slug}`,
 
       images: [
         {
-          url:
-            blog.og_image ||
-            blog.featured_image,
+          url: blog.og_image || blog.featured_image,
         },
       ],
     },
@@ -73,18 +57,11 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
 
-      title:
-        blog.og_title ||
-        blog.title,
+      title: blog.og_title || blog.title,
 
-      description:
-        blog.og_description ||
-        blog.excerpt,
+      description: blog.og_description || blog.excerpt,
 
-      images: [
-        blog.og_image ||
-        blog.featured_image,
-      ],
+      images: [blog.og_image || blog.featured_image],
     },
   };
 }
@@ -94,34 +71,33 @@ export default async function StoryPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  
-const { slug } = await params;
+  const { slug } = await params;
 
-const [rows]: any = await db.query(
-  `
+  const [rows]: any = await db.query(
+    `
   SELECT *
   FROM blogs
   WHERE slug=?
   LIMIT 1
   `,
-  [slug]
-);
+    [slug],
+  );
 
-if (rows.length === 0) {
-  notFound();
-}
+  if (rows.length === 0) {
+    notFound();
+  }
 
-const story = rows[0];
-const sections = JSON.parse(story.content || "[]");
-const [faqs]: any = await db.query(
-  `
+  const story = rows[0];
+  const sections = JSON.parse(story.content || "[]");
+  const [faqs]: any = await db.query(
+    `
   SELECT *
   FROM blog_faqs
   WHERE blog_id=?
   ORDER BY sort_order
   `,
-  [story.id]
-);
+    [story.id],
+  );
   return (
     <main className="min-h-screen bg-white pb-16">
       <article className="pt-0">
@@ -137,9 +113,14 @@ const [faqs]: any = await db.query(
           />
           <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4 max-w-5xl mx-auto mt-16">
             <div className="text-white/80 text-sm md:text-base font-medium mb-6">
-              <Link href="/" className="hover:text-white transition-colors">Home</Link> &gt;{" "}
-              <Link href="/blog" className="hover:text-white transition-colors">Blogs</Link> &gt;{" "}
-              <span className="text-white">{story.title}</span>
+              <Link href="/" className="hover:text-white transition-colors">
+                Home
+              </Link>{" "}
+              &gt;{" "}
+              <Link href="/blog" className="hover:text-white transition-colors">
+                Blogs
+              </Link>{" "}
+              &gt; <span className="text-white">{story.title}</span>
             </div>
             <h1 className="section-heading text-white mb-2 max-w-4xl drop-shadow-md">
               {story.title}
@@ -149,152 +130,121 @@ const [faqs]: any = await db.query(
 
         {/* Quote Section */}
 
-
-    
-
         {/* Main Content */}
         <section className="max-w-7xl mx-auto w-full px-[50px] py-16 sm:py-24">
-
           <div className="space-y-8">
             {story.blockquote && (
-      <div className="relative bg-[#F7F7F5] rounded-sm px-10 md:px-20 py-16 text-center">
+              <div className="relative bg-[#F7F7F5] rounded-sm px-10 md:px-20 py-16 text-center">
+                {/* Quote Icon */}
 
-      {/* Quote Icon */}
+                <div className="absolute left-1/2 -top-9 -translate-x-1/2 w-18 h-18 rounded-full bg-white shadow-md flex items-center justify-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-10 h-10 text-[#0B3A6E]"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M7.17 6A5.001 5.001 0 002 11v7h7v-7H5.09A3.001 3.001 0 017.17 8V6zm10 0A5.001 5.001 0 0012 11v7h7v-7h-3.91A3.001 3.001 0 0117.17 8V6z" />
+                  </svg>
+                </div>
 
-      <div className="absolute left-1/2 -top-9 -translate-x-1/2 w-18 h-18 rounded-full bg-white shadow-md flex items-center justify-center">
+                <p className="max-w-5xl mx-auto text-2xl md:text-3xl leading-relaxed font-medium text-[#0A1733]">
+                  {story.blockquote}
+                </p>
+              </div>
+            )}
 
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-10 h-10 text-[#0B3A6E]"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M7.17 6A5.001 5.001 0 002 11v7h7v-7H5.09A3.001 3.001 0 017.17 8V6zm10 0A5.001 5.001 0 0012 11v7h7v-7h-3.91A3.001 3.001 0 0117.17 8V6z" />
-        </svg>
+            {sections.map((section: any, index: number) => {
+              switch (section.tag) {
+                case "h2":
+                  return (
+                    <div key={index}>
+                      <h2 className="text-4xl font-bold mb-4">
+                        {section.title}
+                      </h2>
 
-      </div>
+                      <div
+                        className="section-body text-ink/80"
+                        dangerouslySetInnerHTML={{
+                          __html: section.details,
+                        }}
+                      />
+                    </div>
+                  );
 
-      <p className="max-w-5xl mx-auto text-2xl md:text-3xl leading-relaxed font-medium text-[#0A1733]">
-        {story.blockquote}
-      </p>
+                case "h3":
+                  return (
+                    <div key={index}>
+                      <h3 className="text-3xl font-semibold mb-4">
+                        {section.title}
+                      </h3>
 
-    </div>
-    )}
+                      <div
+                        className="section-body text-ink/80"
+                        dangerouslySetInnerHTML={{
+                          __html: section.details,
+                        }}
+                      />
+                    </div>
+                  );
 
+                case "h4":
+                  return (
+                    <div key={index}>
+                      <h4 className="text-2xl font-semibold mb-4">
+                        {section.title}
+                      </h4>
 
-  {sections.map((section: any, index: number) => {
+                      <div
+                        className="section-body text-ink/80"
+                        dangerouslySetInnerHTML={{
+                          __html: section.details,
+                        }}
+                      />
+                    </div>
+                  );
 
-    switch (section.tag) {
+                default:
+                  return (
+                    <div
+                      key={index}
+                      className="section-body text-ink/80"
+                      dangerouslySetInnerHTML={{
+                        __html: section.details,
+                      }}
+                    />
+                  );
+              }
+            })}
+          </div>
+        </section>
+        {faqs.length > 0 && (
+          <section className="max-w-7xl mx-auto px-[50px] py-16">
+            <h2 className="section-subheading mb-10">
+              Frequently Asked Questions
+            </h2>
 
-      case "h2":
-        return (
-         <div key={index}>
-          <h2 className="text-4xl font-bold mb-4">
-            {section.title}
-          </h2>
+            <div className="space-y-5">
+              {faqs.map((faq: any) => (
+                <details
+                  key={faq.id}
+                  className="border rounded-xl overflow-hidden"
+                >
+                  <summary className="cursor-pointer bg-gray-100 px-6 py-5 font-semibold">
+                    {faq.question}
+                  </summary>
 
-          <div
-            className="section-body text-ink/80"
-            dangerouslySetInnerHTML={{
-              __html: section.details,
-            }}
-          />
-        </div>
-        );
-
-      case "h3":
-        return (
-          <div key={index}>
-  <h3 className="text-3xl font-semibold mb-4">
-    {section.title}
-  </h3>
-
-  <div
-    className="section-body text-ink/80"
-    dangerouslySetInnerHTML={{
-      __html: section.details,
-    }}
-  />
-</div>
-        );
-
-      case "h4":
-        return (
-          <div key={index}>
-  <h4 className="text-2xl font-semibold mb-4">
-    {section.title}
-  </h4>
-
-  <div
-    className="section-body text-ink/80"
-    dangerouslySetInnerHTML={{
-      __html: section.details,
-    }}
-  />
-</div>
-        );
-
-      default:
-        return (
-        <div
-  key={index}
-  className="section-body text-ink/80"
-  dangerouslySetInnerHTML={{
-    __html: section.details,
-  }}
-/>
-        );
-
-    }
-
-  })}
-
-</div>
-
+                  <div
+                    className="px-6 py-5"
+                    dangerouslySetInnerHTML={{
+                      __html: faq.answer,
+                    }}
+                  />
+                </details>
+              ))}
+            </div>
           </section>
-          {faqs.length > 0 && (
-
-<section className="max-w-7xl mx-auto px-[50px] py-16">
-
-<h2 className="section-subheading mb-10">
-
-Frequently Asked Questions
-
-</h2>
-
-<div className="space-y-5">
-
-{faqs.map((faq:any)=>(
-
-<details
-key={faq.id}
-className="border rounded-xl overflow-hidden"
->
-
-<summary
-className="cursor-pointer bg-gray-100 px-6 py-5 font-semibold"
->
-
-{faq.question}
-
-</summary>
-
-<div
-className="px-6 py-5"
-dangerouslySetInnerHTML={{
-__html:faq.answer
-}}
-/>
-
-</details>
-
-))}
-
-</div>
-
-</section>
-
-)}
+        )}
       </article>
     </main>
   );
