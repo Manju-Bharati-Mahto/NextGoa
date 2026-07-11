@@ -11,12 +11,15 @@ export async function POST(req: Request) {
     const imageFile = formData.get("image") as File | null;
 
     if (imageFile?.size) {
-      image = await uploadImage(imageFile, "uploads/experts");
+      image = await uploadImage(imageFile, "goa-uploads/experts");
     }
 
     const content = {
       name: formData.get("name"),
       designation: formData.get("designation"),
+      department: formData.get("department"),
+      experience: formData.get("experience"),
+      research_area: formData.get("research_area"),
       tagline: formData.get("tagline"),
       tagline2: formData.get("tagline2"),
       description: formData.get("description"),

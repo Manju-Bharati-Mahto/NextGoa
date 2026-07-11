@@ -52,6 +52,9 @@ export async function GET(
 
         name: content.name || "",
         designation: content.designation || "",
+        department: content.department || "",
+        experience: content.experience || "",
+        research_area: content.research_area || "",
         tagline: content.tagline || "",
         tagline2: content.tagline2 || "",
         description: content.description || "",
@@ -127,13 +130,16 @@ export async function PUT(
 
       image = await uploadImage(
         imageFile,
-        "uploads/experts"
+        "goa-uploads/experts"
       );
     }
 
     const content = {
   name: formData.get("name"),
   designation: formData.get("designation"),
+  department: formData.get("department"),
+  experience: formData.get("experience"),
+  research_area: formData.get("research_area"),
   tagline: formData.get("tagline"),
   tagline2: formData.get("tagline2"),
   description: formData.get("description"),

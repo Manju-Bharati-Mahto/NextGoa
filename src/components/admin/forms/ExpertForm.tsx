@@ -38,6 +38,12 @@ export default function ExpertForm({ expertId }: ExpertFormProps) {
 
     designation: "",
 
+    department: "",
+    
+    experience:"",
+    
+    research_area:"",
+
     tagline: "",
 
     tagline2: "",
@@ -112,6 +118,9 @@ export default function ExpertForm({ expertId }: ExpertFormProps) {
         category: result.data.category,
         name: result.data.name,
         designation: result.data.designation,
+        department: result.data.department,
+        experience: result.data.experience,
+        research_area: result.data.research_area,
         tagline: result.data.tagline,
         tagline2: result.data.tagline2,
         description: result.data.description,
@@ -146,6 +155,9 @@ export default function ExpertForm({ expertId }: ExpertFormProps) {
       formData.append("category", JSON.stringify(selectedCategories));
       formData.append("name", form.name);
       formData.append("designation", form.designation);
+      formData.append("department", form.department);
+      formData.append("experience", form.experience);
+      formData.append("research_area", form.research_area);
       formData.append("tagline", form.tagline);
       formData.append("tagline2", form.tagline2);
       formData.append("description", form.description);
@@ -236,6 +248,38 @@ export default function ExpertForm({ expertId }: ExpertFormProps) {
                   onChange={(e) => update("designation", e.target.value)}
                 />
               </div>
+
+              <div>
+                <label className="form-label">Department</label>
+
+                <input
+                  className="form-control"
+                  value={form.department}
+                  onChange={(e) => update("department", e.target.value)}
+                />
+              </div>
+
+              <div>
+                <label className="form-label">Experience</label>
+
+                <input
+                  className="form-control"
+                  value={form.experience}
+                  onChange={(e) => update("experience", e.target.value)}
+                />
+              </div>
+
+              <div>
+                <label className="form-label">Research Area</label>
+
+                <input
+                  className="form-control"
+                  value={form.research_area}
+                  onChange={(e) => update("research_area", e.target.value)}
+                />
+              </div>
+
+              
 
               <div>
                 <label className="form-label">Tagline</label>
