@@ -70,7 +70,7 @@ export function UpcomingEvents() {
               <div className="relative w-full sm:w-32 h-40 sm:h-32 rounded-2xl overflow-hidden">
 
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_APP_URL}${event.featured_image}`}
+                  src={event.featured_image}
                   alt={event.title}
                   fill
                   className="object-cover"

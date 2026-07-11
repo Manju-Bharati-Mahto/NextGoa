@@ -373,7 +373,7 @@ const handleSubmit = async (
                     <div className="relative w-full aspect-[16/11] bg-slate-100 overflow-hidden">
                       {card.image ? (
                         <Image
-                          src={`${process.env.NEXT_PUBLIC_APP_URL}${card.image}`}
+                          src={card.image}
                           alt={card.title}
                           fill
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
