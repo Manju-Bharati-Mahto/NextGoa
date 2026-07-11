@@ -47,6 +47,7 @@ export async function GET(
       success: true,
       data: {
         category: expert.category,
+        faculty: expert.faculty,
         status: expert.status,
         sort_order: expert.sort_order,
 
@@ -154,6 +155,7 @@ export async function PUT(
       UPDATE experts
       SET
       category=?,
+      faculty=?,
       content=?,
       status=?,
       sort_order=?
@@ -161,6 +163,7 @@ export async function PUT(
       `,
       [
         formData.get("category"),
+        formData.get("faculty"),
         JSON.stringify(content),
         Number(formData.get("status")),
         Number(formData.get("sort_order")),

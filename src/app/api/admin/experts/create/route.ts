@@ -34,17 +34,19 @@ export async function POST(req: Request) {
       INSERT INTO experts
       (
         category,
+        faculty,
         content,
         status,
         sort_order
       )
       VALUES
       (
-        ?, ?, ?, ?
+        ?, ?, ?, ?, ?
       )
       `,
       [
         formData.get("category"),
+        formData.get("faculty"),
         JSON.stringify(content),
         Number(formData.get("status")),
         Number(formData.get("sort_order")),

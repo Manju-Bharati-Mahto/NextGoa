@@ -33,10 +33,12 @@ export default function ExpertForm({ expertId }: ExpertFormProps) {
 
   const [faculties, setFaculties] = useState<any[]>([]);
 
-  const [selectedFaculties, setSelectedFaculties] = useState<number[]>([]);
+  const [selectedFaculties, setSelectedFaculties] = useState<string[]>([]);
 
   const [form, setForm] = useState({
     category: "Leadership",
+
+    faculty: "",
 
     name: "",
 
@@ -106,11 +108,11 @@ export default function ExpertForm({ expertId }: ExpertFormProps) {
       form.social_links.filter((_: any, i: number) => i !== index),
     );
   }
-  function toggleFaculty(id: number) {
-    if (selectedFaculties.includes(id)) {
-      setSelectedFaculties(selectedFaculties.filter((x) => x !== id));
+  function toggleFaculty(slug: string) {
+    if (selectedFaculties.includes(slug)) {
+      setSelectedFaculties(selectedFaculties.filter((x) => x !== slug));
     } else {
-      setSelectedFaculties([...selectedFaculties, id]);
+      setSelectedFaculties([...selectedFaculties, slug]);
     }
   }
   async function loadFaculties() {
@@ -135,6 +137,7 @@ export default function ExpertForm({ expertId }: ExpertFormProps) {
 
       setForm({
         category: result.data.category,
+        faculty: result.data.faculty,
         name: result.data.name,
         designation: result.data.designation,
         department: result.data.department,
@@ -156,8 +159,17 @@ export default function ExpertForm({ expertId }: ExpertFormProps) {
       } catch {
         categories = result.data.category ? [result.data.category] : [];
       }
-
       setSelectedCategories(categories);
+
+      let faculties: string[] = [];
+
+      try {
+        faculties = result.data.faculty ? JSON.parse(result.data.faculty) : [];
+      } catch {
+        faculties = [];
+      }
+
+      setSelectedFaculties(faculties);
     } catch (error) {
       console.error(error);
       toast.error("Unable to load expert.");
@@ -172,6 +184,7 @@ export default function ExpertForm({ expertId }: ExpertFormProps) {
       const formData = new FormData();
 
       formData.append("category", JSON.stringify(selectedCategories));
+      formData.append("faculty", JSON.stringify(selectedFaculties));
       formData.append("name", form.name);
       formData.append("designation", form.designation);
       formData.append("department", form.department);
@@ -477,12 +490,12 @@ export default function ExpertForm({ expertId }: ExpertFormProps) {
 
             <div className="p-5 space-y-3">
               {faculties.map((faculty) => (
-                <label key={faculty.id} className="flex items-center gap-3">
+                <label key={faculty.slug} className="flex items-center gap-3">
                   <input
                     type="checkbox"
                     className="form-check-input"
-                    checked={selectedFaculties.includes(faculty.id)}
-                    onChange={() => toggleFaculty(faculty.id)}
+                    checked={selectedFaculties.includes(faculty.slug)}
+                    onChange={() => toggleFaculty(faculty.slug)}
                   />
 
                   <span>{faculty.title}</span>
