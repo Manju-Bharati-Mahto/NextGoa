@@ -1,7 +1,7 @@
 import { ProgrammeData } from "./types";
 
 export const managementData: ProgrammeData = {
-  slug: "management-studies",
+  slug: "management",
   title: "Management Studies",
   hero: {
     badge: "Faculty of Management Studies",

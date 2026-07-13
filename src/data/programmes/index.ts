@@ -10,7 +10,7 @@ import { phdData } from "./phd";
 import { appliedSciencesData } from "./applied-sciences";
 
 const allProgrammes: Record<string, ProgrammeData> = {
-  "management-studies": managementData,
+  "management": managementData,
   "pharmacy": pharmacyData,
   "nursing": nursingData,
   "physiotherapy": physiotherapyData,

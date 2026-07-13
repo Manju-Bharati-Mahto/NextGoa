@@ -58,11 +58,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
   }
 
-  if (slug === "management-studies") {
+  if (slug === "management") {
     return {
       title: { absolute: "Management Studies Programs | BBA, MBA & Ph.D. Program - Parul University Goa" },
       description: "Explore Management Studies at Parul University Goa with BBA, MBA and Ph.D. programs. Gain leadership skills, industry exposure and entrepreneurial expertise. Apply now!",
-      alternates: { canonical: `/faculty-of-management-studies` },
+      alternates: { canonical: `/faculty/management` },
     };
   }
 
@@ -70,7 +70,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
       title: { absolute: "Hotel Management Programs | BHMCT & B.Sc. Courses - Parul University Goa" },
       description: "Explore Hotel Management programs at Parul University Goa, including BHMCT and B.Sc. courses. Gain hands-on hospitality training, industry exposure and career-ready skills. Apply now!",
-      alternates: { canonical: `/faculty-of-hotel-management` },
+      alternates: { canonical: `/faculty/hotel-management` },
     };
   }
 
@@ -78,7 +78,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
       title: { absolute: "Pharmacy Programs | B.Pharm, D.Pharm & M.Pharm - Parul University Goa" },
       description: "Explore pharmacy programs at Parul University Goa, including B.Pharm, D.Pharm, M.Pharm and Ph.D. Gain hands-on training, research exposure and industry-ready skills. Apply now!",
-      alternates: { canonical: `/faculty-of-pharmacy` },
+      alternates: { canonical: `/faculty/pharmacy` },
     };
   }
 
@@ -86,7 +86,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
       title: { absolute: "Nursing Programs | GNM, B.Sc. Nursing & Ph.D. - Parul University Goa" },
       description: "Explore nursing programs at Parul University Goa, including GNM, B.Sc. Nursing and Ph.D. Gain hands-on clinical training, expert mentorship and industry-ready skills. Apply now!",
-      alternates: { canonical: `/faculty-of-nursing` },
+      alternates: { canonical: `/faculty/nursing` },
     };
   }
 
@@ -94,7 +94,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
       title: { absolute: "Physiotherapy Programs | BPT Course Admission - Parul University Goa" },
       description: "Explore the Physiotherapy program at Parul University Goa with hands-on clinical training, expert faculty and modern rehabilitation facilities. Start your healthcare career. Apply now!",
-      alternates: { canonical: `/faculty-of-physiotherapy` },
+      alternates: { canonical: `/faculty/physiotherapy` },
     };
   }
 
@@ -135,7 +135,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
         <NursingProgrammePicker />
       ) : data.slug === "physiotherapy" ? (
         <PhysiotherapyProgrammePicker />
-      ) : data.slug === "management-studies" ? (
+      ) : data.slug === "management" ? (
         <ManagementProgrammePicker />
       ) : data.slug === "allied-healthcare" ? (
         <AlliedHealthProgrammePicker />
@@ -164,7 +164,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
 
 
 
-      {data.slug === "management-studies" ? (
+      {data.slug === "management" ? (
         <ManagementSpecialisations />
       ) : data.slug !== "pharmacy" && data.slug !== "nursing" && data.slug !== "physiotherapy" && data.slug !== "allied-healthcare" && data.slug !== "hotel-management" && data.slug !== "phd" ? (
         <DynamicSpecialisations data={data.specialisations} />
@@ -191,7 +191,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
 
 
 
-      {data.slug === "management-studies" && (
+      {data.slug === "management" && (
         <ManagementLearningEnvironment />
       )}
 
@@ -199,7 +199,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
         <PhdDoctoralProcess />
       )}
 
-      {data.slug !== "management-studies" && data.slug !== "pharmacy" && data.slug !== "nursing" && data.slug !== "hotel-management" && (
+      {data.slug !== "management" && data.slug !== "pharmacy" && data.slug !== "nursing" && data.slug !== "hotel-management" && (
         <DynamicWhyPUGoa
           data={data.why}
           themeColor={data.themeColor}
@@ -207,7 +207,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
         />
       )}
 
-      {data.labs && data.slug !== "management-studies" && data.slug !== "allied-healthcare" && data.slug !== "phd" && (
+      {data.labs && data.slug !== "management" && data.slug !== "allied-healthcare" && data.slug !== "phd" && (
         <DynamicLabsAndLearning data={data.labs} />
       )}
 

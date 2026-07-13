@@ -9,12 +9,12 @@ import { navItems, cta } from "@/lib/navigation";
 const subPrograms = [
   { label: "Engineering & Technology", href: "/faculty/engineering" },
   { label: "IT & Computer Science", href: "/faculty/it-cs" },
-  { label: "Management Studies", href: "/faculty-of-management-studies" },
-  { label: "Hotel Management", href: "/faculty-of-hotel-management" },
+  { label: "Management Studies", href: "/faculty/management" },
+  { label: "Hotel Management", href: "/faculty/hotel-management" },
   { label: "Applied Sciences", href: "/faculty/applied-sciences" },
-  { label: "Nursing", href: "/faculty-of-nursing" },
-  { label: "Pharmacy", href: "/faculty-of-pharmacy" },
-  { label: "Physiotherapy", href: "/faculty-of-physiotherapy" },
+  { label: "Nursing", href: "/faculty/nursing" },
+  { label: "Pharmacy", href: "/faculty/pharmacy" },
+  { label: "Physiotherapy", href: "/faculty/physiotherapy" },
   { label: "Allied & Healthcare Sciences", href: "/faculty/allied-healthcare" },
   { label: "Doctorate Programs", href: "/faculty/doctorate-programs" }
 ];

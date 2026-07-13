@@ -21,19 +21,19 @@ const trendingCourses = [
     course: "B.Sc. Nursing",
     tags: ["5 Seats Left", "High Demand"],
     icon: NursingIcon,
-    href: "/faculty-of-nursing",
+    href: "/faculty/nursing",
   },
   {
     course: "MBA",
     tags: ["18 Seats Left", "Top Placement"],
     icon: ManagementIcon,
-    href: "/faculty-of-management-studies",
+    href: "/faculty/management",
   },
   {
     course: "BHMCT",
     tags: ["8 Seats Left", "Fast Filling"],
     icon: HotelIcon,
-    href: "/faculty-of-hotel-management",
+    href: "/faculty/hotel-management",
   }
 ];
 
