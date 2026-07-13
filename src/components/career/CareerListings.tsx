@@ -230,7 +230,7 @@ export function CareerListings() {
                   </p>
                   
                   <div className="mt-auto flex items-center gap-4 w-full">
-                    <Link href={`/careers/${job.slug}`} className="flex-1 bg-[#EF3341] hover:bg-[#D92A36] transition-colors text-white text-[16px] font-bold py-3 rounded-full text-center block">
+                    <Link href={`/careers/${job.id}`} className="flex-1 bg-[#EF3341] hover:bg-[#D92A36] transition-colors text-white text-[16px] font-bold py-3 rounded-full text-center block">
                       Details
                     </Link>
                     <button className="flex-1 bg-transparent border border-[#111111] text-[#111111] hover:bg-gray-50 transition-colors text-[16px] font-medium py-3 rounded-full">

@@ -4,7 +4,8 @@ import Link from "next/link";
 
 export default async function SuccessPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const job = MOCK_JOBS.find((j) => j.slug === id || String(j.id) === id);
+  const jobId = parseInt(id);
+  const job = MOCK_JOBS.find((j) => j.id === jobId);
 
   if (!job) {
     notFound();
