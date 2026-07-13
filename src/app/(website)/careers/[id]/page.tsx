@@ -1,15 +1,104 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import { notFound } from "next/navigation";
-import { MOCK_JOBS } from "@/data/jobs";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 
-export default async function CareerDetailsPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params;
-  const jobId = parseInt(id);
-  const job = MOCK_JOBS.find((j) => j.id === jobId);
+interface BlockItem {
+  bold_title: string;
+  text: string;
+}
 
-  if (!job) {
-    notFound();
+interface ContentBlock {
+  type: "paragraph" | "unordered-list" | "ordered-list";
+  text?: string;
+  items?: BlockItem[];
+}
+
+interface ContentSection {
+  section_title: string;
+  blocks: ContentBlock[];
+}
+
+interface ContentCard {
+  card_title: string;
+  sections: ContentSection[];
+}
+
+interface Vacancy {
+  id: number;
+  title: string;
+  slug: string;
+  department: string;
+  position: string;
+  location: string;
+  type: string;
+  card_description: string;
+  status: string;
+  content: ContentCard[];
+}
+
+export default function CareerDetailsPage() {
+  const params = useParams();
+  const id = params?.id as string;
+
+  const [job, setJob] = useState<Vacancy | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!id) return;
+
+    async function fetchJobDetails() {
+      try {
+        setLoading(true);
+        const res = await fetch(`/api/vacancies/${id}`);
+        const result = await res.json();
+        if (result.success && result.data) {
+          setJob(result.data);
+        } else {
+          setError(result.message || "Vacancy not found");
+        }
+      } catch (err: any) {
+        console.error("Error fetching job details:", err);
+        setError("Failed to load vacancy details");
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchJobDetails();
+  }, [id]);
+
+  if (loading) {
+    return (
+      <div className="w-full min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="flex flex-col items-center gap-4">
+          <div className="w-12 h-12 border-4 border-t-[#EF3341] border-gray-200 rounded-full animate-spin"></div>
+          <p className="text-gray-600 font-medium">Loading vacancy details...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error || !job) {
+    return (
+      <div className="w-full min-h-screen flex flex-col items-center justify-center bg-gray-50 px-4">
+        <div className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm max-w-md w-full text-center">
+          <div className="w-16 h-16 bg-red-50 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+          </div>
+          <h2 className="text-2xl font-bold text-gray-800 mb-2">Vacancy Not Found</h2>
+          <p className="text-gray-600 mb-6">{error || "The vacancy you are looking for does not exist or has been deleted."}</p>
+          <Link href="/careers" className="inline-block bg-[#EF3341] hover:bg-[#D92A36] text-white font-bold px-6 py-2.5 rounded-full transition-colors">
+            Back to Listings
+          </Link>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -47,7 +136,7 @@ export default async function CareerDetailsPage({ params }: { params: Promise<{ 
               </h1>
               
               {/* CTA */}
-              <Link href={`/careers/${jobId}/apply`} className="bg-[#EF3341] hover:bg-[#D92A36] transition-colors text-white text-[16px] md:text-[18px] font-bold px-8 py-3 md:px-10 md:py-3.5 rounded-full w-fit shadow-md text-center">
+              <Link href={`/careers/${job.slug}/apply`} className="bg-[#EF3341] hover:bg-[#D92A36] transition-colors text-white text-[16px] md:text-[18px] font-bold px-8 py-3 md:px-10 md:py-3.5 rounded-full w-fit shadow-md text-center">
                 Apply Now
               </Link>
             </div>
@@ -60,19 +149,59 @@ export default async function CareerDetailsPage({ params }: { params: Promise<{ 
       <section className="w-full relative z-10 pb-16 sm:pb-24 pt-8 md:pt-[10vw]">
         <div className="max-w-5xl mx-auto px-6 lg:px-12 flex flex-col gap-6 mt-12 md:mt-[5vw]">
           
-          {/* Card 1: Job Description */}
-          <div className="bg-white rounded-[1rem] border border-gray-200 p-8 shadow-sm">
-            <div className="text-[#111111] leading-[1.6] text-[15px] flex flex-col gap-2" dangerouslySetInnerHTML={{ __html: job.description }} />
-          </div>
-
-          {/* Card 3: Application Deadline */}
-          <div className="bg-white rounded-[1rem] border border-gray-200 p-8 shadow-sm">
-            <h2 className="text-[22px] font-bold mb-5 text-[#111111]">Application Deadline</h2>
-            <div className="text-[#111111] leading-[1.6] text-[15px] flex flex-col gap-1">
-              <p>Interested candidates can send their resume to vacancies.paruluniversity.ac.in within 7 days of this advertisement.</p>
-              <p>For Any Queries, Please Contact +91 90161 34646</p>
+          {/* Render content cards from DB */}
+          {Array.isArray(job.content) && job.content.map((card, cardIdx) => (
+            <div key={cardIdx} className="bg-white rounded-[1rem] border border-gray-200 p-8 shadow-sm flex flex-col gap-6">
+              {card.card_title && (
+                <h2 className="text-[22px] font-bold text-[#111111] border-b pb-2 mb-2">
+                  {card.card_title}
+                </h2>
+              )}
+              {Array.isArray(card.sections) && card.sections.map((section, secIdx) => (
+                <div key={secIdx} className="flex flex-col gap-3">
+                  {section.section_title && (
+                    <h3 className="text-lg font-bold text-[#111111]">
+                      {section.section_title}
+                    </h3>
+                  )}
+                  {Array.isArray(section.blocks) && section.blocks.map((block, blockIdx) => {
+                    if (block.type === "paragraph") {
+                      return (
+                        <p key={blockIdx} className="text-[#333333] text-[15px] leading-[1.6]">
+                          {block.text}
+                        </p>
+                      );
+                    }
+                    if (block.type === "unordered-list" && Array.isArray(block.items)) {
+                      return (
+                        <ul key={blockIdx} className="list-disc pl-5 space-y-2 text-[#333333] text-[15px] leading-[1.6]">
+                          {block.items.map((item, itemIdx) => (
+                            <li key={itemIdx}>
+                              {item.bold_title && <strong className="mr-1">{item.bold_title}</strong>}
+                              {item.text}
+                            </li>
+                          ))}
+                        </ul>
+                      );
+                    }
+                    if (block.type === "ordered-list" && Array.isArray(block.items)) {
+                      return (
+                        <ol key={blockIdx} className="list-decimal pl-5 space-y-2 text-[#333333] text-[15px] leading-[1.6]">
+                          {block.items.map((item, itemIdx) => (
+                            <li key={itemIdx}>
+                              {item.bold_title && <strong className="mr-1">{item.bold_title}</strong>}
+                              {item.text}
+                            </li>
+                          ))}
+                        </ol>
+                      );
+                    }
+                    return null;
+                  })}
+                </div>
+              ))}
             </div>
-          </div>
+          ))}
           
         </div>
       </section>
