@@ -76,7 +76,7 @@ export default function RecruitersAndDestinations({ slug }: { slug?: string }) {
     "Zeta.png", "addverb-logo-1 (1).png", "drawinbox.png", "soprasteria_logo.jpg", "synoptek-logo-200x200-1 (1).png"
   ];
 
-  const activeCompanies = slug === "management-studies" 
+  const activeCompanies = slug === "management" 
     ? managementCompanies 
     : slug === "pharmacy" 
       ? pharmacyCompanies 
@@ -90,7 +90,7 @@ export default function RecruitersAndDestinations({ slug }: { slug?: string }) {
               ? hotelManagementCompanies
               : companies;
   const getSrc = (fileName: string) => {
-    if (slug === "management-studies") return `/recruiters/management/${fileName}`;
+    if (slug === "management") return `/recruiters/management/${fileName}`;
     if (slug === "pharmacy") return `/recruiters/pharmacy/${fileName}`;
     if (slug === "allied-healthcare" || slug === "applied-sciences") return `/recruiters/allied-healthcare/${fileName}`;
     if (slug === "nursing" || slug === "physiotherapy") return `/recruiters/nursing/${fileName}`;

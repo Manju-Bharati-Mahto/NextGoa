@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 
-export default function ApplyForm({ jobId, jobSlug, jobTitle }: { jobId: number, jobSlug: string, jobTitle?: string }) {
+export default function ApplyForm({ jobId, jobTitle }: { jobId: number, jobTitle?: string }) {
   const router = useRouter();
   const [fileName, setFileName] = useState<string | null>(null);
   const [formData, setFormData] = useState({
@@ -47,7 +47,7 @@ export default function ApplyForm({ jobId, jobSlug, jobTitle }: { jobId: number,
     const result = await res.json();
 
     if (result.success) {
-      router.push(`/careers/${jobSlug}/success`);
+      router.push(`/careers/${jobId}/success`);
     } else {
       alert(result.message);
     }
@@ -82,7 +82,6 @@ export default function ApplyForm({ jobId, jobSlug, jobTitle }: { jobId: number,
 
   return (
     <form className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6" onSubmit={handleSubmit}>
-      
       {/* Full Name */}
       <div className="flex flex-col gap-2">
         <label className="text-[15px] font-bold text-[#111111]">Full Name</label>
@@ -92,16 +91,16 @@ export default function ApplyForm({ jobId, jobSlug, jobTitle }: { jobId: number,
       {/* Mobile No. */}
       <div className="flex flex-col gap-2">
         <label className="text-[15px] font-bold text-[#111111]">Mobile No.</label>
-        <input required type="tel" value={formData.mobile} onChange={(e) => setFormData({ ...formData, mobile: e.target.value, }) } className="border border-gray-200 rounded-xl px-4 py-3 bg-[#FAFAFA] focus:outline-none focus:border-gray-400 transition-colors text-[15px] placeholder-gray-400" placeholder="XXXXX XXXXX" />
+        <input required type="tel" value={formData.mobile} onChange={(e) => setFormData({ ...formData, mobile: e.target.value })} className="border border-gray-200 rounded-xl px-4 py-3 bg-[#FAFAFA] focus:outline-none focus:border-gray-400 transition-colors text-[15px] placeholder-gray-400" placeholder="XXXXX XXXXX" />
       </div>
 
       {/* Email */}
       <div className="flex flex-col gap-2">
         <label className="text-[15px] font-bold text-[#111111]">Email</label>
-        <input required type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value, }) } className="border border-gray-200 rounded-xl px-4 py-3 bg-[#FAFAFA] focus:outline-none focus:border-gray-400 transition-colors text-[15px] placeholder-gray-400" placeholder="Sample@gmail.com" />
+        <input required type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="border border-gray-200 rounded-xl px-4 py-3 bg-[#FAFAFA] focus:outline-none focus:border-gray-400 transition-colors text-[15px] placeholder-gray-400" placeholder="Sample@gmail.com" />
       </div>
 
-      <div className="hidden md:block"></div> {/* Empty space */}
+      <div className="hidden md:block"></div>
 
       {/* Position */}
       <div className="flex flex-col gap-2">
@@ -112,10 +111,10 @@ export default function ApplyForm({ jobId, jobSlug, jobTitle }: { jobId: number,
       {/* Location */}
       <div className="flex flex-col gap-2">
         <label className="text-[15px] font-bold text-[#111111]">Location</label>
-        <input required type="text" value={formData.location} onChange={(e) => setFormData({ ...formData, location: e.target.value, }) } className="border border-gray-200 rounded-xl px-4 py-3 bg-[#FAFAFA] focus:outline-none focus:border-gray-400 transition-colors text-[15px] placeholder-gray-400" placeholder="Current Location" />
+        <input required type="text" value={formData.location} onChange={(e) => setFormData({ ...formData, location: e.target.value })} className="border border-gray-200 rounded-xl px-4 py-3 bg-[#FAFAFA] focus:outline-none focus:border-gray-400 transition-colors text-[15px] placeholder-gray-400" placeholder="Current Location" />
       </div>
 
-      <div className="hidden md:block"></div> {/* Empty space */}
+      <div className="hidden md:block"></div>
 
       {/* Resume / CV */}
       <div className="md:col-span-2 mt-5">
@@ -141,7 +140,6 @@ export default function ApplyForm({ jobId, jobSlug, jobTitle }: { jobId: number,
           Submit
         </button>
       </div>
-      
     </form>
   );
 }

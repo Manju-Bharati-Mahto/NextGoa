@@ -60,7 +60,7 @@ const faculties = [
     tags: ["BBA", "MBA"],
     levels: ["Undergraduate", "Postgraduate"],
     fields: ["Management Studies"],
-    slug: "management-studies",
+    slug: "management",
     icon: ManagementIcon,
   },
   {

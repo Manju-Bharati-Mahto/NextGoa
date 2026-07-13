@@ -28,53 +28,38 @@ const nextConfig: NextConfig = {
   },
   async rewrites() {
     return [
-      {
-        source: '/faculty-of-hotel-management',
-        destination: '/faculty/hotel-management',
-      },
-      {
-        source: '/faculty-of-physiotherapy',
-        destination: '/faculty/physiotherapy',
-      },
-      {
-        source: '/faculty-of-nursing',
-        destination: '/faculty/nursing',
-      },
-      {
-        source: '/faculty-of-pharmacy',
-        destination: '/faculty/pharmacy',
-      },
-      {
-        source: '/faculty-of-management-studies',
-        destination: '/faculty/management-studies',
-      },
-    ];
+      ];
   },
   async redirects() {
     return [
       {
-        source: '/faculty/hotel-management',
-        destination: '/faculty-of-hotel-management',
+        source: '/faculty-of-hotel-management',
+        destination: '/faculty/hotel-management',
         permanent: true,
       },
       {
-        source: '/faculty/physiotherapy',
-        destination: '/faculty-of-physiotherapy',
+        source: '/faculty-of-physiotherapy',
+        destination: '/faculty/physiotherapy',
         permanent: true,
       },
       {
-        source: '/faculty/nursing',
-        destination: '/faculty-of-nursing',
+        source: '/faculty-of-nursing',
+        destination: '/faculty/nursing',
         permanent: true,
       },
       {
-        source: '/faculty/pharmacy',
-        destination: '/faculty-of-pharmacy',
+        source: '/faculty-of-pharmacy',
+        destination: '/faculty/pharmacy',
+        permanent: true,
+      },
+      {
+        source: '/faculty-of-management-studies',
+        destination: '/faculty/management',
         permanent: true,
       },
       {
         source: '/faculty/management-studies',
-        destination: '/faculty-of-management-studies',
+        destination: '/faculty/management',
         permanent: true,
       },
       {

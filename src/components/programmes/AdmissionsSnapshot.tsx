@@ -22,7 +22,7 @@ export default function AdmissionsSnapshot({ slug }: AdmissionsSnapshotProps) {
         eligibility = "10+2 any stream (BCA). Bachelor's degree (MCA).";
         entrance = "PU Goa entrance accepted. Counselling-based for BCA.";
         break;
-      case "management-studies":
+      case "management":
         eligibility = "10+2 any stream (BBA). Bachelor's degree (MBA).";
         entrance = "PU Goa entrance accepted / National level exams.";
         break;
