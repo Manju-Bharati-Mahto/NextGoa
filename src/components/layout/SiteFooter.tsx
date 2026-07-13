@@ -33,7 +33,7 @@ const columns: { heading: string; links?: LinkItem[]; subSections?: { heading: s
       { label: "Nursing", href: "/faculty/nursing" },
       { label: "Hotel Management", href: "/faculty/hotel-management" },
       { label: "Physiotherapy", href: "/faculty/physiotherapy" },
-      { label: "Allied and Healthcare Sciences", href: "/faculty/allied-healthcare" },
+      { label: "Allied and Healthcare Sciences", href: "/faculty/allied-and-healthcare-science" },
       { label: "Applied Sciences", href: "/faculty/applied-sciences" },
       { label: "Doctorate Programs", href: "/faculty/doctorate-programs" },
     ],

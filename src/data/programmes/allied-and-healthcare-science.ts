@@ -1,14 +1,14 @@
 import { ProgrammeData } from "./types";
 
 export const alliedHealthData: ProgrammeData = {
-  slug: "allied-healthcare",
+  slug: "allied-and-healthcare-science",
   title: "Allied and Healthcare Sciences",
   hero: {
     badge: "Allied and Healthcare Sciences",
     title: "Where science",
     highlight: "serves humanity.",
     subtitle: "Powering the backbone of modern diagnostics, surgical assistance, and critical care.",
-    backgroundImage: "/programmes/hero-allied-healthcare.png",
+    backgroundImage: "/programmes/hero-allied-and-healthcare-science.png",
   },
   snapshotRow: [
     { title: "Duration", value: "3/4 yrs", subtext: "+ 2 yrs M.Sc" },

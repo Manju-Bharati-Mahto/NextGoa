@@ -56,7 +56,7 @@ const allFaculties = [
   { value: "nursing", label: "Nursing" },
   { value: "physiotherapy", label: "Physiotherapy" },
   { value: "hotel-management", label: "Hotel Management" },
-  { value: "allied-healthcare", label: "Allied and Healthcare Sciences" },
+  { value: "allied-and-healthcare-science", label: "Allied and Healthcare Sciences" },
   { value: "applied-sciences", label: "Applied Sciences" },
   { value: "phd", label: "Doctorate Programs" },
 ];
