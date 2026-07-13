@@ -46,7 +46,7 @@ export default function AdmissionsSnapshot({ slug }: AdmissionsSnapshotProps) {
         eligibility = "10+2 any stream (BHMCT / B.Sc HM).";
         entrance = "PU Goa entrance accepted.";
         break;
-      case "allied-healthcare":
+      case "allied-and-healthcare-science":
         eligibility = "10+2 with Science (PCB) for B.AOTT / BMLS.";
         entrance = "PUCET accepted.";
         break;

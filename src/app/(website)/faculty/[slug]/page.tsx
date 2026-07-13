@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const data = getProgrammeData(slug);
   if (!data) return { title: { absolute: "Programme Not Found | Parul University Goa" } };
 
-  if (slug === "allied-healthcare") {
+  if (slug === "allied-and-healthcare-science") {
     return {
       title: { absolute: "Allied & Health Sciences Courses in Goa - Parul University Goa" },
       description: "Discover Allied & Health Sciences programs at Parul University Goa, including Biotechnology, Microbiology, BMLS, B.AOTT, M.Sc. and Ph.D. Build a future in healthcare and science. Apply now!",
@@ -137,7 +137,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
         <PhysiotherapyProgrammePicker />
       ) : data.slug === "management" ? (
         <ManagementProgrammePicker />
-      ) : data.slug === "allied-healthcare" ? (
+      ) : data.slug === "allied-and-healthcare-science" ? (
         <AlliedHealthProgrammePicker />
       ) : data.slug === "hotel-management" ? (
         <HotelManagementProgrammePicker />
@@ -158,7 +158,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
         <PhysiotherapyAccreditation />
       )}
 
-      {data.slug === "allied-healthcare" && (
+      {data.slug === "allied-and-healthcare-science" && (
         <AlliedHealthAccreditation />
       )}
 
@@ -166,7 +166,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
 
       {data.slug === "management" ? (
         <ManagementSpecialisations />
-      ) : data.slug !== "pharmacy" && data.slug !== "nursing" && data.slug !== "physiotherapy" && data.slug !== "allied-healthcare" && data.slug !== "hotel-management" && data.slug !== "phd" ? (
+      ) : data.slug !== "pharmacy" && data.slug !== "nursing" && data.slug !== "physiotherapy" && data.slug !== "allied-and-healthcare-science" && data.slug !== "hotel-management" && data.slug !== "phd" ? (
         <DynamicSpecialisations data={data.specialisations} />
       ) : null}
 
@@ -207,15 +207,15 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
         />
       )}
 
-      {data.labs && data.slug !== "management" && data.slug !== "allied-healthcare" && data.slug !== "phd" && (
+      {data.labs && data.slug !== "management" && data.slug !== "allied-and-healthcare-science" && data.slug !== "phd" && (
         <DynamicLabsAndLearning data={data.labs} />
       )}
 
-      {data.slug === "allied-healthcare" && (
+      {data.slug === "allied-and-healthcare-science" && (
         <AlliedHealthLabs />
       )}
 
-      {data.slug !== "nursing" && data.slug !== "physiotherapy" && data.slug !== "allied-healthcare" && data.slug !== "hotel-management" && data.slug !== "pharmacy" && data.slug !== "phd" && (
+      {data.slug !== "nursing" && data.slug !== "physiotherapy" && data.slug !== "allied-and-healthcare-science" && data.slug !== "hotel-management" && data.slug !== "pharmacy" && data.slug !== "phd" && (
         <StudyAbroadModels />
       )}
 
@@ -233,7 +233,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
 
       <FinalCta
         eyebrow="Admissions Open 2026"
-        title={data.slug === "nursing" ? "Ready to begin nursing?" : data.slug === "pharmacy" ? "Ready to enter pharmacy?" : data.slug === "physiotherapy" ? "Ready to start physio?" : data.slug === "allied-healthcare" ? "Ready to start allied and healthcare sciences?" : data.slug === "hotel-management" ? "Ready to enter hospitality?" : data.slug === "phd" ? "Begin your doctoral journey." : "Ready to lead?"}
+        title={data.slug === "nursing" ? "Ready to begin nursing?" : data.slug === "pharmacy" ? "Ready to enter pharmacy?" : data.slug === "physiotherapy" ? "Ready to start physio?" : data.slug === "allied-and-healthcare-science" ? "Ready to start allied and healthcare sciences?" : data.slug === "hotel-management" ? "Ready to enter hospitality?" : data.slug === "phd" ? "Begin your doctoral journey." : "Ready to lead?"}
         description={data.slug === "phd" ? "PU Goa entrance and PhD admissions are open for the 2026-27 cycle." : "Admissions are open for the 2026-27 academic year."}
         actions={[
           { label: "Apply Now", href: "#", variant: "primary", triggerEnquiry: true },
