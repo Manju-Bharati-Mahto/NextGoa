@@ -121,7 +121,7 @@ export default function EngineeringPage() {
       <LabsAndLearning />
 
       {/* Dean & Faculty Section */}
-      <DeanAndFaculty />
+      <DeanAndFaculty facultySlug="engineering" />
 
       {/* Global Pathways Section */}
       <StudyAbroadModels />
