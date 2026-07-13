@@ -70,10 +70,10 @@ export default function DeanAndFaculty({ facultySlug }: Props) {
 
               <div className="relative z-10">
                 <h3 className="text-white font-bold text-[28px] sm:text-[36px] font-poppins leading-tight mb-2">
-                  {dean?.designation}
+                  {dean?.name}
                 </h3>
                 <p className="text-white/90 text-[16px] sm:text-[18px] font-medium">
-                  {dean?.name}
+                  {dean?.designation}
                 </p>
 
                 <hr className="border-white/20 my-6 w-full" />

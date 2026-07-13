@@ -183,7 +183,7 @@ export function DynamicDeanAndFaculty({
                           {faculty.tagline}
                         </p>
 
-                        <hr className="my-3" />
+                        <hr className="border-gray-200 mb-3 mt-3 w-full" />
 
                         <div className="space-y-1 text-sm">
                           <p>
@@ -220,7 +220,7 @@ export function DynamicDeanAndFaculty({
                         </div>
 
                         {(linkedin || orcid) && (
-                          <div className="flex gap-3 mt-5 border-t pt-4">
+                          <div className="flex gap-3 mt-5 border-light-t pt-4">
                             {orcid && (
                               <a
                                 href={orcid}
