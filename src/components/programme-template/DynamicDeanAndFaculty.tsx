@@ -157,7 +157,7 @@ export function DynamicDeanAndFaculty({
                   return (
                     <div
                       key={idx}
-                      className="bg-white rounded-2xl border overflow-hidden shadow-sm flex flex-col sm:flex-row"
+                      className="bg-white rounded-[16px] border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row h-auto items-stretch"
                     >
                       <div className="relative w-full sm:w-[180px] lg:w-[220px] min-h-[240px] bg-gray-200">
                         {faculty.image && (
