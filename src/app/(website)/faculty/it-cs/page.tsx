@@ -121,7 +121,7 @@ export default function ItCsPage() {
       <LabsAndLearning />
 
       {/* Dean & Faculty Section */}
-      <DeanAndFaculty />
+      <DeanAndFaculty facultySlug="it-cs" />
 
       {/* Global Pathways Section */}
       <StudyAbroadModels />
