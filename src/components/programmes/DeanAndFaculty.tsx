@@ -9,18 +9,6 @@ import { FacultyMember } from "@/data/programmes/types";
 const facultyList: FacultyMember[] = [
   {
     "role": "Associate Professor",
-    "name": "Dr. K. Vasudevan",
-    "degree": "Ph.D.",
-    "faculty": "Faculty of Engineering, IT & CS",
-    "department": "Engineering ,IT & CS",
-    "experience": "16 Years 5 Months",
-    "researchArea": "Power Electronics, Renewable Energy and Distribution Generation",
-    "image": "/faculties/Dr.-K.-Vasudevan.jpg",
-    "linkedin": "https://www.linkedin.com/in/dr-vasudevan-k-m-e-ph-d-a1483549/",
-    "orcid": "https://orcid.org/0000-0002-0508-099X"
-  },
-  {
-    "role": "Associate Professor",
     "name": "Dr. Dhaval Nimavat",
     "degree": "Ph.D.",
     "faculty": "Faculty of Engineering, IT & CS",
@@ -30,6 +18,18 @@ const facultyList: FacultyMember[] = [
     "image": "/faculties/Dr.-Dhaval-Nimavat.jpg",
     "linkedin": "https://www.linkedin.com/in/dhavalnimavat",
     "orcid": "https://orcid.org/0000-0003-2233-7336"
+  },
+  {
+    "role": "Associate Professor",
+    "name": "Dr. K. Vasudevan",
+    "degree": "Ph.D.",
+    "faculty": "Faculty of Engineering, IT & CS",
+    "department": "Engineering ,IT & CS",
+    "experience": "16 Years 5 Months",
+    "researchArea": "Power Electronics, Renewable Energy and Distribution Generation",
+    "image": "/faculties/Dr.-K.-Vasudevan.jpg",
+    "linkedin": "https://www.linkedin.com/in/dr-vasudevan-k-m-e-ph-d-a1483549/",
+    "orcid": "https://orcid.org/0000-0002-0508-099X"
   },
   {
     "role": "Assistant Professor",

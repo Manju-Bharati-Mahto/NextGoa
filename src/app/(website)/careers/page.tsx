@@ -86,7 +86,6 @@ export default function Career() {
               Your next innings begins here.
             </p>
 
-            {/* Search Input Box */}
             <CareerHeroSearch />
 
             {/* Desktop University Tag */}
