@@ -80,7 +80,7 @@ export default function RecruitersAndDestinations({ slug }: { slug?: string }) {
     ? managementCompanies 
     : slug === "pharmacy" 
       ? pharmacyCompanies 
-      : (slug === "allied-and-healthcare-science" || slug === "applied-sciences")
+      : (slug === "allied-and-healthcare-science" || slug === "applied-sciences" || slug === "applied-and-health-sciences")
         ? alliedHealthCompanies
         : (slug === "nursing" || slug === "physiotherapy")
           ? nursingCompanies
@@ -92,7 +92,7 @@ export default function RecruitersAndDestinations({ slug }: { slug?: string }) {
   const getSrc = (fileName: string) => {
     if (slug === "management") return `/recruiters/management/${fileName}`;
     if (slug === "pharmacy") return `/recruiters/pharmacy/${fileName}`;
-    if (slug === "allied-and-healthcare-science" || slug === "applied-sciences") return `/recruiters/allied-and-healthcare-science/${fileName}`;
+    if (slug === "allied-and-healthcare-science" || slug === "applied-sciences" || slug === "applied-and-health-sciences") return `/recruiters/allied-and-healthcare-science/${fileName}`;
     if (slug === "nursing" || slug === "physiotherapy") return `/recruiters/nursing/${fileName}`;
     if (slug === "engineering" || slug === "it-cs") return `/recruiters/engineering/${fileName}`;
     if (slug === "hotel-management") return `/recruiters/hotel-management/${fileName}`;
@@ -124,7 +124,7 @@ export default function RecruitersAndDestinations({ slug }: { slug?: string }) {
       `}</style>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center mb-10">
-        {slug === "allied-and-healthcare-science" || slug === "applied-sciences" ? (
+        {slug === "allied-and-healthcare-science" || slug === "applied-sciences" || slug === "applied-and-health-sciences" ? (
           <>
             <h3 className="text-ink font-bold text-xl sm:text-2xl mb-2">
               Hospital & Industry Network

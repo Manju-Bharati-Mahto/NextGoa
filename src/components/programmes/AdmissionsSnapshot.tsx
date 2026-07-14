@@ -34,6 +34,10 @@ export default function AdmissionsSnapshot({ slug }: AdmissionsSnapshotProps) {
         eligibility = "10+2 with Science (PCB/PCM) for B.Sc. Bachelor's degree for M.Sc.";
         entrance = "PUCET accepted.";
         break;
+      case "applied-and-health-sciences":
+        eligibility = "10+2 with Science (PCB/PCM) for B.Sc / B.AOTT / BMLS. Bachelor's degree for M.Sc.";
+        entrance = "PUCET accepted.";
+        break;
       case "nursing":
         eligibility = "10+2 with PCB and English (B.Sc Nursing). GNM for Post Basic.";
         entrance = "PUCET accepted.";

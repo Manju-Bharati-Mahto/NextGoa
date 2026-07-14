@@ -58,6 +58,7 @@ const allFaculties = [
   { value: "hotel-management", label: "Hotel Management" },
   { value: "allied-and-healthcare-science", label: "Allied and Healthcare Sciences" },
   { value: "applied-sciences", label: "Applied Sciences" },
+  { value: "applied-and-health-sciences", label: "Applied and Health Sciences" },
   { value: "phd", label: "Doctorate Programs" },
 ];
 

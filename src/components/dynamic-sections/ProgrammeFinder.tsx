@@ -36,6 +36,7 @@ const fields = [
   "Physiotherapy",
   "Allied and Healthcare Sciences",
   "Applied Sciences",
+  "Applied and Health Sciences",
 ];
 
 const faculties = [
@@ -110,6 +111,15 @@ const faculties = [
     fields: ["Applied Sciences"],
     slug: "applied-sciences",
     icon: AppliedSciencesIcon,
+  },
+  {
+    name: "Applied and Health Sciences",
+    tags: ["B.Sc", "B.AOTT", "BMLS", "M.Sc"],
+    levels: ["Undergraduate", "Postgraduate", "Diploma"],
+    fields: ["Applied and Health Sciences"],
+    slug: "applied-and-health-sciences",
+    icon: AlliedHealthIcon,
+    color: "white" as CardColor,
   },
   {
     name: "Doctoral Research",
@@ -280,9 +290,7 @@ export function ProgrammeFinder({ data }: Props) {
     return matchesLevel && matchesField;
   });
 
-  const displayedFaculties = showAll
-    ? filteredFaculties
-    : filteredFaculties.slice(0, 6);
+  const displayedFaculties = showAll ? filteredFaculties : filteredFaculties.slice(0, 12);
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -410,7 +418,7 @@ export function ProgrammeFinder({ data }: Props) {
                 return (
                   <li key={fac.name} className="w-full">
                     <CourseCard
-                      color={colors[i % colors.length]}
+                      color={fac.color || colors[i % colors.length]}
                       title={fac.name}
                       tags={fac.tags}
                       href={`/faculty/${fac.slug}`}
@@ -421,7 +429,7 @@ export function ProgrammeFinder({ data }: Props) {
               })}
             </ul>
 
-            {!showAll && filteredFaculties.length > 6 && (
+            {!showAll && filteredFaculties.length > 12 && (
               <div className="mt-8 flex justify-center">
                 <button
                   onClick={() => setShowAll(true)}

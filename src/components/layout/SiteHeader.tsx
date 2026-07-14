@@ -10,6 +10,7 @@ const subPrograms = [
   { label: "Engineering & Technology", href: "/faculty/engineering" },
   { label: "IT & Computer Science", href: "/faculty/it-cs" },
   { label: "Management Studies", href: "/faculty/management" },
+  { label: "Applied and Health Sciences", href: "/faculty/applied-and-health-sciences" },
   { label: "Hotel Management", href: "/faculty/hotel-management" },
   { label: "Applied Sciences", href: "/faculty/applied-sciences" },
   { label: "Nursing", href: "/faculty/nursing" },
