@@ -8,12 +8,10 @@ export async function GET() {
     { path: "/faculty/engineering", changefreq: "weekly", priority: 0.9 },
     { path: "/faculty/management", changefreq: "weekly", priority: 0.9 },
     { path: "/faculty/pharmacy", changefreq: "weekly", priority: 0.9 },
-    { path: "/faculty/applied-sciences", changefreq: "weekly", priority: 0.9 },
     { path: "/faculty/applied-and-health-sciences", changefreq: "weekly", priority: 0.9 },
     { path: "/faculty/nursing", changefreq: "weekly", priority: 0.9 },
     { path: "/faculty/physiotherapy", changefreq: "weekly", priority: 0.9 },
     { path: "/faculty/hotel-management", changefreq: "weekly", priority: 0.9 },
-    { path: "/faculty/allied-and-healthcare-science", changefreq: "weekly", priority: 0.9 },
     { path: "/faculty/it-cs", changefreq: "weekly", priority: 0.9 },
     { path: "/faculty/doctorate-programs", changefreq: "weekly", priority: 0.9 }
   ];

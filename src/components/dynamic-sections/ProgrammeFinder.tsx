@@ -34,8 +34,7 @@ const fields = [
   "Nursing",
   "Hotel Management",
   "Physiotherapy",
-  "Allied and Healthcare Sciences",
-  "Applied Sciences",
+
   "Applied and Health Sciences",
 ];
 
@@ -96,22 +95,7 @@ const faculties = [
     slug: "physiotherapy",
     icon: PhysiotherapyIcon,
   },
-  {
-    name: "Allied and Healthcare Sciences",
-    tags: ["B.AOTT", "BMLS"],
-    levels: ["Undergraduate", "Diploma"],
-    fields: ["Allied and Healthcare Sciences"],
-    slug: "allied-and-healthcare-science",
-    icon: AlliedHealthIcon,
-  },
-  {
-    name: "Applied Sciences",
-    tags: ["B.Sc", "B.Sc Hons", "M.Sc"],
-    levels: ["Undergraduate", "Postgraduate"],
-    fields: ["Applied Sciences"],
-    slug: "applied-sciences",
-    icon: AppliedSciencesIcon,
-  },
+
   {
     name: "Applied and Health Sciences",
     tags: ["B.Sc", "B.AOTT", "BMLS", "M.Sc"],
@@ -131,8 +115,7 @@ const faculties = [
       "Management Studies",
       "Pharmacy",
       "Nursing",
-      "Allied and Healthcare Sciences",
-      "Applied Sciences",
+      "Applied and Health Sciences",
     ],
     slug: "doctorate-programs",
     icon: DoctoralIcon,
@@ -216,19 +199,9 @@ function CourseCard({
       {/* Content wrapper */}
       <div className="flex flex-col z-10 relative">
         {/* Title */}
-        <h3
-          className={`font-poppins font-semibold leading-tight tracking-tight mb-2 sm:mb-4 ${
-            title === "Allied and Healthcare Sciences"
-              ? "text-[18px] sm:text-[26px] sm:pr-8"
-              : "text-[20px] sm:text-[32px] sm:pr-12"
-          }`}
-        >
-          {title === "Allied and Healthcare Sciences" ? (
-            <>
-              Allied and Healthcare
-              <br />
-              Sciences
-            </>
+        <h3 className={`font-poppins font-semibold leading-tight tracking-tight mb-2 sm:mb-4 ${title === "Applied and Health Sciences" ? "text-[18px] sm:text-[26px] sm:pr-8" : "text-[20px] sm:text-[32px] sm:pr-12"}`}>
+          {title === "Applied and Health Sciences" ? (
+            <>Applied and Health<br />Sciences</>
           ) : (
             title
           )}

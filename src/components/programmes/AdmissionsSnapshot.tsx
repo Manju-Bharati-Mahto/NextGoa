@@ -30,10 +30,7 @@ export default function AdmissionsSnapshot({ slug }: AdmissionsSnapshotProps) {
         eligibility = "10+2 with PCB/PCM (B.Pharm). D.Pharm for Lateral Entry.";
         entrance = "PUCET accepted.";
         break;
-      case "applied-sciences":
-        eligibility = "10+2 with Science (PCB/PCM) for B.Sc. Bachelor's degree for M.Sc.";
-        entrance = "PUCET accepted.";
-        break;
+
       case "applied-and-health-sciences":
         eligibility = "10+2 with Science (PCB/PCM) for B.Sc / B.AOTT / BMLS. Bachelor's degree for M.Sc.";
         entrance = "PUCET accepted.";
@@ -50,10 +47,7 @@ export default function AdmissionsSnapshot({ slug }: AdmissionsSnapshotProps) {
         eligibility = "10+2 any stream (BHMCT / B.Sc HM).";
         entrance = "PU Goa entrance accepted.";
         break;
-      case "allied-and-healthcare-science":
-        eligibility = "10+2 with Science (PCB) for B.AOTT / BMLS.";
-        entrance = "PUCET accepted.";
-        break;
+
     }
 
     return [
