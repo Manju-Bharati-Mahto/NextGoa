@@ -33,14 +33,10 @@ import ManagementLearningEnvironment from "@/components/programmes/ManagementLea
 import { FinalCta } from "@/components/landing/FinalCta";
 import HotelManagementDestinations from "@/components/programmes/HotelManagementDestinations";
 
-import AlliedHealthProgrammePicker from "@/components/programmes/AlliedHealthProgrammePicker";
 import PhdResearchAreas from "@/components/programmes/PhdResearchAreas";
 import PhdProgrammePicker from "@/components/programmes/PhdProgrammePicker";
 import PhdEntranceNotice from "@/components/programmes/PhdEntranceNotice";
 import PhdDoctoralProcess from "@/components/programmes/PhdDoctoralProcess";
-
-import AlliedHealthLabs from "@/components/programmes/AlliedHealthLabs";
-
 export async function generateStaticParams() {
   const slugs = getAllProgrammeSlugs();
   return slugs.map((slug) => ({ slug }));
