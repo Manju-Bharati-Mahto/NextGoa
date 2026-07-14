@@ -293,6 +293,33 @@ export default function NotificationMarqueeSection({ data, onChange }: Props) {
                   Open in New Tab
                 </label>
               </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="form-label">Start Date</label>
+
+                  <input
+                    type="date"
+                    className="form-control"
+                    value={item.startDate || ""}
+                    onChange={(e) =>
+                      updateItem(index, "startDate", e.target.value)
+                    }
+                  />
+                </div>
+
+                <div>
+                  <label className="form-label">End Date</label>
+
+                  <input
+                    type="date"
+                    className="form-control"
+                    value={item.endDate || ""}
+                    onChange={(e) =>
+                      updateItem(index, "endDate", e.target.value)
+                    }
+                  />
+                </div>
+              </div>
             </div>
           )}
         </div>

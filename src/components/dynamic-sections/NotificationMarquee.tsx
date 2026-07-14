@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import Marquee from "react-fast-marquee";
 
 interface NotificationMarqueeProps {
   data: {
@@ -52,7 +52,28 @@ const TeardropAsterisk = () => (
 );
 
 export function NotificationMarquee({ data }: NotificationMarqueeProps) {
-  if (!data?.items?.length) return null;
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const activeItems = (data.items || []).filter((item: any) => {
+    if (!item.startDate) return true;
+
+    const start = new Date(item.startDate);
+    start.setHours(0, 0, 0, 0);
+
+    const end = item.endDate ? new Date(item.endDate) : null;
+
+    if (end) {
+      end.setHours(23, 59, 59, 999);
+    }
+
+    if (today < start) return false;
+
+    if (end && today > end) return false;
+
+    return true;
+  });
+  if (!activeItems.length) return null;
 
   const speed = data.speed || 90;
 
@@ -74,25 +95,20 @@ export function NotificationMarquee({ data }: NotificationMarqueeProps) {
 
   return (
     <div
-      className="notification-marquee w-full overflow-hidden border-y py-4 sm:py-5 text-white"
+      className="notification-marquee"
       style={{
         backgroundColor,
         color: textColor,
       }}
     >
-      <div
-        className="flex w-max items-center whitespace-nowrap animate-marquee"
-        style={{
-          animationDuration: `${speed}s`,
-        }}
-      >
-        {[...data.items, ...data.items].map((item, index) => (
+      <Marquee speed={speed} gradient={false} pauseOnHover autoFill>
+        {activeItems.map((item, index) => (
           <div key={index} className="flex items-center">
             <a
               href={item.link}
               target={item.newTab ? "_blank" : "_self"}
               rel="noopener noreferrer"
-              className="cursor-pointer text-[16px] font-semibold tracking-wide sm:text-[20px]"
+              className="text-[16px] sm:text-[20px] font-semibold whitespace-nowrap"
             >
               {item.title}
             </a>
@@ -100,23 +116,12 @@ export function NotificationMarquee({ data }: NotificationMarqueeProps) {
             <TeardropAsterisk />
           </div>
         ))}
-      </div>
+      </Marquee>
 
       <style jsx>{`
-        .animate-marquee {
-          animation-name: marquee;
-          animation-timing-function: linear;
-          animation-iteration-count: infinite;
-          will-change: transform;
-        }
-
-        .animate-marquee:hover {
-          animation-play-state: paused;
-        }
         .notification-marquee {
           margin: ${desktopMargin};
           padding: ${desktopPadding};
-          border: 0px;
         }
 
         @media (max-width: 1024px) {
@@ -130,15 +135,6 @@ export function NotificationMarquee({ data }: NotificationMarqueeProps) {
           .notification-marquee {
             margin: ${mobileMargin};
             padding: ${mobilePadding};
-          }
-        }
-        @keyframes marquee {
-          from {
-            transform: translateX(0);
-          }
-
-          to {
-            transform: translateX(-50%);
           }
         }
       `}</style>
