@@ -14,7 +14,7 @@ import RecruitersAndDestinations from "@/components/programmes/RecruitersAndDest
 import ProgrammePicker from "@/components/programmes/ProgrammePicker";
 import PharmacyProgrammePicker from "@/components/programmes/PharmacyProgrammePicker";
 import ManagementProgrammePicker from "@/components/programmes/ManagementProgrammePicker";
-import AppliedSciencesProgrammePicker from "@/components/programmes/AppliedSciencesProgrammePicker";
+
 import AppliedAndHealthSciencesProgrammePicker from "@/components/programmes/AppliedAndHealthSciencesProgrammePicker";
 import HotelManagementProgrammePicker from "@/components/programmes/HotelManagementProgrammePicker";
 import NursingProgrammePicker from "@/components/programmes/NursingProgrammePicker";
