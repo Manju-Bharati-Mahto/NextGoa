@@ -96,7 +96,7 @@ export async function POST(req: NextRequest) {
     }
 
     const body: any = await parsePageForm(req);
-    console.log("1 parse done");
+  
     await processPageUploads(body);
     
 

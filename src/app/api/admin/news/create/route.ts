@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
 
     body.og_image =
       body.ogImage && body.ogImage.size > 0
-        ? await uploadImage(body.ogImage, "uploads/ogimage")
+        ? await uploadImage(body.ogImage, "goa-uploads/ogimage")
         : "";
 
     const blogData = getBlogData(body);
