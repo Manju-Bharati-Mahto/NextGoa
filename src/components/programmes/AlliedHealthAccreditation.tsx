@@ -1,7 +1,9 @@
 import Image from "next/image";
 import { Icon } from "@iconify/react";
 
-export default function AlliedHealthAccreditation() {
+export default function AlliedHealthAccreditation({ slug }: { slug?: string }) {
+  const programmeName = slug === "applied-and-health-sciences" ? "Applied and Health Sciences" : "Allied Health";
+
   return (
     <section className="w-full bg-[#FAFAFA] pb-12 sm:pb-16 pt-5">
 
@@ -18,7 +20,7 @@ export default function AlliedHealthAccreditation() {
             <div className="flex flex-col text-left">
               <h4 className="font-bold text-[22px] sm:text-[24px] text-ink mb-2">Entrance Test Notice</h4>
               <p className="text-ink/80 text-[17px] sm:text-[19px] leading-relaxed">
-                PU Goa conducts an entrance evaluation for select Allied Health programmes. Eligibility: 10+2 Science. Shortlisted candidates will be notified for the test date and centre.
+                PU Goa conducts an entrance evaluation for select {programmeName} programmes. Eligibility: 10+2 Science. Shortlisted candidates will be notified for the test date and centre.
               </p>
             </div>
           </div>

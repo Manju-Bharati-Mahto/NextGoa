@@ -35,6 +35,7 @@ const columns: { heading: string; links?: LinkItem[]; subSections?: { heading: s
       { label: "Physiotherapy", href: "/faculty/physiotherapy" },
       { label: "Allied and Healthcare Sciences", href: "/faculty/allied-and-healthcare-science" },
       { label: "Applied Sciences", href: "/faculty/applied-sciences" },
+      { label: "Applied and Health Sciences", href: "/faculty/applied-and-health-sciences" },
       { label: "Doctorate Programs", href: "/faculty/doctorate-programs" },
     ],
   },

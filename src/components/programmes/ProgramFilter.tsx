@@ -34,17 +34,17 @@ const allCourses = [
   { id: 12, title: "BHMCT", description: "Bachelor of Hotel Management and Catering Technology.", level: "Bachelor's", field: "BHMCT", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bhmct.png", href: "/faculty/hotel-management" },
   { id: 13, title: "Bachelor of Science - Hotel Management", description: "B.Sc degree in hospitality.", level: "Bachelor's", field: "BHMCT", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bsc_hm.png", href: "/faculty/hotel-management" },
   { id: 14, title: "B.Sc Hons. - Hotel Management", description: "4-year honors program.", level: "Bachelor's", field: "BHMCT", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bsc_hm_hons.png", href: "/faculty/hotel-management" },
-  { id: 15, title: "Bachelor of Anaesthesia & Operation Theatre Technology", description: "Allied healthcare bachelor's degree.", level: "Bachelor's", field: "B.AOTT", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/baott.png", href: "/faculty/allied-and-healthcare-science" },
-  { id: 16, title: "Bachelor of Medical Laboratory Science (BMLS)", description: "Allied healthcare bachelor's degree.", level: "Bachelor's", field: "B.AOTT", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/bmls.png", href: "/faculty/allied-and-healthcare-science" },
+  { id: 15, title: "Bachelor of Anaesthesia & Operation Theatre Technology", description: "Allied healthcare bachelor's degree.", level: "Bachelor's", field: "B.AOTT", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/baott.png", href: "/faculty/applied-and-health-sciences" },
+  { id: 16, title: "Bachelor of Medical Laboratory Science (BMLS)", description: "Allied healthcare bachelor's degree.", level: "Bachelor's", field: "B.AOTT", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/bmls.png", href: "/faculty/applied-and-health-sciences" },
   { id: 23, title: "Bachelor of Computer Applications (BCA)", description: "3-year undergraduate IT program.", level: "Bachelor's", field: "BCA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bca_students.png", href: "/faculty/it-cs" },
   { id: 24, title: "BCA Honours (NEP 2020)", description: "4-year honors program with specializations.", level: "Bachelor's", field: "BCA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/bca_students.png", href: "/faculty/it-cs" },
-  { id: 26, title: "Bachelor of Science (B.Sc.)", description: "3-year science degree in Biotech & Microbiology.", level: "Bachelor's", field: "B.Sc", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/bsc_applied_science.png", href: "/faculty/applied-sciences" },
-  { id: 27, title: "Bachelor of Science - Honors (B.Sc. Hons.) (NEP 2020)", description: "4-year honors program in Biotech & Microbiology.", level: "Bachelor's", field: "B.Sc", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/bsc_hons_applied_science.png", href: "/faculty/applied-sciences" },
+  { id: 26, title: "Bachelor of Science (B.Sc.)", description: "3-year science degree in Biotech & Microbiology.", level: "Bachelor's", field: "B.Sc", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/bsc_applied_science.png", href: "/faculty/applied-and-health-sciences" },
+  { id: 27, title: "Bachelor of Science - Honors (B.Sc. Hons.) (NEP 2020)", description: "4-year honors program in Biotech & Microbiology.", level: "Bachelor's", field: "B.Sc", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/bsc_hons_applied_science.png", href: "/faculty/applied-and-health-sciences" },
 
   // MASTER'S
   { id: 17, title: "Master of Business Administration (MBA)", description: "Postgraduate management degree.", level: "Master's", field: "MBA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/mba.png", href: "/faculty/management" },
   { id: 25, title: "Master of Computer Applications (MCA)", description: "Postgraduate IT and software program.", level: "Master's", field: "MCA", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/mca_students.png", href: "/faculty/it-cs" },
-  { id: 28, title: "Master of Science (M.Sc.)", description: "2-year master's in Biotech & Microbiology.", level: "Master's", field: "B.Sc", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/msc_applied_science.png", href: "/faculty/applied-sciences" },
+  { id: 28, title: "Master of Science (M.Sc.)", description: "2-year master's in Biotech & Microbiology.", level: "Master's", field: "B.Sc", mode: "Full-Time", entranceTest: "PUCET", image: "/programmes/cards/msc_applied_science.png", href: "/faculty/applied-and-health-sciences" },
   { id: 29, title: "M.Tech in Computer Engineering", description: "Master of Technology program.", level: "Master's", field: "B.Tech", mode: "Full-Time", entranceTest: "PU Goa Entrance", image: "/programmes/cards/phd_engineering.png", href: "/faculty/engineering" },
 
   // DOCTORAL
@@ -112,13 +112,13 @@ const FACULTY_INFO: Record<string, { name: string; desc: string; icon: React.Com
     name: "Nursing", 
     desc: "Where dedication becomes healing.", 
     icon: NursingIcon, 
-    image: "/programmes/Clinical Simulation Learning.png"
+    image: "/programmes/Pharmaceutical Lab Practice.png"
   },
   "/faculty/pharmacy": { 
     name: "Pharmacy", 
     desc: "From molecule to medicine — pharmacy that transforms lives.", 
     icon: PharmacyIcon, 
-    image: "/programmes/Pharmaceutical Lab Practice.png"
+    image: "/programmes/Clinical Simulation Learning.png"
   },
   "/faculty/physiotherapy": { 
     name: "Physiotherapy", 
@@ -131,6 +131,12 @@ const FACULTY_INFO: Record<string, { name: string; desc: string; icon: React.Com
     desc: "Where science serves humanity.", 
     icon: AlliedHealthIcon, 
     image: "/programmes/Advanced Science Research.png"
+  },
+  "/faculty/applied-and-health-sciences": { 
+    name: "Applied and Health Sciences", 
+    desc: "Where science meets healthcare.", 
+    icon: AlliedHealthIcon, 
+    image: "/programmes/applied_sciences.jpg"
   },
   "/faculty/doctorate-programs": { 
     name: "Doctorate Programs", 
