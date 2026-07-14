@@ -71,6 +71,137 @@ export default function NotificationMarqueeSection({ data, onChange }: Props) {
           onChange={(e) => update("speed", Number(e.target.value))}
         />
       </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label className="form-label mb-2 block">Background Color</label>
+
+          <div className="flex items-center gap-4 rounded-xl border border-gray-200 bg-white p-3">
+            <input
+              type="color"
+              value={data?.backgroundColor || "#E73649"}
+              onChange={(e) => update("backgroundColor", e.target.value)}
+              className="h-12 w-12 cursor-pointer rounded-lg border-0 bg-transparent p-0"
+            />
+
+            <input
+              type="text"
+              className="form-control flex-1"
+              placeholder="#E73649"
+              value={data?.backgroundColor || "#E73649"}
+              onChange={(e) => update("backgroundColor", e.target.value)}
+            />
+
+            <div
+              className="h-10 w-10 rounded-lg border shadow-sm"
+              style={{
+                backgroundColor: data?.backgroundColor || "#E73649",
+              }}
+            />
+          </div>
+        </div>
+        <div>
+          <label className="form-label mb-2 block">Text Color</label>
+
+          <div className="flex items-center gap-4 rounded-xl border border-gray-200 bg-white p-3">
+            <input
+              type="color"
+              value={data?.textColor || "#FFFFFF"}
+              onChange={(e) => update("textColor", e.target.value)}
+              className="h-12 w-12 cursor-pointer rounded-lg border-0 bg-transparent p-0"
+            />
+
+            <input
+              type="text"
+              className="form-control flex-1"
+              placeholder="#FFFFFF"
+              value={data?.textColor || "#FFFFFF"}
+              onChange={(e) => update("textColor", e.target.value)}
+            />
+
+            <div
+              className="h-10 w-10 rounded-lg border shadow-sm"
+              style={{
+                backgroundColor: data?.textColor || "#FFFFFF",
+              }}
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div>
+          <label className="form-label">Desktop Margin</label>
+
+          <input
+            type="text"
+            className="form-control"
+            placeholder="10px 20px 30px 40px"
+            value={data?.desktopMargin || ""}
+            onChange={(e) => update("desktopMargin", e.target.value)}
+          />
+        </div>
+
+        <div>
+          <label className="form-label">Tablet Margin</label>
+
+          <input
+            type="text"
+            className="form-control"
+            placeholder="10px 20px 30px 40px"
+            value={data?.tabletMargin || ""}
+            onChange={(e) => update("tabletMargin", e.target.value)}
+          />
+        </div>
+
+        <div>
+          <label className="form-label">Mobile Margin</label>
+
+          <input
+            type="text"
+            className="form-control"
+            placeholder="10px 20px 30px 40px"
+            value={data?.mobileMargin || ""}
+            onChange={(e) => update("mobileMargin", e.target.value)}
+          />
+        </div>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-5">
+        <div>
+          <label className="form-label">Desktop Padding</label>
+
+          <input
+            type="text"
+            className="form-control"
+            placeholder="10px 20px 30px 40px"
+            value={data?.desktopPadding || ""}
+            onChange={(e) => update("desktopPadding", e.target.value)}
+          />
+        </div>
+
+        <div>
+          <label className="form-label">Tablet Padding</label>
+
+          <input
+            type="text"
+            className="form-control"
+            placeholder="10px 20px 30px 40px"
+            value={data?.tabletPadding || ""}
+            onChange={(e) => update("tabletPadding", e.target.value)}
+          />
+        </div>
+
+        <div>
+          <label className="form-label">Mobile Padding</label>
+
+          <input
+            type="text"
+            className="form-control"
+            placeholder="10px 20px 30px 40px"
+            value={data?.mobilePadding || ""}
+            onChange={(e) => update("mobilePadding", e.target.value)}
+          />
+        </div>
+      </div>
 
       <div className="flex justify-between items-center">
         <label className="form-label">Notifications</label>

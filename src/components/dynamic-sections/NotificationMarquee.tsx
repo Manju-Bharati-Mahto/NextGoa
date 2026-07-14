@@ -5,6 +5,23 @@ import React from "react";
 interface NotificationMarqueeProps {
   data: {
     speed?: number;
+
+    backgroundColor?: string;
+
+    textColor?: string;
+
+    desktopMargin?: string;
+
+    tabletMargin?: string;
+
+    mobileMargin?: string;
+
+    desktopPadding?: string;
+
+    tabletPadding?: string;
+
+    mobilePadding?: string;
+
     items?: {
       title: string;
       link: string;
@@ -15,8 +32,8 @@ interface NotificationMarqueeProps {
 
 const TeardropAsterisk = () => (
   <svg
-    width="24"
-    height="24"
+    width="15"
+    height="15"
     viewBox="0 0 24 24"
     fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
@@ -34,16 +51,35 @@ const TeardropAsterisk = () => (
   </svg>
 );
 
-export function NotificationMarquee({
-  data,
-}: NotificationMarqueeProps) {
+export function NotificationMarquee({ data }: NotificationMarqueeProps) {
   if (!data?.items?.length) return null;
 
   const speed = data.speed || 90;
 
-  return (
-    <div className="w-full overflow-hidden bg-[#E73649] border-y border-[#d32f41] py-4 sm:py-5 text-white">
+  const backgroundColor = data.backgroundColor || "#E73649";
 
+  const textColor = data.textColor || "#FFFFFF";
+
+  const desktopMargin = data.desktopMargin || "0";
+
+  const tabletMargin = data.tabletMargin || desktopMargin;
+
+  const mobileMargin = data.mobileMargin || tabletMargin;
+
+  const desktopPadding = data.desktopPadding || "0";
+
+  const tabletPadding = data.tabletPadding || desktopPadding;
+
+  const mobilePadding = data.mobilePadding || tabletPadding;
+
+  return (
+    <div
+      className="notification-marquee w-full overflow-hidden border-y py-4 sm:py-5 text-white"
+      style={{
+        backgroundColor,
+        color: textColor,
+      }}
+    >
       <div
         className="flex w-max items-center whitespace-nowrap animate-marquee"
         style={{
@@ -51,10 +87,7 @@ export function NotificationMarquee({
         }}
       >
         {[...data.items, ...data.items].map((item, index) => (
-          <div
-            key={index}
-            className="flex items-center"
-          >
+          <div key={index} className="flex items-center">
             <a
               href={item.link}
               target={item.newTab ? "_blank" : "_self"}
@@ -80,7 +113,25 @@ export function NotificationMarquee({
         .animate-marquee:hover {
           animation-play-state: paused;
         }
+        .notification-marquee {
+          margin: ${desktopMargin};
+          padding: ${desktopPadding};
+          border: 0px;
+        }
 
+        @media (max-width: 1024px) {
+          .notification-marquee {
+            margin: ${tabletMargin};
+            padding: ${tabletPadding};
+          }
+        }
+
+        @media (max-width: 640px) {
+          .notification-marquee {
+            margin: ${mobileMargin};
+            padding: ${mobilePadding};
+          }
+        }
         @keyframes marquee {
           from {
             transform: translateX(0);

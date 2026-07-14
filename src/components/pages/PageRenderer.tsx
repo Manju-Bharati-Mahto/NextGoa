@@ -8,7 +8,6 @@ interface Props {
 
 export default async function PageRenderer({ slug }: Props) {
   const page = await getPage(slug);
-  console.log(page);
 
   if (!page) {
     notFound();
