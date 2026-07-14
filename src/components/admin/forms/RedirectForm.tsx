@@ -158,7 +158,6 @@ export default function RedirectForm({ redirectId }: Props) {
               <option value="404">404 Not Found</option>
               <option value="410">410 Gone</option>
               <option value="451">451 Unavailable For Legal Reasons</option>
-              <option value="410">410 Gone</option>
             </select>
           </div>
 
