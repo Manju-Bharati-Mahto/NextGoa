@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import db from "@/lib/db";
 
 export async function GET(req: NextRequest) {
-  const path = req.nextUrl.searchParams.get("path");
+  const path = decodeURIComponent(req.nextUrl.searchParams.get("path") || "");
 
   if (!path) {
     return NextResponse.json({

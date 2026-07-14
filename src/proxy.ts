@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function proxy(request: NextRequest) {
-  const pathname = request.nextUrl.pathname;
+  const pathname = decodeURIComponent(request.nextUrl.pathname);
   const token = request.cookies.get("admin_token")?.value;
 
   // Ignore API & static files
@@ -55,9 +55,11 @@ export async function proxy(request: NextRequest) {
       cache: "no-store",
     },
   );
+  console.log("status", res.status);
 
   if (res.ok) {
     const redirect = await res.json();
+    console.log("redirect=", redirect);
 
     if (redirect.success && redirect.data) {
       switch (redirect.data.redirect_type) {
