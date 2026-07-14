@@ -55,11 +55,9 @@ export async function proxy(request: NextRequest) {
       cache: "no-store",
     },
   );
-  console.log("status", res.status);
 
   if (res.ok) {
     const redirect = await res.json();
-    console.log("redirect=", redirect);
 
     if (redirect.success && redirect.data) {
       switch (redirect.data.redirect_type) {
