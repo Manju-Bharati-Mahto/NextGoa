@@ -34,15 +34,15 @@ const allProgrammes = [
   { value: "bsc-hotel-management", label: "Bachelor of Science - Hotel Management", faculty: "Hotel Management" },
   { value: "bsc-hons-hotel-management", label: "B.Sc Hons. - Hotel Management", faculty: "Hotel Management" },
   // Allied and Healthcare Sciences
-  { value: "baott", label: "Bachelor of Anaesthesia & Operation Theatre Technology (B.AOTT)", faculty: "Allied Health" },
-  { value: "bmls", label: "Bachelor of Medical Laboratory Science (BMLS)", faculty: "Allied Health" },
+  { value: "baott", label: "B.AOTT (Operation Theater Tech)", faculty: "Applied and Health Sciences" },
+  { value: "bmls", label: "BMLS (Medical Laboratory Sciences)", faculty: "Applied and Health Sciences" },
   // Applied Sciences
-  { value: "bsc-biotech", label: "B.Sc. Biotechnology", faculty: "Applied Sciences" },
-  { value: "bsc-microbio", label: "B.Sc. Microbiology", faculty: "Applied Sciences" },
-  { value: "bsc-hons-biotech", label: "B.Sc. Hons. Biotechnology", faculty: "Applied Sciences" },
-  { value: "bsc-hons-microbio", label: "B.Sc. Hons. Microbiology", faculty: "Applied Sciences" },
-  { value: "msc-biotech", label: "M.Sc. Biotechnology", faculty: "Applied Sciences" },
-  { value: "msc-microbio", label: "M.Sc. Microbiology", faculty: "Applied Sciences" },
+  { value: "bsc-biotech", label: "B.Sc. Biotechnology", faculty: "Applied and Health Sciences" },
+  { value: "bsc-microbio", label: "B.Sc. Microbiology", faculty: "Applied and Health Sciences" },
+  { value: "bsc-hons-biotech", label: "B.Sc. Hons. Biotechnology", faculty: "Applied and Health Sciences" },
+  { value: "bsc-hons-microbio", label: "B.Sc. Hons. Microbiology", faculty: "Applied and Health Sciences" },
+  { value: "msc-biotech", label: "M.Sc. Biotechnology", faculty: "Applied and Health Sciences" },
+  { value: "msc-microbio", label: "M.Sc. Microbiology", faculty: "Applied and Health Sciences" },
 ];
 
 export function TalkToUs() {

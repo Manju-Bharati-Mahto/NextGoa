@@ -102,12 +102,7 @@ const FACULTY_INFO: Record<string, { name: string; desc: string; icon: React.Com
     icon: HotelIcon, 
     image: "/programmes/hotel_management.jpg"
   },
-  "/faculty/applied-sciences": { 
-    name: "Applied Sciences", 
-    desc: "Where science serves humanity.", 
-    icon: AppliedSciencesIcon, 
-    image: "/programmes/applied_sciences.jpg"
-  },
+
   "/faculty/nursing": { 
     name: "Nursing", 
     desc: "Where dedication becomes healing.", 
@@ -125,12 +120,6 @@ const FACULTY_INFO: Record<string, { name: string; desc: string; icon: React.Com
     desc: "Where movement meets recovery.", 
     icon: PhysiotherapyIcon, 
     image: "/programmes/Physiotherapy Training.png"
-  },
-  "/faculty/allied-and-healthcare-science": { 
-    name: "Allied and Healthcare Sciences", 
-    desc: "Where science serves humanity.", 
-    icon: AlliedHealthIcon, 
-    image: "/programmes/Advanced Science Research.png"
   },
   "/faculty/applied-and-health-sciences": { 
     name: "Applied and Health Sciences", 

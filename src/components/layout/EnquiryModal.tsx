@@ -35,15 +35,15 @@ const allCourses = [
   { value: "bsc-hotel-management", label: "Bachelor of Science - Hotel Management", faculty: "Hotel Management" },
   { value: "bsc-hons-hotel-management", label: "B.Sc Hons. - Hotel Management", faculty: "Hotel Management" },
   // Allied and Healthcare Sciences
-  { value: "baott", label: "Bachelor of Anaesthesia & Operation Theatre Technology (B.AOTT)", faculty: "Allied Health" },
-  { value: "bmls", label: "Bachelor of Medical Laboratory Science (BMLS)", faculty: "Allied Health" },
+  { value: "baott", label: "B.AOTT (Operation Theater Tech)", faculty: "Applied and Health Sciences" },
+  { value: "bmls", label: "BMLS (Medical Laboratory Sciences)", faculty: "Applied and Health Sciences" },
   // Applied Sciences
-  { value: "bsc-biotech", label: "B.Sc. Biotechnology", faculty: "Applied Sciences" },
-  { value: "bsc-microbio", label: "B.Sc. Microbiology", faculty: "Applied Sciences" },
-  { value: "bsc-hons-biotech", label: "B.Sc. Hons. Biotechnology", faculty: "Applied Sciences" },
-  { value: "bsc-hons-microbio", label: "B.Sc. Hons. Microbiology", faculty: "Applied Sciences" },
-  { value: "msc-biotech", label: "M.Sc. Biotechnology", faculty: "Applied Sciences" },
-  { value: "msc-microbio", label: "M.Sc. Microbiology", faculty: "Applied Sciences" },
+  { value: "bsc-biotech", label: "B.Sc. Biotechnology", faculty: "Applied and Health Sciences" },
+  { value: "bsc-microbio", label: "B.Sc. Microbiology", faculty: "Applied and Health Sciences" },
+  { value: "bsc-hons-biotech", label: "B.Sc. Hons. Biotechnology", faculty: "Applied and Health Sciences" },
+  { value: "bsc-hons-microbio", label: "B.Sc. Hons. Microbiology", faculty: "Applied and Health Sciences" },
+  { value: "msc-biotech", label: "M.Sc. Biotechnology", faculty: "Applied and Health Sciences" },
+  { value: "msc-microbio", label: "M.Sc. Microbiology", faculty: "Applied and Health Sciences" },
   // Doctorate
   { value: "phd", label: "Doctor of Philosophy (Ph.D.)", faculty: "Doctorate" },
 ];
@@ -56,8 +56,7 @@ const allFaculties = [
   { value: "nursing", label: "Nursing" },
   { value: "physiotherapy", label: "Physiotherapy" },
   { value: "hotel-management", label: "Hotel Management" },
-  { value: "allied-and-healthcare-science", label: "Allied and Healthcare Sciences" },
-  { value: "applied-sciences", label: "Applied Sciences" },
+
   { value: "applied-and-health-sciences", label: "Applied and Health Sciences" },
   { value: "phd", label: "Doctorate Programs" },
 ];
