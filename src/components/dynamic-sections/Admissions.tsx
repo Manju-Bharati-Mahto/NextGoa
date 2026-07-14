@@ -28,31 +28,57 @@ interface AdmissionsProps {
 
     dateCards?: {
       badge: string;
-      title: string;
       description: string;
       color: "brand" | "ocean";
+
+      schedules?: {
+        startDate: string;
+        endDate: string;
+        title: string;
+      }[];
     }[];
 
     acceptedTests?: string[];
   };
 }
 
-export function Admissions({
-  data,
-}: AdmissionsProps) {
+export function Admissions({ data }: AdmissionsProps) {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
 
-  const dateCards =
-    data?.dateCards || [];
+  const dateCards = (data?.dateCards || []).map((card) => {
+    const schedules = card.schedules || [];
 
-  const acceptedTests =
-    data?.acceptedTests || [];
-   return (
-    <section
-      id="admissions"
-      className="bg-brand-white py-0"
-    >
+    const activeSchedule =
+      schedules.find((schedule) => {
+        if (!schedule.startDate) return false;
+
+        const start = new Date(schedule.startDate);
+        start.setHours(0, 0, 0, 0);
+
+        const end = schedule.endDate ? new Date(schedule.endDate) : null;
+
+        if (end) {
+          end.setHours(23, 59, 59, 999);
+        }
+
+        if (today < start) return false;
+
+        if (end && today > end) return false;
+
+        return true;
+      }) || schedules[0];
+
+    return {
+      ...card,
+      title: activeSchedule?.title || "",
+    };
+  });
+
+  const acceptedTests = data?.acceptedTests || [];
+  return (
+    <section id="admissions" className="bg-brand-white py-0">
       <div className="mx-auto max-w-6xl px-6 py-4 sm:py-8">
-
         <div className="flex justify-center mb-6">
           <img
             src="/1.svg"
@@ -73,11 +99,9 @@ export function Admissions({
         </h2>
 
         <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
-
           {/* Left */}
 
           <div className="flex flex-col justify-center text-left">
-
             <h3
               className="font-poppins font-semibold text-[32px] leading-tight tracking-tight text-ink"
               dangerouslySetInnerHTML={{
@@ -93,9 +117,7 @@ export function Admissions({
             />
 
             <div className="mt-6 flex items-center gap-3">
-
               {data.registeredImage && (
-
                 <Image
                   src={data.registeredImage}
                   alt="Registered Students"
@@ -103,61 +125,38 @@ export function Admissions({
                   height={1200}
                   className="h-8 w-auto object-contain"
                 />
-
               )}
 
-              <p className="section-body text-ink/70">
-                {data.registeredText}
-              </p>
-
+              <p className="section-body text-ink/70">{data.registeredText}</p>
             </div>
-
           </div>
 
           {/* Right */}
 
           <div className="flex items-center justify-center py-6 sm:py-0 w-full">
-
             <div className="w-full scale-[1.25] sm:scale-100 origin-center">
-
-              <ExamDatesTicket
-  data={data?.examTicket}
-/>
-
+              <ExamDatesTicket data={data?.examTicket} />
             </div>
-
           </div>
-
         </div>
-                {/* Date Cards */}
+        {/* Date Cards */}
 
         <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 text-left">
-
           {dateCards.map((card, index) => (
-
             <div
               key={index}
               className={`rounded-[24px] p-8 text-white shadow-sm ${
-                card.color === "ocean"
-                  ? "bg-ocean"
-                  : "bg-brand"
+                card.color === "ocean" ? "bg-ocean" : "bg-brand"
               }`}
             >
-
               <div>
-
                 <span className="inline-block rounded-full bg-[#FEDB2F] text-[#1F1F1F] px-4 py-1.5 font-poppins text-[13px] font-bold uppercase tracking-wider">
-
                   {card.badge}
-
                 </span>
-
               </div>
 
               <p className="mt-4 font-sans font-medium text-[26px] sm:text-[32px] leading-tight">
-
                 {card.title}
-
               </p>
 
               <div className="w-full h-px bg-white/20 my-4" />
@@ -168,43 +167,27 @@ export function Admissions({
                   __html: card.description,
                 }}
               />
-
             </div>
-
           ))}
-
         </div>
-        
-                {/* Accepted Tests */}
+
+        {/* Accepted Tests */}
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
-
           <span className="mr-1 font-[family-name:var(--font-poppins)] font-normal text-[15px] sm:text-[17px] text-ink/60">
-{data.entrance_label}
-           
-
+            {data.entrance_label}
           </span>
 
           {acceptedTests.map((test, index) => (
-
             <span
               key={index}
               className="rounded-full bg-zinc-100 px-3 py-1.5 font-[family-name:var(--font-poppins)] font-normal text-xs text-ink/80 ring-1 ring-zinc-200/50"
             >
-
               {test}
-
             </span>
-
           ))}
-
         </div>
-
-        
       </div>
-
     </section>
-
   );
-
 }
