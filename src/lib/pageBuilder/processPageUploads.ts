@@ -31,7 +31,7 @@ export async function processPageUploads(body: any, oldPage?: any) {
       } catch {}
     }
 
-    body.og_image = await uploadImage(body.ogImageFile, "uploads/pages/og");
+    body.og_image = await uploadImage(body.ogImageFile, "goa-uploads/pages/og");
   } else {
     body.og_image = oldPage?.og_image || "";
   }

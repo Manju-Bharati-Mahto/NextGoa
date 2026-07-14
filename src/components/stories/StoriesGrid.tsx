@@ -16,8 +16,8 @@ export interface Story {
 const STORIES_PER_PAGE = 8;
 const categories = [
    { name: "All", icon: "apps" },
-   { name: "News", icon: "newspaper" },
-   { name: "Events", icon: "theater_comedy" },
+   // { name: "News", icon: "newspaper" },
+   // { name: "Events", icon: "theater_comedy" },
    { name: "Academic", icon: "menu_book" },
    { name: "Placement", icon: "business_center" },
    { name: "Research", icon: "biotech" },

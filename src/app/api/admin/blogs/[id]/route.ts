@@ -57,7 +57,7 @@ export async function PUT(
       body.og_image =
         await uploadImage(
           body.ogImage,
-          "uploads/ogimage"
+          "goa-uploads/ogimage"
         );
 
     }
