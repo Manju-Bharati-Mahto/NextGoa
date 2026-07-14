@@ -42,7 +42,7 @@ export default function ProgrammeCard({ title, duration, eligibility, intake, mo
   const displayNew = isNew ?? (isSpecialization && isBtech);
 
   return (
-    <div className="w-full flex-grow flex-shrink basis-[380px] min-w-[320px] max-w-[480px] relative mt-10 flex flex-col group">
+    <div className="w-full flex-grow flex-shrink basis-[380px] min-w-[320px] max-w-[480px] relative mt-5 flex flex-col group">
       {/* Tab */}
       {displayNew && (
         <div 
