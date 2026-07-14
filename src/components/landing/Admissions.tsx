@@ -65,7 +65,7 @@ export function Admissions() {
                 Application deadline
               </span>
             </div>
-            <p className="mt-4 font-sans font-medium text-[26px] sm:text-[32px] leading-tight">20 June 2026</p>
+            <p className="mt-4 font-sans font-medium text-[26px] sm:text-[32px] leading-tight">15 July 2026</p>
             <div className="w-full h-px bg-white/20 my-4" />
             <p className="section-body text-white/90">
               All Diploma, UG, and PG Programs for 2026 Intake.
