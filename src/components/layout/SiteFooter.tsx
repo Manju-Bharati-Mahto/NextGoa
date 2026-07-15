@@ -48,8 +48,7 @@ const columns: { heading: string; links?: LinkItem[]; subSections?: { heading: s
       {
         heading: "Legal",
         links: [
-          { label: "Privacy Policy", href: "/policies" },
-          { label: "Terms of use", href: "/terms-of-use" },
+          { label: "Legal Policies", href: "/policies" },
         ],
       },
     ],

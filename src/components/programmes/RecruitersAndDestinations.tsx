@@ -62,9 +62,10 @@ export default function RecruitersAndDestinations({ slug }: { slug?: string }) {
     "image 244.png", "image 245.png", "image 246.png", "image 247.png"
   ];
   const hotelManagementCompanies = [
-    "Crone Plaza.jpg", "Hyatt-Place-Logo.png", "JW Marriott.png", 
-    "Radisson Blue Fujairah.png", "Taj Hotel.png", "Westin_Hotels_&_Resorts_logo.svg.png", 
-    "the_zuri_hotels__resorts_logo.jpg"
+    "accor.jpeg", "air-india.jpeg", "carnival.jpeg", "disney.jpeg", 
+    "hilton.jpeg", "hyatt.jpeg", "indigo.jpeg", "itc-hotels.jpeg", 
+    "leela.jpeg", "marriott.jpeg", "mcdonalds.jpeg", "msc.jpeg", 
+    "norwegian.jpeg", "oberoi.jpeg", "starbuck.jpeg", "taj.jpeg"
   ];
   const engineeringCompanies = [
     "Accenture.png", "Automation Anywhere logo.png", "Capgemini.png", "Cognizant.png", "Commvault.png",
@@ -156,12 +157,12 @@ export default function RecruitersAndDestinations({ slug }: { slug?: string }) {
         <div className="animate-marquee items-center gap-12 sm:gap-20 px-6">
           {/* Duplicate the array twice to ensure seamless infinite scrolling */}
           {[...repeatedHalf, ...repeatedHalf].map((fileName, idx) => (
-            <div key={idx} className={`relative w-28 h-12 shrink-0 mix-blend-multiply ${fileName.includes('oberoi') ? 'scale-[1.3]' : ''}`}>
+            <div key={idx} className={`relative w-28 h-12 shrink-0 bg-[#FAFAFA] ${fileName.includes('oberoi') ? 'scale-[1.3]' : ''}`}>
               <Image
                 src={getSrc(fileName)}
                 alt={`Recruiter ${idx}`}
                 fill
-                className="object-contain"
+                className="object-contain mix-blend-multiply brightness-110 contrast-125"
               />
             </div>
           ))}
