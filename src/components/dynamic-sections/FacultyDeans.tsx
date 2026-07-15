@@ -92,7 +92,7 @@ export function FacultyDeans({ data }: Props) {
                     {dean.name}
                   </h3>
                   <p className="font-sans font-bold text-[14px] sm:text-[15px] text-[#0CAADD] mt-1">
-                    {dean.designation}
+                    {dean.department}
                   </p>
 
                   {/* Separator */}
