@@ -6,7 +6,7 @@ export async function GET() {
   const staticPaths = [
     { path: "/", changefreq: "daily", priority: 1 },
     { path: "/about-us", changefreq: "weekly", priority: 0.9 },
-    { path: "/privacy-policy", changefreq: "monthly", priority: 0.9 },
+    { path: "/policies", changefreq: "monthly", priority: 0.9 },
     { path: "/terms-of-use", changefreq: "monthly", priority: 0.9 },
     { path: "/documents/Prospectus_AY_2026_27.pdf", changefreq: "monthly", priority: 0.9 },
     { path: "/contact-us", changefreq: "weekly", priority: 0.9 },
