@@ -70,8 +70,8 @@ export function Leadership({ data }: Props) {
                 onClick={() => setActiveBadge(item.category)}
                 className={`rounded-full px-6 py-2 text-sm transition ${
                   activeBadge === item.category
-                    ? "bg-brand text-white"
-                    : "bg-brand/5 text-brand hover:bg-brand/10"
+                    ? "bg-brand/5 text-brand"
+                    : "bg-brand/5 text-brand"
                 }`}
               >
                 {item.category}
