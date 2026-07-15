@@ -68,7 +68,6 @@ export const alliedHealthData: ProgrammeData = {
     ],
     topRoles: [
       { title: "MLT - Diagnostic Labs", tag: "B.MLS · LAL PATH · METROPOLIS", icon: "ph:test-tube-fill" },
-      { title: "OT Technician", tag: "B.AOTT · HOSPITAL SURGICAL UNITS", icon: "ph:bandaids-fill" },
       { title: "Biotech R&D Scientist", tag: "M.SC. BIOTECH · PHARMA + RESEARCH", icon: "ph:dna-fill" },
       { title: "Microbiologist", tag: "HOSPITALS · FOOD + PHARMA QC", icon: "ph:microscope-fill" },
       { title: "Higher Studies / Research", tag: "B.SC. HONS → M.SC. → PH.D.", icon: "ph:graduation-cap-fill" },

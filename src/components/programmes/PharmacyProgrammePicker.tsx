@@ -12,7 +12,7 @@ export default function PharmacyProgrammePicker() {
         title: "Bachelor of Pharmacy\n(B.Pharm.)", 
         duration: "4 Years", 
         eligibility: "10+2 Science (PCM or PCB) from a recognized board.", 
-        intake: "60", 
+        intake: "100", 
         mode: "Full-time",
         tuitionFee: "₹1,35,000",
         enquiryValue: "bpharm"
