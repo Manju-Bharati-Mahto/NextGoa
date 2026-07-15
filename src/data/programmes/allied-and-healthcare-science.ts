@@ -51,7 +51,7 @@ export const alliedHealthData: ProgrammeData = {
       },
       {
         id: "ott",
-        name: "Operation Theater Technology",
+        name: "Anesthesia and Operation Theatre Technology",
         learn: "Surgical assistance, sterilization protocols, and anesthesia equipment management.",
         skills: ["Surgical Prep", "Anesthesia Assistance", "Infection Control"],
         tools: ["Anesthesia Workstations", "Sterilizers", "Surgical Instruments"],
