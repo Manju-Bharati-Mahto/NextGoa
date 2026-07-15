@@ -12,7 +12,7 @@ export default function HotelManagementProgrammePicker() {
       level: "Bachelor's",
       duration: "4 Years",
       eligibility: "Candidate shall have passed 12th Examination in any stream (Science/Commerce/Arts) with a minimum of 45% for General category (40% for SC/ST/SEBC Candidates) with English subject from a recognized board.",
-      intake: "120",
+      intake: "60",
       mode: "Full-time",
       tuitionFee: "₹1,00,000",
       enquiryValue: "bhmct"
@@ -22,7 +22,7 @@ export default function HotelManagementProgrammePicker() {
       level: "Bachelor's",
       duration: "3 Years",
       eligibility: "Candidate shall have passed 12th Examination in any stream (Science/Commerce/Arts) from a recognized board.",
-      intake: "120",
+      intake: "60",
       mode: "Full-time",
       tuitionFee: "₹1,00,000",
       enquiryValue: "bsc-hotel-management"
@@ -32,7 +32,7 @@ export default function HotelManagementProgrammePicker() {
       level: "Bachelor's",
       duration: "4 Years",
       eligibility: "Candidate shall have passed 12th Examination in any stream (Science/Commerce/Arts) from a recognized board.",
-      intake: "120",
+      intake: "60",
       mode: "Full-time",
       tuitionFee: "₹1,00,000",
       enquiryValue: "bsc-hons-hotel-management"
