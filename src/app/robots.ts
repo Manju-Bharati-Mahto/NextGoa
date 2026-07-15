@@ -32,8 +32,7 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "*",
         disallow: "/",
       },
-      sitemap: `${SITE_URL}/sitemap.xml`,
-      host: SITE_URL,
+      sitemap: `${SITE_URL}/sitemap_index.xml`,
     };
   }
 
@@ -53,7 +52,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/admin/"],
       },
     ],
-    sitemap: `${SITE_URL}/sitemap.xml`,
-    host: SITE_URL,
+    sitemap: `${SITE_URL}/sitemap_index.xml`,
   };
 }
