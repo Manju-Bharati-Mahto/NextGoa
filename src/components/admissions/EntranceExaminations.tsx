@@ -48,7 +48,6 @@ export function EntranceExaminations() {
         {activeTab === "pu-goa" && (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
             {/* Entrance Test Grid */}
-            {false && (
               <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2 mb-6">
                 {/* Left - entrance test pitch */}
                 <div className="flex flex-col justify-center text-left">
@@ -56,7 +55,7 @@ export function EntranceExaminations() {
                     Apply for PU Goa&apos;s<br />Entrance Test
                   </h3>
                   <p className="mt-4 max-w-md font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] leading-[1.65] text-ink/80">
-                    The Goa Entrance Exam is designed to assess your readiness for Medical and Doctorate courses.
+                    The PUCET application process and entrance examination have concluded for the 2026 intake. Candidates are advised to regularly check for merit list and counselling updates.
                   </p>
                   <div className="mt-6 flex items-center gap-3">
                     <Image
@@ -75,7 +74,6 @@ export function EntranceExaminations() {
                   <ExamDatesTicket />
                 </div>
               </div>
-            )}
 
             {/* Date cards */}
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 text-left">

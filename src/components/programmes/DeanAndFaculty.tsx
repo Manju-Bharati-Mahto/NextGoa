@@ -14,7 +14,7 @@ export default function DeanAndFaculty({ facultySlug }: Props) {
   const [showAll, setShowAll] = useState(false);
   const [facultyName, setFacultyName] = useState("");
 
-  const displayedFaculties = showAll ? facultyList : facultyList.slice(0, 3);
+  const displayedFaculties = showAll ? facultyList : facultyList.slice(0, 4);
   useEffect(() => {
     loadExperts();
   }, [facultySlug]);
@@ -213,7 +213,7 @@ export default function DeanAndFaculty({ facultySlug }: Props) {
           })}
         </div>
 
-        {facultyList.length > 3 && (
+        {facultyList.length > 4 && (
           <div className="flex justify-center mt-10">
             <button
               onClick={() => setShowAll(!showAll)}

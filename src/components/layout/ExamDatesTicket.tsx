@@ -19,11 +19,11 @@ export function ExamDatesTicket() {
       <div className="absolute left-[13.5cqw] right-[13.5cqw] top-[22.5cqw] bottom-[21.5cqw] flex flex-col justify-between text-left font-[family-name:var(--font-poppins)]">
         {/* Top part */}
         <div className="flex flex-col">
-          <span className="text-gray-500 font-medium text-[2.2cqw] mb-[0.2cqw] uppercase tracking-wider">
-            Examination Date
-          </span>
-          <h4 className="font-poppins font-semibold text-[#333333] text-[5.8cqw] leading-[1.1] tracking-tight">
-            12 July 2026
+          {/* <span className="text-gray-500 font-medium text-[2.2cqw] mb-[0.2cqw] uppercase tracking-wider">
+            On the right section -
+          </span> */}
+          <h4 className="font-poppins font-semibold text-[#333333] text-[4.5cqw] leading-[1.1] tracking-tight">
+            Explore Other Admission Pathways
           </h4>
         </div>
 
@@ -33,9 +33,9 @@ export function ExamDatesTicket() {
         {/* Bottom part */}
         <div className="flex items-center justify-between gap-[2cqw] mb-[1cqw]">
           <div className="flex flex-col gap-[0.4cqw] text-[#1f1f1f] text-left max-w-[75%] font-bold text-[2.7cqw] tracking-normal leading-[1.3]">
-            <span className="text-[#ee364f] font-semibold text-[2.2cqw] mb-[0.8cqw]">Applicable to admissions in</span>
-            <span>B.Sc. in Nursing | BPT | Ph.D.</span>
-            <span>Select PG Programs</span>
+            <span className="text-[#ee364f] font-semibold text-[2.2cqw] mb-[0.8cqw]">Start your application today</span>
+            <span>Our admission team will guide you</span>
+            <span>every step of the way.</span>
           </div>
 
           {/* Apply Now button */}
