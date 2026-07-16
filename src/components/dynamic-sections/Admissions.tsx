@@ -98,47 +98,49 @@ export function Admissions({ data }: AdmissionsProps) {
           {data.heading}
         </h2>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
-          {/* Left */}
+        {false && (
+          <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
+            {/* Left */}
 
-          <div className="flex flex-col justify-center text-left">
-            <h3
-              className="font-poppins font-semibold text-[32px] leading-tight tracking-tight text-ink"
-              dangerouslySetInnerHTML={{
-                __html: data.leftTitle || "",
-              }}
-            />
+            <div className="flex flex-col justify-center text-left">
+              <h3
+                className="font-poppins font-semibold text-[32px] leading-tight tracking-tight text-ink"
+                dangerouslySetInnerHTML={{
+                  __html: data.leftTitle || "",
+                }}
+              />
 
-            <p
-              className="mt-4 max-w-md section-body text-ink/70"
-              dangerouslySetInnerHTML={{
-                __html: data.leftDescription || "",
-              }}
-            />
+              <p
+                className="mt-4 max-w-md section-body text-ink/70"
+                dangerouslySetInnerHTML={{
+                  __html: data.leftDescription || "",
+                }}
+              />
 
-            <div className="mt-6 flex items-center gap-3">
-              {data.registeredImage && (
-                <Image
-                  src={data.registeredImage}
-                  alt="Registered Students"
-                  width={1200}
-                  height={1200}
-                  className="h-8 w-auto object-contain"
-                />
-              )}
+              <div className="mt-6 flex items-center gap-3">
+                {data.registeredImage && (
+                  <Image
+                    src={data.registeredImage || ""}
+                    alt="Registered Students"
+                    width={1200}
+                    height={1200}
+                    className="h-8 w-auto object-contain"
+                  />
+                )}
 
-              <p className="section-body text-ink/70">{data.registeredText}</p>
+                <p className="section-body text-ink/70">{data.registeredText}</p>
+              </div>
+            </div>
+
+            {/* Right */}
+
+            <div className="flex items-center justify-center py-6 sm:py-0 w-full">
+              <div className="w-full scale-[1.25] sm:scale-100 origin-center">
+                <ExamDatesTicket data={data?.examTicket} />
+              </div>
             </div>
           </div>
-
-          {/* Right */}
-
-          <div className="flex items-center justify-center py-6 sm:py-0 w-full">
-            <div className="w-full scale-[1.25] sm:scale-100 origin-center">
-              <ExamDatesTicket data={data?.examTicket} />
-            </div>
-          </div>
-        </div>
+        )}
         {/* Date Cards */}
 
         <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 text-left">

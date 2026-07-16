@@ -27,35 +27,37 @@ export function Admissions() {
           Key Dates You Can Plan Around
         </h2>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
           {/* Left - entrance test pitch */}
-          <div className="flex flex-col justify-center text-left">
-            <h3 className="font-poppins font-semibold text-[32px] leading-tight tracking-tight text-ink">
-              Apply for PU Goa&apos;s<br />Entrance Test
-            </h3>
-            <p className="mt-4 max-w-md section-body text-ink/70">
-              The Goa Entrance Exam is designed to assess your readiness for Medical and Doctorate courses.
-              Appear for it online, get your results quickly, and lock in your seat.
-            </p>
-            <div className="mt-6 flex items-center gap-3">
-              <Image
-                src="/IMG.png"
-                alt="5,235 registered students"
-                className="h-8 w-auto object-contain"
-              width={1200} height={1200} />
-              <p className="section-body text-ink/70">
-                5,235 students have registered
+        {false && (
+          <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
+            <div className="flex flex-col justify-center text-left">
+              <h3 className="font-poppins font-semibold text-[32px] leading-tight tracking-tight text-ink">
+                Apply for PU Goa&apos;s<br />Entrance Test
+              </h3>
+              <p className="mt-4 max-w-md section-body text-ink/70">
+                The Goa Entrance Exam is designed to assess your readiness for Medical and Doctorate courses.
+                Appear for it online, get your results quickly, and lock in your seat.
               </p>
+              <div className="mt-6 flex items-center gap-3">
+                <Image
+                  src="/IMG.png"
+                  alt="5,235 registered students"
+                  className="h-8 w-auto object-contain"
+                width={1200} height={1200} />
+                <p className="section-body text-ink/70">
+                  5,235 students have registered
+                </p>
+              </div>
             </div>
-          </div>
 
-          {/* Right - window card with text overlay */}
-          <div className="flex items-center justify-center py-6 sm:py-0 w-full">
-            <div className="w-full scale-[1.25] sm:scale-100 origin-center">
-              <ExamDatesTicket />
+            {/* Right - window card with text overlay */}
+            <div className="flex items-center justify-center py-6 sm:py-0 w-full">
+              <div className="w-full scale-[1.25] sm:scale-100 origin-center">
+                <ExamDatesTicket />
+              </div>
             </div>
           </div>
-        </div>
+        )}
 
         {/* Date cards */}
         <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 text-left">

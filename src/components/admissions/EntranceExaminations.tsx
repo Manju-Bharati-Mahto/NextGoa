@@ -48,32 +48,34 @@ export function EntranceExaminations() {
         {activeTab === "pu-goa" && (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
             {/* Entrance Test Grid */}
-            <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2 mb-6">
-              {/* Left - entrance test pitch */}
-              <div className="flex flex-col justify-center text-left">
-                <h3 className="font-poppins font-semibold text-[32px] sm:text-[42px] leading-tight tracking-tight text-ink">
-                  Apply for PU Goa&apos;s<br />Entrance Test
-                </h3>
-                <p className="mt-4 max-w-md font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] leading-[1.65] text-ink/80">
-                  The Goa Entrance Exam is designed to assess your readiness for Medical and Doctorate courses.
-                </p>
-                <div className="mt-6 flex items-center gap-3">
-                  <Image
-                    src="/IMG.png"
-                    alt="5,235 registered students"
-                    className="h-8 w-auto object-contain"
-                  width={1200} height={1200} />
-                  <p className="font-[family-name:var(--font-poppins)] font-normal text-sm sm:text-base text-ink/80">
-                    5,235 Students have registered.
+            {false && (
+              <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2 mb-6">
+                {/* Left - entrance test pitch */}
+                <div className="flex flex-col justify-center text-left">
+                  <h3 className="font-poppins font-semibold text-[32px] sm:text-[42px] leading-tight tracking-tight text-ink">
+                    Apply for PU Goa&apos;s<br />Entrance Test
+                  </h3>
+                  <p className="mt-4 max-w-md font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] leading-[1.65] text-ink/80">
+                    The Goa Entrance Exam is designed to assess your readiness for Medical and Doctorate courses.
                   </p>
+                  <div className="mt-6 flex items-center gap-3">
+                    <Image
+                      src="/IMG.png"
+                      alt="5,235 registered students"
+                      className="h-8 w-auto object-contain"
+                    width={1200} height={1200} />
+                    <p className="font-[family-name:var(--font-poppins)] font-normal text-sm sm:text-base text-ink/80">
+                      5,235 Students have registered.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Right - window card with text overlay */}
+                <div className="flex items-center justify-center w-full">
+                  <ExamDatesTicket />
                 </div>
               </div>
-
-              {/* Right - window card with text overlay */}
-              <div className="flex items-center justify-center w-full">
-                <ExamDatesTicket />
-              </div>
-            </div>
+            )}
 
             {/* Date cards */}
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 text-left">

@@ -157,7 +157,7 @@ export default function RecruitersAndDestinations({ slug }: { slug?: string }) {
         <div className="animate-marquee items-center gap-12 sm:gap-20 px-6">
           {/* Duplicate the array twice to ensure seamless infinite scrolling */}
           {[...repeatedHalf, ...repeatedHalf].map((fileName, idx) => (
-            <div key={idx} className={`relative w-28 h-12 shrink-0 bg-[#FAFAFA] ${fileName.includes('oberoi') ? 'scale-[1.3]' : ''}`}>
+            <div key={idx} className={`relative w-40 h-20 shrink-0 bg-[#FAFAFA] ${fileName.includes('oberoi') ? 'scale-[1.3]' : ''}`}>
               <Image
                 src={getSrc(fileName)}
                 alt={`Recruiter ${idx}`}
