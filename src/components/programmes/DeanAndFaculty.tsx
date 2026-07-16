@@ -122,7 +122,7 @@ export default function DeanAndFaculty({ facultySlug }: Props) {
                 className="bg-white rounded-[16px] border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row h-auto items-stretch"
               >
                 {/* Left: Faculty Image Placeholder */}
-                <div className="w-full sm:w-[180px] lg:w-[240px] min-h-[240px] sm:min-h-full bg-gray-200 shrink-0 relative">
+                <div className="w-full sm:w-[180px] lg:w-[270px] min-h-[240px] sm:min-h-full bg-gray-200 shrink-0 relative">
                   {faculty.image && (
                     <Image
                       src={faculty.image}
