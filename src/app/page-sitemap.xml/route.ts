@@ -7,13 +7,14 @@ export async function GET() {
     { path: "/", changefreq: "daily", priority: 1 },
     { path: "/about-us", changefreq: "weekly", priority: 0.9 },
     { path: "/policies", changefreq: "monthly", priority: 0.9 },
-    { path: "/terms-of-use", changefreq: "monthly", priority: 0.9 },
     { path: "/documents/Prospectus_AY_2026_27.pdf", changefreq: "monthly", priority: 0.9 },
-    { path: "/contact-us", changefreq: "weekly", priority: 0.9 },
     { path: "/campus", changefreq: "weekly", priority: 0.9 },
     { path: "/examination", changefreq: "weekly", priority: 0.9 },
     { path: "/international/study-abroad", changefreq: "weekly", priority: 0.9 },
-    { path: "/placements", changefreq: "weekly", priority: 0.9 }
+    { path: "/placements", changefreq: "weekly", priority: 0.9 },
+    { path: "/admissions", changefreq: "weekly", priority: 0.9 },
+    { path: "/grievances/staff", changefreq: "weekly", priority: 0.9 },
+    { path: "/grievances/students", changefreq: "weekly", priority: 0.9 }
   ];
 
   const urls: SitemapUrl[] = staticPaths.map((item) => ({

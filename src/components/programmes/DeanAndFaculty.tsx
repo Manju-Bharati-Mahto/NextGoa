@@ -104,7 +104,7 @@ export default function DeanAndFaculty({ facultySlug }: Props) {
         </div>
 
         {/* Faculty Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 w-full mx-auto">
           {displayedFaculties.map((faculty, idx) => {
             const socialLinks = faculty.social_links || [];
 
@@ -135,12 +135,12 @@ export default function DeanAndFaculty({ facultySlug }: Props) {
 
                 {/* Right: Faculty Details */}
                 <div className="p-5 sm:p-6 flex flex-col justify-center flex-grow">
-                  <span className="bg-[#E73649] text-white text-[10px] sm:text-[11px] font-bold px-3 py-1 rounded-full w-max mb-3 uppercase tracking-wide">
+                  <span className="bg-[#E73649] text-white text-[12px] sm:text-[13px] font-bold px-3 py-1 rounded-full w-max mb-3 uppercase tracking-wide">
                     {faculty.designation}
                   </span>
 
                   <div className="flex items-center gap-2 mb-1">
-                    <h4 className="font-bold text-ink text-[20px] sm:text-[22px] font-poppins leading-tight">
+                    <h4 className="font-bold text-ink text-[22px] sm:text-[24px] font-poppins leading-tight">
                       {faculty.name}
                     </h4>
                   </div>
@@ -151,7 +151,7 @@ export default function DeanAndFaculty({ facultySlug }: Props) {
 
                   <hr className="border-gray-200 mb-3 w-full" />
 
-                  <div className="flex flex-col gap-1.5 text-gray-600 text-[12px] sm:text-[13px] leading-snug">
+                  <div className="flex flex-col gap-2 text-gray-600 text-[13px] sm:text-[14px] leading-snug">
                     <p>
                       <strong className="text-gray-800">Faculty:</strong>{" "}{facultyName}
                     </p>

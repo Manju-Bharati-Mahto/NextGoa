@@ -28,7 +28,9 @@ export async function GET() {
     { path: "/blog/future-scope-of-phd-in-computer-science", changefreq: "daily", priority: 0.9 },
     { path: "/blog/what-you-learn-in-bca-and-mca-program", changefreq: "daily", priority: 0.9 },
     { path: "/blog/bba-vs-bba-hons", changefreq: "daily", priority: 0.9 },
-    { path: "/blog/msc-biotechnology-scope-career-research-guide", changefreq: "daily", priority: 0.9 }
+    { path: "/blog/msc-biotechnology-scope-career-research-guide", changefreq: "daily", priority: 0.9 },
+    { path: "/blog/after-decades-of-improvement-cardiovascular-health-rates", changefreq: "daily", priority: 0.9 },
+    { path: "/blog/those-inequalities-are-inequalities-that-occur-within-households", changefreq: "daily", priority: 0.9 }
   ];
 
   const urls: SitemapUrl[] = staticPaths.map((item) => ({
