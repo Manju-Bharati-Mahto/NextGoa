@@ -31,7 +31,7 @@ export function Admissions() {
           <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
             <div className="flex flex-col justify-center text-left">
               <h3 className="font-poppins font-semibold text-[32px] leading-tight tracking-tight text-ink">
-                Apply for PU Goa&apos;s<br />Entrance Test
+                Thank you to all PUCET 2026 applicants.
               </h3>
               <p className="mt-4 max-w-md section-body text-ink/70">
                 The PUCET application process and entrance examination have concluded for the 2026 intake. Candidates are advised to regularly check for merit list and counselling updates.

@@ -52,7 +52,7 @@ export function EntranceExaminations() {
                 {/* Left - entrance test pitch */}
                 <div className="flex flex-col justify-center text-left">
                   <h3 className="font-poppins font-semibold text-[32px] sm:text-[42px] leading-tight tracking-tight text-ink">
-                    Apply for PU Goa&apos;s<br />Entrance Test
+                    Thank you to all PUCET 2026 applicants.
                   </h3>
                   <p className="mt-4 max-w-md font-[family-name:var(--font-poppins)] font-normal text-[16px] sm:text-[18px] leading-[1.65] text-ink/80">
                     The PUCET application process and entrance examination have concluded for the 2026 intake. Candidates are advised to regularly check for merit list and counselling updates.
