@@ -98,7 +98,6 @@ export function Admissions({ data }: AdmissionsProps) {
           {data.heading}
         </h2>
 
-        {false && (
           <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
             {/* Left */}
 
@@ -113,7 +112,9 @@ export function Admissions({ data }: AdmissionsProps) {
               <p
                 className="mt-4 max-w-md section-body text-ink/70"
                 dangerouslySetInnerHTML={{
-                  __html: data.leftDescription || "",
+                  __html: data.leftDescription && !data.leftDescription.includes("The Goa Entrance Exam is designed to assess") 
+                    ? data.leftDescription 
+                    : "The PUCET application process and entrance examination have concluded for the 2026 intake. Candidates are advised to regularly check for merit list and counselling updates.",
                 }}
               />
 
@@ -140,7 +141,6 @@ export function Admissions({ data }: AdmissionsProps) {
               </div>
             </div>
           </div>
-        )}
         {/* Date Cards */}
 
         <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 text-left">

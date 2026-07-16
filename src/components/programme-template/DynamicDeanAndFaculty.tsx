@@ -18,7 +18,7 @@ export function DynamicDeanAndFaculty({
 
   const displayedFaculties = showAll
     ? facultyList
-    : facultyList.slice(0, 3);
+    : facultyList.slice(0, 4);
 
   useEffect(() => {
     loadFaculty();
@@ -136,7 +136,7 @@ export function DynamicDeanAndFaculty({
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
               {displayedFaculties.map(
                 (faculty: any, idx: number) => {
                   const socialLinks =
@@ -255,7 +255,7 @@ export function DynamicDeanAndFaculty({
               )}
             </div>
 
-            {facultyList.length > 3 && (
+            {facultyList.length > 4 && (
               <div className="flex justify-center mt-10">
                 <button
                   onClick={() =>

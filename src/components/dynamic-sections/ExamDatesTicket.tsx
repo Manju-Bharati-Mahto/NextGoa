@@ -15,16 +15,16 @@ interface ExamDatesTicketProps {
   };
 }
 export function ExamDatesTicket({ data }: ExamDatesTicketProps) {
-  const examLabel = data?.examLabel || "Examination Date";
+  const examLabel = data?.examLabel || "";
 
-  const examDate = data?.examDate || "12 July 2026";
+  const examDate = data?.examDate || "Explore Other Admission Pathways";
 
   const applicableLabel =
-    data?.applicableLabel || "Applicable to admissions in";
+    data?.applicableLabel || "Start your application today";
 
   const programs = data?.programs || [
-    "B.Sc. in Nursing | BPT | Ph.D.",
-    "Select PG Programs",
+    "Our admission team will guide you ",
+    "every step of the way.",
   ];
 
   const buttonText = data?.buttonText || "Apply Now";
@@ -46,7 +46,7 @@ export function ExamDatesTicket({ data }: ExamDatesTicketProps) {
           <span className="text-gray-500 font-medium text-[2.2cqw] mb-[0.2cqw] uppercase tracking-wider">
             {examLabel}
           </span>
-          <h4 className="font-poppins font-semibold text-[#333333] text-[5.8cqw] leading-[1.1] tracking-tight">
+          <h4 className="font-poppins font-semibold text-[#333333] text-[4.5cqw] leading-[1.1] tracking-tight">
             {examDate}
           </h4>
         </div>

@@ -71,7 +71,7 @@ export const hotelManagementData: ProgrammeData = {
     topRoles: [
       { title: "General Manager", tag: "Head of the Hotel", icon: "ph:buildings-fill" },
       { title: "Executive Chef", tag: "Head of the Kitchen", icon: "ph:chef-hat-fill" },
-      { title: "Sommelier/Mixologist", tag: "Guest Experience Leadership", icon: "ph:wine-fill" },
+      { title: "Sommelier/Mixologist", tag: "Beverage Expert", icon: "ph:wine-fill" },
       { title: "Cruise Lines", tag: "Disney Cruise, Norwegian Cruise", icon: "ph:boat-fill" },
       { title: "Event Management", tag: "MICE Events, Destination Wedding", icon: "ph:confetti-fill" },
       { title: "Entrepreneurship", tag: "Own Venture", icon: "ph:rocket-launch-fill" }
