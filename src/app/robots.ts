@@ -1,27 +1,18 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site-config";
 
-/**
- * Generates /robots.txt.
- *
- * GEO note: AI answer engines (ChatGPT, Perplexity, Google AI Overviews, Claude)
- * crawl with named user agents. To be *cited* by them, those agents must be
- * allowed. They're listed explicitly below so the intent is documented and easy
- * to flip - if the university ever wants to opt a specific engine OUT (e.g. out
- * of model training while staying in search), change its `allow` to `disallow`.
- */
 const AI_CRAWLERS = [
-  "GPTBot", 
-  "OAI-SearchBot", 
-  "ChatGPT-User", 
-  "ClaudeBot", 
+  "GPTBot",
+  "OAI-SearchBot",
+  "ChatGPT-User",
+  "ClaudeBot",
   "Claude-Web",
-  "PerplexityBot", 
+  "PerplexityBot",
   "Perplexity-User",
-  "Google-Extended", 
-  "Applebot-Extended", 
-  "Bytespider", 
-  "CCBot", 
+  "Google-Extended",
+  "Applebot-Extended",
+  "Bytespider",
+  "CCBot",
 ];
 
 export default function robots(): MetadataRoute.Robots {
@@ -42,9 +33,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        // Non-public / non-content paths. /api covers route handlers; the rest
-        // are Next.js internals that need not be crawled.
-        disallow: ["/api/", "/_next/", "/admin/"],
+        disallow: ["/api/", "/admin/"],
       },
       {
         userAgent: AI_CRAWLERS,
