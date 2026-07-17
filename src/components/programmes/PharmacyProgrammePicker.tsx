@@ -5,6 +5,7 @@ import ProgrammeCard from "./ProgrammeCard";
 
 export default function PharmacyProgrammePicker() {
   const [activeLevel, setActiveLevel] = useState<string>("Bachelor's");
+  const [showAll, setShowAll] = useState<boolean>(false);
 
   const programmesData: Record<string, any[]> = {
     "Bachelor's": [
@@ -86,6 +87,7 @@ export default function PharmacyProgrammePicker() {
   };
 
   const currentProgrammes = programmesData[activeLevel] || [];
+  const visibleProgrammes = showAll ? currentProgrammes : currentProgrammes.slice(0, 3);
 
   return (
     <section className="w-full bg-[#FAFAFA] py-12 sm:py-16">
@@ -105,7 +107,10 @@ export default function PharmacyProgrammePicker() {
             {["Bachelor's", "Doctoral Programs"].map((level) => (
               <button
                 key={level}
-                onClick={() => setActiveLevel(level)}
+                onClick={() => {
+                  setActiveLevel(level);
+                  setShowAll(false);
+                }}
                 className={`rounded-full px-8 sm:px-10 py-3.5 sm:py-4 font-bold text-[16px] sm:text-[18px] transition-all duration-200 border ${
                   activeLevel === level
                     ? "bg-[#0CAADD] text-white border-[#0CAADD] shadow-md shadow-[#0CAADD]/20"
@@ -120,7 +125,7 @@ export default function PharmacyProgrammePicker() {
 
         {/* Cards Grid */}
         <div className="flex flex-wrap justify-center gap-6 sm:gap-10 w-full mx-auto items-stretch">
-          {currentProgrammes.map((prog, idx) => (
+          {visibleProgrammes.map((prog, idx) => (
             <ProgrammeCard
               key={idx}
               title={prog.title}
@@ -134,11 +139,16 @@ export default function PharmacyProgrammePicker() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <a href="#" className="font-bold text-[#E73649] hover:underline text-[15px]">
-            View more &rarr;
-          </a>
-        </div>
+        {!showAll && currentProgrammes.length > 3 && (
+          <div className="text-center mt-12">
+            <button 
+              onClick={() => setShowAll(true)}
+              className="border-2 border-[#E73649] text-[#E73649] hover:bg-[#E73649] hover:text-white rounded-full px-12 py-3 font-bold text-[17px] transition-all inline-flex items-center justify-center gap-2"
+            >
+              View more &rarr;
+            </button>
+          </div>
+        )}
 
       </div>
     </section>
