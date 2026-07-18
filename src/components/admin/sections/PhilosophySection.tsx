@@ -157,7 +157,7 @@ export default function PhilosophySection({ data, onChange }: Props) {
               className="rounded-xl border-light-all overflow-hidden"
             >
               <div
-                className="flex items-center justify-between bg-gray-50 px-5 py-4 cursor-pointe"
+                className="flex items-center justify-between bg-gray-50 px-5 py-4 cursor-pointer"
                 onClick={() => setOpenCard(openCard === index ? -1 : index)}
               >
                 <div className="font-semibold">Card {index + 1}</div>

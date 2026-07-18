@@ -79,34 +79,29 @@ function TestimonialItem({
   }
 
   return (
-    <div className="rounded-xl border-light-all">
+    <div className="rounded-xl border-light-all overflow-hidden">
+      <div
+        className="flex items-center justify-between bg-gray-50 px-5 py-4 cursor-pointer"
+        onClick={() => setOpen(!open)}
+      >
+        <div className="font-semibold">Testimonial {index + 1}</div>
 
-      <div className="flex items-center justify-between p-4">
-
-        <button
-          type="button"
-          onClick={() =>
-            setOpen(!open)
-          }
-          className="flex items-center gap-2 font-semibold"
-        >
-          {open ? (
-            <ChevronDown size={18} />
-          ) : (
-            <ChevronRight size={18} />
-          )}
-
-          Testimonial {index + 1}
-        </button>
-
-        <button
-          type="button"
-          onClick={removeItem}
-          className="text-red-500"
-        >
-          <Trash2 size={18} />
-        </button>
-
+        <div className="flex items-center gap-3">
+          <ChevronDown
+            size={20}
+            className={`transition-transform ${open ? "rotate-180" : ""}`}
+          />
+          <button
+            type="button"
+            className="text-red-500"
+            onClick={(e) => {
+              e.stopPropagation();
+              removeItem();
+            }}
+          >
+            <Trash2 size={18} />
+          </button>
+        </div>
       </div>
 
       {open && (
@@ -355,13 +350,9 @@ export default function TestimonialSection({
 
       {/* Testimonials */}
 
-      <div>
-
-        <div className="flex items-center justify-between mb-4">
-
-          <label className="form-label">
-            Testimonials
-          </label>
+      <div className="rounded-xl border-light-all">
+        <div className="flex items-center justify-between border-light px-5 py-4">
+          <h3 className="font-semibold">Testimonials</h3>
 
           <button
             type="button"
@@ -384,11 +375,9 @@ export default function TestimonialSection({
             <Plus size={16} />
             Add Testimonial
           </button>
-
         </div>
 
-        <div className="space-y-4">
-
+        <div className="space-y-4 p-5">
           {testimonials.map(
             (
               item: any,
@@ -403,9 +392,7 @@ export default function TestimonialSection({
               />
             )
           )}
-
         </div>
-
       </div>
 
     </div>

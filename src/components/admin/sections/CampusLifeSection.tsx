@@ -38,20 +38,29 @@ function CardItem({ card, index, cards, update }: CardProps) {
   }
 
   return (
-    <div className="rounded-xl border-light-all">
-      <div className="flex items-center justify-between p-4">
-        <button
-          type="button"
-          onClick={() => setOpen(!open)}
-          className="flex items-center gap-2 font-semibold"
-        >
-          {open ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
-          Card {index + 1}
-        </button>
+    <div className="rounded-xl border-light-all overflow-hidden">
+      <div
+        className="flex items-center justify-between bg-gray-50 px-5 py-4 cursor-pointer"
+        onClick={() => setOpen(!open)}
+      >
+        <div className="font-semibold">Card {index + 1}</div>
 
-        <button type="button" onClick={removeCard} className="text-red-500">
-          <Trash2 size={18} />
-        </button>
+        <div className="flex items-center gap-3">
+          <ChevronDown
+            size={20}
+            className={`transition-transform ${open ? "rotate-180" : ""}`}
+          />
+          <button
+            type="button"
+            className="text-red-500"
+            onClick={(e) => {
+              e.stopPropagation();
+              removeCard();
+            }}
+          >
+            <Trash2 size={18} />
+          </button>
+        </div>
       </div>
 
       {open && (
@@ -155,9 +164,9 @@ export default function CampusLifeSection({ data, onChange }: Props) {
         />
       </div>
 
-      <div>
-        <div className="flex items-center justify-between mb-4">
-          <label className="form-label">Cards</label>
+      <div className="rounded-xl border-light-all">
+        <div className="flex items-center justify-between border-light px-5 py-4">
+          <h3 className="font-semibold">Cards</h3>
 
           <button
             type="button"
@@ -179,7 +188,7 @@ export default function CampusLifeSection({ data, onChange }: Props) {
           </button>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-4 p-5">
           {cards.map((card: any, index: number) => (
             <CardItem
               key={index}

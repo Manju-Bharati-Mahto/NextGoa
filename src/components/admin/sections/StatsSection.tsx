@@ -110,142 +110,89 @@ function addItem() {
 
       {/* Stats */}
 
-      <div>
+      {/* Stats */}
 
-        <div className="flex items-center justify-between mb-4">
-
-          <label className="form-label">
-
-            Statistics
-
-          </label>
+      <div className="rounded-xl border-light-all">
+        <div className="flex items-center justify-between border-light px-5 py-4">
+          <h3 className="font-semibold">Statistics</h3>
 
           <button
             type="button"
             className="btn btn-primary btn-sm"
             onClick={addItem}
           >
-
             <Plus size={16} />
-
             Add Stat
-
           </button>
-
         </div>
 
-        <div className="space-y-4">
-
+        <div className="space-y-4 p-5">
           {items.map(
             (
               item: any,
               index: number
             ) => (
-
               <div
-  key={index}
-  className="rounded-xl border-light-all overflow-hidden"
->
+                key={index}
+                className="rounded-xl border-light-all overflow-hidden"
+              >
+                <div
+                  className="flex items-center justify-between bg-gray-50 px-5 py-4 cursor-pointer"
+                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                >
+                  <div className="font-semibold">Stat {index + 1}</div>
 
-  <div className="flex items-center justify-between p-4 bg-gray-50">
+                  <div className="flex items-center gap-3">
+                    <ChevronDown
+                      size={20}
+                      className={`transition-transform ${
+                        openIndex === index ? "rotate-180" : ""
+                      }`}
+                    />
+                    <button
+                      type="button"
+                      className="text-red-500"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        removeItem(index);
+                      }}
+                    >
+                      <Trash2 size={18} />
+                    </button>
+                  </div>
+                </div>
 
-    <button
-      type="button"
-      className="flex items-center gap-3 font-semibold"
-      onClick={() =>
-        setOpenIndex(
-          openIndex === index
-            ? null
-            : index
-        )
-      }
-    >
+                {openIndex === index && (
+                  <div className="p-5 border-light-t">
+                    <div className="grid md:grid-cols-2 gap-5">
+                      <div>
+                        <label className="form-label font-semibold mb-2 block">Value</label>
+                        <input
+                          className="form-control"
+                          value={item.value}
+                          onChange={(e) =>
+                            updateItem(index, "value", e.target.value)
+                          }
+                        />
+                      </div>
 
-      {openIndex === index ? (
-        <ChevronDown size={18} />
-      ) : (
-        <ChevronRight size={18} />
-      )}
-
-      Stat {index + 1}
-
-    </button>
-
-    <button
-      type="button"
-      onClick={() =>
-        removeItem(index)
-      }
-      className="text-red-500"
-    >
-      <Trash2 size={18} />
-    </button>
-
-  </div>
-
-  {openIndex === index && (
-
-    <div className="p-5 border-light-t">
-
-      <div className="grid md:grid-cols-2 gap-5">
-
-        <div>
-
-          <label className="form-label">
-
-            Value
-
-          </label>
-
-          <input
-            className="form-control"
-            value={item.value}
-            onChange={(e) =>
-              updateItem(
-                index,
-                "value",
-                e.target.value
-              )
-            }
-          />
-
-        </div>
-
-        <div>
-
-          <label className="form-label">
-
-            Label
-
-          </label>
-
-          <input
-            className="form-control"
-            value={item.label}
-            onChange={(e) =>
-              updateItem(
-                index,
-                "label",
-                e.target.value
-              )
-            }
-          />
-
-        </div>
-
-      </div>
-
-    </div>
-
-  )}
-
-</div>
-
+                      <div>
+                        <label className="form-label font-semibold mb-2 block">Label</label>
+                        <input
+                          className="form-control"
+                          value={item.label}
+                          onChange={(e) =>
+                            updateItem(index, "label", e.target.value)
+                          }
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
             )
           )}
-
         </div>
-
       </div>
 
       {/* Footer */}

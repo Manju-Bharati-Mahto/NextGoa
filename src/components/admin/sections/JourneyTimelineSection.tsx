@@ -36,9 +36,9 @@ function TimelineItem({
   }
 
   return (
-    <div className="rounded-xl border-light-all">
+    <div className="rounded-xl border-light-all overflow-hidden">
       <div
-        className="flex cursor-pointer items-center justify-between p-5"
+        className="flex cursor-pointer items-center justify-between bg-gray-50 px-5 py-4"
         onClick={() => setOpen(!open)}
       >
         <div className="font-semibold">
@@ -46,6 +46,12 @@ function TimelineItem({
         </div>
 
         <div className="flex items-center gap-3">
+          <ChevronDown
+            size={20}
+            className={`transition-transform ${
+              open ? "rotate-180" : ""
+            }`}
+          />
           <button
             type="button"
             className="text-red-500"
@@ -56,13 +62,6 @@ function TimelineItem({
           >
             <Trash2 size={18} />
           </button>
-
-          <ChevronDown
-            size={20}
-            className={`transition-transform ${
-              open ? "rotate-180" : ""
-            }`}
-          />
         </div>
       </div>
 

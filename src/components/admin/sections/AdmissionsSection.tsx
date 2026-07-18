@@ -73,20 +73,29 @@ function DateCardItem({ card, index, dateCards, update }: any) {
   }
 
   return (
-    <div className="rounded-xl border-light-all">
-      <div className="flex items-center justify-between p-4">
-        <button
-          type="button"
-          className="flex items-center gap-2 font-semibold"
-          onClick={() => setOpen(!open)}
-        >
-          {open ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
-          Card {index + 1}
-        </button>
+    <div className="rounded-xl border-light-all overflow-hidden">
+      <div
+        className="flex items-center justify-between bg-gray-50 px-5 py-4 cursor-pointer"
+        onClick={() => setOpen(!open)}
+      >
+        <div className="font-semibold">Card {index + 1}</div>
 
-        <button type="button" onClick={remove} className="text-red-500">
-          <Trash2 size={18} />
-        </button>
+        <div className="flex items-center gap-3">
+          <ChevronDown
+            size={20}
+            className={`transition-transform ${open ? "rotate-180" : ""}`}
+          />
+          <button
+            type="button"
+            className="text-red-500"
+            onClick={(e) => {
+              e.stopPropagation();
+              remove();
+            }}
+          >
+            <Trash2 size={18} />
+          </button>
+        </div>
       </div>
 
       {open && (
@@ -305,9 +314,9 @@ export default function AdmissionsSection({ data, onChange }: Props) {
 
       {/* Date Cards */}
 
-      <div>
-        <div className="flex items-center justify-between mb-4">
-          <label className="form-label">Date Cards</label>
+      <div className="rounded-xl border-light-all">
+        <div className="flex items-center justify-between border-light px-5 py-4">
+          <h3 className="font-semibold">Date Cards</h3>
 
           <button
             type="button"
@@ -336,7 +345,7 @@ export default function AdmissionsSection({ data, onChange }: Props) {
           </button>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-4 p-5">
           {dateCards.map((card: any, index: number) => (
             <DateCardItem
               key={index}
@@ -350,20 +359,19 @@ export default function AdmissionsSection({ data, onChange }: Props) {
       </div>
       {/* Entrance Exam Ticket */}
 
-      <div className="rounded-xl border-light-all">
-        <div className="flex items-center justify-between p-4">
-          <button
-            type="button"
-            className="flex items-center gap-2 font-semibold"
-            onClick={() => update("examTicketOpen", !data?.examTicketOpen)}
-          >
-            {data?.examTicketOpen ? (
-              <ChevronDown size={18} />
-            ) : (
-              <ChevronRight size={18} />
-            )}
-            Entrance Exam Ticket
-          </button>
+      <div className="rounded-xl border-light-all overflow-hidden">
+        <div
+          className="flex items-center justify-between bg-gray-50 px-5 py-4 cursor-pointer"
+          onClick={() => update("examTicketOpen", !data?.examTicketOpen)}
+        >
+          <div className="font-semibold">Entrance Exam Ticket</div>
+
+          <ChevronDown
+            size={20}
+            className={`transition-transform ${
+              data?.examTicketOpen ? "rotate-180" : ""
+            }`}
+          />
         </div>
 
         {data?.examTicketOpen && (

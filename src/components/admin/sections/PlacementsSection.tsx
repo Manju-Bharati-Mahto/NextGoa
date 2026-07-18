@@ -41,16 +41,17 @@ function HighlightCard({
   }
 
   return (
-    <div className="rounded-xl border-light-all">
-      <div className="flex items-center justify-between p-4">
-        <button
-          type="button"
-          onClick={() => setOpen(!open)}
-          className="flex items-center gap-2 font-semibold"
-        >
-          {open ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
-          Highlight Card
-        </button>
+    <div className="rounded-xl border-light-all overflow-hidden">
+      <div
+        className="flex items-center justify-between bg-gray-50 px-5 py-4 cursor-pointer"
+        onClick={() => setOpen(!open)}
+      >
+        <div className="font-semibold">Highlight Card</div>
+
+        <ChevronDown
+          size={20}
+          className={`transition-transform ${open ? "rotate-180" : ""}`}
+        />
       </div>
 
       {open && (
@@ -139,16 +140,17 @@ function RecruitingSection({
   }
 
   return (
-    <div className="rounded-xl border-light-all">
-      <div className="flex items-center justify-between p-4">
-        <button
-          type="button"
-          className="flex items-center gap-2 font-semibold"
-          onClick={() => setOpen(!open)}
-        >
-          {open ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
-          Recruiting Companies
-        </button>
+    <div className="rounded-xl border-light-all overflow-hidden">
+      <div
+        className="flex items-center justify-between bg-gray-50 px-5 py-4 cursor-pointer"
+        onClick={() => setOpen(!open)}
+      >
+        <div className="font-semibold">Recruiting Companies</div>
+
+        <ChevronDown
+          size={20}
+          className={`transition-transform ${open ? "rotate-180" : ""}`}
+        />
       </div>
 
       {open && (
@@ -211,7 +213,7 @@ function StatItem({ stat, index, stats, update }: any) {
   }
 
   return (
-    <div className="rounded-xl border-light-all">
+    <div className="rounded-xl border-light-all overflow-hidden">
       {/* Header */}
 
       <div

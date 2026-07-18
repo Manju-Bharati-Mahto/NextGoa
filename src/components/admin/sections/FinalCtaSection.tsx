@@ -38,11 +38,11 @@ function ActionItem({ item, index, items, update }: ActionItemProps) {
   }
 
   return (
-    <div className="rounded-xl border-light-all">
+    <div className="rounded-xl border-light-all overflow-hidden">
       {/* Header */}
 
       <div
-        className="flex items-center justify-between bg-gray-50 px-5 py-4 cursor-pointe"
+        className="flex items-center justify-between bg-gray-50 px-5 py-4 cursor-pointer"
         onClick={() => setOpen(!open)}
       >
         <div>

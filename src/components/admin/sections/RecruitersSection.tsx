@@ -52,20 +52,29 @@ function LogoItem({ logo, index, row, logos, update }: LogoItemProps) {
   }
 
   return (
-    <div className="rounded-xl border-light-all">
-      <div className="flex items-center justify-between p-4">
-        <button
-          type="button"
-          onClick={() => setOpen(!open)}
-          className="flex items-center gap-2 font-semibold"
-        >
-          {open ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
-          Logo {index + 1}
-        </button>
+    <div className="rounded-xl border-light-all overflow-hidden">
+      <div
+        className="flex items-center justify-between bg-gray-50 px-5 py-4 cursor-pointer"
+        onClick={() => setOpen(!open)}
+      >
+        <div className="font-semibold">Logo {index + 1}</div>
 
-        <button type="button" onClick={removeLogo} className="text-red-500">
-          <Trash2 size={18} />
-        </button>
+        <div className="flex items-center gap-3">
+          <ChevronDown
+            size={20}
+            className={`transition-transform ${open ? "rotate-180" : ""}`}
+          />
+          <button
+            type="button"
+            className="text-red-500"
+            onClick={(e) => {
+              e.stopPropagation();
+              removeLogo();
+            }}
+          >
+            <Trash2 size={18} />
+          </button>
+        </div>
       </div>
 
       {open && (
@@ -174,25 +183,32 @@ export default function RecruitersSection({ data, onChange }: Props) {
       </div>
       {/* Row 1 Logos */}
 
-      <div className="rounded-xl border-light-all">
-        <div className="flex items-center justify-between p-4">
-          <button
-            type="button"
-            onClick={() => setRow1Open(!row1Open)}
-            className="flex items-center gap-2 font-semibold"
-          >
-            {row1Open ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
-            Row 1 Logos
-          </button>
+      <div className="rounded-xl border-light-all overflow-hidden">
+        <div
+          className="flex items-center justify-between bg-gray-50 px-5 py-4 cursor-pointer"
+          onClick={() => setRow1Open(!row1Open)}
+        >
+          <div className="font-semibold">Row 1 Logos</div>
 
-          <button
-            type="button"
-            className="btn btn-primary btn-sm"
-            onClick={() => update("row1", [...row1, ""])}
-          >
-            <Plus size={16} />
-            Add Logo
-          </button>
+          <div className="flex items-center gap-3">
+            <ChevronDown
+              size={20}
+              className={`transition-transform ${
+                row1Open ? "rotate-180" : ""
+              }`}
+            />
+            <button
+              type="button"
+              className="btn btn-primary btn-sm"
+              onClick={(e) => {
+                e.stopPropagation();
+                update("row1", [...row1, ""]);
+              }}
+            >
+              <Plus size={16} />
+              Add Logo
+            </button>
+          </div>
         </div>
 
         {row1Open && (
@@ -215,25 +231,32 @@ export default function RecruitersSection({ data, onChange }: Props) {
 
       {/* Row 2 Logos */}
 
-      <div className="rounded-xl border-light-all">
-        <div className="flex items-center justify-between p-4">
-          <button
-            type="button"
-            onClick={() => setRow2Open(!row2Open)}
-            className="flex items-center gap-2 font-semibold"
-          >
-            {row2Open ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
-            Row 2 Logos
-          </button>
+      <div className="rounded-xl border-light-all overflow-hidden">
+        <div
+          className="flex items-center justify-between bg-gray-50 px-5 py-4 cursor-pointer"
+          onClick={() => setRow2Open(!row2Open)}
+        >
+          <div className="font-semibold">Row 2 Logos</div>
 
-          <button
-            type="button"
-            className="btn btn-primary btn-sm"
-            onClick={() => update("row2", [...row2, ""])}
-          >
-            <Plus size={16} />
-            Add Logo
-          </button>
+          <div className="flex items-center gap-3">
+            <ChevronDown
+              size={20}
+              className={`transition-transform ${
+                row2Open ? "rotate-180" : ""
+              }`}
+            />
+            <button
+              type="button"
+              className="btn btn-primary btn-sm"
+              onClick={(e) => {
+                e.stopPropagation();
+                update("row2", [...row2, ""]);
+              }}
+            >
+              <Plus size={16} />
+              Add Logo
+            </button>
+          </div>
         </div>
 
         {row2Open && (

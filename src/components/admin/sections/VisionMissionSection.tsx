@@ -65,16 +65,20 @@ export default function VisionMissionSection({ data, onChange }: Props) {
 
       {/* Vision */}
 
-      <div className="rounded-xl border-light-all">
-        <button
-          type="button"
+      <div className="rounded-xl border-light-all overflow-hidden">
+        <div
+          className="flex cursor-pointer items-center justify-between bg-gray-50 px-5 py-4"
           onClick={() => setVisionOpen(!visionOpen)}
-          className="flex w-full items-center justify-between p-5"
         >
-          <h4 className="font-semibold">Vision Card</h4>
+          <div className="font-semibold">Vision Card</div>
 
-          {visionOpen ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
-        </button>
+          <ChevronDown
+            size={20}
+            className={`transition-transform ${
+              visionOpen ? "rotate-180" : ""
+            }`}
+          />
+        </div>
 
         {visionOpen && (
           <div className="space-y-5 border-t border-light-all p-5">
@@ -113,16 +117,20 @@ export default function VisionMissionSection({ data, onChange }: Props) {
       </div>
 
       {/* Mission */}
-      <div className="rounded-xl border-light-all">
-        <button
-          type="button"
+      <div className="rounded-xl border-light-all overflow-hidden">
+        <div
+          className="flex cursor-pointer items-center justify-between bg-gray-50 px-5 py-4"
           onClick={() => setMissionOpen(!missionOpen)}
-          className="flex w-full items-center justify-between p-5"
         >
-          <h4 className="font-semibold">Mission Card</h4>
+          <div className="font-semibold">Mission Card</div>
 
-          {missionOpen ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
-        </button>
+          <ChevronDown
+            size={20}
+            className={`transition-transform ${
+              missionOpen ? "rotate-180" : ""
+            }`}
+          />
+        </div>
 
         {missionOpen && (
           <div className="space-y-5 border-t border-light-all p-5">
@@ -164,16 +172,20 @@ export default function VisionMissionSection({ data, onChange }: Props) {
 
       {/* Pills */}
 
-      <div className="rounded-xl border-light-all">
-        <button
-          type="button"
+      <div className="rounded-xl border-light-all overflow-hidden">
+        <div
+          className="flex cursor-pointer items-center justify-between bg-gray-50 px-5 py-4"
           onClick={() => setPillsOpen(!pillsOpen)}
-          className="flex w-full items-center justify-between p-5"
         >
-          <h4 className="font-semibold">Tags / Pills</h4>
+          <div className="font-semibold">Tags / Pills</div>
 
-          {pillsOpen ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
-        </button>
+          <ChevronDown
+            size={20}
+            className={`transition-transform ${
+              pillsOpen ? "rotate-180" : ""
+            }`}
+          />
+        </div>
 
         {pillsOpen && (
           <div className="border-t border-light-all p-5">

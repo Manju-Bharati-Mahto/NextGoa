@@ -44,20 +44,29 @@ function ResearchCardItem({ card, index, cards, update }: any) {
   }
 
   return (
-    <div className="rounded-xl border-light-all">
-      <div className="flex items-center justify-between p-4">
-        <button
-          type="button"
-          onClick={() => setOpen(!open)}
-          className="flex items-center gap-2 font-semibold"
-        >
-          {open ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
-          Card {index + 1}
-        </button>
+    <div className="rounded-xl border-light-all overflow-hidden">
+      <div
+        className="flex items-center justify-between bg-gray-50 px-5 py-4 cursor-pointer"
+        onClick={() => setOpen(!open)}
+      >
+        <div className="font-semibold">Card {index + 1}</div>
 
-        <button type="button" onClick={remove} className="text-red-500">
-          <Trash2 size={18} />
-        </button>
+        <div className="flex items-center gap-3">
+          <ChevronDown
+            size={20}
+            className={`transition-transform ${open ? "rotate-180" : ""}`}
+          />
+          <button
+            type="button"
+            className="text-red-500"
+            onClick={(e) => {
+              e.stopPropagation();
+              remove();
+            }}
+          >
+            <Trash2 size={18} />
+          </button>
+        </div>
       </div>
 
       {open && (
@@ -116,20 +125,20 @@ function ResearchCardItem({ card, index, cards, update }: any) {
           </div>
           {/* Stats */}
 
-          <div className="rounded-xl border-light-all">
-            <button
-              type="button"
+          <div className="rounded-xl border-light-all overflow-hidden">
+            <div
+              className="flex cursor-pointer items-center justify-between bg-gray-50 px-5 py-4"
               onClick={() => setStatsOpen(!statsOpen)}
-              className="flex w-full items-center justify-between p-4 font-semibold"
             >
-              <span>Statistics</span>
+              <div className="font-semibold">Statistics</div>
 
-              {statsOpen ? (
-                <ChevronDown size={18} />
-              ) : (
-                <ChevronRight size={18} />
-              )}
-            </button>
+              <ChevronDown
+                size={20}
+                className={`transition-transform ${
+                  statsOpen ? "rotate-180" : ""
+                }`}
+              />
+            </div>
 
             {statsOpen && (
               <div className="border-light-t p-5 space-y-5">
@@ -207,9 +216,9 @@ export default function ResearchSection({ data, onChange }: Props) {
       </div>
       {/* Research Cards */}
 
-      <div>
-        <div className="flex items-center justify-between mb-4">
-          <label className="form-label">Research Cards</label>
+      <div className="rounded-xl border-light-all">
+        <div className="flex items-center justify-between border-light px-5 py-4">
+          <h3 className="font-semibold">Research Cards</h3>
 
           <button
             type="button"
@@ -246,7 +255,7 @@ export default function ResearchSection({ data, onChange }: Props) {
           </button>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-4 p-5">
           {cards.map((card: any, index: number) => (
             <ResearchCardItem
               key={index}

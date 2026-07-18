@@ -125,11 +125,12 @@ export default function LeadershipSection({ data, onChange }: Props) {
                   </div>
 
                   <div className="flex items-center gap-3">
-                    {isOpen ? (
-                      <ChevronDown size={18} />
-                    ) : (
-                      <ChevronRight size={18} />
-                    )}
+                    <ChevronDown
+                      size={20}
+                      className={`transition-transform ${
+                        isOpen ? "rotate-180" : ""
+                      }`}
+                    />
 
                     <button
                       type="button"

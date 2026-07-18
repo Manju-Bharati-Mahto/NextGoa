@@ -186,7 +186,7 @@ export default function TrendingProgramSection({ data, onChange }: Props) {
 
                   <div className="flex items-center gap-3">
                     <ChevronDown
-                      size={18}
+                      size={20}
                       className={`transition-transform ${
                         isOpen ? "rotate-180" : ""
                       }`}

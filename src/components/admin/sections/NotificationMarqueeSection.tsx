@@ -203,127 +203,134 @@ export default function NotificationMarqueeSection({ data, onChange }: Props) {
         </div>
       </div>
 
-      <div className="flex justify-between items-center">
-        <label className="form-label">Notifications</label>
+      <div className="rounded-xl border-light-all">
+        <div className="flex items-center justify-between border-light px-5 py-4">
+          <h3 className="font-semibold">Notifications</h3>
 
-        <button
-          type="button"
-          className="btn btn-primary btn-sm"
-          onClick={addItem}
-        >
-          <Plus size={16} />
-          Add Notification
-        </button>
-      </div>
-
-      {items.map((item: any, index: number) => (
-        <div
-          key={index}
-          className="rounded-xl border-light-all overflow-hidden"
-        >
-          <div className="flex justify-between items-center p-4 bg-gray-50">
-            <button
-              type="button"
-              className="flex items-center gap-3 font-semibold"
-              onClick={() => setOpen(open === index ? null : index)}
-            >
-              {open === index ? (
-                <ChevronDown size={18} />
-              ) : (
-                <ChevronRight size={18} />
-              )}
-              Notification {index + 1}
-            </button>
-
-            <button
-              type="button"
-              className="text-red-500"
-              onClick={() => removeItem(index)}
-            >
-              <Trash2 size={18} />
-            </button>
-          </div>
-
-          {open === index && (
-            <div className="p-5 space-y-5 border-light-t">
-              <div>
-                <label className="form-label">Title</label>
-
-                <textarea
-                  rows={4}
-                  className="form-textarea"
-                  value={item.title}
-                  onChange={(e) => updateItem(index, "title", e.target.value)}
-                />
-              </div>
-
-              <div>
-                <label className="form-label">Document</label>
-
-                <input
-                  type="file"
-                  className="form-control img-input"
-                  accept=".pdf,.doc,.docx"
-                  onChange={(e) => {
-                    const file = e.target.files?.[0];
-
-                    if (!file) return;
-
-                    updateItem(index, "documentFile", file);
-                  }}
-                />
-                {/* {item.link && (
-                    <a
-                        href={item.link}
-                        target="_blank"
-                        className="text-blue-600 text-sm"
-                    >
-                        View Uploaded File
-                    </a>
-                    )} */}
-
-                <label className="flex items-center gap-2 mt-3">
-                  <input
-                    type="checkbox"
-                    checked={item.newTab}
-                    onChange={(e) =>
-                      updateItem(index, "newTab", e.target.checked)
-                    }
-                  />
-                  Open in New Tab
-                </label>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="form-label">Start Date</label>
-
-                  <input
-                    type="date"
-                    className="form-control"
-                    value={item.startDate || ""}
-                    onChange={(e) =>
-                      updateItem(index, "startDate", e.target.value)
-                    }
-                  />
-                </div>
-
-                <div>
-                  <label className="form-label">End Date</label>
-
-                  <input
-                    type="date"
-                    className="form-control"
-                    value={item.endDate || ""}
-                    onChange={(e) =>
-                      updateItem(index, "endDate", e.target.value)
-                    }
-                  />
-                </div>
-              </div>
-            </div>
-          )}
+          <button
+            type="button"
+            className="btn btn-primary btn-sm"
+            onClick={addItem}
+          >
+            <Plus size={16} />
+            Add Notification
+          </button>
         </div>
-      ))}
+
+        <div className="space-y-4 p-5">
+          {items.map((item: any, index: number) => (
+            <div
+              key={index}
+              className="rounded-xl border-light-all overflow-hidden"
+            >
+              <div
+                className="flex items-center justify-between bg-gray-50 px-5 py-4 cursor-pointer"
+                onClick={() => setOpen(open === index ? null : index)}
+              >
+                <div className="font-semibold">Notification {index + 1}</div>
+
+                <div className="flex items-center gap-3">
+                  <ChevronDown
+                    size={20}
+                    className={`transition-transform ${
+                      open === index ? "rotate-180" : ""
+                    }`}
+                  />
+                  <button
+                    type="button"
+                    className="text-red-500"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      removeItem(index);
+                    }}
+                  >
+                    <Trash2 size={18} />
+                  </button>
+                </div>
+              </div>
+
+              {open === index && (
+                <div className="p-5 space-y-5 border-light-t">
+                  <div>
+                    <label className="form-label">Title</label>
+
+                    <textarea
+                      rows={4}
+                      className="form-textarea"
+                      value={item.title}
+                      onChange={(e) => updateItem(index, "title", e.target.value)}
+                    />
+                  </div>
+
+                  <div>
+                    <label className="form-label">Document</label>
+
+                    <input
+                      type="file"
+                      className="form-control img-input"
+                      accept=".pdf,.doc,.docx"
+                      onChange={(e) => {
+                        const file = e.target.files?.[0];
+
+                        if (!file) return;
+
+                        updateItem(index, "documentFile", file);
+                      }}
+                    />
+                    {/* {item.link && (
+                        <a
+                            href={item.link}
+                            target="_blank"
+                            className="text-blue-600 text-sm"
+                        >
+                            View Uploaded File
+                        </a>
+                        )} */}
+
+                    <label className="flex items-center gap-2 mt-3">
+                      <input
+                        type="checkbox"
+                        checked={item.newTab}
+                        onChange={(e) =>
+                          updateItem(index, "newTab", e.target.checked)
+                        }
+                      />
+                      Open in New Tab
+                    </label>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="form-label">Start Date</label>
+
+                      <input
+                        type="date"
+                        className="form-control"
+                        value={item.startDate || ""}
+                        onChange={(e) =>
+                          updateItem(index, "startDate", e.target.value)
+                        }
+                      />
+                    </div>
+
+                    <div>
+                      <label className="form-label">End Date</label>
+
+                      <input
+                        type="date"
+                        className="form-control"
+                        value={item.endDate || ""}
+                        onChange={(e) =>
+                          updateItem(index, "endDate", e.target.value)
+                        }
+                      />
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
