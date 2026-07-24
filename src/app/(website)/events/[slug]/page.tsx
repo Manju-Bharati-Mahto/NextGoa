@@ -164,9 +164,9 @@ export default async function EventDetailPage({
                     <path d="M7.17 6A5.001 5.001 0 002 11v7h7v-7H5.09A3.001 3.001 0 017.17 8V6zm10 0A5.001 5.001 0 0012 11v7h7v-7h-3.91A3.001 3.001 0 0117.17 8V6z" />
                   </svg>
                 </div>
-                <p className="max-w-5xl mx-auto text-2xl md:text-3xl leading-relaxed font-medium text-[#0A1733]">
+                <h3 className="max-w-5xl mx-auto text-2xl md:text-3xl leading-relaxed font-bold text-[#0A1733]">
                   {story.blockquote}
-                </p>
+                </h3>
               </div>
             )}
 
@@ -175,7 +175,7 @@ export default async function EventDetailPage({
                 case "h2":
                   return (
                     <div key={index}>
-                      <h2 className="text-4xl font-bold mb-4">
+                      <h2 className="text-[40px] font-bold mb-4">
                         {section.title}
                       </h2>
                       <div
@@ -189,7 +189,7 @@ export default async function EventDetailPage({
                 case "h3":
                   return (
                     <div key={index}>
-                      <h3 className="text-3xl font-semibold mb-4">
+                      <h3 className="text-3xl font-bold mb-4">
                         {section.title}
                       </h3>
                       <div
