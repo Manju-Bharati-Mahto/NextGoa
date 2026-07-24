@@ -148,9 +148,9 @@ export default async function StoryPage({
                   </svg>
                 </div>
 
-                <p className="max-w-5xl mx-auto text-2xl md:text-3xl leading-relaxed font-medium text-[#0A1733]">
+                <h3 className="max-w-5xl mx-auto text-2xl md:text-3xl leading-relaxed font-bold text-[#0A1733]">
                   {story.blockquote}
-                </p>
+                </h3>
               </div>
             )}
 
@@ -159,7 +159,7 @@ export default async function StoryPage({
                 case "h2":
                   return (
                     <div key={index}>
-                      <h2 className="text-4xl font-bold mb-4">
+                      <h2 className="text-[40px] font-bold mb-4">
                         {section.title}
                       </h2>
 
@@ -175,7 +175,7 @@ export default async function StoryPage({
                 case "h3":
                   return (
                     <div key={index}>
-                      <h3 className="text-3xl font-semibold mb-4">
+                      <h3 className="text-3xl font-bold mb-4">
                         {section.title}
                       </h3>
 
