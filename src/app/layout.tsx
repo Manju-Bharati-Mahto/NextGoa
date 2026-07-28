@@ -2,6 +2,8 @@ import "./globals.css";
 import Script from "next/script";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { AnimatedFavicon } from "@/components/layout/AnimatedFavicon";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { organizationSchema, baseOrganizationSchema, websiteSchema } from "@/lib/structured-data";
 
 export default function RootLayout({
   children,
@@ -11,6 +13,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <JsonLd data={organizationSchema()} />
+        <JsonLd data={baseOrganizationSchema()} />
+        <JsonLd data={websiteSchema()} />
         <Script id="gtm-1" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
