@@ -22,41 +22,42 @@ const orgId = `${SITE_URL}/#organization`;
  * Uses a stable @id so other nodes (Course.provider, breadcrumbs) can reference it.
  */
 export function organizationSchema() {
-  const { contact } = siteConfig;
   return {
     "@context": "https://schema.org",
     "@type": "CollegeOrUniversity",
-    "@id": orgId,
-    name: siteConfig.legalName,
-    url: SITE_URL,
-    logo: `${SITE_URL}/logo.png`,
-    description: siteConfig.description,
-    ...(socialProfiles.length ? { sameAs: socialProfiles } : {}),
+    "@id": "https://goa.paruluniversity.ac.in/#university",
+    name: "Parul University Goa",
+    url: "https://goa.paruluniversity.ac.in/",
+    logo: "https://goa.paruluniversity.ac.in/logo.svg",
+    image: "https://goa.paruluniversity.ac.in/goa-uploads/pages/hero/d92f5cf7-a1e1-4666-a83d-c84b6eb1b6d1-0f028141-b9a1-4710-b56f-18b3e5479cad-hero-bg.jpg",
+    description: "Parul University Goa is Goa's First State Private University, backed by three decades of teaching, research, and placements at Parul University in Gujarat. Admissions open for 2026.",
+    telephone: "+91-18008909090",
+    email: "admissions@goa.paruluniversity.ac.in",
     address: {
       "@type": "PostalAddress",
-      streetAddress: contact.address.streetAddress,
-      addressLocality: contact.address.addressLocality,
-      addressRegion: contact.address.addressRegion,
-      postalCode: contact.address.postalCode,
-      addressCountry: contact.address.addressCountry,
+      streetAddress: "Near ONGC, Betul",
+      addressLocality: "Quepem",
+      addressRegion: "Goa",
+      postalCode: "403723",
+      addressCountry: "IN"
     },
-    ...(contact.geo.latitude && contact.geo.longitude
-      ? {
-          geo: {
-            "@type": "GeoCoordinates",
-            latitude: contact.geo.latitude,
-            longitude: contact.geo.longitude,
-          },
-        }
-      : {}),
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: contact.phone,
-      email: contact.email,
-      contactType: "admissions",
-      areaServed: "IN",
-      availableLanguage: ["en", "hi"],
-    },
+    sameAs: [
+      "https://www.facebook.com/p/Parul-University-Goa-100084545576383/",
+      "https://www.instagram.com/paruluniversitygoa/",
+      "https://www.linkedin.com/company/parul-university-goa",
+      "https://www.youtube.com/channel/UCwn-ALLelk9BJziTZCU5S4g"
+    ]
+  };
+}
+
+export function baseOrganizationSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Parul University Goa",
+    alternateName: "Goa Parul University",
+    url: "https://goa.paruluniversity.ac.in/",
+    logo: "https://goa.paruluniversity.ac.in/logo.svg"
   };
 }
 

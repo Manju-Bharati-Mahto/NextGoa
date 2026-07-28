@@ -62,8 +62,6 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <JsonLd data={organizationSchema()} />
-      <JsonLd data={websiteSchema()} />
       <ScrollRestoration />
 
       <SiteHeader />
