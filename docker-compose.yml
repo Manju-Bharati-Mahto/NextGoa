@@ -13,7 +13,7 @@ services:
       - NODE_ENV=production
     volumes:
       - /opt/next/NextGoa/public/uploads:/app/public/uploads
-      - /opt/next/NextGoa/goa-uploads:/app/goa-uploads
+      - /opt/next/NextGoa/public/goa-uploads:/app/public/goa-uploads
     depends_on:
       - db
     networks:

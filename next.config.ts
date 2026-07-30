@@ -2,6 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "standalone",
+  // 1. Disable Next.js's automatic internal 308 normalization loop
+  trailingSlash: false, 
   turbopack: {},
   webpack: (config, { dev, isServer }) => {
     if (dev && !isServer) {
@@ -32,10 +34,16 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // NEW RULE: Intercepts trailing slashes and forces a 301 instead of a 308
+      {
+        source: '/:path+/', 
+        destination: '/:path+', 
+        statusCode: 301, 
+      },
       {
         source: '/faculty-of-hotel-management',
         destination: '/faculty/hotel-management',
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: '/faculty-of-physiotherapy',
