@@ -3,7 +3,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: "standalone",
   // 1. Disable Next.js's automatic internal 308 normalization loop
-  trailingSlash: false, 
+  //trailingSlash: false, 
+  skipTrailingSlashRedirect: true,
   turbopack: {},
   webpack: (config, { dev, isServer }) => {
     if (dev && !isServer) {
