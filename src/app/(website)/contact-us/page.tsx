@@ -12,6 +12,80 @@ import GetInTouch from "@/components/contact/GetInTouch";
 export default function ContactUs() {
   return (
     <main className="flex-1 overflow-x-hidden font-poppins">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollegeOrUniversity",
+            "@id": "https://goa.paruluniversity.ac.in/#organization",
+            "name": "Parul University Goa",
+            "url": "https://goa.paruluniversity.ac.in/",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Near ONGC, Betul",
+              "addressLocality": "Quepem",
+              "addressRegion": "Goa",
+              "postalCode": "403723",
+              "addressCountry": "IN"
+            }
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "@id": "https://goa.paruluniversity.ac.in/contact-us#contactpage",
+            "url": "https://goa.paruluniversity.ac.in/contact-us",
+            "name": "Contact Us | Parul University Goa",
+            "description": "Contact Parul University Goa for admissions, academic enquiries, campus visits, and student support.",
+            "inLanguage": "en-IN",
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": "https://goa.paruluniversity.ac.in/#website"
+            },
+            "about": {
+              "@type": "CollegeOrUniversity",
+              "@id": "https://goa.paruluniversity.ac.in/#organization"
+            },
+            "mainEntity": {
+              "@type": "CollegeOrUniversity",
+              "@id": "https://goa.paruluniversity.ac.in/#organization"
+            }
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPoint",
+            "contactType": "Admissions",
+            "telephone": "+91-18008909090",
+            "email": "admissions@goa.paruluniversity.ac.in",
+            "areaServed": "IN",
+            "availableLanguage": [
+              "English",
+              "Hindi"
+            ]
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "GeoCoordinates",
+            "latitude": 15.1287554,
+            "longitude": 73.9477978
+          })
+        }}
+      />
       <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[url('/hero-campus.webp')] bg-cover bg-bottom bg-no-repeat"
       >
         {/* Light gradient overlay to ensure text is readable if sky gets too bright */}
