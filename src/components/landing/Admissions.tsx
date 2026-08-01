@@ -76,7 +76,7 @@ export function Admissions() {
                 Merit list &amp; counselling
               </span>
             </div>
-            <p className="mt-4 font-sans font-medium text-[26px] sm:text-[32px] leading-tight">July 2026</p>
+            <p className="mt-4 font-sans font-medium text-[26px] sm:text-[32px] leading-tight">August 2026</p>
             <div className="w-full h-px bg-white/20 my-4" />
             <p className="section-body text-white/90">
               Rolling rounds with hostel allotment.
