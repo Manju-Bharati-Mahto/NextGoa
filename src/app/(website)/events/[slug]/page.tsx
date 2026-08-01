@@ -122,8 +122,33 @@ export default async function EventDetailPage({
     [story.id]
   );
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org/", 
+    "@type": "BreadcrumbList", 
+    "itemListElement": [{
+      "@type": "ListItem", 
+      "position": 1, 
+      "name": "Home",
+      "item": "https://goa.paruluniversity.ac.in/"  
+    },{
+      "@type": "ListItem", 
+      "position": 2, 
+      "name": "Events",
+      "item": "https://goa.paruluniversity.ac.in/events"  
+    },{
+      "@type": "ListItem", 
+      "position": 3, 
+      "name": story.title,
+      "item": `https://goa.paruluniversity.ac.in/events/${slug}`
+    }]
+  };
+
   return (
     <main className="min-h-screen bg-white pb-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <article className="pt-0">
         {/* Hero Section */}
         <section className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden py-16 sm:py-24">
