@@ -1,7 +1,7 @@
 import React from "react";
 
 const cards = [
-  {
+   {
     title: "Location",
     line1: "Tal. Quepem, South Goa",
     line2: "Near ONGC Betul",
