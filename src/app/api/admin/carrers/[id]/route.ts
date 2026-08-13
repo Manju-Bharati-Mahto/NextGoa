@@ -20,7 +20,7 @@ export async function GET(
 
     const [rows]: any = await db.query(
       `
-      SELECT id, title, slug, department, position, location, type, card_description, status, content, created_at, updated_at
+      SELECT id, title, meta_title, meta_description, keywords, canonical_url, slug, department, position, location, type, card_description, status, content, created_at, updated_at
       FROM vacancies
       WHERE id = ? AND is_deleted = 0
       `,
@@ -93,7 +93,7 @@ export async function PUT(
     const [result]: any = await db.execute(
       `
       UPDATE vacancies 
-      SET title = ?, slug = ?, department = ?, position = ?, location = ?, type = ?, card_description = ?, status = ?, content = ?
+      SET title = ?, slug = ?, department = ?, position = ?, location = ?, type = ?, card_description = ?, meta_title = ?, meta_description = ?, keywords = ?, canonical_url = ?, status = ?, content = ?
       WHERE id = ? AND is_deleted = 0
       `,
       [
@@ -104,6 +104,10 @@ export async function PUT(
         body.location,
         body.type,
         body.card_description || "",
+        body.meta_title || null,
+        body.meta_description || null,
+        body.keywords || null,
+        body.canonical_url || null,
         body.status || "published",
         JSON.stringify(body.content),
         jobId

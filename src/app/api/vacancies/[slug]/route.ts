@@ -11,7 +11,7 @@ export async function GET(
 
     const [rows]: any = await db.query(
       `
-      SELECT id, title, slug, department, position, location, type, card_description, status, content, created_at, updated_at
+      SELECT id, title, meta_title, meta_description, keywords, canonical_url, slug, department, position, location, type, card_description, status, content, created_at, updated_at
       FROM vacancies
       WHERE (slug = ? ${isNumeric ? "OR id = ?" : ""}) AND is_deleted = '0' AND status = 'published'
       LIMIT 1

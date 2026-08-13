@@ -132,14 +132,13 @@ export function UpcomingEvents() {
 
           <div className="text-center mt-10">
 
-            <button
-              onClick={() => setShowAll(!showAll)}
-              className="bg-brand text-white px-8 py-3 rounded-full"
+            <Link
+              href="https://goa.paruluniversity.ac.in/events"
+              target="_blank"
+              className="bg-brand text-white px-8 py-3 rounded-full inline-block"
             >
-              {showAll
-                ? "View Less Events"
-                : "View All Events"}
-            </button>
+              View All Events
+            </Link>
 
           </div>
 

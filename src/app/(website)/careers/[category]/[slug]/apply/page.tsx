@@ -19,19 +19,19 @@ interface Vacancy {
 
 export default function ApplyPage() {
   const params = useParams();
-  const id = params?.id as string;
+  const slug = params?.slug as string;
 
   const [job, setJob] = useState<Vacancy | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!id) return;
+    if (!slug) return;
 
     async function fetchJobDetails() {
       try {
         setLoading(true);
-        const res = await fetch(`/api/vacancies/${id}`);
+        const res = await fetch(`/api/vacancies/${slug}`);
         const result = await res.json();
         if (result.success && result.data) {
           setJob(result.data);
@@ -47,7 +47,7 @@ export default function ApplyPage() {
     }
 
     fetchJobDetails();
-  }, [id]);
+  }, [slug]);
 
   if (loading) {
     return (
@@ -93,7 +93,7 @@ export default function ApplyPage() {
           <div className="max-w-[1440px] w-full mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center h-full">
             {/* Left Content */}
             <div className="flex-1 flex flex-col justify-center w-full max-w-[800px] md:pr-8">
-              <Link href={`/careers/${job.slug}`} className="text-[#111111] hover:opacity-80 transition-opacity mb-4 md:mb-6 font-medium text-sm w-fit flex items-center gap-2">
+              <Link href={`/careers/${job.position.toLowerCase().replace(/\s+/g, '-')}/${job.slug}`} className="text-[#111111] hover:opacity-80 transition-opacity mb-4 md:mb-6 font-medium text-sm w-fit flex items-center gap-2">
                 &larr; Back to Job Details
               </Link>
               
