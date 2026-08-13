@@ -41,19 +41,19 @@ interface Vacancy {
 
 export default function CareerDetailsPage() {
   const params = useParams();
-  const id = params?.id as string;
+  const slug = params?.slug as string;
 
   const [job, setJob] = useState<Vacancy | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!id) return;
+    if (!slug) return;
 
     async function fetchJobDetails() {
       try {
         setLoading(true);
-        const res = await fetch(`/api/vacancies/${id}`);
+        const res = await fetch(`/api/vacancies/${slug}`);
         const result = await res.json();
         if (result.success && result.data) {
           setJob(result.data);
@@ -69,7 +69,7 @@ export default function CareerDetailsPage() {
     }
 
     fetchJobDetails();
-  }, [id]);
+  }, [slug]);
 
   if (loading) {
     return (

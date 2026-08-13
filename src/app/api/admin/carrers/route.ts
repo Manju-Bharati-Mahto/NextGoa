@@ -78,7 +78,7 @@ export async function GET(req: NextRequest) {
 
     const [rows]: any = await db.query(
       `
-      SELECT id, title, slug, department, position, location, type, card_description, status, content, created_at, updated_at
+      SELECT id, title, meta_title, meta_description, keywords, canonical_url, slug, department, position, location, type, card_description, status, content, created_at, updated_at
       FROM vacancies
       ${where}
       ORDER BY id DESC
@@ -149,8 +149,8 @@ export async function POST(req: NextRequest) {
     const [result]: any = await db.execute(
       `
       INSERT INTO vacancies 
-      (title, slug, department, position, location, type, card_description, status, content) 
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+      (title, slug, department, position, location, type, card_description, meta_title, meta_description, keywords, canonical_url, status, content) 
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       `,
       [
         body.title,
@@ -160,6 +160,10 @@ export async function POST(req: NextRequest) {
         body.location,
         body.type,
         body.card_description || "",
+        body.meta_title || null,
+        body.meta_description || null,
+        body.keywords || null,
+        body.canonical_url || null,
         body.status || "published",
         JSON.stringify(body.content)
       ]

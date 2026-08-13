@@ -45,6 +45,10 @@ export default function VacancyForm({ vacancyId }: VacancyFormProps) {
     location: "Goa",
     type: "On-site",
     card_description: "",
+    meta_title: "",
+    meta_description: "",
+    keywords: "",
+    canonical_url: "",
     status: "published" as "published" | "draft",
   });
 
@@ -101,6 +105,10 @@ export default function VacancyForm({ vacancyId }: VacancyFormProps) {
           location: vacancy.location,
           type: vacancy.type,
           card_description: vacancy.card_description || "",
+          meta_title: vacancy.meta_title || "",
+          meta_description: vacancy.meta_description || "",
+          keywords: vacancy.keywords || "",
+          canonical_url: vacancy.canonical_url || "",
           status: vacancy.status || "published",
         });
 
@@ -439,14 +447,17 @@ export default function VacancyForm({ vacancyId }: VacancyFormProps) {
               </div>
               <div>
                 <label className="form-label font-semibold text-gray-700">Position / Category</label>
-                <input
-                  type="text"
+                <select
                   required
-                  placeholder="e.g., Teaching"
                   value={form.position}
                   onChange={(e) => setForm({ ...form, position: e.target.value })}
-                  className="mt-2 w-full form-control rounded-lg px-4 py-3"
-                />
+                  className="mt-2 w-full form-control rounded-lg px-4 py-3 bg-white"
+                >
+                  <option value="" disabled>Select Position / Category</option>
+                  <option value="Teaching">Teaching</option>
+                  <option value="Non Teaching">Non Teaching</option>
+                  <option value="Leadership">Leadership</option>
+                </select>
               </div>
             </div>
 
@@ -967,6 +978,59 @@ export default function VacancyForm({ vacancyId }: VacancyFormProps) {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Full-width SEO Settings */}
+      <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm space-y-5 mt-6">
+        <h2 className="text-xl font-bold text-gray-800 border-b pb-3 mb-4">SEO</h2>
+        
+        {/* Meta Title */}
+        <div>
+          <label className="form-label font-semibold text-gray-700">Meta Title</label>
+          <input
+            type="text"
+            placeholder="Meta Title"
+            value={form.meta_title}
+            onChange={(e) => setForm({ ...form, meta_title: e.target.value })}
+            className="mt-2 w-full form-control rounded-lg px-4 py-3 bg-white border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none"
+          />
+        </div>
+
+        {/* Meta Description */}
+        <div>
+          <label className="form-label font-semibold text-gray-700">Meta Description</label>
+          <textarea
+            rows={3}
+            placeholder="Meta Description"
+            value={form.meta_description}
+            onChange={(e) => setForm({ ...form, meta_description: e.target.value })}
+            className="mt-2 w-full form-control rounded-lg px-4 py-3 resize-y bg-white border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none"
+          />
+        </div>
+
+        {/* Keywords */}
+        <div>
+          <label className="form-label font-semibold text-gray-700">Keywords (comma separated)</label>
+          <textarea
+            rows={2}
+            placeholder="Keywords (comma separated)"
+            value={form.keywords}
+            onChange={(e) => setForm({ ...form, keywords: e.target.value })}
+            className="mt-2 w-full form-control rounded-lg px-4 py-3 resize-y bg-white border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none"
+          />
+        </div>
+
+        {/* Canonical URL */}
+        <div>
+          <label className="form-label font-semibold text-gray-700">Canonical URL</label>
+          <input
+            type="text"
+            placeholder="Canonical URL"
+            value={form.canonical_url}
+            onChange={(e) => setForm({ ...form, canonical_url: e.target.value })}
+            className="mt-2 w-full form-control rounded-lg px-4 py-3 bg-white border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none"
+          />
+        </div>
       </div>
 
       {/* Form Bottom Save */}
