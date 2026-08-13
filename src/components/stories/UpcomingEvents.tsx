@@ -63,7 +63,7 @@ export function UpcomingEvents() {
 
             <Link
               key={event.id}
-              href={`/blog/${event.slug}`}
+              href={`/events/${event.slug}`}
               className="flex flex-col sm:flex-row gap-6 p-6 bg-white rounded-3xl shadow border hover:shadow-lg transition"
             >
 
