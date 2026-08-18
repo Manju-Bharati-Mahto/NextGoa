@@ -5,6 +5,7 @@ import { gotham, poppins } from "@/lib/fonts";
 import { siteConfig, SITE_URL } from "@/lib/site-config";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { organizationSchema, websiteSchema } from "@/lib/structured-data";
+import DataLayerClickTracker from "@/components/DataLayerClickTracker";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 const EnquiryModal = dynamic(() => import("@/components/layout/EnquiryModal").then((mod) => mod.EnquiryModal));
@@ -62,6 +63,7 @@ export default function RootLayout({
 }>) {
   return (
     <>
+      <DataLayerClickTracker />
       <ScrollRestoration />
 
       <SiteHeader />

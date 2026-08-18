@@ -164,7 +164,7 @@ export function News() {
             href="/blog" 
             className="inline-flex items-center justify-center rounded-full bg-brand px-8 py-3 text-[15px] font-poppins font-semibold text-white shadow-sm transition-all hover:bg-brand/90 hover:shadow-md"
           >
-            All news →
+            All 12 news →
           </Link>
         </div>
       </div>

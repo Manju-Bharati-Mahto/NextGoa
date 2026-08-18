@@ -433,6 +433,9 @@ const handleSubmit = async (
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-4 mt-2">
               <button
+              data-track
+              data-track-event="subscribe_click_success"
+              data-track-text="Subscribe"
     type="submit"
     disabled={loading}
   className="w-full sm:w-auto bg-[#E73649] hover:bg-[#c92b3c] text-white px-10 py-4 rounded-full text-base font-semibold tracking-wide shadow-md transition-all hover:scale-[1.02] cursor-pointer whitespace-nowrap">

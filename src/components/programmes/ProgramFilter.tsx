@@ -382,6 +382,11 @@ export default function ProgramFilter() {
                     <Link
                       key={href}
                       href={finalHref}
+                       data-track
+                      data-track-event="card_click"
+                      data-track-text={info.name}
+                      data-track-header="Find your Faculty"
+                      data-track-category="Faculty"
                       className="bg-white rounded-[20px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.04)] border-[3px] border-zinc-200 flex flex-col group hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all h-full"
                     >
                       <div className="relative h-[220px] sm:h-[240px] w-full overflow-hidden shrink-0">

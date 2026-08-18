@@ -92,7 +92,12 @@ export function HowToApply() {
                   <p className="text-white/80 text-base leading-relaxed mb-4 font-poppins">
                     Book a campus tour and apply on the spot with our admissions team.
                   </p>
-                  <button data-campus-visit-trigger="true" className="bg-[#fedb2f] hover:bg-[#e5c52a] text-ink text-base font-bold py-2 px-5 rounded-full transition-colors font-poppins">
+                  <button data-campus-visit-trigger="true" 
+                    data-track
+                    data-track-event="book_tour_success"
+                    data-track-text="Confirm Visit"
+                    data-track-header="Book a Campus Visit"
+                    className="bg-[#fedb2f] hover:bg-[#e5c52a] text-ink text-base font-bold py-2 px-5 rounded-full transition-colors font-poppins">
                     Book Campus Tour!
                   </button>
                 </div>
