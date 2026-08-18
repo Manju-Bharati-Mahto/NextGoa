@@ -6,6 +6,12 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { navItems, cta } from "@/lib/navigation";
 
+declare global {
+  interface Window {
+    dataLayer: Record<string, any>[];
+  }
+}
+
 const subPrograms = [
   { label: "Engineering & Technology", href: "/faculty/engineering" },
   { label: "IT & Computer Science", href: "/faculty/it-cs" },
@@ -27,12 +33,33 @@ const subPrograms = [
  * Client component for the mobile menu toggle; still prerenders (SSG) + hydrates.
  */
 
-function Logo() {
+
+
+export function SiteHeader() {
+  const [open, setOpen] = useState(false);
+  const [mobileProgramsOpen, setMobileProgramsOpen] = useState(false);
+  const pathname = usePathname() || "";
+
+  const handleTopNavigationClick = (
+    clickText: string,
+    clickHeader: string = "NA"
+  ) => {
+    window.dataLayer = window.dataLayer || [];
+
+    window.dataLayer.push({
+      event: "top_navigation",
+      click_text: clickText,
+      click_header: clickHeader,
+    });
+  };
+
+  function Logo() {
   return (
     <Link
       href="/"
       className="flex shrink-0 items-center gap-2"
       aria-label="Parul University Goa home"
+      onClick={() => handleTopNavigationClick("Logo", "Header Brand")}
     >
       <Image
         src="/logo.svg"
@@ -45,11 +72,6 @@ function Logo() {
     </Link>
   );
 }
-
-export function SiteHeader() {
-  const [open, setOpen] = useState(false);
-  const [mobileProgramsOpen, setMobileProgramsOpen] = useState(false);
-  const pathname = usePathname() || "";
 
   useEffect(() => {
     if (open) {
@@ -78,6 +100,7 @@ export function SiteHeader() {
                   <div key={item.label} className="relative group py-4 -my-4 flex items-center h-full">
                     <Link
                       href={item.href}
+                      onClick={() => handleTopNavigationClick(item.label, "Desktop Main Nav")}
                       className={`flex items-center gap-1.5 whitespace-nowrap font-[family-name:var(--font-poppins)] text-[15px] font-semibold transition-all py-1 relative text-white
                         after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2.5px] after:bg-[#E73649] after:origin-left after:transition-transform after:duration-300 after:ease-out
                         ${isActive ? "after:scale-x-100" : "after:scale-x-0 hover:after:scale-x-50"}
@@ -100,6 +123,7 @@ export function SiteHeader() {
                         <div className="grid grid-cols-1 gap-0.5">
                           <Link
                             href="/faculty"
+                            onClick={() => handleTopNavigationClick("All Faculties", "Desktop Faculties Dropdown")}
                             className={`group/link flex items-center justify-between px-4 py-3 text-[14px] font-[family-name:var(--font-poppins)] font-bold rounded-xl transition-all
                               ${pathname === "/faculty" ? "text-[#ED383F] bg-[#ED383F]/10" : "text-slate-800 hover:text-[#ED383F] hover:bg-[#ED383F]/5"}
                             `}
@@ -114,6 +138,7 @@ export function SiteHeader() {
                             <Link
                               key={sub.href}
                               href={sub.href}
+                              onClick={() => handleTopNavigationClick(sub.label, "Desktop Faculties Dropdown")}
                               className={`group/link flex items-center justify-between px-4 py-3 text-[14px] font-[family-name:var(--font-poppins)] font-semibold rounded-xl transition-all
                                 ${pathname === sub.href ? "text-[#ED383F] bg-[#ED383F]/10" : "text-slate-700 hover:text-[#ED383F] hover:bg-[#ED383F]/5"}
                               `}
@@ -135,6 +160,7 @@ export function SiteHeader() {
                   <Link
                     href={item.href}
                     target={item.newTab ? "_blank" : undefined}
+                    onClick={() => handleTopNavigationClick(item.label, "Desktop Main Nav")}
                     rel={item.newTab ? "noopener noreferrer" : undefined}
                     className={`whitespace-nowrap font-[family-name:var(--font-poppins)] text-[15px] font-semibold transition-all py-1 relative text-white
                       after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2.5px] after:bg-[#E73649] after:origin-left after:transition-transform after:duration-300 after:ease-out
@@ -151,12 +177,14 @@ export function SiteHeader() {
           <div className="flex shrink-0 items-center gap-2 xl:gap-3">
             <button
               data-enquiry-trigger="true"
+              onClick={() => handleTopNavigationClick("Apply Now", "Desktop Header CTA")}
               className="hidden sm:inline-flex whitespace-nowrap rounded-full bg-brand px-4 xl:px-5 py-2 xl:py-2.5 text-[13px] xl:text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-bright"
             >
               Apply Now
             </button>
             <Link
               href="/contact-us"
+              onClick={() => handleTopNavigationClick("Contact Us", "Desktop Header CTA")}
               className="hidden sm:inline-flex whitespace-nowrap rounded-full border border-white px-4 xl:px-5 py-2 xl:py-2.5 text-[13px] xl:text-sm font-semibold text-white shadow-sm transition-colors hover:bg-white hover:text-brand-blue"
             >
               Contact Us
@@ -195,7 +223,10 @@ export function SiteHeader() {
           <button
             type="button"
             aria-label="Close menu"
-            onClick={() => setOpen(false)}
+            onClick={() => {
+              handleTopNavigationClick("Logo", "Mobile Header Brand");
+              setOpen(false);
+            }}
             className="text-white hover:text-white/80 p-2"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -221,7 +252,10 @@ export function SiteHeader() {
                   >
                     <div className="flex flex-col">
                       <button
-                        onClick={() => setMobileProgramsOpen(!mobileProgramsOpen)}
+                        onClick={() => {
+                          setMobileProgramsOpen(!mobileProgramsOpen);
+                          handleTopNavigationClick(item.label, "Mobile Nav Accordion");
+                        }}
                         className="group inline-flex items-center justify-start font-[family-name:var(--font-poppins)] text-xl font-medium text-white transition-colors w-full text-left py-1 animate-pulse-subtle"
                       >
                         <div className="flex items-center gap-3">
@@ -263,7 +297,10 @@ export function SiteHeader() {
                           <li>
                             <Link
                               href="/faculty"
-                              onClick={() => setOpen(false)}
+                              onClick={() => {
+                                handleTopNavigationClick("All Faculties", "Mobile Faculties Submenu");
+                                setOpen(false);
+                              }}
                               className="block text-[17px] font-semibold text-white/90 hover:text-white transition-colors"
                             >
                               All Faculties &rarr;
@@ -273,7 +310,10 @@ export function SiteHeader() {
                             <li key={sub.href}>
                               <Link
                                 href={sub.href}
-                                onClick={() => setOpen(false)}
+                                onClick={() => {
+                                  handleTopNavigationClick(sub.label, "Mobile Faculties Submenu");
+                                  setOpen(false);
+                                }}
                                 className="block text-[17px] font-semibold text-white/70 hover:text-white transition-colors"
                               >
                                 {sub.label}
@@ -296,7 +336,10 @@ export function SiteHeader() {
                 >
                   <Link
                     href={item.href}
-                    onClick={() => setOpen(false)}
+                    onClick={() => {
+                      handleTopNavigationClick(item.label);
+                      setOpen(false);
+                    }}
                     target={item.newTab ? "_blank" : undefined}
                     rel={item.newTab ? "noopener noreferrer" : undefined}
                     className="group inline-flex flex-col font-[family-name:var(--font-poppins)] text-xl font-medium text-white transition-colors"
@@ -328,14 +371,20 @@ export function SiteHeader() {
         <div className="flex shrink-0 flex-col gap-3 p-6 pt-8">
           <Link
             href="/contact-us"
-            onClick={() => setOpen(false)}
+            onClick={() => {
+              handleTopNavigationClick("Contact Us", "Mobile Footer CTA");
+              setOpen(false);
+            }}
             className="flex w-full items-center justify-center rounded-full border-2 border-white px-6 py-3.5 text-md font-bold text-white transition-all hover:bg-white hover:text-brand-blue"
           >
             Contact Us
           </Link>
           <button
             data-enquiry-trigger="true"
-            onClick={() => setOpen(false)}
+            onClick={() => {
+              handleTopNavigationClick("Apply Now", "Mobile Footer CTA");
+              setOpen(false);
+            }}
             className="flex w-full items-center justify-center rounded-full bg-[#E73649] px-6 py-4 text-md font-bold text-white transition-all hover:bg-[#D62B3D]"
           >
             Apply Now &rarr;
