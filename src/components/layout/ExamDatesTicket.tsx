@@ -41,7 +41,7 @@ export function ExamDatesTicket() {
           {/* Apply Now button */}
           <button
             data-enquiry-trigger="true"
-            data-track="true"
+            data-track
             data-track-event="popup_form_click"
             data-track-text="Apply Now"
             data-track-header="Explore Other Admission Pathways"

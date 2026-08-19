@@ -18,7 +18,7 @@ interface CountryItemProps {
 interface CardItemProps {
   item: any;
   index: number;
-  items: any[];
+  items: any[]; 
   update: (field: string, value: any) => void;
 }
 

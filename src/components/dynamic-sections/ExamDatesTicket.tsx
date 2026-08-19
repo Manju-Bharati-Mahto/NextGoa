@@ -69,6 +69,10 @@ export function ExamDatesTicket({ data }: ExamDatesTicketProps) {
           <Link
             href={buttonLink}
             data-enquiry-trigger="true"
+            data-track
+            data-track-event="popup_form_click"
+            data-track-text={buttonText}
+            data-track-header={examDate}
             className="inline-flex items-center justify-center rounded-full bg-black px-[4.5cqw] py-[1.8cqw] text-[2.4cqw] font-bold text-white shadow-sm hover:bg-[#ee364f] transition-colors duration-300"
           >
             {buttonText}

@@ -24,6 +24,9 @@ export default function BlogForm({
     const [categories, setCategories] =
         useState<any[]>([]);
 
+    const [faculties, setFaculties] =
+        useState<any[]>([]);
+
     const [imageFile, setImageFile] =
         useState<File | null>(null);
 
@@ -77,6 +80,10 @@ export default function BlogForm({
         og_description: "",
 
         status: "draft",
+
+        author_name: "",
+
+        faculty_id: "",
 
     });
 
@@ -135,6 +142,22 @@ export default function BlogForm({
     }
 
     // ===============================
+    // Load Faculties
+    // ===============================
+
+    async function loadFaculties() {
+        try {
+            const res = await fetch("/api/admin/faculty?limit=100");
+            const data = await res.json();
+            if (data.success) {
+                setFaculties(data.data || []);
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    // ===============================
     // Load Blog (Edit)
     // ===============================
 
@@ -167,6 +190,8 @@ setForm({
   og_title: blog.og_title || "",
   og_description: blog.og_description || "",
   status: blog.status || "draft",
+  author_name: blog.author_name || "",
+  faculty_id: blog.faculty_id || "",
 });
 
 setSections(
@@ -202,6 +227,8 @@ if (blog.publish_at) {
         );
 
         loadCategories();
+
+        loadFaculties();
 
         if (isEdit) {
 
@@ -537,6 +564,16 @@ if (blog.publish_at) {
         formData.append(
         "publish_at",
         publishDate
+        );
+
+        formData.append(
+        "author_name",
+        form.author_name
+        );
+
+        formData.append(
+        "faculty_id",
+        form.faculty_id
         );
 
         // FAQ
@@ -1227,6 +1264,22 @@ if (blog.publish_at) {
                   </div>
                </div>
                )}
+                
+                {/* Author Name */}
+                <div className="py-4 border-dotted">
+                   <label className="form-label font-medium mb-2 block">
+                      Author's Name
+                   </label>
+                   <input
+                      type="text"
+                      name="author_name"
+                      value={form.author_name}
+                      onChange={handleChange}
+                      className="form-control w-full"
+                      placeholder="e.g. Author Name"
+                   />
+                </div>
+
                <button
                   type="submit"
                   disabled={loading}
@@ -1249,6 +1302,29 @@ if (blog.publish_at) {
                )}
             </div>
          </div>
+         {/* Faculty */}
+         <div className="cards-admin-text">
+            <div className="border-light px-5 py-4">
+               <h3 className="font-semibold">
+                  Faculty (Optional)
+               </h3>
+            </div>
+            <div className="p-5">
+               <select
+                  name="faculty_id"
+                  value={String(form.faculty_id || "")}
+                  onChange={handleChange}
+                  className="form-select w-full"
+               >
+                  <option value="">Select Faculty...</option>
+                  {faculties.map((f, index) => (
+                     <option key={`${f.id}-${index}`} value={String(f.id)}>
+                        {f.title}
+                     </option>
+                  ))}
+               </select>
+            </div>
+         </div>
          {/* Categories */}
          <div className="cards-admin-text">
             <div className="border-light px-5 py-4">
@@ -1257,9 +1333,9 @@ if (blog.publish_at) {
                </h3>
             </div>
             <div className="p-5 space-y-3">
-               {categories.map((category:any)=>(
+               {categories.map((category:any, index)=>(
                <label
-                  key={category.id}
+                  key={`${category.id}-${index}`}
                   className="flex items-center gap-3"
                   >
                <input

@@ -320,7 +320,7 @@ export default function ProgramFilter() {
               <h4 className="text-[26px] sm:text-3xl font-semibold mb-6 leading-[1.2] font-poppins">
                 {groupedFaculties.length === 10 ? 9 : groupedFaculties.length} faculties<br />{filteredCourses.length} programmes<br />match
               </h4>
-              <button data-enquiry-trigger="true" className="bg-[#FCE34B] text-ink text-[15px] font-bold py-3.5 px-6 rounded-full w-full hover:bg-yellow-400 transition-colors shadow-sm">
+              <button data-enquiry-trigger="true" data-track data-track-event="popup_form_click" data-track-text="Help me choose" data-track-header="NA" className="bg-[#FCE34B] text-ink text-[15px] font-bold py-3.5 px-6 rounded-full w-full hover:bg-yellow-400 transition-colors shadow-sm">
                 Help me choose
               </button>
             </div>

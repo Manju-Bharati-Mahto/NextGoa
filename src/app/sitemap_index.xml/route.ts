@@ -9,7 +9,6 @@ export async function GET() {
     `${SITE_URL}/faculty-sitemap.xml`,
     `${SITE_URL}/careers-sitemap.xml`,
     `${SITE_URL}/events-sitemap.xml`,
-    `${SITE_URL}/contact-sitemap.xml`,
     `${SITE_URL}/news-sitemap.xml`,
   ];
 

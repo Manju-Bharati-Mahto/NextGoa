@@ -135,30 +135,50 @@ export function AdmissionJourneyTimeline() {
           <div className="w-full md:w-2/3 flex overflow-x-auto md:overflow-x-visible pb-2 md:pb-0 gap-3 justify-start md:flex-wrap md:justify-start scrollbar-none [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
             <button
               onClick={() => handleStepSelect(0)}
+              data-track
+              data-track-event="cta_click"
+              data-track-text="I AM A BEGINNER"
+              data-track-header="Where are you right now?"
               className={`shrink-0 px-6 py-2.5 rounded-full text-sm font-semibold transition-colors ${activeStep === 0 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
             >
               I AM A BEGINNER
             </button>
             <button
               onClick={() => handleStepSelect(1)}
+              data-track
+              data-track-event="cta_click"
+              data-track-text="SUBMITTED APPLICATION"
+              data-track-header="Where are you right now?"
               className={`shrink-0 px-6 py-2.5 rounded-full text-sm font-semibold transition-colors ${activeStep === 1 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
             >
               SUBMITTED APPLICATION
             </button>
             <button
               onClick={() => handleStepSelect(3)}
+              data-track
+              data-track-event="cta_click"
+              data-track-text="DONE WITH ENTRANCE TEST"
+              data-track-header="Where are you right now?"
               className={`shrink-0 px-6 py-2.5 rounded-full text-sm font-semibold transition-colors ${activeStep === 3 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
             >
               DONE WITH ENTRANCE TEST
             </button>
             <button
               onClick={() => handleStepSelect(4)}
+              data-track
+              data-track-event="cta_click"
+              data-track-text="AWAITING MERIT LIST"
+              data-track-header="Where are you right now?"
               className={`shrink-0 px-6 py-2.5 rounded-full text-sm font-semibold transition-colors ${activeStep === 4 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
             >
               AWAITING MERIT LIST
             </button>
             <button
               onClick={() => handleStepSelect(5)}
+              data-track
+              data-track-event="cta_click"
+              data-track-text="COMPLETED COUNSELLING"
+              data-track-header="Where are you right now?"
               className={`shrink-0 px-6 py-2.5 rounded-full text-sm font-semibold transition-colors ${activeStep === 5 ? 'bg-[#00aee8] text-white' : 'bg-gray-100 text-ink hover:bg-gray-200'}`}
             >
               COMPLETED COUNSELLING
@@ -247,6 +267,10 @@ export function AdmissionJourneyTimeline() {
                 <div>
                   <button
                     onClick={handleNextPhaseClick}
+                    data-track
+                    data-track-event="cta_click"
+                    data-track-text={currentStepData.nextButtonLabel}
+                    data-track-header={currentStepData.whiteCardTitle}
                     className="bg-[#00aee8] hover:bg-[#0095c7] text-white font-semibold rounded-full px-7 py-3 transition-colors inline-block text-sm"
                   >
                     {currentStepData.nextButtonLabel}
@@ -334,6 +358,10 @@ export function AdmissionJourneyTimeline() {
                                   router.push('/campus-life');
                                 }
                               }}
+                              data-track
+                              data-track-event="cta_click"
+                              data-track-text={step.nextButtonLabel}
+                              data-track-header={step.whiteCardTitle}
                               className="w-full bg-white hover:bg-gray-100 text-ink font-semibold text-sm sm:text-xs rounded-full py-3 transition-colors shadow-sm"
                             >
                               {step.nextButtonLabel}

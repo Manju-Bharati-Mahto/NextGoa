@@ -193,6 +193,12 @@ export function ExaminationSchedules({ data }: Props) {
           href={pdf.file}
           target="_blank"
           rel="noopener noreferrer"
+          data-track
+          data-track-event="pdf_click"
+          data-track-category={activeTab || "NA"}
+          data-track-course-name={selectedProgram || "NA"}
+          data-track-header={selectedSession || "NA"}
+          data-track-text={pdf.title || "Download"}
           className="w-14 h-14 bg-[#ffce2a] rounded-xl flex items-center justify-center shrink-0 hover:bg-[#ecc029] transition-colors"
           aria-label="Download PDF"
         >

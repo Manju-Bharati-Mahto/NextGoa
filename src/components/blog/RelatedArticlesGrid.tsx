@@ -1,0 +1,60 @@
+import db from "@/lib/db";
+import { StoryCard, Story } from "@/components/stories/StoriesGrid";
+
+export default async function RelatedArticlesGrid({ 
+  currentBlogId, 
+  facultyId 
+}: { 
+  currentBlogId: number;
+  facultyId: number | null;
+}) {
+  if (!facultyId) return null;
+
+  const [rows]: any = await db.query(
+    `
+    SELECT b.*, 
+      (
+        SELECT GROUP_CONCAT(c.name SEPARATOR ', ')
+        FROM blog_categories c
+        WHERE FIND_IN_SET(c.id, b.category)
+      ) AS category_names
+    FROM blogs b
+    WHERE b.id != ? AND b.status = 'published' AND b.faculty_id = ?
+    ORDER BY COALESCE(b.publish_at, b.created_at) DESC 
+    LIMIT 2
+    `,
+    [currentBlogId, facultyId]
+  );
+
+  if (!rows || rows.length === 0) return null;
+
+  const stories: Story[] = rows.map((blog: any) => ({
+    tag: blog.category_names || "General",
+    tagClass: "bg-brand/10 text-brand ring-1 ring-brand/20",
+    title: blog.title,
+    body: blog.excerpt,
+    image: blog.featured_image,
+    link: `/blog/${blog.slug}`,
+    date: blog.publish_at || blog.created_at,
+    author_name: blog.author_name,
+  }));
+
+  return (
+    <div className="pt-8 mt-8">
+      <div className="flex items-center gap-4 mb-10">
+        <div className="bg-gradient-to-r from-brand to-ocean px-5 py-2.5 rounded-md shadow-sm">
+          <h2 className="text-white font-semibold text-lg tracking-wide">
+            Related Articles
+          </h2>
+        </div>
+        <div className="flex-1 h-px bg-gray-200"></div>
+      </div>
+      
+      <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 xl:gap-8 transition-all duration-300">
+        {stories.map((s, index) => (
+          <StoryCard key={s.title + index} s={s} />
+        ))}
+      </ul>
+    </div>
+  );
+}

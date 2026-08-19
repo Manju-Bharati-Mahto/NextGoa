@@ -98,6 +98,10 @@ export function Research() {
                     href={c.link || "#"}
                     target={c.link?.startsWith("http") ? "_blank" : undefined}
                     rel={c.link?.startsWith("http") ? "noopener noreferrer" : undefined}
+                    data-track
+                    data-track-event="cta_click"
+                    data-track-text={c.cta}
+                    data-track-header={c.badge}
                     className="inline-block rounded-full bg-sunshine px-5 py-2.5 font-[family-name:var(--font-poppins)] text-[18px] font-bold text-ink transition-transform hover:scale-[1.03]"
                   >
                     {c.cta}

@@ -368,6 +368,11 @@ const handleSubmit = async (
                     onClick={(e) => { if (isSwiping.current) e.preventDefault(); }}
                     onDragStart={(e) => e.preventDefault()}
                     className="rounded-[28px] bg-white shadow-md border border-black/5 overflow-hidden flex flex-col h-full group transition-all hover:shadow-lg"
+                    data-track
+                    data-track-event="blog_click"
+                    data-track-header="Across all categories."
+                    data-track-category="All"
+                    data-track-text={card.title}
                   >
                     {/* Top: Image */}
                     <div className="relative w-full aspect-[16/11] bg-slate-100 overflow-hidden">

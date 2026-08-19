@@ -90,7 +90,9 @@ export async function PUT(
         og_image=?,
         blog_type=?,
         status=?,
-        publish_at=?
+        publish_at=?,
+        author_name=?,
+        faculty_id=?
       WHERE id=?
       `,
       dbParams

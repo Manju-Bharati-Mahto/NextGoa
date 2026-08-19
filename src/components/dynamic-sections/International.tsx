@@ -94,6 +94,10 @@ export function International({ data }: InternationalProps) {
         <p className="mt-10 text-center">
           <Link
             href={data?.buttonLink || "#"}
+            data-track
+            data-track-event="cta_click"
+            data-track-text={data?.buttonText || "Explore Global Opportunities"}
+            data-track-header="NA"
             className="inline-block rounded-full bg-brand px-7 py-3.5 text-sm font-bold text-white transition-colors hover:bg-brand-dark"
           >
             {data?.buttonText}

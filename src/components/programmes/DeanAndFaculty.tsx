@@ -87,6 +87,11 @@ export default function DeanAndFaculty({ facultySlug }: Props) {
                     href={deanLinkedin}
                     target="_blank"
                     rel="noopener noreferrer"
+                    data-track
+                    data-track-event="social_link_click"
+                    data-track-category="Dean and Faculty"
+                    data-track-header={dean?.name || "Dean"}
+                    data-track-text="LinkedIn"
                     className="bg-white hover:bg-gray-100 text-[#CF4055] px-6 py-3 rounded-full transition-colors w-max flex items-center gap-3 font-semibold"
                   >
                     <Icon icon="mdi:linkedin" className="w-5 h-5" />
@@ -185,6 +190,11 @@ export default function DeanAndFaculty({ facultySlug }: Props) {
                           href={orcid}
                           target="_blank"
                           rel="noopener noreferrer"
+                          data-track
+                          data-track-event="social_link_click"
+                          data-track-category="Teaching Faculty"
+                          data-track-header={faculty.name}
+                          data-track-text="ORCID"
                           className="flex-shrink-0 hover:opacity-80 transition-opacity"
                         >
                           <img
@@ -200,6 +210,11 @@ export default function DeanAndFaculty({ facultySlug }: Props) {
                           href={linkedin}
                           target="_blank"
                           rel="noopener noreferrer"
+                          data-track
+                          data-track-event="social_link_click"
+                          data-track-category="Teaching Faculty"
+                          data-track-header={faculty.name}
+                          data-track-text="LinkedIn"
                           className="text-[#E73649] hover:text-[#c42d3d]"
                         >
                           <Icon icon="mdi:linkedin" className="w-7 h-7" />

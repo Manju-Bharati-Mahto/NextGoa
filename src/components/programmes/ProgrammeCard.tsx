@@ -112,6 +112,10 @@ export default function ProgrammeCard({ title, duration, eligibility, intake, mo
             <button 
               data-enquiry-trigger="true"
               data-enquiry-program={enquiryValue}
+              data-track
+              data-track-event="popup_form_click"
+              data-track-text="Apply Now"
+              data-track-header={title}
               className="text-white rounded-full px-6 py-2.5 font-bold text-[14px] sm:text-[15px] transition-transform hover:scale-105 shadow-sm"
               style={{ backgroundColor: themeColor }}
             >
@@ -120,6 +124,10 @@ export default function ProgrammeCard({ title, duration, eligibility, intake, mo
           )}
           <button 
             onClick={() => setIsModalOpen(true)}
+            data-track
+            data-track-event="popup_form_click"
+            data-track-text="Brochure"
+            data-track-header={title}
             className="border border-ink text-ink hover:bg-gray-50 rounded-full px-6 py-2.5 font-bold text-[14px] sm:text-[15px] transition-transform hover:scale-105"
           >
             Brochure

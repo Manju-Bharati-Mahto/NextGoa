@@ -10,6 +10,7 @@ interface Guide {
   iconColor: string;
   buttonBg: string;
   buttonText: string;
+  trackingText: string;
   buttonHoverBg: string;
 }
 
@@ -23,6 +24,7 @@ const guides: Guide[] = [
     buttonBg: "bg-ocean text-white",
     buttonHoverBg: "hover:bg-ocean-deep",
     buttonText: "Download Prospectus &rarr;",
+    trackingText: "Download Prospectus",
   },
   {
     title: "PU Goa 2026 Admissions Handbook",
@@ -33,6 +35,7 @@ const guides: Guide[] = [
     buttonBg: "bg-sunshine text-ink",
     buttonHoverBg: "hover:bg-sunshine-deep",
     buttonText: "Download Handbook &rarr;",
+    trackingText: "Download Handbook",
   },
   {
     title: "Study Abroad Pathways Guide",
@@ -43,6 +46,7 @@ const guides: Guide[] = [
     buttonBg: "bg-brand text-white",
     buttonHoverBg: "hover:bg-brand-dark",
     buttonText: "Download Guide &rarr;",
+    trackingText: "Download Guide",
   },
 ];
 
@@ -107,6 +111,12 @@ export function FreeGuides() {
                   <a
                     href="/documents/Prospectus_AY_2026_27.pdf"
                     download="Prospectus A.Y. 2026-27.pdf"
+                    data-track
+                    data-track-event="pdf_click"
+                    data-track-category={guide.title}
+                    data-track-course-name="NA"
+                    data-track-header="Download free guides straight to your inbox."
+                    data-track-text={guide.trackingText}
                     className={`inline-flex items-center gap-2 rounded-full px-7 py-3 text-[16px] font-bold tracking-wide shadow-sm transition-all hover:scale-[1.02] cursor-pointer ${guide.buttonBg} ${guide.buttonHoverBg}`}
                   >
                     <span dangerouslySetInnerHTML={{ __html: guide.buttonText }} />

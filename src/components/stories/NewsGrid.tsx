@@ -3,6 +3,7 @@ import React, { useState, useEffect, Suspense } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from 'next/image';
 import Link from 'next/link';
+import { Clock, User } from "lucide-react";
 
 export interface Story {
    tag: string;
@@ -12,14 +13,23 @@ export interface Story {
    image?: string;
    link?: string;
    date?: string;
+   author_name?: string;
 }
 
 const STORIES_PER_PAGE = 8;
 
-function StoryCard({ s }: { s: Story }) {
+function StoryCard({ s, trackHeader, trackCategory, eventName }: { s: Story; trackHeader?: string; trackCategory?: string; eventName?: string }) {
    return (
       <li className="group flex flex-col justify-between overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-black/5 transition-all duration-300 hover:shadow-lg">
-         <Link href={s.link || '#'} className="flex flex-col justify-between h-full">
+         <Link 
+            href={s.link || '#'} 
+            className="flex flex-col justify-between h-full"
+            data-track
+            data-track-event={eventName || "news_click"}
+            data-track-header={trackHeader || "NA"}
+            data-track-category={trackCategory || "NA"}
+            data-track-text={s.title}
+         >
             <div>
                <div className="relative aspect-[16/12] bg-gradient-to-br from-brand via-brand-bright to-ocean overflow-hidden">
                   {s.image ? (
@@ -35,7 +45,25 @@ function StoryCard({ s }: { s: Story }) {
                   <h3 className="mt-4 font-poppins text-lg font-semibold leading-snug tracking-tight text-ink group-hover:text-brand transition-colors line-clamp-2">
                      {s.title}
                   </h3>
-                  <p className="mt-3 font-[family-name:var(--font-poppins)] text-sm leading-relaxed text-ink/70 line-clamp-3">
+                  
+                  {/* Date & Author */}
+                  <div className="flex items-center gap-2 mt-3 text-[13px] font-medium text-ink/80">
+                     {s.date && (
+                        <span className="flex items-center gap-1.5">
+                           <Clock size={14} className="text-brand" />
+                           {new Date(s.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                        </span>
+                     )}
+                     {s.date && s.author_name && <span>|</span>}
+                     {s.author_name && (
+                        <span className="flex items-center gap-1.5">
+                           <User size={14} className="text-brand" />
+                           {s.author_name}
+                        </span>
+                     )}
+                  </div>
+
+                  <p className="mt-3 font-[family-name:var(--font-poppins)] text-sm leading-relaxed text-ink/70 line-clamp-2">
                      {s.body}
                   </p>
                </div>
@@ -70,6 +98,8 @@ function NewsGridInner() {
                body: blog.excerpt,
                image: blog.featured_image,
                link: `/news/${blog.slug}`,
+               date: blog.publish_at || blog.created_at,
+               author_name: blog.author_name,
             }));
             setStories(formatted);
          } catch (err) {
@@ -101,7 +131,7 @@ function NewsGridInner() {
                   <>
                      <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-8 transition-all duration-300">
                         {paginatedStories.map((s, index) => (
-                           <StoryCard key={s.title + index} s={s} />
+                           <StoryCard key={s.title + index} s={s} trackHeader="News" trackCategory="All" eventName="news_click" />
                         ))}
                      </ul>
                      {totalPages > 1 && (

@@ -17,15 +17,21 @@ function FaqAccordionItem({
   f,
   isOpen,
   onToggle,
+  title,
 }: {
   f: FaqItem;
   isOpen: boolean;
   onToggle: () => void;
+  title: string;
 }) {
   return (
     <div className="rounded-2xl bg-white shadow-sm ring-1 ring-black/5">
       <button
         onClick={onToggle}
+        data-track
+        data-track-event="faq_interaction"
+        data-track-text={f.question}
+        data-track-header={title}
         className="flex w-full cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left font-[family-name:var(--font-poppins)] text-base font-medium text-ink"
       >
         {f.question}
@@ -125,6 +131,7 @@ export function Faq({ data }: FaqProps) {
                   onToggle={() =>
                     setOpenIndex(openIndex === index ? null : index)
                   }
+                  title={title}
                 />
               </li>
             ))}

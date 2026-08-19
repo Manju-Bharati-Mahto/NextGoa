@@ -401,16 +401,32 @@ export function PlacementsByTheNumbers() {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
-            <button data-enquiry-trigger="true" className="bg-gradient-to-r from-[#EE384E] to-[#D32F2F] hover:from-[#D32F2F] hover:to-[#B71C1C] text-white px-6 py-3 rounded-full font-sans font-bold text-[14px] sm:text-[15px] transition-all text-center whitespace-nowrap shadow-sm">
+            <button data-enquiry-trigger="true" data-track data-track-event="popup_form_click" data-track-text="Apply Now" data-track-header="NA" className="bg-gradient-to-r from-[#EE384E] to-[#D32F2F] hover:from-[#D32F2F] hover:to-[#B71C1C] text-white px-6 py-3 rounded-full font-sans font-bold text-[14px] sm:text-[15px] transition-all text-center whitespace-nowrap shadow-sm">
               Apply Now
             </button>
-            <a href="https://wa.me/919558210145" target="_blank" rel="noopener noreferrer" className="inline-block bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#20bd5a] hover:to-[#0f7568] text-white px-6 py-3 rounded-full font-sans font-bold text-[14px] sm:text-[15px] transition-all text-center whitespace-nowrap shadow-sm">
+            <a 
+              href="https://wa.me/919558210145" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              data-track
+              data-track-event="whatsapp_click"
+              data-track-text="Chat on WhatsApp"
+              data-track-header="How to Apply"
+              className="inline-block bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#20bd5a] hover:to-[#0f7568] text-white px-6 py-3 rounded-full font-sans font-bold text-[14px] sm:text-[15px] transition-all text-center whitespace-nowrap shadow-sm"
+            >
               Chat on WhatsApp
             </a>
-            <button className="bg-gradient-to-r from-[#12B2E6] to-[#0A8CB8] hover:from-[#0fa0cf] hover:to-[#08789e] text-white px-6 py-3 rounded-full font-sans font-bold text-[14px] sm:text-[15px] transition-all flex items-center justify-center gap-2.5 whitespace-nowrap shadow-sm">
+            <a 
+              href="tel:18008909090"
+              data-track
+              data-track-event="toll_free_click"
+              data-track-text="1800 890 9090"
+              data-track-header="Talk to Us"
+              className="bg-gradient-to-r from-[#12B2E6] to-[#0A8CB8] hover:from-[#0fa0cf] hover:to-[#08789e] text-white px-6 py-3 rounded-full font-sans font-bold text-[14px] sm:text-[15px] transition-all flex items-center justify-center gap-2.5 whitespace-nowrap shadow-sm"
+            >
               <svg className="w-[18px] h-[18px] text-white shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
               1800 890 9090
-            </button>
+            </a>
           </div>
         </div>
       </div>

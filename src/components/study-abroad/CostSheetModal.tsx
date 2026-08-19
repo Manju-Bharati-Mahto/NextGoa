@@ -206,6 +206,10 @@ export default function CostSheetModal({ isOpen, onClose }: CostSheetModalProps)
                     </div>
                     <button
                       type="submit"
+                      data-track
+                      data-track-event="popup_form_click"
+                      data-track-text="Download Brochure & Cost Sheet"
+                      data-track-header="Get your cost sheet"
                       disabled={isSubmitting}
                       className="mt-4 w-full bg-[#eb3b47] hover:bg-[#d6323c] text-white font-bold py-4 rounded-xl shadow-lg transition-all disabled:opacity-70 flex items-center justify-center gap-2"
                     >

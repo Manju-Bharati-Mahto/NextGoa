@@ -74,6 +74,7 @@ export default function RootLayout({
 
       <EnquiryModal />
       <DownloadBrochureModal />
+      <DownloadPlacementReportModal />
       <CampusVisitModal />
       <FloatingCta />
       <ScrollToTop />
