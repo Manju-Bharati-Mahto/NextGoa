@@ -241,6 +241,10 @@ function CountryCard({
         <div>
           <button 
             onClick={() => setIsModalOpen(true)}
+            data-track
+            data-track-event="popup_form_click"
+            data-track-text="Enquire Now"
+            data-track-header={country}
             className="bg-[#f0424e] hover:bg-[#d63a44] text-white font-bold rounded-full py-2.5 px-6 transition-colors text-sm shadow-sm"
           >
             Enquire Now

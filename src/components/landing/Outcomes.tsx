@@ -99,6 +99,10 @@ export function Outcomes() {
       <div className="mx-auto max-w-5xl px-6 pb-10 pt-10 flex justify-center">
         <Link
           href="/placements"
+          data-track
+          data-track-event="placements_click"
+          data-track-text="Full placement report"
+          data-track-header="Outcomes"
           className="inline-flex items-center justify-center bg-[#FEDB2F] hover:bg-[#e5c52a] text-black font-bold text-[15px] sm:text-[16px] px-8 py-3.5 rounded-full transition-colors shadow-sm"
         >
           Full placements report →

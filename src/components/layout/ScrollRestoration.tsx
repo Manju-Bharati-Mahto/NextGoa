@@ -9,6 +9,13 @@ export function ScrollRestoration() {
   const lenis = useLenis();
 
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      if (sessionStorage.getItem("skipScrollToTop") === "true") {
+        sessionStorage.removeItem("skipScrollToTop");
+        return;
+      }
+    }
+
     // Force immediate scroll to top on route change to mimic native navigation
     if (lenis) {
       lenis.scrollTo(0, { immediate: true });

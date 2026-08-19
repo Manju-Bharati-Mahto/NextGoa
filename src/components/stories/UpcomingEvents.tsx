@@ -65,6 +65,11 @@ export function UpcomingEvents() {
               key={event.id}
               href={`/events/${event.slug}`}
               className="flex flex-col sm:flex-row gap-6 p-6 bg-white rounded-3xl shadow border hover:shadow-lg transition"
+              data-track
+              data-track-event="blog_click"
+              data-track-header="Events you can attend."
+              data-track-category="All"
+              data-track-text={event.title}
             >
 
               <div className="relative w-full sm:w-32 h-40 sm:h-32 rounded-2xl overflow-hidden">

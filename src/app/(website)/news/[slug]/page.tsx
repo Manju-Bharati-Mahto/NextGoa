@@ -2,7 +2,14 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { Clock, User } from "lucide-react";
 import db from "@/lib/db";
+import ShareButtons from "@/components/blog/ShareButtons";
+import SidebarLatestPosts from "@/components/blog/SidebarLatestPosts";
+import SidebarCategories from "@/components/blog/SidebarCategories";
+import SidebarNewsletter from "@/components/blog/SidebarNewsletter";
+import LatestArticlesGrid from "@/components/blog/LatestArticlesGrid";
+import RelatedArticlesGrid from "@/components/blog/RelatedArticlesGrid";
 
 export async function generateMetadata({
   params,
@@ -170,12 +177,35 @@ export default async function NewsDetailPage({
               {story.title}
             </h1>
           </div>
+          <div className="absolute z-20 bottom-6 left-6 md:bottom-10 md:left-12 flex items-center gap-3 text-white/90 text-sm md:text-base font-medium drop-shadow">
+            {(story.publish_at || story.created_at) && (
+              <span className="flex items-center gap-2">
+                <Clock size={16} className="opacity-80" />
+                {new Date(story.publish_at || story.created_at).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+              </span>
+            )}
+            {(story.publish_at || story.created_at) && story.author_name && <span className="opacity-60">|</span>}
+            {story.author_name && (
+              <span className="flex items-center gap-2">
+                <User size={16} className="opacity-80" />
+                {story.author_name}
+              </span>
+            )}
+          </div>
+
+          {/* Social Share Buttons */}
+          <div className="absolute z-20 bottom-6 right-6 md:bottom-10 md:right-12">
+            <ShareButtons url={`/news/${slug}`} title={story.title} />
+          </div>
         </section>
 
-        {/* Main Content */}
-        <section className="max-w-7xl mx-auto w-full px-[50px] py-16 sm:py-24">
-
-          <div className="space-y-8">
+        {/* Main Content & Sidebar Layout */}
+        <section className="max-w-[1400px] mx-auto w-full px-6 sm:px-10 py-16 sm:py-24">
+          <div className="flex flex-col lg:flex-row gap-12 items-start">
+            
+            {/* Left Column: Content & FAQs */}
+            <div className="w-full lg:w-[65%] xl:w-[70%] space-y-12">
+              <div className="space-y-8">
             {story.blockquote && (
               <div className="relative bg-[#F7F7F5] rounded-sm px-10 md:px-20 py-16 text-center">
                 {/* Quote Icon */}
@@ -251,37 +281,54 @@ export default async function NewsDetailPage({
                   );
               }
             })}
-          </div>
+              </div>
+            
+            {/* FAQs inside left column */}
+            {faqs.length > 0 && (
+              <div className="pt-8 border-t border-gray-100">
+                <h2 className="section-subheading mb-8">
+                  Frequently Asked Questions
+                </h2>
+                <div className="space-y-5">
+                  {faqs.map((faq: any) => (
+                    <details
+                      key={faq.id}
+                      className="border rounded-xl overflow-hidden"
+                    >
+                      <summary className="cursor-pointer bg-gray-100 px-6 py-5 font-semibold">
+                        {faq.question}
+                      </summary>
+                      <div
+                        className="px-6 py-5"
+                        dangerouslySetInnerHTML={{
+                          __html: faq.answer,
+                        }}
+                      />
+                    </details>
+                  ))}
+                </div>
+              </div>
+            )}
+            
+            {/* Related Articles */}
+            {story.faculty_id && (
+              <RelatedArticlesGrid currentBlogId={story.id} facultyId={story.faculty_id} />
+            )}
 
-        </section>
-
-        {faqs.length > 0 && (
-          <section className="max-w-7xl mx-auto px-[50px] py-16">
-            <h2 className="section-subheading mb-10">
-              Frequently Asked Questions
-            </h2>
-            <div className="space-y-5">
-              {faqs.map((faq: any) => (
-                <details
-                  key={faq.id}
-                  className="border rounded-xl overflow-hidden"
-                >
-                  <summary
-                    className="cursor-pointer bg-gray-100 px-6 py-5 font-semibold"
-                  >
-                    {faq.question}
-                  </summary>
-                  <div
-                    className="px-6 py-5"
-                    dangerouslySetInnerHTML={{
-                      __html: faq.answer
-                    }}
-                  />
-                </details>
-              ))}
+            {/* Latest Articles at bottom of left column */}
+            <LatestArticlesGrid currentBlogId={story.id} />
+            
             </div>
-          </section>
-        )}
+            
+            {/* Right Column: Sidebar Widgets */}
+            <aside className="w-full lg:w-[35%] xl:w-[30%] space-y-10 sticky top-32">
+              <SidebarLatestPosts currentBlogId={story.id} />
+              <SidebarCategories />
+              <SidebarNewsletter />
+            </aside>
+            
+          </div>
+        </section>
       </article>
     </main>
   );

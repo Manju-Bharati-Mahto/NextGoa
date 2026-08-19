@@ -101,6 +101,10 @@ export function CampusSafety() {
           <button 
             type="button"
             data-enquiry-trigger="true"
+            data-track
+            data-track-event="popup_form_click"
+            data-track-text="Talk to a counsellor"
+            data-track-header="Have a specific safety question?"
             className="w-full sm:w-auto bg-[#FEDB2F] hover:bg-white text-[#1F1F1F] font-[family-name:var(--font-poppins)] font-bold text-[15px] sm:text-[16px] px-8 py-3 rounded-2xl transition-colors flex items-center justify-center gap-2"
           >
             Talk to a counsellor

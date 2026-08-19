@@ -225,6 +225,10 @@ export function DocumentsChecklist() {
             <a 
               href="#"
               data-brochure-trigger="true"
+              data-track
+              data-track-event="popup_form_click"
+              data-track-text="Download"
+              data-track-header="View Checklist"
               data-pdf-url="/prospectus/PU_Goa_Document_Checklist.pdf"
               className="bg-[#FEDB2F] hover:bg-[#e5c52a] text-ink font-bold text-[15px] sm:text-[16px] px-6 py-3 rounded-full flex items-center gap-3 transition-colors shadow-sm w-full sm:w-auto justify-center"
             >

@@ -1,8 +1,10 @@
 "use client";
 import React, { useState, useEffect, Suspense } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useParams } from "next/navigation";
 import Image from 'next/image';
 import Link from 'next/link';
+import { Clock, User } from "lucide-react";
 
 export interface Story {
    tag: string;
@@ -12,14 +14,23 @@ export interface Story {
    image?: string;
    link?: string;
    date?: string;
+   author_name?: string;
 }
 
 const STORIES_PER_PAGE = 8;
 
-function StoryCard({ s }: { s: Story }) {
+function StoryCard({ s, trackHeader, trackCategory, eventName }: { s: Story; trackHeader?: string; trackCategory?: string; eventName?: string }) {
    return (
       <li className="group flex flex-col justify-between overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-black/5 transition-all duration-300 hover:shadow-lg">
-         <Link href={s.link || '#'} className="flex flex-col justify-between h-full">
+         <Link 
+            href={s.link || '#'} 
+            className="flex flex-col justify-between h-full"
+            data-track
+            data-track-event={eventName || "event_click"}
+            data-track-header={trackHeader || "NA"}
+            data-track-category={trackCategory || "NA"}
+            data-track-text={s.title}
+         >
             <div>
                <div className="relative aspect-[16/12] bg-gradient-to-br from-brand via-brand-bright to-ocean overflow-hidden">
                   {s.image ? (
@@ -35,7 +46,25 @@ function StoryCard({ s }: { s: Story }) {
                   <h3 className="mt-4 font-poppins text-lg font-semibold leading-snug tracking-tight text-ink group-hover:text-brand transition-colors line-clamp-2">
                      {s.title}
                   </h3>
-                  <p className="mt-3 font-[family-name:var(--font-poppins)] text-sm leading-relaxed text-ink/70 line-clamp-3">
+                  
+                  {/* Date & Author */}
+                  <div className="flex items-center gap-2 mt-3 text-[13px] font-medium text-ink/80">
+                     {s.date && (
+                        <span className="flex items-center gap-1.5">
+                           <Clock size={14} className="text-brand" />
+                           {new Date(s.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                        </span>
+                     )}
+                     {s.date && s.author_name && <span>|</span>}
+                     {s.author_name && (
+                        <span className="flex items-center gap-1.5">
+                           <User size={14} className="text-brand" />
+                           {s.author_name}
+                        </span>
+                     )}
+                  </div>
+
+                  <p className="mt-3 font-[family-name:var(--font-poppins)] text-sm leading-relaxed text-ink/70 line-clamp-2">
                      {s.body}
                   </p>
                </div>
@@ -54,9 +83,11 @@ function StoryCard({ s }: { s: Story }) {
 }
 
 function EventGridInner() {
+   const params = useParams();
    const [stories, setStories] = useState<Story[]>([]);
    const [loading, setLoading] = useState(true);
-   const [currentPage, setCurrentPage] = useState(1);
+   const pageParam = params?.page ? parseInt(params.page as string) : 1;
+   const currentPage = isNaN(pageParam) ? 1 : pageParam;
 
    useEffect(() => {
       async function fetchStories() {
@@ -70,6 +101,8 @@ function EventGridInner() {
                body: blog.excerpt,
                image: blog.featured_image,
                link: `/events/${blog.slug}`,
+               date: blog.publish_at || blog.created_at,
+               author_name: blog.author_name,
             }));
             setStories(formatted);
          } catch (err) {
@@ -91,7 +124,7 @@ function EventGridInner() {
 
    return (
       <div id="stories-grid" className="w-full">
-         <section className="bg-brand-white py-16 sm:py-24">
+         <section className="bg-brand-white py-16 sm:py-24 min-h-[1000px]">
             <div className="mx-auto max-w-[1680px] px-6 sm:px-10">
                {loading ? (
                   <div className="text-center py-20">
@@ -101,39 +134,59 @@ function EventGridInner() {
                   <>
                      <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-8 transition-all duration-300">
                         {paginatedStories.map((s, index) => (
-                           <StoryCard key={s.title + index} s={s} />
+                           <StoryCard key={s.title + index} s={s} trackHeader="Events" trackCategory="All" eventName="event_click" />
                         ))}
                      </ul>
                      {totalPages > 1 && (
                         <div className="flex justify-center items-center gap-3 mt-14">
-                           <button
-                              onClick={() => setCurrentPage((p) => p - 1)}
-                              disabled={currentPage === 1}
-                              className="flex items-center gap-2 px-4 py-2 rounded-full border border-[#d62b3d]/20 bg-white text-[#d62b3d] hover:bg-[#d62b3d] hover:text-white transition-all duration-300 disabled:opacity-40 disabled:hover:bg-white disabled:hover:text-[#d62b3d]"
-                           >
-                              <ChevronLeft size={18} />
-                           </button>
-
-                           {Array.from({ length: totalPages }).map((_, i) => (
-                              <button
-                                 key={i}
-                                 onClick={() => setCurrentPage(i + 1)}
-                                 className={`w-11 h-11 rounded-full text-sm font-semibold transition-all duration-300 ${currentPage === i + 1
-                                    ? "bg-[#5B6933] text-white shadow-lg scale-105"
-                                    : "bg-white border border-gray-300 text-gray-700 hover:border-[#d62b3d] hover:text-[#d62b3d] hover:shadow"
-                                    }`}
+                           {currentPage > 1 ? (
+                              <Link
+                                 href={`/events${currentPage - 1 === 1 ? '' : `/page/${currentPage - 1}`}`}
+                                 scroll={false}
+                                 onClick={() => sessionStorage.setItem("skipScrollToTop", "true")}
+                                 className="flex items-center gap-2 px-4 py-2 rounded-full border border-[#d62b3d]/20 bg-white text-[#d62b3d] hover:bg-[#d62b3d] hover:text-white transition-all duration-300"
                               >
-                                 {i + 1}
+                                 <ChevronLeft size={18} />
+                              </Link>
+                           ) : (
+                              <button disabled className="flex items-center gap-2 px-4 py-2 rounded-full border border-[#d62b3d]/20 bg-white text-[#d62b3d] transition-all duration-300 opacity-40">
+                                 <ChevronLeft size={18} />
                               </button>
-                           ))}
+                           )}
 
-                           <button
-                              onClick={() => setCurrentPage((p) => p - 1)}
-                              disabled={currentPage === totalPages}
-                              className="flex items-center gap-2 px-4 py-2 rounded-full border border-[#5B6933]/20 bg-white text-[#5B6933] hover:bg-[#5B6933] hover:text-white transition-all duration-300 disabled:opacity-40 disabled:hover:bg-white disabled:hover:text-[#5B6933]"
-                           >
-                              <ChevronRight size={18} />
-                           </button>
+                           {Array.from({ length: totalPages }).map((_, i) => {
+                              const p = i + 1;
+                              const isCurrent = currentPage === p;
+                              return (
+                                 <Link
+                                    key={i}
+                                    href={`/events${p === 1 ? '' : `/page/${p}`}`}
+                                    scroll={false}
+                                    onClick={() => sessionStorage.setItem("skipScrollToTop", "true")}
+                                    className={`flex items-center justify-center w-11 h-11 rounded-full text-sm font-semibold transition-all duration-300 ${isCurrent
+                                       ? "bg-[#5B6933] text-white shadow-lg scale-105"
+                                       : "bg-white border border-gray-300 text-gray-700 hover:border-[#d62b3d] hover:text-[#d62b3d] hover:shadow"
+                                       }`}
+                                 >
+                                    {p}
+                                 </Link>
+                              );
+                           })}
+
+                           {currentPage < totalPages ? (
+                              <Link
+                                 href={`/events/page/${currentPage + 1}`}
+                                 scroll={false}
+                                 onClick={() => sessionStorage.setItem("skipScrollToTop", "true")}
+                                 className="flex items-center gap-2 px-4 py-2 rounded-full border border-[#5B6933]/20 bg-white text-[#5B6933] hover:bg-[#5B6933] hover:text-white transition-all duration-300"
+                              >
+                                 <ChevronRight size={18} />
+                              </Link>
+                           ) : (
+                              <button disabled className="flex items-center gap-2 px-4 py-2 rounded-full border border-[#5B6933]/20 bg-white text-[#5B6933] transition-all duration-300 opacity-40">
+                                 <ChevronRight size={18} />
+                              </button>
+                           )}
                         </div>
                      )}
                   </>

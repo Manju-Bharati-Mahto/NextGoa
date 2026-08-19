@@ -29,7 +29,7 @@ export function HowToApply() {
                   <p className="text-ink/80 text-base leading-relaxed mb-4 pr-2 font-poppins">
                     Drop your details below - a counsellor will call you within 24 hours.
                   </p>
-                  <button type="button" data-enquiry-trigger="true" className="inline-block bg-[#00aee8] hover:bg-[#0095c7] text-white text-base font-semibold py-2 px-5 rounded-full transition-colors font-poppins">
+                  <button type="button" data-enquiry-trigger="true" data-track data-track-event="popup_form_click" data-track-text="Request a Callback" data-track-header="Callback" className="inline-block bg-[#00aee8] hover:bg-[#0095c7] text-white text-base font-semibold py-2 px-5 rounded-full transition-colors font-poppins">
                     Request a Callback
                   </button>
                 </div>
@@ -49,7 +49,16 @@ export function HowToApply() {
                   <p className="text-white/90 text-lg leading-relaxed mb-5 pr-4 font-poppins">
                     Apply through the official PU Goa admissions portal and upload documents digitally.
                   </p>
-                  <a href="http://admissions.paruluniversity.ac.in/" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#ee364f] hover:bg-[#d42d41] text-white text-base font-semibold py-2.5 px-6 rounded-full transition-colors font-poppins">
+                  <a 
+                    href="http://admissions.paruluniversity.ac.in/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    data-track
+                    data-track-event="cta_click"
+                    data-track-text="Apply Now"
+                    data-track-header="Digital"
+                    className="inline-block bg-[#ee364f] hover:bg-[#d42d41] text-white text-base font-semibold py-2.5 px-6 rounded-full transition-colors font-poppins"
+                  >
                     Apply Now
                   </a>
                 </div>
@@ -72,7 +81,16 @@ export function HowToApply() {
                   <p className="text-white/90 text-lg leading-relaxed mb-5 font-poppins">
                     Ask quick questions on programmes, fees or eligibility - instant answers.
                   </p>
-                  <a href="https://wa.me/919558210145" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#00b368] hover:bg-[#009657] text-white text-base font-semibold py-2.5 px-6 rounded-full transition-colors font-poppins">
+                  <a 
+                    href="https://wa.me/919558210145" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    data-track
+                    data-track-event="whatsapp_click"
+                    data-track-text="Chat on WhatsApp"
+                    data-track-header="How to Apply"
+                    className="inline-block bg-[#00b368] hover:bg-[#009657] text-white text-base font-semibold py-2.5 px-6 rounded-full transition-colors font-poppins"
+                  >
                     Chat on WhatsApp
                   </a>
                 </div>
@@ -120,7 +138,7 @@ export function HowToApply() {
               <p className="text-ink/80 text-xs xs:text-sm leading-snug mb-2 pr-1 font-poppins">
                 Drop your details below - a counsellor will call you within 24 hours.
               </p>
-              <button type="button" data-enquiry-trigger="true" className="inline-block bg-[#00aee8] hover:bg-[#0095c7] text-white text-[10px] xs:text-xs font-semibold py-1.5 px-3 sm:py-2 sm:px-4 rounded-full transition-colors font-poppins w-max">
+              <button type="button" data-enquiry-trigger="true" data-track data-track-event="popup_form_click" data-track-text="Request a Callback" data-track-header="Callback" className="inline-block bg-[#00aee8] hover:bg-[#0095c7] text-white text-[10px] xs:text-xs font-semibold py-1.5 px-3 sm:py-2 sm:px-4 rounded-full transition-colors font-poppins w-max">
                 Request a Callback
               </button>
             </div>
@@ -138,7 +156,16 @@ export function HowToApply() {
               <p className="text-white/95 text-lg sm:text-xl leading-relaxed mb-6 max-w-[95%] font-medium font-poppins">
                 Apply through the official PU Goa admissions portal and upload documents digitally.
               </p>
-              <a href="http://admissions.paruluniversity.ac.in/" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#ee364f] hover:bg-[#d42d41] text-white text-base sm:text-lg font-bold py-3 px-8 rounded-full transition-colors font-poppins w-max">
+              <a 
+                href="http://admissions.paruluniversity.ac.in/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                data-track
+                data-track-event="cta_click"
+                data-track-text="Apply Now"
+                data-track-header="Digital"
+                className="inline-block bg-[#ee364f] hover:bg-[#d42d41] text-white text-base sm:text-lg font-bold py-3 px-8 rounded-full transition-colors font-poppins w-max"
+              >
                 Apply Now
               </a>
             </div>
@@ -158,7 +185,16 @@ export function HowToApply() {
               <p className="text-white/95 text-lg sm:text-xl leading-relaxed mb-6 max-w-[95%] font-medium font-poppins">
                 Ask quick questions on programmes, fees or eligibility - instant answers.
               </p>
-              <a href="https://wa.me/919558210145" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#00b368] hover:bg-[#009657] text-white text-base sm:text-lg font-bold py-3 px-8 rounded-full transition-colors font-poppins w-max">
+              <a 
+                href="https://wa.me/919558210145" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                data-track
+                data-track-event="whatsapp_click"
+                data-track-text="Chat on WhatsApp"
+                data-track-header="How to Apply"
+                className="inline-block bg-[#00b368] hover:bg-[#009657] text-white text-base sm:text-lg font-bold py-3 px-8 rounded-full transition-colors font-poppins w-max"
+              >
                 Chat on WhatsApp
               </a>
             </div>

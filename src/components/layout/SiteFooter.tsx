@@ -149,7 +149,14 @@ export function SiteFooter() {
                 <span className="text-white/80 shrink-0">
                   <PhoneIcon />
                 </span>
-                <a href="tel:18008909090" className="hover:text-white">
+                <a 
+                  href="tel:18008909090" 
+                  className="hover:text-white"
+                  data-track
+                  data-track-event="contact_click"
+                  data-track-text="18008909090"
+                  data-track-header="Phone"
+                >
                   18008909090
                 </a>
               </div>
@@ -162,6 +169,10 @@ export function SiteFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="break-all hover:text-white"
+                  data-track
+                  data-track-event="contact_click"
+                  data-track-text={contact.email}
+                  data-track-header="Email"
                 >
                   {contact.email}
                 </a>
@@ -207,7 +218,14 @@ export function SiteFooter() {
                 <ul className="mt-6 space-y-3 text-base text-white sm:text-[17px]">
                   {col.links.map((l) => (
                     <li key={l.label}>
-                      <Link href={l.href} className="transition-colors hover:text-white">
+                      <Link 
+                        href={l.href} 
+                        data-track
+                        data-track-event="footer_navigation"
+                        data-track-text={l.label}
+                        data-track-header={col.heading.toUpperCase()}
+                        className="transition-colors hover:text-white"
+                      >
                         {l.label}
                       </Link>
                     </li>
@@ -222,7 +240,14 @@ export function SiteFooter() {
                   <ul className="mt-6 space-y-3 text-base text-white sm:text-[17px]">
                     {sub.links.map((l) => (
                       <li key={l.label}>
-                        <Link href={l.href} className="transition-colors hover:text-white">
+                        <Link 
+                          href={l.href} 
+                          data-track
+                          data-track-event="footer_navigation"
+                          data-track-text={l.label}
+                          data-track-header={sub.heading.toUpperCase()}
+                          className="transition-colors hover:text-white"
+                        >
                           {l.label}
                         </Link>
                       </li>

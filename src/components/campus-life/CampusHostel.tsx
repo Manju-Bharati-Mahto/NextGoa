@@ -189,8 +189,14 @@ export function CampusHostel() {
           
           {/* Right: Actions */}
           <div className="md:w-[40%] bg-[#0CAADD] px-8 py-8 sm:px-16 sm:py-12 flex flex-col items-center justify-center gap-5">
-            <button 
+            <button
+              type="button"
               data-brochure-trigger="true"
+              data-track
+              data-track-event="popup_form_click"
+              data-track-text="Admission Brochure"
+              data-track-header="Hostel fees & room plans"
+              data-pdf-url="/prospectus/PU_Goa_Hostel_Fee_Structure.pdf"
               className="w-full max-w-[320px] bg-[#FEDB2F] hover:bg-white text-[#1F1F1F] font-[family-name:var(--font-poppins)] font-semibold text-[16px] sm:text-[18px] px-8 py-5 rounded-full transition-colors flex items-center justify-center gap-3 shadow-lg"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -198,7 +204,7 @@ export function CampusHostel() {
               </svg>
               Admission Brochure
             </button>
-            <button type="button" data-enquiry-trigger="true" className="font-[family-name:var(--font-poppins)] text-white/90 hover:text-white text-[14px] sm:text-[15px] transition-colors underline underline-offset-4">
+            <button type="button" data-enquiry-trigger="true" data-track data-track-event="popup_form_click" data-track-text="Talk to counsellor" data-track-header="Hostel fees & room plans" className="font-[family-name:var(--font-poppins)] text-white/90 hover:text-white text-[14px] sm:text-[15px] transition-colors underline underline-offset-4">
               Talk to counsellor
             </button>
           </div>

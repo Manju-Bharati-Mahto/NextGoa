@@ -166,6 +166,7 @@ export function EnquiryModal() {
     }
   };
   const [modalHeading, setModalHeading] = useState("Start Your Application");
+  const [triggerText, setTriggerText] = useState("Enquire Now");
 
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
@@ -179,7 +180,10 @@ export function EnquiryModal() {
       if (isEnquiry) {
         e.preventDefault();
         
-        const buttonText = target.textContent?.toLowerCase() || "";
+        const rawButtonText = target.textContent?.trim() || "Enquire Now";
+        setTriggerText(rawButtonText);
+        
+        const buttonText = rawButtonText.toLowerCase();
         if (buttonText.includes("talk to counsellor") || buttonText.includes("talk to a counsellor")) {
           setModalHeading("Request a Callback");
         } else {
@@ -684,6 +688,12 @@ export function EnquiryModal() {
                   <button
                     type="submit"
                     disabled={submitState === 'submitting'}
+                    data-track
+                    data-track-event="lead_form_success"
+                    data-track-category={triggerText}
+                    data-track-subcategory="study-abroad"
+                    data-track-text="Submit"
+                    data-track-form-type={modalHeading}
                     className={`w-full sm:w-1/2 rounded-full py-3.5 font-bold text-white transition-all text-[18px] ${submitState === 'submitting'
                       ? 'bg-[#11B1E3]/70 cursor-not-allowed'
                       : 'bg-[#11B1E3] hover:bg-[#11B1E3]/90 hover:scale-[1.02] active:scale-95'

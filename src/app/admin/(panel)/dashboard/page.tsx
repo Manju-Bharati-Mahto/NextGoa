@@ -119,10 +119,10 @@ return (
                Latest Blogs
             </div>
          </div>
-         <div className="space-y-4">
-            {dashboard?.recentBlogs?.map((blog: any) => (
+          <div className="space-y-4">
+            {dashboard?.recentBlogs?.map((blog: any, index: number) => (
             <div
-               key={blog.id}
+               key={`blog-${blog.id}-${index}`}
                className="flex items-center justify-between border-b last:border-0 pb-4"
                >
                <div>
@@ -152,14 +152,14 @@ return (
             Latest Leads
          </h2>
          <div className="space-y-4">
-            {dashboard?.recentLeads?.map((lead:any)=>{
+            {dashboard?.recentLeads?.map((lead:any, index: number)=>{
             const formData=
             typeof lead.form_data==="string"
             ?JSON.parse(lead.form_data)
             :lead.form_data;
             return(
             <div
-               key={lead.id}
+               key={`lead-${lead.id}-${index}`}
                className="flex justify-between items-start border-light pb-3 last:border-0"
                >
                <div>

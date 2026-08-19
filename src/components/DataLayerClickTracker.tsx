@@ -77,4 +77,6 @@ export default function DataLayerClickTracker() {
       document.removeEventListener("click", handleClick);
     };
   }, []);
+
+  return null;
 }

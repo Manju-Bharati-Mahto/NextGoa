@@ -109,9 +109,10 @@ export async function POST(req: NextRequest) {
         og_description,
         og_image,
         blog_type,
-        status
+        status,
+        author_name
       )
-      VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+      VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
       `,
       [
         body.title,
@@ -129,6 +130,7 @@ export async function POST(req: NextRequest) {
         body.og_image,
         "blog",
         body.status,
+        body.author_name,
       ]
     );
 

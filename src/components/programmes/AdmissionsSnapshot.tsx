@@ -105,6 +105,10 @@ export default function AdmissionsSnapshot({ slug }: AdmissionsSnapshotProps) {
         <div className="mt-12 sm:mt-16 text-center">
           <button 
             data-enquiry-trigger="true"
+            data-track
+            data-track-event="popup_form_click"
+            data-track-text="Open admissions"
+            data-track-header="Admissions Snapshot"
             className="inline-block bg-[#E73649] text-white font-bold text-[16px] sm:text-[18px] px-8 py-4 rounded-full hover:bg-[#D62839] transition-colors shadow-sm"
           >
             Open admissions &rarr;

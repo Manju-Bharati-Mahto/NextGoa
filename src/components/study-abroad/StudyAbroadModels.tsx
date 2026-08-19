@@ -183,6 +183,10 @@ export default function StudyAbroadModels() {
               
               <button 
                 onClick={() => setIsModalOpen(true)}
+                data-track
+                data-track-event="popup_form_click"
+                data-track-text="Explore More"
+                data-track-header="Three Models. Six Countries."
                 className="inline-flex items-center gap-2 bg-[#e73649] hover:bg-[#D62839] text-white px-8 py-2.5 rounded-full font-bold text-[18px] transition-all duration-300 hover:shadow-lg ml-0 md:ml-2"
               >
                 Explore More

@@ -423,6 +423,10 @@ export function ProgrammeFinder({ data }: Props) {
           </p>
           <button
             data-enquiry-trigger="true"
+            data-track
+            data-track-event="popup_form_click"
+            data-track-text="Talk to Counsellor"
+            data-track-header="NA"
             className="whitespace-nowrap rounded-full bg-sunshine px-6 py-3 text-sm font-bold text-ink transition-transform hover:scale-[1.03] flex items-center gap-2"
           >
             Talk to Counsellor

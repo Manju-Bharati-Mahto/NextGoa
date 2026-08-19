@@ -30,6 +30,10 @@ export default function StudyAbroadCTA() {
             <button
               type="button"
               data-enquiry-trigger="true"
+              data-track
+              data-track-event="popup_form_click"
+              data-track-text="Apply Now"
+              data-track-header="NA"
               className="w-full sm:w-auto block sm:inline-block text-center bg-[#eb3b47] text-white px-8 py-3.5 rounded-full font-bold text-[16px] shadow-md hover:bg-[#d6323c] transition-colors whitespace-nowrap"
               style={{ letterSpacing: '0.3px' }}
             >
@@ -39,6 +43,10 @@ export default function StudyAbroadCTA() {
               href="https://wa.me/919558210145"
               target="_blank"
               rel="noopener noreferrer"
+              data-track
+              data-track-event="whatsapp_click"
+              data-track-text="Chat on WhatsApp"
+              data-track-header="How to Apply"
               className="w-full sm:w-auto block sm:inline-block text-center bg-white/20 border border-white/40 backdrop-blur-md text-white px-8 py-3.5 rounded-full font-bold text-[16px] shadow-md hover:bg-white/30 transition-colors whitespace-nowrap"
               style={{ letterSpacing: '0.3px' }}
             >
@@ -46,6 +54,10 @@ export default function StudyAbroadCTA() {
             </a>
             <a
               href="tel:18008909090"
+              data-track
+              data-track-event="toll_free_click"
+              data-track-text="1800 890 9090"
+              data-track-header="Talk to Us"
               className="w-full sm:w-auto flex sm:inline-flex bg-white/20 border border-white/40 backdrop-blur-md text-white px-8 py-3.5 rounded-full font-bold text-[16px] shadow-md hover:bg-white/30 transition-colors items-center justify-center gap-2 whitespace-nowrap"
               style={{ letterSpacing: '0.3px' }}
             >

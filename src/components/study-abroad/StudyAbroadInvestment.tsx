@@ -39,7 +39,15 @@ export default function StudyAbroadInvestment() {
               </p>
             </div>
             <div>
-              <a href="/documents/Prospectus_AY_2026_27.pdf" download="Prospectus A.Y. 2026-27.pdf" className="inline-block bg-[#eb3b47] hover:bg-[#d6323c] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-colors w-max shadow-md">
+              <a 
+                href="/documents/Prospectus_AY_2026_27.pdf" 
+                download="Prospectus A.Y. 2026-27.pdf" 
+                data-track
+                data-track-event="popup_form_click"
+                data-track-text="Download Prospectus"
+                data-track-header="Standard PU Goa fee"
+                className="inline-block bg-[#eb3b47] hover:bg-[#d6323c] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-colors w-max shadow-md"
+              >
                 Download Prospectus
               </a>
             </div>
@@ -57,6 +65,10 @@ export default function StudyAbroadInvestment() {
             <div>
               <button 
                 onClick={() => setIsModalOpen(true)}
+                data-track
+                data-track-event="popup_form_click"
+                data-track-text="Connect with Counsellor"
+                data-track-header="Tuition + living costs"
                 className="bg-[#0ca7dd] hover:bg-[#0b92c2] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-colors w-max shadow-md"
               >
                 Connect with Counsellor
@@ -75,7 +87,7 @@ export default function StudyAbroadInvestment() {
               </p>
             </div>
             <div>
-              <button data-enquiry-trigger="true" className="inline-block bg-[#232323] hover:bg-[#111111] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-colors w-max shadow-md">
+              <button data-enquiry-trigger="true" data-track data-track-event="popup_form_click" data-track-text="Talk to advisor" data-track-header="Pay your way" className="inline-block bg-[#232323] hover:bg-[#111111] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-colors w-max shadow-md">
                 Talk to advisor
               </button>
             </div>

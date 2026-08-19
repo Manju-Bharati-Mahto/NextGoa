@@ -244,6 +244,10 @@ export default function PIERCModal({ onClose }: Props) {
               type="submit"
               form=""
               onClick={handleSubmit}
+              data-track
+              data-track-event="pierc_form_success"
+              data-track-header="You're almost there!"
+              data-track-text="Submit & Visit PIERC"
               className="px-8 py-3 rounded-full font-bold text-[15px] bg-[#FEDB2F] text-black hover:bg-[#ffe042] transition-all"
             >
               Submit & Visit PIERC 🚀

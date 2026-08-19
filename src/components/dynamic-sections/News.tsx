@@ -68,7 +68,14 @@ export function News({ data }: NewsProps) {
   };
 
   const CardContent = ({ s }: { s: any }) => (
-    <Link href={s.link || "#"} className="group flex flex-col justify-between overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-black/5 transition-all duration-300 hover:shadow-lg h-full">
+    <Link 
+      href={s.link || "#"} 
+      data-track
+      data-track-event="news_click"
+      data-track-text={s.title}
+      data-track-header={data?.eyebrow || "news & stories"}
+      className="group flex flex-col justify-between overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-black/5 transition-all duration-300 hover:shadow-lg h-full"
+    >
       <div className="flex flex-col h-full">
         <div className="relative aspect-[16/12] bg-gradient-to-br from-brand via-brand-bright to-ocean overflow-hidden shrink-0">
           {s.image ? (
@@ -154,6 +161,10 @@ export function News({ data }: NewsProps) {
         <div className="mt-10 flex justify-center">
           <Link 
            href={data?.buttonLink || "/blog"}
+           data-track
+           data-track-event="cta_click"
+           data-track-text={data?.buttonText || "All news"}
+           data-track-header={data?.eyebrow || "News"}
             className="inline-flex items-center justify-center rounded-full bg-brand px-8 py-3 text-[15px] font-poppins font-semibold text-white shadow-sm transition-all hover:bg-brand/90 hover:shadow-md"
           >
            {data?.buttonText || "All news →"}

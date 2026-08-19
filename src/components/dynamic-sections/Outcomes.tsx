@@ -91,11 +91,15 @@ export function Recruiters({ data, }: RecruitersProps) {
       {/* Constrained Footer Container */}
       <div className="mx-auto max-w-5xl px-6 pb-10 pt-10 flex justify-center">
         <Link
-  href={data.buttonLink || "#"}
-  className="inline-flex items-center justify-center bg-[#FEDB2F] hover:bg-[#e5c52a] text-black font-bold text-[15px] sm:text-[16px] px-8 py-3.5 rounded-full transition-colors shadow-sm"
->
-  {data.buttonText}
-</Link>
+          href={data.buttonLink || "#"}
+          data-track
+          data-track-event="placements_click"
+          data-track-text={data.buttonText || "Full placement report"}
+          data-track-header={data.eyebrow || "Outcomes"}
+          className="inline-flex items-center justify-center bg-[#FEDB2F] hover:bg-[#e5c52a] text-black font-bold text-[15px] sm:text-[16px] px-8 py-3.5 rounded-full transition-colors shadow-sm"
+        >
+          {data.buttonText}
+        </Link>
       </div>
     </section>
   );

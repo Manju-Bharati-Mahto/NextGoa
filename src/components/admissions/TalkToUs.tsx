@@ -378,12 +378,20 @@ export function TalkToUs() {
               <a 
                 href="https://wa.me/919558210145"
                 target="_blank" rel="noopener noreferrer"
+                data-track
+                data-track-event="whatsapp_click"
+                data-track-text="Chat on WhatsApp"
+                data-track-header="Talk to Us"
                 className="flex items-center justify-center bg-[#00b25c] hover:bg-[#00a050] text-white font-bold text-[15px] py-3 px-6 rounded-full transition-colors flex-1"
               >
                 Chat on WhatsApp
               </a>
               <a 
                 href="tel:18008909090"
+                data-track
+                data-track-event="toll_free_click"
+                data-track-text="1800 890 9090"
+                data-track-header="Talk to Us"
                 className="flex items-center justify-center gap-2 bg-[#ee364f] hover:bg-[#d62d43] text-white font-bold text-[15px] py-3 px-6 rounded-full transition-colors flex-1"
               >
                 <span className="material-symbols-rounded text-[20px]">call</span>
@@ -550,6 +558,12 @@ export function TalkToUs() {
                   <button
                     type="submit"
                     disabled={submitState === 'submitting'}
+                    data-track
+                    data-track-event="lead_form_success"
+                    data-track-category="Enquire Now"
+                    data-track-subcategory="admissions"
+                    data-track-text="Submit"
+                    data-track-form-type="Request a Callback"
                     className={`w-full sm:w-1/2 rounded-full py-3.5 font-bold text-white transition-all text-[18px] ${submitState === 'submitting'
                       ? 'bg-[#11B1E3]/70 cursor-not-allowed'
                       : 'bg-[#11B1E3] hover:bg-[#11B1E3]/90 hover:scale-[1.02] active:scale-95'

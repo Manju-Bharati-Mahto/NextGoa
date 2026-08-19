@@ -414,6 +414,10 @@ export function CampusVisitModal() {
                     <button
                       type="submit"
                       disabled={submitState === 'submitting'}
+                      data-track
+                      data-track-event="book_tour_success"
+                      data-track-text="Confirm Visit"
+                      data-track-header="Book a Campus Visit"
                       className={`flex-1 text-[15px] font-bold py-3 rounded-full transition-all ${
                         submitState === 'submitting'
                           ? 'bg-[#fedb2f]/70 text-ink/70 cursor-not-allowed'

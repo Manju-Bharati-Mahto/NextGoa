@@ -67,6 +67,17 @@ export function FinalCta({
 
                   const commonProps = {
                     "data-enquiry-trigger": action.triggerEnquiry ? "true" : undefined,
+                    ...(action.triggerEnquiry ? {
+                      "data-track": true,
+                      "data-track-event": "popup_form_click",
+                      "data-track-text": action.label,
+                      "data-track-header": title || "NA",
+                    } : action.href?.startsWith("tel:") ? {
+                      "data-track": true,
+                      "data-track-event": "toll_free_click",
+                      "data-track-text": action.label,
+                      "data-track-header": "Talk to Us",
+                    } : {}),
                     className: `inline-flex min-h-12 w-full max-w-[280px] sm:w-auto sm:max-w-none items-center justify-center gap-2 rounded-full px-6 font-sans text-[16px] font-bold transition ${isPrimary
                         ? "bg-brand text-white hover:bg-brand-dark"
                         : "border border-white/30 bg-white/20 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_10px_30px_rgba(0,0,0,0.18)] backdrop-blur-md hover:bg-white/30"

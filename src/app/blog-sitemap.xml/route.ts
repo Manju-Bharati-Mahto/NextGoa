@@ -21,16 +21,24 @@ export async function GET() {
     { path: "/blog/btech-in-ai-course-structure", changefreq: "daily", priority: 0.9 },
     { path: "/blog/bsc-nursing-course-details", changefreq: "daily", priority: 0.9 },
     { path: "/blog/b-sc-biotechnology-course-guide-subjects-admission-process", changefreq: "daily", priority: 0.9 },
-    { path: "/blog/inequality-inside-the-home-understanding-the-gaps-that-exist-within-household", changefreq: "daily", priority: 0.9 },
     { path: "/blog/bba-course-guide", changefreq: "daily", priority: 0.9 },
-    { path: "/blog/cardiovascular-health-after-decades-of-progress-why-the-numbers-are-worrying-again", changefreq: "daily", priority: 0.9 },
     { path: "/blog/how-to-start-career-in-finance-with-mba-and-bba", changefreq: "daily", priority: 0.9 },
     { path: "/blog/future-scope-of-phd-in-computer-science", changefreq: "daily", priority: 0.9 },
     { path: "/blog/what-you-learn-in-bca-and-mca-program", changefreq: "daily", priority: 0.9 },
     { path: "/blog/bba-vs-bba-hons", changefreq: "daily", priority: 0.9 },
     { path: "/blog/msc-biotechnology-scope-career-research-guide", changefreq: "daily", priority: 0.9 },
     { path: "/blog/after-decades-of-improvement-cardiovascular-health-rates", changefreq: "daily", priority: 0.9 },
-    { path: "/blog/those-inequalities-are-inequalities-that-occur-within-households", changefreq: "daily", priority: 0.9 }
+    { path: "/blog/those-inequalities-are-inequalities-that-occur-within-households", changefreq: "daily", priority: 0.9 },
+    { path: "/blog/how-students-learn-creative-design", changefreq: "daily", priority: 0.9 },
+    { path: "/blog/mba-vs-specialised-business-certifications-what-employers-value", changefreq: "daily", priority: 0.9 },
+    { path: "/blog/why-an-industrial-visit-for-mca-students-matters-inside-d-links-goa-networking-plant-with-parul-university", changefreq: "daily", priority: 0.9 },
+    { path: "/blog/inside-ncpor-indias-polar-research-nodal-agency-in-goa-what-an-ncpor-industrial-visit-teaches-computer-science-and-bca-students-about-data-science-in-real-research", changefreq: "daily", priority: 0.9 },
+    { path: "/blog/physiotherapy-top-choice-in-healthcare-career", changefreq: "daily", priority: 0.9 },
+    { path: "/blog/top-programming-skills-recruiters-expect-from-freshers", changefreq: "daily", priority: 0.9 },
+    { path: "/blog/applied-science-powering-innovation-in-healthcare-agriculture-and-sustainability", changefreq: "daily", priority: 0.9 },
+    { path: "/blog/allied-healthcare-careers-in-india", changefreq: "daily", priority: 0.9 },
+    { path: "/blog/d-link-goa-industrial-visit-mca-students", changefreq: "daily", priority: 0.9 },
+    { path: "/blog/bca-students-ncpor-industrial-visit-data-science-learning", changefreq: "daily", priority: 0.9 }
   ];
 
   const urls: SitemapUrl[] = staticPaths.map((item) => ({

@@ -38,13 +38,29 @@ export function PlacementsCta() {
           <button className="bg-[#EF4444] text-white px-8 py-3.5 rounded-full font-bold text-[15px] hover:bg-red-600 transition-colors shadow-sm">
             Apply Now
           </button>
-          <a href="https://wa.me/919558210145" target="_blank" rel="noopener noreferrer" className="bg-white text-black border border-gray-200 shadow-sm px-8 py-3.5 rounded-full font-bold text-[15px] hover:bg-gray-50 transition-colors">
+          <a 
+            href="https://wa.me/919558210145" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            data-track
+            data-track-event="whatsapp_click"
+            data-track-text="Chat on WhatsApp"
+            data-track-header="How to Apply"
+            className="bg-white text-black border border-gray-200 shadow-sm px-8 py-3.5 rounded-full font-bold text-[15px] hover:bg-gray-50 transition-colors"
+          >
             Chat on WhatsApp
           </a>
-          <button className="bg-white text-black border border-gray-200 shadow-sm px-8 py-3.5 rounded-full font-bold text-[15px] hover:bg-gray-50 transition-colors flex items-center gap-2">
+          <a 
+            href="tel:18008909090"
+            data-track
+            data-track-event="toll_free_click"
+            data-track-text="1800 890 9090"
+            data-track-header="Talk to Us"
+            className="bg-white text-black border border-gray-200 shadow-sm px-8 py-3.5 rounded-full font-bold text-[15px] hover:bg-gray-50 transition-colors flex items-center gap-2"
+          >
             <PhoneIcon />
             1800 890 9090
-          </button>
+          </a>
         </div>
       </div>
     </section>

@@ -16,18 +16,30 @@ export default function FloatingCta() {
       <div className="bg-black/30 backdrop-blur-xl border border-white/20 p-2 sm:p-2.5 rounded-full flex items-center justify-between gap-2 sm:gap-4 shadow-[0_8px_32px_rgba(0,0,0,0.15)] pointer-events-auto">
         <button 
           data-enquiry-trigger="true"
+          data-track
+          data-track-event="popup_form_click"
+          data-track-text="Apply for 2026"
+          data-track-header="NA"
           className="bg-[#E73649] text-white font-bold text-[14px] sm:text-[16px] px-6 sm:px-8 py-3 rounded-full hover:bg-[#D62B3D] transition-colors whitespace-nowrap"
         >
           Apply for 2026 &rarr;
         </button>
         <button 
           data-enquiry-trigger="true"
+          data-track
+          data-track-event="popup_form_click"
+          data-track-text="Talk to Counsellor"
+          data-track-header="NA"
           className="bg-white text-ink font-bold text-[14px] sm:text-[16px] px-5 sm:px-8 py-3 rounded-full hover:bg-gray-50 transition-colors whitespace-nowrap hidden sm:block"
         >
           Talk to Counsellor
         </button>
         <button 
           data-brochure-trigger="true"
+          data-track
+          data-track-event="popup_form_click"
+          data-track-text="Brochure"
+          data-track-header="NA"
           className="bg-white text-ink font-bold text-[14px] sm:text-[16px] px-5 sm:px-8 py-3 rounded-full hover:bg-gray-50 transition-colors whitespace-nowrap"
         >
           Brochure

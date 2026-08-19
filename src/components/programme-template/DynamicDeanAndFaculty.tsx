@@ -101,6 +101,11 @@ export function DynamicDeanAndFaculty({
                       href={deanOrcid}
                       target="_blank"
                       rel="noreferrer"
+                      data-track
+                      data-track-event="social_link_click"
+                      data-track-category="Dean and Faculty"
+                      data-track-header={dean.name}
+                      data-track-text="ORCID"
                       className="bg-white text-[#CF4055] rounded-full px-6 py-3 flex items-center gap-2"
                     >
                       <img
@@ -116,6 +121,11 @@ export function DynamicDeanAndFaculty({
                       href={deanLinkedin}
                       target="_blank"
                       rel="noreferrer"
+                      data-track
+                      data-track-event="social_link_click"
+                      data-track-category="Dean and Faculty"
+                      data-track-header={dean.name}
+                      data-track-text="LinkedIn"
                       className="bg-white text-[#CF4055] rounded-full px-6 py-3 flex items-center gap-2"
                     >
                       <Icon icon="mdi:linkedin" />
@@ -226,6 +236,11 @@ export function DynamicDeanAndFaculty({
                                 href={orcid}
                                 target="_blank"
                                 rel="noreferrer"
+                                data-track
+                                data-track-event="social_link_click"
+                                data-track-category="Teaching Faculty"
+                                data-track-header={faculty.name}
+                                data-track-text="ORCID"
                               >
                                 <img
                                   src="/orchid.svg"
@@ -239,6 +254,11 @@ export function DynamicDeanAndFaculty({
                                 href={linkedin}
                                 target="_blank"
                                 rel="noreferrer"
+                                data-track
+                                data-track-event="social_link_click"
+                                data-track-category="Teaching Faculty"
+                                data-track-header={faculty.name}
+                                data-track-text="LinkedIn"
                               >
                                 <Icon
                                   icon="mdi:linkedin"

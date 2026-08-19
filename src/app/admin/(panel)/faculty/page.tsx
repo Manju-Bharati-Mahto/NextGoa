@@ -123,7 +123,7 @@ export default function FacultyPage() {
 
           <tbody>
             {faculty.map((item, index) => (
-              <tr key={item.id} className="border-light hover:bg-gray-50">
+              <tr key={`${item.id}-${index}`} className="border-light hover:bg-gray-50">
                 <td className="px-5 py-4">{(page - 1) * limit + index + 1}</td>
 
                 <td className="px-5 py-4 font-medium">{item.title}</td>
