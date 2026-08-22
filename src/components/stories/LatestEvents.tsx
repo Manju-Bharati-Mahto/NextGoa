@@ -73,6 +73,11 @@ export function LatestEvents() {
       }
 
       alert("Subscribed Successfully");
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'subscribe_click_success',
+        click_text: 'Subscribe',
+      });
 
       setFormData({
         name: "",

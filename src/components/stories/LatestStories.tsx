@@ -82,6 +82,12 @@ const handleSubmit = async (
 
     alert("Subscribed Successfully");
 
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'subscribe_click_success',
+      click_text: 'Subscribe',
+    });
+
     setFormData({
       name: "",
       email: "",
@@ -431,16 +437,14 @@ const handleSubmit = async (
           </div>
 
           {/* Right Side - Form */}
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full lg:max-w-[600px]" >
+          <form onSubmit={handleSubmit} 
+              className="flex flex-col gap-4 w-full lg:max-w-[600px]" >
             <div className="flex flex-col sm:flex-row gap-4">
               <input type="text" placeholder="Your name (optional)" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value, }) } className="w-full bg-[#1F1F1F]/60 border border-white/10 rounded-full px-8 py-4 text-white" />
              <input type="email" placeholder="Email address *" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value, }) } className="w-full bg-[#1F1F1F]/60 border border-white/10 rounded-full px-8 py-4 text-white" />
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-4 mt-2">
               <button
-              data-track
-              data-track-event="subscribe_click_success"
-              data-track-text="Subscribe"
     type="submit"
     disabled={loading}
   className="w-full sm:w-auto bg-[#E73649] hover:bg-[#c92b3c] text-white px-10 py-4 rounded-full text-base font-semibold tracking-wide shadow-md transition-all hover:scale-[1.02] cursor-pointer whitespace-nowrap">

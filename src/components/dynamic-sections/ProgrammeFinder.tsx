@@ -182,6 +182,11 @@ function CourseCard({
   return (
     <Link
       href={href}
+      data-track
+      data-track-event="card_click"
+      data-track-text={title} 
+      data-track-header="Find your Faculty"
+      data-track-category="Home" 
       className={`relative block w-full min-h-[160px] sm:min-h-[280px] rounded-[12px] sm:rounded-[16px] p-4 sm:p-8 flex flex-col justify-center overflow-hidden border text-left cursor-pointer ${theme.bg}`}
     >
       {/* Decorative background icon — smaller on mobile */}

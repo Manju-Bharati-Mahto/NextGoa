@@ -221,7 +221,7 @@ export function SiteFooter() {
                       <Link 
                         href={l.href} 
                         data-track
-                        data-track-event="footer_navigation"
+                        data-track-event="footer_interaction"
                         data-track-text={l.label}
                         data-track-header={col.heading.toUpperCase()}
                         className="transition-colors hover:text-white"
@@ -243,7 +243,7 @@ export function SiteFooter() {
                         <Link 
                           href={l.href} 
                           data-track
-                          data-track-event="footer_navigation"
+                          data-track-event="footer_interaction"
                           data-track-text={l.label}
                           data-track-header={sub.heading.toUpperCase()}
                           className="transition-colors hover:text-white"

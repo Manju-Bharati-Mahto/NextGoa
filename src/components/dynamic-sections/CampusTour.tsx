@@ -126,6 +126,7 @@ export function CampusTour({ data, }: CampusTourProps) {
               onClick={() => setIsPlaying(true)}
               aria-label="Watch the 3D campus tour"
               data-track
+              data-track-text="NA" 
               data-track-event="video_play"
               data-track-video-title="Step Into Parul University Goa | A New Chapter of Higher Education"
               data-track-video-url={data?.videoUrl || "https://www.youtube.com/watch?v=epXIhN_Pt7I"}
