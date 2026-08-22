@@ -23,7 +23,8 @@ const categories = [
    { name: "Placement", icon: "business_center" },
    { name: "Research", icon: "biotech" },
    { name: "Student Life", icon: "school" },
-   { name: "Admissions Tips", icon: "assignment" }
+   { name: "Admissions Tips", icon: "assignment" },
+   { name: "Careers", icon: "ads_click" }
 ];
 
 export const slugifyCategory = (name: string) => name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
@@ -259,7 +260,7 @@ function StoriesGridInner() {
                   </>
                ) : (
                   <div className="text-center py-16 bg-white rounded-3xl shadow-sm border border-black/5">
-                     <p className="font-poppins text-lg text-ink/60">No stories found in this category.</p>
+                     <p className="font-poppins text-lg text-ink/60">No blogs found in this category.</p>
                   </div>
                )}
             </div>

@@ -5,7 +5,8 @@ const categories = [
   "Placement",
   "Research",
   "Student Life",
-  "Admissions Tips"
+  "Admissions Tips",
+  "Careers"
 ];
 
 const slugifyCategory = (name: string) => name.toLowerCase().replace(/[^a-z0-9]+/g, "-");

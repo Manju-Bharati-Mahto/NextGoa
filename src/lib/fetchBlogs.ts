@@ -33,6 +33,7 @@ function determineCategory(title: string, tags: string[]): string {
   if (content.includes('admission') || content.includes('apply')) return 'Admissions Tips';
   if (content.includes('student') || content.includes('campus') || content.includes('life')) return 'Student Life';
   if (content.includes('academic') || content.includes('curriculum') || content.includes('class')) return 'Academic';
+  if (content.includes('career') || content.includes('careers') || content.includes('job') || content.includes('placement') || content.includes('hiring') || content.includes('interview')) return 'Careers';
   return 'News';
 }
 
