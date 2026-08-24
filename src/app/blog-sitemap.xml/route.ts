@@ -35,7 +35,9 @@ export async function GET() {
     { path: "/blog/applied-science-powering-innovation-in-healthcare-agriculture-and-sustainability", changefreq: "daily", priority: 0.9 },
     { path: "/blog/allied-healthcare-careers-in-india", changefreq: "daily", priority: 0.9 },
     { path: "/blog/d-link-goa-industrial-visit-mca-students", changefreq: "daily", priority: 0.9 },
-    { path: "/blog/bca-students-ncpor-industrial-visit-data-science-learning", changefreq: "daily", priority: 0.9 }
+    { path: "/blog/bca-students-ncpor-industrial-visit-data-science-learning", changefreq: "daily", priority: 0.9 },
+    { path: "/blog/careers-in-telemedicine-and-healthcare-technology", changefreq: "daily", priority: 0.9 },
+    { path: "/blog/ai-in-pharmacy-and-drug-discovery", changefreq: "daily", priority: 0.9 }
   ];
 
   const urls: SitemapUrl[] = staticPaths.map((item) => ({
