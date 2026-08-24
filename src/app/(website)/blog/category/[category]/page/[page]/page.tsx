@@ -3,6 +3,8 @@ import StoriesPage from "../../../../page";
 import db from "@/lib/db";
 import { SITE_URL } from "@/lib/site-config";
 
+export const dynamic = "force-dynamic";
+
 type Props = {
   params: Promise<{ category: string; page: string }>;
 };
