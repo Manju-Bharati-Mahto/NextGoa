@@ -17,6 +17,7 @@ export function getBlogData(body: any) {
     body.status,
     body.publish_at,
     body.author_name,
-    body.faculty_id,
+    body.author_linkedin,
+    body.faculty_id.join(","),
   ];
 }

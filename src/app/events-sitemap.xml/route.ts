@@ -1,25 +1,40 @@
 import { NextResponse } from "next/server";
 import { generateSitemap, SitemapUrl } from "@/lib/sitemaps/sitemap-utils";
 import { SITE_URL } from "@/lib/site-config";
+import db from "@/lib/db";
+
+export const revalidate = 3600; // Cache for 1 hour
 
 export async function GET() {
-  const staticPaths = [
-    { path: "/events", changefreq: "weekly", priority: 0.9 },
-    { path: "/events/vadodara-fashion-week-season-3-innovation-arjun-kapoor-parul-university-goa", changefreq: "weekly", priority: 0.9 },
-    { path: "/events/7th-annual-convocation-9980-graduates-careers", changefreq: "weekly", priority: 0.9 },
-    { path: "/events/pu-overall-champions-aiu-west-zone-unifest-2025-satrang", changefreq: "weekly", priority: 0.9 },
-    { path: "/events/enterprise-rag-architecture-explained-how-the-goa-cloud-connect-2026-grounding-session-taught-developers-to-make-ai-trustworthy", changefreq: "weekly", priority: 0.9 },
-    { path: "/events/building-ai-applications-with-gemini-what-the-goa-cloud-connect-2026-baseline-session-taught-120-developers-at-parul-university-goa", changefreq: "weekly", priority: 0.9 },
-    { path: "/events/world-no-tobacco-day-2026-role-of-nurses-parul-college-of-nursing-students-skit-on-public-health-education", changefreq: "weekly", priority: 0.9 },
-    { path: "/events/parul-university-goa-achieves-a-historic-hattrick-at-india-energy-week-iew-2026", changefreq: "weekly", priority: 0.9 }
+  let urls: SitemapUrl[] = [
+    {
+      loc: `${SITE_URL}/events`,
+      lastmod: new Date().toISOString(),
+      changefreq: "weekly",
+      priority: 0.9,
+    },
   ];
 
-  const urls: SitemapUrl[] = staticPaths.map((item) => ({
-    loc: `${SITE_URL}${item.path}`,
-    lastmod: new Date().toISOString(),
-    changefreq: item.changefreq,
-    priority: item.priority,
-  }));
+  try {
+    const [rows]: any = await db.query(
+      `SELECT slug, COALESCE(publish_at, updated_at, created_at) AS date 
+       FROM blogs 
+       WHERE blog_type = 'event' AND status = 'published'`
+    );
+
+    if (rows && rows.length > 0) {
+      const dynamicUrls: SitemapUrl[] = rows.map((event: any) => ({
+        loc: `${SITE_URL}/events/${event.slug}`,
+        lastmod: new Date(event.date || Date.now()).toISOString(),
+        changefreq: "weekly",
+        priority: 0.9,
+      }));
+      urls = [...urls, ...dynamicUrls];
+    }
+  } catch (error) {
+    console.error("[EventsSitemap] Database error:", error);
+    // On DB failure, it will just return the static /events route
+  }
 
   const xml = generateSitemap(urls);
 

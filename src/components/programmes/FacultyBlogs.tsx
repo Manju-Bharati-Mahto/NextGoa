@@ -41,7 +41,7 @@ export default async function FacultyBlogs({ facultySlug }: { facultySlug: strin
           WHERE FIND_IN_SET(c.id, b.category)
         ) AS category_names
       FROM blogs b
-      WHERE b.status = 'published' AND b.faculty_id = ?
+      WHERE b.status = 'published' AND FIND_IN_SET(?, b.faculty_id)
       ORDER BY COALESCE(b.publish_at, b.created_at) DESC 
       LIMIT 10
       `,
