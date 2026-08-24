@@ -163,32 +163,39 @@ export default async function StoryPage({
               </p>
             )}
           </div>
-          <div className="absolute z-20 bottom-6 left-6 md:bottom-10 md:left-12 flex items-center gap-3 text-white/90 text-sm md:text-base font-medium drop-shadow">
-            {(story.publish_at || story.created_at) && (
-              <span className="flex items-center gap-2">
-                <Clock size={16} className="opacity-80" />
-                {new Date(story.publish_at || story.created_at).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
-              </span>
-            )}
-            {(story.publish_at || story.created_at) && story.author_name && <span className="opacity-60">|</span>}
-            {story.author_name && (
-              <span className="flex items-center gap-2">
-                <User size={16} className="opacity-80" />
-                {story.author_linkedin ? (
-                  <a href={story.author_linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-white hover:underline transition-colors group">
-                    {story.author_name}
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-70 group-hover:opacity-100 transition-opacity text-[#0A66C2] bg-white rounded-sm"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                  </a>
-                ) : (
-                  story.author_name
-                )}
-              </span>
-            )}
-          </div>
-
-          {/* Social Share Buttons */}
-          <div className="absolute z-20 bottom-6 right-6 md:bottom-10 md:right-12">
-            <ShareButtons url={`/blog/${slug}`} title={story.title} />
+          {/* Footer Metadata & Share Buttons */}
+          <div className="absolute z-20 bottom-0 left-0 w-full p-6 md:px-12 md:pb-10 flex flex-col md:flex-row justify-between items-end gap-4">
+            <div className="flex flex-wrap items-center gap-3 text-white/90 text-sm md:text-base font-medium drop-shadow">
+              {(story.publish_at || story.created_at) && (
+                <span className="flex items-center gap-2">
+                  <Clock size={16} className="opacity-80" />
+                  {new Date(story.publish_at || story.created_at).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                </span>
+              )}
+              {(story.publish_at || story.created_at) && story.author_name && <span className="opacity-60 hidden sm:inline">|</span>}
+              {story.author_name && (
+                <span className="flex items-center gap-2">
+                  <User size={16} className="opacity-80" />
+                  {story.author_linkedin ? (
+                    <a href={story.author_linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-white transition-colors group">
+                      <span className="leading-none">{story.author_name}</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="opacity-80 group-hover:opacity-100 transition-all mt-[3px]">
+                        {/* Donut Background (White -> Blue) */}
+                        <path className="fill-current group-hover:text-[#0077b5] transition-colors" d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z" />
+                        {/* Inner 'in' text (Transparent -> White) */}
+                        <path fill="transparent" className="group-hover:fill-white transition-colors" d="M10 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z" />
+                      </svg>
+                    </a>
+                  ) : (
+                    story.author_name
+                  )}
+                </span>
+              )}
+            </div>
+            
+            <div className="shrink-0">
+              <ShareButtons url={`/blog/${slug}`} title={story.title} />
+            </div>
           </div>
         </section>
 
