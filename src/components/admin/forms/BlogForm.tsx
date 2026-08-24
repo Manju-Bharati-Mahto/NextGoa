@@ -83,7 +83,7 @@ export default function BlogForm({
 
         author_name: "",
 
-        faculty_id: "",
+        faculty_id: [] as string[],
 
     });
 
@@ -191,7 +191,7 @@ setForm({
   og_description: blog.og_description || "",
   status: blog.status || "draft",
   author_name: blog.author_name || "",
-  faculty_id: blog.faculty_id || "",
+  faculty_id: blog.faculty_id ? String(blog.faculty_id).split(",") : [],
 });
 
 setSections(
@@ -382,37 +382,31 @@ if (blog.publish_at) {
     // =====================================
 
     function toggleCategory(id: string) {
-
-    if (form.category.includes(id)) {
-
-        setForm((prev) => ({
-
-        ...prev,
-
-        category: prev.category.filter(
-            (c) => c !== id
-        ),
-
-        }));
-
-    } else {
-
-        setForm((prev) => ({
-
-        ...prev,
-
-        category: [
-
-            ...prev.category,
-
-            id,
-
-        ],
-
-        }));
-
+        if (form.category.includes(id)) {
+            setForm((prev) => ({
+                ...prev,
+                category: prev.category.filter((c) => c !== id),
+            }));
+        } else {
+            setForm((prev) => ({
+                ...prev,
+                category: [...prev.category, id],
+            }));
+        }
     }
 
+    function toggleFaculty(id: string) {
+        if (form.faculty_id.includes(id)) {
+            setForm((prev) => ({
+                ...prev,
+                faculty_id: prev.faculty_id.filter((f) => f !== id),
+            }));
+        } else {
+            setForm((prev) => ({
+                ...prev,
+                faculty_id: [...prev.faculty_id, id],
+            }));
+        }
     }
 
     // =====================================
@@ -572,8 +566,8 @@ if (blog.publish_at) {
         );
 
         formData.append(
-        "faculty_id",
-        form.faculty_id
+            "faculty_id",
+            JSON.stringify(form.faculty_id)
         );
 
         // FAQ
@@ -1309,20 +1303,18 @@ if (blog.publish_at) {
                   Faculty (Optional)
                </h3>
             </div>
-            <div className="p-5">
-               <select
-                  name="faculty_id"
-                  value={String(form.faculty_id || "")}
-                  onChange={handleChange}
-                  className="form-select w-full"
-               >
-                  <option value="">Select Faculty...</option>
-                  {faculties.map((f, index) => (
-                     <option key={`${f.id}-${index}`} value={String(f.id)}>
-                        {f.title}
-                     </option>
-                  ))}
-               </select>
+            <div className="p-5 space-y-3">
+               {faculties.map((f: any, index) => (
+                  <label key={`${f.id}-${index}`} className="flex items-center gap-3">
+                     <input
+                        type="checkbox"
+                        className="form-check-input"
+                        checked={form.faculty_id.includes(String(f.id))}
+                        onChange={() => toggleFaculty(String(f.id))}
+                     />
+                     <span>{f.title}</span>
+                  </label>
+               ))}
             </div>
          </div>
          {/* Categories */}
