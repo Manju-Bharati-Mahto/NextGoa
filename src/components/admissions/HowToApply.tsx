@@ -88,7 +88,7 @@ export function HowToApply() {
                     data-track
                     data-track-event="whatsapp_click"
                     data-track-text="Chat on WhatsApp"
-                    data-track-header="How to Apply"
+                    data-track-header="WhatsApp"
                     className="inline-block bg-[#00b368] hover:bg-[#009657] text-white text-base font-semibold py-2.5 px-6 rounded-full transition-colors font-poppins"
                   >
                     Chat on WhatsApp
@@ -192,7 +192,7 @@ export function HowToApply() {
                 data-track
                 data-track-event="whatsapp_click"
                 data-track-text="Chat on WhatsApp"
-                data-track-header="How to Apply"
+                data-track-header="WhatsApp"
                 className="inline-block bg-[#00b368] hover:bg-[#009657] text-white text-base sm:text-lg font-bold py-3 px-8 rounded-full transition-colors font-poppins w-max"
               >
                 Chat on WhatsApp

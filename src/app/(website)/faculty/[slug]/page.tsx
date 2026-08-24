@@ -37,6 +37,7 @@ import PhdResearchAreas from "@/components/programmes/PhdResearchAreas";
 import PhdProgrammePicker from "@/components/programmes/PhdProgrammePicker";
 import PhdEntranceNotice from "@/components/programmes/PhdEntranceNotice";
 import PhdDoctoralProcess from "@/components/programmes/PhdDoctoralProcess";
+import FacultyBlogs from "@/components/programmes/FacultyBlogs";
 export async function generateStaticParams() {
   const slugs = getAllProgrammeSlugs();
   return slugs.map((slug) => ({ slug }));
@@ -222,6 +223,7 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
         <AdmissionsSnapshot slug={data.slug} />
       )}
 
+      <FacultyBlogs facultySlug={slug} />
       <DynamicFaq data={data.faqs} />
 
       <FinalCta

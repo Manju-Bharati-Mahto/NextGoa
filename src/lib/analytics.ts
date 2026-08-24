@@ -20,5 +20,5 @@ export const pushToDataLayer = (
   window.dataLayer.push(data);
 
   // Temporary: see events in browser console
- // console.log("======================DataLayer Event==============:", data);
+//  console.log("======================DataLayer Event==============:", data);
 };
