@@ -216,7 +216,6 @@ export default async function DynamicProgrammePage({ params }: { params: Promise
       )}
 
 
-
       {data.slug !== "phd" && (
         <DynamicDeanAndFaculty facultySlug={data.slug} />
       )}
