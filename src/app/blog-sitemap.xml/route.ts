@@ -3,7 +3,7 @@ import { generateSitemap, SitemapUrl } from "@/lib/sitemaps/sitemap-utils";
 import { SITE_URL } from "@/lib/site-config";
 import db from "@/lib/db";
 
-export const revalidate = 3600; // Cache for 1 hour
+export const dynamic = "force-dynamic";
 
 export async function GET() {
   let urls: SitemapUrl[] = [
