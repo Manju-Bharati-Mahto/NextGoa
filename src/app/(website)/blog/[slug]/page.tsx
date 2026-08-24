@@ -134,7 +134,7 @@ export default async function StoryPage({
       />
       <article className="pt-0">
         {/* Hero Section */}
-        <section className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden py-16 sm:py-24">
+        <section className="relative w-full min-h-[90vh] flex flex-col justify-center overflow-hidden py-24 sm:py-32">
           <div className="absolute inset-0 bg-black/60 z-10" />
           <Image
             src={story.featured_image}
@@ -143,8 +143,8 @@ export default async function StoryPage({
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4 max-w-5xl mx-auto mt-16">
-            <div className="text-white/80 text-sm md:text-base font-medium mb-6">
+          <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 w-full max-w-7xl mx-auto mt-12 pb-0 md:pb-12">
+            <div className="text-white/80 text-sm md:text-base font-medium mb-8 md:mb-10 max-w-4xl mx-auto">
               <Link href="/" className="hover:text-white transition-colors">
                 Home
               </Link>{" "}
@@ -154,9 +154,14 @@ export default async function StoryPage({
               </Link>{" "}
               &gt; <span className="text-white">{story.title}</span>
             </div>
-            <h1 className="section-heading text-white mb-2 max-w-4xl drop-shadow-md">
+            <h1 className="section-heading text-white mb-2 md:mb-6 max-w-6xl drop-shadow-md">
               {story.title}
             </h1>
+            {story.excerpt && (
+              <p className="text-white/90 text-base md:text-lg max-w-5xl mt-6 md:mt-8 drop-shadow-md leading-relaxed">
+                {story.excerpt}
+              </p>
+            )}
           </div>
           <div className="absolute z-20 bottom-6 left-6 md:bottom-10 md:left-12 flex items-center gap-3 text-white/90 text-sm md:text-base font-medium drop-shadow">
             {(story.publish_at || story.created_at) && (
@@ -220,7 +225,7 @@ export default async function StoryPage({
                           </h2>
 
                           <div
-                            className="section-body text-ink/80"
+                            className="section-body text-ink/80 [&_a]:text-[#0caadd] [&_a:hover]:underline transition-all"
                             dangerouslySetInnerHTML={{
                               __html: section.details,
                             }}
@@ -236,7 +241,7 @@ export default async function StoryPage({
                           </h3>
 
                           <div
-                            className="section-body text-ink/80"
+                            className="section-body text-ink/80 [&_a]:text-[#0caadd] [&_a:hover]:underline transition-all"
                             dangerouslySetInnerHTML={{
                               __html: section.details,
                             }}
@@ -252,7 +257,7 @@ export default async function StoryPage({
                           </h4>
 
                           <div
-                            className="section-body text-ink/80"
+                            className="section-body text-ink/80 [&_a]:text-[#0caadd] [&_a:hover]:underline transition-all"
                             dangerouslySetInnerHTML={{
                               __html: section.details,
                             }}
@@ -264,7 +269,7 @@ export default async function StoryPage({
                       return (
                         <div
                           key={index}
-                          className="section-body text-ink/80"
+                          className="section-body text-ink/80 [&_a]:text-[#0caadd] [&_a:hover]:underline transition-all"
                           dangerouslySetInnerHTML={{
                             __html: section.details,
                           }}
@@ -290,7 +295,7 @@ export default async function StoryPage({
                           {faq.question}
                         </summary>
                         <div
-                          className="px-6 py-5"
+                          className="px-6 py-5 [&_a]:text-[#0caadd] [&_a:hover]:underline transition-all"
                           dangerouslySetInnerHTML={{
                             __html: faq.answer,
                           }}

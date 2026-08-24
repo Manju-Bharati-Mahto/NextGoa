@@ -15,7 +15,8 @@ export async function GET() {
     { path: "/admissions", changefreq: "weekly", priority: 0.9 },
     { path: "/grievances/staff", changefreq: "weekly", priority: 0.9 },
     { path: "/grievances/students", changefreq: "weekly", priority: 0.9 },
-    { path: "/contact-us", changefreq: "weekly", priority: 0.9 }
+    { path: "/contact-us", changefreq: "weekly", priority: 0.9 },
+    { path: "/research-and-development-centre", changefreq: "weekly", priority: 0.9 }
   ];
 
   const urls: SitemapUrl[] = staticPaths.map((item) => ({

@@ -5,7 +5,6 @@ import { SITE_URL } from "@/lib/site-config";
 export async function GET() {
   const staticPaths = [
     { path: "/blog", changefreq: "daily", priority: 0.9 },
-    { path: "/blog/parul-university-goa-achieves-a-historic-hattrick-at-india-energy-week-iew-2026", changefreq: "daily", priority: 0.9 },
     { path: "/blog/classroom-community-building-its-ok-to-try-something-new-feature", changefreq: "daily", priority: 0.9 },
     { path: "/blog/best-courses-after-12th-in-goa", changefreq: "daily", priority: 0.9 },
     { path: "/blog/career-in-artificial-intelligence-after-12th-in-goa", changefreq: "daily", priority: 0.9 },
@@ -31,8 +30,6 @@ export async function GET() {
     { path: "/blog/those-inequalities-are-inequalities-that-occur-within-households", changefreq: "daily", priority: 0.9 },
     { path: "/blog/how-students-learn-creative-design", changefreq: "daily", priority: 0.9 },
     { path: "/blog/mba-vs-specialised-business-certifications-what-employers-value", changefreq: "daily", priority: 0.9 },
-    { path: "/blog/why-an-industrial-visit-for-mca-students-matters-inside-d-links-goa-networking-plant-with-parul-university", changefreq: "daily", priority: 0.9 },
-    { path: "/blog/inside-ncpor-indias-polar-research-nodal-agency-in-goa-what-an-ncpor-industrial-visit-teaches-computer-science-and-bca-students-about-data-science-in-real-research", changefreq: "daily", priority: 0.9 },
     { path: "/blog/physiotherapy-top-choice-in-healthcare-career", changefreq: "daily", priority: 0.9 },
     { path: "/blog/top-programming-skills-recruiters-expect-from-freshers", changefreq: "daily", priority: 0.9 },
     { path: "/blog/applied-science-powering-innovation-in-healthcare-agriculture-and-sustainability", changefreq: "daily", priority: 0.9 },
