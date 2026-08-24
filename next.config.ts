@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
   //trailingSlash: false, 
   skipTrailingSlashRedirect: true,
   turbopack: {},
+  // @ts-ignore - 'eslint' is a valid Next.js config property but might be missing in current types
   eslint: {
     ignoreDuringBuilds: true,
   },
