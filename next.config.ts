@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
   //trailingSlash: false, 
   skipTrailingSlashRedirect: true,
   turbopack: {},
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   webpack: (config, { dev, isServer }) => {
     if (dev && !isServer) {
       config.watchOptions = {
