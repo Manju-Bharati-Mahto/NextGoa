@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Clock, User, Linkedin } from "lucide-react";
+import { Clock, User } from "lucide-react";
 import db from "@/lib/db";
 import ShareButtons from "@/components/blog/ShareButtons";
 import SidebarLatestPosts from "@/components/blog/SidebarLatestPosts";
@@ -177,7 +177,7 @@ export default async function StoryPage({
                 {story.author_linkedin ? (
                   <a href={story.author_linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-white hover:underline transition-colors group">
                     {story.author_name}
-                    <Linkedin size={14} className="opacity-70 group-hover:opacity-100 transition-opacity text-[#0A66C2] bg-white rounded-sm" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-70 group-hover:opacity-100 transition-opacity text-[#0A66C2] bg-white rounded-sm"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
                   </a>
                 ) : (
                   story.author_name
