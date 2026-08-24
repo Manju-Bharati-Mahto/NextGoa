@@ -15,45 +15,56 @@ const insightsText: Record<string, string> = {
 };
 
 export default async function FacultyBlogs({ facultySlug }: { facultySlug: string }) {
-  // Try to find the faculty in the DB by slug
-  const [faculties]: any = await db.query(
-    "SELECT id, title FROM faculty WHERE slug = ? LIMIT 1",
-    [facultySlug]
-  );
+  let stories: Story[] = [];
+  let faculty: any = null;
 
-  if (!faculties || faculties.length === 0) return null;
+  try {
+    // Try to find the faculty in the DB by slug
+    const [faculties]: any = await db.query(
+      "SELECT id, title FROM faculty WHERE slug = ? LIMIT 1",
+      [facultySlug]
+    );
 
-  const faculty = faculties[0];
+    if (!faculties || faculties.length === 0) return null;
 
-  // Fetch blogs for this faculty
-  const [rows]: any = await db.query(
-    `
-    SELECT b.*, 
-      (
-        SELECT GROUP_CONCAT(c.name SEPARATOR ', ')
-        FROM blog_categories c
-        WHERE FIND_IN_SET(c.id, b.category)
-      ) AS category_names
-    FROM blogs b
-    WHERE b.status = 'published' AND b.faculty_id = ?
-    ORDER BY COALESCE(b.publish_at, b.created_at) DESC 
-    LIMIT 10
-    `,
-    [faculty.id]
-  );
+    faculty = faculties[0];
 
-  if (!rows || rows.length === 0) return null;
+    // Fetch blogs for this faculty
+    const [rows]: any = await db.query(
+      `
+      SELECT b.*, 
+        (
+          SELECT GROUP_CONCAT(c.name SEPARATOR ', ')
+          FROM blog_categories c
+          WHERE FIND_IN_SET(c.id, b.category)
+        ) AS category_names
+      FROM blogs b
+      WHERE b.status = 'published' AND b.faculty_id = ?
+      ORDER BY COALESCE(b.publish_at, b.created_at) DESC 
+      LIMIT 10
+      `,
+      [faculty.id]
+    );
 
-  const stories: Story[] = rows.map((blog: any) => ({
-    tag: blog.category_names || "General",
-    tagClass: "bg-brand/10 text-brand ring-1 ring-brand/20",
-    title: blog.title,
-    body: blog.excerpt,
-    image: blog.featured_image,
-    link: `/blog/${blog.slug}`,
-    date: blog.publish_at || blog.created_at,
-    author_name: blog.author_name,
-  }));
+    if (rows && rows.length > 0) {
+      stories = rows.map((blog: any) => ({
+        tag: blog.category_names || "General",
+        tagClass: "bg-brand/10 text-brand ring-1 ring-brand/20",
+        title: blog.title,
+        body: blog.excerpt,
+        image: blog.featured_image,
+        link: `/blog/${blog.slug}`,
+        date: blog.publish_at || blog.created_at,
+        author_name: blog.author_name,
+      }));
+    }
+  } catch (error) {
+    console.error(`[FacultyBlogs] Failed to fetch blogs for ${facultySlug}:`, error);
+    // Gracefully fail during build or runtime DB outages
+    return null;
+  }
+
+  if (stories.length === 0) return null;
 
   const insightHeading = insightsText[facultySlug] || "Insights for your future.";
 
