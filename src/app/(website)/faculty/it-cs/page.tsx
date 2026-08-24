@@ -10,12 +10,15 @@ import StudyAbroadModels from "@/components/study-abroad/StudyAbroadModels";
 import AdmissionsSnapshot from "@/components/programmes/AdmissionsSnapshot";
 import EngineeringFaq from "@/components/programmes/EngineeringFaq";
 import Image from "next/image";
+import FacultyBlogs from "@/components/programmes/FacultyBlogs";
 
 export const metadata: Metadata = {
   title: { absolute: "IT & Computer Science | Parul University Goa" },
   description: "Explore our IT and Computer Science programmes.",
   alternates: { canonical: "/faculty/it-cs" },
 };
+
+export const revalidate = 60; // Revalidate for blogs
 
 export default function ItCsPage() {
   return (
@@ -128,6 +131,9 @@ export default function ItCsPage() {
 
       {/* Admissions Snapshot Section */}
       <AdmissionsSnapshot slug="it-cs" />
+
+      {/* Blogs Section */}
+      <FacultyBlogs facultySlug="it-cs" />
 
       {/* FAQs Section */}
       <EngineeringFaq />

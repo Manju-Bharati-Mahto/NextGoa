@@ -10,12 +10,14 @@ import StudyAbroadModels from "@/components/study-abroad/StudyAbroadModels";
 import AdmissionsSnapshot from "@/components/programmes/AdmissionsSnapshot";
 import EngineeringFaq from "@/components/programmes/EngineeringFaq";
 import Image from "next/image";
+import FacultyBlogs from "@/components/programmes/FacultyBlogs";
 
 export const metadata: Metadata = {
   title: { absolute: "Faculty of Engineering, IT & Computer Science - Parul University Goa" },
   description: "Explore the Faculty of Engineering, IT & Computer Science at Parul University Goa. Discover industry-focused programs, advanced labs and expert mentorship. Apply now!",
   alternates: { canonical: "/faculty/engineering" },
 };
+export const revalidate = 60; // Revalidate for blogs
 
 export default function EngineeringPage() {
   return (
@@ -128,6 +130,9 @@ export default function EngineeringPage() {
 
       {/* Admissions Snapshot Section */}
       <AdmissionsSnapshot slug="engineering" />
+
+      {/* Blogs Section */}
+      <FacultyBlogs facultySlug="engineering" />
 
       {/* FAQs Section */}
       <EngineeringFaq />

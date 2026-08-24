@@ -12,7 +12,6 @@ const insightsText: Record<string, string> = {
   "physiotherapy": "Insights for future physiotherapists.",
   "hotel-management": "Insights for future hoteliers.",
   "applied-and-health-sciences": "Insights for future scientists.",
-  
 };
 
 
