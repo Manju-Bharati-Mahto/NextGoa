@@ -9,10 +9,6 @@ export function UpcomingEvents() {
   const [loading, setLoading] = useState(true);
   const [showAll, setShowAll] = useState(false);
 
-  useEffect(() => {
-    loadEvents();
-  }, []);
-
   async function loadEvents() {
     try {
       const res = await fetch("/api/events");
@@ -27,6 +23,10 @@ export function UpcomingEvents() {
       setLoading(false);
     }
   }
+
+  useEffect(() => {
+    loadEvents();
+  }, []);
 
   if (loading) return null;
 
