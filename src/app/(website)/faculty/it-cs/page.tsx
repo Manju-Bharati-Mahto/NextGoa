@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   title: { absolute: "IT & Computer Science | Parul University Goa" },
   description: "Explore our IT and Computer Science programmes.",
   alternates: { canonical: "/faculty/it-cs" },
+  
 };
 
 export const revalidate = 60; // Revalidate for blogs
