@@ -43,6 +43,8 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
+export const revalidate = 60; // Revalidate the page every 60 seconds in production
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const data = getProgrammeData(slug);
