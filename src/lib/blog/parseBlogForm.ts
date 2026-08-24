@@ -18,6 +18,7 @@ export interface BlogFormData {
   status: string;
   publish_at: string;
   author_name: string | null;
+  author_linkedin: string | null;
   faculty_id: string[];
 
   faqs: any[];
@@ -66,6 +67,7 @@ export async function parseBlogForm(
 
     publish_at: (formData.get("publish_at") as string) || "",
     author_name: (formData.get("author_name") as string) || null,
+    author_linkedin: (formData.get("author_linkedin") as string) || null,
     faculty_id: JSON.parse(
       (formData.get("faculty_id") as string) || "[]"
     ),

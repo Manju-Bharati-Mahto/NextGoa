@@ -82,6 +82,7 @@ export default function BlogForm({
         status: "draft",
 
         author_name: "",
+        author_linkedin: "",
 
         faculty_id: [] as string[],
 
@@ -191,6 +192,7 @@ setForm({
   og_description: blog.og_description || "",
   status: blog.status || "draft",
   author_name: blog.author_name || "",
+  author_linkedin: blog.author_linkedin || "",
   faculty_id: blog.faculty_id ? String(blog.faculty_id).split(",") : [],
 });
 
@@ -561,8 +563,12 @@ if (blog.publish_at) {
         );
 
         formData.append(
-        "author_name",
-        form.author_name
+            "author_name",
+            form.author_name
+        );
+        formData.append(
+            "author_linkedin",
+            form.author_linkedin
         );
 
         formData.append(
@@ -1271,6 +1277,19 @@ if (blog.publish_at) {
                       onChange={handleChange}
                       className="form-control w-full"
                       placeholder="e.g. Author Name"
+                   />
+                </div>
+                <div className="p-5 border-t border-light/50">
+                   <label className="block text-sm font-medium text-ink mb-1.5">
+                      Author's LinkedIn URL (Optional)
+                   </label>
+                   <input
+                      type="url"
+                      name="author_linkedin"
+                      value={form.author_linkedin}
+                      onChange={handleChange}
+                      className="form-control w-full"
+                      placeholder="https://linkedin.com/in/..."
                    />
                 </div>
 

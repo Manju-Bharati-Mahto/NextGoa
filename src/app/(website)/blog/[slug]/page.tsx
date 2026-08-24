@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Clock, User } from "lucide-react";
+import { Clock, User, Linkedin } from "lucide-react";
 import db from "@/lib/db";
 import ShareButtons from "@/components/blog/ShareButtons";
 import SidebarLatestPosts from "@/components/blog/SidebarLatestPosts";
@@ -174,7 +174,14 @@ export default async function StoryPage({
             {story.author_name && (
               <span className="flex items-center gap-2">
                 <User size={16} className="opacity-80" />
-                {story.author_name}
+                {story.author_linkedin ? (
+                  <a href={story.author_linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-white hover:underline transition-colors group">
+                    {story.author_name}
+                    <Linkedin size={14} className="opacity-70 group-hover:opacity-100 transition-opacity text-[#0A66C2] bg-white rounded-sm" />
+                  </a>
+                ) : (
+                  story.author_name
+                )}
               </span>
             )}
           </div>

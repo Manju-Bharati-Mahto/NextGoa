@@ -92,6 +92,7 @@ export async function PUT(
         status=?,
         publish_at=?,
         author_name=?,
+        author_linkedin=?,
         faculty_id=?
       WHERE id=?
       `,
