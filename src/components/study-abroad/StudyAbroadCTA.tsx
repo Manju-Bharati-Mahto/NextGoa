@@ -46,7 +46,7 @@ export default function StudyAbroadCTA() {
               data-track
               data-track-event="whatsapp_click"
               data-track-text="Chat on WhatsApp"
-              data-track-header="How to Apply"
+              data-track-header="Admissions Open 2026"
               className="w-full sm:w-auto block sm:inline-block text-center bg-white/20 border border-white/40 backdrop-blur-md text-white px-8 py-3.5 rounded-full font-bold text-[16px] shadow-md hover:bg-white/30 transition-colors whitespace-nowrap"
               style={{ letterSpacing: '0.3px' }}
             >

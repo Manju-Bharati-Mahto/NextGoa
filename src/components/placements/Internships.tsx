@@ -117,7 +117,7 @@ export function InternshipsAndPPOs() {
                   data-track
                   data-track-event="whatsapp_click"
                   data-track-text="Chat on WhatsApp"
-                  data-track-header="How to Apply"
+                  data-track-header="Your faculty. Your future."
                   className="inline-block bg-[#00A859] text-white px-6 py-3 rounded-full font-poppins text-[14px] font-semibold hover:bg-opacity-90 transition-opacity whitespace-nowrap"
                 >
                   Chat on WhatsApp

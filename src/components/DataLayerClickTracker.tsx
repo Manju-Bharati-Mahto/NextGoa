@@ -74,7 +74,7 @@ export default function DataLayerClickTracker() {
     document.addEventListener("click", handleClick, { capture: true });
 
     return () => {
-      document.removeEventListener("click", handleClick);
+      document.removeEventListener("click", handleClick , { capture: true });
     };
   }, []);
 

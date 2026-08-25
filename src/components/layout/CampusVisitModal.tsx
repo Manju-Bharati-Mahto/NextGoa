@@ -145,8 +145,6 @@ export function CampusVisitModal() {
     try {
       setSubmitState("submitting");
 
-      console.log("Submitting Data:", visitData);
-
       const res = await fetch("/api/form-submit", {
         method: "POST",
         headers: {
@@ -176,6 +174,13 @@ export function CampusVisitModal() {
       }
 
       setSubmitState("success");
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'book_tour_success',
+        click_text: 'Confirm Visit',
+        click_header: 'Book a Campus Visit',
+      });
 
       setTimeout(() => {
         close();
