@@ -64,7 +64,7 @@ export function Admissions() {
                 Application deadline
               </span>
             </div>
-            <p className="mt-4 font-sans font-medium text-[26px] sm:text-[32px] leading-tight">25th August 2026</p>
+            <p className="mt-4 font-sans font-medium text-[26px] sm:text-[32px] leading-tight">Next Application Cycle Opens Shortly</p>
             <div className="w-full h-px bg-white/20 my-4" />
             <p className="section-body text-white/90">
               All Diploma, UG, and PG Programs for 2026 Intake.
@@ -76,7 +76,7 @@ export function Admissions() {
                 Merit list &amp; counselling
               </span>
             </div>
-            <p className="mt-4 font-sans font-medium text-[26px] sm:text-[32px] leading-tight">August 2026</p>
+            <p className="mt-4 font-sans font-medium text-[26px] sm:text-[32px] leading-tight">September 2026</p>
             <div className="w-full h-px bg-white/20 my-4" />
             <p className="section-body text-white/90">
               Rolling rounds with hostel allotment.
